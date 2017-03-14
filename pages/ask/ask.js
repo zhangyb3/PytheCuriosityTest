@@ -28,16 +28,28 @@ Page({
 
      teachers:[
       {
-        teacher_name: 'ye',
+        teacher_name: '都教授',
       },{
-        teacher_name: 'arjen',
+        teacher_name: '孙悟空',
       },{
-        teacher_name: 'king',
+        teacher_name: '猪八戒',
       },
       {
-        teacher_name: 'lidia',
+        teacher_name: '白骨精',
       },
     ],
+    subjects_discribe:[
+      {
+        sub_dis: '数学（mathematics或maths），是研究数量、结构、变化、空间以及信息等概念的一门学科，从某种角度看属于形式科学的一种。',
+      },{
+        sub_dis: '数学（mathematics或maths），是研究数量、结构、变化、空间以及信息等概念的一门学科，从某种角度看属于形式科学的一种。',
+      },{
+        sub_dis: '数学（mathematics或maths），是研究数量、结构、变化、空间以及信息等概念的一门学科，从某种角度看属于形式科学的一种。',
+      },
+      {
+        sub_dis: '数学（mathematics或maths），是研究数量、结构、变化、空间以及信息等概念的一门学科，从某种角度看属于形式科学的一种。',
+      },
+    ]
 
     },
   onLoad:function(options){

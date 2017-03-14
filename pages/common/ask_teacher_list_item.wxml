@@ -2,20 +2,17 @@
 
 <view class="list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneTeacher">
 
-            <view class="border_tab"/>
+            <view class="border_tab"></view>
             <!--<view class="dotted_line"></view>-->
             <view class="teacher_wrapper">
-      
+                <image class="teacher_icon" src="../../images/icon_language@2x.png"
+                ></image>
                 <text class="teacher_content">{{ item.teacher_name }}</text>
               
             </view>
 
-            
-            
             <!--<view class="dotted_line"></view>-->
-            <!--<view class="border_tab"/>-->
-      
-        
+            <!--<view class="border_tab"/>-->        
 </view>
 
 </template>

@@ -17,9 +17,11 @@
 
 .subject_wrapper{
     /*border-top: 1px solid #EEE;*/
-    height: 40px;
-display: flex;
-flex-direction: row;
+    /*height: 40px;*/
+        display: flex;
+    flex-direction: row;
+    /*justify-content: center;*/
+    align-items: center;
     overflow-x: hidden; 
     overflow-y: auto;
 }
@@ -28,15 +30,37 @@ flex-direction: row;
     width: 25px;
     height: 20px;
     margin-left: 4%;
-    margin-top: 3%;
+    /*margin-top: 3%;*/
     /*background-color: purple;*/
 }
 
 .subject_content {
     margin-left: 10px;
+    /*line-height: 10px;*/
+    text-align: center;
     line-height: 40px;
     font-size: 18px;
+    /*margin-top: 3%;*/
+    /*margin-bottom: 3%;*/
+    width: 40px;
     
+}
+
+.subject_discribe{
+    margin-left: 5px;
+    color: #ABABAB;
+    line-height: 14px;
+    /*margin-top: 3%;*/
+    width: 60%;
+    font-size: 16px;
+}
+
+.subject_icon_ask{
+    width: 25px;
+    height: 25px;
+    /*margin-right: 20px;*/
+    /*justify-content: flex-end;*/
+    /*margin-top: 3%;*/
 }
 
 .dotted_line{

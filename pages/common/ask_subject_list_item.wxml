@@ -8,7 +8,9 @@
                 <image class="subject_icon" src="../../images/icon_language@2x.png"
                 ></image>
                 <text class="subject_content">{{ item.subject_name }}</text>
-              
+                <text class="subject_discribe">研究数量、结构</text>
+                <image class="subject_icon_ask" src="../../images/icon_question_1@2x.png"
+                ></image>
             </view>
 
             

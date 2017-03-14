@@ -17,15 +17,23 @@
 .teacher_wrapper{
     /*border-top: 1px solid #EEE;*/
     /*height: 40px;*/
-
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     overflow-x: hidden; 
     overflow-y: auto;
 }
 
+.teacher_icon{
+    width: 25px;
+    height: 25px;
+    margin-left: 4%;
+    /*margin-top: 3%;*/
+}
+
 .teacher_content {
-    margin-left: 20px;
-    line-height: 40px;
-    
+    margin-left: 10px;
+    line-height:120px; 
     font-size: 18px;
     
 }
