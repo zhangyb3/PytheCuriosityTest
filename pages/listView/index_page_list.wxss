@@ -1,0 +1,23 @@
+
+
+.scroll_list{
+    
+    /*height: 300px;*/
+    margin-top: 0px;
+    margin-bottom: 10px;
+}
+
+.interval{
+    height: 10px;
+    background-color: #ECEBF4;
+}
+    
+
+.index_page_list_container{
+    background-color: lightgray;
+}
+
+
+
+@import "../common/index_page_list_item.wxss";
+

@@ -1,0 +1,35 @@
+<!--pages/ask/ask.wxml-->
+
+<import src="../listView/ask_page_subject_list.wxml" />
+<import src="../listView/ask_page_teacher_list.wxml" />
+<import src="../common/ask_page_section_selector.wxml" />
+
+<import src="../register/register.wxml" />
+
+
+<view class="register_container" hidden='{{hide_register_page}}'>
+  <template is="register_page" data="{{grades,grade_index,subjects,subject_index,hide_subject_selection,hide_grade_selection,select_student,select_teacher,second}}"></template>
+</view>
+
+
+<view class="ask_page_container" hidden='{{hide_ask_page}}'>
+  
+    <view class="ask_page_selector_container" >
+        <template is="ask_page_section_selector" data="{{ask_page_menu}}" ></template>
+    </view>
+
+    
+    
+  
+
+    <view class="ask_page_list_container" hidden='{{hide_ask_subject_list}}'>
+      <template is="ask_page_subject_list" data="{{ask_subject_list}}"></template>
+    </view>
+
+    <view class="ask_page_list_container" hidden='{{hide_ask_teacher_list}}'>
+      <template is="ask_page_teacher_list" data="{{ask_teacher_list}}"></template>
+    </view>
+
+    
+
+</view>

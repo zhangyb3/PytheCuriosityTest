@@ -1,0 +1,37 @@
+<!--pages/answer/answer.wxml-->
+
+<import src="../listView/answer_page_list.wxml" />
+<import src="../common/answer_page_filter_sort.wxml" />
+<import src="../pop/answer_page_subject_list.wxml" />
+<import src="../pop/answer_page_sort_attribute_list.wxml" />
+
+<import src="../register/register.wxml" />
+
+
+<view class="register_container" hidden='{{hide_register_page}}'>
+  <template is="register_page" data="{{grades,grade_index,subjects,subject_index,hide_subject_selection,hide_grade_selection,select_student,select_teacher,second}}"></template>
+</view>
+
+
+<view class="answer_page_container" hidden='{{hide_answer_page}}'>
+  
+    <view class="answer_page_filter_sort_container" >
+        <template is="answer_page_filter_sort" data="{{answer_page_sections,answer_page_menu}}" ></template>
+    </view>
+
+    <view class="answer_page_subject_list_container" hidden='{{hide_pop_subject_list}}'>
+        <template is="answer_page_subject_list" data="{{subject_infos}}"></template>
+    </view>
+
+    <view class="answer_page_sort_attributes_container" hidden='{{hide_pop_sort_attribute_list}}'>
+        <template is="answer_page_sort_attribute_list" data="{{sort_attributes}}"></template>
+    </view>
+  
+
+    <view class="answer_page_list_container" >
+      <template is="answer_page_list" data="{{questionsForAnswer}}"></template>
+    </view>
+
+    <view class="list_bottom"></view>
+
+</view>

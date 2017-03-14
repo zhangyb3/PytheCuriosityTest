@@ -1,0 +1,71 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/ask/ask",
+    "pages/ask/ask_operation",
+    "pages/answer/answer",
+    "pages/answer/answer_operation",
+    "pages/personal/personal",
+    "pages/personal/personal_ask",
+    "pages/personal/personal_ask_detail",
+    "pages/personal/personal_answer",
+    "pages/personal/personal_like",
+    "pages/knowledge/knowledge",
+    "pages/register/register",
+    "pages/reward/reward",
+    "pages/reward/other_reward"
+  ],
+
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "派知好问",
+    "navigationBarTextStyle":"black"
+  },
+
+  "tabBar": {
+      "color":"#0F0F0F",
+      "selectedColor":"#3AA4F1",
+      "backgroundColor":"#fff",
+      "list": [
+      {
+        "pagePath": "pages/index/index",
+        
+        "color":"white",
+        "selectedColor":"lightblue",
+        "iconPath":"images/tab_icon_know_nor@2x.png",
+        "selectedIconPath":"images/tab_icon_know_sel@2x.png",
+        "text":"知"
+      },
+      {
+        "pagePath": "pages/ask/ask",
+        
+        "color":"white",
+        "selectedColor":"lightblue",
+        "iconPath":"images/tab_icon_question_nor@2x.png",
+        "selectedIconPath":"images/tab_icon_question_sel@2x.png",
+        "text":"问"
+      },
+      {
+        "pagePath": "pages/answer/answer",
+        
+        "color":"white",
+        "selectedColor":"lightblue",
+        "iconPath":"images/tab_icon_answer_nor@2x.png",
+        "selectedIconPath":"images/tab_icon_answer_sel@2x.png",
+        "text":"答"
+      },
+      {
+        "pagePath": "pages/personal/personal",
+        
+        "color":"white",
+        "selectedColor":"lightblue",
+        "iconPath":"images/tab_icon_personal_nor@2x.png",
+        "selectedIconPath":"images/tab_icon_personal_sel@2x.png",
+        "text":"我"
+      }
+      ]
+  },
+  "debug": true
+}

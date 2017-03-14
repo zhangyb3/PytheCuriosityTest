@@ -1,0 +1,22 @@
+/* pages/personal/personal_answer.wxss */
+
+.personal_answer_page{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    display: flex;
+    flex-direction: column;
+    background-color: lightgray;
+}
+
+.list_bottom{
+  height: 10px;
+  background-color: lightgray;
+}
+
+@import "../common/personal_answer_section_selector.wxss";
+@import "../listView/personal_answer_list.wxss";
+@import "../listView/personal_not_answer_list.wxss";

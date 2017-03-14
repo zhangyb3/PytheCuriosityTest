@@ -1,0 +1,93 @@
+
+<import src="../section/operation_take_photo.wxml" />
+<import src="../section/operation_record_sound.wxml" />
+<import src="../section/operation_draw_picture.wxml" />
+
+<view class="ask_operation_view"  data-item='{{ ask_item }}'>
+    
+       
+        
+        <view class="border_tab"></view>
+
+        
+        <view class="border_tab"></view>
+
+        <view class="ask_container" >
+            
+            
+            <view class="border_tab"></view>
+
+            <view class="ask_content_zone" hidden='{{hide_textarea}}'>
+                <textarea class="ask_content_text_input"  placeholder="在此输入题目···"  placeholder-style="color:black;"/>
+            </view>
+
+            <view class="border_tab"></view>
+
+        </view>
+
+        <view class="multi_tips">
+            <view wx:if="{{ask_question.voice_path != null}}" class="voice" >
+                
+                <view class="bubble" bindtap="playVoiceRecord">
+                    <view class="bubble-tail"></view>
+                    <view class="voice-wave"></view>
+                    <view>{{ask_question.voice_timeLength}}秒</view>
+                </view>
+
+            </view>
+
+            <view wx:if="{{ask_question.photo_path != null}}" class="photo" >
+                <view class="bubble-photo" >
+                    <view>照片</view>
+                </view>
+            </view>
+
+        </view>
+
+        <view class="ask_operation_zone" >
+            <text class='record_sound' bindtap='recordSound'>录音
+            </text>
+            <text class="take_photo" bindtap="takePhoto">拍照
+            </text>
+            <text class="draw_picture" bindtap='drawPicture'>画板
+            </text>
+        </view>
+
+        <view class="record_sound_section_container" hidden='{{hide_record_sound_section}}'>
+             <template is="operation_record_sound_section" data='{{isSpeaking,loop,voices}}'></template>
+        </view>
+
+        <view class="take_photo_section_container" hidden='{{hide_take_photo_section}}'>
+             <template is="operation_take_photo_section" ></template>
+        </view>
+
+        <view class="draw_picture_section_container" hidden='{{hide_draw_picture_section}}'>
+             <template is="operation_draw_picture_section" data='{{pen}}'></template>
+        </view>
+
+        <view class="reward_number_container">
+        <view class="reward_1" bindtap="selectReward1">
+            <image class="reward_img" src="../../images/reward_1.png"></image>
+        </view>
+        <view class="reward_5" bindtap="selectReward5">
+            <image class="reward_img" src="../../images/reward_5.png"></image>
+        </view>
+        <view class="reward_10" bindtap="selectReward10">
+            <image class="reward_img" src="../../images/reward_10.png"></image>
+        </view>
+    </view>
+
+        <view class="border_tab"></view>
+
+        <view class="ask_commit_confirm">
+            <button class="ask_commit_button" bindtap="commitQuestion">
+                发布
+            </button>
+        </view>
+
+
+    </view>
+
+    
+
+    

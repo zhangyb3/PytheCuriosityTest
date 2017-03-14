@@ -1,0 +1,51 @@
+<template name="operation_record_sound_section">
+
+<view class="record_sound_section_cover"  bindtap='returnOperationPage'></view>
+
+
+<view class="record_sound_section" >
+    
+    <view class="voice_list_container">
+    <scroll-view class="voice_list" scroll-y="true" style="height:100px; z-index:999;">
+        <view wx:if="{{voices}}" class="common-list" >
+        <block  wx:for="{{voices}}">
+            <view class="board">
+                        <view class="cell"  >
+                            <view class="cell-bd" data-key="{{item.filePath}}" bindtap="gotoPlayVoice" > 
+                                <view  class="date">存储路径:{{item.filePath}}</view>
+                                
+                                <view  class="date">音频大小:{{item.size}}KB</view>
+                                <view ></view>
+                            </view>  
+                            
+                        </view>
+            </view>
+        </block>
+        </view>
+    </scroll-view>
+    </view>
+
+    <view wx:if="{{voices}}" class="tryVoiceRecord" >
+        <button class="tryVoiceRecord btn-style" data-key='{{voices[0].filePath}}' bindtap='gotoPlayVoice'>试听</button>
+    </view>
+
+    <view wx:if="{{voices}}" class="selectVoiceRecord" >
+        <button class="selectVoiceRecord btn-style" data-key="{{voices[0].filePath}}" bindtap='selectVoiceRecord'>确定</button>
+    </view>
+ 
+    <view  wx:if="{{isSpeaking}}"  class="speak-style">
+        <image class="sound-style" src="../../images/voice_icon_speech_sound_1.png" ></image>
+        <image wx:if="{{loop==2}}" class="sound-style" src="../../images/voice_icon_speech_sound_2.png" ></image>
+        <image wx:if="{{loop==3}}" class="sound-style" src="../../images/voice_icon_speech_sound_3.png" ></image>
+        <image wx:if="{{loop==4}}" class="sound-style" src="../../images/voice_icon_speech_sound_4.png" ></image>
+        <image wx:if="{{loop==5}}"class="sound-style" src="../../images/voice_icon_speech_sound_5.png" ></image>
+    </view>
+ 
+ 
+    <view class="record-style">
+        <button class="btn-style" bindtouchstart="startRecordVoice" bindtouchend="finishRecordVoice">按住（重新）录音</button>
+    </view>
+
+</view>
+
+</template>

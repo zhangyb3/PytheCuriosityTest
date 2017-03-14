@@ -1,0 +1,24 @@
+<import src="../common/ask_subject_list_item.wxml" />
+
+<template name="ask_page_subject_list">
+
+<!--列表-->
+  <scroll-view    scroll-y="true" 
+               bindscrolltolower="onLoadMore" bindscrolltoupper="onRefesh" >
+
+    
+      <block wx:for="{{ask_subject_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
+        <view class="interval"></view>
+        <view class="ask_subject_list_container" >
+          <template is="ask_subject_list_item" data="{{item}}"></template>
+        </view>
+      </block>
+
+
+    <view class="loadmore_view" wx:if="{{!netStateBean.loadmoreHidden && infos.length>8 }}" >
+      {{netStateBean.loadmoreMsg}}
+    </view>
+
+  </scroll-view>
+
+</template>

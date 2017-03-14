@@ -1,0 +1,59 @@
+.pop_sort_attribute_list_cover {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 20px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    opacity: 1;
+}
+
+.sort_attribute_list_zone {
+    z-index: 12;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: block;
+    bottom: 386px;
+}
+
+
+
+
+
+
+
+.sort_attribute_list {
+    background-color: #FFF;
+    z-index: 11;
+    width: 100%;
+   border-top: 1rpx solid #D9D9D9;
+    align-items: center;
+}
+
+
+
+
+.sort_attribute_item {
+    
+    position: relative;
+    float: left;
+    padding: 20rpx 20rpx;
+    width: 100%;
+    box-sizing: border-box;
+    /*border-right: 1rpx solid #D9D9D9;*/
+    /*border-top: 1rpx solid #D9D9D9;*/
+    background-color: white;
+}
+
+.sort_attribute_item_content {
+    display: block;
+    /*width: 100rpx;*/
+    /*height: 100rpx;*/
+    margin: 0 auto;
+    /*box-shadow: 3px 3px 5px #bbb;*/
+    text-align: center;
+    color: black;
+}

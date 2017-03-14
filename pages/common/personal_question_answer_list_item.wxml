@@ -1,0 +1,33 @@
+
+
+<template name="personal_question_answer_list_item">
+
+    <view class="personal_question_answer_list_item"  >
+    
+    
+    
+        <view class="personal_question_answer_container">
+            <view class="personal_question_answer_complain" >
+                <view class="complain_container" bindtap="complainOneAnswer">
+                    <image class="complain_image" src="../../images/my_account_un.png"></image>
+                </view>
+            </view>
+            <view class="personal_question_answer_content" data-item='{{ item }}' bindtap="seeOneAnswer">
+                <text class="personal_question_answer_text">{{item.text}}</text>
+            </view>
+            <view class="personal_question_answer_selector" >
+                <view class="answer_selector_container" bindtap="selectBestAnswer">
+                    <image class="answer_selector_image" src="../../images/my_account_on.png"></image>
+                </view>
+            </view>
+        </view>
+        
+        <view class="border_tab"></view>
+
+    </view>
+
+    
+
+
+
+</template>

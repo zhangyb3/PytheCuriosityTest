@@ -1,0 +1,21 @@
+<template name="ask_teacher_list_item">
+
+<view class="list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneTeacher">
+
+            <view class="border_tab"/>
+            <!--<view class="dotted_line"></view>-->
+            <view class="teacher_wrapper">
+      
+                <text class="teacher_content">{{ item.teacher_name }}</text>
+              
+            </view>
+
+            
+            
+            <!--<view class="dotted_line"></view>-->
+            <!--<view class="border_tab"/>-->
+      
+        
+</view>
+
+</template>

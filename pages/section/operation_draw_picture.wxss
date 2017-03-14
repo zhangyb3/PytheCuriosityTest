@@ -1,0 +1,100 @@
+
+.draw_picture_section_cover {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 1);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    opacity: 1;
+}
+
+.draw_picture_section{
+    z-index: 12;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    
+    /*align-items: center;*/
+}
+
+.canvas_container {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.canvas_area {
+
+    background-color: white;
+
+    width: 100%;
+    height: 90%;
+
+    flex: 1;
+
+}
+
+.draw_canvas{
+    width: 100%;
+    height: 100%;
+}
+
+.canvas_tools {
+
+    background-color: lightblue;
+
+    width: 100%;
+    height: 5%;
+
+    /*position: fixed;*/
+
+    /*bottom: 0;*/
+
+    display: flex;
+
+    justify-content: space-around;
+
+    align-items: center;
+
+}
+
+.red_pen {
+
+    background-color: red;
+    color: black;
+}
+
+.black_pen {
+
+    background-color: black;
+    color: red;
+}
+
+.eraser {
+
+    background-color: white;
+    color: lightblue;
+}
+
+
+
+.canvas_confirm {
+
+    
+    background-color: white;
+
+    width: 100%;
+    height: 5%;
+    text-align: center;
+
+}

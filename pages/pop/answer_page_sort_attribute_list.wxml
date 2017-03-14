@@ -1,0 +1,31 @@
+<!-- 弹出层 -->
+
+<template name="answer_page_sort_attribute_list">
+
+    <view class="pop_sort_attribute_list_view" >
+    
+    
+    
+    <!-- 遮罩 -->
+    <view class="pop_sort_attribute_list_cover"  bindtap='returnAnswerPage'></view>
+    <!-- 课程列表区域 -->
+    <view class="sort_attribute_list_zone" >
+        <view class="sort_attribute_list">
+            <block wx:for-items="{{sort_attributes}}"  >
+                <view class="sort_attribute_item" data-name="{{item.name}}"bindtap="selectSortAttribute" >
+                    <view class="sort_attribute_item_content">
+                        <text class="sort_attribute_text ">{{item.name}}</text>
+                    </view>
+                </view>
+            </block>
+            
+        </view>
+        
+    </view>
+
+
+    </view>
+
+
+
+</template>

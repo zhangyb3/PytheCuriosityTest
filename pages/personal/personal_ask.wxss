@@ -1,0 +1,19 @@
+/* pages/personal/personal_ask.wxss */
+
+.personal_ask_container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    background-color: lightgray;
+}
+
+.list_bottom{
+  height: 10px;
+  background-color: lightgray;
+}
+
+
+@import "../listView/personal_ask_list.wxss";

@@ -1,0 +1,19 @@
+.scroll_list{
+    /*margin-top: 10px;*/
+    
+}
+
+.personal_question_answer_list{
+    /*overflow-x: hidden; 
+    overflow-y: auto;*/
+}
+
+.interval{
+    height: 10px;
+}
+    
+.personal_question_answer_list_container{
+    background-color: lightgray;
+}
+
+@import "../common/personal_question_answer_list_item.wxss";

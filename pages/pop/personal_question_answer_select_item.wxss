@@ -1,0 +1,154 @@
+.select_item_cover {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    
+}
+
+.select_item_zone {
+
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
+
+    background-color: white;
+    
+    position: fixed;
+    top: 30px;
+    left: 0;
+    right: 0;
+    
+    display: flex;
+    flex-direction: column;
+
+   
+}
+
+.info_zone{
+    height: 400px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.select_question_wrapper{
+    /*height: 120px;*/
+    /*overflow-x: hidden; */
+    /*overflow-y: auto;*/
+}
+
+
+.select_question_content {
+    margin-left: 20px;
+    
+    font-size: 18px;
+    
+}
+
+.dotted_line{
+    
+    border-bottom: 1px dashed #A9A9A9; 
+}
+
+.select_answer_container {
+    /*padding: 8px;*/
+    display: flex;
+    flex-direction: column;
+    /*border-top: 1px solid #EEE;*/
+    /*border-bottom: 1px solid #EEE;*/
+    
+
+    
+}
+
+.select_answer_wrapper {
+    /*padding: 8px;*/
+    display: flex;
+    flex-direction: row;
+    /*border-top: 1px solid #EEE;*/
+    /*border-bottom: 1px solid #EEE;*/
+    
+}
+
+.select_answer_wrapper>image {
+    
+    width: 30px;
+    height: 30px;
+    
+    border-radius: 100%;
+    background-size: contain;
+}
+
+.select_lines {
+    /*height: 250px;*/
+    font-size: 18px;
+    /*overflow-x: hidden; */
+    /*overflow-y: auto;*/
+}
+
+
+
+.select_teacher_name {
+    width: 100%;
+    color: #666;
+    font-size: 32px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+
+.border_tab{
+    height:5px;
+}
+
+.operation_zone{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.operation_zone>text {
+    width: 100%;
+    text-align: center;
+    font-size: 28rpx;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #A9A9A9;
+}
+
+.operation_zone>text:not(:first-child) {
+    border-left: 1px solid #EEE;
+}
+
+.operation_zone>text:before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 2px;
+    position: relative;
+    bottom: 1px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.like_answer:before{
+    background-image: url(../../images/like.png);
+    background-size: 18px; 
+}
+
+.not_like_answer:before{
+    background-image: url(../../images/not_like.png);
+    background-size: 18px; 
+}
+
+.reward_answer:before{
+    background-image: url(../../images/money.png);
+    background-size: 18px; 
+}
+

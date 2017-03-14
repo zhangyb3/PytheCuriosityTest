@@ -1,0 +1,98 @@
+
+.record_sound_section_cover {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 1);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    opacity: 1;
+}
+
+.record_sound_section {
+    z-index: 12;
+    position: fixed;
+    top: 50px;
+    left: 0;
+    right: 0;
+    display: block;
+}
+
+.speak-style{
+    /*position: relative;*/
+    height: 240rpx;
+    width: 240rpx;
+    border-radius: 20rpx;
+    margin: 50% auto;
+    margin-top: 50px;
+    background: lightblue;
+    
+}
+.item-style{
+    margin-top: 30rpx;
+    margin-bottom: 30rpx;
+}
+.text-style{
+    text-align: center;
+
+}
+.record-style{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: 120rpx;
+    width: 100%;
+}
+.btn-style{
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+
+.sound-style{
+  position: absolute;
+  width: 74rpx;
+  height:150rpx;
+  margin-top: 45rpx;
+  margin-left: 83rpx;
+}
+
+
+
+
+.board {
+  overflow: hidden;
+  border-bottom: 2rpx solid #26A5FF;  
+  background-color: white;
+}
+/*列布局*/
+.cell{
+    display: flex;
+    margin: 20rpx;
+    background-color: white;
+}
+.cell-hd{
+    margin-left: 10rpx;
+    color: #885A38;
+}
+.cell .cell-bd{
+    flex:1;
+    position: relative;
+   
+}
+/**只显示一行*/
+.date{
+    font-size: 30rpx;
+    text-overflow: ellipsis; 
+    white-space:nowrap;
+    overflow-x:hidden; 
+    overflow-y:auto; 
+}
+
+.tryVoiceRecord{
+    margin-top: 10px;
+}
+
+.selectVoiceRecord{
+    margin-top: 10px;
+}

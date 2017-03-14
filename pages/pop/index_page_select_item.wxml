@@ -1,0 +1,66 @@
+<!-- 弹出层 -->
+
+<template name="index_page_select_item">
+
+    <view class="select_item_list_view" data-item='{{ select_item }}'>
+    
+    
+    
+    <!-- 遮罩 -->
+    <view class="select_item_cover" bindtap='returnIndexPage'></view>
+    <!-- 信息区域 -->
+    <view class="select_item_zone" >
+
+    <view class="info_zone">  
+        <view class="border_tab"></view>
+
+        <view class="select_question_wrapper">
+                <text class="question_content">{{ select_item.question_content }}</text>
+                
+        </view>
+
+        <view class="border_tab"></view>
+
+        <view class="dotted_line"></view>
+
+        <view class="border_tab"></view>
+
+        <view class="select_answer_container" >
+            <view class="select_answer_wrapper" >
+                <image  src='{{ select_item.avatar || "../../images/my_account_on.png" }}' />
+                <text class="teacher_name">{{ select_item.teacher_name }}</text>
+                
+            </view>
+            
+            <view class="border_tab"></view>
+
+            <view class="select_lines">
+                <text class="select_answer_content">{{ select_item.answer_content }}</text>
+            </view>
+
+            <view class="border_tab"></view>
+
+        </view>
+    </view>  
+
+        <view class="operation_zone" >
+            <text class='{{ select_item.is_like == true ? "like_answer" : "not_like_answer" }}' bindtap='likeAnswer'>{{select_item.like_num}}
+            </text>
+            <text class="return_to_index_page" bindtap="returnIndexPage">返回
+            </text>
+            <text class="reward_answer" bindtap='rewardAnswer'>
+            </text>
+        </view>
+
+
+    </view>
+
+    
+
+    </view>
+
+    
+
+
+
+</template>

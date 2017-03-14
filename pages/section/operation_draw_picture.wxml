@@ -1,0 +1,42 @@
+<template name="operation_draw_picture_section">
+
+<view class="draw_picture_section_cover"  bindtap='returnOperationPage'></view>
+
+
+
+<view class="draw_picture_section" >
+    
+    <view class="canvas_container">
+
+        <view class="canvas_area">
+            <canvas canvas-id="draw_canvas" class="draw_canvas" 
+                disable-scroll="false"
+                bindtouchstart="drawTouchStart"
+                bindtouchmove="drawTouchMove"
+                bindtouchend="drawTouchEnd">
+            </canvas>
+        </view>
+
+        <view class="canvas_tools">
+            <view class="red_pen tool" bindtap="penColorSelect" data-pen_color="red">
+                <text class="tool_content">红笔</text>
+            </view>
+            <view class="eraser tool" bindtap="clearCanvas">
+                <text class="tool_content">橡皮擦</text>
+            </view>
+            <view class="black_pen tool" bindtap="penColorSelect" data-pen_color="black">
+                <text class="tool_content">黑笔</text>
+            </view>
+            
+        </view>
+
+        <view class="canvas_confirm">
+            <view class="canvas_confirm_button" bindtap="drawPictureConfirm">确定</view>
+        </view>
+
+    </view>
+    
+
+</view>
+
+</template>

@@ -1,0 +1,38 @@
+
+
+.filter_sort_bar{
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.bar_item{
+    
+    width: 50%;
+    text-align: center;
+    border: 1px;
+    color: white;
+    background-color: white;
+    
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+
+.bar_item.active{
+    color: lightblue;
+    background-color: white;
+    display: flex;
+}
+
+.subject_filter_text{
+    -webkit-text-fill-color: black;
+    padding-bottom: 10px;
+}
+
+.sort_by_attribute_text{
+    -webkit-text-fill-color: black;
+    padding-bottom: 10px;
+}

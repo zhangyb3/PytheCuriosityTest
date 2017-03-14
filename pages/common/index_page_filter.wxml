@@ -1,0 +1,20 @@
+<template name="index_page_filter">
+
+<view class="input_filter" >
+
+    <view class="subject_view" >
+        <button class="subject_button"
+         bindtap='filterSubject'></button>
+    </view>
+
+    <view class="input_view" >
+        <input class="input" type="text" placeholder="查询知识点" bindinput="listenerSearchInput" ></input>
+    </view>
+
+    <view class="search_button_view" >
+        <button class="search_button"    bindtap='filterSubject'></button>
+    </view>
+
+</view>
+
+</template>

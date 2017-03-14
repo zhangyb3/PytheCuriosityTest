@@ -1,0 +1,25 @@
+
+
+.personal_answer_section_selector_bar{
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+
+}
+
+.bar_item{
+    
+    width: 50%;
+    text-align: center;
+    border: 1px;
+    color: white;
+    background-color: lightblue;
+    
+    justify-content: center;
+    align-items: center;
+}
+
+.bar_item.active{
+    color: lightblue;
+    background-color: white;
+}

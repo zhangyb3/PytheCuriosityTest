@@ -1,0 +1,13 @@
+/* pages/answer/ask.wxss */
+
+.list_bottom{
+  height: 10px;
+  background-color: lightgray;
+}
+
+@import "../common/ask_page_section_selector.wxss";
+@import "../listView/ask_page_subject_list.wxss";
+@import "../listView/ask_page_teacher_list.wxss";
+
+@import "../register/register.wxss";
+

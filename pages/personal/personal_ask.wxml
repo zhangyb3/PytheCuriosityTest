@@ -1,0 +1,20 @@
+<!--pages/personal/personal_ask.wxml-->
+
+
+<import src="../listView/personal_ask_list.wxml" />
+
+
+
+<view class="personal_ask_container">
+  
+   
+
+    <view class="personal_ask_list_container" >
+      <template is="personal_ask_list" data="{{personal_ask_list}}"></template>
+    </view>
+
+    
+
+    
+
+</view>

@@ -1,0 +1,12 @@
+<template name="ask_page_section_selector">
+
+<view class="ask_page_section_selector_bar">
+        <view class="bar_item {{ask_page_menu[0].active ? 'active' : ''}}" bindtap='subject_filter' data-index='0' data-value="{{ask_page_menu[0].value}}">
+            <text class="subject_filter_text " data-value="{{ask_page_menu[0].value}}">{{ask_page_menu[0].name}}</text>
+        </view>
+        <view class="bar_item {{ask_page_menu[1].active ? 'active' : ''}}" bindtap='teacher_filter' data-index='1' data-value="{{ask_page_menu[1].value}}">
+            <text class="teacher_filter_text " data-value="{{ask_page_menu[1].value}}">{{ask_page_menu[1].name}}</text>
+        </view>
+</view>
+
+</template>

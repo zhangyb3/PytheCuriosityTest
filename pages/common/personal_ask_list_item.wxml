@@ -1,0 +1,20 @@
+<template name="personal_ask_list_item">
+
+<view class="list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneQuestion">
+
+            <view class="border_tab"/>
+
+            <view class="question_wrapper">
+      
+                <text class="question_content">{{ item.question_content }}</text>
+              
+            </view>
+
+            <view class="border_tab"/>
+
+            
+      
+        
+</view>
+
+</template>

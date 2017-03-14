@@ -1,0 +1,45 @@
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #aaa;
+}
+
+.usermotto {
+  margin-top: 200px;
+}
+
+.index_page_list_container{
+    background-color: lightgray;
+
+}
+
+.list_bottom{
+  height: 10px;
+  background-color: #ECEBF4;
+}
+
+.index_page_filter{
+  width: 10%;
+  color: lightgray;
+}
+
+
+
+@import "../listView/index_page_list.wxss";
+@import "../common/index_page_filter.wxss";
+@import "../pop/index_page_subject_list.wxss";
+@import "../register/register.wxss";
+
+@import "../pop/index_page_select_item.wxss";

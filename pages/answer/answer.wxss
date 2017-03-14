@@ -1,0 +1,13 @@
+/* pages/answer/answer.wxss */
+
+.list_bottom{
+  height: 10px;
+  background-color: #ECEBF4;
+}
+
+@import "../common/answer_page_filter_sort.wxss";
+@import "../listView/answer_page_list.wxss";
+@import "../pop/answer_page_subject_list.wxss";
+@import "../pop/answer_page_sort_attribute_list.wxss";
+
+@import "../register/register.wxss";

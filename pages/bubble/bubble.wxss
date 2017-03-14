@@ -1,0 +1,74 @@
+
+
+.voice{
+    display:inline-block;
+}
+
+.photo{
+    display:inline-block;
+}
+
+.multi_tips{
+    display: flex;
+    flex-direction: row;
+}
+
+.bubble{
+    float: none;
+    display: block;
+    /*background-color: #1ccda6;*/
+    background-color: #28aef5;
+    line-height: 2.2rem;
+    height: 2.2rem;
+    border-radius: 1.1rem;
+    text-align: center;
+    min-width: 6rem;
+    color: black;
+    font-size: .8rem;
+    text-decoration: none;
+    position: relative;
+    margin-right: .35rem;
+    margin-left: .35rem;
+}
+
+.bubble-blue {
+    background: #28aef5;
+}
+
+.bubble-tail {
+    width: .83rem;
+    height: 1.185rem;
+    position: absolute;
+    bottom: 0;
+    left: -.3rem;
+    background-image: url('/images/bubble-tail-blue.png');
+    background-size: .83rem 1.185rem;
+}
+
+.voice-wave {
+    display: block;
+    position: absolute;
+    width: .8rem;
+    height: .8rem;
+    background-image: url('/images/bubble-wave.png');
+    background-size: .8rem;
+    top: .65rem;
+    left: .65rem;
+}
+
+.bubble-photo{
+    float: none;
+    display: block;
+    background-image: url('/images/bubble-frame.png');
+    background-color: lightblue;
+    line-height: 2.2rem;
+    height: 2.2rem;
+    text-align: center;
+    min-width: 6rem;
+    color: black;
+    font-size: .8rem;
+    text-decoration: none;
+    position: relative;
+    margin-right: .35rem;
+    margin-left: .35rem;
+}

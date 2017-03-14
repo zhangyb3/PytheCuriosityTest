@@ -1,0 +1,51 @@
+<!--pages/personal/personal.wxml-->
+
+<import src="../register/register.wxml" />
+
+<view class="register_container" hidden='{{hide_register_page}}'>
+  <template is="register_page" data="{{grades,grade_index,subjects,subject_index,hide_subject_selection,hide_grade_selection,select_student,select_teacher,second,countdownText}}"></template>
+</view>
+
+<view class="personal_page" hidden='{{hide_personal_page}}'>
+
+
+    <view class="personal_description_zone">
+        <view class="personal_description_image_zone">
+            <view class="personal_avatar_container">
+                <image class="personal_avartar_image" src="../../images/my_account_on.png"></image>
+            </view>
+        </view>
+        <view class="personal_description_text_zone">
+            <text class="personal_nick_name">少先大队长</text>
+            <text class="personal_summary">试卷屠夫</text>
+        </view>
+        <view class="personal_description_revise_zone">
+        </view>
+    </view>
+
+    <view class="personal_operation_zone">
+        <view class="personal_ask personal_operation_item" bindtap='selectPersonalAsk'>
+            <text class="personal_ask personal_operation_item_text">我的问</text>
+        </view>
+        <view class="personal_answer personal_operation_item" bindtap='selectPersonalAnswer'>
+            <text class="personal_answer personal_operation_item_text">我的答</text>
+        </view>
+        <view class="personal_like personal_operation_item" bindtap='selectPersonalLike'>
+            <text class="personal_like personal_operation_item_text">我的点赞</text>
+        </view>
+    </view>
+
+    <view class="about_us_zone">
+        <view class="balance_detailed_rules personal_operation_item" bindtap='selectBalanceRules'>
+            <text class="rules personal_operation_item_text">结算细则</text>
+        </view>
+        <view class="about_us personal_operation_item" bindtap='selectAboutUs'>
+            <text class="about personal_operation_item_text">关于我们</text>
+        </view>
+    </view>
+
+    <view class="countdown_container">  
+        <text>倒计时: {{second}} </text>  
+    </view>
+
+</view>

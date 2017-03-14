@@ -1,0 +1,71 @@
+
+.other_reward_cover {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.8);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    opacity: 1;
+}
+
+.other_reward_container{
+    z-index: 12;
+    position: fixed;
+    top: 150px;
+    left: 0;
+    right: 0;
+    bottom: 150px;
+    
+    /*align-items: center;*/
+}
+
+.other_reward_area {
+
+    background-color: white;
+
+    width: 100%;
+    height: 100%;
+
+    flex: 1;
+
+    text-align: center;
+
+    
+}
+
+.other_reward_input{
+    text-align: center;
+    width :100%;
+    /*垂直居中示例*/
+    position: relative; /*脱离文档流*/
+    top: 30%; /*偏移50%为居中，此处30%*/
+    transform: translateY(-50%);
+}
+
+.other_rewawrd_number_input{
+    margin:0 auto;
+    height: 15%;
+    width: 80%;
+    
+    text-align: center;
+    justify-content: center;
+    border-style: solid;
+    border-width: 2rpx;
+    border-radius: 8rpx;
+    
+    font-size: 24px;
+
+    
+}
+
+.other_reward_confirm{
+    margin-top: 150px;
+}
+
+.other_reward_confirm_button{
+    margin:0 auto;
+    width:50%;
+    background-color: lightblue;
+}

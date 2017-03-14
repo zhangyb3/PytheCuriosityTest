@@ -1,0 +1,26 @@
+<template name="other_reward_page">
+
+<view class="other_reward_cover"  bindtap='returnOperationPage'></view>
+
+
+
+<view class="other_reward_container" >
+    
+   <view class="other_reward_area">
+   
+
+    <view class="other_reward_input">
+        <input class="other_rewawrd_number_input" type="digit" placeholder="输入金额" bindinput="otherRewardNumInput" ></input>
+    </view>
+
+    <view class="other_reward_confirm">
+        <button class="other_reward_confirm_button" bindtap='rewardConfirm'>确定
+        </button>
+    </view>
+
+   </view>
+   
+
+</view>
+
+</template>

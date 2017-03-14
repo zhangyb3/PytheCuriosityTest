@@ -1,0 +1,35 @@
+<!--index.wxml-->
+
+<import src="../listView/index_page_list.wxml" />
+<import src="../common/index_page_filter.wxml" />
+<import src="../pop/index_page_subject_list.wxml" />
+<import src="../pop/index_page_select_item.wxml" />
+<import src="../register/register.wxml" />
+
+
+<view class="register_container" hidden='{{hide_register_page}}'>
+  <template is="register_page" data="{{grades,grade_index,subjects,subject_index,hide_subject_selection,hide_grade_selection,select_student,select_teacher,second}}"></template>
+</view>
+
+<view class="index_page_container" hidden='{{hide_index_page}}'>
+  
+
+  <view class="index_page_subject_list_container" hidden='{{hide_pop_subject_list}}'>
+    <template is="index_page_subject_list" data="{{subject_infos}}"></template>
+  </view>
+
+  <view class="index_page_filter_container" >
+    <template is="index_page_filter"></template>
+  </view>
+
+  <view class="index_page_list_container" >
+    <template is="index_page_list" data="{{infos}}"></template>
+  </view>
+
+  <view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
+    <template is="index_page_select_item" data="{{select_item}}"></template>
+  </view>
+
+  <view class="list_bottom"></view>
+
+</view>

@@ -1,0 +1,60 @@
+
+
+<template name="personal_question_answer_select_item">
+
+    <view class="select_item_view" data-item='{{ select_item }}'>
+    
+    
+    
+    <!-- 遮罩 -->
+    <view class="select_item_cover" bindtap='returnPersonalAnswerDetailPage'></view>
+
+    <!-- 信息区域 -->
+    <view class="select_item_zone" >
+
+    <view class="info_zone">  
+        
+
+        <view class="border_tab"></view>
+
+        <view class="select_answer_container" >
+            <view class="select_answer_wrapper" >
+                <image  src='{{ select_item.avatar || "../../images/my_account_on.png" }}' />
+                <text class="teacher_name">{{ select_item.teacher_name }}</text>
+                
+            </view>
+            
+            <view class="border_tab"></view>
+
+            <view class="select_lines">
+                <text class="select_answer_content">{{ select_item.text }}</text>
+            </view>
+
+            <view class="border_tab"></view>
+
+            <view class="operation_zone" >
+                <text class='record_sound' bindtap='recordSound'>录音
+                </text>
+                <text class="take_photo" bindtap="takePhoto">拍照
+                </text>
+                <text class="draw_picture" bindtap='drawPicture'>画板
+                </text>
+            </view>
+
+        </view>
+    </view>  
+
+    
+
+
+    </view>
+
+    
+
+    </view>
+
+    
+
+
+
+</template>

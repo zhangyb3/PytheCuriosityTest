@@ -1,0 +1,36 @@
+<template name="personal_answer_list_item">
+
+<view class="list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneItem">
+
+            <view class="border_tab"/>
+
+            <view class="question_wrapper">
+      
+                <text class="question_content">{{ item.question_content }}</text>
+              
+            </view>
+
+            <view class="border_tab"/>
+
+            <view class="dotted_line"></view>
+
+            <view class="border_tab"/>
+
+            <view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
+
+            
+
+            
+
+            <view class="lines">
+                <text class="answer_content">{{ item.answer_content }}</text>
+            </view>
+
+            </view>
+
+            <view class="border_tab"/>
+      
+        
+</view>
+
+</template>

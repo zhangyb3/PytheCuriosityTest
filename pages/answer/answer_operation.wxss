@@ -1,0 +1,119 @@
+
+
+
+.answer_question_wrapper{
+    height: 120px;
+    
+    overflow-x: hidden; 
+    overflow-y: auto;
+    align-items: center;
+}
+
+
+.answer_question_content {
+    /*margin-left: 20px;*/
+    width: 90%;
+    font-size: 18px;
+    
+}
+
+.dotted_line{
+    
+    border-bottom: 1px dashed #A9A9A9; 
+}
+
+.answer_container {
+    /*padding: 8px;*/
+    display: flex;
+    flex-direction: column;
+    /*border-top: 1px solid #EEE;*/
+    /*border-bottom: 1px solid #EEE;*/
+    align-items: center;
+
+    
+}
+
+
+
+.answer_content_text_input {
+    width:350px;
+    
+    border-style: solid;
+    border-color: lightgrey;
+    height: 250px;
+    font-size: 16px;
+    overflow-x: auto; 
+    overflow-y: visible;
+}
+
+
+
+
+
+.border_tab{
+    height:5px;
+}
+
+.answer_operation_zone{
+    height: 50px;
+    display: flex;
+    flex-direction: row;
+    
+}
+
+.answer_operation_zone>text {
+    width: 100%;
+    text-align: center;
+    font-size: 28rpx;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #A9A9A9;
+}
+
+.answer_operation_zone>text:not(:first-child) {
+    border-left: 1px solid #EEE;
+}
+
+.answer_operation_zone>text:before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 2px;
+    position: relative;
+    bottom: 1px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+
+.record_sound:before{
+    background-image: url(../../images/money.png);
+    background-size: 18px; 
+}
+
+.take_photo:before{
+    background-image: url(../../images/money.png);
+    background-size: 18px; 
+}
+
+.draw_picture:before{
+    background-image: url(../../images/money.png);
+    background-size: 18px; 
+}
+
+.interval{
+    margin-top: 10px;
+}
+
+.answer_commit_button{
+    background-color: lightblue;
+}
+
+@import "../section/operation_record_sound.wxss";
+@import "../section/operation_take_photo.wxss";
+@import "../section/operation_draw_picture.wxss";
+@import "../bubble/bubble.wxss";
