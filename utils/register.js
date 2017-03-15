@@ -5,6 +5,8 @@ var app = getApp();
 
 const CHECK_REGISTER_URL = `${config.PytheRestfulServerURL}/user/register/is`;//校验是否注册
 
+const SEND_PHONENUM_REGISTER_URL = `${config.PytheRestfulServerURL}/message/verification/`;//发送手机号注册
+
 /**
  * 检查是否已注册
  */
@@ -33,6 +35,24 @@ var checkRegister = (success,fail) => {
 function sendVerificationCode(registerPhonenumber) 
 {
     console.log("send verification code");
+    wx.request({
+      url: SEND_PHONENUM_REGISTER_URL,
+      data: {
+        
+        // openid : wx.getStorageSync(user.OpenID),
+        mobile : registerPhonenumber,
+      },
+      method: 'POST', 
+      success: function(res){
+        console.log(res);
+        typeof success == "function" && success(res)
+      },
+      fail: function() {
+        console.log(res);
+        typeof success == "function" && fail(res)
+      },
+      
+    })
 }
 
 module.exports = {

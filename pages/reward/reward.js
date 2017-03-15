@@ -22,7 +22,9 @@ Page({
     },
     userInfo:{},
   },
-  onLoad:function(options){
+  onLoad:function(parameters){
+    
+    console.log(parameters);
     
     var that = this;
     this.setData({
