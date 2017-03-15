@@ -1,20 +1,26 @@
 
 
 .scroll_list{
-    margin-top: 10px;
+
+    /*margin-top: 10px;*/
+    /*line-height: 675;*/
+    width: 100%;
+
     
 }
 
-.interval{
+/*.interval{
     margin-top: 10px;
-}
+}*/
     
 
 .personal_answer_list_container{
-    background-color: lightgray;
+    background-color: #ECEBF4;
 }
 
-
+.personal_answer_list{
+    background-color: #ECEBF4;
+}
 
 @import "../common/personal_answer_list_item.wxss";
 
