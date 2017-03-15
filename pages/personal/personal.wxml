@@ -12,40 +12,41 @@
     <view class="personal_description_zone">
         <view class="personal_description_image_zone">
             <view class="personal_avatar_container">
-                <image class="personal_avartar_image" src="../../images/my_account_on.png"></image>
+                <image class="personal_avartar_image" src="../../images/image_1@2x.png"></image>
             </view>
         </view>
         <view class="personal_description_text_zone">
             <text class="personal_nick_name">少先大队长</text>
-            <text class="personal_summary">试卷屠夫</text>
+            <text class="personal_summary" src="../../images/icon_money_1@2x.png">265</text>
         </view>
+        <button class="person_edit_icon" bindtap='personEditOperationPage'></button>
         <view class="personal_description_revise_zone">
         </view>
     </view>
 
     <view class="personal_operation_zone">
         <view class="personal_ask personal_operation_item" bindtap='selectPersonalAsk'>
-            <text class="personal_ask personal_operation_item_text">我的问</text>
+            <text class="personal_ask personal_operation_item_text" src="../../images/icon_money_1@2x.png">我的问</text>
         </view>
         <view class="personal_answer personal_operation_item" bindtap='selectPersonalAnswer'>
-            <text class="personal_answer personal_operation_item_text">我的答</text>
+            <text class="personal_answer personal_operation_item_text" src="../../images/icon_money_1@2x.png">我的答</text>
         </view>
         <view class="personal_like personal_operation_item" bindtap='selectPersonalLike'>
-            <text class="personal_like personal_operation_item_text">我的点赞</text>
+            <text class="personal_like personal_operation_item_text" src="../../images/icon_money_1@2x.png">我的点赞</text>
         </view>
     </view>
 
     <view class="about_us_zone">
         <view class="balance_detailed_rules personal_operation_item" bindtap='selectBalanceRules'>
-            <text class="rules personal_operation_item_text">结算细则</text>
+            <text class="rules personal_operation_item_text" src="../../images/icon_money_1@2x.png">结算细则</text>
         </view>
         <view class="about_us personal_operation_item" bindtap='selectAboutUs'>
-            <text class="about personal_operation_item_text">关于我们</text>
+            <text class="about personal_operation_item_text" src="../../images/icon_money_1@2x.png">关于我们</text>
         </view>
     </view>
 
     <view class="countdown_container">  
-        <text>倒计时: {{second}} </text>  
+        <text class="countdown_text">倒计时: {{second}} </text>  
     </view>
 
 </view>

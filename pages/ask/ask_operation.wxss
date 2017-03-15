@@ -33,17 +33,26 @@
     
 }
 
-
+.ask_content_zone{
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
 
 .ask_content_text_input {
-    width:350px;
-    
+    /*width:375;*/
+    margin-left: 2px;
+    margin-right: 2px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
     border-style: solid;
     border-color: lightgrey;
     height: 250px;
     font-size: 16px;
     overflow-x: auto; 
     overflow-y: visible;
+    color: #0B0B0B;
 }
 
 
@@ -115,42 +124,45 @@
     position: relative;
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .reward_1{
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     /*border-radius: 100%;*/
     background-size: contain;
     /*background: url(../../images/reward_1.png)*/
 }
 
 .reward_5{
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     /*border-radius: 100%;*/
     background-size: contain;
     /*background: url(../../images/reward_5.png)*/
 }
 
 .reward_10{
-    height: 100px;
-    width: 100px;
+    height: 80px;
+    width: 80px;
     /*border-radius: 100%;*/
     background-size: contain;
     /*background: url(../../images/reward_10.png)*/
 }
 
 .reward_img{
-    width: 100%;
-    height: 100%;
+    
+    width: 80px;
+    height: 80px;
 }
 
 .ask_commit_button{
-    background-color: lightblue;
+    line-height: 30px;
+    margin-top: 30px;
+    background-color: #3AA5F0;
 }
 
 @import "../section/operation_record_sound.wxss";

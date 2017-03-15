@@ -16,13 +16,16 @@
     /*border-color: gray;*/
     /*border-style: solid;*/
     /*border-width: 1px;*/
-
+    border-top: 1px solid #EEE;
     display: flex;
     flex-direction: row;
     background-color: white;
-
-    height: 100px;
+    /*justify-content: space-around;*/
+    align-items: center;
+    height: auto;
     width: 100%;
+    position: relative;
+    z-index: 1;
 }
 
 .personal_description_image_zone{
@@ -35,8 +38,8 @@
 }
 
 .personal_avatar_container{
-    width: 50px;
-    height: 50px;
+    width: 44px;
+    height: 44px;
     margin: auto;
     
 }
@@ -50,17 +53,41 @@
 .personal_description_text_zone{
     height: 100%;
     width: 75%;
-    
     display: flex;
+    position: relative;
     flex-direction: column;
 }
 
 .personal_nick_name{
-    font-size: 24px;
+    margin-top: 10px;
+    font-size: 18px;
 }
 
 .personal_summary{
-    font-size: 18px;
+    /*height: 25px;*/
+    margin-top: 15px;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    background:url(../../images/icon_money_1@2x.png) no-repeat left center;
+    color: #FF9635;
+    background-size:20px 20px;
+    line-height:20px;
+    font-size: 16px;
+}
+
+.person_edit_icon{
+    background: url(../../images/icon_information@2x.png) no-repeat center center;
+    position: absolute;
+    right: 20px;
+    bottom: 10px;
+    height: 20px;
+    width: 20px;
+    background-size: 20px 20px;
+}
+
+/*去掉button的边框*/
+.person_edit_icon:after{
+    border:none;
 }
 
 .personal_description_revise_zone{
@@ -81,24 +108,34 @@
 }
 
 .personal_operation_item{
-    width: 100%;
+    /*width: 100%;*/
     display: flex;
     flex-direction: row;
-
-    border-bottom-style: solid;
-    border-bottom-color: lightgray;
+    /*justify-content: flex-end;*/
+    line-height: 30px;
+    margin-left: 10px;
+    border-bottom: 1px solid #EEE;
     border-width: 1px;
+    margin-right: 10px;
+    background:url(../../images/icon_more@2x.png) no-repeat right center;
+    /*margin-top: 15px;*/
+    /*padding-right: -80px;*/
+    /*margin-bottom: 10px;*/
+    /*background:url(../../images/icon_money_1@2x.png) no-repeat right center;*/
+
 }
 
 .personal_ask personal_operation_item{
-
+    /*padding-right: 10px;*/
+    /*background:url(../../images/icon_money_1@2x.png) no-repeat center;
+    background-size: 25px 25px;*/
     background: black;
 }
 
 .personal_operation_item_text{
     width: 90%;
     height: 30px;
-    font-size: 18px;
+    font-size: 16px;
     
 }
 
@@ -110,6 +147,21 @@
     flex-direction: column;
     background-color: white;
     
+}
+
+.countdown_container{
+    margin-top: 10px;
+    display: flex;
+    position: relative;
+    flex-direction: row;
+}
+
+.countdown_text{
+    /*margin-left: 10px;
+    padding-left: 10px;*/
+    font-size: 16px;
+    margin-left: 10px;
+    height: 30px;
 }
 
 @import "../register/register.wxss";

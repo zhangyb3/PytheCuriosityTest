@@ -18,7 +18,7 @@
             <view class="border_tab"></view>
 
             <view class="ask_content_zone" hidden='{{hide_textarea}}'>
-                <textarea class="ask_content_text_input"  placeholder="在此输入题目···"  placeholder-style="color:black;"/>
+                <textarea class="ask_content_text_input"  placeholder="在此输入题目···"  placeholder-style="color:#C9C9C9" placeholder-style="font-size:14px"/>
             </view>
 
             <view class="border_tab"></view>
