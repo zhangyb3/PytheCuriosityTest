@@ -32,18 +32,30 @@
 
     
 }
+answer_content_zone{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+}
 
 
 
 .answer_content_text_input {
-    width:350px;
-    
+    /*width:350px;*/
+    margin-left: 2px;
+    margin-right: 2px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+
     border-style: solid;
     border-color: lightgrey;
     height: 250px;
     font-size: 16px;
     overflow-x: auto; 
     overflow-y: visible;
+    color: #0B0B0B;
 }
 
 
@@ -110,7 +122,8 @@
 }
 
 .answer_commit_button{
-    background-color: lightblue;
+    background-color: #3AA4F1;
+    line-height: 30px;
 }
 
 @import "../section/operation_record_sound.wxss";
