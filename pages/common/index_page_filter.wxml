@@ -4,7 +4,7 @@
 
     <view class="subject_view" >
         <button class="subject_button"
-         bindtap='filterSubject'></button>
+         bindtap='filterSubject'> <image src="../../images/nav_icon_menu@2x.png"></image></button>
     </view>
 
     <view class="input_view" >
@@ -12,7 +12,7 @@
     </view>
 
     <view class="search_button_view" >
-        <button class="search_button"    bindtap='filterSubject'></button>
+        <button class="search_button"    bindtap='filterSubject'><image src="../../images/nav_icon_search@2x.png"></image></button>
     </view>
 
 </view>

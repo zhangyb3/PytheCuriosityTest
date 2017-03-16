@@ -34,7 +34,7 @@
     height: 290rpx;
     margin-top: 50rpx;
     border-radius: 20%;
-    background: url(../../images/not_select_student.png)0 0 no-repeat;
+    /*background: url(../../images/not_select_student.png)0 0 no-repeat;*/
     background-size:contain;
 }
 
@@ -44,7 +44,7 @@
     height: 290rpx;
     margin-top: 50rpx;
     border-radius: 20%;
-    background: url(../../images/select_student.png)0 0 no-repeat;
+    /*background: url(../../images/select_student.png)0 0 no-repeat;*/
     background-size:contain;
 }
 
@@ -66,7 +66,7 @@
     height: 290rpx;
     margin-top: 50rpx;
     border-radius: 20%;
-    background: url(../../images/not_select_teacher.png) right 0 no-repeat;
+    /*background: url(../../images/not_select_teacher.png) right 0 no-repeat;*/
     background-size:contain;
 }
 
@@ -76,7 +76,7 @@
     height: 290rpx;
     margin-top: 50rpx;
     border-radius: 20%;
-    background: url(../../images/select_teacher.png) right 0 no-repeat;
+    /*background: url(../../images/select_teacher.png) right 0 no-repeat;*/
     background-size:contain;
 }
 

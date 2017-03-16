@@ -1,3 +1,11 @@
+
+
+
+
+
+
+
+
 <import src="../common/index_page_list_item.wxml" />
 
 <template name="index_page_list">

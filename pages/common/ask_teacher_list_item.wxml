@@ -15,13 +15,14 @@
                     <!--教师简介-->
                     <text class="teacher_brief">{{ item.teacher_name }}</text>
                     <!--收藏数量-->
-                    <text class="collect_icon" src="../../images/icon_language@2x.png">268
-                </text>
+                <view class="collect_icon_wrap"><image src="../../images/collect_icon.png"></image><text class="collect_icon">268</text></view>
+                    <!--<text class="collect_icon" src="../../images/icon_language@2x.png">268
+                </text>-->
                 </view>
 
             <!--名师尾部部分-->
                 <!--<button class="search_button"    bindtap='filterSubject'></button>-->
-                <button class="teacher_ask_section" bindtap='askToAskOperationPage'></button> 
+                <button class="teacher_ask_section" bindtap='askToAskOperationPage'> <image src="../../images/teacher_ask_icon.png"></image></button> 
                 <!--<text class="teacher_content">{{ item.teacher_name }}</text>-->
               
             </view>      

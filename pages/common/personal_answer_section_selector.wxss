@@ -4,6 +4,7 @@
     height: 5%;
     display: flex;
     flex-direction: row;
+    border-top: 1px solid #EEE;
 
 }
 
@@ -13,13 +14,14 @@
     text-align: center;
     border: 1px;
     color: white;
-    background-color: lightblue;
-    
+    background-color: #3AA4F1;
+    line-height: 30px;
     justify-content: center;
     align-items: center;
 }
 
 .bar_item.active{
-    color: lightblue;
+    line-height: 30px;
+    color: #0B0B0B;
     background-color: white;
 }

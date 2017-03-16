@@ -17,9 +17,12 @@
         </view>
         <view class="personal_description_text_zone">
             <text class="personal_nick_name">少先大队长</text>
-            <text class="personal_summary" src="../../images/icon_money_1@2x.png">265</text>
+        <view class="personal_summary_wrap"><image src="../../images/icon_money_1@2x.png"></image><text class="personal_summary">268</text></view>
+            <!--<text class="personal_summary" src="../../images/icon_money_1@2x.png">265</text>-->
+            <view class="person_edit_icon_view">
+        <button class="person_edit_icon" bindtap='personEditOperationPage'><image src="../../images/icon_information@2x.png"></image></button>
         </view>
-        <button class="person_edit_icon" bindtap='personEditOperationPage'></button>
+        </view>
         <view class="personal_description_revise_zone">
         </view>
     </view>
