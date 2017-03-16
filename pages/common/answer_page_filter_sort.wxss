@@ -12,7 +12,7 @@
     width: 50%;
     text-align: center;
     border: 1px;
-    color: white;
+    color: #3AA4F1;
     background-color: white;
     
     justify-content: center;
@@ -23,7 +23,8 @@
 
 .bar_item.active{
     color: lightblue;
-    background-color: white;
+    /*background-color: #3AA4F1;*/
+    /*background-color: white;*/
     display: flex;
 }
 

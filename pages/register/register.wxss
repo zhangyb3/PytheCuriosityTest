@@ -82,18 +82,20 @@
 
 
 .register_input_container{
-    /*display: flex;
-    flex-direction: column;*/
+    display: flex;
+    flex-direction: column;
+    
     margin-top: 100rpx;
 }
 
 .phone_number_container{
     display: flex;
     flex-direction: row;
+    justify-content: flex-start;
 }
 
 .phone_hint{
-    width:60px;
+    width:auto;
     text-align:right;
     line-height:30px;
     color:#0a0a0a;
@@ -130,7 +132,7 @@
     /*text-align: center;*/
 }
 .verification_hint{
-    width:60px;
+    width:auto;
     text-align:right;
     line-height:30px;
     color:#0a0a0a;
@@ -166,7 +168,7 @@
 }
 
 .grade_hint{
-    width:60px;
+    width:46px;
     text-align:right;
     line-height:30px;
     color:#0a0a0a;
@@ -194,7 +196,7 @@
     margin-top:10px;
 }
 .subject_hint{
-    width:60px;
+    width:46px;
     text-align:right;
     line-height:30px;
     color:#0a0a0a;
