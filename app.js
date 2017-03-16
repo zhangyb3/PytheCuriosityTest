@@ -57,7 +57,7 @@ App({
     // );
 
     // pay.orderPay();
-    // pay.enchashment();
+    pay.enchashment();
     
   },
   getUserInfo:function(cb){

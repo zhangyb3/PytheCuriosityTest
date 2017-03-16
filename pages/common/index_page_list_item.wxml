@@ -6,7 +6,7 @@
 
             <view class="question_wrapper">
       
-                <text class="question_content">{{ item.question_content }}</text>
+                <text class="question_content">questionid:{{ item.questionid }}</text>
               
             </view>
 
@@ -22,17 +22,17 @@
 
             <view class="answer_wrapper" bindtap='bindItem' data-index='{{ index }}'>
                 <image  src='{{ item.avatar || "../../images/my_account_on.png" }}' />
-                <text class="teacher_name">{{ item.teacher_name }}</text>
+                <text class="teacher_name">{{ item.username }}</text>
                 
                 <view class="ctrls">
-                    <text class='{{ item.is_liked == 1 ? "like" : "not-like" }}' bindtap='bindLike' data-index='{{ index }}'>{{ item.reward_num }}</text>
+                    <text class='{{ item.is_liked == 1 ? "like" : "not-like" }}' bindtap='bindLike' data-index='{{ index }}'>{{ item.fee }}</text>
                     
                 </view>
                 
             </view>
 
             <view class="lines">
-                <text class="answer_content">{{ item.answertime }}</text>
+                <text class="answer_content">answerid:{{ item.answerid }}</text>
             </view>
 
             </view>

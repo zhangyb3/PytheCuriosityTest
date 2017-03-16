@@ -2,9 +2,9 @@
 
 .scroll_list{
     
-    /*height: 300px;*/
-    margin-top: 0px;
-    margin-bottom: 10px;
+    height: 300px;
+    /*margin-top: 0px;*/
+    /*margin-bottom: 10px;*/
 }
 
 .interval{

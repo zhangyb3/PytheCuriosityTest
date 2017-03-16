@@ -74,8 +74,8 @@ var orderPay = (success, fail) => {
  * 取现
  */
 var enchashment = (success, fail) => {
-    var sessionID = wx.getStorageSync(config.SessionID);
-    var openID = wx.getStorageSync(config.OpenID);
+    var sessionID = wx.getStorageSync(user.SessionID);
+    var openID = wx.getStorageSync(user.OpenID);
     wx.request({
       url: ENCHASHMENT_URL,
       data: {
