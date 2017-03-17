@@ -1,7 +1,7 @@
 
 
 .scroll_list{
-    margin-top: 10px;
+    margin-top: 0px;
     
 }
 
@@ -11,7 +11,7 @@
     
 
 .personal_not_answer_list_container{
-    background-color: lightgray;
+    background-color: #ECEBF4;
 }
 
 

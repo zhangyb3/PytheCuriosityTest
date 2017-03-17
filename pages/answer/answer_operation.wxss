@@ -2,8 +2,9 @@
 
 
 .answer_question_wrapper{
-    height: 120px;
-    
+    /*margin-top: 10px;*/
+    height: auto;
+    border-top: 1px solid #EEE;
     overflow-x: hidden; 
     overflow-y: auto;
     align-items: center;
@@ -32,14 +33,16 @@
 
     
 }
-answer_content_zone{
+.answer_content_zone{
     display: flex;
     flex-direction: row;
     align-items: center;
     position: relative;
 }
 
-
+.question_content{
+    height: auto;
+}
 
 .answer_content_text_input {
     /*width:350px;*/
