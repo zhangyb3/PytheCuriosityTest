@@ -9,12 +9,12 @@
     
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
+    background-color: #ECEBF4;
 }
 
 .list_bottom{
   height: 10px;
-  background-color: lightgray;
+  background-color: #ECEBF4;
 }
 
 @import "../common/personal_answer_section_selector.wxss";

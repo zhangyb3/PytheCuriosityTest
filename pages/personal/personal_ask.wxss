@@ -7,12 +7,12 @@
     right: 0;
     bottom: 0;
     
-    background-color: lightgray;
+    background-color: #ECEBF4;
 }
 
 .list_bottom{
   height: 10px;
-  background-color: lightgray;
+  background-color: #ECEBF4;
 }
 
 

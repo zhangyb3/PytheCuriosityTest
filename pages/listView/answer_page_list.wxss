@@ -5,11 +5,11 @@
 }
 
 .interval{
-    margin-top: 1px;
+    margin-top: 10px;
 }
     
 .answer_page_list_container{
-    background-color: lightgray;
+    background-color: #ECEBF4;
 }
 
 
