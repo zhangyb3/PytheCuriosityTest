@@ -40,8 +40,10 @@ Page({
       hide_textarea: false,
     });
     
-    console.log(parameters.subject_name);
-    console.log(parameters.teacher_name);
+    console.log(parameters);
+
+    fileSys.downloadFile(this,'1.png');
+    
   },
 
   recordSound:function(e){
@@ -180,7 +182,7 @@ Page({
     //上传录音
     var parameters = {
       userFilePath : 'testVoice',
-      fileType : 'silk',
+      fileType : 'audio',
     };
     fileSys.uploadFile(this.data.ask_question.voice_path,parameters);
   },

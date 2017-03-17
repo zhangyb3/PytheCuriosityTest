@@ -4,6 +4,10 @@ var netUtil=require("../../utils/netUtil.js");
 var listViewUtil=require("../../utils/listViewUtil.js");
 var utils=require("../../utils/util.js");
 
+var register = require("../../utils/register.js");
+var config = require("../../utils/config.js");
+var base = require("../../utils/base.js");
+
 Page({
   data:{
     ask_page_menu:[{
@@ -64,7 +68,27 @@ Page({
     this.setData({hide_ask_teacher_list:true});
 
     this.setData({ask_subject_list: this.data.subjects});
-    this.setData({ask_teacher_list: this.data.teachers});
+    // this.setData({ask_teacher_list: this.data.teachers});
+
+    var that = this;
+    var simple_params = {
+      pageSize : 3,
+      pageNum : 1,
+    };
+    listViewUtil.loadList(that,'teacher',config.PytheRestfulServerURL,
+    "/question/teacherList/",
+    10,
+        simple_params,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
   },
 
   subject_filter:function(e){
@@ -138,7 +162,7 @@ Page({
 
   selectOneTeacher:function(e){
       console.log("navigate to ask operation page");
-      var parametersJSON = e.currentTarget.dataset.item;
+      var parametersJSON = e.currentTarget.dataset.teacher;
       console.log(parametersJSON);
       var parameters = netUtil.json2Form(parametersJSON);
       // console.log(parameters);
@@ -158,6 +182,43 @@ Page({
         }
       })
   },
+
+
+  likeTeacher:function(e){
+    var teacher = e.currentTarget.dataset.teacher;
+    console.log(teacher);
+    var teacher_index = e.currentTarget.dataset.index;
+    console.log(teacher_index);
+
+    // if(teacher.not_like == true){
+
+      this.data.ask_teacher_list[teacher_index].popularity++;
+      this.setData({
+        ask_teacher_list: this.data.ask_teacher_list,
+      });
+      //通知数据库更新纪录
+      wx.request({
+        url: config.PytheRestfulServerURL + '/question/teacher/likes',
+        data: {
+          userId: user.UserID,
+          teacherId: teacher.teacherid,
+        },
+        method: 'GET', 
+        success: function(res){
+          console.log(res);
+        },
+        fail: function(res) {
+          console.log(res);
+        }
+      })
+
+    // };
+    
+  },
+
+
+
+
 
 
 

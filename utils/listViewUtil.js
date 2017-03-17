@@ -49,10 +49,10 @@ var actions = netUtil.action;
 /**
  * 加载滑动列表
  */
-function loadList(page,basic_url,urlDetail,page_size,setNetparams,getListFromNetData,handldItemInfo,emptyMsg,requestMethod)
+function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getListFromNetData,handldItemInfo,emptyMsg,requestMethod)
 {
 
-
+    console.log('load ' + list_type + " list ");
 
     page.data.currentPageIndex = 1;
     page.data.currentAction = netUtil.action.request_none;
@@ -73,26 +73,35 @@ function loadList(page,basic_url,urlDetail,page_size,setNetparams,getListFromNet
         page.data.netStateBean.emptyMsg = emptyMsg;
     }
 
-    page.data.infos=[];//列表
+    if(list_type == 'index'){
+        page.data.infos=[];//默认列表
+    }
+    if(list_type == 'teacher'){
+        page.data.ask_teacher_list = [];//老师列表
+    }
+    if(list_type == 'question'){
+        page.data.questionsForAnswer = [];//老师列表
+    }
+    
 
     page.onPullDownRefresh = function(){
-        netUtil.requestSimpleList(page,1,netUtil.action.request_refresh);
+        netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
     };
 
     page.onReachBottom = function(){
-        netUtil.requestSimpleList(page,page.data.currentPageIndex +1,netUtil.action.request_loadmore);
+        netUtil.requestSimpleList(page,list_type,page.data.currentPageIndex +1,netUtil.action.request_loadmore);
     };
 
     page.onLoadMore = page.onReachBottom;
     page.onRefresh = page.onPullDownRefresh;
     page.onRetry = function(){
-        netUtil.requestSimpleList(page,1,netUtil.action.request_refresh);
+        netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
     };
 
     page.setNetparams = setNetparams;
     page.getListFromNetData = getListFromNetData;
     page.handldItemInfo = handldItemInfo;
-    netUtil.requestSimpleList(page,1,netUtil.action.request_refresh);
+    netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
 
 }
 

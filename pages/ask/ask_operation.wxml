@@ -85,6 +85,9 @@
             </button>
         </view>
 
+        <image class="image_frame" src="{{img_src}}" mode="aspectFill">  
+        </image> 
+
 
     </view>
 

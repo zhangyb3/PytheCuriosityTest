@@ -127,13 +127,15 @@ Page({
     this.setData({hide_register_page:true});
     this.setData({hide_index_page:false});
     var that = this;
+
     var simple_params = {
       gradeId : 112,
       pageSize : 3,
       pageNum : 1,
       subjectId: 1001,
     };
-    listViewUtil.loadList(that,config.PytheRestfulServerURL,
+    
+    listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
     "/index/defaultList",
     10,
         simple_params,
@@ -147,6 +149,7 @@ Page({
         {},
         'GET',
     );
+
   },
 
   filterSubject:function(subject_data){

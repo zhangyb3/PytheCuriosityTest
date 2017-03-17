@@ -310,14 +310,14 @@ function request(requestConfig){
  * @param pageIndex
  * @param action
  */
-function requestSimpleList(that,pageIndex,action,requestMethod){
+function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
     var config = new requestConfig();
     config.page = that;
     config.basic_url = that.data.basic_url;
     config.urlDetail= that.data.urlDetail;
     config.netMethod = that.data.requestMethod;
     config.params.pageIndex = pageIndex;
-    console.log(config.params);
+    console.log(pageIndex);
     config.params = that.setNetparams;
     config.params.pageNum = pageIndex;
     that.data.currentAction = action;
@@ -369,21 +369,39 @@ function requestSimpleList(that,pageIndex,action,requestMethod){
 
         //根据操作的action不同而处理:
         if(action == request_firstIn){
-            // that.data.infos.length =0;
+            
         }else if (action == request_loadmore){
 
         }else if (action == request_refresh){
-            that.data.infos.length =0;
+            // that.data.infos.length =0;
         }
 
         if(currentDatas.length < config.params.pageSize){
             loadMoreNoData(that);
         }
 
-        //滑动列表结尾追加数据
-        that.data.infos=that.data.infos.concat(currentDatas);
-        console.log('before setData----------'+that.data.infos);
-        that.setData({infos:that.data.infos});
+        /**
+         * 根据不同列表类型动态加载内容
+         */
+        if(list_type == 'index'){
+            //滑动列表结尾追加数据
+            that.data.infos=that.data.infos.concat(currentDatas);
+            console.log('before setData----------'+that.data.infos);
+            that.setData({infos:that.data.infos});
+        }
+        if(list_type == 'teacher'){
+            //滑动列表结尾追加数据
+                        that.data.ask_teacher_list=that.data.ask_teacher_list.concat(currentDatas);
+            console.log('before setData----------'+that.data.ask_teacher_list);
+            that.setData({ask_teacher_list:that.data.ask_teacher_list});
+        }
+        if(list_type == 'question'){
+            //
+        that.data.questionsForAnswer=that.data.questionsForAnswer.concat(currentDatas);
+            console.log('before setData----------'+that.data.questionsForAnswer);
+            that.setData({questionsForAnswer:that.data.questionsForAnswer});
+        }
+        
 
     };
 

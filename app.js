@@ -4,6 +4,7 @@ import utils from '/utils/base';
 import pay from '/utils/pay';
 import register from '/utils/register';
 import login from '/utils/login';
+import fileSys from '/utils/file';
 
 var app = getApp();
 
@@ -25,20 +26,20 @@ App({
     
     
     //登录
-    utils.login(
-      () => {
-        utils.getUserInfo(
-          (userInfo) => {
-            console.log("已获取数据", userInfo);
-            app.data.userInfo = userInfo;
-          }, 
-          () => {
-            console.log("用户拒绝提供信息");
-          }
-        );
+    // utils.login(
+    //   () => {
+    //     utils.getUserInfo(
+    //       (userInfo) => {
+    //         console.log("已获取数据", userInfo);
+    //         app.data.userInfo = userInfo;
+    //       }, 
+    //       () => {
+    //         console.log("用户拒绝提供信息");
+    //       }
+    //     );
         
-      }
-    );
+    //   }
+    // );
   
     wx.setStorageSync('alreadyRegister', 'no');
     //检查是否有注册过
@@ -57,7 +58,9 @@ App({
     // );
 
     // pay.orderPay();
-    pay.enchashment();
+    // pay.enchashment();
+
+    
     
   },
   getUserInfo:function(cb){
