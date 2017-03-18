@@ -26,7 +26,7 @@
         <view class="border_tab"></view>
 
         <view class="answers">
-            <block wx:for="{{answers}}" wx:for-item="answer" wx:for-index="index" wx:key="unique">
+            <block wx:for="{{answers}}" wx:for-item="answer" wx:for-index="answer_index" wx:key="unique">
 
                 <view class="select_answer_container" >
                     <view class="select_answer_wrapper" >
@@ -44,7 +44,7 @@
                     <view class="border_tab"></view>
 
                     <view class="operation_zone" >
-                        <text class='{{ select_item.is_like == true ? "like_answer" : "not_like_answer" }}' bindtap='likeAnswer'>{{answer.likesnum}}
+                        <text class='{{ select_item.is_like == true ? "like_answer" : "not_like_answer" }}' data-selected="{{answer}}" data-answer_index="{{answer_index}}" bindtap='likeAnswer'>{{answer.likesnum}}
                         </text>
                         <text class="return_to_index_page" bindtap="returnIndexPage">返回
                         </text>

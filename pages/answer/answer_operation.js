@@ -3,7 +3,8 @@
 var context;
 var config = require("../../utils/config.js");
 var fileSys = require("../../utils/file.js");
-
+var base = require("../../utils/base.js");
+var user = require("../../utils/user.js");
 
 Page({
 
@@ -56,6 +57,12 @@ Page({
       answer_question : this.data.answer_question,
       question_answer : this.data.question_answer,
     });
+  },
+
+  getAnswerText:function(e){
+    var text_input = e.detail.value;
+    console.log(text_input);
+    this.data.question_answer.text_content = text_input;
   },
 
   recordSound:function(e){
@@ -353,11 +360,63 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
         console.log(tempFilePaths[0]);
-        that.data.question_answer.photo_path = tempFilePaths[0];
+        wx.saveFile({
+          tempFilePath: tempFilePaths[0],
+          success: function(res){
+            // success
+            var savedFilePath = res.savedFilePath;
+            that.data.question_answer.photo_path = savedFilePath;
         that.setData({
           question_answer : that.data.question_answer,
         })
+          },
+          fail: function() {
+            // fail
+          },
+          complete: function() {
+            // complete
+          }
+        })
         
+        
+      }
+    })
+  },
+
+  playQuestionVoiceRecord:function(e){
+    var that = this;
+    
+    var questionVoiceRemotePath = e.currentTarget.dataset.question_voice;
+    var questionVoicePath = fileSys.downloadFile(that,questionVoiceRemotePath,'audio');
+    that.data.answer_question.questionVoicePath = questionVoicePath;
+    
+    wx.playVoice({
+      filePath: that.data.answer_question.questionVoicePath,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+
+    
+  },
+
+  playAnswerVoiceRecord:function(e){
+    wx.playVoice({
+      filePath: this.data.question_answer.voice_path,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
       }
     })
   },
@@ -365,6 +424,9 @@ Page({
   commitAnswer:function(result){
     console.log("commit answer");
     //上传quesition_answer
+    this.data.question_answer.questionId = this.data.answer_question.questionId;
+    this.data.question_answer.teacherId = wx.getStorageSync(user.TeacherID);
+    base.commitAnswer(this.data.question_answer);
   },
 
   onShow:function(){

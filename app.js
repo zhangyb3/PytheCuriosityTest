@@ -26,20 +26,20 @@ App({
     
     
     //登录
-    // utils.login(
-    //   () => {
-    //     utils.getUserInfo(
-    //       (userInfo) => {
-    //         console.log("已获取数据", userInfo);
-    //         app.data.userInfo = userInfo;
-    //       }, 
-    //       () => {
-    //         console.log("用户拒绝提供信息");
-    //       }
-    //     );
+    utils.login(
+      () => {
+        utils.getUserInfo(
+          (userInfo) => {
+            console.log("已获取数据", userInfo);
+            app.data.userInfo = userInfo;
+          }, 
+          () => {
+            console.log("用户拒绝提供信息");
+          }
+        );
         
-    //   }
-    // );
+      }
+    );
   
     wx.setStorageSync('alreadyRegister', 'no');
     //检查是否有注册过

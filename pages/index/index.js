@@ -12,6 +12,7 @@ var base = require("../../utils/base.js");
 var selectItem;
 var itemIndex;
 
+
 Page({
   data: {
     second: 60,
@@ -43,7 +44,7 @@ Page({
       { key: 9, name: ' 地理 ', number: '#70DB93' }
     ],
 
-    
+    answers:[],
     hide_select_item: true,
     motto: 'Hello World',
     userInfo: {},
@@ -165,24 +166,28 @@ Page({
     this.setData({hide_select_item:false});
 
     //进入详细列表
-    var select_item = base.getDetailContent(this,selectItem);
+    this.data.answers = base.getDetailContent(this,selectItem);
     
     // this.setData({select_item:selectItem});
   },
 
   likeAnswer:function(e){
-    console.log(this.data.infos[itemIndex]);
-    selectItem.is_like = true;
-    this.setData({select_item:selectItem});
-    this.data.infos[itemIndex].is_like = true;
-    this.setData({infos:this.data.infos});
+    var answer_index = e.currentTarget.dataset.answer_index;
+    
+    //点赞+1并更新数据库
+    console.log(this.data.answers[answer_index]);
+    this.data.answers[answer_index].likesnum++;
+    this.setData({
+      answers: this.data.answers,
+    });
+    //更新数据库
   },
 
   rewardAnswer:function(e){
     var selected = e.currentTarget.dataset.selected;
     console.log(selected);
     var parametersJSON ={
-      answerId: selected.data[0].answerid
+      answerId: selected.answerid,
     };
     var parametersString = netUtil.json2Form(parametersJSON);
     wx.navigateTo({

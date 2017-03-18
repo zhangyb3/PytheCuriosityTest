@@ -2,6 +2,9 @@
 
 var config = require("../../utils/config.js");
 var fileSys = require("../../utils/file.js");
+var base = require("../../utils/base.js");
+var pay = require("../../utils/pay.js");
+var user = require("../../utils/user.js");
 
 Page({
   data:{
@@ -29,6 +32,8 @@ Page({
       voice_timeLength: 0,
       draw_path: null,
     },
+
+    hasPaidReward: false,
   },
   onLoad:function(parameters){
     console.log("from ask");
@@ -42,8 +47,38 @@ Page({
     
     console.log(parameters);
 
-    fileSys.downloadFile(this,'1.png');
+    if(parameters.teacherid != null)
+    {
+      this.data.ask_question.ask_teacherId = parameters.teacherid;
+    }
+    if(parameters.subjectId != null)
+    {
+      this.data.ask_question.question_subjectId = parameters.subjectId;
+    }
+    console.log(this.data.ask_question);
+
+    // fileSys.downloadFile(this,'/home/ftpuser/www/image/2017/3/12/1489250910037730.jpg','image');
+    wx.downloadFile({
+      url: "http://10.0.0.13:8081/rest/file/downloadFile?path=/home/ftpuser/www/image/2017/3/12/1489250910037730.jpg",
+      success: function(res){
+        console.log(res);
+        // this.data.img_src = res.tempFilePath;
+        
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
     
+  },
+
+  getQuestionText:function(e){
+    var text_input = e.detail.value;
+    console.log(text_input);
+    this.data.ask_question.text_content = text_input;
   },
 
   recordSound:function(e){
@@ -310,13 +345,60 @@ Page({
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
         var tempFilePaths = res.tempFilePaths
         console.log(tempFilePaths[0]);
-        that.data.ask_question.photo_path = tempFilePaths[0];
+        wx.saveFile({
+          tempFilePath: tempFilePaths[0],
+          success: function(res){
+            // success
+            var savedFilePath = res.savedFilePath;
+            that.data.ask_question.photo_path = savedFilePath;
         that.setData({
           ask_question : that.data.ask_question,
+        })
+          },
+          fail: function() {
+            // fail
+          },
+          complete: function() {
+            // complete
+          }
         })
         
       }
     })
+  },
+
+  playQuestionVoiceRecord:function(e){
+    wx.playVoice({
+      filePath: this.data.ask_question.voice_path,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+
+  selectReward1:function(e){
+    console.log("￥ 1");
+    wx.setStorageSync('rewardNum', 1);
+    var payResult = pay.orderPay();
+    this.data.hasPaidReward = true;
+  },
+  selectReward5:function(e){
+    console.log("￥ 5");
+    wx.setStorageSync('rewardNum', 5);
+    var payResult = pay.orderPay();
+    this.data.hasPaidReward = true;
+  },
+  selectReward10:function(e){
+    console.log("￥ 10");
+    wx.setStorageSync('rewardNum', 10);
+    var payResult = pay.orderPay();
+    this.data.hasPaidReward = true;
   },
 
   commitQuestion:function(result){
@@ -324,6 +406,12 @@ Page({
     //先检查是否选好悬赏金额
     //接着开始请求支付
     //示支付结果而定是否上传ask_question
+    if(this.data.hasPaidReward)
+    {
+      this.data.ask_question.studentId = wx.getStorageSync(user.StudentID);
+      this.data.ask_question.rewardNum = wx.getStorageSync('rewardNum')
+      base.commitQuestion(this.data.ask_question);
+    }
   },
 
   onShow:function(){

@@ -23,7 +23,8 @@ Page({
         is_like: true,
         like_num: 0,
         reward_num: 10.00,
-        question_content: "十万个为什么"
+        question_content: "十万个为什么",
+        voice_path:'template',
       }
     ],
   },

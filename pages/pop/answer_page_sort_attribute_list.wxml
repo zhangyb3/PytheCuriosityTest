@@ -12,7 +12,7 @@
     <view class="sort_attribute_list_zone" >
         <view class="sort_attribute_list">
             <block wx:for-items="{{sort_attributes}}"  >
-                <view class="sort_attribute_item" data-name="{{item.name}}"bindtap="selectSortAttribute" >
+                <view class="sort_attribute_item" data-name="{{item.name}}" bindtap="selectSortAttribute" >
                     <view class="sort_attribute_item_content">
                         <text class="sort_attribute_text ">{{item.name}}</text>
                     </view>

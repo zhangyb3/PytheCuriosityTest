@@ -12,6 +12,27 @@
 
             <view class="border_tab"/>
 
+            <view class="multi_tips">
+                <view wx:if="{{item.voice_path != null}}" class="voice" >
+                    
+                    <view class="bubble" data-question_voice='{{item.voice_path}}' bindtap="playQuestionVoiceRecord">
+                        <view class="bubble-tail"></view>
+                        <view class="voice-wave"></view>
+                        <view>{{item.voice_timeLength}}秒</view>
+                    </view>
+
+                </view>
+
+                <view wx:if="{{item.photo_path != null}}" class="photo" >
+                    <view class="bubble-photo" data-question_photo='{{item.photo_path}}' >
+                        <view>照片</view>
+                    </view>
+                </view>
+
+            </view>
+
+            <view class="border_tab"/>
+
             <view class="dotted_line"></view>
 
             <view class="border_tab"/>
@@ -25,6 +46,27 @@
             <view class="lines">
                 <text class="answer_content">{{ item.answer_content }}</text>
             </view>
+
+            </view>
+
+            <view class="border_tab"/>
+
+            <view class="multi_tips">
+                <view wx:if="{{item.voice_path != null}}" class="voice" >
+                    
+                    <view class="bubble" data-question_voice='{{item.voice_path}}' bindtap="playQuestionVoiceRecord">
+                        <view class="bubble-tail"></view>
+                        <view class="voice-wave"></view>
+                        <view>{{item.voice_timeLength}}秒</view>
+                    </view>
+
+                </view>
+
+                <view wx:if="{{item.photo_path != null}}" class="photo" >
+                    <view class="bubble-photo" data-question_photo='{{item.photo_path}}' >
+                        <view>照片</view>
+                    </view>
+                </view>
 
             </view>
 

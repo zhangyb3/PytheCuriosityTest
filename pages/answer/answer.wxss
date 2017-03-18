@@ -11,3 +11,4 @@
 @import "../pop/answer_page_sort_attribute_list.wxss";
 
 @import "../register/register.wxss";
+@import "../bubble/bubble.wxss";

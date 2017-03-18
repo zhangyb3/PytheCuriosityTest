@@ -2,7 +2,11 @@ var config = require('./config')
 var user = require('./user')
 var login = require('login.js')
 
-const DETAIL_CONTENT_URL = `${config.PytheRestfulServerURL}/index2/question_answers`;//下单
+const DETAIL_CONTENT_URL = `${config.PytheRestfulServerURL}/index2/question_answers`;
+
+const COMMIT_ANSWER_URL = `${config.PytheRestfulServerURL}/answer/insert/`;
+
+const COMMIT_QUESTION_URL = `${config.PytheRestfulServerURL}/question/insert/`;
 
 function getDetailContent(that,selectItem)
 {
@@ -19,12 +23,55 @@ function getDetailContent(that,selectItem)
             answers: res.data.data,
             question:selectItem,
         });
+        return res.data.data;
       },
       fail: function(res) {
         console.log(res);
       }
     })
     
+}
+
+function commitAnswer(parameters)
+{
+  wx.request({
+    url: COMMIT_ANSWER_URL,
+    data: {
+      parameters
+    },
+    method: 'POST', 
+    success: function(res){
+      // success
+      console.log(res);
+    },
+    fail: function() {
+      // fail
+    },
+    complete: function() {
+      // complete
+    }
+  })
+}
+
+function commitQuestion(parameters)
+{
+  wx.request({
+    url: COMMIT_QUESTION_URL,
+    data: {
+      parameters
+    },
+    method: 'POST', 
+    success: function(res){
+      // success
+      console.log(res);
+    },
+    fail: function() {
+      // fail
+    },
+    complete: function() {
+      // complete
+    }
+  })
 }
 
 
@@ -38,5 +85,6 @@ module.exports = {
     alreadyRegister : login.alreadyRegister,
     
     getDetailContent: getDetailContent,
-
+    commitAnswer : commitAnswer,
+    commitQuestion: commitQuestion,
 }

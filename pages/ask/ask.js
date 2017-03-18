@@ -22,10 +22,15 @@ Page({
 
     subjects:[
       {
+        subjectId:1,
         subject_name: '数学',
-      },{
+      },
+      {
+        subjectId:2,
         subject_name: '物理',
-      },{
+      },
+      {
+        subjectId:3,
         subject_name: '化学',
       },
     ],
