@@ -50,11 +50,12 @@ Page({
       hide_textarea : false,
     });
     
-    console.log(parameters.question_content);
-    var answer_question = this.data.answer_question;
-    answer_question.question_content = parameters.question_content;
+    console.log(parameters.questioncontent);
+    
+    var answer_question = parameters;
+    this.data.question_answer.questionId = answer_question.questionid;
     this.setData({
-      answer_question : this.data.answer_question,
+      answer_question : answer_question,
       question_answer : this.data.question_answer,
     });
   },
@@ -424,7 +425,7 @@ Page({
   commitAnswer:function(result){
     console.log("commit answer");
     //上传quesition_answer
-    this.data.question_answer.questionId = this.data.answer_question.questionId;
+    // this.data.question_answer.questionId = this.data.answer_question.questionId;
     this.data.question_answer.teacherId = wx.getStorageSync(user.TeacherID);
     base.commitAnswer(this.data.question_answer);
   },

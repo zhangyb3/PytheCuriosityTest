@@ -368,6 +368,11 @@ Page({
   },
 
   playQuestionVoiceRecord:function(e){
+    wx.showToast({
+      title: '播放录音',
+      icon: 'success',
+      duration: 1000
+    });
     wx.playVoice({
       filePath: this.data.ask_question.voice_path,
       success: function(res){

@@ -19,7 +19,7 @@ Page({
 
   },
   onLoad:function(parameters){
-    console.log(parameters.question_content);
+    console.log(parameters);
 
   },
 

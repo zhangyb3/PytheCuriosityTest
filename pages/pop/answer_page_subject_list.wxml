@@ -11,8 +11,8 @@
     <!-- 课程列表区域 -->
     <view class="subject_list_zone" >
         <view class="subjects">
-            <block wx:for-items="{{subject_infos}}"  >
-                <view class="subject_item" data-name="{{item.name}}"bindtap="selectSubject" >
+            <block wx:for-items="{{subject_infos}}" wx:for-index="{{index}}" >
+                <view class="subject_item" data-name="{{item.name}}" data-select_subject="{{item}}" bindtap="selectSubject" >
                     <view class="subject_item_icon">
                         <text class="subject_item_text ">{{item.name}}</text>
                     </view>

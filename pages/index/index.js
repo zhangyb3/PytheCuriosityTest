@@ -48,8 +48,7 @@ Page({
     hide_select_item: true,
     motto: 'Hello World',
     userInfo: {},
-    // basic_url: 'https://api.qxinli.com/api/'
-    basic_url: 'http://192.168.1.6:8080'
+    
   },
   //事件处理函数
   bindViewTap: function() {
