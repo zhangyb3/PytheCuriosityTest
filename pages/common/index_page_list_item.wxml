@@ -11,7 +11,7 @@
             </view>
 
             <view class="multi_tips">
-                <view wx:if="{{item.voice_path != null}}" class="voice" >
+                <view wx:if="{{item.voice_path == null}}" class="voice" >
                     
                     <view class="bubble" data-question_voice='{{item.voice_path}}' bindtap="playQuestionVoiceRecord">
                         <view class="bubble-tail"></view>
@@ -21,7 +21,7 @@
 
                 </view>
 
-                <view wx:if="{{item.photo_path != null}}" class="photo" >
+                <view wx:if="{{item.photo_path == null}}" class="photo" >
                     <view class="bubble-photo" data-question_photo='{{item.photo_path}}' >
                         <view>照片</view>
                     </view>
@@ -57,7 +57,7 @@
             </view>
 
             <view class="multi_tips">
-                <view wx:if="{{item.voice_path != null}}" class="voice" >
+                <view wx:if="{{item.voice_path == null}}" class="voice" >
                     
                     <view class="bubble" data-question_voice='{{item.voice_path}}' bindtap="playQuestionVoiceRecord">
                         <view class="bubble-tail"></view>

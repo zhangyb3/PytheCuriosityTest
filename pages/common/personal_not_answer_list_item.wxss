@@ -16,14 +16,17 @@
 
 .question_wrapper{
     /*border-top: 1px solid #EEE;*/
-    height: 20px;
-
+    height: auto;
     overflow-x: hidden; 
     overflow-y: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .question_content {
-    margin-left: 20px;
+    height: auto;
+    margin-left: 0px;
     
     font-size: 18px;
     

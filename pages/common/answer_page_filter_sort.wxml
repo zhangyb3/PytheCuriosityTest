@@ -4,7 +4,7 @@
         <view class="bar_item {{answer_page_menu[0].active ? 'active' : ''}}" bindtap='subject_filter' data-index='0' data-value="{{answer_page_menu[0].value}}">
             <text class="subject_filter_text " data-value="{{answer_page_menu[0].value}}">{{answer_page_menu[0].name}}</text>
         </view>
-        <view class="bar_item {{answer_page_menu[1].active ? 'active' : ''}}" backgroundcolor='{{!answer_page_menu[1].active ? "#3AA4F1" : "white"}}' bindtap='sort_by_attribute' data-index='1' data-value="{{answer_page_menu[1].value}}">
+        <view class="bar_item {{answer_page_menu[1].active ? 'active' : ''}}"  bindtap='sort_by_attribute' data-index='1' data-value="{{answer_page_menu[1].value}}">
             <text class="sort_by_attribute_text " data-value="{{answer_page_menu[1].value}}">{{answer_page_menu[1].name}}</text>
         </view>
 </view>

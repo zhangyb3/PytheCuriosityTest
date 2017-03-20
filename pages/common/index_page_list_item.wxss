@@ -18,21 +18,20 @@
     /*border-top: 1px solid #EEE;*/
     /*display: flex;*/
     text-align: left;
-    height: 20px;
+    height: auto;
     width: 100%;
     margin-left: -10px;
     overflow-x: hidden; 
     overflow: hidden;
     white-space: nowrap;
-    /*overflow-y: auto;*/
+    overflow-y: auto;
 
-    /*overflow-wrap: break-word;*/
-    text-overflow: ellipsis;
+    /*text-overflow: ellipsis;*/
 }
 
 .question_content {
     margin-left: 20px;
-    
+    height: auto;
     font-size: 18px;
     color: #0A0A0A;
    

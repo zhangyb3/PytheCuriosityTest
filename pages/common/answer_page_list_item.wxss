@@ -16,7 +16,7 @@
 
 .question_wrapper{
     /*border-top: 1px solid #EEE;*/
-    height: 20px;
+    height: auto;
     text-align: left;
     margin-left: -10px;
     overflow: hidden;
