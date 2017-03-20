@@ -21,6 +21,27 @@
 
         <view class="border_tab"></view>
 
+        <view class="multi_tips">
+                <view wx:if="{{question.voice_path == null}}" class="voice" >
+                    
+                    <view class="bubble" data-question_voice='{{question.voice_path}}' bindtap="playQuestionVoiceRecord">
+                        <view class="bubble-tail"></view>
+                        <view class="voice-wave"></view>
+                        <view>{{question.voice_timeLength}}秒</view>
+                    </view>
+
+                </view>
+
+                <view wx:if="{{question.photo_path == null}}" class="photo" >
+                    <view class="bubble-photo" data-question_photo='{{question.photo_path}}' >
+                        <view>照片</view>
+                    </view>
+                </view>
+
+            </view>
+
+            <view class="border_tab"/>
+
         <view class="dotted_line"></view>
 
         <view class="border_tab"></view>
@@ -42,6 +63,27 @@
                     </view>
 
                     <view class="border_tab"></view>
+
+                    <view class="multi_tips">
+                        <view wx:if="{{answer.voice_path == null}}" class="voice" >
+                            
+                            <view class="bubble" data-question_voice='{{answer.voice_path}}' bindtap="playAnswerVoiceRecord">
+                                <view class="bubble-tail"></view>
+                                <view class="voice-wave"></view>
+                                <view>{{answer.voice_timeLength}}秒</view>
+                            </view>
+
+                        </view>
+
+                        <view wx:if="{{answer.photo_path == null}}" class="photo" >
+                            <view class="bubble-photo" data-question_photo='{{answer.photo_path}}' >
+                                <view>照片</view>
+                            </view>
+                        </view>
+
+                    </view>
+
+                    <view class="border_tab"/>
 
                     <view class="operation_zone" >
                         <text class='{{ select_item.is_like == true ? "like_answer" : "not_like_answer" }}' data-selected="{{answer}}" data-answer_index="{{answer_index}}" bindtap='likeAnswer'>{{answer.likesnum}}

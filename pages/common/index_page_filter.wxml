@@ -12,7 +12,7 @@
     </view>
 
     <view class="search_button_view" >
-        <button class="search_button"    bindtap='filterSubject'><image src="../../images/nav_icon_search@2x.png"></image></button>
+        <button class="search_button"    bindtap='getSearchContentList'><image src="../../images/nav_icon_search@2x.png"></image></button>
     </view>
 
 </view>

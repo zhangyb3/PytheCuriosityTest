@@ -12,7 +12,7 @@
     <view class="subject_list_zone" >
         <view class="subjects">
             <block wx:for-items="{{subject_infos}}"  >
-                <view class="subject_item" hover-class="" data-name="{{item.name}}"bindtap="selectSubject" >
+                <view class="subject_item" hover-class="" data-name="{{item.name}}" data-subject_id="{{item.subjectId}}"bindtap="getSelectSubjectList" >
                     <view class="subject_item_icon">
                         <text class="subject_item_text ">{{item.name}}</text>
                     </view>

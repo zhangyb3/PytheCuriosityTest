@@ -25,23 +25,23 @@ Page({
     selectStudent:false,
     selectTeacher:false,
     subject_infos: [
-      { key: 1, name: ' 语文 ', number: '#FFFFFF' },
+      { subjectId: 1001, name: ' 语文 ', number: '#FFFFFF' },
 
-      { key: 2, name: ' 数学 ', number: '#FF0000' },
+      { subjectId: 2, name: ' 数学 ', number: '#FF0000' },
 
-      { key: 3, name: ' 英语 ', number: '#00FF00' },
+      { subjectId: 3, name: ' 英语 ', number: '#00FF00' },
 
-      { key: 4, name: ' 物理 ', number: '#0000FF' },
+      { subjectId: 4, name: ' 物理 ', number: '#0000FF' },
 
-      { key: 5, name: ' 化学 ', number: '#FF00FF' },
+      { subjectId: 5, name: ' 化学 ', number: '#FF00FF' },
 
-      { key: 6, name: ' 生物 ', number: '#00FFFF' },
+      { subjectId: 6, name: ' 生物 ', number: '#00FFFF' },
 
-      { key: 7, name: ' 历史 ', number: '#FFFF00' },
+      { subjectId: 7, name: ' 历史 ', number: '#FFFF00' },
 
-      { key: 8, name: ' 政治 ', number: '#000000' },
+      { subjectId: 8, name: ' 政治 ', number: '#000000' },
 
-      { key: 9, name: ' 地理 ', number: '#70DB93' }
+      { subjectId: 9, name: ' 地理 ', number: '#70DB93' }
     ],
 
     answers:[],
@@ -109,6 +109,7 @@ Page({
     })
   },
 
+  //注册
   phoneNumberInput: function(e) {
     var registerPhoneNum = e.detail.value;
     console.log(e.detail.value);
@@ -124,6 +125,38 @@ Page({
     wx.setStorageSync('verificationCode', verificationCode);
   },
 
+  //搜索
+  listenerSearchInput:function(e){
+    //获取搜索框输入
+    var search_content_text = e.detail.value;
+    console.log(search_content_text);
+    this.data.search_content_text = search_content_text;
+  },
+  getSearchContentList:function(e){
+    var that = this;
+    var searchParameters = {
+      q: this.data.search_content_text,
+      pageSize: 3,
+      pageNum: 1,
+    };
+
+    listViewUtil.loadList(that,'index',config.PytheSearchServerURL,
+    "/index",
+    10,
+        searchParameters,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data.knowlegeList;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
+
+  },
+
   registerToMainPage:function(e){
     this.setData({hide_register_page:true});
     this.setData({hide_index_page:false});
@@ -133,7 +166,7 @@ Page({
       gradeId : 112,
       pageSize : 3,
       pageNum : 1,
-      subjectId: 1001,
+      // subjectId: 1001,
     };
     
     listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
@@ -220,12 +253,34 @@ Page({
       });
   },
 
-
-  selectSubject:function(e){
+  //科目筛选列表
+  getSelectSubjectList:function(e){
     
     var selected_subject = e.currentTarget.dataset.name;
     console.log(selected_subject);
     this.setData({hide_pop_subject_list:true});
+
+    var that = this;
+    var subjectParamters = {
+      subjectId: e.currentTarget.dataset.subject_id,
+      pageSize: 3,
+      pageNum: 1,
+      gradeId: 112,
+    };
+    listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
+    "/index/filterList",
+    10,
+        subjectParamters,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
   },
 
 

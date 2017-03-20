@@ -1,9 +1,12 @@
 // pages/answer/answer.js
 
 
-var netUtil=require("../../utils/netUtil.js");
 var listViewUtil=require("../../utils/listViewUtil.js");
+var netUtil=require("../../utils/netUtil.js");
 var utils=require("../../utils/util.js");
+var register = require("../../utils/register.js");
+var config = require("../../utils/config.js");
+var base = require("../../utils/base.js");
 
 Page({
   data:{
@@ -18,23 +21,23 @@ Page({
         active:false
     }],
     subject_infos: [
-      { key: 1, name: ' 语文 ', number: '#FFFFFF' },
+      { subjectId: 1001, name: ' 语文 ', number: '#FFFFFF' },
 
-      { key: 2, name: ' 数学 ', number: '#FF0000' },
+      { subjectId: 2, name: ' 数学 ', number: '#FF0000' },
 
-      { key: 3, name: ' 英语 ', number: '#00FF00' },
+      { subjectId: 3, name: ' 英语 ', number: '#00FF00' },
 
-      { key: 4, name: ' 物理 ', number: '#0000FF' },
+      { subjectId: 4, name: ' 物理 ', number: '#0000FF' },
 
-      { key: 5, name: ' 化学 ', number: '#FF00FF' },
+      { subjectId: 5, name: ' 化学 ', number: '#FF00FF' },
 
-      { key: 6, name: ' 生物 ', number: '#00FFFF' },
+      { subjectId: 6, name: ' 生物 ', number: '#00FFFF' },
 
-      { key: 7, name: ' 历史 ', number: '#FFFF00' },
+      { subjectId: 7, name: ' 历史 ', number: '#FFFF00' },
 
-      { key: 8, name: ' 政治 ', number: '#000000' },
+      { subjectId: 8, name: ' 政治 ', number: '#000000' },
 
-      { key: 9, name: ' 地理 ', number: '#70DB93' }
+      { subjectId: 9, name: ' 地理 ', number: '#70DB93' }
     ],
     
     questionsForAnswer:[
@@ -76,27 +79,27 @@ Page({
 
     this.setData({hide_pop_subject_list:true});
     this.setData({hide_pop_sort_attribute_list:true});
-    // 页面初始化 options为页面跳转所带来的参数
-    var that = this;
-    // listViewUtil.initListView(that,that.data.basic_url,
-    // "/answer/2",
-    // // "lesson/search/v1.json",
-    // 10,
-    //     function(params){
-    //       params.type = 2;
-    //       params.sourceType = 0;
-    //       params.labelId = 0;
-    //       params.priceType = 2;
-    //       params.categoryIds = "";
-    //     },
-    //     function (netData){
 
-    //       return netData;
-    //     },
-    //     function(item){
+    // 获取默认问题列表
+    var that = this;
+    var questionListParams = {
+      pageSize: 3,
+      pageNum: 1,
+    };
+    listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
+    "/answer/defaultList",
+    10,
+        questionListParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
          
-    //     }
-    // );
+        },
+        {},
+        'GET',
+    );
   },
 
   subject_filter:function(e){

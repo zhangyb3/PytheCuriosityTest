@@ -74,7 +74,7 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     }
 
     if(list_type == 'index'){
-        page.data.infos=[];//默认列表
+        page.data.infos=[];//知列表
     }
     if(list_type == 'teacher'){
         page.data.ask_teacher_list = [];//老师列表
@@ -85,6 +85,15 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     
 
     page.onPullDownRefresh = function(){
+        if(list_type == 'index'){
+        page.data.infos=[];//知列表
+        }
+        if(list_type == 'teacher'){
+            page.data.ask_teacher_list = [];//老师列表
+        }
+        if(list_type == 'question'){
+            page.data.questionsForAnswer = [];//老师列表
+        }
         netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
     };
 
