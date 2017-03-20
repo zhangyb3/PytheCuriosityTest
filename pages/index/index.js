@@ -57,11 +57,7 @@ Page({
     })
   },
   onLoad: function () {
-    if(wx.getStorageSync('alreadyRegister')=='no')
-    {
-      this.setData({hide_register_page:false});
-      this.setData({hide_index_page:true});
-    }
+    
       
     
     
@@ -70,6 +66,28 @@ Page({
 
     console.log('onLoad');
     var that = this;
+
+    var simple_params = {
+      gradeId : 112,
+      pageSize : 3,
+      pageNum : 1,
+      // subjectId: 1001,
+    };
+    
+    listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
+    "/index/defaultList",
+    10,
+        simple_params,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
     
     
 
@@ -156,34 +174,7 @@ Page({
 
   },
 
-  registerToMainPage:function(e){
-    this.setData({hide_register_page:true});
-    this.setData({hide_index_page:false});
-    var that = this;
-
-    var simple_params = {
-      gradeId : 112,
-      pageSize : 3,
-      pageNum : 1,
-      // subjectId: 1001,
-    };
-    
-    listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
-    "/index/defaultList",
-    10,
-        simple_params,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-         
-        },
-        {},
-        'GET',
-    );
-
-  },
+  
 
   filterSubject:function(subject_data){
     console.log("subject filter");
@@ -283,31 +274,31 @@ Page({
   },
 
 
+  
 
   onShow:function(){
-    countdown(this);
+    if(wx.getStorageSync('alreadyRegister')=='no')
+    {
+      // this.setData({hide_register_page:false});
+      // this.setData({hide_index_page:true});
+      wx.navigateTo({
+        url: '../register/register',
+        success: function(res){
+          // success
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      })
+    }
   },
 
 })
 
 
-function countdown(that) {
-  var second = that.data.second ;
-    if (second == 0) {  
-      that.setData({  
-        second: '结束'  
-      });  
-      return ;  
-  } 
-
-  var time = setTimeout(function(){  
-    that.setData({  
-      second: second - 1  
-    });  
-    countdown(that);  
-    }  
-    ,1000)  
-}
 
 
 

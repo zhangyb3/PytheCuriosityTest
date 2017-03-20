@@ -1,5 +1,5 @@
 
-<template name="register_page">
+<!--<template name="register_page">-->
 
 <view class="register_zone">
 
@@ -55,5 +55,5 @@
 
 </view>
 
-</template>
+<!--</template>-->
 

@@ -63,11 +63,7 @@ Page({
     },
   onLoad:function(options){
     
-    if(wx.getStorageSync('alreadyRegister')=='no')
-    {
-      this.setData({hide_register_page:false});
-      this.setData({hide_ask_page:true});
-    }
+    
 
     this.setData({hide_ask_subject_list:false});
     this.setData({hide_ask_teacher_list:true});
@@ -226,78 +222,6 @@ Page({
 
 
 
-
-  selectStudent:function(e){
-    console.log("学生");
-    this.setData({
-      hide_subject_selection:true,
-      hide_grade_selection:false,
-      select_student:true,
-      select_teacher:false
-    })
-  },
-  selectTeacher:function(e){
-    console.log("老师");
-    this.setData({
-      hide_subject_selection:false,
-      hide_grade_selection:true,
-      select_student:false,
-      select_teacher:true
-    })
-  },
-
-  gradeChange: function(e) {
-    console.log('年级', this.data.grades[e.detail.value])
-    this.setData({
-      grade_index: e.detail.value
-    })
-  },
-  subjectChange: function(e) {
-    console.log('科目', this.data.subjects[e.detail.value])
-    this.setData({
-      subject_index: e.detail.value
-    })
-  },
-
-  phoneNumberInput: function(e) {
-    var registerPhoneNum = e.detail.value;
-    console.log(e.detail.value);
-    wx.setStorageSync('registerPhoneNum', registerPhoneNum);
-  },
-  sendVerificationCode:function(res) {
-    console.log(wx.getStorageSync('registerPhoneNum'));
-    register.sendVerificationCode(wx.getStorageSync('registerPhoneNum'));
-  },
-  verificationCodeInput: function(e) {
-    var verificationCode = e.detail.value;
-    console.log(e.detail.value);
-    wx.setStorageSync('verificationCode', verificationCode);
-  },
-
-  registerToMainPage:function(e){
-    this.setData({hide_register_page:true});
-    this.setData({hide_ask_page:false});
-    var that = this;
-    // listViewUtil.initListView(that,that.data.basic_url,
-    // "/answer/2",
-    // // "lesson/search/v1.json",
-    // 10,
-    //     function(params){
-    //       params.type = 2;
-    //       params.sourceType = 0;
-    //       params.labelId = 0;
-    //       params.priceType = 2;
-    //       params.categoryIds = "";
-    //     },
-    //     function (netData){
-
-    //       return netData;
-    //     },
-    //     function(item){
-         
-    //     }
-    // );
-  },
 
 
   onReady:function(){

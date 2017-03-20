@@ -57,21 +57,8 @@ Page({
     }
     console.log(this.data.ask_question);
 
-    // fileSys.downloadFile(this,'/home/ftpuser/www/image/2017/3/12/1489250910037730.jpg','image');
-    wx.downloadFile({
-      url: "http://10.0.0.13:8081/rest/file/downloadFile?path=/home/ftpuser/www/image/2017/3/12/1489250910037730.jpg",
-      success: function(res){
-        console.log(res);
-        // this.data.img_src = res.tempFilePath;
-        
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
+    fileSys.downloadFile(this,'/home/ftpuser/www/image/2017/3/12/1489250910037730.jpg','image');
+    
     
   },
 

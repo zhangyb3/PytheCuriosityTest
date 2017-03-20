@@ -1,0 +1,20 @@
+
+
+.scroll_list{
+    margin-top: 10px;
+    
+}
+
+.interval{
+    /*margin-top: 10px;*/
+}
+    
+
+.personal_like_teacher_list_container{
+    background-color: lightgray;
+}
+
+
+
+@import "../common/personal_like_teacher_list_item.wxss";
+

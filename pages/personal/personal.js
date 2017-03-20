@@ -16,44 +16,13 @@ Page({
     countdownText : '发',
   },
   onLoad:function(options){
-    if(wx.getStorageSync('alreadyRegister')=='no')
-    {
-      this.setData({hide_register_page:false});
-      this.setData({hide_personal_page:true});
-    }
+    
 
 
   },
 
   
-  resendVerificationCode:function(e){
-   
-  },
-
-  registerToMainPage:function(e){
-    this.setData({hide_register_page:true});
-    this.setData({hide_personal_page:false});
-    var that = this;
-    // listViewUtil.initListView(that,that.data.basic_url,
-    // "/answer/2",
-    // // "lesson/search/v1.json",
-    // 10,
-    //     function(params){
-    //       params.type = 2;
-    //       params.sourceType = 0;
-    //       params.labelId = 0;
-    //       params.priceType = 2;
-    //       params.categoryIds = "";
-    //     },
-    //     function (netData){
-
-    //       return netData;
-    //     },
-    //     function(item){
-         
-    //     }
-    // );
-  },
+  
 
   selectPersonalAsk:function(result){
     var parametersJSON = this.data.user;
@@ -77,6 +46,23 @@ Page({
     var parametersString = netUtil.json2Form(parametersJSON);
     wx.navigateTo({
       url: 'personal_answer' + '?' + parametersString,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+
+  selectPersonalLike:function(result){
+    var parametersJSON = this.data.user;
+    var parametersString = netUtil.json2Form(parametersJSON);
+    wx.navigateTo({
+      url: 'personal_like' + '?' + parametersString,
       success: function(res){
         // success
       },

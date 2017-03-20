@@ -5,12 +5,6 @@
 <import src="../pop/answer_page_subject_list.wxml" />
 <import src="../pop/answer_page_sort_attribute_list.wxml" />
 
-<import src="../register/register.wxml" />
-
-
-<view class="register_container" hidden='{{hide_register_page}}'>
-  <template is="register_page" data="{{grades,grade_index,subjects,subject_index,hide_subject_selection,hide_grade_selection,select_student,select_teacher,second}}"></template>
-</view>
 
 
 <view class="answer_page_container" hidden='{{hide_answer_page}}'>

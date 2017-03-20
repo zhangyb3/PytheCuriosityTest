@@ -1,0 +1,31 @@
+<template name="persoanl_like_teacher_list_item">
+
+<view class="list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' >
+
+            <view class="border_tab"></view>
+<!--名师区域  -->
+            <view class="teacher_wrapper">
+            <!--名师头像部分-->
+                <image class="teacher_icon" src="../../images/image_1@2x.png"
+                ></image>
+            <!--名师中间部分:姓名,介绍,收藏-->
+                <view class= "teacher_middle_wrapper">
+                <!--教师姓名-->
+                    <text class="teacher_content">teacherid:{{ item.teacherid }}</text>
+                    <!--教师简介-->
+                    <text class="teacher_brief">{{ item.teacher_name }}</text>
+                    <!--收藏数量-->
+                <view class="collect_icon_wrap"><image src="../../images/collect_icon.png"></image><text class="collect_icon" data-teacher="{{item}}" data-index='{{index}}' bindtap="likeTeacher">{{item.popularity}}</text></view>
+                    <!--<text class="collect_icon" src="../../images/icon_language@2x.png">268
+                </text>-->
+                </view>
+
+            <!--名师尾部部分-->
+                <!--<button class="search_button"    bindtap='filterSubject'></button>-->
+                <button class="teacher_ask_section" data-teacher="{{item}}" bindtap="selectOneTeacher"> <image src="../../images/teacher_ask_icon.png"></image></button> 
+                <!--<text class="teacher_content">{{ item.teacher_name }}</text>-->
+              
+            </view>      
+</view>
+
+</template>

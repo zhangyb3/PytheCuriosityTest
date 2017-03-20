@@ -1,10 +1,6 @@
 <!--pages/personal/personal.wxml-->
 
-<import src="../register/register.wxml" />
 
-<view class="register_container" hidden='{{hide_register_page}}'>
-  <template is="register_page" data="{{grades,grade_index,subjects,subject_index,hide_subject_selection,hide_grade_selection,select_student,select_teacher,second,countdownText}}"></template>
-</view>
 
 <view class="personal_page" hidden='{{hide_personal_page}}'>
 

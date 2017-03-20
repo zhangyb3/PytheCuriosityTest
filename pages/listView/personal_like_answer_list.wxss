@@ -1,0 +1,24 @@
+
+
+.scroll_list{
+    
+    height: auto;
+    /*margin-top: 0px;
+    margin-bottom: 10px;*/
+}
+
+.interval{
+    height: 10px;
+    background-color: #ECEBF4;
+}
+    
+
+.personal_like_answer_list_container{
+    background-color: #ECEBF4;
+}
+
+
+
+@import "../common/personal_like_answer_list_item.wxss";
+@import "../bubble/bubble.wxss";
+

@@ -4,12 +4,12 @@
 <import src="../common/index_page_filter.wxml" />
 <import src="../pop/index_page_subject_list.wxml" />
 <import src="../pop/index_page_select_item.wxml" />
-<import src="../register/register.wxml" />
+<!--<import src="../register/register.wxml" />-->
 
 
-<view class="register_container" hidden='{{hide_register_page}}'>
+<!--<view class="register_container" hidden='{{hide_register_page}}'>
   <template is="register_page" data="{{grades,grade_index,subjects,subject_index,hide_subject_selection,hide_grade_selection,select_student,select_teacher,second}}"></template>
-</view>
+</view>-->
 
 <view class="index_page_container" hidden='{{hide_index_page}}'>
   
