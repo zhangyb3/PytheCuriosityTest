@@ -13,10 +13,10 @@
 .draw_picture_section{
     z-index: 12;
     position: fixed;
-    top: 20px;
+    top: 0px;
     left: 0;
     right: 0;
-    bottom: 100px;
+    bottom: 0px;
     
     /*align-items: center;*/
 }

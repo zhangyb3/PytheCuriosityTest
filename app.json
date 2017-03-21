@@ -34,8 +34,8 @@
         
         "color":"white",
         "selectedColor":"lightblue",
-        "iconPath":"images/tab_icon_know_nor@2x.png",
-        "selectedIconPath":"images/tab_icon_know_sel@2x.png",
+        "iconPath":"images/know_nor.png",
+        "selectedIconPath":"images/know_sel.png",
         "text":"知"
       },
       {
@@ -43,8 +43,8 @@
         
         "color":"white",
         "selectedColor":"lightblue",
-        "iconPath":"images/tab_icon_question_nor@2x.png",
-        "selectedIconPath":"images/tab_icon_question_sel@2x.png",
+        "iconPath":"images/question.png",
+        "selectedIconPath":"images/question_sel.png",
         "text":"问"
       },
       {
@@ -52,8 +52,8 @@
         
         "color":"white",
         "selectedColor":"lightblue",
-        "iconPath":"images/tab_icon_answer_nor@2x.png",
-        "selectedIconPath":"images/tab_icon_answer_sel@2x.png",
+        "iconPath":"images/answer_nor.png",
+        "selectedIconPath":"images/answer_sel.png",
         "text":"答"
       },
       {
@@ -61,8 +61,8 @@
         
         "color":"white",
         "selectedColor":"lightblue",
-        "iconPath":"images/tab_icon_personal_nor@2x.png",
-        "selectedIconPath":"images/tab_icon_personal_sel@2x.png",
+        "iconPath":"images/my_nor.png",
+        "selectedIconPath":"images/my_sel.png",
         "text":"我"
       }
       ]

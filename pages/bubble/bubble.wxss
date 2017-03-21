@@ -2,6 +2,7 @@
 
 .voice{
     display:inline-block;
+    position: relative;
 }
 
 .photo{
@@ -18,9 +19,9 @@
     display: block;
     /*background-color: #1ccda6;*/
     background-color: #28aef5;
-    line-height: 2.2rem;
-    height: 2.2rem;
-    border-radius: 1.1rem;
+    line-height: 30px;
+    height: 30px;
+    border-radius: 15px;
     text-align: center;
     min-width: 6rem;
     color: black;
@@ -29,6 +30,7 @@
     position: relative;
     margin-right: .35rem;
     margin-left: .35rem;
+    margin-top: 5px;
 }
 
 .bubble-blue {
@@ -39,7 +41,7 @@
     width: .83rem;
     height: 1.185rem;
     position: absolute;
-    bottom: 0;
+    bottom: 0px;
     left: -.3rem;
     background-image: url('/images/bubble-tail-blue.png');
     background-size: .83rem 1.185rem;
@@ -61,8 +63,8 @@
     display: block;
     background-image: url('/images/bubble-frame.png');
     background-color: lightblue;
-    line-height: 2.2rem;
-    height: 2.2rem;
+    line-height: 30px;
+    height: 30px;
     text-align: center;
     min-width: 6rem;
     color: black;
@@ -71,4 +73,5 @@
     position: relative;
     margin-right: .35rem;
     margin-left: .35rem;
+    margin-top: 5px;
 }

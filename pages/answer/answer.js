@@ -58,7 +58,25 @@ Page({
         is_like: true,
         like_num: 0,
         reward_num: 10.00,
-        question_content: "十万个为什么"
+        question_content: "峰山昨天（8日）指出，中共中央举行的2017年对台工作会议，政策措施涉及"
+      },
+      {
+        avatar: null,
+        
+        teacher_name: "自己",
+        is_like: true,
+        like_num: 0,
+        reward_num: 10.00,
+        question_content: "峰山昨天（8日）指出，中共中央举行的2017年对台工作会议，政策措施涉及"
+      },
+      {
+        avatar: null,
+        
+        teacher_name: "自己",
+        is_like: true,
+        like_num: 0,
+        reward_num: 10.00,
+        question_content: "峰山昨天（8日）指出，中共中央举行的2017年对台工作会议，政策措施涉及"
       }
     ],
     selectSubject:'',

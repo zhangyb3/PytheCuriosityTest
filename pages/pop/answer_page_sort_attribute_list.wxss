@@ -1,7 +1,7 @@
 .pop_sort_attribute_list_cover {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
-    top: 20px;
+    top: 30px;
     right: 0;
     left: 0;
     bottom: 0;
@@ -12,7 +12,7 @@
 .sort_attribute_list_zone {
     z-index: 12;
     position: fixed;
-    top: 20px;
+    top: 30px;
     left: 0;
     right: 0;
     display: block;

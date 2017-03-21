@@ -35,7 +35,7 @@ Page({
       },
     ],
 
-     teachers:[
+     ask_teacher_list:[
       {
         teacher_name: '都教授',
       },{

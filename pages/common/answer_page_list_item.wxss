@@ -4,33 +4,43 @@
     border-top: 1px solid #EEE;
     border-bottom: 1px solid #EEE;
     
-    margin-top: 2px;
-    margin-bottom: 2px;
+    /*margin-top: 2px;*/
+    /*margin-bottom: 2px;*/
     margin-left: 2px;
     margin-right: 2px;
+    height: 80px;
     
     display: flex;
     flex-direction: column;
     background-color: white;
+    /*justify-content: center;*/
 }
 
 .question_wrapper{
-    /*border-top: 1px solid #EEE;*/
-    height: auto;
-    text-align: left;
-    margin-left: -10px;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    /*overflow-x: hidden; 
-    overflow-y: auto;*/
+    display: flex;
+    /*align-content: center;*/
+    justify-content: center;
+    height: 80px;
+    /*text-align: left;*/
+    /*margin-left: -10px;*/
+    width: 100%;
+    /*overflow: hidden;*/
+    /*white-space: nowrap;*/
+    /*text-overflow: ellipsis;*/
+    overflow-x: hidden; 
+    overflow-y: auto;
 }
 
 .question_content {
-    margin-left: 20px;
-    
-    font-size: 18px;
-    
+    /*display: flex;
+    flex-direction: row;*/
+    width: 94%;
+    /*text-align: left;*/
+    /*margin-left: 20px;*/
+    /*text-align: center;*/
+    height: 80px;
+    font-size: 16px;
+    color: #0A0A0A;
 }
 
 .dotted_line{
@@ -56,14 +66,7 @@
     height: 20px;
 }
 
-.answer_wrapper>image {
-    margin-left: 5px;
-    width: 20px;
-    height: 20px;
-    
-    border-radius: 50%;
-    background-size: contain;
-}
+
 
 .lines {
     
@@ -74,16 +77,31 @@
     overflow-y: auto;
 }
 
-
+.questioner_info_wrap{
+    display: flex;
+    flex-direction: row;
+    line-height: 30px;
+    width: 100%;
+    /*background-color: yellow;*/
+}
 
 .teacher_name {
     width: 100%;
     color: #666;
     font-size: 16px;
     margin-bottom: 0;
+    margin-left: 5px;
 }
 
-
+.questioner_info_wrap>image {
+    padding-left: 10px;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    
+    border-radius: 50%;
+    background-size: contain;
+}
 
 
 /* likes and fav */
