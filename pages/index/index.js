@@ -20,9 +20,9 @@ Page({
     grade_index:0,
     subjects: ['物理', '化学', '计算机'],
     subject_index:0,
-    hide_subject_selection:false,
+    hide_subject_selection:true,
     hide_grade_selection:false,
-    selectStudent:false,
+    selectStudent:true,
     selectTeacher:false,
     subject_infos: [
       { subjectId: 1001, name: ' 语文 ', number: '#FFFFFF' },
