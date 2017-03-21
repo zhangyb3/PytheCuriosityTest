@@ -1,0 +1,24 @@
+<!-- 弹出层 -->
+
+<template name="show_image_page">
+
+    <view class="show_image_page_view" >
+    
+    
+    
+    <!-- 遮罩 -->
+    <view class="show_image_page_cover"   bindtap='returnLoadImagePage'></view>
+    <!-- 图片区域 -->
+    <view class="show_image_zone" >
+        
+        <image class="image_frame" src="{{img_src}}" data-image_source="{{img_src}}" bindtap='getImageSource' mode="aspectFill">  
+        </image>
+        
+    </view>
+
+
+    </view>
+
+
+
+</template>

@@ -6,15 +6,21 @@ Page({
     grade_index:0,
     subjects: ['物理', '化学', '计算机'],
     subject_index:0,
-    hide_subject_selection:false,
+    hide_subject_selection:true,
     hide_grade_selection:false,
-    selectStudent:false,
+    selectStudent:true,
     selectTeacher:false,
 
   },
   
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
+    this.setData({
+      hide_subject_selection:true,
+      hide_grade_selection:false,
+      select_student:true,
+      select_teacher:false
+    });
   },
 
   selectStudent:function(e){

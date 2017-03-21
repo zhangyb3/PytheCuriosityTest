@@ -1,0 +1,26 @@
+.show_image_page_cover {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 1);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 20;
+    opacity: 1;
+}
+
+.show_image_zone{
+    /*margin-top: 1px;*/
+    background-color: black;
+
+    z-index: 22;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: block;
+    /*bottom: 386px;*/
+}
+
+
+

@@ -8,6 +8,7 @@ var user = require("../../utils/user.js");
 
 Page({
   data:{
+    hide_show_image_page: true,
     hide_record_sound_section : true,
     hide_take_photo_section : true,
     hide_draw_picture_section : true,
@@ -338,9 +339,10 @@ Page({
             // success
             var savedFilePath = res.savedFilePath;
             that.data.ask_question.photo_path = savedFilePath;
-        that.setData({
-          ask_question : that.data.ask_question,
-        })
+            that.setData({
+              ask_question : that.data.ask_question,
+              img_src : savedFilePath,
+            })
           },
           fail: function() {
             // fail
@@ -372,6 +374,21 @@ Page({
         // complete
       }
     })
+  },
+
+  showImage:function(e){
+    console.log("显示图片" );
+    this.setData({
+      hide_show_image_page: false,
+    });
+  },
+  returnLoadImagePage:function(e){
+    this.setData({
+      hide_show_image_page: true,
+    });
+  },
+  getImageSource:function(e){
+    console.log(e.currentTarget.dataset.image_source);
   },
 
   selectReward1:function(e){

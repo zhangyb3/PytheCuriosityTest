@@ -3,6 +3,8 @@
 <import src="../section/operation_record_sound.wxml" />
 <import src="../section/operation_draw_picture.wxml" />
 
+<import src="../pop/show_image_page.wxml" />
+
 <view class="ask_operation_view"  data-item='{{ ask_item }}'>
     
        
@@ -37,7 +39,7 @@
             </view>
 
             <view wx:if="{{ask_question.photo_path != null}}" class="photo" >
-                <view class="bubble-photo" data-question_photo='{{ask_question.photo_path}}' >
+                <view class="bubble-photo" data-question_photo='{{ask_question.photo_path}}' bindtap="showImage">
                     <view>照片</view>
                 </view>
             </view>
@@ -83,6 +85,11 @@
             <button class="ask_commit_button" bindtap="commitQuestion">
                 发布
             </button>
+        </view>
+
+
+        <view class="show_image_page_container" hidden='{{hide_show_image_page}}'>
+            <template is="show_image_page" data="{{img_src}}"></template>
         </view>
 
         <image class="image_frame" src="{{img_src}}" mode="aspectFill">  
