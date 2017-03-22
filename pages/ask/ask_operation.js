@@ -47,6 +47,7 @@ Page({
     });
     
     console.log(parameters);
+    this.data.ask_question.studentId = wx.getStorageSync(user.StudentID);
 
     if(parameters.teacherid != null)
     {
@@ -434,6 +435,7 @@ Page({
       hide_show_image_page: false,
       img_src: this.data.ask_question.photo_path,
     });
+    
   },
   showDraw:function(e){
     console.log("显示手绘" );
@@ -441,6 +443,7 @@ Page({
       hide_show_image_page: false,
       img_src: this.data.ask_question.draw_path,
     });
+    
   },
   returnLoadImagePage:function(e){
     this.setData({

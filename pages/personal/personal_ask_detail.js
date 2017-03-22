@@ -31,10 +31,7 @@ Page({
     //加载个人问题列表答案集
     var that = this;
     var myQuestionAnswersParams = {
-      studentId : 1,
-      pageSize : 3,
-      pageNum : 1,
-      // subjectId: 1001,
+      questionId: parameters.questionid,
     };    
     listViewUtil.loadList(that,'my_question_answer',config.PytheRestfulServerURL,
     base.MY_QUESTION_ANSWER_URL_DETAIL,

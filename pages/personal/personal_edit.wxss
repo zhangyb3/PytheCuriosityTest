@@ -1,0 +1,46 @@
+/* pages/personal/personal_edit.wxss */
+
+.nickname_content_text_input{
+    height: 30px;
+    width: 75%;
+    
+    border-style: solid;
+    border-width: 2rpx;
+    font-family: 黑体;
+    color: #CBCECE;
+    border-radius: 22px;
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-around;*/
+    align-items: center;
+    
+    margin:2px 5px;
+    text-align: center;
+    
+    background-color: white;
+    background-size: 18px 18px;
+    background-position: center left 10px;
+    font-size: 15px;
+
+}
+
+.description_content_text_input {
+    /*width:375;*/
+    margin-left: 2px;
+    margin-right: 2px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 10px;
+    border-style: solid;
+    border-color: lightgrey;
+    height: 250px;
+    font-size: 16px;
+    overflow-x: auto; 
+    overflow-y: visible;
+    color: #0B0B0B;
+}
+
+.edit_commit_button{
+    background-color: #3AA4F1;
+    line-height: 30px;
+}

@@ -69,6 +69,11 @@ var remoteLogin = (success, fail) => {
                 key: user.js_code,
                 data: loginRes.code,
             });
+
+            //SID,TID临时测试数据
+            wx.setStorageSync(user.StudentID, 'studentID');
+            wx.setStorageSync(user.TeacherID, 'teacherID');
+
             wx.request({
                 url: LOGIN_URL,
                 data: {
@@ -99,8 +104,18 @@ var remoteLogin = (success, fail) => {
                             key: user.OpenID,
                             data: res.data.data.openid,
                         });
+                        wx.setStorage({
+                            key: user.StudentID,
+                            data: 'studentID',
+                        });
+                        wx.setStorage({
+                            key: user.TeacherID,
+                            data: 'teacherID',
+                        });
                         wx.setStorageSync('SessionID', res.data.data.session_id);
                         wx.setStorageSync('OpenID', res.data.data.openid);
+                        wx.setStorageSync('StudentID', 'StudentID');
+                        wx.setStorageSync('TeacherID', 'TeacherID');
                         typeof success == "function" && success(res.data.data);
                     }
                 }

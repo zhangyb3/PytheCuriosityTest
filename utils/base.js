@@ -10,7 +10,7 @@ const COMMIT_QUESTION_URL = `${config.PytheRestfulServerURL}/question/insert/`;
 
 const MY_QUESTION_URL_DETAIL = `/me/question`;
 
-const MY_QUESTION_ANSWER_URL_DETAIL = `/me/question/answers`;
+const MY_QUESTION_ANSWER_URL_DETAIL = `/me/question/click`;
 
 const MY_ANSWERED_URL_DETAIL = `/me/answer/is`;
 

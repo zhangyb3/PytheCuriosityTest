@@ -75,6 +75,22 @@ Page({
     })
   },
 
+  personEditOperationPage:function(e){
+    console.log('person Edit');
+    wx.navigateTo({
+      url: 'personal_edit',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+
 
   onReady:function(){
     

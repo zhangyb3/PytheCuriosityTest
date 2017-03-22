@@ -1,0 +1,24 @@
+
+<view class="border_tab"></view>
+
+    <text>昵称</text>
+
+    <input class="nickname_content_text_input" bindinput="getNicknameText" auto-focus/>
+
+<view class="border_tab"></view>
+
+<view class="description_content_zone" >
+
+    <text>个人描述</text>
+
+    <textarea class="description_content_text_input" bindinput="getDescriptionText"   placeholder-style="color:#C9C9C9;"/>
+
+</view>
+
+<view class="border_tab"></view>
+
+<view class="edit_commit_confirm">
+    <button class="answer_commit_button" bindtap="commitPersonalEdit">
+        确定
+    </button>
+</view>

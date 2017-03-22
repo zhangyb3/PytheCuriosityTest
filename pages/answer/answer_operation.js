@@ -7,9 +7,10 @@ var base = require("../../utils/base.js");
 var user = require("../../utils/user.js");
 
 Page({
-  hide_show_image_page: true,
+  
   operation_type: 'answer operation',
   data:{
+    hide_show_image_page: true,
     hide_record_sound_section : true,
     hide_take_photo_section : true,
     hide_draw_picture_section : true,
@@ -51,7 +52,9 @@ Page({
     });
     
     console.log(parameters.questioncontent);
-    
+    this.data.question_answer.questionId = parameters.questionid;
+    this.data.question_answer.teacherId = wx.getStorageSync(user.TeacherID);
+
     var answer_question = parameters;
     this.data.question_answer.questionId = answer_question.questionid;
     this.setData({
