@@ -58,7 +58,7 @@ Page({
     }
     console.log(this.data.ask_question);
 
-    fileSys.downloadFile(this,'/home/ftpuser/www/image/2017/3/12/1489250910037730.jpg','image');
+ 
     
     
   },
@@ -227,6 +227,7 @@ Page({
       hide_take_photo_section : true,
       hide_draw_picture_section : true,
       hide_textarea: false,
+      ask_question: this.data.ask_question,
     });
   },
 
@@ -319,12 +320,58 @@ Page({
   },
 
   drawPictureConfirm:function(e){
-
+    var that = this;
+    
+    wx.canvasToTempFilePath({
+      canvasId: 'draw_canvas',
+      success(res) {
+        console.log(res.tempFilePath);
+        wx.saveFile({
+          tempFilePath: res.tempFilePath,
+          success: function(res){
+            // success
+            console.log(res.savedFilePath);
+            that.data.ask_question.draw_path = res.savedFilePath;
+            wx.showModal({
+              title: '图示已保存',
+              content: res.savedFilePath,
+              success: function(res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                }
+              }
+            });
+            that.setData({
+              hide_record_sound_section : true,
+              hide_take_photo_section : true,
+              hide_draw_picture_section : true,
+              hide_textarea: false,
+              ask_question: that.data.ask_question,
+            });
+            // var parameters = {
+            //   userFilePath : res.savedFilePath,
+            //   fileType : 'image',
+            // };
+            // fileSys.uploadFile(savedFilePath,parameters);
+            
+          },
+          fail: function() {
+            // fail
+          },
+          complete: function() {
+            // complete
+          }
+        })
+      },
+      fail(res) {
+        console.log("draw fail:" + res);
+      }, 
+    });
   },
 
 
   takePhoto: function () {
-    var that = this
+    var that = this;
     wx.chooseImage({
       count: 1, // 默认9
       sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
@@ -341,8 +388,13 @@ Page({
             that.data.ask_question.photo_path = savedFilePath;
             that.setData({
               ask_question : that.data.ask_question,
-              img_src : savedFilePath,
+              // img_src : savedFilePath,
             })
+            var parameters = {
+              userFilePath : savedFilePath,
+              fileType : 'image',
+            };
+            fileSys.uploadFile(savedFilePath,parameters);
           },
           fail: function() {
             // fail
@@ -376,10 +428,18 @@ Page({
     })
   },
 
-  showImage:function(e){
+  showPhoto:function(e){
     console.log("显示图片" );
     this.setData({
       hide_show_image_page: false,
+      img_src: this.data.ask_question.photo_path,
+    });
+  },
+  showDraw:function(e){
+    console.log("显示手绘" );
+    this.setData({
+      hide_show_image_page: false,
+      img_src: this.data.ask_question.draw_path,
     });
   },
   returnLoadImagePage:function(e){
@@ -425,6 +485,7 @@ Page({
 
   onShow:function(){
     // 页面显示
+    
   },
   onHide:function(){
     // 页面隐藏

@@ -80,9 +80,27 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
         page.data.ask_teacher_list = [];//老师列表
     }
     if(list_type == 'question'){
-        page.data.questionsForAnswer = [];//老师列表
+        page.data.questionsForAnswer = [];//问题列表
     }
     
+    if(list_type == 'my_question'){
+        page.data.personal_ask_list = [];//personal问题列表
+    }
+    if(list_type == 'my_question_answer'){
+        page.data.personal_question_answer_list = [];//personal问题列表答案集
+    }
+    if(list_type == 'my_answered'){
+        page.data.personal_answer_list = [];//personal已答列表
+    }
+    if(list_type == 'my_unanswer'){
+        page.data.personal_not_answer_list = [];//personal未答列表
+    }
+    if(list_type == 'my_like_answer'){
+        page.data.personal_like_answer_list = [];//like answer列表
+    }
+    if(list_type == 'my_like_teacher'){
+        page.data.personal_like_teacher_list = [];//like teacher列表
+    }
 
     page.onPullDownRefresh = function(){
         if(list_type == 'index'){
@@ -92,7 +110,26 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             page.data.ask_teacher_list = [];//老师列表
         }
         if(list_type == 'question'){
-            page.data.questionsForAnswer = [];//老师列表
+            page.data.questionsForAnswer = [];//问题列表
+        }
+
+        if(list_type == 'my_question'){
+            page.data.personal_ask_list = [];//personal问题列表
+        }
+        if(list_type == 'my_question_answer'){
+            page.data.personal_question_answer_list = [];//personal问题列表答案集
+        }
+        if(list_type == 'my_answered'){
+            page.data.personal_answer_list = [];//personal已答列表
+        }
+        if(list_type == 'my_unanswer'){
+            page.data.personal_not_answer_list = [];//personal未答列表
+        }
+        if(list_type == 'my_like_answer'){
+            page.data.personal_like_answer_list = [];//like answer列表
+        }
+        if(list_type == 'my_like_teacher'){
+            page.data.personal_like_teacher_list = [];//like teacher列表
         }
         netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
     };

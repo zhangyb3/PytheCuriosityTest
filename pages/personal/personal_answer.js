@@ -1,8 +1,11 @@
 // pages/personal/personal_answer.js
 
-var netUtil=require("../../utils/netUtil.js");
 var listViewUtil=require("../../utils/listViewUtil.js");
+var netUtil=require("../../utils/netUtil.js");
 var utils=require("../../utils/util.js");
+var register = require("../../utils/register.js");
+var config = require("../../utils/config.js");
+var base = require("../../utils/base.js");
 
 Page({
   data:{
@@ -61,7 +64,7 @@ Page({
       }
     ],
 
-    
+    hide_show_image_page: true,
 
 
     hide_personal_answer_list:false,
@@ -72,6 +75,52 @@ Page({
     console.log("from personal");
     console.log(parameters);
     
+    //加载个人已答列表
+    var that = this;
+    var myAnsweredParams = {
+      teacherId : 1,
+      pageSize : 3,
+      pageNum : 1,
+      // subjectId: 1001,
+    };    
+    listViewUtil.loadList(that,'my_answered',config.PytheRestfulServerURL,
+    base.MY_ANSWERED_URL_DETAIL,
+    10,
+        myAnsweredParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
+
+    //加载个人未答列表
+    var that = this;
+    var myUnanswerParams = {
+      teacherId : 1,
+      pageSize : 3,
+      pageNum : 1,
+      // subjectId: 1001,
+    };    
+    listViewUtil.loadList(that,'my_unanswer',config.PytheRestfulServerURL,
+    base.MY_UNANSWER_URL_DETAIL,
+    10,
+        myUnanswerParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
+
   },
 
 

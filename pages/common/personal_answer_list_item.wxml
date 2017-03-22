@@ -6,7 +6,7 @@
 
             <view class="question_wrapper">
       
-                <text class="question_content">{{ item.question_content }}</text>
+                <text class="question_content">questionid:{{ item.questionid }}</text>
               
             </view>
 
@@ -44,7 +44,7 @@
             
 
             <view class="lines">
-                <text class="answer_content">{{ item.answer_content }}</text>
+                <text class="answer_content">{{ item.questioncontent }}</text>
             </view>
 
             </view>

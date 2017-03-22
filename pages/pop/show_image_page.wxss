@@ -10,16 +10,15 @@
 }
 
 .show_image_zone{
-    /*margin-top: 1px;*/
-    background-color: black;
-
+    
+    background-color: white;
+    display: block;
     z-index: 22;
     position: fixed;
-    top: 20px;
+    top: 0px;
     left: 0;
-    right: 0;
-    display: block;
-    /*bottom: 386px;*/
+    right: 0; 
+    /*bottom: 0px;*/
 }
 
 

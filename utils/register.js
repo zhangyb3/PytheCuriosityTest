@@ -3,7 +3,7 @@ var config = require('./config')
 var user = require('./user')
 var app = getApp();
 
-const CHECK_REGISTER_URL = `${config.PytheRestfulServerURL}/user/register/is`;//校验是否注册
+const CHECK_REGISTER_URL = `${config.PytheRestfulServerURL}/user/login/prepare`;//校验是否注册
 
 const SEND_PHONENUM_REGISTER_URL = `${config.PytheRestfulServerURL}/message/verification/`;//发送手机号注册
 
@@ -15,7 +15,7 @@ var checkRegister = (success,fail) => {
       url: CHECK_REGISTER_URL,
       data: {
         SessionID: wx.getStorageSync(user.SessionID),
-        openid : wx.getStorageSync(user.OpenID),
+        openId : wx.getStorageSync(user.OpenID),
         phoneNum : '12345',
       },
       method: 'GET', 
@@ -55,7 +55,16 @@ function sendVerificationCode(registerPhonenumber)
     })
 }
 
+function commitRegister()
+{
+
+}
+
+
+
 module.exports = {
     checkRegister : checkRegister,
     sendVerificationCode : sendVerificationCode,
+
+    commitRegister: commitRegister,
 }

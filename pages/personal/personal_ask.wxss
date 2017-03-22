@@ -18,3 +18,4 @@
 
 @import "../listView/personal_ask_list.wxss";
 @import "../bubble/bubble.wxss";
+@import "../pop/show_image_page.wxss";

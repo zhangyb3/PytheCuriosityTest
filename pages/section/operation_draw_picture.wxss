@@ -6,12 +6,12 @@
     right: 0;
     left: 0;
     bottom: 0;
-    z-index: 9;
+    z-index: 10;
     opacity: 1;
 }
 
 .draw_picture_section{
-    z-index: 12;
+    z-index: 14;
     position: fixed;
     top: 0px;
     left: 0;

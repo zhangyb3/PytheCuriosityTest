@@ -5,7 +5,7 @@
 <import src="../pop/answer_page_subject_list.wxml" />
 <import src="../pop/answer_page_sort_attribute_list.wxml" />
 
-
+<import src="../pop/show_image_page.wxml" />
 
 <view class="answer_page_container" hidden='{{hide_answer_page}}'>
   

@@ -45,10 +45,9 @@
 @import "../pop/index_page_select_item.wxss";
 
 
+@import "../pop/show_image_page.wxss";
 
 
 
 
 
-
-/*多人同时使用appid请求数据有问题*/

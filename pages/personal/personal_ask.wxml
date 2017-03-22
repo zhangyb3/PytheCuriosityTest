@@ -3,7 +3,10 @@
 
 <import src="../listView/personal_ask_list.wxml" />
 
-
+<import src="../pop/show_image_page.wxml" />
+<view class="show_image_page_container" hidden='{{hide_show_image_page}}'>
+        <template is="show_image_page" data="{{img_src}}"></template>
+</view>
 
 <view class="personal_ask_container">
   

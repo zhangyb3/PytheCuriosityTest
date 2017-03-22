@@ -7,7 +7,7 @@
                bindscrolltolower="onLoadMore" bindscrolltoupper="onRefesh" >
 
     
-      <block wx:for="{{persoanl_like_teacher_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
+      <block wx:for="{{personal_like_teacher_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         <view class="interval"></view>
         <view class="persoanl_like_teacher_list_container" >
           <template is="personal_like_teacher_list_item" data="{{item,index}}"></template>

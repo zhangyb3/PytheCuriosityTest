@@ -1,4 +1,4 @@
-<template name="persoanl_like_teacher_list_item">
+<template name="personal_like_teacher_list_item">
 
 <view class="list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' >
 

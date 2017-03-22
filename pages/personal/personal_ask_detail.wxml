@@ -1,6 +1,11 @@
 <import src="../listView/personal_question_answer_list.wxml" />
 <import src="../pop/personal_question_answer_select_item.wxml" />
 
+<import src="../pop/show_image_page.wxml" />
+<view class="show_image_page_container" hidden='{{hide_show_image_page}}'>
+        <template is="show_image_page" data="{{img_src}}"></template>
+</view>
+
 <view class="personal_ask_detail_page">
 
     <view class="personal_question_zone">

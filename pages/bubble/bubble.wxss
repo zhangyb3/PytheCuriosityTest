@@ -75,3 +75,21 @@
     margin-left: .35rem;
     margin-top: 5px;
 }
+
+.bubble-draw{
+    float: none;
+    display: block;
+    background-image: url('/images/bubble-frame.png');
+    background-color: palegreen;
+    line-height: 30px;
+    height: 30px;
+    text-align: center;
+    min-width: 6rem;
+    color: black;
+    font-size: .8rem;
+    text-decoration: none;
+    position: relative;
+    margin-right: .35rem;
+    margin-left: .35rem;
+    margin-top: 5px;
+}

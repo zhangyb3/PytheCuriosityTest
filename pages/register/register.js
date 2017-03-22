@@ -1,4 +1,9 @@
-
+var listViewUtil=require("../../utils/listViewUtil.js");
+var netUtil=require("../../utils/netUtil.js");
+var utils=require("../../utils/util.js");
+var register = require("../../utils/register.js");
+var config = require("../../utils/config.js");
+var base = require("../../utils/base.js");
 
 Page({
   data:{
@@ -58,9 +63,9 @@ Page({
   //注册
   phoneNumberInput: function(e) {
     var registerPhoneNum = e.detail.value;
-    console.log(e.detail.value);
-    wx.setStorageSync('registerPhoneNum', registerPhoneNum);
-  },
+      console.log(e.detail.value);
+      wx.setStorageSync('registerPhoneNum', registerPhoneNum);
+    },
   sendVerificationCode:function(res) {
     console.log(wx.getStorageSync('registerPhoneNum'));
     register.sendVerificationCode(wx.getStorageSync('registerPhoneNum'));
@@ -69,7 +74,7 @@ Page({
     var verificationCode = e.detail.value;
     console.log(e.detail.value);
     wx.setStorageSync('verificationCode', verificationCode);
-  },
+},
 
   registerToMainPage:function(e){
     //判断注册是否成功，成功则返回index页面
@@ -120,40 +125,3 @@ function countdown(that) {
     ,1000)  
 }
 
-var config = require('../../utils/config')
-
-const CHECK_REGISTER_URL = `${config.PytheRestfulServerURL}/user/register/is`;//校验是否注册
-
-/**
- * 检查是否已注册
- */
-var checkRegister = (success,fail) => {
-    wx.request({
-      url: CHECK_REGISTER_URL,
-      data: {
-        SessionID: wx.getStorageSync(user.SessionID),
-        openid : wx.getStorageSync(user.OpenID),
-        phoneNum : '12345',
-      },
-      method: 'GET', 
-      success: function(res){
-        typeof success == "function" && success(res)
-      },
-      fail: function() {
-        typeof success == "function" && fail(res)
-      },
-      
-    })
-}
-
-/**
- * 发送验证码
- */
-var sendVerificationCode = (success,fail) => {
-    
-}
-
-module.exports = {
-    checkRegister : checkRegister,
-    sendVerificationCode : sendVerificationCode,
-}

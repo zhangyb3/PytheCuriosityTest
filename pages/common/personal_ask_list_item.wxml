@@ -6,7 +6,7 @@
 
             <view class="question_wrapper">
       
-                <text class="question_content">{{ item.question_content }}</text>
+                <text class="question_content">questionid:{{ item.questionid }},studentid:{{ item.studentid }}</text>
               
             </view>
 

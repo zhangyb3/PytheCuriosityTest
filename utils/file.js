@@ -20,6 +20,7 @@ function uploadFile(filePath, parameters)
       formData: parameters,
       success: function(res){
         console.log(res);
+
       },
       fail: function() {
         // console.log(res);
@@ -58,6 +59,7 @@ function downloadFile(that,download_file,fileType)
             },
             fail: function() {
               // fail
+              
             },
             complete: function() {
               // complete
@@ -67,7 +69,15 @@ function downloadFile(that,download_file,fileType)
         },
         fail: function(res) {
           console.log(res);
-          
+          wx.showModal({
+            title: '提示',
+            content: '下载失败',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              }
+            }
+          });
         },
         complete: function(res) {
           console.log(res);
@@ -78,6 +88,15 @@ function downloadFile(that,download_file,fileType)
     fail: function(res) {
       // fail
       console.log(res);
+      wx.showModal({
+        title: '提示',
+        content: '文件不存在',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      });
     }
   })
   

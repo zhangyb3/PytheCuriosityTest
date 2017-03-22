@@ -21,4 +21,5 @@
 @import "../listView/personal_answer_list.wxss";
 @import "../listView/personal_not_answer_list.wxss";
 
+@import "../pop/show_image_page.wxss";
 @import "../bubble/bubble.wxss";

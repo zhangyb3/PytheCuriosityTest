@@ -100,5 +100,5 @@
 
 @import "../listView/personal_question_answer_list.wxss";
 @import "../pop/personal_question_answer_select_item.wxss";
-
+@import "../pop/show_image_page.wxss";
 @import "../bubble/bubble.wxss";

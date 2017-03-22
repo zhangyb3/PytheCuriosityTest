@@ -13,7 +13,7 @@
             
 
             <view class="lines">
-                <text class="question_content">{{ item.question_content }}</text>
+                <text class="question_content">answerid:{{ item.answerid }}</text>
             </view>
 
             </view>

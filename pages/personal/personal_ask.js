@@ -1,8 +1,11 @@
 // pages/personal/personal_ask.js
 
-var netUtil=require("../../utils/netUtil.js");
 var listViewUtil=require("../../utils/listViewUtil.js");
+var netUtil=require("../../utils/netUtil.js");
 var utils=require("../../utils/util.js");
+var register = require("../../utils/register.js");
+var config = require("../../utils/config.js");
+var base = require("../../utils/base.js");
 
 Page({
   data:{
@@ -27,11 +30,36 @@ Page({
         voice_path:'template',
       }
     ],
+
+    hide_show_image_page: true,
+    
   },
   onLoad:function(parameters){
     console.log("from personal");
     console.log(parameters);
     
+    //加载个人问题列表
+    var that = this;
+    var myQuestionParams = {
+      studentId : 1,
+      pageSize : 3,
+      pageNum : 1,
+      // subjectId: 1001,
+    };    
+    listViewUtil.loadList(that,'my_question',config.PytheRestfulServerURL,
+    base.MY_QUESTION_URL_DETAIL,
+    10,
+        myQuestionParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
   },
 
   selectOneQuestion:function(result){

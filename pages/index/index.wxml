@@ -4,6 +4,12 @@
 <import src="../common/index_page_filter.wxml" />
 <import src="../pop/index_page_subject_list.wxml" />
 <import src="../pop/index_page_select_item.wxml" />
+
+<import src="../pop/show_image_page.wxml" />
+<view class="show_image_page_container" hidden='{{hide_show_image_page}}'>
+        <template is="show_image_page" data="{{img_src}}"></template>
+</view>
+
 <!--<import src="../register/register.wxml" />-->
 
 

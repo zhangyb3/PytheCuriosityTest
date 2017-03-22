@@ -133,5 +133,5 @@
 @import "../section/operation_take_photo.wxss";
 @import "../section/operation_draw_picture.wxss";
 
-
+@import "../pop/show_image_page.wxss";
 @import "../bubble/bubble.wxss";

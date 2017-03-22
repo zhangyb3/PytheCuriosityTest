@@ -7,7 +7,7 @@ var base = require("../../utils/base.js");
 var user = require("../../utils/user.js");
 
 Page({
-
+  hide_show_image_page: true,
   operation_type: 'answer operation',
   data:{
     hide_record_sound_section : true,
@@ -350,6 +350,56 @@ Page({
     this.isClear = false;
   },
 
+  drawPictureConfirm:function(e){
+    var that = this;
+    
+    wx.canvasToTempFilePath({
+      canvasId: 'draw_canvas',
+      success(res) {
+        console.log(res.tempFilePath);
+        wx.saveFile({
+          tempFilePath: res.tempFilePath,
+          success: function(res){
+            // success
+            console.log(res.savedFilePath);
+            that.data.ask_question.draw_path = res.savedFilePath;
+            wx.showModal({
+              title: '图示已保存',
+              content: res.savedFilePath,
+              success: function(res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                }
+              }
+            });
+            that.setData({
+              hide_record_sound_section : true,
+              hide_take_photo_section : true,
+              hide_draw_picture_section : true,
+              hide_textarea: false,
+              ask_question: that.data.ask_question,
+            });
+            // var parameters = {
+            //   userFilePath : res.savedFilePath,
+            //   fileType : 'image',
+            // };
+            // fileSys.uploadFile(savedFilePath,parameters);
+            
+          },
+          fail: function() {
+            // fail
+          },
+          complete: function() {
+            // complete
+          }
+        })
+      },
+      fail(res) {
+        console.log("draw fail:" + res);
+      }, 
+    });
+  },
+
 
   takePhoto: function () {
     var that = this
@@ -385,6 +435,11 @@ Page({
   },
 
   playQuestionVoiceRecord:function(e){
+    wx.showToast({
+      title: '播放录音',
+      icon: 'success',
+      duration: 1000
+    });
     var that = this;
     
     var questionVoiceRemotePath = e.currentTarget.dataset.question_voice;
@@ -408,6 +463,11 @@ Page({
   },
 
   playAnswerVoiceRecord:function(e){
+    wx.showToast({
+      title: '播放录音',
+      icon: 'success',
+      duration: 1000
+    });
     wx.playVoice({
       filePath: this.data.question_answer.voice_path,
       success: function(res){
@@ -420,6 +480,44 @@ Page({
         // complete
       }
     })
+  },
+
+  showQuestionPhoto:function(e){
+    console.log("显示图片" );
+    var questionPhotoPath = fileSys.downloadFile(this,e.currentTarget.dataset.question_photo,'image');
+    this.data.answer_question.photo_path = questionPhotoPath;
+    this.setData({
+      hide_show_image_page: false,
+      img_src: questionPhotoPath,
+    });
+
+  },
+  showQuestionDraw:function(e){
+    console.log("显示手绘" );
+    var questionDrawPath = fileSys.downloadFile(this,e.currentTarget.dataset.question_draw,'image');
+    this.data.answer_question.draw_path = questionDrawPath;
+    this.setData({
+      hide_show_image_page: false,
+      img_src: questionDrawPath,
+    });
+  },
+
+  showAnswerPhoto:function(e){
+    console.log("显示图片" );
+    this.data.question_answer.photo_path = e.currentTarget.dataset.answer_photo;
+    this.setData({
+      hide_show_image_page: false,
+      img_src: this.data.question_answer.photo_path,
+    });
+
+  },
+  showAnswerDraw:function(e){
+    console.log("显示手绘" );
+    this.data.question_answer.draw_path = e.currentTarget.dataset.answer_draw;
+    this.setData({
+      hide_show_image_page: false,
+      img_src: this.data.question_answer.draw_path,
+    });
   },
 
   commitAnswer:function(result){

@@ -8,6 +8,19 @@ const COMMIT_ANSWER_URL = `${config.PytheRestfulServerURL}/answer/insert/`;
 
 const COMMIT_QUESTION_URL = `${config.PytheRestfulServerURL}/question/insert/`;
 
+const MY_QUESTION_URL_DETAIL = `/me/question`;
+
+const MY_QUESTION_ANSWER_URL_DETAIL = `/me/question/answers`;
+
+const MY_ANSWERED_URL_DETAIL = `/me/answer/is`;
+
+const MY_UNANSWER_URL_DETAIL = `/me/answer/isnot`;
+
+const MY_ANSWER_COLLECTION_URL_DETAIL = `/me/collection/question`;
+
+const MY_TEACHER_COLLECTION_URL_DETAIL = `/me/collection/teacher`;
+
+
 function getDetailContent(that,selectItem)
 {
     //请求具体数据
@@ -75,6 +88,7 @@ function commitQuestion(parameters)
 }
 
 
+
 module.exports = {
     login: login.login,
     checkLogin: login.checkLogin,
@@ -87,4 +101,16 @@ module.exports = {
     getDetailContent: getDetailContent,
     commitAnswer : commitAnswer,
     commitQuestion: commitQuestion,
+
+    MY_QUESTION_URL_DETAIL: MY_QUESTION_URL_DETAIL,
+
+    MY_QUESTION_ANSWER_URL_DETAIL: MY_QUESTION_ANSWER_URL_DETAIL,
+
+    MY_ANSWERED_URL_DETAIL: MY_ANSWERED_URL_DETAIL,
+
+    MY_UNANSWER_URL_DETAIL: MY_UNANSWER_URL_DETAIL,
+
+    MY_ANSWER_COLLECTION_URL_DETAIL: MY_ANSWER_COLLECTION_URL_DETAIL,
+
+    MY_TEACHER_COLLECTION_URL_DETAIL: MY_TEACHER_COLLECTION_URL_DETAIL,
 }

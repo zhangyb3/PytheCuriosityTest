@@ -20,5 +20,5 @@
 @import "../common/personal_like_section_selector.wxss";
 @import "../listView/personal_like_answer_list.wxss";
 @import "../listView/personal_like_teacher_list.wxss";
-
+@import "../pop/show_image_page.wxss";
 @import "../bubble/bubble.wxss";

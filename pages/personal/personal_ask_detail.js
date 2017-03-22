@@ -1,5 +1,10 @@
 // pages/personal/personal_ask_detail.js
-
+var listViewUtil=require("../../utils/listViewUtil.js");
+var netUtil=require("../../utils/netUtil.js");
+var utils=require("../../utils/util.js");
+var register = require("../../utils/register.js");
+var config = require("../../utils/config.js");
+var base = require("../../utils/base.js");
 
 Page({
   data:{
@@ -17,9 +22,34 @@ Page({
 
     hide_select_answer: true,
 
+    hide_show_image_page: true,
+
   },
   onLoad:function(parameters){
     console.log(parameters);
+
+    //加载个人问题列表答案集
+    var that = this;
+    var myQuestionAnswersParams = {
+      studentId : 1,
+      pageSize : 3,
+      pageNum : 1,
+      // subjectId: 1001,
+    };    
+    listViewUtil.loadList(that,'my_question_answer',config.PytheRestfulServerURL,
+    base.MY_QUESTION_ANSWER_URL_DETAIL,
+    10,
+        myQuestionAnswersParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
 
   },
 
