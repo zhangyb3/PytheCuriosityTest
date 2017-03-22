@@ -16,13 +16,20 @@
 
 .question_wrapper{
     /*border-top: 1px solid #EEE;*/
-    height: 20px;
-
-    overflow-x: hidden; 
-    overflow-y: auto;
+    display: flex;
+    flex-direction: row;
+    line-height: 100px;
+    width: 100%;
+    /*overflow-x: hidden; 
+    overflow-y: auto;*/
+    background-color: pink;
 }
 
 .question_content {
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    width: 100%;
     margin-left: 20px;
     
     font-size: 18px;

@@ -9,18 +9,18 @@
     
     display: flex;
     flex-direction: column;
-    background-color: lightgray;
+    background-color: #ECEBF4;
 }
 
 .personal_question_zone{
     /*border-color: gray;*/
     /*border-style: solid;*/
     /*border-width: 1px;*/
-
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     background-color: white;
-
+    height: auto;
     /*height: 150px;*/
     width: 100%;
 
@@ -28,13 +28,14 @@
 }
 
 .personal_question_text_container{
-    height: 100px;
-    overflow-x: hidden; 
-    overflow-y: auto;
+    /*height: 100px;*/
+    /*overflow-x: hidden; 
+    overflow-y: auto;*/
+    height: auto;
 }
 
 .personal_question_text_content{
-    font-size: 28px;
+    font-size: 16px;
 }
 
 .personal_question_multimedia_zone{
@@ -46,7 +47,7 @@
 .personal_question_multimedia_zone>text {
     width: 100%;
     text-align: center;
-    font-size: 28rpx;
+    font-size: 16px;
     position: relative;
     display: flex;
     flex-direction: row;

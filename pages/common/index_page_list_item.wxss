@@ -4,12 +4,13 @@
     border-top: 1px solid #EEE;
     border-bottom: 1px solid #EEE;
     
-    margin-top: 2px;
-    margin-bottom: 2px;
-    margin-left: 2px;
-    margin-right: 2px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
     
-    /*display: flex;*/
+    display: flex;
+    position: relative;
     flex-direction: column;
     background-color: white;
 }
@@ -18,7 +19,8 @@
     /*border-top: 1px solid #EEE;*/
     /*display: flex;*/
     text-align: left;
-    height: auto;
+    /*height: auto;*/
+    height: 100px;
     width: 100%;
     margin-left: -10px;
     overflow-x: hidden; 

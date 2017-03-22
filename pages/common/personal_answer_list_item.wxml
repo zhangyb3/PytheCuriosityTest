@@ -37,7 +37,7 @@
 
             <view class="border_tab"/>
 
-            <view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
+            <!--<view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
 
             
 
@@ -70,7 +70,7 @@
 
             </view>
 
-            <view class="border_tab"/>
+            <view class="border_tab"/>-->
       
         
 </view>

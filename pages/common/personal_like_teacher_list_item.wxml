@@ -2,7 +2,7 @@
 
 <view class="list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' >
 
-            <view class="border_tab"></view>
+            <!--<view class="border_tab"></view>-->
 <!--名师区域  -->
             <view class="teacher_wrapper">
             <!--名师头像部分-->
