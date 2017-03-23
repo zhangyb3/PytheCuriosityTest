@@ -183,21 +183,6 @@
     
 }
 
-.countdown_container{
-    margin-top: 10px;
-    display: flex;
-    position: relative;
-    flex-direction: row;
-}
-
-.countdown_text{
-    /*margin-left: 10px;
-    padding-left: 10px;*/
-    font-size: 16px;
-    margin-left: 10px;
-    height: 30px;
-}
-
 @import "../register/register.wxss";
     
 

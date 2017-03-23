@@ -5,11 +5,11 @@
 
     <view class="register_role_image">
         <view class="student_role_selection" bindtap="selectStudent">
-            <image class='{{!select_student ? "student_avatar" : "student_avatar_after"}}' src='{{!select_student ? "../../images/not_select_student.png" : "../../images/select_student.png"}}'></image>
+            <image class='{{!select_student ? "student_avatar" : "student_avatar_after"}}' src='{{!select_student ? "../../images/student_nor@2x.png" : "../../images/student_sel@2x.png"}}'></image>
             <!--<text class="student_role_text"> 学生 </text>-->
         </view>
         <view class="teacher_role_selection" bindtap="selectTeacher">
-            <image class='{{!select_teacher ? "teacher_avatar" : "teacher_avatar_after"}}' src='{{!select_teacher ? "../../images/not_select_teacher.png" : "../../images/select_teacher.png"}}'></image>
+            <image class='{{!select_teacher ? "teacher_avatar" : "teacher_avatar_after"}}' src='{{!select_teacher ? "../../images/teacher_nor@2x.png" : "../../images/teacher_sel@2x.png"}}'></image>
             <!--<text class="teacher_role_text"> 老师 </text>-->
         </view>
     </view>
