@@ -17,9 +17,10 @@
 .personal_answer_list_container{
     display: flex;
     position: relative;
-    height: 100px;
+    /*height: 100px;*/
+    height:auto;
     width: 100%;
-    background-color: yellow;
+    /*background-color: yellow;*/
 }
 
 .personal_answer_list{
