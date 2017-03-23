@@ -19,7 +19,7 @@
                 
         </view>
 
-        <view class="border_tab"></view>
+        <!--<view class="border_tab"></view>-->
 
         <view class="multi_tips">
             <view wx:if="{{answer_question.voice_path == null}}" class="voice" >
@@ -46,9 +46,9 @@
 
         </view>
 
-        <view class="border_tab"></view>
+        <!--<view class="border_tab"></view>-->
 
-        <view class="dotted_line"></view>
+        <!--<view class="dotted_line"></view>-->
 
         <view class="border_tab"></view>
 
@@ -111,7 +111,7 @@
              <template is="operation_draw_picture_section" data='{{pen}}'></template>
         </view>
 
-        <view class="border_tab"></view>
+        <!--<view class="border_tab"></view>-->
 
         <view class="answer_commit_confirm">
             <button class="answer_commit_button" bindtap="commitAnswer">
