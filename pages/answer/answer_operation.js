@@ -51,7 +51,8 @@ Page({
       hide_textarea : false,
     });
     
-    console.log(parameters.questioncontent);
+    console.log(parameters);
+    this.data.question_answer.studentId = parameters.studentid;
     this.data.question_answer.questionId = parameters.questionid;
     this.data.question_answer.teacherId = wx.getStorageSync(user.TeacherID);
 
@@ -202,6 +203,7 @@ Page({
 
   //选择录音
   selectVoiceRecord:function(e){
+    var that = this;
     this.setData({
       hide_record_sound_section: true,
       hide_textarea : false,
@@ -213,12 +215,34 @@ Page({
       hide_voice_bubble: false,
     });
     console.log(this.data.question_answer);
+    
+    wx.request({
+      url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
+      data: {
+        userFilePath: voicePath,
+        fileType: 'audio',
+      },
+      method: 'POST', 
+      success: function(res){
+        // success
+        console.log(res.data.data)
+        var result = JSON.parse(res.data.data);
+        that.data.question_answer.upload_voice_path = result.path;
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    });
+
     //上传录音
     var parameters = {
-      userFilePath : 'testVoice',
-      fileType : 'silk',
+      userFilePath : voicePath,
+      fileType : 'audio',
     };
-    fileSys.uploadFile(this.data.question_answer.voice_path,parameters);
+    this.data.question_answer.upload_photo_path = fileSys.uploadFile(this.data.question_answer.voice_path,parameters);
   },
 
   drawPicture:function(e){
@@ -382,11 +406,34 @@ Page({
               hide_textarea: false,
               ask_question: that.data.ask_question,
             });
-            // var parameters = {
-            //   userFilePath : res.savedFilePath,
-            //   fileType : 'image',
-            // };
-            // fileSys.uploadFile(savedFilePath,parameters);
+            var parameters = {
+              userFilePath : res.savedFilePath,
+              fileType : 'image',
+            };
+
+            that.data.question_answer.upload_draw_path = null;
+            //获得上传文件在文件服务器的路径
+            // wx.request({
+            //   url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
+            //   data: {
+            //     userFilePath: savedFilePath,
+            //     fileType: 'image',
+            //   },
+            //   method: 'POST', 
+            //   success: function(res){
+            //     // success
+            //     console.log(res.data.data)
+            //     var result = JSON.parse(res.data.data);
+            //     that.data.question_answer.upload_draw_path = result.path;
+            //   },
+            //   fail: function() {
+            //     // fail
+            //   },
+            //   complete: function() {
+            //     // complete
+            //   }
+            // });
+            // fileSys.uploadFile(this,savedFilePath,parameters);
             
           },
           fail: function() {
@@ -420,9 +467,42 @@ Page({
             // success
             var savedFilePath = res.savedFilePath;
             that.data.question_answer.photo_path = savedFilePath;
-        that.setData({
-          question_answer : that.data.question_answer,
-        })
+            that.setData({
+              question_answer : that.data.question_answer,
+            })
+
+             
+            //获得上传文件在文件服务器的路径
+            wx.request({
+              url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
+              data: {
+                userFilePath: savedFilePath,
+                fileType: 'image',
+              },
+              method: 'POST', 
+              success: function(res){
+                // success
+                console.log(res.data.data)
+                var result = JSON.parse(res.data.data);
+                that.data.question_answer.upload_photo_path = result.path;
+              },
+              fail: function() {
+                // fail
+              },
+              complete: function() {
+                // complete
+              }
+            });
+
+            var parameters = {
+              userFilePath : savedFilePath,
+              fileType : 'image',
+              whatFile : 'photo',
+              fromWhere: 'answer',
+            };
+            //上传文件
+            fileSys.uploadFile(savedFilePath,parameters);
+
           },
           fail: function() {
             // fail
@@ -446,21 +526,22 @@ Page({
     var that = this;
     
     var questionVoiceRemotePath = e.currentTarget.dataset.question_voice;
+    
     var questionVoicePath = fileSys.downloadFile(that,questionVoiceRemotePath,'audio');
     that.data.answer_question.questionVoicePath = questionVoicePath;
     
-    wx.playVoice({
-      filePath: that.data.answer_question.questionVoicePath,
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
+    // wx.playVoice({
+    //   filePath: that.data.answer_question.questionVoicePath,
+    //   success: function(res){
+    //     // success
+    //   },
+    //   fail: function() {
+    //     // fail
+    //   },
+    //   complete: function() {
+    //     // complete
+    //   }
+    // })
 
     
   },
@@ -522,13 +603,42 @@ Page({
       img_src: this.data.question_answer.draw_path,
     });
   },
+  returnLoadImagePage:function(e){
+    this.setData({
+      hide_show_image_page: true,
+    });
+  },
+  getImageSource:function(e){
+    console.log(e.currentTarget.dataset.image_source);
+  },
 
   commitAnswer:function(result){
     console.log("commit answer");
     //上传quesition_answer
     // this.data.question_answer.questionId = this.data.answer_question.questionId;
     this.data.question_answer.teacherId = wx.getStorageSync(user.TeacherID);
-    base.commitAnswer(this.data.question_answer);
+    var answerParams = {
+      questionId: this.data.question_answer.questionId,
+      teacherId: 2001,
+      studentId: this.data.question_answer.studentId,
+      knowledgeId: 999,
+      answerContent:{
+          text: [
+            this.data.question_answer.text_content,
+          ],
+          img: [
+            this.data.question_answer.upload_photo_path,
+          ],
+          audio:[
+            this.data.question_answer.upload_voice_path,
+            this.data.question_answer.voice_timeLength,
+          ],
+          draw:[
+            this.data.question_answer.upload_draw_path,
+          ],
+        },
+    };
+    base.commitAnswer(answerParams);
   },
 
   onShow:function(){

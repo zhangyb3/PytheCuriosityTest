@@ -24,6 +24,31 @@ App({
       
     // });
     
+    wx.login({
+      success: function(res){
+        // success
+        wx.getUserInfo({
+          success: function(res){
+            // success
+            console.log(res.rawData);
+            var rawData = JSON.parse(res.rawData);
+            wx.setStorageSync('userAvatarUrl', rawData.avatarUrl);
+          },
+          fail: function() {
+            // fail
+          },
+          complete: function() {
+            // complete
+          }
+        })
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
     
     //登录
     utils.login(
@@ -32,6 +57,7 @@ App({
           (userInfo) => {
             console.log("已获取数据", userInfo);
             app.data.userInfo = userInfo;
+            app.globalData.userInfo = userInfo;
           }, 
           () => {
             console.log("用户拒绝提供信息");
@@ -117,7 +143,8 @@ App({
     
   },
   globalData:{
-    userInfo:null,
+
+    userInfo: null,
     loginCode: null,
     encryptedData: null,
     iv: null,

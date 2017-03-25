@@ -126,6 +126,61 @@ Page({
 
   },
 
+  selectOneTeacher:function(e){
+      console.log("navigate to ask operation page");
+      var parametersJSON = e.currentTarget.dataset.teacher;
+      console.log(parametersJSON);
+      var parameters = netUtil.json2Form(parametersJSON);
+      // console.log(parameters);
+      wx.navigateTo({
+        url: '../ask/ask_operation' + '?' + parameters,
+        success: function(res){
+          // success
+          // console.log(res);
+        },
+        fail: function() {
+          // fail
+          // console.log(res);
+        },
+        complete: function() {
+          // complete
+          // console.log(res);
+        }
+      })
+  },
+
+  likeTeacher:function(e){
+    var teacher = e.currentTarget.dataset.teacher;
+    console.log(teacher);
+    var teacher_index = e.currentTarget.dataset.index;
+    console.log(teacher_index);
+
+    // if(teacher.not_like == true){
+
+      this.data.personal_like_teacher_listt[teacher_index].popularity++;
+      this.setData({
+        personal_like_teacher_list: this.data.personal_like_teacher_list,
+      });
+      //通知数据库更新纪录
+      wx.request({
+        url: config.PytheRestfulServerURL + '/question/teacher/likes',
+        data: {
+          userId: user.UserID,
+          teacherId: teacher.teacherid,
+        },
+        method: 'GET', 
+        success: function(res){
+          console.log(res);
+        },
+        fail: function(res) {
+          console.log(res);
+        }
+      })
+
+    // };
+
+  },
+
   
 
   onReady:function(){

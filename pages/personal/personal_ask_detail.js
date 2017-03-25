@@ -10,23 +10,42 @@ Page({
   data:{
     personal_question_answer_list:[
       {
-        text: '答案一',
+        data:{
+          answerid:-1,
+          text: '答案一',
+        },
+        selected:false,
       },
       {
-        text: '答案二',
+        data:{
+          answerid:-2,
+          text: '答案二',
+        },
+        selected:false,
       },
       {
-        text: '答案三',
+        data:{
+          answerid:-3,
+          text: '答案三',
+        },
+        selected:false,
       },
     ],
+    
 
     hide_select_answer: true,
 
     hide_show_image_page: true,
 
+    bestAnswerParams:{
+      questionId:'',
+      answerIds:'',
+    },
+
   },
   onLoad:function(parameters){
     console.log(parameters);
+    this.data.bestAnswerParams.questionId = parameters.questionid;
 
     //加载个人问题列表答案集
     var that = this;
@@ -61,11 +80,41 @@ Page({
   },
 
   selectBestAnswer:function(result){
-    console.log("best answer");
+    console.log("best answer " + result.currentTarget.dataset.item.data.answerid);
+    var theAnswer = result.currentTarget.dataset.item;
+    
+    this.data.bestAnswerParams.answerIds = this.data.bestAnswerParams.answerIds + theAnswer.answerid + ',';
+    
+    //显示选中效果
+    var select_item = result.currentTarget.dataset.item;
+    var select_item_index = result.currentTarget.dataset.index;
+    console.log("best answer index " + select_item_index);
+    if(select_item.selected != true)
+    {
+      this.data.personal_question_answer_list[select_item_index].selected = true;
+    }
+    else
+    {
+      this.data.personal_question_answer_list[select_item_index].selected = false;
+    }
+    this.setData({
+      personal_question_answer_list: this.data.personal_question_answer_list,
+    });
+    
+    // base.selectBestAnswer(bestAnswerParams);
   },
-
+  commitBestAnswer:function(e){
+    this.data.bestAnswerParams.answerIds = this.data.bestAnswerParams.answerIds.substr(0,this.data.bestAnswerParams.answerIds.length-1);
+    base.selectBestAnswer(this.data.bestAnswerParams);
+  },
   complainOneAnswer:function(result){
-    console.log("complain this answer");
+    console.log("complain this answer " + result.currentTarget.dataset.item.data.answerid);
+    var theAnswer = result.currentTarget.dataset.item.data;
+    var complainParams = {
+      userId: 1,
+      complainedId: theAnswer.answerid,
+    };
+    base.complainAnswer(complainParams);
   },
 
   returnPersonalAnswerDetailPage:function(result){

@@ -3,13 +3,38 @@ var config = require('./config')
 
 const FILE_UPLOAD_URL = `${config.PytheRestfulServerURL}/file/uploadFile`;//文件上传服务
 
+const FILE_PREUPLOAD_URL = `${config.PytheRestfulServerURL}/file/uploadFilePrepare`;//文件上传服务
+
 const FILE_DOWNLOAD_URL = `${config.PytheFileServerURL}`;//文件下载服务
 
 const FILE_PREDOWNLOAD_URL = `${config.PytheRestfulServerURL}/file/downloadFile`;//文件下载服务启动前先移动到缓冲区
 
+function uploadFilePrepare(filePath, fileType)
+{
+  wx.request({
+    url: FILE_PREUPLOAD_URL,
+    data: {
+      userFilePath: filePath,
+      fileType: fileType,
+    },
+    method: 'POST', 
+    success: function(res){
+      // success
+      
+      return JSON.parse(res.data.data);
+    },
+    fail: function() {
+      // fail
+    },
+    complete: function() {
+      // complete
+    }
+  })
+}
 
 function uploadFile(filePath, parameters)
 {
+  
     console.log('upload file ' + filePath);
     console.log(' to ' + FILE_UPLOAD_URL);
     wx.uploadFile({
@@ -20,7 +45,7 @@ function uploadFile(filePath, parameters)
       formData: parameters,
       success: function(res){
         console.log(res);
-
+        
       },
       fail: function() {
         // console.log(res);
@@ -52,9 +77,27 @@ function downloadFile(that,download_file,fileType)
             tempFilePath: res.tempFilePath,
             success: function(res){
               console.log(res.savedFilePath);
-              that.setData({
-                img_src: res.savedFilePath,
-              });
+              if(fileType == 'image')
+              {
+                that.setData({
+                  img_src: res.savedFilePath,
+                });
+              }
+              if(fileType == 'audio')
+              {
+                wx.playVoice({
+                  filePath: res.savedFilePath,
+                  success: function(res){
+                    // success
+                  },
+                  fail: function() {
+                    // fail
+                  },
+                  complete: function() {
+                    // complete
+                  }
+                })
+              }
               return res.savedFilePath;
             },
             fail: function() {
@@ -103,6 +146,7 @@ function downloadFile(that,download_file,fileType)
 }
 
 module.exports = {
+    uploadFilePrepare: uploadFilePrepare,
     uploadFile: uploadFile,
     downloadFile: downloadFile,
 }

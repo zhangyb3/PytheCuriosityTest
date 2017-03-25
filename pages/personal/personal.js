@@ -1,8 +1,11 @@
 // pages/personal/personal.js
 
-var netUtil=require("../../utils/netUtil.js");
 var listViewUtil=require("../../utils/listViewUtil.js");
+var netUtil=require("../../utils/netUtil.js");
 var utils=require("../../utils/util.js");
+var register = require("../../utils/register.js");
+var config = require("../../utils/config.js");
+var base = require("../../utils/base.js");
 
 var sleep = 30;
 var interval = null;
@@ -17,7 +20,28 @@ Page({
   },
   onLoad:function(options){
     
-
+    var that = this;
+    //查看赚了多少钱
+    wx.request({
+      url: config.PytheRestfulServerURL + '/me/earn',
+      data: {
+        // teacherId: wx.getStorageSync(user.TeacherID),
+        teacherId: 1,
+      },
+      method: 'GET', 
+      success: function(res){
+        // success
+        that.setData({
+          teacherEarn: res.data.data,
+        });
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
 
   },
 

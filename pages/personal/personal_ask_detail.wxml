@@ -45,9 +45,13 @@
     </view>
 
     <view class="personal_question_answer_select_item_container" hidden='{{hide_select_answer}}'>
-    <template is="personal_question_answer_select_item" data="{{select_item}}"></template>
-  </view>
+        <template is="personal_question_answer_select_item" data="{{select_item}}"></template>
+    </view>
 
-    
+    <view class="select_best_answer_commit">
+        <button class="best_answer_commit_button" bindtap="commitBestAnswer">
+            确定
+        </button>
+    </view>
 
 </view>

@@ -409,7 +409,14 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
         }
         if(list_type == 'my_question_answer'){
            //personal question answer
-            that.data.personal_question_answer_list=that.data.personal_question_answer_list.concat(currentDatas);
+            for(var count = 0; count < currentDatas.length;count++)
+            {
+                var temp = {};
+                temp.data = currentDatas[count];
+                temp.selected = false;
+                that.data.personal_question_answer_list=that.data.personal_question_answer_list.concat(temp);
+            }
+            // that.data.personal_question_answer_list=that.data.personal_question_answer_list.concat(currentDatas);
             console.log('before setData----------'+that.data.personal_question_answer_list);
             that.setData({personal_question_answer_list:that.data.personal_question_answer_list});
         }

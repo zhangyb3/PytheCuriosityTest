@@ -8,16 +8,17 @@
     
         <view class="personal_question_answer_container">
             <view class="personal_question_answer_complain" >
-                <view class="complain_container" bindtap="complainOneAnswer">
+                <view class="complain_container" data-item='{{ item }}' bindtap="complainOneAnswer">
                     <image class="complain_image" src="../../images/my_account_un.png"></image>
                 </view>
             </view>
             <view class="personal_question_answer_content" data-item='{{ item }}' bindtap="seeOneAnswer">
-                <text class="personal_question_answer_text">{{item.text}}</text>
+                <text class="personal_question_answer_text">{{item.data.answerid}}</text>
             </view>
             <view class="personal_question_answer_selector" >
-                <view class="answer_selector_container" bindtap="selectBestAnswer">
-                    <image class="answer_selector_image" src="../../images/my_account_on.png"></image>
+                <view class="answer_selector_container" data-item='{{ item }}' data-index='{{index}}' bindtap="selectBestAnswer">
+                    <image class="answer_selector_image" wx:if="{{item.selected != true}}" src="../../images/icon_choose_nor@2x.png"></image>
+                    <image class="answer_selector_image" wx:if="{{item.selected == true}}" src="../../images/icon_choose_sel@2x.png"></image>
                 </view>
             </view>
         </view>

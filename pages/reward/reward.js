@@ -21,11 +21,15 @@ Page({
       iv: null,
     },
     userInfo:{},
+    payFee: false,
+    payAnswerId:'',
   },
   onLoad:function(parameters){
     
     console.log(parameters);
-    
+    this.data.payFee = parameters.payFee;
+    this.data.payAnswerId = parameters.answerId;
+
     var that = this;
     this.setData({
       hide_other_reward_page: true,
@@ -90,7 +94,27 @@ Page({
   rewardConfirm:function(e){
     pay.orderPay(
       (pay_result)=>{
-
+        if(this.data.payFee)
+        {
+          //更新打赏的数据库纪录
+          wx.request({
+            url: config.PytheRestfulServerURL + '/rewardnum',
+            data: {
+              answerId: this.data.payAnswerId,
+              f: wx.getStorageSync('rewardNum'),
+            },
+            method: 'GET', 
+            success: function(res){
+              // success
+            },
+            fail: function() {
+              // fail
+            },
+            complete: function() {
+              // complete
+            }
+          })
+        }
       },
       (pay_result)=>{
         console.log("支付出错");

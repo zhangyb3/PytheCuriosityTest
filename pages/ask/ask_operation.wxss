@@ -48,7 +48,7 @@
     padding-left: 10px;
     border-style: solid;
     border-color: lightgrey;
-    height: 250px;
+    height: 150px;
     font-size: 16px;
     overflow-x: auto; 
     overflow-y: visible;
@@ -116,6 +116,34 @@
 
 .interval{
     margin-top: 10px;
+}
+
+.subject_container{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    margin-top:10px;
+}
+.subject_hint{
+    width:46px;
+    text-align:right;
+    line-height:30px;
+    color:#0a0a0a;
+    font-size:14px;
+    font-weight:bold;
+    margin-right:5px;
+}
+.subject_picker_wrap{
+    border:1px solid #3AA4F1;
+    border-radius: 8rpx;
+    height: 30px;
+    width:216px;
+    padding:0 5px;
+    line-height:30px;
+}
+.subject_picker{
+    background:url(../../images/arr.png) right center no-repeat;
+    background-size:8px 8px;
 }
 
 .reward_number_container{

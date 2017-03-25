@@ -32,16 +32,34 @@
 
             <view class="border_tab"></view>
 
-            <view class="operation_zone" >
-                <text class='record_sound' bindtap='recordSound'>录音
-                </text>
-                <text class="take_photo" bindtap="takePhoto">拍照
-                </text>
-                <text class="draw_picture" bindtap='drawPicture'>画板
-                </text>
+            
+        </view>
+
+        <view class="multi_tips">
+            <view wx:if="{{select_item.voice_path == null}}" class="voice" >
+                
+                <view class="bubble" data-select_item_voice='{{select_item.voice_path}}' bindtap="playVoiceRecord">
+                    <view class="bubble-tail"></view>
+                    <view class="voice-wave"></view>
+                    <view>{{select_item.voice_timeLength}}秒</view>
+                </view>
+
+            </view>
+
+            <view wx:if="{{select_item.photo_path == null}}" class="photo" >
+                <view class="bubble-photo" data-select_item_photo='{{select_item.photo_path}}' bindtap="showPhoto">
+                    <view>照片</view>
+                </view>
+            </view>
+
+            <view wx:if="{{select_item.draw_path == null}}" class="draw" >
+                <view class="bubble-draw" data-select_item_photo='{{select_item.draw_path}}' bindtap="showDraw">
+                    <view>手绘</view>
+                </view>
             </view>
 
         </view>
+        
     </view>  
 
     

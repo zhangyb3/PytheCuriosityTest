@@ -32,7 +32,12 @@ Page({
       voice_path: null,
       voice_timeLength: 0,
       draw_path: null,
+      subjectId: null,
+      not_select_subject: false,
     },
+
+    subjects: ['物理', '化学', '计算机'],
+    subject_index:0,
 
     hasPaidReward: false,
   },
@@ -52,13 +57,17 @@ Page({
     if(parameters.teacherid != null)
     {
       this.data.ask_question.ask_teacherId = parameters.teacherid;
+      this.data.ask_question.not_select_subject = true;
     }
     if(parameters.subjectId != null)
     {
       this.data.ask_question.question_subjectId = parameters.subjectId;
+      this.data.ask_question.ask_teacherId = -1;
     }
     console.log(this.data.ask_question);
-
+    this.setData({
+      ask_question: this.data.ask_question,
+    });
  
     
     
@@ -192,6 +201,7 @@ Page({
 
   //选择录音
   selectVoiceRecord:function(e){
+    var that = this;
     this.setData({
       hide_record_sound_section: true,
       hide_textarea: false,
@@ -203,12 +213,35 @@ Page({
       hide_voice_bubble: false,
     });
     console.log(this.data.ask_question.voice_path);
+    
+
+    wx.request({
+      url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
+      data: {
+        userFilePath: voicePath,
+        fileType: 'audio',
+      },
+      method: 'POST', 
+      success: function(res){
+        // success
+        console.log(res.data.data)
+        var result = JSON.parse(res.data.data);
+        that.data.ask_question.upload_voice_path = result.path;
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    });
+
     //上传录音
     var parameters = {
-      userFilePath : 'testVoice',
+      userFilePath : voicePath,
       fileType : 'audio',
     };
-    fileSys.uploadFile(this.data.ask_question.voice_path,parameters);
+    this.data.ask_question.photo_path = fileSys.uploadFile(this.data.ask_question.voice_path,parameters);
   },
 
   drawPicture:function(e){
@@ -349,10 +382,33 @@ Page({
               hide_textarea: false,
               ask_question: that.data.ask_question,
             });
-            // var parameters = {
-            //   userFilePath : res.savedFilePath,
-            //   fileType : 'image',
-            // };
+            var parameters = {
+              userFilePath : res.savedFilePath,
+              fileType : 'image',
+            };
+
+            that.data.ask_question.upload_draw_path = null;
+            //获得上传文件在文件服务器的路径
+            // wx.request({
+            //   url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
+            //   data: {
+            //     userFilePath: savedFilePath,
+            //     fileType: 'image',
+            //   },
+            //   method: 'POST', 
+            //   success: function(res){
+            //     // success
+            //     console.log(res.data.data)
+            //     var result = JSON.parse(res.data.data);
+            //     that.data.ask_question.upload_draw_path = result.path;
+            //   },
+            //   fail: function() {
+            //     // fail
+            //   },
+            //   complete: function() {
+            //     // complete
+            //   }
+            // });
             // fileSys.uploadFile(savedFilePath,parameters);
             
           },
@@ -394,8 +450,35 @@ Page({
             var parameters = {
               userFilePath : savedFilePath,
               fileType : 'image',
+              whatFile : 'photo',
+              fromWhere: 'ask',
             };
+            //获得上传文件在文件服务器的路径
+            wx.request({
+              url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
+              data: {
+                userFilePath: savedFilePath,
+                fileType: 'image',
+              },
+              method: 'POST', 
+              success: function(res){
+                // success
+                console.log(res.data.data)
+                var result = JSON.parse(res.data.data);
+                that.data.ask_question.upload_photo_path = result.path;
+              },
+              fail: function() {
+                // fail
+              },
+              complete: function() {
+                // complete
+              }
+            });
+
+          
+            //上传文件
             fileSys.uploadFile(savedFilePath,parameters);
+            
           },
           fail: function() {
             // fail
@@ -482,7 +565,32 @@ Page({
     {
       this.data.ask_question.studentId = wx.getStorageSync(user.StudentID);
       this.data.ask_question.rewardNum = wx.getStorageSync('rewardNum')
-      base.commitQuestion(this.data.ask_question);
+      // base.commitQuestion(this.data.ask_question);
+
+      var questionParams= {
+        // studentId: wx.getStorageSync('StudentID'),
+        studentId: 1,
+        questionContent:{
+          text: [
+            this.data.ask_question.text_content,
+          ],
+          img: [
+            this.data.ask_question.upload_photo_path,
+          ],
+          audio:[
+            this.data.ask_question.upload_voice_path,
+            this.data.ask_question.voice_timeLength,
+          ],
+          draw:[
+            this.data.ask_question.upload_draw_path,
+          ],
+        },
+        // subjectId: this.data.ask_question.question_subjectId,
+        subjectId: 1001,
+        // reward: wx.getStorageSync('rewardNum'),
+        reward: wx.getStorageSync("rewardNum"),
+      };
+      base.commitQuestion(questionParams);
     }
   },
 

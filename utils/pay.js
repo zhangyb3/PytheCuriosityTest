@@ -59,9 +59,6 @@ var orderPay = (success, fail) => {
               console.log(res);
               typeof success == "function" && fail(res);
           },
-          complete: function(res) {
-              console.log("已支付");
-          }
         })
         
     }, 

@@ -22,7 +22,7 @@ Page({
 
     subjects:[
       {
-        subjectId:1,
+        subjectId:1001,
         subject_name: '数学',
       },
       {
@@ -37,6 +37,7 @@ Page({
 
      ask_teacher_list:[
       {
+        teacherid:0,
         teacher_name: '都教授',
       },{
         teacher_name: '孙悟空',

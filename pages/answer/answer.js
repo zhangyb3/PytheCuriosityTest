@@ -21,9 +21,9 @@ Page({
         active:false
     }],
     subject_infos: [
-      { subjectId: 1001, name: ' 语文 ', number: '#FFFFFF' },
+      { subjectId: 1, name: ' 语文 ', number: '#FFFFFF' },
 
-      { subjectId: 2, name: ' 数学 ', number: '#FF0000' },
+      { subjectId: 1001, name: ' 数学 ', number: '#FF0000' },
 
       { subjectId: 3, name: ' 英语 ', number: '#00FF00' },
 
@@ -257,6 +257,8 @@ Page({
   selectOneItem:function(e){
       console.log("navigate to answer operation page");
       var parametersJSON = e.currentTarget.dataset.item;
+      parametersJSON.audio_path = parametersJSON.audio[0];
+      parametersJSON.audio_duration = parametersJSON.audio[1];
       console.log(parametersJSON);
       var parameters = netUtil.json2Form(parametersJSON);
       // console.log(parameters);

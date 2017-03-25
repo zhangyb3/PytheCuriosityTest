@@ -20,6 +20,10 @@ const MY_ANSWER_COLLECTION_URL_DETAIL = `/me/collection/question`;
 
 const MY_TEACHER_COLLECTION_URL_DETAIL = `/me/collection/teacher`;
 
+const COMPLAIN_URL = `${config.PytheRestfulServerURL}/me/question/report`;
+
+const SELECT_BEST_ANSWER_URL = `${config.PytheRestfulServerURL}/me/question/select`;
+
 
 function getDetailContent(that,selectItem)
 {
@@ -88,6 +92,64 @@ function commitQuestion(parameters)
 }
 
 
+function complainAnswer(parameters)
+{
+  wx.request({
+    url: COMPLAIN_URL,
+    data: {
+      userId: parameters.userId,
+      complainedId: parameters.complainedId,
+    },
+    method: 'GET', 
+    success: function(res){
+      // success
+      console.log(res);
+      wx.showToast({
+        title: '已举报',
+        icon: 'success',
+        duration: 1500
+      });
+    },
+    fail: function() {
+      // fail
+    },
+    complete: function() {
+      // complete
+    }
+  })
+}
+
+function selectBestAnswer(parameters)
+{
+  wx.request({
+    url: SELECT_BEST_ANSWER_URL,
+    data: {
+      questionId: parameters.questionId,
+      answerIds: parameters.answerIds,
+    },
+    method: 'GET', 
+    success: function(res){
+      // success
+      console.log(res);
+      if(res.data.data==2)
+      {
+        wx.showToast({
+          title: '已选择最佳答案',
+          icon: 'success',
+          duration: 1000
+        });
+      }
+    },
+    fail: function() {
+      // fail
+    },
+    complete: function() {
+      // complete
+    }
+  })
+}
+
+
 
 module.exports = {
     login: login.login,
@@ -101,6 +163,9 @@ module.exports = {
     getDetailContent: getDetailContent,
     commitAnswer : commitAnswer,
     commitQuestion: commitQuestion,
+
+    complainAnswer: complainAnswer,
+    selectBestAnswer: selectBestAnswer,
 
     MY_QUESTION_URL_DETAIL: MY_QUESTION_URL_DETAIL,
 

@@ -197,6 +197,7 @@ Page({
     // this.setData({select_item:selectItem});
   },
 
+  //点赞答案
   likeAnswer:function(e){
     var answer_index = e.currentTarget.dataset.answer_index;
     
@@ -207,19 +208,21 @@ Page({
       answers: this.data.answers,
     });
     //更新数据库
-  },
-
-  rewardAnswer:function(e){
-    var selected = e.currentTarget.dataset.selected;
-    console.log(selected);
-    var parametersJSON ={
-      answerId: selected.answerid,
-    };
-    var parametersString = netUtil.json2Form(parametersJSON);
-    wx.navigateTo({
-      url: '../reward/reward' + '?' + parametersString,
+    wx.request({
+      url: config.PytheRestfulServerURL + '/likesnum',
+      data: {
+        answerId: this.data.answers[answer_index].answerid,
+        userId: wx.getStorageSync('userID'),
+        questionId:  this.data.answers[answer_index].questionid,
+      },
+      method: 'GET', 
       success: function(res){
         // success
+        wx.showToast({
+          title: '点赞+1',
+          icon: 'success',
+          duration: 1000
+        });
       },
       fail: function() {
         // fail
@@ -228,6 +231,31 @@ Page({
         // complete
       }
     })
+  },
+
+  //打赏答案
+  rewardAnswer:function(e){
+    var selected = e.currentTarget.dataset.selected;
+    console.log(selected);
+    var parametersJSON ={
+      answerId: selected.answerid,
+      payFee: true,
+    };
+    var parametersString = netUtil.json2Form(parametersJSON);
+    wx.navigateTo({
+      url: '../reward/reward' + '?' + parametersString,
+      success: function(res){
+        // success
+        
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+
   },
   
 
