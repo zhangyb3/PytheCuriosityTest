@@ -7,14 +7,13 @@
            
 
             <view class="question_container" bindtap='bindItem' data-index='{{ index }}'>
-
-            
-
-            
-
-            <view class="lines">
-                <text class="question_content">answerid:{{ item.answerid }}</text>
-            </view>
+                <view class="lines">
+                    <view class="question_content"><text>answerid:{{ item.answerid }}</text></view>
+                    <view class="queation_button"><image src="../../images/icon_answer@2x.png"></image></view>
+                </view>
+                <view class="question_bottom">
+                    <view class="money_number"><image src="../../images/icon_money_2@2x.png"></image>3.000</view>
+                </view>
 
             </view>
 

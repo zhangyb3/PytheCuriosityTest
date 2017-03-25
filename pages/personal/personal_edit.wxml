@@ -1,12 +1,14 @@
 
 <view class="border_tab"></view>
-
+<view class="nickname_zone">
+    <view class="nickname_wrap">
     <text>昵称</text>
-
     <input class="nickname_content_text_input" bindinput="getNicknameText" auto-focus/>
+    </view>
+</view>
 
-<view class="border_tab"></view>
-
+    
+    <view class="border_tab"></view>
 <view class="description_content_zone" >
 
     <text>个人描述</text>
@@ -18,7 +20,7 @@
 <view class="border_tab"></view>
 
 <view class="edit_commit_confirm">
-    <button class="answer_commit_button" bindtap="commitPersonalEdit">
+    <button class="edit_commit_button" bindtap="commitPersonalEdit">
         确定
     </button>
 </view>

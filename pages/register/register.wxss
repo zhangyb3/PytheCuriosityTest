@@ -31,7 +31,7 @@
 .student_avatar{
     content: '';
     width: 250rpx;
-    height: 290rpx;
+    height: 320rpx;
     margin-top: 50rpx;
     border-radius: 20%;
     /*background: url(../../images/not_select_student.png)0 0 no-repeat;*/
@@ -41,7 +41,7 @@
 .student_avatar_after{
     content: '';
     width: 250rpx;
-    height: 290rpx;
+    height: 320rpx;
     margin-top: 50rpx;
     border-radius: 20%;
     /*background: url(../../images/select_student.png)0 0 no-repeat;*/
@@ -63,7 +63,7 @@
 .teacher_avatar{
     content: '';
     width: 250rpx;
-    height: 290rpx;
+    height: 320rpx;
     margin-top: 50rpx;
     border-radius: 20%;
     /*background: url(../../images/not_select_teacher.png) right 0 no-repeat;*/
@@ -73,7 +73,7 @@
 .teacher_avatar_after{
     content: '';
     width: 250rpx;
-    height: 290rpx;
+    height: 320rpx;
     margin-top: 50rpx;
     border-radius: 20%;
     /*background: url(../../images/select_teacher.png) right 0 no-repeat;*/
@@ -225,7 +225,7 @@
 .register_confirm{
     display: flex;
     /*height: 30px;*/
-    width: 90%;
+    width: 80%;
     /*align-items: center;*/
 }
 

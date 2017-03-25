@@ -4,11 +4,23 @@
 
             <view class="border_tab"/>
 
-            <view class="question_wrapper">
-      
-                <text class="question_content">questionid:{{ item.questionid }}</text>
-              
+            <view class="question_container">
+                <view class="answer_lines">
+                    <text>questionid:{{ item.questionid }}</text>
+                </view>
+                <view class="question_bottom">
+                    <view class="money_number"><image src="../../images/icon_money_2@2x.png"></image>3.000</view>
+                    <view class="money_star">3.000<image src="../../images/collect_icon.png"></image></view>
+                </view>
             </view>
+
+
+
+
+
+
+
+
 
             <view class="border_tab"/>
 
@@ -37,7 +49,7 @@
 
             <view class="border_tab"/>
 
-            <view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
+            <!--<view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
 
             
 
@@ -70,7 +82,7 @@
 
             </view>
 
-            <view class="border_tab"/>
+            <view class="border_tab"/>-->
       
         
 </view>

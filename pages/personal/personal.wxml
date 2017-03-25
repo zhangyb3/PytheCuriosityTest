@@ -43,9 +43,4 @@
             <text class="about personal_operation_item_text" src="../../images/icon_money_1@2x.png">关于我们</text>
         </view>
     </view>
-
-    <view class="countdown_container">  
-        <text class="countdown_text">倒计时: {{second}} </text>  
-    </view>
-
 </view>
