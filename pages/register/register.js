@@ -4,18 +4,57 @@ var utils=require("../../utils/util.js");
 var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
+var user = require("../../utils/user.js");
 
 Page({
   data:{
-    grades: ['六年级', '初三', '高三'],
+    grades: [
+      {
+        gradeId: 161,
+        name: '六年级',
+      }, 
+      {
+        gradeId: 231,
+        name: '初三', 
+      },
+      {
+        gradeId: 331,
+        name: '高三',
+      },
+      
+      
+    ],
     grade_index:0,
-    subjects: ['物理', '化学', '计算机'],
+
+    subjects: [
+      {
+        subjectId: 161,
+        name: '物理',
+      }, 
+      {
+        subjectId: 231,
+        name: '化学', 
+      },
+      {
+        subjectId: 331,
+        name: '计算机',
+      },
+      
+      
+    ],
     subject_index:0,
+
     hide_subject_selection:true,
     hide_grade_selection:false,
     selectStudent:true,
     selectTeacher:false,
 
+    registerParams: {
+      status: null,
+      gradeId: null,
+      subjectId: null,
+    },
+   
   },
   
   onLoad:function(options){
@@ -26,6 +65,7 @@ Page({
       select_student:true,
       select_teacher:false
     });
+    this.data.registerParams.status = 0;
   },
 
   selectStudent:function(e){
@@ -36,6 +76,8 @@ Page({
       select_student:true,
       select_teacher:false
     })
+
+    this.data.registerParams.status = 0;
   },
   selectTeacher:function(e){
     console.log("老师");
@@ -45,6 +87,9 @@ Page({
       select_student:false,
       select_teacher:true
     })
+
+    this.data.registerParams.status = 1;
+    this.data.registerParams.gradeId = 332;
   },
 
   gradeChange: function(e) {
@@ -52,12 +97,16 @@ Page({
     this.setData({
       grade_index: e.detail.value
     })
+
+    this.data.registerParams.gradeId = this.data.grades[e.detail.value].gradeId;
   },
   subjectChange: function(e) {
     console.log('科目', this.data.subjects[e.detail.value])
     this.setData({
       subject_index: e.detail.value
     })
+
+    this.data.registerParams.subjectId = this.data.subjects[e.detail.value].subjectId;
   },
 
   //注册
@@ -77,6 +126,33 @@ Page({
 },
 
   registerToMainPage:function(e){
+
+    //注册
+    wx.request({
+      url: config.PytheRestfulServerURL + '/user/register/',
+      data: {
+        status:this.data.registerParams.status,
+        userName: wx.getStorageSync('userName'),
+        phoneNum: wx.getStorageSync('registerPhoneNum'),
+        verificationCode: wx.getStorageSync('verificationCode'),
+        gradeId: this.data.registerParams.gradeId,
+        subjecId: this.data.registerParams.subjectId,
+        openId: wx.getStorageSync(user.OpenID),
+        userImg: wx.getStorageSync('userAvatarUrl'),
+      },
+      method: 'POST',
+      success: function(res){
+        // success
+        console.log(res);
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+
     //判断注册是否成功，成功则返回index页面
     wx.setStorageSync('alreadyRegister', 'yes');
     wx.navigateBack({

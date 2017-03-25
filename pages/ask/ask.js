@@ -3,7 +3,7 @@
 var netUtil=require("../../utils/netUtil.js");
 var listViewUtil=require("../../utils/listViewUtil.js");
 var utils=require("../../utils/util.js");
-
+var user = require("../../utils/user.js");
 var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");

@@ -33,6 +33,7 @@ App({
             console.log(res.rawData);
             var rawData = JSON.parse(res.rawData);
             wx.setStorageSync('userAvatarUrl', rawData.avatarUrl);
+            wx.setStorageSync('userName', rawData.nickName);
           },
           fail: function() {
             // fail
@@ -67,8 +68,8 @@ App({
       }
     );
   
-    wx.setStorageSync('alreadyRegister', 'yes');
-    // wx.setStorageSync('alreadyRegister', 'no');
+    // wx.setStorageSync('alreadyRegister', 'yes');
+    wx.setStorageSync('alreadyRegister', 'no');
 
 
     // 检查是否有注册过
