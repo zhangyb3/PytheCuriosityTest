@@ -8,4 +8,6 @@ module.exports = {
     UserID: 'UserID',
     StudentID: 'StudentID',
     TeacherID: 'TeacherID',
+    GradeID: 'GradeID',
+    SubjectID: 'SubjectID',
 }

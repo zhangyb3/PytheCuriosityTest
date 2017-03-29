@@ -1,5 +1,6 @@
 var config = require('./config')
 var user = require('./user')
+var register = require('./register')
 var app = getApp();
 
 const LOGIN_URL = `${config.PytheRestfulServerURL}/user/login/request`;//登录服务
@@ -15,6 +16,32 @@ const DECODE_USER_DATA = `${config.PytheRestfulServerURL}/user/decode`;//解密�
 var login = (success, fail) => {
     checkLogin(() => {
         //DO NOTHING
+        // 检查是否有注册过
+        register.checkRegister(
+          (userRegisterResult) => {
+            console.log('check register : ' + JSON.stringify(userRegisterResult));
+            //如果没注册过，则注册
+            var registerInfo = userRegisterResult.data.data;
+            if(registerInfo == null)
+            {
+              wx.setStorageSync('alreadyRegister', 'no');
+              console.log("register : " + wx.getStorageSync('alreadyRegister'));
+              //注册
+              
+            }
+            else
+            {
+              wx.setStorageSync('alreadyRegister', 'yes');
+              wx.setStorageSync(user.UserID, registerInfo.userid);
+              wx.setStorageSync(user.StudentID, registerInfo.studentid);
+              wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
+              wx.setStorageSync(user.GradeID, registerInfo.gradeid);
+            }
+          },
+          (userRegisterResult) => {
+            console.log(userRegisterResult);
+          },
+        );
         console.log("已登录");
     }, () => {
         remoteLogin(success, fail)
@@ -150,27 +177,7 @@ var getUserInfo = (success, fail) => {
     })
 }
 
-/**
- * 检查是否已注册
- */
-var checkRegister = (success,fail) => {
-    wx.request({
-      url: CHECK_REGISTER_URL,
-      data: {
-        SessionID: wx.getStorageSync(user.SessionID),
-        openid : wx.getStorageSync(user.OpenID),
-        phoneNum : '12345',
-      },
-      method: 'GET', 
-      success: function(res){
-        typeof success == "function" && success(res)
-      },
-      fail: function() {
-        typeof success == "function" && fail(res)
-      },
-      
-    })
-}
+
 
 
 /**
@@ -226,7 +233,7 @@ module.exports = {
     login: login,
     checkLogin: checkLogin,
     getUserInfo: getUserInfo,
-    checkRegister : checkRegister,
+    
     getUserAllData : getUserAllData,
     decodeUserData : decodeUserData,
     alreadyRegister : 'no',

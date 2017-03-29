@@ -14,9 +14,9 @@ var checkRegister = (success,fail) => {
     wx.request({
       url: CHECK_REGISTER_URL,
       data: {
-        SessionID: wx.getStorageSync(user.SessionID),
+        // SessionID: wx.getStorageSync(user.SessionID),
         openId : wx.getStorageSync(user.OpenID),
-        phoneNum : '12345',
+        
       },
       method: 'GET', 
       success: function(res){

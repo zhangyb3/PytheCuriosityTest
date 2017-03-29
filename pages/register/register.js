@@ -10,17 +10,9 @@ Page({
   data:{
     grades: [
       {
-        gradeId: 161,
-        name: '六年级',
+        gradeId: null,
+        grade: '请选择',
       }, 
-      {
-        gradeId: 231,
-        name: '初三', 
-      },
-      {
-        gradeId: 331,
-        name: '高三',
-      },
       
       
     ],
@@ -28,17 +20,9 @@ Page({
 
     subjects: [
       {
-        subjectId: 161,
-        name: '物理',
+        subjectId: null,
+        subject: '请选择',
       }, 
-      {
-        subjectId: 231,
-        name: '化学', 
-      },
-      {
-        subjectId: 331,
-        name: '计算机',
-      },
       
       
     ],
@@ -58,6 +42,11 @@ Page({
   },
   
   onLoad:function(options){
+
+    this.data.registerParams.gradeId = null;
+    this.data.registerParams.subjectId = null;
+
+
     // 页面初始化 options为页面跳转所带来的参数
     this.setData({
       hide_subject_selection:true,
@@ -66,6 +55,74 @@ Page({
       select_teacher:false
     });
     this.data.registerParams.status = 0;
+
+    var that = this;
+
+    var subjectRange = ['请选择'];
+    //加载动态课程列表,年级列表
+    wx.request({
+      url: config.PytheRestfulServerURL + '/user/register/subject',
+      data: {
+
+      },
+      method: 'GET', 
+      success: function(res){
+        // success
+        console.log(res.data.data);
+        
+        for(var count = 0; count < res.data.data.length; count++)
+        {
+          
+          subjectRange[count+1] = res.data.data[count].subject;
+          that.data.subjects[count+1] = res.data.data[count];
+          console.log(subjectRange);
+        }
+        
+        that.setData({
+          subjectRange: subjectRange,
+        });
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    });
+
+    var gradeRange = ['请选择'];
+    //加载动态课程列表,年级列表
+    wx.request({
+      url: config.PytheRestfulServerURL + '/user/register/grade',
+      data: {
+
+      },
+      method: 'GET', 
+      success: function(res){
+        // success
+        console.log(res.data.data);
+        
+        for(var count = 0; count < res.data.data.length; count++)
+        {
+          
+          gradeRange[count+1] = res.data.data[count].gradename;
+          that.data.grades[count+1] = res.data.data[count];
+          console.log(gradeRange);
+        }
+        
+        that.setData({
+          gradeRange: gradeRange,
+        });
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    });
+
+    
   },
 
   selectStudent:function(e){
@@ -95,10 +152,10 @@ Page({
   gradeChange: function(e) {
     console.log('年级', this.data.grades[e.detail.value])
     this.setData({
-      grade_index: e.detail.value
+      grade_index: e.detail.value      
     })
 
-    this.data.registerParams.gradeId = this.data.grades[e.detail.value].gradeId;
+    this.data.registerParams.gradeId = this.data.grades[e.detail.value].gradeid;
   },
   subjectChange: function(e) {
     console.log('科目', this.data.subjects[e.detail.value])
@@ -144,6 +201,13 @@ Page({
       success: function(res){
         // success
         console.log(res);
+        if(res.data.data.userid != null)
+        {
+          wx.setStorageSync(user.UserID, res.data.data.userid);
+          wx.setStorageSync(user.StudentID, res.data.data.studentid);
+          wx.setStorageSync(user.TeacherID, res.data.data.teacherid);
+          wx.setStorageSync(user.GradeID, res.data.data.gradeid);
+        }
       },
       fail: function() {
         // fail
@@ -155,6 +219,7 @@ Page({
 
     //判断注册是否成功，成功则返回index页面
     wx.setStorageSync('alreadyRegister', 'yes');
+    wx.setStorageSync('fromRegister', 'yes');
     wx.navigateBack({
       delta: 1, // 回退前 delta(默认为1) 页面
       success: function(res){
@@ -174,6 +239,25 @@ Page({
   },
   onShow:function(){
     countdown(this);
+
+    if(wx.getStorageSync(user.UserID)!=null)
+    {
+      wx.setStorageSync('alreadyRegister', 'yes');
+      wx.setStorageSync('fromRegister', 'yes');
+      wx.navigateBack({
+        delta: 1, // 回退前 delta(默认为1) 页面
+        success: function(res){
+          // success
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      });
+
+    }
   },
   onHide:function(){
     // 页面隐藏

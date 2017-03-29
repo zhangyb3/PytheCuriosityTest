@@ -157,7 +157,7 @@ Page({
 
     // if(teacher.not_like == true){
 
-      this.data.personal_like_teacher_listt[teacher_index].popularity++;
+      this.data.personal_like_teacher_list[teacher_index].popularity++;
       this.setData({
         personal_like_teacher_list: this.data.personal_like_teacher_list,
       });

@@ -12,9 +12,9 @@
     <view class="subject_list_zone" >
         <view class="subjects">
             <block wx:for-items="{{subject_infos}}"  >
-                <view class="subject_item" hover-class="" data-name="{{item.name}}" data-subject_id="{{item.subjectId}}"bindtap="getSelectSubjectList" >
+                <view class="subject_item" hover-class="" data-name="{{item.subject}}" data-subject_id="{{item.subjectid}}"bindtap="getSelectSubjectList" >
                     <view class="subject_item_icon">
-                        <text class="subject_item_text ">{{item.name}}</text>
+                        <text class="subject_item_text ">{{item.subject}}</text>
                     </view>
                 </view>
             </block>

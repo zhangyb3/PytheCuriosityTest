@@ -22,7 +22,7 @@ Page({
     },
 
     pen:{
-      lineWidth: 3,
+      lineWidth: 2,
       color: 'black',
     },
     photoFilePath: null,

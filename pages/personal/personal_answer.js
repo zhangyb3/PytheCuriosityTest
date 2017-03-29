@@ -92,7 +92,7 @@ Page({
           return netData.data;
         },
         function(item){
-         
+          
         },
         {},
         'GET',

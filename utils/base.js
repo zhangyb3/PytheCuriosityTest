@@ -40,7 +40,7 @@ function getDetailContent(that,selectItem)
             answers: res.data.data,
             question:selectItem,
         });
-        return res.data.data;
+        typeof success == "function" && success(res.data.data);
       },
       fail: function(res) {
         console.log(res);
@@ -60,6 +60,11 @@ function commitAnswer(parameters)
     success: function(res){
       // success
       console.log(res);
+      wx.showToast({
+        title: '已提交',
+        icon: 'success',
+        duration: 2000
+      })
     },
     fail: function() {
       // fail
@@ -81,6 +86,11 @@ function commitQuestion(parameters)
     success: function(res){
       // success
       console.log(res);
+      wx.showToast({
+        title: '已发布',
+        icon: 'success',
+        duration: 2000
+      })
     },
     fail: function() {
       // fail

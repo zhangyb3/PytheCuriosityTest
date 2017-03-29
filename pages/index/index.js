@@ -8,6 +8,7 @@ var utils=require("../../utils/util.js");
 var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
+var user = require("../../utils/user.js");
 
 var selectItem;
 var itemIndex;
@@ -25,30 +26,30 @@ Page({
     selectStudent:false,
     selectTeacher:false,
     subject_infos: [
-      { subjectId: 1001, name: ' 语文 ', number: '#FFFFFF' },
+      // { subjectId: 1001, name: ' 语文 ', number: '#FFFFFF' },
 
-      { subjectId: 2, name: ' 数学 ', number: '#FF0000' },
+      // { subjectId: 2, name: ' 数学 ', number: '#FF0000' },
 
-      { subjectId: 3, name: ' 英语 ', number: '#00FF00' },
+      // { subjectId: 3, name: ' 英语 ', number: '#00FF00' },
 
-      { subjectId: 4, name: ' 物理 ', number: '#0000FF' },
+      // { subjectId: 4, name: ' 物理 ', number: '#0000FF' },
 
-      { subjectId: 5, name: ' 化学 ', number: '#FF00FF' },
+      // { subjectId: 5, name: ' 化学 ', number: '#FF00FF' },
 
-      { subjectId: 6, name: ' 生物 ', number: '#00FFFF' },
+      // { subjectId: 6, name: ' 生物 ', number: '#00FFFF' },
 
-      { subjectId: 7, name: ' 历史 ', number: '#FFFF00' },
+      // { subjectId: 7, name: ' 历史 ', number: '#FFFF00' },
 
-      { subjectId: 8, name: ' 政治 ', number: '#000000' },
+      // { subjectId: 8, name: ' 政治 ', number: '#000000' },
 
-      { subjectId: 9, name: ' 地理 ', number: '#70DB93' }
+      // { subjectId: 9, name: ' 地理 ', number: '#70DB93' }
     ],
 
     answers:[],
     hide_select_item: true,
     motto: 'Hello World',
     userInfo: {},
-
+    val:[],
     
 
     hide_show_image_page: true,
@@ -68,82 +69,14 @@ Page({
     this.setData({hide_select_item:true});
 
     console.log('onLoad');
-    var that = this;
 
-    var simple_params = {
-      gradeId : 112,
-      pageSize : 3,
-      pageNum : 1,
-      // subjectId: 1001,
-    };
-    
-    listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
-    "/index/defaultList",
-    10,
-        simple_params,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-         
-        },
-        {},
-        'GET',
-    );
     
     
 
 
   },
 
-  selectStudent:function(e){
-    console.log("学生");
-    this.setData({
-      hide_subject_selection:true,
-      hide_grade_selection:false,
-      select_student:true,
-      select_teacher:false
-    })
-  },
-  selectTeacher:function(e){
-    console.log("老师");
-    this.setData({
-      hide_subject_selection:false,
-      hide_grade_selection:true,
-      select_student:false,
-      select_teacher:true
-    })
-  },
-
-  gradeChange: function(e) {
-    console.log('年级', this.data.grades[e.detail.value])
-    this.setData({
-      grade_index: e.detail.value
-    })
-  },
-  subjectChange: function(e) {
-    console.log('科目', this.data.subjects[e.detail.value])
-    this.setData({
-      subject_index: e.detail.value
-    })
-  },
-
-  //注册
-  phoneNumberInput: function(e) {
-    var registerPhoneNum = e.detail.value;
-    console.log(e.detail.value);
-    wx.setStorageSync('registerPhoneNum', registerPhoneNum);
-  },
-  sendVerificationCode:function(res) {
-    console.log(wx.getStorageSync('registerPhoneNum'));
-    register.sendVerificationCode(wx.getStorageSync('registerPhoneNum'));
-  },
-  verificationCodeInput: function(e) {
-    var verificationCode = e.detail.value;
-    console.log(e.detail.value);
-    wx.setStorageSync('verificationCode', verificationCode);
-  },
+  
 
   //搜索
   listenerSearchInput:function(e){
@@ -189,10 +122,11 @@ Page({
     selectItem = e.currentTarget.dataset.item;
     itemIndex = e.currentTarget.dataset.index;
     console.log(JSON.stringify(selectItem) + "," + itemIndex);
+
     this.setData({hide_select_item:false});
 
     //进入详细列表
-    this.data.answers = base.getDetailContent(this,selectItem);
+    val = base.getDetailContent(this,selectItem);console.log(val);
     
     // this.setData({select_item:selectItem});
   },
@@ -286,7 +220,7 @@ Page({
       subjectId: e.currentTarget.dataset.subject_id,
       pageSize: 3,
       pageNum: 1,
-      gradeId: 112,
+      gradeId: wx.getStorageSync(user.GradeID),
     };
     listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
     "/index/filterList",
@@ -305,9 +239,58 @@ Page({
   },
 
 
-  
+  onReady:function(){
+    var that = this;
+    wx.request({
+      url: config.PytheRestfulServerURL + '/index/subject/' + wx.getStorageSync(user.GradeID),
+      data: {
+        
+      },
+      method: 'GET', 
+      success: function(res){
+        // success
+        
+        that.data.subject_infos = res.data;
+        that.setData({
+          subject_infos : that.data.subject_infos,
+        });
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    });
+    
+    var that = this;
+    var simple_params = {
+      gradeId : wx.getStorageSync(user.GradeID),
+      pageSize : 3,
+      pageNum : 1,
+      // subjectId: 1001,
+    };
+    
+    listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
+    "/index/defaultList",
+    10,
+        simple_params,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
+    
+
+  },
 
   onShow:function(){
+    //判断注册了没有
     if(wx.getStorageSync('alreadyRegister')=='no')
     {
       // this.setData({hide_register_page:false});
@@ -324,6 +307,35 @@ Page({
           // complete
         }
       })
+    }
+
+    //判断是否从注册页面返回
+    if(wx.getStorageSync('fromRegister')=='yes')
+    {
+      //加载科目列表
+      wx.request({
+        url: config.PytheRestfulServerURL + '/index/subject/' + wx.getStorageSync(user.GradeID),
+      data: {
+        
+      },
+        method: 'GET', 
+        success: function(res){
+          // success
+        
+          that.data.subject_infos = res.data;
+          that.setData({
+            subject_infos : that.data.subject_infos,
+          });
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      });
+
+      wx.setStorageSync('fromRegister', 'no');
     }
   },
 

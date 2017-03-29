@@ -8,7 +8,7 @@
 
             <view class="question_container" bindtap='bindItem' data-index='{{ index }}'>
                 <view class="lines">
-                    <view class="question_content"><text>answerid:{{ item.answerid }}</text></view>
+                    <view class="question_content"><text>answerid:{{ item.answerid }}，questionid:{{item.questionid}}</text></view>
                     <view class="queation_button"><image src="../../images/icon_answer@2x.png"></image></view>
                 </view>
                 <view class="question_bottom">

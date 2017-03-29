@@ -17,9 +17,18 @@ Page({
       id: 'vnoeajo4alvn24',
     },
     countdownText : '发',
+
+    userAvatarUrl:'../../images/image_1@2x.png',
+    userNickName:'9527',
   },
   onLoad:function(options){
     
+    this.data.userAvatarUrl = wx.getStorageSync('userAvatarUrl');
+    this.data.userNickName = wx.getStorageSync('userNickName');
+    this.setData({
+      userAvatarUrl: this.data.userAvatarUrl,
+      userNickName: this.data.userNickName,
+    });
     var that = this;
     //查看赚了多少钱
     wx.request({

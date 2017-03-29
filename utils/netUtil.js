@@ -207,7 +207,15 @@ function isFunction(value){
 function json2Form(json) {
     var str = [];
     for(var p in json){
-        str.push(encodeURIComponent(p) + "=" + encodeURIComponent(json[p]));
+        if(p == 'questioncontent')
+        {
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(json[p])));
+        }
+        else if(json[p] != null)
+        {
+            str.push(encodeURIComponent(p) + "=" + encodeURIComponent(json[p]));
+        }
+        
     }
     return str.join("&");
 }
@@ -357,15 +365,35 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
 
 
         //数据的一些处理,包括了一维和二维数组的处理,全部都解析到单个item层次返回
-        currentDatas.forEach(function(info){
-            if(info instanceof Array){
-                info.forEach(function(item){
-                    that.handldItemInfo(item)
-                });
-            }else {
-                that.handldItemInfo(info)
+        // currentDatas.forEach(function(info){
+        //     if(info instanceof Array){
+        //         console.log('handle path1');
+        //         info.forEach(function(item){
+        //             that.handldItemInfo(item);
+        //         });
+        //     }else {
+        //         console.log('handle path2');
+        //         that.handldItemInfo(info);
+        //     }
+        // });
+        // console.log(currentDatas);
+
+        var concatDatas = [];
+        for(var count = 0; count < currentDatas.length; count++)
+        {
+            // console.log(currentDatas[count]);
+            var temp = currentDatas[count];
+            if(temp.questioncontent != null)
+            {
+                temp.questioncontent = JSON.parse(currentDatas[count].questioncontent);
             }
-        });
+            if(list_type == 'my_question_answer')
+            {
+                temp.selected = false;
+            }
+            console.log(temp);
+            concatDatas[count] = temp;
+        }
 
         //根据操作的action不同而处理:
         if(action == request_firstIn){
@@ -385,62 +413,56 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
          */
         if(list_type == 'index'){
             //滑动列表结尾追加数据
-            that.data.infos=that.data.infos.concat(currentDatas);
+            that.data.infos=that.data.infos.concat(concatDatas);
             console.log('before setData----------'+that.data.infos);
             that.setData({infos:that.data.infos});
         }
         if(list_type == 'teacher'){
             //滑动列表结尾追加数据
-                        that.data.ask_teacher_list=that.data.ask_teacher_list.concat(currentDatas);
+                        that.data.ask_teacher_list=that.data.ask_teacher_list.concat(concatDatas);
             console.log('before setData----------'+that.data.ask_teacher_list);
             that.setData({ask_teacher_list:that.data.ask_teacher_list});
         }
         if(list_type == 'question'){
-    that.data.questionsForAnswer=that.data.questionsForAnswer.concat(currentDatas);
+    that.data.questionsForAnswer=that.data.questionsForAnswer.concat(concatDatas);
             console.log('before setData----------'+that.data.questionsForAnswer);
             that.setData({questionsForAnswer:that.data.questionsForAnswer});
         }
 
         if(list_type == 'my_question'){
            //personal question
-            that.data.personal_ask_list=that.data.personal_ask_list.concat(currentDatas);
+            that.data.personal_ask_list=that.data.personal_ask_list.concat(concatDatas);
             console.log('before setData----------'+that.data.personal_ask_list);
             that.setData({personal_ask_list:that.data.personal_ask_list});
         }
         if(list_type == 'my_question_answer'){
            //personal question answer
-            for(var count = 0; count < currentDatas.length;count++)
-            {
-                var temp = {};
-                temp.data = currentDatas[count];
-                temp.selected = false;
-                that.data.personal_question_answer_list=that.data.personal_question_answer_list.concat(temp);
-            }
-            // that.data.personal_question_answer_list=that.data.personal_question_answer_list.concat(currentDatas);
+            
+            that.data.personal_question_answer_list=that.data.personal_question_answer_list.concat(concatDatas);
             console.log('before setData----------'+that.data.personal_question_answer_list);
             that.setData({personal_question_answer_list:that.data.personal_question_answer_list});
         }
         if(list_type == 'my_answered'){
            //personal answer
-            that.data.personal_answer_list=that.data.personal_answer_list.concat(currentDatas);
+            that.data.personal_answer_list=that.data.personal_answer_list.concat(concatDatas);
             console.log('before setData----------'+that.data.personal_answer_list);
             that.setData({personal_answer_list:that.data.personal_answer_list});
         }
         if(list_type == 'my_unanswer'){
            //personal not answer
-            that.data.personal_not_answer_list=that.data.personal_not_answer_list.concat(currentDatas);
+            that.data.personal_not_answer_list=that.data.personal_not_answer_list.concat(concatDatas);
             console.log('before setData----------'+that.data.personal_not_answer_list);
             that.setData({personal_not_answer_list:that.data.personal_not_answer_list});
         }
         if(list_type == 'my_like_answer'){
            //personal like answer
-            that.data.personal_like_answer_list=that.data.personal_like_answer_list.concat(currentDatas);
+            that.data.personal_like_answer_list=that.data.personal_like_answer_list.concat(concatDatas);
             console.log('before setData----------'+that.data.personal_like_answer_list);
             that.setData({personal_like_answer_list:that.data.personal_like_answer_list});
         }
         if(list_type == 'my_like_teacher'){
            //personal like teacher
-            that.data.personal_like_teacher_list=that.data.personal_like_teacher_list.concat(currentDatas);
+            that.data.personal_like_teacher_list=that.data.personal_like_teacher_list.concat(concatDatas);
             console.log('before setData----------'+that.data.personal_like_teacher_list);
             that.setData({personal_like_teacher_list:that.data.personal_like_teacher_list});
         }

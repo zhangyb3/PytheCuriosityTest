@@ -24,7 +24,7 @@ Page({
       voices: [],//音频数组
     },
     pen:{
-      lineWidth: 3,
+      lineWidth: 2,
       color: 'black',
     },
     photoFilePath: null,

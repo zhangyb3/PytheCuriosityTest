@@ -8,7 +8,7 @@
     <view class="personal_description_zone">
         <view class="personal_description_image_zone">
             <view class="personal_avatar_container">
-                <image class="personal_avartar_image" src="../../images/image_1@2x.png"></image>
+                <image class="personal_avartar_image" src="{{userAvatarUrl}}"></image>
             </view>
         </view>
         <view class="personal_description_text_zone">

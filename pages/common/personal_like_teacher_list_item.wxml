@@ -15,7 +15,7 @@
                     <!--教师简介-->
                     <text class="teacher_brief">{{ item.teacher_name }}</text>
                     <!--收藏数量-->
-                <view class="collect_icon_wrap"><image src="../../images/collect_icon.png"></image><text class="collect_icon" data-teacher="{{item}}" data-index='{{index}}' bindtap="likeTeacher">{{item.popularity}}</text></view>
+                <view class="collect_icon_wrap" data-teacher="{{item}}" data-index='{{index}}' bindtap="likeTeacher"><image src="../../images/collect_icon.png"></image><text class="collect_icon" >{{item.popularity}}</text></view>
                     <!--<text class="collect_icon" src="../../images/icon_language@2x.png">268
                 </text>-->
                 </view>

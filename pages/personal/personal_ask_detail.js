@@ -16,20 +16,20 @@ Page({
         },
         selected:false,
       },
-      {
-        data:{
-          answerid:-2,
-          text: '答案二',
-        },
-        selected:false,
-      },
-      {
-        data:{
-          answerid:-3,
-          text: '答案三',
-        },
-        selected:false,
-      },
+      // {
+      //   data:{
+      //     answerid:-2,
+      //     text: '答案二',
+      //   },
+      //   selected:false,
+      // },
+      // {
+      //   data:{
+      //     answerid:-3,
+      //     text: '答案三',
+      //   },
+      //   selected:false,
+      // },
     ],
     
 
@@ -42,9 +42,20 @@ Page({
       answerIds:'',
     },
 
+    question:{},
+
   },
   onLoad:function(parameters){
     console.log(parameters);
+
+    this.data.question.questioncontent = JSON.parse(parameters.questioncontent);
+    this.data.question.question_id = parameters.questionid;
+    this.data.question.reward = parameters.reward;
+    
+    this.setData({
+      question: this.data.question,
+    });
+
     this.data.bestAnswerParams.questionId = parameters.questionid;
 
     //加载个人问题列表答案集
@@ -71,7 +82,7 @@ Page({
 
   seeOneAnswer:function(result){
     console.log("see this answer");
-    var select_item = result.currentTarget.dataset.item;
+    var select_item = result.currentTarget.dataset.item.data;
     console.log(select_item);
     this.setData({
       hide_select_answer: false,
@@ -101,7 +112,7 @@ Page({
       personal_question_answer_list: this.data.personal_question_answer_list,
     });
     
-    // base.selectBestAnswer(bestAnswerParams);
+    
   },
   commitBestAnswer:function(e){
     this.data.bestAnswerParams.answerIds = this.data.bestAnswerParams.answerIds.substr(0,this.data.bestAnswerParams.answerIds.length-1);

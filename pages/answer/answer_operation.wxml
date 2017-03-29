@@ -38,7 +38,7 @@
                 </view>
             </view>
 
-            <view wx:if="{{answer_question.draw != 'null'}}" class="draw" >
+            <view wx:if="{{answer_question.draw != null}}" class="draw" >
                 <view class="bubble-draw" data-answer_draw='{{answer_question.draw}}' bindtap="showQuestionDraw">
                     <view>手绘</view>
                 </view>

@@ -12,25 +12,31 @@
         <view class="border_tab"/>
 
         <view class="personal_question_text_container">
-            <text class="personal_question_text_content">骄傲了的撒娇就大奖赛多绝对是副科级阿里;大家 到家了房价爱丽丝; 发动机辣椒粉就开了;爱神的箭京东方拉法基;登录碍事{{question.text_content}}</text>
+            <text class="personal_question_text_content">question_id:{{question.question_id}},reward:{{question.reward}}</text>
         </view>
 
         <view class="border_tab"/>
 
         <view class="multi_tips">
-            <view wx:if="{{item.voice_path == null}}" class="voice" >
+            <view wx:if="{{question.questioncontent.audio[0] != null}}" class="voice" >
                 
-                <view class="bubble" data-question_voice='{{question.voice_path}}' bindtap="playQuestionVoiceRecord">
+                <view class="bubble" data-question_voice='{{question.questioncontent.audio[0]}}' bindtap="playQuestionVoiceRecord">
                     <view class="bubble-tail"></view>
                     <view class="voice-wave"></view>
-                    <view>{{question.voice_timeLength}}秒</view>
+                    <view>{{question.questioncontent.audio[1]}}秒</view>
                 </view>
 
             </view>
 
-            <view wx:if="{{question.photo_path == null}}" class="photo" >
-                <view class="bubble-photo" data-question_photo='{{question.photo_path}}' >
+            <view wx:if="{{question.questioncontent.img[0] != null}}" class="photo" >
+                <view class="bubble-photo" data-question_photo='{{question.questioncontent.audio[0]}}' >
                     <view>照片</view>
+                </view>
+            </view>
+
+            <view wx:if="{{question.questioncontent.draw[0] != null}}" class="photo" >
+                <view class="bubble-photo" data-question_photo='{{question.questioncontent.draw[0]}}' >
+                    <view>手绘</view>
                 </view>
             </view>
 
@@ -44,14 +50,16 @@
         <template is="personal_question_answer_list" data='{{personal_question_answer_list}}'></template>
     </view>
 
-    <view class="personal_question_answer_select_item_container" hidden='{{hide_select_answer}}'>
-        <template is="personal_question_answer_select_item" data="{{select_item}}"></template>
-    </view>
-
     <view class="select_best_answer_commit">
         <button class="best_answer_commit_button" bindtap="commitBestAnswer">
             确定
         </button>
     </view>
+
+    <view class="personal_question_answer_select_item_container" hidden='{{hide_select_answer}}'>
+        <template is="personal_question_answer_select_item" data="{{select_item}}"></template>
+    </view>
+
+    
 
 </view>

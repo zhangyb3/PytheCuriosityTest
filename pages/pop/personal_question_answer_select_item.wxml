@@ -20,7 +20,7 @@
         <view class="select_answer_container" >
             <view class="select_answer_wrapper" >
                 <image  src='{{ select_item.avatar || "../../images/my_account_on.png" }}' />
-                <text class="teacher_name">{{ select_item.teacher_name }}</text>
+                <text class="teacher_name">{{ select_item.answerid }}</text>
                 
             </view>
             
@@ -36,24 +36,24 @@
         </view>
 
         <view class="multi_tips">
-            <view wx:if="{{select_item.voice_path == null}}" class="voice" >
+            <view wx:if="{{select_item.audio[0] != null}}" class="voice" >
                 
-                <view class="bubble" data-select_item_voice='{{select_item.voice_path}}' bindtap="playVoiceRecord">
+                <view class="bubble" data-select_item_voice='{{select_item.audio[0]}}' bindtap="playVoiceRecord">
                     <view class="bubble-tail"></view>
                     <view class="voice-wave"></view>
-                    <view>{{select_item.voice_timeLength}}秒</view>
+                    <view>{{select_item.audio[1]}}秒</view>
                 </view>
 
             </view>
 
-            <view wx:if="{{select_item.photo_path == null}}" class="photo" >
-                <view class="bubble-photo" data-select_item_photo='{{select_item.photo_path}}' bindtap="showPhoto">
+            <view wx:if="{{select_item.img[0] != null}}" class="photo" >
+                <view class="bubble-photo" data-select_item_photo='{{select_item.img[0]}}' bindtap="showPhoto">
                     <view>照片</view>
                 </view>
             </view>
 
-            <view wx:if="{{select_item.draw_path == null}}" class="draw" >
-                <view class="bubble-draw" data-select_item_photo='{{select_item.draw_path}}' bindtap="showDraw">
+            <view wx:if="{{select_item.draw[0] != null}}" class="draw" >
+                <view class="bubble-draw" data-select_item_photo='{{select_item.draw[0]}}' bindtap="showDraw">
                     <view>手绘</view>
                 </view>
             </view>
