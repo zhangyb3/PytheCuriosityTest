@@ -6,6 +6,7 @@ var utils=require("../../utils/util.js");
 var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
+var user = require("../../utils/user.js");
 
 Page({
   data:{
@@ -78,10 +79,10 @@ Page({
     //加载个人已答列表
     var that = this;
     var myAnsweredParams = {
-      teacherId : 1,
+      teacherId : wx.getStorageSync(user.TeacherID),
       pageSize : 3,
       pageNum : 1,
-      // subjectId: 1001,
+      
     };    
     listViewUtil.loadList(that,'my_answered',config.PytheRestfulServerURL,
     base.MY_ANSWERED_URL_DETAIL,
@@ -101,10 +102,10 @@ Page({
     //加载个人未答列表
     var that = this;
     var myUnanswerParams = {
-      teacherId : 1,
+      teacherId : wx.getStorageSync(user.TeacherID),
       pageSize : 3,
       pageNum : 1,
-      // subjectId: 1001,
+      
     };    
     listViewUtil.loadList(that,'my_unanswer',config.PytheRestfulServerURL,
     base.MY_UNANSWER_URL_DETAIL,

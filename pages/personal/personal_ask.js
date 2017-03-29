@@ -6,6 +6,7 @@ var utils=require("../../utils/util.js");
 var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
+var user = require("../../utils/user.js");
 
 Page({
   data:{
@@ -41,10 +42,10 @@ Page({
     //加载个人问题列表
     var that = this;
     var myQuestionParams = {
-      studentId : 1,
+      studentId : wx.getStorageSync(user.StudentID),
       pageSize : 3,
       pageNum : 1,
-      // subjectId: 1001,
+      
     };    
     listViewUtil.loadList(that,'my_question',config.PytheRestfulServerURL,
     base.MY_QUESTION_URL_DETAIL,

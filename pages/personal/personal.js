@@ -6,6 +6,7 @@ var utils=require("../../utils/util.js");
 var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
+var user = require("../../utils/user.js");
 
 var sleep = 30;
 var interval = null;
@@ -14,7 +15,7 @@ Page({
   data:{
     second : 10,
     user:{
-      id: 'vnoeajo4alvn24',
+      id: null,
     },
     countdownText : '发',
 
@@ -23,34 +24,7 @@ Page({
   },
   onLoad:function(options){
     
-    this.data.userAvatarUrl = wx.getStorageSync('userAvatarUrl');
-    this.data.userNickName = wx.getStorageSync('userNickName');
-    this.setData({
-      userAvatarUrl: this.data.userAvatarUrl,
-      userNickName: this.data.userNickName,
-    });
-    var that = this;
-    //查看赚了多少钱
-    wx.request({
-      url: config.PytheRestfulServerURL + '/me/earn',
-      data: {
-        // teacherId: wx.getStorageSync(user.TeacherID),
-        teacherId: 1,
-      },
-      method: 'GET', 
-      success: function(res){
-        // success
-        that.setData({
-          teacherEarn: res.data.data,
-        });
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
+    
 
   },
 
@@ -130,6 +104,68 @@ Page({
   },
   onShow:function(){
     // 页面显示
+    this.data.userAvatarUrl = wx.getStorageSync('userAvatarUrl');
+    this.data.userNickName = wx.getStorageSync('userNickName');
+    this.data.userDescription = wx.getStorageSync('UserDescription');
+    this.setData({
+      userAvatarUrl: this.data.userAvatarUrl,
+      userNickName: this.data.userNickName,
+      userDescription: this.data.userDescription,
+    });
+    var that = this;
+    //查看赚了多少钱
+    wx.request({
+      url: config.PytheRestfulServerURL + '/me/earn',
+      data: {
+        teacherId: wx.getStorageSync(user.TeacherID),
+        
+      },
+      method: 'GET', 
+      success: function(res){
+        // success
+        that.setData({
+          teacherEarn: res.data.data,
+        });
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    });
+
+    if(wx.getStorageSync('fixPersonalInfo')=='yes')
+    {
+      register.checkRegister(
+          (userRegisterResult) => {
+            console.log('check register : ' + JSON.stringify(userRegisterResult));
+            //如果没注册过，则注册
+            var registerInfo = userRegisterResult.data.data;
+            if(registerInfo == null)
+            {
+              wx.setStorageSync('alreadyRegister', 'no');
+              console.log("register : " + wx.getStorageSync('alreadyRegister'));
+              //注册
+              
+            }
+            else
+            {
+              wx.setStorageSync('alreadyRegister', 'yes');
+              wx.setStorageSync(user.UserID, registerInfo.userid);
+              wx.setStorageSync(user.StudentID, registerInfo.studentid);
+              wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
+              wx.setStorageSync(user.GradeID, registerInfo.gradeid);
+              wx.setStorageSync(user.UserDescription, registerInfo.description);
+              wx.setStorageSync('userNickName', registerInfo.username);
+            }
+          },
+          (userRegisterResult) => {
+            console.log(userRegisterResult);
+          },
+        );
+        wx.setStorageSync('fixPersonalInfo', 'no');
+    }
   },
   onHide:function(){
     // 页面隐藏

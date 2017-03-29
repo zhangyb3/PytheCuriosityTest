@@ -77,10 +77,10 @@
         </view>
 
         <view class="subject_container" wx:if="{{ask_question.not_select_subject == true}}">
-            <text class="subject_hint">科目    :</text>
-            <picker mode="selector" bindchange="subjectChange" value="{{subject_index}}" range="{{subjects}}" class="subject_picker_wrap">
+            <text class="subject_hint"> 科目: </text>
+            <picker mode="selector" bindchange="subjectChange" value="{{subject_index}}" range="{{subjectRange}}" class="subject_picker_wrap">
                 <view class="subject_picker">
-                    {{subjects[subject_index]}}
+                    {{subjectRange[subject_index]}}
                 </view>
             </picker>
         </view>

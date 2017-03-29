@@ -3,7 +3,7 @@
 var netUtil=require("../../utils/netUtil.js");
 var listViewUtil=require("../../utils/listViewUtil.js");
 var utils=require("../../utils/util.js");
-
+var user = require("../../utils/user.js");
 var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
@@ -35,7 +35,7 @@ Page({
     wx.request({
       url: config.PytheRestfulServerURL + '/me/imformation',
       data: {
-        userId: 1,
+        userId: wx.getStorageSync(user.UserID),
         username: this.data.user.username,
         description: this.data.user.description,
       },
@@ -49,7 +49,8 @@ Page({
       complete: function() {
         // complete
       }
-    })
+    });
+    wx.setStorageSync('fixPersonalInfo', 'yes');
   },
 
 

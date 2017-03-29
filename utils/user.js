@@ -10,4 +10,6 @@ module.exports = {
     TeacherID: 'TeacherID',
     GradeID: 'GradeID',
     SubjectID: 'SubjectID',
+    UserDescription: 'UserDescription',
+    UserNickName: 'UserNickName',
 }

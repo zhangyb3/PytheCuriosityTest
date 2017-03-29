@@ -189,7 +189,7 @@ Page({
       url: config.PytheRestfulServerURL + '/user/register/',
       data: {
         status:this.data.registerParams.status,
-        userName: wx.getStorageSync('userName'),
+        userName: wx.getStorageSync('userNickName'),
         phoneNum: wx.getStorageSync('registerPhoneNum'),
         verificationCode: wx.getStorageSync('verificationCode'),
         gradeId: this.data.registerParams.gradeId,
@@ -240,7 +240,7 @@ Page({
   onShow:function(){
     countdown(this);
 
-    if(wx.getStorageSync(user.UserID)!=null)
+    if(wx.getStorageSync(user.UserID)!='userID')
     {
       wx.setStorageSync('alreadyRegister', 'yes');
       wx.setStorageSync('fromRegister', 'yes');

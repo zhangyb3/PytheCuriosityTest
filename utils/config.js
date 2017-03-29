@@ -5,7 +5,7 @@ var MerchantID = "1438382702";
 
 var PytheRestfulServerURL = "http://10.0.0.2:8081/rest";
 var PytheFileServerURL = "http://10.0.0.2:8081";
-var PytheSearchServerURL = "http://10.0.0.6:8083/search";
+var PytheSearchServerURL = "http://139.199.212.174:8082/search";
 
 module.exports = {
     AppID : AppID,

@@ -6,6 +6,7 @@ var utils=require("../../utils/util.js");
 var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
+var user = require("../../utils/user.js");
 
 Page({
   data:{
@@ -33,10 +34,10 @@ Page({
     //加载个人精选列表
     var that = this;
     var myLikeAnswerParams = {
-      userId : 1,
+      userId : wx.getStorageSync(user.UserID),
       pageSize : 3,
       pageNum : 1,
-      // subjectId: 1001,
+      
     };    
     listViewUtil.loadList(that,'my_like_answer',config.PytheRestfulServerURL,
     base.MY_ANSWER_COLLECTION_URL_DETAIL,
@@ -56,10 +57,10 @@ Page({
     //加载个人名师列表
     var that = this;
     var myLikeTeacherParams = {
-      userId : 1,
+      userId : wx.getStorageSync(user.UserID),
       pageSize : 3,
       pageNum : 1,
-      // subjectId: 1001,
+      
     };    
     listViewUtil.loadList(that,'my_like_teacher',config.PytheRestfulServerURL,
     base.MY_TEACHER_COLLECTION_URL_DETAIL,

@@ -36,6 +36,7 @@ var login = (success, fail) => {
               wx.setStorageSync(user.StudentID, registerInfo.studentid);
               wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
               wx.setStorageSync(user.GradeID, registerInfo.gradeid);
+              wx.setStorageSync(user.UserDescription, registerInfo.description);
             }
           },
           (userRegisterResult) => {
@@ -100,6 +101,7 @@ var remoteLogin = (success, fail) => {
             //SID,TID临时测试数据
             wx.setStorageSync(user.StudentID, 'studentID');
             wx.setStorageSync(user.TeacherID, 'teacherID');
+            wx.setStorageSync(user.UserID, 'userID');
 
             wx.request({
                 url: LOGIN_URL,

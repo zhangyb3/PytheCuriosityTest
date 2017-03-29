@@ -26,23 +26,6 @@ Page({
     selectStudent:false,
     selectTeacher:false,
     subject_infos: [
-      // { subjectId: 1001, name: ' 语文 ', number: '#FFFFFF' },
-
-      // { subjectId: 2, name: ' 数学 ', number: '#FF0000' },
-
-      // { subjectId: 3, name: ' 英语 ', number: '#00FF00' },
-
-      // { subjectId: 4, name: ' 物理 ', number: '#0000FF' },
-
-      // { subjectId: 5, name: ' 化学 ', number: '#FF00FF' },
-
-      // { subjectId: 6, name: ' 生物 ', number: '#00FFFF' },
-
-      // { subjectId: 7, name: ' 历史 ', number: '#FFFF00' },
-
-      // { subjectId: 8, name: ' 政治 ', number: '#000000' },
-
-      // { subjectId: 9, name: ' 地理 ', number: '#70DB93' }
     ],
 
     answers:[],

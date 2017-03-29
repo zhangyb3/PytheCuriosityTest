@@ -36,7 +36,12 @@ Page({
       not_select_subject: false,
     },
 
-    subjects: ['物理', '化学', '计算机'],
+    subjects: [
+      {
+        subjectId: null,
+        subject: '请选择',
+      },
+    ],
     subject_index:0,
 
     hasPaidReward: false,
@@ -70,6 +75,39 @@ Page({
     });
  
     
+    var that = this;
+
+    var subjectRange = ['请选择'];
+    //加载动态课程列表,年级列表
+    wx.request({
+      url: config.PytheRestfulServerURL + '/user/register/subject',
+      data: {
+
+      },
+      method: 'GET', 
+      success: function(res){
+        // success
+        console.log(res.data.data);
+        
+        for(var count = 0; count < res.data.data.length; count++)
+        {
+          
+          subjectRange[count+1] = res.data.data[count].subject;
+          that.data.subjects[count+1] = res.data.data[count];
+          console.log(subjectRange);
+        }
+        
+        that.setData({
+          subjectRange: subjectRange,
+        });
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    });
     
   },
 
@@ -537,6 +575,16 @@ Page({
     console.log(e.currentTarget.dataset.image_source);
   },
 
+  //问老师需要选中科目
+  subjectChange: function(e) {
+    console.log('科目', this.data.subjects[e.detail.value])
+    this.setData({
+      subject_index: e.detail.value
+    })
+
+    this.data.ask_question.subjectId = this.data.subjects[e.detail.value].subjectid;
+  },
+
   selectReward1:function(e){
     console.log("￥ 1");
     wx.setStorageSync('rewardNum', 1);
@@ -585,8 +633,8 @@ Page({
             this.data.ask_question.upload_draw_path,
           ],
         },
-        // subjectId: this.data.ask_question.question_subjectId,
-        subjectId: 1001,
+        subjectId: this.data.ask_question.subjectId,
+        
         // reward: wx.getStorageSync('rewardNum'),
         reward: wx.getStorageSync("rewardNum"),
       };
