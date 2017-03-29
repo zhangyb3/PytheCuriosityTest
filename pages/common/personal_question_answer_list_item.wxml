@@ -12,18 +12,30 @@
                 <view class="complain_container" data-item='{{ item }}' bindtap="complainOneAnswer">
                     <image class="complain_image" src="../../images/my_account_un.png"></image>
                 </view>
-            </view>
-            <view class="personal_question_answer_content" data-item='{{ item }}' bindtap="seeOneAnswer">
-                <text class="personal_question_answer_text">{{item.data.answerid}}</text>
-            </view>
-            <view class="personal_question_answer_selector" >
+
+<view class="personal_question_answer_selector" >
                 <view class="answer_selector_container" data-item='{{ item }}' data-index='{{index}}' bindtap="selectBestAnswer">
                     <image class="answer_selector_image" wx:if="{{item.selected != true}}" src="../../images/icon_choose_nor@2x.png"></image>
                     <image class="answer_selector_image" wx:if="{{item.selected == true}}" src="../../images/icon_choose_sel@2x.png"></image>
-                </view>
+                </view>   
 
             </view>
+
             
+                <!--<view class="complain_container complain_container_cur" bindtap="complainOneAnswer">举报</view>-->
+                <!--去掉complain_container_cur这个类恢复灰色的字-->
+                <!--<view class="answer_selector_container" bindtap="selectBestAnswer">
+                    <image class="answer_selector_image" src="../../images/icon_choose_nor@2x.png"></image>-->
+                    <!--<image class="answer_selector_image" src="../../images/icon_choose_sel@2x.png"></image>--> 
+                <!--</view>-->
+            </view>
+            <!--<view class="personal_question_answer_content" data-item='{{ item }}' bindtap="seeOneAnswer">
+                <text class="personal_question_answer_text">{{item.text}}氨基酸地方辣椒粉垃圾收代理费福建省大垃圾发牢骚;大姐夫剪短发撒链接</text>
+
+            </view>-->
+             <view class="personal_question_answer_content" data-item='{{ item }}' bindtap="seeOneAnswer">
+                <text class="personal_question_answer_text">{{item.data.answerid}}按实际的法律;姐啊福利局束带结发飞机上的链接发来; 接发的是垃圾分类;撒接发的是辣椒粉</text>
+            </view>
         </view>
         <view class="border_tab"></view>
 

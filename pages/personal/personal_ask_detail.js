@@ -16,20 +16,20 @@ Page({
         },
         selected:false,
       },
-      // {
-      //   data:{
-      //     answerid:-2,
-      //     text: '答案二',
-      //   },
-      //   selected:false,
-      // },
-      // {
-      //   data:{
-      //     answerid:-3,
-      //     text: '答案三',
-      //   },
-      //   selected:false,
-      // },
+      {
+        data:{
+          answerid:-2,
+          text: '答案二',
+        },
+        selected:false,
+      },
+      {
+        data:{
+          answerid:-3,
+          text: '答案三',
+        },
+        selected:false,
+      },
     ],
     
 
