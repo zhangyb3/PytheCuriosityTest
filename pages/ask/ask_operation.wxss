@@ -190,6 +190,7 @@
 .ask_commit_button{
     line-height: 30px;
     margin-top: 30px;
+    width: 80%;
     background-color: #3AA5F0;
 }
 
