@@ -265,6 +265,14 @@ Page({
         console.log(res.data.data)
         var result = JSON.parse(res.data.data);
         that.data.ask_question.upload_voice_path = result.path;
+
+        //上传录音
+        var parameters = {
+          path : that.data.ask_question.upload_voice_path,
+          fileType : 'audio',
+        };
+        that.data.ask_question.photo_path = fileSys.uploadFile(that.data.ask_question.voice_path,parameters);
+        
       },
       fail: function() {
         // fail
@@ -274,12 +282,7 @@ Page({
       }
     });
 
-    //上传录音
-    var parameters = {
-      userFilePath : voicePath,
-      fileType : 'audio',
-    };
-    this.data.ask_question.photo_path = fileSys.uploadFile(this.data.ask_question.voice_path,parameters);
+    
   },
 
   drawPicture:function(e){
@@ -420,34 +423,36 @@ Page({
               hide_textarea: false,
               ask_question: that.data.ask_question,
             });
-            var parameters = {
-              userFilePath : res.savedFilePath,
-              fileType : 'image',
-            };
+            
 
             that.data.ask_question.upload_draw_path = null;
             //获得上传文件在文件服务器的路径
-            // wx.request({
-            //   url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
-            //   data: {
-            //     userFilePath: savedFilePath,
-            //     fileType: 'image',
-            //   },
-            //   method: 'POST', 
-            //   success: function(res){
-            //     // success
-            //     console.log(res.data.data)
-            //     var result = JSON.parse(res.data.data);
-            //     that.data.ask_question.upload_draw_path = result.path;
-            //   },
-            //   fail: function() {
-            //     // fail
-            //   },
-            //   complete: function() {
-            //     // complete
-            //   }
-            // });
-            // fileSys.uploadFile(savedFilePath,parameters);
+            wx.request({
+              url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
+              data: {
+                userFilePath: savedFilePath,
+                fileType: 'image',
+              },
+              method: 'POST', 
+              success: function(res){
+                // success
+                console.log(res.data.data)
+                var result = JSON.parse(res.data.data);
+                that.data.ask_question.upload_draw_path = result.path;
+                var parameters = {
+                  path : res.savedFilePath,
+                  fileType : 'image',
+                };
+                fileSys.uploadFile(that.data.ask_question.upload_draw_path,parameters);
+              },
+              fail: function() {
+                // fail
+              },
+              complete: function() {
+                // complete
+              }
+            });
+            
             
           },
           fail: function() {
@@ -485,12 +490,7 @@ Page({
               ask_question : that.data.ask_question,
               // img_src : savedFilePath,
             })
-            var parameters = {
-              userFilePath : savedFilePath,
-              fileType : 'image',
-              whatFile : 'photo',
-              fromWhere: 'ask',
-            };
+            
             //获得上传文件在文件服务器的路径
             wx.request({
               url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
@@ -504,18 +504,24 @@ Page({
                 console.log(res.data.data)
                 var result = JSON.parse(res.data.data);
                 that.data.ask_question.upload_photo_path = result.path;
-              },
-              fail: function() {
-                // fail
-              },
-              complete: function() {
-                // complete
-              }
-            });
-
-          
-            //上传文件
-            fileSys.uploadFile(savedFilePath,parameters);
+                
+                var parameters = {
+                  path : that.data.ask_question.upload_photo_path,
+                  fileType : 'image',
+                  whatFile : 'photo',
+                  
+                };
+                //上传文件
+                fileSys.uploadFile(savedFilePath,parameters);
+                  },
+                  fail: function() {
+                    // fail
+                  },
+                  complete: function() {
+                    // complete
+                  }
+                });
+            
             
           },
           fail: function() {

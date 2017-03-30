@@ -40,7 +40,7 @@ function uploadFile(filePath, parameters)
     wx.uploadFile({
       url: FILE_UPLOAD_URL,
       filePath:filePath,
-      name:parameters.userFilePath,
+      name:parameters.path,
       // header: {}, // 设置请求的 header
       formData: parameters,
       success: function(res){
