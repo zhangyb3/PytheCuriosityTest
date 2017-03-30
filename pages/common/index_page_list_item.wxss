@@ -20,21 +20,28 @@
     /*display: flex;*/
     text-align: left;
     /*height: auto;*/
-    height: 100px;
-    width: 100%;
-    margin-left: -10px;
+    height: 60px;
+    /*width: 100%;*/
+    margin-left: 10px;
+    margin-right: 10px;
     overflow-x: hidden; 
     overflow: hidden;
-    white-space: nowrap;
+   word-wrap: break-word;
     overflow-y: auto;
 
     text-overflow: ellipsis;
 }
 
 .question_content {
-    margin-left: 20px;
+    margin-left: 10px;
+    margin-right: 10px;
     height: auto;
     font-size: 18px;
+    -webkit-line-clamp: 2;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    word-wrap: break-word;
+
     color: #0A0A0A;
    
 }
@@ -59,7 +66,7 @@
     flex-direction: row;
     /*border-top: 1px solid #EEE;*/
     /*border-bottom: 1px solid #EEE;*/
-    height: 20px;
+    height: auto;
 }
 
 .answer_wrapper>image {
@@ -71,7 +78,7 @@
     background-size: contain;
 }
 
-.lines {
+.lines_an {
     
     font-size: 18px;
     height: 100px;
@@ -90,8 +97,12 @@
 }
 
 .answer_content{
+    margin-left: 10px;
     color: #6E6E6E;
     font-size: 16px;
+    height: auto;
+    margin-right: 10px;
+    word-wrap: break-word;
 }
 
 
