@@ -129,7 +129,7 @@ Page({
       url: config.PytheRestfulServerURL + '/likesnum',
       data: {
         answerId: this.data.answers[answer_index].answerid,
-        userId: wx.getStorageSync('userID'),
+        userId: wx.getStorageSync(user.UserID),
         questionId:  this.data.answers[answer_index].questionid,
       },
       method: 'GET', 

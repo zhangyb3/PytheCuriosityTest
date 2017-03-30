@@ -41,43 +41,7 @@ Page({
     ],
     
     questionsForAnswer:[
-      {
-        avatar: null,
-        
-        teacher_name: "自己",
-        is_like: false,
-        like_num: 88,
-        reward_num: 10.00,
-        question_content: "传言大陆正研究给予台湾地区民众“国民待遇”。国台办发言人安峰山昨天（8日）指出，中共中央举行的2017年对台工作会议，政策措施涉及台人在大陆的就业、社会保障、生活便利等，有关部门正按照会议精神研究，待成",
-        voice_path:'template',
-      },
-      {
-        avatar: null,
-        
-        teacher_name: "自己",
-        is_like: true,
-        like_num: 0,
-        reward_num: 10.00,
-        question_content: "峰山昨天（8日）指出，中共中央举行的2017年对台工作会议，政策措施涉及"
-      },
-      {
-        avatar: null,
-        
-        teacher_name: "自己",
-        is_like: true,
-        like_num: 0,
-        reward_num: 10.00,
-        question_content: "峰山昨天（8日）指出，中共中央举行的2017年对台工作会议，政策措施涉及"
-      },
-      {
-        avatar: null,
-        
-        teacher_name: "自己",
-        is_like: true,
-        like_num: 0,
-        reward_num: 10.00,
-        question_content: "峰山昨天（8日）指出，中共中央举行的2017年对台工作会议，政策措施涉及"
-      }
+          
     ],
     selectSubject:'',
     sortSortAttribute:'',
@@ -114,6 +78,7 @@ Page({
         {},
         'GET',
     );
+    
   },
 
   subject_filter:function(e){
@@ -257,8 +222,14 @@ Page({
   selectOneItem:function(e){
       console.log("navigate to answer operation page");
       var parametersJSON = e.currentTarget.dataset.item;
-      parametersJSON.audio_path = parametersJSON.audio[0];
-      parametersJSON.audio_duration = parametersJSON.audio[1];
+      parametersJSON.question_id = parametersJSON.question.questionid;
+      parametersJSON.subject_id = parametersJSON.question.subjectid;
+      parametersJSON.student_id = parametersJSON.question.studentid;
+      parametersJSON.text_content = parametersJSON.question.questioncontent.text[0];
+      parametersJSON.photo_path = parametersJSON.question.questioncontent.img[0];
+      parametersJSON.draw_path = parametersJSON.question.questioncontent.draw[0];
+      parametersJSON.audio_path = parametersJSON.question.questioncontent.audio[0];
+      parametersJSON.audio_duration = parametersJSON.question.questioncontent.audio[1];
       console.log(parametersJSON);
       var parameters = netUtil.json2Form(parametersJSON);
       // console.log(parameters);

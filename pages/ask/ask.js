@@ -202,7 +202,7 @@ Page({
       wx.request({
         url: config.PytheRestfulServerURL + '/question/teacher/likes',
         data: {
-          userId: user.UserID,
+          userId: wx.getStorageSync(user.UserID),
           teacherId: teacher.teacherid,
         },
         method: 'GET', 

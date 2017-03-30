@@ -38,7 +38,9 @@ Page({
       gradeId: null,
       subjectId: null,
     },
-   
+
+    countdownText : '发送验证码',
+    second: 10,
   },
   
   onLoad:function(options){
@@ -175,6 +177,20 @@ Page({
   sendVerificationCode:function(res) {
     console.log(wx.getStorageSync('registerPhoneNum'));
     register.sendVerificationCode(wx.getStorageSync('registerPhoneNum'));
+
+    //重发倒数
+    var that = this;
+    
+    that.setData({  
+      second: 10,  
+      
+      }); 
+    countdown(that);
+    if (second < 0) {  
+      that.setData({  
+        countdownText: "重发验证码"  
+      });  
+    }
   },
   verificationCodeInput: function(e) {
     var verificationCode = e.detail.value;
@@ -238,7 +254,7 @@ Page({
     // 页面渲染完成
   },
   onShow:function(){
-    countdown(this);
+    
 
     if(wx.getStorageSync(user.UserID)!='userID')
     {
@@ -264,21 +280,30 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
-  }
+  },
+
+
+  
+
+
 })
 
 function countdown(that) {
   var second = that.data.second ;
-    if (second == 0) {  
+    if (second < 0) {  
       that.setData({  
-      second: "60秒倒计时结束"  
+        countdownText: "重发验证码" ,
+        lock_countdown: false,
       });  
       return ;  
   } 
 
   var time = setTimeout(function(){  
     that.setData({  
-      second: second - 1  
+      
+      countdownText: second + '秒后可重发',
+      second: second - 1  ,
+      lock_countdown: true,
     });  
     countdown(that);  
     }  

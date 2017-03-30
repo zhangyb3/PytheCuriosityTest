@@ -19,7 +19,7 @@
         <view class="phone_number_container">
             <text class="phone_hint">手机号:</text>
             <input class="phone_number_input" type="text"  bindinput="phoneNumberInput" ></input>
-            <button type="default" class="send_verification_code_button" bindtap="sendVerificationCode">获取验证码</button>
+            <button type="default" class="send_verification_code_button" bindtap="sendVerificationCode">{{countdownText}}</button>
         </view>
         <view class="verification_code_container">
             <text class="verification_hint">验证码:</text>
@@ -50,6 +50,9 @@
 
     <view class="countdown_container">
         <button class="countdown_button" disabled="{{lock_countdown}}" bindtap="enterToCountdown">{{countdownText}}</button>
+    </view>
+    <view class="countdown_container" hidden="true">  
+        <text class="countdown_text">倒计时: {{second}} </text>  
     </view>
 
 

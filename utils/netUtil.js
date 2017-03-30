@@ -391,6 +391,11 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             {
                 temp.selected = false;
             }
+            if(list_type == 'question')
+            {
+                temp.question = JSON.parse(currentDatas[count].question);
+                temp.question.questioncontent = JSON.parse(temp.question.questioncontent);
+            }
             console.log(temp);
             concatDatas[count] = temp;
         }

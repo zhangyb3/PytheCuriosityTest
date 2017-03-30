@@ -616,8 +616,8 @@ Page({
       // base.commitQuestion(this.data.ask_question);
 
       var questionParams= {
-        // studentId: wx.getStorageSync('StudentID'),
-        studentId: 1,
+        studentId: wx.getStorageSync(user.StudentID),
+        
         questionContent:{
           text: [
             this.data.ask_question.text_content,

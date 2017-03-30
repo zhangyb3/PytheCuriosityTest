@@ -126,6 +126,36 @@
     background-size: 18px; 
 }
 
+
+.grade_container{
+    display: flex;
+    flex-direction: row;
+    margin-top:10px;
+    text-align: center;
+}
+
+.grade_hint{
+    width:46px;
+    text-align:right;
+    line-height:30px;
+    color:#0a0a0a;
+    font-size:14px;
+    font-weight:bold;
+    margin-right:5px;
+}
+.grade_picker_wrap{
+    border:1px solid #3AA4F1;
+    border-radius: 8rpx;
+    height: 30px;
+    width:216px;
+    padding:0 5px;
+    line-height:30px;
+}
+.grade_picker{
+    background:url(../../images/arr.png) right center no-repeat;
+    background-size:8px 8px;
+}
+
 .interval{
     margin-top: 10px;
 }
