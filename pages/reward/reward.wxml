@@ -15,13 +15,13 @@
 
     <view class="reward_number_container">
         <view class="reward_1" bindtap="selectReward1">
-            <!--<image src="../../images/reward_1.png"></image>-->
+            <image class="reward_1_img" src="../../images/reward_1.png"></image>
         </view>
         <view class="reward_5" bindtap="selectReward5">
-            <!--<image src="../../images/reward_5.png"></image>-->
+            <image class="reward_5_img" src="../../images/reward_5.png"></image>
         </view>
         <view class="reward_10" bindtap="selectReward10">
-            <!--<image src="../../images/reward_10.png"></image>-->
+            <image class="reward_1_img" src="../../images/reward_10.png"></image>
         </view>
     </view>
 

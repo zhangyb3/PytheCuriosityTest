@@ -5,6 +5,7 @@
     justify-content: space-around;
     align-items: center;
     background-color: #3AA4F1;
+    border-bottom: 1px solid #EEE;
 }
 
 .subject_view{

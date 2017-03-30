@@ -23,7 +23,7 @@
             <view class="border_tab"></view>
 
             <view class="ask_content_zone" hidden='{{hide_textarea}}'>
-                <textarea class="ask_content_text_input" bindinput="getQuestionText"  placeholder-style="color:#C9C9C9" placeholder-style="font-size:14px"/>
+                <textarea class="ask_content_text_input" bindinput="getQuestionText" placeholder="请输入问题"    placeholder-style="color:#C9C9C9" placeholder-style="font-size:14px"/>
             </view>
 
             <view class="border_tab"></view>
@@ -97,7 +97,7 @@
         </view>
     </view>
 
-        <view class="border_tab"></view>
+        <!--<view class="border_tab"></view>-->
 
         <view class="ask_commit_confirm">
             <button class="ask_commit_button" bindtap="commitQuestion">

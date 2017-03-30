@@ -20,15 +20,14 @@
                 </view>   
 
             </view>
-
+    </view>
             
                 <!--<view class="complain_container complain_container_cur" bindtap="complainOneAnswer">举报</view>-->
                 <!--去掉complain_container_cur这个类恢复灰色的字-->
                 <!--<view class="answer_selector_container" bindtap="selectBestAnswer">
-                    <image class="answer_selector_image" src="../../images/icon_choose_nor@2x.png"></image>-->
-                    <!--<image class="answer_selector_image" src="../../images/icon_choose_sel@2x.png"></image>--> 
-                <!--</view>-->
-            </view>
+                    <image class="answer_selector_image" src="../../images/icon_choose_nor@2x.png"></image>
+                    <image class="answer_selector_image" src="../../images/icon_choose_sel@2x.png"></image> 
+                </view>-->
             <!--<view class="personal_question_answer_content" data-item='{{ item }}' bindtap="seeOneAnswer">
                 <text class="personal_question_answer_text">{{item.text}}氨基酸地方辣椒粉垃圾收代理费福建省大垃圾发牢骚;大姐夫剪短发撒链接</text>
 
