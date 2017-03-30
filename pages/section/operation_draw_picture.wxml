@@ -31,6 +31,7 @@
         </view>
 
         <view class="canvas_confirm">
+            <view class="canvas_cancel_button" bindtap="drawPictureCancel">取消</view>
             <view class="canvas_confirm_button" bindtap="drawPictureConfirm">确定</view>
         </view>
 
