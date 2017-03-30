@@ -39,7 +39,7 @@
             </view>
 
             <view wx:if="{{answer_question.draw_path != null}}" class="draw" >
-                <view class="bubble-draw" data-answer_draw='{{answer_question.draw_path}}' bindtap="showQuestionDraw">
+                <view class="bubble-draw" data-question_draw='{{answer_question.draw_path}}' bindtap="showQuestionDraw">
                     <view>手绘</view>
                 </view>
             </view>

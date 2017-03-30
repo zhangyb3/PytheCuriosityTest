@@ -394,6 +394,15 @@ Page({
     this.isClear = false;
   },
 
+  drawPictureCancel:function(e){
+    console.log('cancel draw');
+    this.setData({
+      hide_record_sound_section : true,
+      hide_take_photo_section : true,
+      hide_draw_picture_section : true,
+      hide_textarea: false,
+    });
+  },
   drawPictureConfirm:function(e){
     var that = this;
     
@@ -430,7 +439,7 @@ Page({
             wx.request({
               url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
               data: {
-                userFilePath: savedFilePath,
+                userFilePath: that.data.ask_question.draw_path,
                 fileType: 'image',
               },
               method: 'POST', 
@@ -440,7 +449,7 @@ Page({
                 var result = JSON.parse(res.data.data);
                 that.data.ask_question.upload_draw_path = result.path;
                 var parameters = {
-                  path : res.savedFilePath,
+                  path : that.data.ask_question.upload_draw_path,
                   fileType : 'image',
                 };
                 fileSys.uploadFile(that.data.ask_question.upload_draw_path,parameters);

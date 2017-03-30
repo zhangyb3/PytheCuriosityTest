@@ -402,6 +402,15 @@ Page({
     this.isClear = false;
   },
 
+  drawPictureCancel:function(e){
+    console.log('cancel draw');
+    this.setData({
+      hide_record_sound_section : true,
+      hide_take_photo_section : true,
+      hide_draw_picture_section : true,
+      hide_textarea: false,
+    });
+  },
   drawPictureConfirm:function(e){
     var that = this;
     
@@ -414,7 +423,7 @@ Page({
           success: function(res){
             // success
             console.log(res.savedFilePath);
-            that.data.ask_question.draw_path = res.savedFilePath;
+            that.data.question_answer.draw_path = res.savedFilePath;
             wx.showModal({
               title: '图示已保存',
               content: res.savedFilePath,
@@ -429,7 +438,7 @@ Page({
               hide_take_photo_section : true,
               hide_draw_picture_section : true,
               hide_textarea: false,
-              ask_question: that.data.ask_question,
+              question_answer: that.data.question_answer,
             });
             
 
@@ -438,7 +447,7 @@ Page({
             wx.request({
               url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
               data: {
-                userFilePath: savedFilePath,
+                userFilePath: that.data.question_answer.draw_path,
                 fileType: 'image',
               },
               method: 'POST', 
@@ -449,7 +458,7 @@ Page({
                 that.data.question_answer.upload_draw_path = result.path;
 
                 var parameters = {
-                  path : res.savedFilePath,
+                  path : that.data.ask_question.upload_draw_path,
                   fileType : 'image',
                 };
                 fileSys.uploadFile(that.data.question_answer.upload_draw_path,parameters);
@@ -597,8 +606,9 @@ Page({
   },
 
   showQuestionPhoto:function(e){
-    console.log("显示图片" );
-    var questionPhotoPath = fileSys.downloadFile(this,decodeURI(e.currentTarget.dataset.question_photo),'image');
+    var question_photo = decodeURI(e.currentTarget.dataset.question_photo);
+    console.log("显示图片" + question_photo);
+    var questionPhotoPath = fileSys.downloadFile(this,question_photo,'image');
     this.data.answer_question.photo_path = questionPhotoPath;
     this.setData({
       hide_show_image_page: false,
@@ -607,8 +617,9 @@ Page({
 
   },
   showQuestionDraw:function(e){
-    console.log("显示手绘" );
-    var questionDrawPath = fileSys.downloadFile(this,decodeURI(e.currentTarget.dataset.question_draw),'image');
+    var question_draw = decodeURI(e.currentTarget.dataset.question_draw);
+    console.log("显示手绘" + question_draw);
+    var questionDrawPath = fileSys.downloadFile(this,question_draw,'image');
     this.data.answer_question.draw_path = questionDrawPath;
     this.setData({
       hide_show_image_page: false,

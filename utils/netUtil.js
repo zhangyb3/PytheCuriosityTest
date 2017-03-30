@@ -304,7 +304,7 @@ function request(requestConfig){
         complete:function(res){
             stopPullRefresh(requestConfig.page);
            // requestConfig.callback.onEnd();
-
+           wx.setStorageSync('end_load', 'yes');
 
             // that.setData({hidden:true,toast:true});
         }

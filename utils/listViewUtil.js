@@ -104,7 +104,28 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
 
     page.onPullDownRefresh = function(){
         if(list_type == 'index'){
-        page.data.infos=[];//知列表
+            page.data.infos=[];//知列表
+
+            /**
+             * 下拉时更新不同模式的知列表，requestSimpleList是异步加载，所以要有信号量判断是否已加载完成，否则无法使用另一种模式
+             */
+            if(wx.getStorageSync('index_load_type') == 'one' && wx.getStorageSync('end_load') == 'yes')
+            {
+                page.data.urlDetail = page.data.urlDetail + '/two';
+                wx.setStorageSync('end_load', 'no');
+                netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
+                wx.setStorageSync('index_load_type', 'two');
+            }
+            if(wx.getStorageSync('index_load_type') == 'two' && wx.getStorageSync('end_load') == 'yes')
+            {
+                var urlstr = page.data.urlDetail;
+                urlstr = urlstr.slice(0,urlstr.length-4);
+                page.data.urlDetail = urlstr;
+                wx.setStorageSync('end_load', 'no');
+                netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
+                wx.setStorageSync('index_load_type', 'one');
+            }
+
         }
         if(list_type == 'teacher'){
             page.data.ask_teacher_list = [];//老师列表
@@ -131,7 +152,11 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
         if(list_type == 'my_like_teacher'){
             page.data.personal_like_teacher_list = [];//like teacher列表
         }
-        netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
+        if(list_type != 'index')
+        {
+            netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
+        }
+        
     };
 
     page.onReachBottom = function(){
@@ -139,7 +164,7 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     };
 
     page.onLoadMore = page.onReachBottom;
-    page.onRefresh = page.onPullDownRefresh;
+    // page.onRefresh = page.onPullDownRefresh;
     page.onRetry = function(){
         netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
     };
