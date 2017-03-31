@@ -211,7 +211,8 @@ function json2Form(json) {
         {
             str.push(encodeURIComponent(p) + "=" + encodeURIComponent(JSON.stringify(json[p])));
         }
-        else if(json[p] != null)
+        else 
+        if(json[p] != null)
         {
             str.push(encodeURIComponent(p) + "=" + encodeURIComponent(json[p]));
         }

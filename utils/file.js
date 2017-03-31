@@ -61,7 +61,7 @@ function downloadFile(that,download_file,fileType)
   wx.request({
     url: FILE_PREDOWNLOAD_URL,
     data: {
-      path: decodeURI(download_file),
+      path: decodeURIComponent(download_file),
       // fileType : fileType,
     },
     method: 'GET', 
@@ -69,45 +69,68 @@ function downloadFile(that,download_file,fileType)
       // 成功移动到缓冲区
 
       wx.downloadFile({
-        url: FILE_DOWNLOAD_URL + decodeURI(download_file),
+        url: FILE_DOWNLOAD_URL + decodeURIComponent(download_file),
         type: fileType, // 下载资源的类型，用于客户端识别处理，有效值：image/audio/video
         success: function(res){
           console.log(res);
-          wx.saveFile({
-            tempFilePath: res.tempFilePath,
-            success: function(res){
-              console.log(res.savedFilePath);
-              if(fileType == 'image')
-              {
-                that.setData({
-                  img_src: res.savedFilePath,
-                });
+
+          if(fileType == 'image')
+          {
+            that.setData({
+              img_src: res.tempFilePath,
+            });
+          }
+          if(fileType == 'audio')
+          {
+            wx.playVoice({
+              filePath: res.tempFilePath,
+              success: function(res){
+                // success
+              },
+              fail: function() {
+                // fail
+              },
+              complete: function() {
+                // complete
               }
-              if(fileType == 'audio')
-              {
-                wx.playVoice({
-                  filePath: res.savedFilePath,
-                  success: function(res){
-                    // success
-                  },
-                  fail: function() {
-                    // fail
-                  },
-                  complete: function() {
-                    // complete
-                  }
-                })
-              }
-              return res.savedFilePath;
-            },
-            fail: function() {
-              // fail
+            })
+          }
+
+          // wx.saveFile({
+          //   tempFilePath: res.tempFilePath,
+          //   success: function(res){
+          //     console.log(res.savedFilePath);
+          //     if(fileType == 'image')
+          //     {
+          //       that.setData({
+          //         img_src: res.savedFilePath,
+          //       });
+          //     }
+          //     if(fileType == 'audio')
+          //     {
+          //       wx.playVoice({
+          //         filePath: res.savedFilePath,
+          //         success: function(res){
+          //           // success
+          //         },
+          //         fail: function() {
+          //           // fail
+          //         },
+          //         complete: function() {
+          //           // complete
+          //         }
+          //       })
+          //     }
+          //     return res.savedFilePath;
+          //   },
+          //   fail: function() {
+          //     // fail
               
-            },
-            complete: function() {
-              // complete
-            }
-          });
+          //   },
+          //   complete: function() {
+          //     // complete
+          //   }
+          // });
           
         },
         fail: function(res) {

@@ -33,7 +33,7 @@
                 </view>
 
                  <view wx:if="{{item.question.questioncontent.draw[0] != null}}" class="draw" >
-                    <view class="bubble-photo" data-question_photo='{{item.question.questioncontent.draw[0]}}' >
+                    <view class="bubble-draw" data-question_photo='{{item.question.questioncontent.draw[0]}}' >
                         <view>手绘</view>
                     </view>
                 </view>
@@ -43,7 +43,7 @@
             <view class="dotted_line"></view>
             <view class="border_tab"/>
 
-            <text class="question_content">{{item.timer}}</text>
+            <text class="question_content">倒计时：{{item.timer}}</text>
 
             <view class="border_tab"/>
       

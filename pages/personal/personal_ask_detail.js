@@ -5,6 +5,7 @@ var utils=require("../../utils/util.js");
 var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
+var user = require("../../utils/user.js");
 
 Page({
   data:{
@@ -45,10 +46,11 @@ Page({
     question:{},
 
   },
-  onLoad:function(parameters){
-    console.log(parameters);
-
-    this.data.question.questioncontent = JSON.parse(parameters.questioncontent);
+  onLoad:function(params){
+    console.log(params);
+    var parameters = JSON.parse(decodeURIComponent(params.P));
+    
+    this.data.question.questioncontent = parameters.questioncontent;
     this.data.question.question_id = parameters.questionid;
     this.data.question.reward = parameters.reward;
     
@@ -82,7 +84,7 @@ Page({
 
   seeOneAnswer:function(result){
     console.log("see this answer");
-    var select_item = result.currentTarget.dataset.item.data;
+    var select_item = result.currentTarget.dataset.item;
     console.log(select_item);
     this.setData({
       hide_select_answer: false,
@@ -91,7 +93,7 @@ Page({
   },
 
   selectBestAnswer:function(result){
-    console.log("best answer " + result.currentTarget.dataset.item.data.answerid);
+    console.log("best answer " + result.currentTarget.dataset.item.answerid);
     var theAnswer = result.currentTarget.dataset.item;
     
     this.data.bestAnswerParams.answerIds = this.data.bestAnswerParams.answerIds + theAnswer.answerid + ',';
@@ -119,10 +121,10 @@ Page({
     base.selectBestAnswer(this.data.bestAnswerParams);
   },
   complainOneAnswer:function(result){
-    console.log("complain this answer " + result.currentTarget.dataset.item.data.answerid);
-    var theAnswer = result.currentTarget.dataset.item.data;
+    console.log("complain this answer " + result.currentTarget.dataset.item.answerid);
+    var theAnswer = result.currentTarget.dataset.item;
     var complainParams = {
-      userId: 1,
+      userId: wx.getStorageSync(user.UserID),
       complainedId: theAnswer.answerid,
     };
     base.complainAnswer(complainParams);

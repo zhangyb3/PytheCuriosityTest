@@ -33,7 +33,7 @@
 
             </view>-->
              <view class="personal_question_answer_content" data-item='{{ item }}' bindtap="seeOneAnswer">
-                <text class="personal_question_answer_text">{{item.data.answerid}}按实际的法律;姐啊福利局束带结发飞机上的链接发来; 接发的是垃圾分类;撒接发的是辣椒粉</text>
+                <text class="personal_question_answer_text">answerid:{{item.answerid}}</text>
             </view>
         </view>
         <view class="border_tab"></view>

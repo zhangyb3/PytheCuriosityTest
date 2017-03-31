@@ -48,7 +48,7 @@
         <button class="register_confirm_button" bindtap="registerToMainPage">登录</button>
     </view>
 
-    <view class="countdown_container">
+    <view class="countdown_container" hidden="true">
         <button class="countdown_button" disabled="{{lock_countdown}}" bindtap="enterToCountdown">{{countdownText}}</button>
     </view>
     <view class="countdown_container" hidden="true">  
