@@ -37,7 +37,8 @@
     margin-right: 10px;
     height: auto;
     font-size: 18px;
-    -webkit-line-clamp: 2;
+    /*开头空两格*/
+    /*-webkit-line-clamp: 2;*/
     text-overflow: ellipsis;
     overflow: hidden;
     word-wrap: break-word;
