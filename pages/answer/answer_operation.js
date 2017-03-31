@@ -606,7 +606,7 @@ Page({
   },
 
   showQuestionPhoto:function(e){
-    var question_photo = decodeURI(e.currentTarget.dataset.question_photo);
+    var question_photo = decodeURIComponent(e.currentTarget.dataset.question_photo);
     console.log("显示图片" + question_photo);
     var questionPhotoPath = fileSys.downloadFile(this,question_photo,'image');
     this.data.answer_question.photo_path = questionPhotoPath;
@@ -617,7 +617,7 @@ Page({
 
   },
   showQuestionDraw:function(e){
-    var question_draw = decodeURI(e.currentTarget.dataset.question_draw);
+    var question_draw = decodeURIComponent(e.currentTarget.dataset.question_draw);
     console.log("显示手绘" + question_draw);
     var questionDrawPath = fileSys.downloadFile(this,question_draw,'image');
     this.data.answer_question.draw_path = questionDrawPath;

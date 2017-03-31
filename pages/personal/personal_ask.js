@@ -65,10 +65,12 @@ Page({
 
   selectOneQuestion:function(result){
     var question = result.currentTarget.dataset.item;
+    console.log(question);
     console.log(JSON.stringify(question));
-    var parametersString = netUtil.json2Form(question);
+    // var parametersString = netUtil.json2Form(question);
+    var parametersString = encodeURIComponent(JSON.stringify(question));
     wx.navigateTo({
-      url: 'personal_ask_detail' + '?' + parametersString,
+      url: 'personal_ask_detail' + '?' + 'P=' +parametersString,
       success: function(res){
         // success
       },
