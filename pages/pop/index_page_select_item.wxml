@@ -71,19 +71,25 @@
                     <view class="border_tab"></view>
 
                     <view class="multi_tips">
-                        <view wx:if="{{answer.voice_path == null}}" class="voice" >
+                        <view wx:if="{{answer.questioncontent.audio[0] != null}}" class="voice" >
                             
-                            <view class="bubble" data-question_voice='{{answer.voice_path}}' bindtap="playAnswerVoiceRecord">
+                            <view class="bubble" data-question_voice='{{answer.questioncontent.audio[0]}}' bindtap="playAnswerVoiceRecord">
                                 <view class="bubble-tail"></view>
                                 <view class="voice-wave"></view>
-                                <view>{{answer.voice_timeLength}}秒</view>
+                                <view>{{answer.questioncontent.audio[1]}}秒</view>
                             </view>
 
                         </view>
 
-                        <view wx:if="{{answer.photo_path == null}}" class="photo" >
-                            <view class="bubble-photo" data-question_photo='{{answer.photo_path}}' >
+                        <view wx:if="{{answer.questioncontent.img[0] != null}}" class="photo" >
+                            <view class="bubble-photo" data-question_photo='{{answer.questioncontent.img[0]}}' >
                                 <view>照片</view>
+                            </view>
+                        </view>
+
+                        <view wx:if="{{answer.questioncontent.draw[0] != null}}" class="photo" >
+                            <view class="bubble-draw" data-question_photo='{{answer.questioncontent.draw[0]}}' >
+                                <view>手绘</view>
                             </view>
                         </view>
 

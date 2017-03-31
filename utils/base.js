@@ -36,8 +36,13 @@ function getDetailContent(that,selectItem)
       method: 'GET', 
       success: function(res){
         console.log(res);
+        var answers = res.data.data;
+        for(var count = 0; count < answers.length; count++)
+        {
+          answers[count].questioncontent = JSON.parse(answers[count].questioncontent);
+        }
         that.setData({
-            answers: res.data.data,
+            answers: answers,
             question:selectItem,
         });
         typeof success == "function" && success(res.data.data);

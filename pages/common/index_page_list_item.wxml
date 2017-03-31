@@ -6,7 +6,7 @@
             <!--<view class="border_tab_index_white"></view>-->
             <view class="question_wrapper">
             <view class="border_tab_index_white"></view>
-                <text class="question_content">questionid:{{ item.questionid }}hsjdahflkahkasldhfkajshdfkahsdkfhaskdhfkalsdhfkalsdhfkjjahsdkfjllhasdkjlfhasdkjhfkals</text>
+                <text class="question_content">questionid:{{ item.questionid }}</text>
               
             </view>
 
@@ -50,14 +50,14 @@
                 <text class="teacher_name">{{ item.teacher_name }}</text>
                 
                 <view class="ctrls">
-                    <text class='{{ item.is_liked == 1 ? "like" : "not-like" }}' bindtap='bindLike' data-index='{{ index }}'>{{ item.fee }}</text>
+                    <text class='{{ item.is_liked == 1 ? "like" : "not-like" }}' bindtap='bindLike' data-index='{{ index }}'>{{ item.reward }}</text>
                     
                 </view>
                 
             </view>
 
             <view class="lines">
-                <text class="answer_content">answerid:{{ item.answerid }}sjdahflkahkasldhfkajshdfkahsdkfhaskdhfkalsdhfkalsdhfkjjahsdkfjllhasdkjlfhasdkjhfkals</text>
+                <text class="answer_content">answerid:{{ item.answerid }}</text>
             </view>
 
             </view>
@@ -80,7 +80,7 @@
                 </view>
 
                 <view wx:if="{{item.a_draw != null}}" class="photo" >
-                    <view class="bubble-photo" data-question_photo='{{item.a_draw}}' >
+                    <view class="bubble-draw" data-question_photo='{{item.a_draw}}' >
                         <view>手绘</view>
                     </view>
                 </view>
