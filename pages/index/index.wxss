@@ -21,7 +21,7 @@
 }
 
 .index_page_list_container{
-    background-color: lightgray;
+    background-color: #ECEBF4;
 
 }
 
@@ -32,10 +32,8 @@
 
 .index_page_filter{
   width: 10%;
-  color: lightgray;
+  color: #ECEBF4;
 }
-
-
 
 @import "../listView/index_page_list.wxss";
 @import "../common/index_page_filter.wxss";

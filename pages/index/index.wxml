@@ -6,6 +6,7 @@
 <import src="../pop/index_page_select_item.wxml" />
 
 <import src="../pop/show_image_page.wxml" />
+
 <view class="show_image_page_container" hidden='{{hide_show_image_page}}'>
         <template is="show_image_page" data="{{img_src}}"></template>
 </view>
@@ -28,14 +29,24 @@
     <template is="index_page_filter"></template>
   </view>
 
-  <view class="index_page_list_container" >
+  <!--<view class="index_page_list_container" >
     <template is="index_page_list" data="{{infos}}"></template>
-  </view>
+  </view>-->
 
-  <view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
+  <!--<view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
     <template is="index_page_select_item" data="{{answers,question}}"></template>
-  </view>
+  </view>-->
 
   <!--<view class="list_bottom"></view>-->
 
 </view>
+
+<view class="index_page_list_container" >
+    <template is="index_page_list" data="{{infos}}"></template>
+</view>
+
+<view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
+    <template is="index_page_select_item" data="{{answers,question}}"></template>
+  </view>
+  <view class="list_bottom"></view>
+

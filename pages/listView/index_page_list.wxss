@@ -17,6 +17,11 @@
     background-color: #ECEBF4;
 }
 
+.border_tab_index_white{
+    height: 10px;
+    background-color: white;
+}
+
 
 
 @import "../common/index_page_list_item.wxss";

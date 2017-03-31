@@ -13,10 +13,14 @@
     background-color: white;
 }
 
-
+.multi_tips{
+    background: white;
+}
 .answer_question_content {
     
-    width: 90%;
+    /*width: 90%;*/
+    margin-left: 10px;
+    margin-right: 10px;
     font-size: 18px;
 
     
@@ -53,9 +57,10 @@
 }
 
 .question_content{
+    display: flex;
     margin-left: 10px;
     margin-right: 10px;
-    width: auto;
+    width: 100%;
     height: auto;
 }
 
