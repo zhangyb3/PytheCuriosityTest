@@ -102,6 +102,13 @@
     
 }
 
+.best_answer_commit_button{
+    line-height: 30px;
+    margin-top: 20px;
+    width: 80%;
+    background-color: #3AA4F1;
+}
+
 
 @import "../listView/personal_question_answer_list.wxss";
 @import "../pop/personal_question_answer_select_item.wxss";
