@@ -20,7 +20,7 @@
     display: flex;
     flex-direction: column;
     background-color: white;
-    height: auto;
+    height: 60px;
     /*height: 150px;*/
     width: 100%;
 
@@ -31,12 +31,16 @@
     /*height: 100px;*/
     /*overflow-x: hidden; 
     overflow-y: auto;*/
-    height: auto;
+    display: flex;
+    align-items: center;
+    
+    height: 60px;
 }
 
 .personal_question_text_content{
+    margin-top: 10px;
     width: 100%;
-    height: auto;
+    height: 40px;
     margin-left: 10px;
     margin-right: 10px;
     font-size: 16px;
@@ -85,7 +89,7 @@
 
 
 .border_tab{
-    height:5px;
+    height:10px;
 }
 
 .ask_answer_interval{
@@ -100,6 +104,13 @@
     left: 0;
     bottom: 0;
     
+}
+
+.best_answer_commit_button{
+    line-height: 30px;
+    margin-top: 20px;
+    width: 80%;
+    background-color: #3AA4F1;
 }
 
 
