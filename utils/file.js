@@ -40,7 +40,7 @@ function uploadFile(filePath, parameters)
     wx.uploadFile({
       url: FILE_UPLOAD_URL,
       filePath:filePath,
-      name:parameters.userFilePath,
+      name:parameters.path,
       // header: {}, // 设置请求的 header
       formData: parameters,
       success: function(res){
@@ -61,7 +61,7 @@ function downloadFile(that,download_file,fileType)
   wx.request({
     url: FILE_PREDOWNLOAD_URL,
     data: {
-      path: download_file,
+      path: decodeURI(download_file),
       // fileType : fileType,
     },
     method: 'GET', 
@@ -69,7 +69,7 @@ function downloadFile(that,download_file,fileType)
       // 成功移动到缓冲区
 
       wx.downloadFile({
-        url: FILE_DOWNLOAD_URL + download_file,
+        url: FILE_DOWNLOAD_URL + decodeURI(download_file),
         type: fileType, // 下载资源的类型，用于客户端识别处理，有效值：image/audio/video
         success: function(res){
           console.log(res);

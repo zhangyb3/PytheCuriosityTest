@@ -268,7 +268,7 @@ Page({
         {},
         'GET',
     );
-    
+    wx.setStorageSync('index_load_type', 'one');
 
   },
 
@@ -321,6 +321,8 @@ Page({
       wx.setStorageSync('fromRegister', 'no');
     }
   },
+
+  
 
 })
 

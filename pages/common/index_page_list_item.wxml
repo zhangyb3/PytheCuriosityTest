@@ -11,7 +11,7 @@
             </view>
 
             <view class="multi_tips">
-                <view wx:if="{{item.q_audio != null}}" class="voice" >
+                <view wx:if="{{item.q_audio[0] != null}}" class="voice" >
                     
                     <view class="bubble" data-question_voice='{{item.q_audio[0]}}' bindtap="playQuestionVoiceRecord">
                         <view class="bubble-tail"></view>
@@ -63,7 +63,7 @@
             </view>
 
             <view class="multi_tips">
-                <view wx:if="{{item.a_audio != null}}" class="voice" >
+                <view wx:if="{{item.a_audio[0] != null}}" class="voice" >
                     
                     <view class="bubble" data-question_voice='{{item.a_audio[0]}}' bindtap="playQuestionVoiceRecord">
                         <view class="bubble-tail"></view>

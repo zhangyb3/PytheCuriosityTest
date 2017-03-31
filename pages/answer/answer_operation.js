@@ -5,6 +5,7 @@ var config = require("../../utils/config.js");
 var fileSys = require("../../utils/file.js");
 var base = require("../../utils/base.js");
 var user = require("../../utils/user.js");
+var utils = require("../../utils/util.js");
 
 Page({
   
@@ -73,7 +74,8 @@ Page({
     this.data.question_answer.questionId = parameters.questionid;
     this.data.question_answer.teacherId = wx.getStorageSync(user.TeacherID);
 
-    var answer_question = parameters;
+    var answer_question = parameters; 
+    answer_question.text_content = decodeURI(answer_question.text_content);
     this.data.question_answer.questionId = answer_question.questionid;
     this.setData({
       answer_question : answer_question,
@@ -249,6 +251,13 @@ Page({
         console.log(res.data.data)
         var result = JSON.parse(res.data.data);
         that.data.question_answer.upload_voice_path = result.path;
+
+        //上传录音
+        var parameters = {
+          path : voicePath,
+          fileType : 'audio',
+        };
+        that.data.question_answer.upload_photo_path = fileSys.uploadFile(that.data.question_answer.upload_voice_path,parameters);
       },
       fail: function() {
         // fail
@@ -258,12 +267,7 @@ Page({
       }
     });
 
-    //上传录音
-    var parameters = {
-      userFilePath : voicePath,
-      fileType : 'audio',
-    };
-    this.data.question_answer.upload_photo_path = fileSys.uploadFile(this.data.question_answer.voice_path,parameters);
+    
   },
 
   drawPicture:function(e){
@@ -398,6 +402,15 @@ Page({
     this.isClear = false;
   },
 
+  drawPictureCancel:function(e){
+    console.log('cancel draw');
+    this.setData({
+      hide_record_sound_section : true,
+      hide_take_photo_section : true,
+      hide_draw_picture_section : true,
+      hide_textarea: false,
+    });
+  },
   drawPictureConfirm:function(e){
     var that = this;
     
@@ -410,7 +423,7 @@ Page({
           success: function(res){
             // success
             console.log(res.savedFilePath);
-            that.data.ask_question.draw_path = res.savedFilePath;
+            that.data.question_answer.draw_path = res.savedFilePath;
             wx.showModal({
               title: '图示已保存',
               content: res.savedFilePath,
@@ -425,36 +438,40 @@ Page({
               hide_take_photo_section : true,
               hide_draw_picture_section : true,
               hide_textarea: false,
-              ask_question: that.data.ask_question,
+              question_answer: that.data.question_answer,
             });
-            var parameters = {
-              userFilePath : res.savedFilePath,
-              fileType : 'image',
-            };
+            
 
             that.data.question_answer.upload_draw_path = null;
             //获得上传文件在文件服务器的路径
-            // wx.request({
-            //   url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
-            //   data: {
-            //     userFilePath: savedFilePath,
-            //     fileType: 'image',
-            //   },
-            //   method: 'POST', 
-            //   success: function(res){
-            //     // success
-            //     console.log(res.data.data)
-            //     var result = JSON.parse(res.data.data);
-            //     that.data.question_answer.upload_draw_path = result.path;
-            //   },
-            //   fail: function() {
-            //     // fail
-            //   },
-            //   complete: function() {
-            //     // complete
-            //   }
-            // });
-            // fileSys.uploadFile(this,savedFilePath,parameters);
+            wx.request({
+              url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
+              data: {
+                userFilePath: that.data.question_answer.draw_path,
+                fileType: 'image',
+              },
+              method: 'POST', 
+              success: function(res){
+                // success
+                console.log(res.data.data)
+                var result = JSON.parse(res.data.data);
+                that.data.question_answer.upload_draw_path = result.path;
+
+                var parameters = {
+                  path : that.data.ask_question.upload_draw_path,
+                  fileType : 'image',
+                };
+                fileSys.uploadFile(that.data.question_answer.upload_draw_path,parameters);
+                
+              },
+              fail: function() {
+                // fail
+              },
+              complete: function() {
+                // complete
+              }
+            });
+            
             
           },
           fail: function() {
@@ -506,6 +523,14 @@ Page({
                 console.log(res.data.data)
                 var result = JSON.parse(res.data.data);
                 that.data.question_answer.upload_photo_path = result.path;
+                var parameters = {
+                  path : savedFilePath,
+                  fileType : 'image',
+                  whatFile : 'photo',
+
+                };
+                //上传文件
+                fileSys.uploadFile(that.data.question_answer.upload_photo_path,parameters);
               },
               fail: function() {
                 // fail
@@ -515,14 +540,7 @@ Page({
               }
             });
 
-            var parameters = {
-              userFilePath : savedFilePath,
-              fileType : 'image',
-              whatFile : 'photo',
-              fromWhere: 'answer',
-            };
-            //上传文件
-            fileSys.uploadFile(savedFilePath,parameters);
+            
 
           },
           fail: function() {
@@ -548,7 +566,7 @@ Page({
     
     var questionVoiceRemotePath = e.currentTarget.dataset.question_voice;
     
-    var questionVoicePath = fileSys.downloadFile(that,questionVoiceRemotePath,'audio');
+    var questionVoicePath = fileSys.downloadFile(that,decodeURI(questionVoiceRemotePath),'audio');
     that.data.answer_question.questionVoicePath = questionVoicePath;
     
     // wx.playVoice({
@@ -588,8 +606,9 @@ Page({
   },
 
   showQuestionPhoto:function(e){
-    console.log("显示图片" );
-    var questionPhotoPath = fileSys.downloadFile(this,e.currentTarget.dataset.question_photo,'image');
+    var question_photo = decodeURI(e.currentTarget.dataset.question_photo);
+    console.log("显示图片" + question_photo);
+    var questionPhotoPath = fileSys.downloadFile(this,question_photo,'image');
     this.data.answer_question.photo_path = questionPhotoPath;
     this.setData({
       hide_show_image_page: false,
@@ -598,8 +617,9 @@ Page({
 
   },
   showQuestionDraw:function(e){
-    console.log("显示手绘" );
-    var questionDrawPath = fileSys.downloadFile(this,e.currentTarget.dataset.question_draw,'image');
+    var question_draw = decodeURI(e.currentTarget.dataset.question_draw);
+    console.log("显示手绘" + question_draw);
+    var questionDrawPath = fileSys.downloadFile(this,question_draw,'image');
     this.data.answer_question.draw_path = questionDrawPath;
     this.setData({
       hide_show_image_page: false,
@@ -636,6 +656,7 @@ Page({
 
   //选择一级知识点
   knowledge1Change: function(e) {
+    
     console.log('一级知识点', this.data.knowledge1s[e.detail.value])
     this.setData({
       knowledge1_index: e.detail.value
@@ -646,6 +667,10 @@ Page({
     //选中后加载二级知识点
     var that = this;
     var knowledge2Range = ['请选择'];
+    that.setData({
+      knowledge2Range: knowledge2Range,
+    });
+    
     //加载动态课程列表,年级列表
     wx.request({
       url: config.PytheRestfulServerURL + '/answer/knowledgeList/two',
