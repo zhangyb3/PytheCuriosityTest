@@ -12,7 +12,7 @@
     
        
         
-        <view class="border_tab"></view>
+        <!--<view class="border_tab"></view>-->
 
         <view class="answer_question_wrapper">
                 <text class="question_content">questionId:{{answer_question.question_id}},username:{{answer_question.username}}...text content: {{answer_question.text_content}}</text>
@@ -50,7 +50,7 @@
 
         <!--<view class="dotted_line"></view>-->
 
-        <view class="border_tab"></view>
+        <!--<view class="border_tab"></view>-->
 
         <view class="answer_container" >
             
@@ -89,8 +89,10 @@
             </view>
 
         </view>
-
-        <view class="grade_container" >
+        <view class="border_tab_white"></view>
+<view class="grade_zone">
+<view class="border_tab_white"></view>
+    <view class="grade_container" >
             <text class="grade_hint"> 一级: </text>
             <picker mode="selector" bindchange="knowledge1Change" value="{{knowledge1_index}}" range="{{knowledge1Range}}" class="grade_picker_wrap">
                 <view class="grade_picker">
@@ -98,7 +100,7 @@
                 </view>
             </picker>
         </view>
-
+<view class="border_tab_white"></view>
         <view class="grade_container" >
             <text class="grade_hint"> 二级: </text>
             <picker mode="selector" bindchange="knowledge2Change" value="{{knowledge2_index}}" range="{{knowledge2Range}}" class="grade_picker_wrap">
@@ -107,6 +109,9 @@
                 </view>
             </picker>
         </view>
+        <view class="border_tab_white"></view>
+</view>
+        <!--<view class="border_tab_white"></view>-->
 
         <view class="answer_operation_zone" >
             <text class='record_sound' bindtap='recordSound'>录音

@@ -8,7 +8,7 @@
              <image class ="person_icon" src='{{ item.avatar || "../../images/my_account_on.png" }}'></image>
                 <text class="teacher_name">{{item.question.username}}</text>
              </view>
-            <view class="border_tab"/>
+            <!--<view class="border_tab"/>-->
             <view class="question_wrapper">
       
                 <text class="question_content">{{ item.question.questioncontent.text[0] }}</text>

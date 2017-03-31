@@ -41,6 +41,7 @@
     height: 80px;
     font-size: 16px;
     color: #0A0A0A;
+    margin-left: 10px;
 }
 
 .dotted_line{
