@@ -85,6 +85,11 @@
     background-color: #ECEBF4;
 }
 
+.border_tab_white{
+    height: 10px;
+    background-color: white;
+}
+
 .answer_operation_zone{
     height: 50px;
     display: flex;
@@ -139,12 +144,21 @@
     background-size: 18px; 
 }
 
+.grade_zone{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin-top: 10px;
+    width: 100%;
+}
 
 .grade_container{
     display: flex;
     flex-direction: row;
-    margin-top:10px;
+    /*margin-top:10px;*/
     text-align: center;
+    background-color: white;
+    
 }
 
 .grade_hint{
@@ -155,6 +169,7 @@
     font-size:14px;
     font-weight:bold;
     margin-right:5px;
+    background-color: white;
 }
 .grade_picker_wrap{
     border:1px solid #3AA4F1;
