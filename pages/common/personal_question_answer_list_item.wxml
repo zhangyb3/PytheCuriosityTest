@@ -10,7 +10,9 @@
             <view class="personal_question_answer_complain" >
 
                 <view class="complain_container" data-item='{{ item }}' bindtap="complainOneAnswer">
-                    <image class="complain_image" src="../../images/my_account_un.png"></image>
+                    <!--<image class="complain_image" src="../../images/button_simple@3x.png"></image>-->
+                    <image class="complain_image" wx:if="{{item.selected != true}}" src="../../images/button_simple@3x.png"></image>
+                    <image class="complain_image" wx:if="{{item.selected == true}}" src="../../images/button_simple_nor@3x.png"></image>
                 </view>
 
 <view class="personal_question_answer_selector" >

@@ -46,8 +46,8 @@
 .complain_image{
     display: flex;
     position: relative;
-    width: 37px;
-    height: 15px;
+    width: 40px;
+    height: 18px;
 }
 
 .complain_container_cur{
@@ -104,6 +104,11 @@
     /*margin-right: 10px;*/
     margin-right: 10px;
 
+}
+
+.border_tab_white{
+    height:10px;
+    background-color: white;
 }
 
 
