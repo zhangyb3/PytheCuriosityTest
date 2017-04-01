@@ -198,6 +198,12 @@
     background-color: white;
 
 }
+
+.select_knowledge_container{
+    display:flex;
+    flex-direction: row;
+}
+
 .answer_commit_confirm{
     padding-top: 30px;
     width: 100%;
@@ -219,3 +225,5 @@
 
 @import "../pop/show_image_page.wxss";
 @import "../bubble/bubble.wxss";
+
+@import "../pop/knowledge_list.wxss";

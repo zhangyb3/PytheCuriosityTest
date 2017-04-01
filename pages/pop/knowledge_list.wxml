@@ -1,0 +1,61 @@
+
+
+<template name="knowledge_list">
+
+<!-- 遮罩 -->
+  <view class="pop_knowledge_list_cover"  bindtap='returnOperationPage'></view>
+
+<!-- 列表横向排列容器 -->
+<view class="knowledge_list_zone">
+
+  <view class="srcoll1">
+  <!--列表-->
+  <scroll-view  class="scroll_list"  scroll-y="true" 
+               bindscrolltolower="onLoadMore" bindscrolltoupper="onRefesh" >
+
+    
+      <block wx:for="{{knowledge1Range}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
+        
+        <view class="knowledge_list_container" >
+           <view class="knowledge_item level1" data-item='{{item}}' data-index='{{index}}' bindtap="knowledge1Change">
+              <text class="knowledge_item_text ">{{item}}</text>
+           </view>
+        </view>
+
+      </block>
+
+
+    <view class="loadmore_view" wx:if="{{!netStateBean.loadmoreHidden && infos.length>8 }}" >
+      {{netStateBean.loadmoreMsg}}
+    </view>
+
+  </scroll-view>
+  </view>
+
+  <view class="srcoll2">
+  <scroll-view  class="scroll_list"  scroll-y="true" 
+               bindscrolltolower="onLoadMore" bindscrolltoupper="onRefesh" >
+
+    
+      <block wx:for="{{knowledge2Range}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
+        
+        <view class="knowledge_list_container" >
+           <view class="knowledge_item level2" data-item='{{item}}' data-index='{{index}}' bindtap="knowledge2Change">
+              <text class="knowledge_item_text ">{{item}}</text>
+           </view>
+        </view>
+
+      </block>
+
+
+    <view class="loadmore_view" wx:if="{{!netStateBean.loadmoreHidden && infos.length>8 }}" >
+      {{netStateBean.loadmoreMsg}}
+    </view>
+
+  </scroll-view>
+  </view>
+
+
+</view>
+
+</template>

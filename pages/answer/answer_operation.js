@@ -17,6 +17,7 @@ Page({
     hide_draw_picture_section : true,
     hide_voice_bubble: true,
     hide_textarea : false,
+    hide_knowledge_list: true,
     soundData:{
 
       loop: 1,//帧动画初始图片
@@ -39,21 +40,23 @@ Page({
       voice_timeLength: 0,
       draw_path:null,
       photo_path:null,
+      knowlege_level1:'',
+      knowlege_level2:'选择知识点',
     },
 
     knowledge1s: [
-      {
-        knowledgeId: null,
-        level1: '请选择',
-      },       
+      // {
+      //   knowledgeId: null,
+      //   level1: '请选择',
+      // },       
     ],
     knowledge1_index:0,
 
     knowledge2s: [
-      {
-        knowledgeId: null,
-        level2: '请选择',
-      },       
+      // {
+      //   knowledgeId: null,
+      //   level2: '请选择',
+      // },       
     ],
     knowledge2_index:0,
 
@@ -67,6 +70,7 @@ Page({
       hide_draw_picture_section : true,
       hide_voice_bubble: true,
       hide_textarea : false,
+      hide_knowledge_list: true,
     });
     
     console.log(parameters);
@@ -311,6 +315,7 @@ Page({
       hide_take_photo_section : true,
       hide_draw_picture_section : true,
       hide_textarea : false,
+      hide_knowledge_list: true,
     });
   },
 
@@ -655,19 +660,30 @@ Page({
   },
 
 
+  selectKnowledge:function(e){
+    console.log("选择知识点");
+    this.setData({
+      hide_knowledge_list: false,  
+      // knowledge1s: this.data.knwoledge1s,    
+    });
+  },
+  
   //选择一级知识点
   knowledge1Change: function(e) {
     
-    console.log('一级知识点', this.data.knowledge1s[e.detail.value])
+    // console.log('一级知识点', this.data.knowledge1s[e.detail.value])
+    console.log('一级知识点', this.data.knowledge1s[e.currentTarget.dataset.index])
     this.setData({
-      knowledge1_index: e.detail.value
+      // knowledge1_index: e.detail.value,
+      knowledge1_index: e.currentTarget.dataset.index,
     })
 
-    this.data.question_answer.knowlege_level1 = this.data.knowledge1s[e.detail.value].level1;
+    // this.data.question_answer.knowlege_level1 = this.data.knowledge1s[e.detail.value].level1;
+    this.data.question_answer.knowlege_level1 = this.data.knowledge1s[e.currentTarget.dataset.index].level1;
 
     //选中后加载二级知识点
     var that = this;
-    var knowledge2Range = ['请选择'];
+    var knowledge2Range = [];
     that.setData({
       knowledge2Range: knowledge2Range,
     });
@@ -686,8 +702,8 @@ Page({
         for(var count = 0; count < res.data.data.length; count++)
         {
           
-          knowledge2Range[count+1] = res.data.data[count].level2;
-          that.data.knowledge2s[count+1] = res.data.data[count];
+          knowledge2Range[count] = res.data.data[count].level2;
+          that.data.knowledge2s[count] = res.data.data[count];
           console.log(knowledge2Range);
         }
         
@@ -707,12 +723,19 @@ Page({
 
   //选择二级知识点
   knowledge2Change: function(e) {
-    console.log('二级知识点', this.data.knowledge2s[e.detail.value])
+    // console.log('二级知识点', this.data.knowledge2s[e.detail.value])
+    console.log('二级知识点', this.data.knowledge2s[e.currentTarget.dataset.index])
     this.setData({
-      knowledge2_index: e.detail.value
+      // knowledge2_index: e.detail.value,
+      knowledge2_index: e.currentTarget.dataset.index,
     })
 
-    this.data.question_answer.knowlege_level2 = this.data.knowledge2s[e.detail.value].level2;
+    // this.data.question_answer.knowlege_level2 = this.data.knowledge2s[e.detail.value].level2;
+    this.data.question_answer.knowlege_level2 = this.data.knowledge2s[e.currentTarget.dataset.index].level2;
+    this.setData({
+      hide_knowledge_list: true,
+      knowledge_point: this.data.question_answer.knowlege_level2
+    });
   },
 
 
@@ -749,8 +772,8 @@ Page({
   onReady:function(){
 
     var that = this;
-    var knowledge1Range = ['请选择'];
-    var knowledge2Range = ['请选择'];
+    var knowledge1Range = [];
+    var knowledge2Range = [];
     that.setData({
       knowledge1Range: knowledge1Range,
       knowledge2Range: knowledge2Range,
@@ -771,8 +794,8 @@ Page({
         for(var count = 0; count < res.data.data.length; count++)
         {
           
-          knowledge1Range[count+1] = res.data.data[count].level1;
-          that.data.knowledge1s[count+1] = res.data.data[count];
+          knowledge1Range[count] = res.data.data[count].level1;
+          that.data.knowledge1s[count] = res.data.data[count];
           console.log(knowledge1Range);
         }
         
