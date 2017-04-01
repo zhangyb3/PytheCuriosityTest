@@ -7,6 +7,7 @@ var utils=require("../../utils/util.js");
 var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
+var user = require("../../utils/user.js");
 
 Page({
   data:{
@@ -21,23 +22,7 @@ Page({
         active:false
     }],
     subject_infos: [
-      { subjectId: 1, name: ' 语文 ', number: '#FFFFFF' },
-
-      { subjectId: 1001, name: ' 数学 ', number: '#FF0000' },
-
-      { subjectId: 3, name: ' 英语 ', number: '#00FF00' },
-
-      { subjectId: 4, name: ' 物理 ', number: '#0000FF' },
-
-      { subjectId: 5, name: ' 化学 ', number: '#FF00FF' },
-
-      { subjectId: 6, name: ' 生物 ', number: '#00FFFF' },
-
-      { subjectId: 7, name: ' 历史 ', number: '#FFFF00' },
-
-      { subjectId: 8, name: ' 政治 ', number: '#000000' },
-
-      { subjectId: 9, name: ' 地理 ', number: '#70DB93' }
+     
     ],
     
     questionsForAnswer:[
@@ -49,7 +34,17 @@ Page({
       { key: 1, name: '按时间' },
       { key: 2, name: '按金额' }
     ],
-    basic_url: 'http://192.168.1.6:8080'
+    
+    answer_page_filter:{
+      selectSubject:{
+        subjectId:-1,
+        subjectName:'科目',
+      },
+      selectSort:{
+        sortId:'startTime',
+        sortName:'排序',
+      },
+    },
   },
   onLoad:function(options){
 
@@ -78,6 +73,8 @@ Page({
         {},
         'GET',
     );
+
+    
     
   },
 
@@ -129,9 +126,12 @@ Page({
 
   selectSubject:function(e){
     
-    var selected_subject = e.currentTarget.dataset.select_subject;
-    console.log(selected_subject.name);
-    this.data.select_subject = selected_subject;
+    var select_subject = e.currentTarget.dataset.select_subject;
+    console.log(select_subject.subject);
+    
+    this.data.answer_page_filter.selectSubject.subjectName = select_subject.subject;
+    this.data.answer_page_filter.selectSubject.subjectId = select_subject.subjectid;
+    this.setData({answer_page_filter: this.data.answer_page_filter});
     this.setData({hide_pop_subject_list:true});
 
     var answer_page_menu = this.data.answer_page_menu;
@@ -141,8 +141,8 @@ Page({
 
     var that = this;
     var conditionQuestionParams = {
-      subjectId: this.data.select_subject.subjectId,
-      condition: "startTime",
+      subjectId: that.data.answer_page_filter.selectSubject.subjectId,
+      condition: that.data.answer_page_filter.selectSort.sortId,
       order: 'desc',     
       pageNum: 1,
       pageSize: 3,   
@@ -169,27 +169,32 @@ Page({
     console.log(selected_sort_attribute);
     
     this.setData({hide_pop_sort_attribute_list:true});
-
+    
     var answer_page_menu = this.data.answer_page_menu;
     this.data.answer_page_menu[0].active = false;
     this.data.answer_page_menu[1].active = false;
     this.setData({answer_page_menu : answer_page_menu});
 
+
     var that= this;
     var conditionQuestionParams = {
-        // subjectId: this.data.select_subject.subjectId,
+        subjectId: that.data.answer_page_filter.selectSubject.subjectId,
         order: 'desc',     
         pageNum: 1,
         pageSize: 3,   
     };
+    that.data.answer_page_filter.selectSort.sortName = selected_sort_attribute;
     if(selected_sort_attribute == "按金额")
     {
       conditionQuestionParams.condition = 'reward';
+       that.data.answer_page_filter.selectSort.sortId = 'reward';
     }
     if(selected_sort_attribute == "按时间")
     {
       conditionQuestionParams.condition = 'startTime';
+      that.data.answer_page_filter.selectSort.sortId = 'startTime';
     }
+    that.setData({answer_page_filter: this.data.answer_page_filter});
 
     listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
     "/answer/conditionList",
@@ -258,6 +263,30 @@ Page({
 
   onReady:function(){
     // 页面渲染完成
+
+    //获取科目列表
+    var that = this;
+    wx.request({
+      url: config.PytheRestfulServerURL + '/index/subject/' + wx.getStorageSync(user.GradeID),
+      data: {
+        
+      },
+      method: 'GET', 
+      success: function(res){
+        // success
+        
+        that.data.subject_infos = res.data;
+        that.setData({
+          subject_infos : that.data.subject_infos,
+        });
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    });
   },
   onShow:function(){
     // 页面显示

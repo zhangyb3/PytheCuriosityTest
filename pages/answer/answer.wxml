@@ -10,7 +10,7 @@
 <view class="answer_page_container" hidden='{{hide_answer_page}}'>
   
     <view class="answer_page_filter_sort_container" >
-        <template is="answer_page_filter_sort" data="{{answer_page_sections,answer_page_menu}}" ></template>
+        <template is="answer_page_filter_sort" data="{{answer_page_sections,answer_page_menu,answer_page_filter}}" ></template>
     </view>
 
     <view class="answer_page_subject_list_container" hidden='{{hide_pop_subject_list}}'>

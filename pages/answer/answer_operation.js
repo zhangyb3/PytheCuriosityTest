@@ -647,6 +647,7 @@ Page({
   returnLoadImagePage:function(e){
     this.setData({
       hide_show_image_page: true,
+      img_src:null,
     });
   },
   getImageSource:function(e){
