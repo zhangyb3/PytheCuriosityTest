@@ -653,6 +653,7 @@ Page({
     this.setData({
       hide_show_image_page: true,
       img_src:null,
+      hide_textarea : false,
     });
   },
   getImageSource:function(e){
@@ -663,6 +664,7 @@ Page({
   selectKnowledge:function(e){
     console.log("选择知识点");
     this.setData({
+      hide_textarea : true,
       hide_knowledge_list: false,  
       // knowledge1s: this.data.knwoledge1s,    
     });

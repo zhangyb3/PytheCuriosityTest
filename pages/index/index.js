@@ -98,6 +98,29 @@ Page({
   filterSubject:function(subject_data){
     console.log("subject filter");
     this.setData({hide_pop_subject_list:false});
+    //加载科目列表
+    var that = this;
+    wx.request({
+      url: config.PytheRestfulServerURL + '/index/subject/' + wx.getStorageSync(user.GradeID),
+    data: {
+      
+    },
+      method: 'GET', 
+      success: function(res){
+        // success
+      
+        that.data.subject_infos = res.data;
+        that.setData({
+          subject_infos : that.data.subject_infos,
+        });
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    });
   },
 
   selectOneItem:function(e){
@@ -223,28 +246,8 @@ Page({
 
 
   onReady:function(){
-    var that = this;
-    wx.request({
-      url: config.PytheRestfulServerURL + '/index/subject/' + wx.getStorageSync(user.GradeID),
-      data: {
-        
-      },
-      method: 'GET', 
-      success: function(res){
-        // success
-        
-        that.data.subject_infos = res.data;
-        that.setData({
-          subject_infos : that.data.subject_infos,
-        });
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    });
+    
+    
     
     var that = this;
     var simple_params = {
@@ -295,28 +298,7 @@ Page({
     //判断是否从注册页面返回
     if(wx.getStorageSync('fromRegister')=='yes')
     {
-      //加载科目列表
-      wx.request({
-        url: config.PytheRestfulServerURL + '/index/subject/' + wx.getStorageSync(user.GradeID),
-      data: {
-        
-      },
-        method: 'GET', 
-        success: function(res){
-          // success
-        
-          that.data.subject_infos = res.data;
-          that.setData({
-            subject_infos : that.data.subject_infos,
-          });
-        },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
-        }
-      });
+      
 
       wx.setStorageSync('fromRegister', 'no');
     }
