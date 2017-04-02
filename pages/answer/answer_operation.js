@@ -40,8 +40,9 @@ Page({
       voice_timeLength: 0,
       draw_path:null,
       photo_path:null,
-      knowlege_level1:'',
-      knowlege_level2:'选择知识点',
+      knowledge_level1:'',
+      knowledge_level2:'选择知识点',
+      knowledgeId:999,
     },
 
     knowledge1s: [
@@ -680,8 +681,8 @@ Page({
       knowledge1_index: e.currentTarget.dataset.index,
     })
 
-    // this.data.question_answer.knowlege_level1 = this.data.knowledge1s[e.detail.value].level1;
-    this.data.question_answer.knowlege_level1 = this.data.knowledge1s[e.currentTarget.dataset.index].level1;
+    // this.data.question_answer.knowledge_level1 = this.data.knowledge1s[e.detail.value].level1;
+    this.data.question_answer.knowledge_level1 = this.data.knowledge1s[e.currentTarget.dataset.index].level1;
 
     //选中后加载二级知识点
     var that = this;
@@ -694,7 +695,7 @@ Page({
     wx.request({
       url: config.PytheRestfulServerURL + '/answer/knowledgeList/two',
       data: {
-        level1: that.data.question_answer.knowlege_level1
+        level1: that.data.question_answer.knowledge_level1
       },
       method: 'GET', 
       success: function(res){
@@ -732,11 +733,11 @@ Page({
       knowledge2_index: e.currentTarget.dataset.index,
     })
 
-    // this.data.question_answer.knowlege_level2 = this.data.knowledge2s[e.detail.value].level2;
-    this.data.question_answer.knowlege_level2 = this.data.knowledge2s[e.currentTarget.dataset.index].level2;
+    // this.data.question_answer.knowledge_level2 = this.data.knowledge2s[e.detail.value].level2;
+    this.data.question_answer.knowledge_level2 = this.data.knowledge2s[e.currentTarget.dataset.index].level2;
     this.setData({
       hide_knowledge_list: true,
-      knowledge_point: this.data.question_answer.knowlege_level2
+      knowledge_point: this.data.question_answer.knowledge_level2
     });
   },
 
@@ -751,7 +752,7 @@ Page({
       questionId: this.data.question_answer.questionId,
       teacherId: this.data.question_answer.teacherId,
       studentId: this.data.question_answer.studentId,
-      knowledgeId: 999,
+      knowledgeId: this.data.question_answer.knowledgeId,
       answerContent:{
           text: [
             this.data.question_answer.text_content,
@@ -768,7 +769,24 @@ Page({
           ],
         },
     };
-    base.commitAnswer(answerParams);
+
+    if(answerParams.text[0]!=null && answerParams.knowledgeId!=null)
+    {
+      base.commitAnswer(answerParams);
+    }
+    else
+    {
+      wx.showModal({
+        title: '提示',
+        content: '答案内容和知识点不能为空',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      });
+    }
+
   },
 
   onReady:function(){

@@ -198,21 +198,40 @@ Page({
       this.setData({
         ask_teacher_list: this.data.ask_teacher_list,
       });
-      //通知数据库更新纪录
+
+      //先查是否已点赞过这老师
       wx.request({
-        url: config.PytheRestfulServerURL + '/question/teacher/likes',
+        url: config.PytheRestfulServerURL + '/user/teacher/likes',
         data: {
           userId: wx.getStorageSync(user.UserID),
           teacherId: teacher.teacherid,
         },
         method: 'GET', 
         success: function(res){
-          console.log(res);
+          // success
         },
         fail: function(res) {
-          console.log(res);
+          // fail
+        },
+        complete: function(res) {
+          // complete
         }
       })
+      //通知数据库更新纪录
+      // wx.request({
+      //   url: config.PytheRestfulServerURL + '/question/teacher/likes',
+      //   data: {
+      //     userId: wx.getStorageSync(user.UserID),
+      //     teacherId: teacher.teacherid,
+      //   },
+      //   method: 'GET', 
+      //   success: function(res){
+      //     console.log(res);
+      //   },
+      //   fail: function(res) {
+      //     console.log(res);
+      //   }
+      // })
 
     // };
     

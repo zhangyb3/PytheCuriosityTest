@@ -603,20 +603,56 @@ Page({
   selectReward1:function(e){
     console.log("￥ 1");
     wx.setStorageSync('rewardNum', 1);
-    var payResult = pay.orderPay();
-    this.data.hasPaidReward = true;
+    
+    pay.orderPay(
+      (payResult)=>{
+        console.log(payResult);
+        if(payResult.errMsg == "requestPayment:ok")
+        {
+          this.data.hasPaidReward = true;
+        }
+      },
+      (payResult)=>{
+        console.log(payResult);
+      },
+    );
+    
   },
   selectReward5:function(e){
     console.log("￥ 5");
     wx.setStorageSync('rewardNum', 5);
-    var payResult = pay.orderPay();
-    this.data.hasPaidReward = true;
+    
+    pay.orderPay(
+      (payResult)=>{
+        console.log(payResult);
+        if(payResult.errMsg == "requestPayment:ok")
+        {
+          this.data.hasPaidReward = true;
+        }
+      },
+      (payResult)=>{
+        console.log(payResult);
+      },
+    );
+
   },
   selectReward10:function(e){
     console.log("￥ 10");
     wx.setStorageSync('rewardNum', 10);
-    var payResult = pay.orderPay();
-    this.data.hasPaidReward = true;
+    
+    pay.orderPay(
+      (payResult)=>{
+        console.log(payResult);
+        if(payResult.errMsg == "requestPayment:ok")
+        {
+          this.data.hasPaidReward = true;
+        }
+      },
+      (payResult)=>{
+        console.log(payResult);
+      },
+    );
+    
   },
 
   commitQuestion:function(result){
@@ -653,7 +689,24 @@ Page({
         // reward: wx.getStorageSync('rewardNum'),
         reward: wx.getStorageSync("rewardNum"),
       };
-      base.commitQuestion(questionParams);
+      
+      if(questionParams.text[0]!=null)
+      {
+        base.commitQuestion(questionParams);
+        this.data.hasPaidReward = false;
+      }
+      else
+      {
+        wx.showModal({
+          title: '提示',
+          content: '题目内容不能为空',
+          success: function(res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        });
+      }
     }
   },
 

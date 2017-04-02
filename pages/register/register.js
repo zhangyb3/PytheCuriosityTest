@@ -72,11 +72,11 @@ Page({
         // success
         console.log(res.data.data);
         
-        for(var count = 0; count < res.data.data.length; count++)
+        for(var count = 0; count < res.data.data.data.length; count++)
         {
           
-          subjectRange[count+1] = res.data.data[count].subject;
-          that.data.subjects[count+1] = res.data.data[count];
+          subjectRange[count+1] = res.data.data.data[count].subject;
+          that.data.subjects[count+1] = res.data.data.data[count];
           console.log(subjectRange);
         }
         
@@ -104,11 +104,11 @@ Page({
         // success
         console.log(res.data.data);
         
-        for(var count = 0; count < res.data.data.length; count++)
+        for(var count = 0; count < res.data.data.data.length; count++)
         {
           
-          gradeRange[count+1] = res.data.data[count].gradename;
-          that.data.grades[count+1] = res.data.data[count];
+          gradeRange[count+1] = res.data.data.data[count].gradename;
+          that.data.grades[count+1] = res.data.data.data[count];
           console.log(gradeRange);
         }
         
@@ -223,31 +223,42 @@ Page({
           wx.setStorageSync(user.StudentID, res.data.data.studentid);
           wx.setStorageSync(user.TeacherID, res.data.data.teacherid);
           wx.setStorageSync(user.GradeID, res.data.data.gradeid);
+
+          //判断注册是否成功，成功则返回index页面
+          wx.setStorageSync('alreadyRegister', 'yes');
+          wx.setStorageSync('fromRegister', 'yes');
+          wx.navigateBack({
+            delta: 1, // 回退前 delta(默认为1) 页面
+            success: function(res){
+              // success
+            },
+            fail: function() {
+              // fail
+            },
+            complete: function() {
+              // complete
+            }
+          });
         }
       },
       fail: function() {
         // fail
+        wx.showModal({
+            title: '提示',
+            content: '登录失败，请重试',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定')
+              }
+            }
+          });
       },
       complete: function() {
         // complete
       }
     })
 
-    //判断注册是否成功，成功则返回index页面
-    wx.setStorageSync('alreadyRegister', 'yes');
-    wx.setStorageSync('fromRegister', 'yes');
-    wx.navigateBack({
-      delta: 1, // 回退前 delta(默认为1) 页面
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    });
+    
   },
 
   onReady:function(){

@@ -147,30 +147,49 @@ Page({
     this.setData({
       answers: this.data.answers,
     });
-    //更新数据库
+
+    //先查是否已点赞过这道题
     wx.request({
-      url: config.PytheRestfulServerURL + '/likesnum',
+      url: config.PytheRestfulServerURL + '/user/question/likes',
       data: {
-        answerId: this.data.answers[answer_index].answerid,
         userId: wx.getStorageSync(user.UserID),
-        questionId:  this.data.answers[answer_index].questionid,
+        answerId: this.data.answers[answer_index].answerid,
       },
       method: 'GET', 
       success: function(res){
         // success
-        wx.showToast({
-          title: '点赞+1',
-          icon: 'success',
-          duration: 1000
-        });
       },
-      fail: function() {
+      fail: function(res) {
         // fail
       },
-      complete: function() {
+      complete: function(res) {
         // complete
       }
     })
+    //更新数据库
+    // wx.request({
+    //   url: config.PytheRestfulServerURL + '/likesnum',
+    //   data: {
+    //     answerId: this.data.answers[answer_index].answerid,
+    //     userId: wx.getStorageSync(user.UserID),
+    //     questionId:  this.data.answers[answer_index].questionid,
+    //   },
+    //   method: 'GET', 
+    //   success: function(res){
+    //     // success
+    //     wx.showToast({
+    //       title: '点赞+1',
+    //       icon: 'success',
+    //       duration: 1000
+    //     });
+    //   },
+    //   fail: function() {
+    //     // fail
+    //   },
+    //   complete: function() {
+    //     // complete
+    //   }
+    // })
   },
 
   //打赏答案
