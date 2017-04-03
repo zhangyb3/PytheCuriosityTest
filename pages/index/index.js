@@ -148,6 +148,7 @@ Page({
       answers: this.data.answers,
     });
 
+    var that = this;
     //先查是否已点赞过这道题
     wx.request({
       url: config.PytheRestfulServerURL + '/user/question/likes',
@@ -157,7 +158,34 @@ Page({
       },
       method: 'GET', 
       success: function(res){
-        // success
+        // 没点赞过
+        if(res.data.data == false)
+        {
+          //更新数据库
+          wx.request({
+            url: config.PytheRestfulServerURL + '/likesnum',
+            data: {
+              answerId: that.data.answers[answer_index].answerid,
+              userId: wx.getStorageSync(user.UserID),
+              questionId:  that.data.answers[answer_index].questionid,
+            },
+            method: 'GET', 
+            success: function(res){
+              // success
+              wx.showToast({
+                title: '点赞+1',
+                icon: 'success',
+                duration: 1000
+              });
+            },
+            fail: function() {
+              // fail
+            },
+            complete: function() {
+              // complete
+            }
+          })
+        }
       },
       fail: function(res) {
         // fail
@@ -166,30 +194,7 @@ Page({
         // complete
       }
     })
-    //更新数据库
-    // wx.request({
-    //   url: config.PytheRestfulServerURL + '/likesnum',
-    //   data: {
-    //     answerId: this.data.answers[answer_index].answerid,
-    //     userId: wx.getStorageSync(user.UserID),
-    //     questionId:  this.data.answers[answer_index].questionid,
-    //   },
-    //   method: 'GET', 
-    //   success: function(res){
-    //     // success
-    //     wx.showToast({
-    //       title: '点赞+1',
-    //       icon: 'success',
-    //       duration: 1000
-    //     });
-    //   },
-    //   fail: function() {
-    //     // fail
-    //   },
-    //   complete: function() {
-    //     // complete
-    //   }
-    // })
+    
   },
 
   //打赏答案

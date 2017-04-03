@@ -199,6 +199,7 @@ Page({
         ask_teacher_list: this.data.ask_teacher_list,
       });
 
+      
       //先查是否已点赞过这老师
       wx.request({
         url: config.PytheRestfulServerURL + '/user/teacher/likes',
@@ -208,7 +209,26 @@ Page({
         },
         method: 'GET', 
         success: function(res){
-          // success
+          // 没点赞过
+          if(res.data.data == false)
+          {
+            //通知数据库更新纪录
+            wx.request({
+              url: config.PytheRestfulServerURL + '/question/teacher/likes',
+              data: {
+                userId: wx.getStorageSync(user.UserID),
+                teacherId: teacher.teacherid,
+              },
+              method: 'GET', 
+              success: function(res){
+                console.log(res);
+              },
+              fail: function(res) {
+                console.log(res);
+              }
+            })
+          }
+          
         },
         fail: function(res) {
           // fail
@@ -217,21 +237,7 @@ Page({
           // complete
         }
       })
-      //通知数据库更新纪录
-      // wx.request({
-      //   url: config.PytheRestfulServerURL + '/question/teacher/likes',
-      //   data: {
-      //     userId: wx.getStorageSync(user.UserID),
-      //     teacherId: teacher.teacherid,
-      //   },
-      //   method: 'GET', 
-      //   success: function(res){
-      //     console.log(res);
-      //   },
-      //   fail: function(res) {
-      //     console.log(res);
-      //   }
-      // })
+      
 
     // };
     
