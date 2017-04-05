@@ -71,6 +71,11 @@
     
 }
 
+.select_answer_content{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
 .select_answer_wrapper {
     /*padding: 8px;*/
     display: flex;
