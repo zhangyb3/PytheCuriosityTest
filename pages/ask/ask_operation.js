@@ -87,13 +87,13 @@ Page({
       method: 'GET', 
       success: function(res){
         // success
-        console.log(res.data.data);
+        console.log(res.data.data.data);
         
-        for(var count = 0; count < res.data.data.length; count++)
+        for(var count = 0; count < res.data.data.data.length; count++)
         {
           
-          subjectRange[count+1] = res.data.data[count].subject;
-          that.data.subjects[count+1] = res.data.data[count];
+          subjectRange[count+1] = res.data.data.data[count].subject;
+          that.data.subjects[count+1] = res.data.data.data[count];
           console.log(subjectRange);
         }
         
@@ -690,7 +690,7 @@ Page({
         reward: wx.getStorageSync("rewardNum"),
       };
       
-      if(questionParams.text[0]!=null)
+      if(questionParams.questionContent.text[0]!=null)
       {
         base.commitQuestion(questionParams);
         this.data.hasPaidReward = false;

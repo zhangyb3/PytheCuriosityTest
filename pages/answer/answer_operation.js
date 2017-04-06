@@ -736,6 +736,7 @@ Page({
     // this.data.question_answer.knowledge_level2 = this.data.knowledge2s[e.detail.value].level2;
     this.data.question_answer.knowledge_level2 = this.data.knowledge2s[e.currentTarget.dataset.index].level2;
     this.setData({
+      hide_textarea: false,
       hide_knowledge_list: true,
       knowledge_point: this.data.question_answer.knowledge_level2
     });
@@ -770,7 +771,7 @@ Page({
         },
     };
 
-    if(answerParams.text[0]!=null && answerParams.knowledgeId!=null)
+    if(answerParams.answerContent.text[0]!=null && answerParams.knowledgeId!=null)
     {
       base.commitAnswer(answerParams);
     }
