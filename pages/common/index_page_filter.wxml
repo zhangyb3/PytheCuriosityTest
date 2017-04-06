@@ -4,7 +4,8 @@
 
     <view class="subject_view" >
         <button class="subject_button"
-         bindtap='filterSubject'> <image src="../../images/nav_icon_menu@2x.png"></image></button>
+         bindtap='filterSubject'> <image src="../../images/index_icon_kemu@2x.png"></image></button>
+         <text class="subject_name">科目</text>
     </view>
 
     <view class="input_view" >
@@ -12,7 +13,8 @@
     </view>
 
     <view class="search_button_view" >
-        <button class="search_button"    bindtap='getSearchContentList'><image src="../../images/nav_icon_search@2x.png"></image></button>
+        <button class="search_button"    bindtap='getSearchContentList'><image src="../../images/index_icon_serch@2x.png"></image></button>
+        <text class="subject_name">搜索</text>
     </view>
 
 </view>

@@ -3,6 +3,8 @@
 
 <template name="index_page_list">
 
+<view class="page_contain">
+
 <!--列表-->
   <scroll-view wx:if="{{!netStateBean.contentHidden}}" class="scroll_list"  scroll-y="true" lower-threshold="50" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
 
@@ -20,5 +22,8 @@
     </view>
 
   </scroll-view>
+
+
+</view>
 
 </template>
