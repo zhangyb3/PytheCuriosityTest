@@ -1,5 +1,6 @@
 var netUtil=require("../utils/netUtil.js");
 var config=require("../utils/config.js");
+var user=require("../utils/user.js");
 
 var actions = netUtil.action;
 
@@ -113,6 +114,8 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             if(wx.getStorageSync('index_load_type') == 'one' && wx.getStorageSync('end_load') == 'yes')
             {
                 // page.data.urlDetail = page.data.urlDetail + '/two';
+                page.setNetparams.q = null;
+                page.setNetparams.gradeId = wx.getStorageSync(user.GradeID);
                 page.data.basic_url = config.PytheRestfulServerURL;
                 page.data.urlDetail = '/index/defaultList/two';
                 wx.setStorageSync('end_load', 'no');
@@ -124,6 +127,8 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
                 // var urlstr = page.data.urlDetail;
                 // urlstr = urlstr.slice(0,urlstr.length-4);
                 // page.data.urlDetail = urlstr;
+                page.setNetparams.q = null;
+                page.setNetparams.gradeId = wx.getStorageSync(user.GradeID);
                 page.data.basic_url = config.PytheRestfulServerURL;
                 page.data.urlDetail = '/index/defaultList';
                 wx.setStorageSync('end_load', 'no');

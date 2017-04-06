@@ -388,6 +388,10 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             {
                 temp.questioncontent = JSON.parse(currentDatas[count].questioncontent);
             }
+            if(temp.answercontent != null)
+            {
+                temp.answercontent = JSON.parse(currentDatas[count].answercontent);
+            }
             if(list_type == 'my_question_answer')
             {
                 temp.selected = false;
