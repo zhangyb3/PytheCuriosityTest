@@ -8,6 +8,8 @@ left: 0rpx;
 right: 0rpx;
 bottom: 0rpx;
 background-color: #FFFFFF;
+/*background-color: yellow;*/
+/*border-radius: 40rpx;*/
 }
 
 .scroll_list{
@@ -17,6 +19,7 @@ background-color: #FFFFFF;
     /*height: auto;*/
     top: 0px;
     bottom: 10px;
+    border-radius: 40rpx;
 }
 
 .interval{

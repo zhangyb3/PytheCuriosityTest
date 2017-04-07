@@ -21,20 +21,24 @@
     flex-direction: row;
     align-items: center;
     overflow-x: hidden; 
-    overflow-y: auto;
+    /*overflow-y: auto;*/
+    height: 188rpx;
     position: relative;
     z-index: 1;
 }
 
 .teacher_icon{
-    width: 40px;
-    height: 40px;
-    margin-left: 4%;
+    position: absolute;
+    width: 80rpx;
+    height: 80rpx;
+    top: 30rpx;
+    left: 30rpx;
+    
     /*margin-top: 3%;*/
 }
 
 .teacher_middle_wrapper{
-    margin-left: 20px;
+    margin-left: 130rpx;
     /*height: 120px;*/
     height: auto;
     display: flex;
@@ -44,42 +48,43 @@
 }
 
 .teacher_content {
-    margin-top: 8px;
+    margin-top: 30rpx;
     color: #0F0F0F;
-    height: 25px;
-    font-size: 17px;  
+    height: auto;
+    font-size: 34rpx;  
     /*font-weight:bold; */
 }
 .teacher_brief{
 
-    font-size: 16px;
-    margin-top: 10px;
-    margin-bottom: 15px;
-    color: #A9A9A9;
+    font-size: 24rpx;
+    margin-top: 20rpx;
+    /*height: auto;*/
+    min-height: 40rpx;
+    /*margin-bottom: 15px;*/
+    color: #999999;
 }
 
 .collect_icon_wrap{
-    height:25px;
+    height:28rpx;
     display:flex;
     margin-bottom: 10px;
-    line-height:25px;
+    line-height:28rpx;
+    align-items: center;
+    align-content: center;
+    /*width: 33rpx;*/
 }
 .collect_icon_wrap image{
-    width:20px;
-    height: 20px;
+    width:28rpx;
+    height: 33rpx;
     display:block;
-    margin-right:5px;
+    margin-bottom:8rpx;
+    margin-right: 10rpx;
 }
 
-/*.collect_icon{
-    width: 25px;
-    height: 25px;
-    padding-left: 0px;
-    margin-bottom: 10px;
-    background:url(../../images/collect_icon.png) no-repeat left center;
-    background-size:25px 25px;
-    line-height:25px;
-}*/
+.collect_icon{
+    font-size: 24rpx;
+    color: #999999;
+}
 
 .teacher_ask_section{
     /*display: flex;*/
@@ -92,14 +97,16 @@
     height: 20px;
     width: 20px;
     background: none;
+    align-items: center;
     /*background-size: 30px 30px;*/
 }
 .teacher_ask_section image{
     /*padding-left: -10px;*/
     position: absolute;
-    left: 0px;
-    width: 20px;
-    height: 20px;
+    top: 10rpx;
+    left: 10rpx;
+    width: 34rpx;
+    height: 30rpx;
     display:block;
 }
 
@@ -272,6 +279,7 @@
 
 .border_tab{
     border-bottom: 1px solid #EEE;
+    /*width: 100%;*/
     margin-left: 5%;
     margin-right: 5%;
 }

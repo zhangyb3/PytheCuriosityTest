@@ -1,16 +1,25 @@
 
 
 .ask_page_section_selector_bar{
-    height: 5%;
+    height: 64rpx;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 
 }
-
+.middle_line{
+    display: flex;
+    width: 1px;
+    background-color: #CCCCCC;
+    /*top: 15rpx;*/
+    /*bottom: 30rpx;*/
+    height: 40rpx;
+}
 .bar_item{
     
     width: 50%;
-    line-height: 30px;
+    line-height: 64rpx;
     text-align: center;
     /*border: 1px;*/
     color: #6E6E6E;
@@ -23,4 +32,8 @@
 .bar_item.active{
     color: #3AA4F1;
     background-color: #FFFFFF;
+}
+
+.bottom_line{
+    border-bottom: 1px solid #EEE;
 }

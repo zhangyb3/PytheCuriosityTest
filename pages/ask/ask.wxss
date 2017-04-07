@@ -1,8 +1,8 @@
 /* pages/answer/ask.wxss */
 
 .list_bottom{
-  height: 10px;
-  background-color: lightgray;
+  height: 20rpx;
+  background-color: #F5F5F5;
 }
 
 @import "../common/ask_page_section_selector.wxss";

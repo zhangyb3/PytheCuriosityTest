@@ -16,7 +16,7 @@
     /*border: 1px;*/
     color: #6E6E6E;
     background-color: white;
-    border-right: 1rpx solid #D9D9D9;
+    /*border-right: 1rpx solid #D9D9D9;*/
     border-bottom: 1rpx solid #D9D9D9;
     justify-content: center;
     align-items: center;
@@ -28,10 +28,12 @@
     /*background-color: #3AA4F1;*/
 }
 
-/*.subject_filter_text{
-    -webkit-text-fill-color: black;
+.answer_middle_line{
+    display: flex;
+    width: 1px;
+    background-color: #CCCCCC;
+    /*top: 15rpx;*/
+    /*bottom: 30rpx;*/
+    margin-top: 10rpx;
+    height: 40rpx;
 }
-
-.sort_by_attribute_text{
-    -webkit-text-fill-color: black;
-}*/

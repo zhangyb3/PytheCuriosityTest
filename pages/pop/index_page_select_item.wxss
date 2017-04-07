@@ -22,7 +22,7 @@
     right: 20rpx;
     bottom: 44rpx;
     /*margin-bottom: 0px;*/
-    
+    border-radius: 10rpx;
     display: flex;
     flex-direction: column;
 
@@ -46,7 +46,7 @@
 
 .select_question_content {
     display: flex;
-    padding-left: 30rpx;
+    padding-left: 60rpx;
     padding-right: 30rpx;
     margin-top: 50rpx;
     text-align: left;
@@ -76,8 +76,8 @@
 }
 
 .select_answer_content{
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
 }
 
 .select_answer_wrapper {
