@@ -617,6 +617,7 @@ Page({
     var questionPhotoPath = fileSys.downloadFile(this,question_photo,'image');
     this.data.answer_question.photo_path = questionPhotoPath;
     this.setData({
+      hide_textarea: true,
       hide_show_image_page: false,
       img_src: questionPhotoPath,
     });
@@ -628,6 +629,7 @@ Page({
     var questionDrawPath = fileSys.downloadFile(this,question_draw,'image');
     this.data.answer_question.draw_path = questionDrawPath;
     this.setData({
+      hide_textarea: true,
       hide_show_image_page: false,
       img_src: questionDrawPath,
     });
@@ -637,6 +639,7 @@ Page({
     console.log("显示图片" );
     this.data.question_answer.photo_path = e.currentTarget.dataset.answer_photo;
     this.setData({
+      hide_textarea: true,
       hide_show_image_page: false,
       img_src: this.data.question_answer.photo_path,
     });

@@ -116,6 +116,7 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
                 // page.data.urlDetail = page.data.urlDetail + '/two';
                 page.setNetparams.q = null;
                 page.setNetparams.gradeId = wx.getStorageSync(user.GradeID);
+                page.getListFromNetData = getListFromNetData;
                 page.data.basic_url = config.PytheRestfulServerURL;
                 page.data.urlDetail = '/index/defaultList/two';
                 wx.setStorageSync('end_load', 'no');
@@ -129,6 +130,7 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
                 // page.data.urlDetail = urlstr;
                 page.setNetparams.q = null;
                 page.setNetparams.gradeId = wx.getStorageSync(user.GradeID);
+                page.getListFromNetData = getListFromNetData;
                 page.data.basic_url = config.PytheRestfulServerURL;
                 page.data.urlDetail = '/index/defaultList';
                 wx.setStorageSync('end_load', 'no');
