@@ -9,8 +9,9 @@
                 <text class="teacher_name">{{item.question.username}}</text>
              </view>
             <!--<view class="border_tab"/>-->
+            <view class="dotted_line"></view>
             <view class="question_wrapper">
-      
+            <!--<view class="border_tab"/>-->
                 <text class="question_content">{{ item.question.questioncontent.text[0] }}</text>
               
             </view>
@@ -40,10 +41,9 @@
 
             </view>
             <view class="border_tab"/>
-            <view class="dotted_line"></view>
             <view class="border_tab"/>
 
-            <text class="question_content">倒计时：{{item.timer}}</text>
+            <text class="time_zone">{{item.timer}}</text>
 
             <view class="border_tab"/>
       

@@ -8,7 +8,7 @@
     /*margin-bottom: 2px;*/
     margin-left: 2px;
     margin-right: 2px;
-    height: 80px;
+    height: 300rpx;
     
     display: flex;
     flex-direction: column;
@@ -32,16 +32,19 @@
 }
 
 .question_content {
-    /*display: flex;
-    flex-direction: row;*/
-    width: 94%;
-    /*text-align: left;*/
+    display: flex;
+    flex-direction: row;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
+    margin-top: 20rpx;
+    width: 100%;
+    text-align: left;
     /*margin-left: 20px;*/
     /*text-align: center;*/
     height: 80px;
-    font-size: 16px;
-    color: #0A0A0A;
-    margin-left: 10px;
+    font-size: 28rpx;
+    color: #333333;
+    /*margin-left: 10px;*/
 }
 
 .dotted_line{
@@ -81,24 +84,29 @@
 .questioner_info_wrap{
     display: flex;
     flex-direction: row;
-    line-height: 30px;
+    height: 70rpx;
     width: 100%;
+    justify-content: flex-start;
     /*background-color: yellow;*/
 }
 
 .teacher_name {
-    width: 100%;
-    color: #666;
-    font-size: 16px;
-    margin-bottom: 0;
-    margin-left: 5px;
+    display: flex;
+    /*width: 100%;*/
+    color: #999999;
+    font-size: 26rpx;
+    /*margin-bottom: 0;*/
+    width: auto;
+    /*height: auto;*/
+    line-height: 30rpx;
+    margin-left: 10rpx;
 }
 
 .questioner_info_wrap>image {
-    padding-left: 10px;
-    margin-left: 5px;
-    width: 30px;
-    height: 30px;
+    /*padding-left: 10px;*/
+    margin-left: 27rpx;
+    width: 60rpx;
+    height: 60rpx;
     
     border-radius: 50%;
     background-size: contain;
@@ -210,6 +218,11 @@
     background: url(http://wx.wg-global.com/Public/images/gwlbsjyz_icon.png) no-repeat;
     background-size: 80px 25px;
     text-align: center;
+}
+.time_zone{
+    margin-left: 30rpx;
+    font-size: 26rpx;
+    color: #999999;
 }
 
 .border_tab{

@@ -61,19 +61,75 @@
 
 .border_tab{
     height:5px;
-    background-color: #ECEBF4;
+    background-color: #F5F5F5;
 }
 
 .ask_operation_zone{
-    border-top: 1px solid #ECEBF4;
-    border-bottom: 1px solid #ECEBF4;
+    /*border-top: 1px solid #ECEBF4;*/
+    /*border-bottom: 1px solid #ECEBF4;*/
     height: 50px;
+    width: 100%;
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     
 }
 
-.ask_operation_zone>text {
+.record_sound{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: 40rpx;
+    /*position: absolute;
+    left: 40rpx;*/
+}
+
+.take_photo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /*margin-right: 40rpx;*/
+    /*position: absolute;
+    left: 40rpx;*/
+}
+
+.take_photo_image{
+    /*position: absolute;*/
+    /*left: 40rpx;*/
+    width: 44rpx;
+    height: 43rpx;
+}
+
+.draw_picture{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-right: 40rpx;
+    /*position: absolute;
+    left: 40rpx;*/
+}
+
+.draw_picture_image{
+    /*position: absolute;*/
+    /*left: 40rpx;*/
+    width: 45rpx;
+    height: 41rpx;
+}
+
+.record_sound_image{
+    /*position: absolute;*/
+    /*left: 40rpx;*/
+    width: 30rpx;
+    height: 46rpx;
+}
+
+.record_sound_text{
+margin-left: 10rpx;
+font-size: 24rpx;
+color: #999999;
+}
+
+/*.ask_operation_zone>text {
     width: 100%;
     text-align: center;
     font-size: 28rpx;
@@ -83,13 +139,13 @@
     justify-content: center;
     align-items: center;
     color: #A9A9A9;
-}
+}*/
 
 .ask_operation_zone>text:not(:first-child) {
-    border-left: 1px solid #EEE;
+    /*border-left: 1px solid #EEE;*/
 }
 
-.ask_operation_zone>text:before {
+/*.ask_operation_zone>text:before {
     content: '';
     display: block;
     width: 18px;
@@ -99,10 +155,10 @@
     bottom: 1px;
     background-position: 0 0;
     background-repeat: no-repeat;
-}
+}*/
 
 
-.record_sound:before{
+/*.record_sound:before{
     background-image: url(../../images/money.png);
     background-size: 18px; 
 }
@@ -115,7 +171,7 @@
 .draw_picture:before{
     background-image: url(../../images/money.png);
     background-size: 18px; 
-}
+}*/
 
 .interval{
     margin-top: 10px;
@@ -148,6 +204,19 @@
     background:url(../../images/arr.png) right center no-repeat;
     background-size:8px 8px;
 }
+.reward_number_text_comtain{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20rpx;
+}
+
+.reward_number_text{
+    font-size: 24rpx;
+    color: #999999;
+    text-align: center
+}
 
 .reward_number_container{
     width: 100%;
@@ -161,24 +230,24 @@
 }
 
 .reward_1{
-    height: 80px;
-    width: 80px;
+    height: 131rpx;
+    width: 131rpx;
     /*border-radius: 100%;*/
     background-size: contain;
     /*background: url(../../images/reward_1.png)*/
 }
 
 .reward_5{
-    height: 80px;
-    width: 80px;
+    height: 131rpx;
+    width: 131rpx;
     /*border-radius: 100%;*/
     background-size: contain;
     /*background: url(../../images/reward_5.png)*/
 }
 
 .reward_10{
-    height: 80px;
-    width: 80px;
+    height: 131rpx;
+    width: 131rpx;
     /*border-radius: 100%;*/
     background-size: contain;
     /*background: url(../../images/reward_10.png)*/
@@ -186,15 +255,43 @@
 
 .reward_img{
     
-    width: 80px;
-    height: 80px;
+    height: 131rpx;
+    width: 131rpx;
 }
 
 .ask_commit_button{
-    line-height: 30px;
-    margin-top: 30px;
-    width: 80%;
+    line-height: 93rpx;
+    margin-top: 55rpx;
+    width: 85%;
     background-color: #3AA5F0;
+    font-size: 36rpx;
+}
+
+.input_select_view{
+    display: flex;
+    height: 96rpx;
+    width: 100%;
+    background-color: #F5F5F5;
+    align-items: center;
+    justify-content: center;
+}
+
+.input_content{
+    height: 68rpx;
+    width: 543rpx;
+
+    border-radius: 34rpx;
+    display: flex;
+    flex-direction: row;
+    /*justify-content: space-around;*/
+    align-items: center;
+    /*margin-left: 20px;*/
+    /*margin:2px 5px;*/
+    text-align: center;
+    background-color: #FFFFFF;
+    font-size: 30rpx;
+    color: #999999;
+
 }
 
 @import "../section/operation_record_sound.wxss";

@@ -74,7 +74,7 @@ App({
             //如果没注册过，则注册
             var registerInfo = userRegisterResult.data.data;
             
-            if(registerInfo == null)
+            if(registerInfo != null)
             {
               wx.setStorageSync('alreadyRegister', 'no');
               console.log("register : " + wx.getStorageSync('alreadyRegister'));

@@ -4,6 +4,9 @@
         <view class="bar_item {{answer_page_menu[0].active ? 'active' : ''}}" bindtap='subject_filter' data-index='0' data-value="{{answer_page_menu[0].value}}">
             <text class="subject_filter_text " data-value="{{answer_page_menu[0].value}}">{{answer_page_filter.selectSubject.subjectName}}</text>
         </view>
+
+        <view class="answer_middle_line"></view>
+
         <view class="bar_item {{answer_page_menu[1].active ? 'active' : ''}}"  bindtap='sort_by_attribute' data-index='1' data-value="{{answer_page_menu[1].value}}">
             <text class="sort_by_attribute_text " data-value="{{answer_page_menu[1].value}}">{{answer_page_filter.selectSort.sortName}}</text>
         </view>

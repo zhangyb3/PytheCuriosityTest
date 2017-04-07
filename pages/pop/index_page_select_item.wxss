@@ -17,12 +17,12 @@
     background-color: white;
     z-index: 12;
     position: fixed;
-    top: 30px;
-    left: 0;
-    right: 0;
-    bottom: 30px;
+    top: 44rpx;
+    left: 20rpx;
+    right: 20rpx;
+    bottom: 44rpx;
     /*margin-bottom: 0px;*/
-    
+    border-radius: 10rpx;
     display: flex;
     flex-direction: column;
 
@@ -39,14 +39,18 @@
 .select_question_wrapper{
     /*height: 120px;*/
     /*overflow-x: hidden; */
-    /*overflow-y: auto;*/
+    min-height: 100rpx;
+    overflow-y: auto;
 }
 
 
 .select_question_content {
-    margin-left: 20px;
-    
-    font-size: 18px;
+    display: flex;
+    padding-left: 60rpx;
+    padding-right: 30rpx;
+    margin-top: 50rpx;
+    text-align: left;
+    font-size: 28rpx;
     
 }
 
@@ -72,8 +76,8 @@
 }
 
 .select_answer_content{
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
 }
 
 .select_answer_wrapper {
@@ -87,10 +91,10 @@
 
 .select_answer_wrapper>image {
     
-    width: 30px;
-    height: 30px;
+    width: 80rpx;
+    height: 80rpx;
     
-    border-radius: 100%;
+    border-radius: 50%;
     background-size: contain;
 }
 
@@ -104,16 +108,20 @@
 
 
 .select_teacher_name {
-    width: 100%;
-    color: #666;
-    font-size: 32px;
+    display: flex;
+    position: relative;
+    width: auto;
+    color: #999999;
+    margin-left: 15rpx;
+    font-size: 24rpx;
     margin-bottom: 0;
-    text-align: center;
+    text-align: left;
+    background-color: yellow;
 }
 
 
 .border_tab{
-    height:5px;
+    height:30rpx;
 }
 
 .operation_zone{

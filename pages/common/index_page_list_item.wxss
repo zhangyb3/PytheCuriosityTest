@@ -5,10 +5,10 @@
     border-bottom: 1px solid #EEE;
     
     margin-top: 0px;
-    margin-bottom: 0px;
+    /*margin-bottom: 0px;*/
     margin-left: 0px;
     margin-right: 0px;
-    
+    height: auto;
     display: flex;
     position: relative;
     flex-direction: column;
@@ -22,8 +22,8 @@
     /*height: auto;*/
     height: 70px;
     /*width: 100%;*/
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 10rpx;
+    margin-right: 10rpx;
     overflow-x: hidden; 
     overflow: hidden;
    word-wrap: break-word;
@@ -33,17 +33,18 @@
 }
 
 .question_content {
+    /*padding-top: 10rpx;*/
     margin-left: 10px;
     margin-right: 10px;
     height: auto;
-    font-size: 18px;
+    font-size: 36rpx;
     /*开头空两格*/
     /*-webkit-line-clamp: 2;*/
     text-overflow: ellipsis;
     overflow: hidden;
     word-wrap: break-word;
 
-    color: #0A0A0A;
+    color: #333333;
    
 }
 
@@ -56,8 +57,8 @@
     /*padding: 8px;*/
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 30rpx;
+    margin-right: 30rpx;
     /*border-top: 1px solid #EEE;*/
     /*border-bottom: 1px solid #EEE;*/
     
@@ -76,8 +77,8 @@
 .answer_wrapper>image {
     margin-top: 5px;
     margin-left: 0px;
-    width: 20px;
-    height: 20px;
+    width: 40rpx;
+    height: 40rpx;
     
     border-radius: 50%;
     background-size: contain;
@@ -226,5 +227,9 @@
 
 .border_tab{
     height:5px;
+}
+.interval_inder{
+    height:30rpx;
+    background-color: #F5F5F5;
 }
 

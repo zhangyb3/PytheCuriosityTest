@@ -4,6 +4,19 @@
 
             <!--<view class="border_tab"/>-->
             <!--<view class="border_tab_index_white"></view>-->
+
+ <view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
+
+            <view class="answer_wrapper" bindtap='bindItem' data-index='{{ index }}'>
+                <image  src='{{ item.avatar || "../../images/my_account_on.png" }}' />
+                <text class="teacher_name">{{ item.teacher_name }}</text>
+        <view class="ctrls">
+                    <text class='{{ item.is_liked == 1 ? "like" : "not-like" }}' bindtap='bindLike' data-index='{{ index }}'>{{ item.reward }}</text>
+                    
+         </view>
+    </view>
+</view>
+            <view class="dotted_line"></view>
             <view class="question_wrapper">
             <view class="border_tab_index_white"></view>
                 <text class="question_content">questionid:{{ item.questionid }}</text>
@@ -34,14 +47,11 @@
             </view>
 
             </view>
+            
+            <view class="interval_inder"/>
+            <!--<view class="border_tab"/>-->
 
-            <view class="border_tab"/>
-
-            <view class="dotted_line"></view>
-
-            <view class="border_tab"/>
-
-            <view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
+            <!--<view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
 
             
 
@@ -85,9 +95,9 @@
                     </view>
                 </view>
 
-            </view>
+            </view>-->
 
-            <view class="border_tab"/>
+            <!--<view class="border_tab"/>-->
       
         
 </view>

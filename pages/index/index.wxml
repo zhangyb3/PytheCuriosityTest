@@ -48,5 +48,5 @@
 <view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
     <template is="index_page_select_item" data="{{answers,question}}"></template>
   </view>
-  <view class="list_bottom"></view>
+  <!--<view class="list_bottom"></view>-->
 

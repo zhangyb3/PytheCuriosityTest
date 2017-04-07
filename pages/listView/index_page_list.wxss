@@ -1,24 +1,40 @@
 
 
+.page_contain{
+display: flex;
+position: absolute;
+top: 98rpx;
+left: 0rpx;
+right: 0rpx;
+bottom: 0rpx;
+background-color: #FFFFFF;
+/*background-color: yellow;*/
+/*border-radius: 40rpx;*/
+}
+
 .scroll_list{
-    
+    /*display: flex;*/
+    /*position: relative;*/
+    /*height: 500px;*/
     /*height: auto;*/
-    /*margin-top: 0px;
-    margin-bottom: 10px;*/
+    top: 0px;
+    bottom: 10px;
+    border-radius: 40rpx;
 }
 
 .interval{
-    height: 10px;
-    background-color: #ECEBF4;
+    height: 30rpx;
+    background-color: #F5F5F5;
 }
     
 
 .index_page_list_container{
-    background-color: #ECEBF4;
+    height: 250rpx;
+    background-color: #FFFFFF;
 }
 
 .border_tab_index_white{
-    height: 10px;
+    height: 30rpx;
     background-color: white;
 }
 

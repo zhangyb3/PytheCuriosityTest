@@ -10,12 +10,14 @@
 
 <view class="ask_operation_view"  data-item='{{ ask_item }}'>
     
-       
+       <view class="input_select_view" >
+        <input class="input_content" type="text" placeholder="选择您的科目是:" bindinput="selectSubject" ></input>
+    </view>
         
-        <view class="border_tab"></view>
+        <!--<view class="border_tab"></view>
 
         
-        <view class="border_tab"></view>
+        <view class="border_tab"></view>-->
 
         <view class="ask_container" >
             
@@ -23,7 +25,7 @@
             <view class="border_tab"></view>
 
             <view class="ask_content_zone" hidden='{{hide_textarea}}'>
-                <textarea class="ask_content_text_input" bindinput="getQuestionText" placeholder="请输入问题"    placeholder-style="color:#C9C9C9" placeholder-style="font-size:14px"/>
+                <textarea class="ask_content_text_input" bindinput="getQuestionText" placeholder="请输入问题..."    placeholder-style="color:#C9C9C9" placeholder-style="font-size:28rpx"/>
             </view>
 
             <view class="border_tab"></view>
@@ -55,15 +57,33 @@
 
         </view>
 
+
         <view class="ask_operation_zone" >
-            <text class='record_sound' bindtap='recordSound'>录音
-            </text>
-            <text class="take_photo" bindtap="takePhoto">拍照
-            </text>
-            <text class="draw_picture" bindtap='drawPicture'>画板
-            </text>
+
+        <view class="record_sound" bindtap="recordSound">
+        <image class="record_sound_image" src="../../images/question_icon_record@2x.png"></image>
+        <text class="record_sound_text" >录音</text>
         </view>
 
+        <view class="take_photo" bindtap="takePhoto">
+        <image class="take_photo_image" src="../../images/question_icon_pic@2x.png"></image>
+        <text class="record_sound_text" >拍照</text>
+        </view>
+
+        <view class="draw_picture" bindtap="drawPicture">
+        <image class="draw_picture_image" src="../../images/question_icon_huaban@2x.png"></image>
+        <text class="record_sound_text" >画板</text>
+        </view>
+
+            <!--<text class='record_sound' bindtap='recordSound'>录音
+            </text>-->
+            <!--<text class="take_photo" bindtap="takePhoto">拍照
+            </text>-->
+            <!--<text class="draw_picture" bindtap='drawPicture'>画板
+            </text>-->
+        </view>
+<view class="border_tab"></view>
+<view class="border_tab"></view>
         <view class="record_sound_section_container" hidden='{{hide_record_sound_section}}'>
              <template is="operation_record_sound_section" data='{{isSpeaking,loop,voices}}'></template>
         </view>
@@ -84,23 +104,27 @@
                 </view>
             </picker>
         </view>
-
+        <view class="reward_number_text_comtain">
+        <text class="reward_number_text">
+        请选择悬赏金额
+        </text>
+        </view>
         <view class="reward_number_container">
         <view class="reward_1" bindtap="selectReward1">
-            <image class="reward_img" src="../../images/reward_1.png"></image>
+            <image class="reward_img" src="../../images/question_icon_one_nor@2x.png"></image>
         </view>
         <view class="reward_5" bindtap="selectReward5">
-            <image class="reward_img" src="../../images/reward_5.png"></image>
+            <image class="reward_img" src="../../images/question_icon_five_nor@2x.png"></image>
         </view>
         <view class="reward_10" bindtap="selectReward10">
-            <image class="reward_img" src="../../images/reward_10.png"></image>
+            <image class="reward_img" src="../../images/question_icon_ten_nor@2x.png"></image>
         </view>
     </view>
 
         <!--<view class="border_tab"></view>-->
 
         <view class="ask_commit_confirm">
-            <button class="ask_commit_button" bindtap="commitQuestion">
+            <button style="color:#FFFFFF" class="ask_commit_button" bindtap="commitQuestion">
                 发布
             </button>
         </view>
