@@ -16,7 +16,12 @@
 <view class="answer_operation_view" data-item='{{ answer_item }}'>
     
        
-        
+         <view class="select_knowledge_container">
+            <text class="select_knowledge_button" bindtap="selectKnowledge">
+                选择知识点：{{knowledge_point}}
+            </text>
+            
+        </view>
         <!--<view class="border_tab"></view>-->
 
         <view class="answer_question_wrapper">
@@ -63,7 +68,7 @@
             <view class="border_tab"></view>
 
             <view class="answer_content_zone" hidden='{{hide_textarea}}'>
-                <textarea class="answer_content_text_input" bindinput="getAnswerText"   placeholder-style="color:#C9C9C9;"/>
+                <textarea class="answer_content_text_input" placeholder="请输入答案..."  bindinput="getAnswerText" placeholder-style="font-size:28rpx; color:#333333"/>
             </view>
 
             <view class="border_tab"></view>
@@ -121,12 +126,29 @@
         <!--<view class="border_tab_white"></view>-->
 
         <view class="answer_operation_zone" >
-            <text class='record_sound' bindtap='recordSound'>录音
+            <!--<text class='record_sound' bindtap='recordSound'>录音
             </text>
             <text class="take_photo" bindtap="takePhoto">拍照
             </text>
             <text class="draw_picture" bindtap='drawPicture'>画板
-            </text>
+            </text>-->
+<view class="record_sound" bindtap="recordSound">
+        <image class="record_sound_image" src="../../images/question_icon_record@2x.png"></image>
+        <text class="record_sound_text" >录音</text>
+        </view>
+
+        <view class="take_photo" bindtap="takePhoto">
+        <image class="take_photo_image" src="../../images/question_icon_pic@2x.png"></image>
+        <text class="record_sound_text" >拍照</text>
+        </view>
+
+        <view class="draw_picture" bindtap="drawPicture">
+        <image class="draw_picture_image" src="../../images/question_icon_huaban@2x.png"></image>
+        <text class="record_sound_text" >画板</text>
+        </view>
+
+
+
         </view>
 
         <view class="record_sound_section_container" hidden='{{hide_record_sound_section}}'>
@@ -143,12 +165,12 @@
 
         <!--<view class="border_tab"></view>-->
 
-        <view class="select_knowledge_container">
+        <!--<view class="select_knowledge_container">
             <button class="select_knowledge_button" bindtap="selectKnowledge">
                 选择知识点：{{knowledge_point}}
             </button>
             
-        </view>
+        </view>-->
 
         <view class="answer_commit_confirm">
             <button class="answer_commit_button" bindtap="commitAnswer">
@@ -156,7 +178,7 @@
             </button>
         </view>
 
-
+<view class="background"></view>
     </view>
 
     
