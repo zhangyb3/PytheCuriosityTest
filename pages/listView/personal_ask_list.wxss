@@ -7,12 +7,13 @@
 
 .interval{
     margin-top: 10px;
+    background-color: #F5F5F5;
 }
     
 
 .personal_ask_list_container{
     height: auto;
-    background-color: #ECEBF4;
+    background-color: #F5F5F5;
 }
 
 

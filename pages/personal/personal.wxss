@@ -9,7 +9,7 @@
     
     display: flex;
     flex-direction: column;
-    background-color: #ECEBF4;
+    background-color: #F5F5F5;
 }
 
 .personal_description_zone{
@@ -22,7 +22,7 @@
     background-color: white;
     /*justify-content: space-around;*/
     align-items: center;
-    height: auto;
+    height: 202rpx;
     width: 100%;
     position: relative;
     z-index: 1;
@@ -38,16 +38,17 @@
 }
 
 .personal_avatar_container{
-    width: 44px;
-    height: 44px;
+    width: 88rpx;
+    height: 88rpx;
     margin: auto;
     
 }
 
 .personal_avartar_image{
+    margin-top: 50rpx;
     width: 100%;
     height: 100%;
-    border-radius: 22px;
+    border-radius: 44rpx;
 
 }
 
@@ -60,8 +61,9 @@
 }
 
 .personal_nick_name{
-    margin-top: 10px;
-    font-size: 16px;
+    margin-top: 54rpx;
+    font-size: 28rpx;
+    color: #333333;
 }
 
 .personal_summary_wrap{
@@ -72,8 +74,8 @@
     line-height:20px;
 }
 .personal_summary_wrap image{
-    width:20px;
-    height: 20px;
+    width:43rpx;
+    height: 38rpx;
     display:block;
     margin-right:5px;
 }
@@ -103,9 +105,9 @@
     /*padding: 0px;*/
     right: 0px;
     /*padding-right: 10;*/
-    bottom: 10px;
-    height: 20px;
-    width: 20px;
+    bottom: 5rpx;
+    height: 80rpx;
+    width: 80rpx;
     background: none;
     /*display: block;*/
     /*background-size: 20px 20px;*/
@@ -115,8 +117,8 @@
     position: absolute;
     /*left: 0px;*/
     right: 0px;
-    height: 20px;
-    width: 20px;
+    height: 45rpx;
+    width: 44rpx;
     display:block;
 }
 
@@ -139,6 +141,8 @@
     display: flex;
     flex-direction: column;
     background-color: white;
+    justify-content: space-between;
+    align-items: flex-start;
     
 }
 
@@ -147,17 +151,22 @@
     display: flex;
     flex-direction: row;
     /*justify-content: flex-end;*/
-    line-height: 30px;
-    margin-left: 10px;
+    line-height: 94rpx;
+    width: 95%;
+    margin-left: 20rpx;
     border-bottom: 1px solid #EEE;
     border-width: 1px;
-    margin-right: 10px;
-    background:url(../../images/icon_more@2x.png) no-repeat right center;
-    /*margin-top: 15px;*/
-    /*padding-right: -80px;*/
-    /*margin-bottom: 10px;*/
-    /*background:url(../../images/icon_money_1@2x.png) no-repeat right center;*/
+    margin-right: 20rpx;
+    /*background:url(../../images/icon_more@2x.png) no-repeat right center;*/
 
+}
+
+.personal_operation_item image{
+    margin-top: 20rpx;
+    margin-right: 30rpx;
+    /*right: 30rpx;*/
+    width: 13rpx;
+    height: 25rpx;
 }
 
 .personal_ask personal_operation_item{
@@ -168,9 +177,11 @@
 }
 
 .personal_operation_item_text{
-    width: 90%;
-    height: 30px;
-    font-size: 16px;
+    width: 96%;
+    line-height: 60rpx;
+    font-size: 28rpx;
+    color: #333333;
+    text-align: left;
     
 }
 

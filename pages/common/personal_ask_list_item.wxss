@@ -16,7 +16,7 @@
 
 .question_wrapper{
     /*border-top: 1px solid #EEE;*/
-    height: 120px;
+    height: 200rpx;
 
     overflow-x: hidden; 
     overflow-y: auto;
@@ -25,7 +25,8 @@
 .question_content {
     margin-left: 10px;
     
-    font-size: 18px;
+    font-size: 28rpx;
+    color: #333333;
     
 }
 

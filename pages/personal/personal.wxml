@@ -13,10 +13,10 @@
         </view>
         <view class="personal_description_text_zone">
             <text class="personal_nick_name">用户{{userNickName}}的描述：{{userDescription}}</text>
-        <view class="personal_summary_wrap"><image src="../../images/icon_money_1@2x.png"></image><text class="personal_summary">{{teacherEarn}}</text></view>
+        <view class="personal_summary_wrap"><image src="../../images/personal_icon_org.money@2x.png"></image><text class="personal_summary">{{teacherEarn}}</text></view>
             <!--<text class="personal_summary" src="../../images/icon_money_1@2x.png">265</text>-->
             <view class="person_edit_icon_view">
-        <button class="person_edit_icon" bindtap='personEditOperationPage'><image src="../../images/icon_information@2x.png"></image></button>
+        <button class="person_edit_icon" bindtap='personEditOperationPage'><image src="../../images/personal_icon_change@2x.png"></image></button>
         </view>
         </view>
         <view class="personal_description_revise_zone">
@@ -26,21 +26,26 @@
     <view class="personal_operation_zone">
         <view class="personal_ask personal_operation_item" bindtap='selectPersonalAsk'>
             <text class="personal_ask personal_operation_item_text" src="../../images/icon_money_1@2x.png">我的问</text>
+            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
         <view class="personal_answer personal_operation_item" bindtap='selectPersonalAnswer'>
             <text class="personal_answer personal_operation_item_text" src="../../images/icon_money_1@2x.png">我的答</text>
+            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
         <view class="personal_like personal_operation_item" bindtap='selectPersonalLike'>
             <text class="personal_like personal_operation_item_text" src="../../images/icon_money_1@2x.png">我的点赞</text>
+            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
     </view>
 
     <view class="about_us_zone">
         <view class="balance_detailed_rules personal_operation_item" bindtap='selectBalanceRules'>
             <text class="rules personal_operation_item_text" src="../../images/icon_money_1@2x.png">结算细则</text>
+            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
         <view class="about_us personal_operation_item" bindtap='selectAboutUs'>
             <text class="about personal_operation_item_text" src="../../images/icon_money_1@2x.png">关于我们</text>
+            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
     </view>
 </view>

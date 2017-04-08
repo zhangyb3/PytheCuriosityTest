@@ -4,6 +4,9 @@
         <view class="bar_item {{personal_like_menu[0].active ? 'active' : ''}}" bindtap='selectLikeAnswer' data-index='0' data-value="{{personal_like_menu[0].value}}">
             <text class="select_like_answer_text " data-value="{{personal_like_menu[0].value}}">{{personal_like_menu[0].name}}</text>
         </view>
+
+<view class="person_like_middle_line"></view>
+
         <view class="bar_item {{personal_like_menu[1].active ? 'active' : ''}}" bindtap='selectLikeTeacher' data-index='1' data-value="{{personal_like_menu[1].value}}">
             <text class="select_like_teacher_text " data-value="{{personal_like_menu[1].value}}">{{personal_like_menu[1].name}}</text>
         </view>
