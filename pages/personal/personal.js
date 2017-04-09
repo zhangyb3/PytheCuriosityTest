@@ -123,9 +123,18 @@ Page({
       method: 'GET', 
       success: function(res){
         // success
-        that.setData({
-          teacherEarn: res.data.data,
-        });
+        if(res.data.data != null)
+        {
+          that.setData({
+            teacherEarn: res.data.data,
+          });
+        }
+        else{
+          that.setData({
+            teacherEarn: 0.00,
+          });
+        }
+        
       },
       fail: function() {
         // fail
