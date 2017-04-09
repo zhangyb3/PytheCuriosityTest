@@ -19,7 +19,7 @@
         <view class="phone_number_container">
             <text class="phone_hint">手机号:</text>
             <input class="phone_number_input" type="text"  bindinput="phoneNumberInput" ></input>
-            <button type="default" class="send_verification_code_button" bindtap="sendVerificationCode">{{countdownText}}</button>
+            <button type="default" class="send_verification_code_button" disabled="{{lock_countdown}}" bindtap="sendVerificationCode">{{countdownText}}</button>
         </view>
         <view class="verification_code_container">
             <text class="verification_hint">验证码:</text>

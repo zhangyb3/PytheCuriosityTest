@@ -708,6 +708,18 @@ Page({
         });
       }
     }
+    else
+    {
+      wx.showModal({
+        title: '提示',
+        content: '请选择悬赏金额',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      });
+    }
   },
 
   onShow:function(){

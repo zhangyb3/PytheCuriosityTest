@@ -9,6 +9,7 @@ var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
 var user = require("../../utils/user.js");
+var fileSys = require("../../utils/file.js");
 
 var selectItem;
 var itemIndex;
@@ -221,6 +222,59 @@ Page({
     })
 
   },
+
+
+  playVoiceRecord:function(e){
+    wx.showToast({
+      title: '播放录音',
+      icon: 'success',
+      duration: 1000
+    });
+    var voice_path = decodeURIComponent(e.currentTarget.dataset.voice);
+    wx.playVoice({
+      filePath: voice_path,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+
+  showPhoto:function(e){
+    var photo = decodeURIComponent(e.currentTarget.dataset.photo);
+    console.log("显示图片" + photo);
+    var photoPath = fileSys.downloadFile(this,photo,'image');
+    this.data.photo_path = photoPath;
+    this.setData({
+      hide_textarea: true,
+      hide_show_image_page: false,
+      // img_src: photo_path,
+    });
+
+  },
+  showDraw:function(e){
+    var draw = decodeURIComponent(e.currentTarget.dataset.draw);
+    console.log("显示手绘" + draw);
+    var drawPath = fileSys.downloadFile(this,draw,'image');
+    this.data.draw_path = drawPath;
+    this.setData({
+      hide_textarea: true,
+      hide_show_image_page: false,
+      // img_src: draw_path,
+    });
+  },
+  returnLoadImagePage:function(e){
+    this.setData({
+      hide_show_image_page: true,
+      img_src:null,
+      // hide_textarea : false,
+    });
+  },
   
 
   /**
@@ -235,6 +289,8 @@ Page({
       });
       this.setData({
           hide_select_item: true,
+          hide_show_image_page: true,
+          img_src:null,
       });
   },
 

@@ -575,18 +575,18 @@ Page({
     var questionVoicePath = fileSys.downloadFile(that,decodeURI(questionVoiceRemotePath),'audio');
     that.data.answer_question.questionVoicePath = questionVoicePath;
     
-    // wx.playVoice({
-    //   filePath: that.data.answer_question.questionVoicePath,
-    //   success: function(res){
-    //     // success
-    //   },
-    //   fail: function() {
-    //     // fail
-    //   },
-    //   complete: function() {
-    //     // complete
-    //   }
-    // })
+    wx.playVoice({
+      filePath: that.data.answer_question.questionVoicePath,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
 
     
   },

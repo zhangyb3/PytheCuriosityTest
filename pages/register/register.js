@@ -165,7 +165,7 @@ Page({
       subject_index: e.detail.value
     })
 
-    this.data.registerParams.subjectId = this.data.subjects[e.detail.value].subjectId;
+    this.data.registerParams.subjectId = this.data.subjects[e.detail.value].subjectid;
   },
 
   //注册
@@ -183,12 +183,13 @@ Page({
     
     that.setData({  
       second: 10,  
-      
+      lock_countdown: true,
       }); 
     countdown(that);
     if (second < 0) {  
       that.setData({  
-        countdownText: "重发验证码"  
+        countdownText: "重发验证码"  ,
+        lock_countdown: false,
       });  
     }
   },
@@ -199,51 +200,90 @@ Page({
 },
 
   registerToMainPage:function(e){
-
-    //注册
-    wx.request({
-      url: config.PytheRestfulServerURL + '/user/register/',
-      data: {
-        status:this.data.registerParams.status,
-        userName: wx.getStorageSync('userNickName'),
-        phoneNum: wx.getStorageSync('registerPhoneNum'),
-        verificationCode: wx.getStorageSync('verificationCode'),
-        gradeId: this.data.registerParams.gradeId,
-        subjecId: this.data.registerParams.subjectId,
-        openId: wx.getStorageSync(user.OpenID),
-        userImg: wx.getStorageSync('userAvatarUrl'),
-      },
-      method: 'POST',
-      success: function(res){
-        // success
-        console.log(res);
-        if(res.data.data.userid != null)
-        {
-          wx.setStorageSync(user.UserID, res.data.data.userid);
-          wx.setStorageSync(user.StudentID, res.data.data.studentid);
-          wx.setStorageSync(user.TeacherID, res.data.data.teacherid);
-          wx.setStorageSync(user.GradeID, res.data.data.gradeid);
-
-          //判断注册是否成功，成功则返回index页面
-          wx.setStorageSync('alreadyRegister', 'yes');
-          wx.setStorageSync('fromRegister', 'yes');
-          wx.navigateBack({
-            delta: 1, // 回退前 delta(默认为1) 页面
-            success: function(res){
-              // success
-            },
-            fail: function() {
-              // fail
-            },
-            complete: function() {
-              // complete
-            }
-          });
+    var that = this;
+    if(that.data.registerParams.status == 0 && that.data.registerParams.gradeId == null)
+    {
+      wx.showModal({
+        title: '提示',
+        content: '年级必填',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
         }
-      },
-      fail: function() {
-        // fail
-        wx.showModal({
+      });
+    }
+    else if( that.data.registerParams.status == 1 && that.data.registerParams.subjectId == null)
+    {
+      wx.showModal({
+        title: '提示',
+        content: '科目必填',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      });
+    }
+    else
+    {
+      //注册
+      wx.request({
+        url: config.PytheRestfulServerURL + '/user/register/',
+        data: {
+          status:this.data.registerParams.status,
+          userName: wx.getStorageSync('userNickName'),
+          phoneNum: wx.getStorageSync('registerPhoneNum'),
+          verificationCode: wx.getStorageSync('verificationCode'),
+          gradeId: this.data.registerParams.gradeId,
+          subjecId: this.data.registerParams.subjectId,
+          openId: wx.getStorageSync(user.OpenID),
+          userImg: wx.getStorageSync('userAvatarUrl'),
+        },
+        method: 'POST',
+        success: function(res){
+          // success
+          console.log(res);
+          if(res.data.data==null)
+          {
+            wx.showModal({
+              title: '提示',
+              content: '登录失败，请重试',
+              success: function(res) {
+                if (res.confirm) {
+                  console.log('用户点击确定')
+                }
+              }
+            });
+          }
+          else if(res.data.data.userid != null)
+          {
+            wx.setStorageSync(user.UserID, res.data.data.userid);
+            wx.setStorageSync(user.StudentID, res.data.data.studentid);
+            wx.setStorageSync(user.TeacherID, res.data.data.teacherid);
+            wx.setStorageSync(user.GradeID, res.data.data.gradeid);
+
+            //判断注册是否成功，成功则返回index页面
+            wx.setStorageSync('alreadyRegister', 'yes');
+            wx.setStorageSync('fromRegister', 'yes');
+            wx.navigateBack({
+              delta: 1, // 回退前 delta(默认为1) 页面
+              success: function(res){
+                // success
+              },
+              fail: function() {
+                // fail
+              },
+              complete: function() {
+                // complete
+              }
+            });
+          }
+          
+        },
+        fail: function() {
+          // fail
+          wx.showModal({
             title: '提示',
             content: '登录失败，请重试',
             success: function(res) {
@@ -252,11 +292,11 @@ Page({
               }
             }
           });
-      },
-      complete: function() {
-        // complete
-      }
-    })
+        },
+        
+      });
+    }
+    
 
     
   },
