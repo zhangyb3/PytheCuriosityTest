@@ -56,7 +56,8 @@
 
         </view>
 
-        <!--<view class="border_tab"></view>-->
+        
+        <view class="border_tab_white"></view>
 
         <!--<view class="dotted_line"></view>-->
 
