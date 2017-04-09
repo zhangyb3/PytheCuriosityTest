@@ -34,10 +34,11 @@
 
 .question_content {
     /*padding-top: 10rpx;*/
-    margin-left: 10px;
-    margin-right: 10px;
+    /*margin-left: 10px;
+    margin-right: 10px;*/
+    padding-left: 20rpx;
     height: auto;
-    font-size: 36rpx;
+    font-size: 28rpx;
     /*开头空两格*/
     /*-webkit-line-clamp: 2;*/
     text-overflow: ellipsis;
@@ -45,6 +46,7 @@
     word-wrap: break-word;
 
     color: #333333;
+    line-height:30rpx;
    
 }
 
@@ -68,10 +70,11 @@
     /*padding: 8px;*/
     display: flex;
     flex-direction: row;
+    width: 100%;
     /*border-top: 1px solid #EEE;*/
     /*border-bottom: 1px solid #EEE;*/
     justify-content: space-between;
-    height: 30px;
+    height: 60rpx;
 }
 
 .answer_wrapper>image {
@@ -111,6 +114,11 @@
     height: auto;
     
     word-wrap: break-word;
+}
+.know_select_item_icon{
+    width: 88rpx;
+    height: 88rpx;
+    margin-left: 20rpx;
 }
 
 

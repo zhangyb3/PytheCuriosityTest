@@ -8,7 +8,7 @@
  <view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
 
             <view class="answer_wrapper" bindtap='bindItem' data-index='{{ index }}'>
-                <image  src='{{ item.avatar || "../../images/my_account_on.png" }}' />
+                <image class="know_select_item_icon"  src='{{ item.avatar || "../../images/my_account_on.png" }}' />
                 <text class="teacher_name">{{ item.teacher_name }}</text>
         <view class="ctrls">
                     <text class='{{ item.is_liked == 1 ? "like" : "not-like" }}' bindtap='bindLike' data-index='{{ index }}'>{{ item.reward }}</text>
