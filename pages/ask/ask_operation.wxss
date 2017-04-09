@@ -184,13 +184,13 @@ color: #999999;
     margin-top:10px;
 }
 .subject_hint{
-    width:46px;
+    width:92rpx;
     text-align:right;
     line-height:30px;
-    color:#0a0a0a;
-    font-size:14px;
+    color:#333333;
+    font-size:30rpx;
     font-weight:bold;
-    margin-right:5px;
+    margin-right:10rpx;
 }
 .subject_picker_wrap{
     border:1px solid #3AA4F1;
@@ -203,6 +203,8 @@ color: #999999;
 .subject_picker{
     background:url(../../images/arr.png) right center no-repeat;
     background-size:8px 8px;
+    font-size: 28rpx;
+    color: #999999;
 }
 .reward_number_text_comtain{
     display: flex;

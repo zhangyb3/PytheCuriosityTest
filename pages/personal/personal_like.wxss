@@ -9,12 +9,12 @@
     
     display: flex;
     flex-direction: column;
-    background-color: #ECEBF4;
+    background-color: #F5F5F5;
 }
 
 .list_bottom{
   height: 10px;
-  background-color: #ECEBF4;
+  background-color: #F5F5F5;
 }
 
 @import "../common/personal_like_section_selector.wxss";

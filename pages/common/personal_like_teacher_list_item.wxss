@@ -27,14 +27,17 @@
 }
 
 .teacher_icon{
-    width: 40px;
-    height: 40px;
-    margin-left: 4%;
+    width: 80rpx;
+    height: 80rpx;
+    left: 30rpx;
+    top: 30rpx;
+    position: absolute;
     /*margin-top: 3%;*/
 }
 
 .teacher_middle_wrapper{
-    margin-left: 20px;
+    margin-left: 130rpx;
+    margin-right: 20rpx;
     /*height: 120px;*/
     height: auto;
     display: flex;
@@ -44,31 +47,35 @@
 }
 
 .teacher_content {
-    margin-top: 8px;
-    color: #0F0F0F;
-    height: 25px;
-    font-size: 17px;  
+    margin-top: 30rpx;
+    color: #333333;
+    height: 50rpx;
+    font-size: 30rpx;  
     /*font-weight:bold; */
 }
 .teacher_brief{
 
-    font-size: 16px;
-    margin-top: 10px;
+    font-size: 28rpx;
+    margin-top: 10rpx;
     margin-bottom: 15px;
-    color: #A9A9A9;
+    color: #999999;
 }
 
 .collect_icon_wrap{
-    height:25px;
+    height:50rpx;
     display:flex;
-    margin-bottom: 10px;
-    line-height:25px;
+    margin-bottom: 20rpx;
+    line-height:50rpx;
+}
+.collect_icon{
+    color: #999999;
+    font-size: 28rpx;
 }
 .collect_icon_wrap image{
-    width:20px;
-    height: 20px;
+    width:34rpx;
+    height: 40rpx;
     display:block;
-    margin-right:5px;
+    margin-right:10rpx;
 }
 
 /*.collect_icon{
@@ -271,7 +278,7 @@
 }
 
 .border_tab{
-    border-bottom: 1px solid #EEE;
+    /*border-bottom: 1px solid #EEE;*/
     margin-left: 5%;
     margin-right: 5%;
 }
