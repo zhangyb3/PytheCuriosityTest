@@ -41,6 +41,7 @@
     /*overflow-x: hidden; */
     min-height: 100rpx;
     overflow-y: auto;
+    padding:0  20rpx;
 }
 
 
@@ -68,22 +69,35 @@
     /*padding: 8px;*/
     display: flex;
     flex-direction: column;
+    background-color: #FFFFFF;
     /*border-top: 1px solid #EEE;*/
     /*border-bottom: 1px solid #EEE;*/
+        padding: 0 20rpx;
     
 
     
 }
 
 .select_answer_content{
+    margin-top: 53rpx;
     margin-left: 20rpx;
     margin-right: 20rpx;
+    min-height: 80rpx;
+    line-height: 30rpx;
+    color: #333333;
+    font-size: 28rpx;
+    /*background: black;*/
 }
 
 .select_answer_wrapper {
     /*padding: 8px;*/
     display: flex;
     flex-direction: row;
+    background-color: #FFFFFF;
+    /*margin-top: */
+    /*line-height: 88rpx;*/
+    /*justify-content: center;*/
+
     /*border-top: 1px solid #EEE;*/
     /*border-bottom: 1px solid #EEE;*/
     
@@ -91,9 +105,9 @@
 
 .select_answer_wrapper>image {
     
-    width: 80rpx;
-    height: 80rpx;
-    
+    width: 88rpx;
+    height: 88rpx;
+    margin-left: 20rpx;
     border-radius: 50%;
     background-size: contain;
 }
@@ -112,12 +126,22 @@
     position: relative;
     width: auto;
     color: #999999;
+    line-height: 30rpx;
     margin-left: 15rpx;
-    font-size: 24rpx;
+    font-size: 26rpx;
     margin-bottom: 0;
     text-align: left;
-    background-color: yellow;
+    /*background-color: yellow;*/
 }
+
+
+.select_item_teacher_name{
+    line-height: 88rpx;
+    font-size: 28rpx;
+    width: auto;
+    color: #999999;
+}
+
 
 
 .border_tab{

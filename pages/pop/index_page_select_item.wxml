@@ -58,17 +58,17 @@
                 <view class="select_answer_container" >
                     <view class="select_answer_wrapper" >
                         <image  src='{{ answer.avatar || "../../images/my_account_on.png" }}' />
-                        <text class="teacher_name">{{ answer.username }}</text>
+                        <text class="select_item_teacher_name">{{ answer.username }}45665</text>
                         
                     </view>
                     
-                    <view class="border_tab"></view>
+                    <!--<view class="border_tab"></view>-->
 
                     <view class="select_lines">
-                        <text class="select_answer_content">answerid:{{ answer.answerid }}</text>
+                        <text class="select_answer_content">answerid:{{ answer.answerid }}fdjsfl;asjdlfjsdlfjdslk 静安寺发的哈垃圾的分类设计费爱丽丝就对了撒放寒假啦收到回复 地方撒静安寺发的哈垃圾的分类设计费爱丽丝就对了撒放寒假啦收到回复 地方撒发生静安寺发的哈垃圾的分类设计费爱丽丝就对了撒放寒假啦收到回复 地方撒发生静安寺发的哈垃圾的分类设计费爱丽丝就对了撒放寒假啦收到回复 地方撒发生发生</text>
                     </view>
 
-                    <view class="border_tab"></view>
+                    <!--<view class="border_tab"></view>-->
 
                     <view class="multi_tips">
                         <view wx:if="{{answer.answercontent.audio[0] != null}}" class="voice" >
