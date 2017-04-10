@@ -17,10 +17,11 @@
 .subject_list_zone {
     z-index: 12;
     position: fixed;
+    /*margin-top: 100px;*/
     top: 30px;
     left: 0;
     right: 0;
-    display: block;
+    /*display: block;*/
     bottom: 386px;
 }
 
@@ -58,4 +59,9 @@
     /*box-shadow: 3px 3px 5px #bbb;*/
     text-align: center;
     color: lightblue;
+}
+
+.subject_item_text {
+    font-size: 32rpx;
+    color: #333333;
 }

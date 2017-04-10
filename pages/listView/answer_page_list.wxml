@@ -8,7 +8,7 @@
 
     
       <block wx:for="{{questionsForAnswer}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
-        <view class="interval"></view>
+        <!--<view class="interval"></view>-->
         <view class="answer_page_filter_container" >
           <template is="answer_page_list_item" data="{{item}}"></template>
         </view>

@@ -180,16 +180,18 @@ color: #999999;
 .subject_container{
     display: flex;
     flex-direction: row;
+    align-items: center;
     text-align: center;
+    justify-content: center;
     margin-top:10px;
 }
 .subject_hint{
-    width:92rpx;
+    width:auto;
     text-align:right;
     line-height:30px;
     color:#333333;
     font-size:30rpx;
-    font-weight:bold;
+    /*font-weight:bold;*/
     margin-right:10rpx;
 }
 .subject_picker_wrap{
