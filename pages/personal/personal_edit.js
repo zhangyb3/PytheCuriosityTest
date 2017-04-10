@@ -32,12 +32,13 @@ Page({
   },
 
   commitPersonalEdit:function(e){
+    var that = this;
     wx.request({
       url: config.PytheRestfulServerURL + '/me/imformation',
       data: {
         userId: wx.getStorageSync(user.UserID),
-        username: this.data.user.username,
-        description: this.data.user.description,
+        username: that.data.user.username,
+        description: that.data.user.description,
       },
       method: 'GET', 
       success: function(res){
@@ -51,6 +52,18 @@ Page({
       }
     });
     wx.setStorageSync('fixPersonalInfo', 'yes');
+    wx.navigateBack({
+      delta: 1, // 回退前 delta(默认为1) 页面
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
   },
 
 

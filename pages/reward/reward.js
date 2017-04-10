@@ -106,6 +106,18 @@ Page({
             method: 'GET', 
             success: function(res){
               // success
+              wx.navigateBack({
+                delta: 1, // 回退前 delta(默认为1) 页面
+                success: function(res){
+                  // success
+                },
+                fail: function(res) {
+                  // fail
+                },
+                complete: function(res) {
+                  // complete
+                }
+              })
             },
             fail: function() {
               // fail

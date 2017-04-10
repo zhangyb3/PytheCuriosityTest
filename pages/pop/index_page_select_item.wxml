@@ -15,7 +15,7 @@
         <view class="border_tab"></view>
 
         <view class="select_question_wrapper">
-                <text class="question_content">questionid:{{ question.questionid }}阿拉斯加的法律就发了 艾弗森两地分居拉手登录;按实际贷款 经典款是否开始了解到活动空间撒谎发空间很大方老师啊红烧豆腐卡号是发说 好可怜电话费阿拉斯加的法律就发了 艾弗森两地分居拉手登录;按实际贷款 经典款是否开始了解到活动空间撒谎发空间很大方老师啊红烧豆腐卡号是发说 好可怜电话费 </text>
+                <text class="question_content">{{ question.questioncontent.text[0] }}阿拉斯加的法律就发了 艾弗森两地分居拉手登录;按实际贷款 经典款是否开始了解到活动空间撒谎发空间很大方老师啊红烧豆腐卡号是发说 好可怜电话费阿拉斯加的法律就发了 艾弗森两地分居拉手登录;按实际贷款 经典款是否开始了解到活动空间撒谎发空间很大方老师啊红烧豆腐卡号是发说 好可怜电话费 </text>
                 
         </view>
 
@@ -39,7 +39,7 @@
                 </view>
 
                 <view wx:if="{{question.questioncontent.draw[0] != null}}" class="draw" >
-                    <view class="bubble-photo" data-draw='{{question.questioncontent.draw[0]}}' bindtap="showDraw">
+                    <view class="bubble-draw" data-draw='{{question.questioncontent.draw[0]}}' bindtap="showDraw">
                         <view>手绘</view>
                     </view>
                 </view>
@@ -57,7 +57,7 @@
 
                 <view class="select_answer_container" >
                     <view class="select_answer_wrapper" >
-                        <image  src='{{ answer.avatar || "../../images/my_account_on.png" }}' />
+                        <image  src='{{ answer.userimg || "../../images/my_account_on.png" }}' />
                         <text class="select_item_teacher_name">{{ answer.username }}45665</text>
                         
                     </view>
@@ -65,7 +65,7 @@
                     <!--<view class="border_tab"></view>-->
 
                     <view class="select_lines">
-                        <text class="select_answer_content">answerid:{{ answer.answerid }}fdjsfl;asjdlfjsdlfjdslk 静安寺发的哈垃圾的分类设计费爱丽丝就对了撒放寒假啦收到回复 地方撒静安寺发的哈垃圾的分类设计费爱丽丝就对了撒放寒假啦收到回复 地方撒发生静安寺发的哈垃圾的分类设计费爱丽丝就对了撒放寒假啦收到回复 地方撒发生静安寺发的哈垃圾的分类设计费爱丽丝就对了撒放寒假啦收到回复 地方撒发生发生</text>
+                        <text class="select_answer_content">{{ answer.answercontent.text[0] }}fdjsfl;asjdlfjsdlfjdslk 静安寺发的哈垃圾的分类设计费爱丽丝就对了撒放寒假啦收到回复 地方撒静安寺发的哈垃圾的分类设计费爱丽丝就对了撒放寒假啦收到回复 地方撒发生静安寺发的哈垃圾的分类设计费爱丽丝就对了撒放寒假啦收到回复 地方撒发生静安寺发的哈垃圾的分类设计费爱丽丝就对了撒放寒假啦收到回复 地方撒发生发生</text>
                     </view>
 
                     <!--<view class="border_tab"></view>-->
@@ -73,7 +73,7 @@
                     <view class="multi_tips">
                         <view wx:if="{{answer.answercontent.audio[0] != null}}" class="voice" >
                             
-                            <view class="bubble" data-voice='{{answer.questioncontent.audio[0]}}' bindtap="playVoiceRecord">
+                            <view class="bubble" data-voice='{{answer.answercontent.audio[0]}}' bindtap="playVoiceRecord">
                                 <view class="bubble-tail"></view>
                                 <view class="voice-wave"></view>
                                 <view>{{answer.answercontent.audio[1]}}秒</view>
@@ -81,14 +81,14 @@
 
                         </view>
 
-                        <view wx:if="{{answer.questioncontent.img[0] != null}}" class="photo" >
-                            <view class="bubble-photo" data-photo='{{answer.questioncontent.img[0]}}'bindtap="showPhoto">
+                        <view wx:if="{{answer.answercontent.img[0] != null}}" class="photo" >
+                            <view class="bubble-photo" data-photo='{{answer.answercontent.img[0]}}'bindtap="showPhoto">
                                 <view>照片</view>
                             </view>
                         </view>
 
-                        <view wx:if="{{answer.questioncontent.draw[0] != null}}" class="photo" >
-                            <view class="bubble-draw" bindtap="showDraw" data-draw='{{answer.questioncontent.draw[0]}}' >
+                        <view wx:if="{{answer.answercontent.draw[0] != null}}" class="photo" >
+                            <view class="bubble-draw" bindtap="showDraw" data-draw='{{answer.answercontent.draw[0]}}' >
                                 <view>手绘</view>
                             </view>
                         </view>

@@ -190,56 +190,53 @@ Page({
     var teacher = e.currentTarget.dataset.teacher;
     console.log(teacher);
     var teacher_index = e.currentTarget.dataset.index;
-    console.log(teacher_index);
+    console.log(teacher_index);   
 
-    // if(teacher.not_like == true){
-
-      this.data.ask_teacher_list[teacher_index].popularity++;
-      this.setData({
-        ask_teacher_list: this.data.ask_teacher_list,
-      });
-
-      
-      //先查是否已点赞过这老师
-      wx.request({
-        url: config.PytheRestfulServerURL + '/user/teacher/likes',
-        data: {
-          userId: wx.getStorageSync(user.UserID),
-          teacherId: teacher.teacherid,
-        },
-        method: 'GET', 
-        success: function(res){
-          // 没点赞过
-          if(res.data.data == false)
-          {
-            //通知数据库更新纪录
-            wx.request({
-              url: config.PytheRestfulServerURL + '/question/teacher/likes',
-              data: {
-                userId: wx.getStorageSync(user.UserID),
-                teacherId: teacher.teacherid,
-              },
-              method: 'GET', 
-              success: function(res){
-                console.log(res);
-              },
-              fail: function(res) {
-                console.log(res);
-              }
-            })
-          }
-          
-        },
-        fail: function(res) {
-          // fail
-        },
-        complete: function(res) {
-          // complete
+     var that = this; 
+    //先查是否已点赞过这老师
+    wx.request({
+      url: config.PytheRestfulServerURL + '/user/teacher/likes',
+      data: {
+        userId: wx.getStorageSync(user.UserID),
+        teacherId: teacher.teacherid,
+      },
+      method: 'GET', 
+      success: function(res){
+        // 没点赞过
+        if(res.data.data == false)
+        {
+          that.data.ask_teacher_list[teacher_index].popularity++;
+          that.setData({
+            ask_teacher_list: that.data.ask_teacher_list,
+          });
+          //通知数据库更新纪录
+          wx.request({
+            url: config.PytheRestfulServerURL + '/question/teacher/likes',
+            data: {
+              userId: wx.getStorageSync(user.UserID),
+              teacherId: teacher.teacherid,
+            },
+            method: 'GET', 
+            success: function(res){
+              console.log(res);
+            },
+            fail: function(res) {
+              console.log(res);
+            }
+          })
         }
-      })
+        
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
       
 
-    // };
+    
     
   },
 

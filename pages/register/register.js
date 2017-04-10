@@ -309,8 +309,8 @@ Page({
 
     if(wx.getStorageSync(user.UserID)=='userID')
     {
-      wx.setStorageSync('alreadyRegister', 'yes');
-      wx.setStorageSync('fromRegister', 'yes');
+      wx.setStorageSync('alreadyRegister', 'no');
+      wx.setStorageSync('fromRegister', 'no');
       wx.navigateBack({
         delta: 1, // 回退前 delta(默认为1) 页面
         success: function(res){

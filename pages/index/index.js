@@ -133,7 +133,7 @@ Page({
     this.setData({hide_select_item:false});
 
     //进入详细列表
-    val = base.getDetailContent(this,selectItem);console.log(val);
+    base.getDetailContent(this,selectItem);
     
     // this.setData({select_item:selectItem});
   },
@@ -144,10 +144,7 @@ Page({
     
     //点赞+1并更新数据库
     console.log(this.data.answers[answer_index]);
-    this.data.answers[answer_index].likesnum++;
-    this.setData({
-      answers: this.data.answers,
-    });
+    
 
     var that = this;
     //先查是否已点赞过这道题
@@ -162,6 +159,10 @@ Page({
         // 没点赞过
         if(res.data.data == false)
         {
+          that.data.answers[answer_index].likesnum++;
+          that.setData({
+            answers: that.data.answers,
+          });
           //更新数据库
           wx.request({
             url: config.PytheRestfulServerURL + '/likesnum',

@@ -101,32 +101,7 @@ App({
 
 
   
-    // wx.setStorageSync('alreadyRegister', 'yes');
-    // wx.setStorageSync('alreadyRegister', 'no');
-
-
-    // 检查是否有注册过
-    // register.checkRegister(
-    //   (userRegisterResult) => {
-    //     console.log(userRegisterResult);
-    //     //如果没注册过，则注册
-    //     var alreadyRegister = userRegisterResult.data.data;
-    //     if(!alreadyRegister)
-    //     {
-    //       wx.setStorageSync('alreadyRegister', 'no');
-    //       console.log("register : " + wx.getStorageSync('alreadyRegister'));
-    //       //注册
-          
-    //     }
-    //     else
-    //     {
-    //       wx.setStorageSync('alreadyRegister', 'yes');
-    //     }
-    //   },
-    //   (userRegisterResult) => {
-    //     console.log(userRegisterResult);
-    //   },
-    // );
+    
 
 
   },

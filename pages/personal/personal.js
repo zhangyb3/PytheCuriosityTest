@@ -104,6 +104,35 @@ Page({
   },
   onShow:function(){
     // 页面显示
+
+    register.checkRegister(
+      (userRegisterResult) => {
+        console.log('check register : ' + JSON.stringify(userRegisterResult));
+        //如果没注册过，则注册
+        var registerInfo = userRegisterResult.data.data;
+        
+        if(registerInfo == null)
+        {
+          wx.setStorageSync('alreadyRegister', 'no');
+          console.log("register : " + wx.getStorageSync('alreadyRegister'));
+          //注册
+          
+        }
+        else
+        {
+          wx.setStorageSync('alreadyRegister', 'yes');
+          wx.setStorageSync(user.UserID, registerInfo.userid);
+          wx.setStorageSync(user.StudentID, registerInfo.studentid);
+          wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
+          wx.setStorageSync(user.GradeID, registerInfo.gradeid);
+          wx.setStorageSync(user.UserDescription, registerInfo.description);
+        }
+      },
+      (userRegisterResult) => {
+        console.log(userRegisterResult);
+      },
+    );
+
     this.data.userAvatarUrl = wx.getStorageSync('userAvatarUrl');
     this.data.userNickName = wx.getStorageSync('userNickName');
     this.data.userDescription = wx.getStorageSync('UserDescription');
@@ -183,42 +212,8 @@ Page({
     // 页面关闭
   },
 
-  //倒计时
-  enterToCountdown:function(e){
-    var that = this;
-    
-    that.setData({  
-      second: 10,  
-      
-      }); 
-    countdown(that);
-    if (second == 0) {  
-      that.setData({  
-      countdownText: "重发验证码"  
-      });  
-    }
-  },
+  
 
 
 })
 
-function countdown(that) {
-  var second = that.data.second ;
-    if (second == 0) {  
-      that.setData({  
-        countdownText: "重发验证码" ,
-        lock_countdown: false,
-      });  
-      return ;  
-  } 
-
-  var time = setTimeout(function(){  
-    that.setData({  
-      second: second - 1  ,
-      countdownText: second + '秒后可重发',
-      lock_countdown: true,
-    });  
-    countdown(that);  
-    }  
-    ,1000)  
-}
