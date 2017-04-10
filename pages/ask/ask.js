@@ -23,16 +23,48 @@ Page({
     subjects:[
       {
         subjectId:1001,
-        subject_name: '数学',
+        subject_name: '语文',
       },
       {
         subjectId:2,
-        subject_name: '物理',
+        subject_name: '数学',
+      },
+      {
+        subjectId:3,
+        subject_name: '英语',
+      },
+      {
+        subjectId:3,
+        subject_name: '生物',
       },
       {
         subjectId:3,
         subject_name: '化学',
       },
+      {
+        subjectId:3,
+        subject_name: '物理',
+      },
+      {
+        subjectId:3,
+        subject_name: '地理',
+      },
+      {
+        subjectId:3,
+        subject_name: '政治',
+      },
+      {
+        subjectId:3,
+        subject_name: '艺术',
+      },
+      {
+        subjectId:3,
+        subject_name: '健康',
+      },
+      {
+        subjectId:3,
+        subject_name: '历史',
+      }
     ],
 
      ask_teacher_list:[
@@ -50,15 +82,37 @@ Page({
     ],
     subjects_discribe:[
       {
-        sub_dis: '数学（mathematics或maths），是研究数量、结构、变化、空间以及信息等概念的一门学科，从某种角度看属于形式科学的一种。',
+        sub_dis: '文言文、古诗词解析、成语',
       },{
-        sub_dis: '数学（mathematics或maths），是研究数量、结构、变化、空间以及信息等概念的一门学科，从某种角度看属于形式科学的一种。',
+        sub_dis: '一次函数、数的认识、小数',
       },{
-        sub_dis: '数学（mathematics或maths），是研究数量、结构、变化、空间以及信息等概念的一门学科，从某种角度看属于形式科学的一种。',
+        sub_dis: '翻译、作文、语法',
       },
       {
-        sub_dis: '数学（mathematics或maths），是研究数量、结构、变化、空间以及信息等概念的一门学科，从某种角度看属于形式科学的一种。',
+        sub_dis: '细胞、物种、食物链',
       },
+      {
+        sub_dis: '元素周期表、化学方程式、分子',
+      },
+      {
+        sub_dis: '能量守恒、自由落体、加速度',
+      },
+      {
+        sub_dis: '时区、地形、星系',
+      },
+      {
+        sub_dis: '政治制度、党的制度',
+      },
+      {
+        sub_dis: '音乐、舞蹈、美术',
+      },
+      {
+        sub_dis: '运动、养生',
+      },
+      {
+        sub_dis: '春秋战国、分封制、诸子百家'
+      },
+
     ]
 
     },

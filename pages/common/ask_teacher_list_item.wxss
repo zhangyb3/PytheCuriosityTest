@@ -67,6 +67,7 @@
 .collect_icon_wrap{
     height:28rpx;
     display:flex;
+    flex-direction: row;
     margin-bottom: 10px;
     line-height:28rpx;
     align-items: center;

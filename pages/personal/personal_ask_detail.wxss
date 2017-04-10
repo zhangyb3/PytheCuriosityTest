@@ -9,7 +9,7 @@
     
     display: flex;
     flex-direction: column;
-    background-color: #ECEBF4;
+    background-color: #f5f5f5;
 }
 
 .personal_question_zone{
@@ -109,12 +109,12 @@
 }
 
 .best_answer_commit_button{
-    line-height: 30px;
+    line-height: 92rpx;
     margin-top: 20px;
     width: 85%;
     background-color: #3AA4F1;
-    font-size: 36rpx;
-    -webkit-text-fill-color: #FFFFFF;
+    font-size: 30rpx;
+    color: #ffffff;
 }
 
 

@@ -83,7 +83,7 @@
     margin-left: 20rpx;
     margin-right: 20rpx;
     min-height: 80rpx;
-    line-height: 30rpx;
+    /*line-height: 30rpx;*/
     color: #333333;
     font-size: 28rpx;
     /*background: black;*/

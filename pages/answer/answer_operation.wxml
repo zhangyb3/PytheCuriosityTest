@@ -16,12 +16,7 @@
 <view class="answer_operation_view" data-item='{{ answer_item }}'>
     
        
-         <view class="select_knowledge_container">
-            <text class="select_knowledge_button" bindtap="selectKnowledge">
-                选择知识点：{{knowledge_point}}
-            </text>
-            
-        </view>
+         
         <!--<view class="border_tab"></view>-->
 
         <view class="answer_question_wrapper">
@@ -67,7 +62,12 @@
             
             
             <view class="border_tab"></view>
-
+<view class="select_knowledge_container">
+            <text class="select_knowledge_button" bindtap="selectKnowledge">
+                选择知识点：{{knowledge_point}}
+            </text>
+            
+        </view>
             <view class="answer_content_zone" hidden='{{hide_textarea}}'>
                 <textarea class="answer_content_text_input" placeholder="请输入答案..."  bindinput="getAnswerText" placeholder-style="font-size:28rpx; color:#333333"/>
             </view>

@@ -28,9 +28,9 @@
 }
 /*git test#########################*/
 .subject_icon{
-    width: 25px;
-    height: 20px;
-    margin-left: 4%;
+    width: 40rpx;
+    height: 34rpx;
+    margin-left: 44rpx;
     /*margin-top: 3%;*/
     /*background-color: purple;*/
 }
@@ -40,19 +40,20 @@
     /*line-height: 10px;*/
     text-align: center;
     line-height: 92rpx;
-    font-size: 34rpx;
+    font-size: 32rpx;
     /*margin-top: 3%;*/
     /*margin-bottom: 3%;*/
     color: #333333;
-    width: 40px;
+    width: auto;
     
 }
 
 .subject_discribe{
-    margin-left: 5px;
+    margin-left: 10rpx;
     color: #999999;
-    line-height: 14px;
+    line-height: 28rpx;
     /*margin-top: 3%;*/
+    margin-right: 10rpx;
     width: 60%;
     font-size: 24rpx;
 

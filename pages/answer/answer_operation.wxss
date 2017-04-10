@@ -54,6 +54,7 @@
     align-items: center;
     position: relative;
     background-color: white;
+    margin-top: 20rpx;
 }
 
 .question_content{
@@ -78,7 +79,8 @@
     /*border-style: solid;
     border-color: lightgrey;*/
     height: 150px;
-    font-size: 16px;
+    line-height: 30rpx;
+    font-size: 28rpx;
     overflow-x: auto; 
     overflow-y: visible;
     color: #0B0B0B;
@@ -232,26 +234,27 @@ color: #999999;
 .select_knowledge_container{
     display:flex;
     flex-direction: row;
-    height: 96rpx;
+    height: 64rpx;
     width: 100%;
     justify-content: center;
 }
 .select_knowledge_button{
-    margin-top: 16rpx;
+    /*margin-top: 16rpx;*/
     height: 64rpx;
     /*padding: 10rpx 0;*/
     /*padding-bottom: 10rpx;*/
     width: 650rpx;
     font-size: 28rpx;
     border-radius: 37rpx;
-    -webkit-text-fill-color: #999999;
-    background-color: #FFFFFF;
+    /*-webkit-text-fill-color: #999999;*/
+    background-color: #f5f5f5;
     text-align: center;
     /*border: none;*/
     /*outline: none;*/
     /*align-content: center;*/
-    justify-content: center;
-    margin-bottom: 30rpx; 
+    /*justify-content: center;*/
+    /*margin-bottom: 30rpx; */
+    padding-bottom: 8rpx;
 
 }
 .answer_commit_confirm{
@@ -265,9 +268,9 @@ color: #999999;
 .answer_commit_button{
     margin-top: 60rpx;
     background-color: #3AA4F1;
-    line-height: 30px;
+    line-height: 92rpx;
     width: 80%;
-    font-size: 28rpx;
+    font-size: 30rpx;
     -webkit-text-fill-color: #FFFFFF;
 }
 

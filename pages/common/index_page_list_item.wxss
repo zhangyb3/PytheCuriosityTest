@@ -46,7 +46,7 @@
     word-wrap: break-word;
 
     color: #333333;
-    line-height:30rpx;
+    /*line-height:30rpx;*/
    
 }
 
