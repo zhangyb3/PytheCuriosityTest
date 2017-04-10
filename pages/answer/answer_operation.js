@@ -259,10 +259,10 @@ Page({
 
         //上传录音
         var parameters = {
-          path : voicePath,
+          path : that.data.question_answer.upload_voice_path,
           fileType : 'audio',
         };
-        that.data.question_answer.upload_photo_path = fileSys.uploadFile(that.data.question_answer.upload_voice_path,parameters);
+        that.data.question_answer.upload_photo_path = fileSys.uploadFile(that.data.question_answer.voice_path,parameters);
       },
       fail: function() {
         // fail
@@ -464,10 +464,10 @@ Page({
                 that.data.question_answer.upload_draw_path = result.path;
 
                 var parameters = {
-                  path : that.data.ask_question.upload_draw_path,
+                  path : that.data.question_answer.upload_draw_path,
                   fileType : 'image',
                 };
-                fileSys.uploadFile(that.data.question_answer.upload_draw_path,parameters);
+                fileSys.uploadFile(that.data.question_answer.draw_path,parameters);
                 
               },
               fail: function() {
@@ -530,13 +530,13 @@ Page({
                 var result = JSON.parse(res.data.data);
                 that.data.question_answer.upload_photo_path = result.path;
                 var parameters = {
-                  path : savedFilePath,
+                  path : that.data.question_answer.upload_photo_path = result.path,
                   fileType : 'image',
                   whatFile : 'photo',
 
                 };
                 //上传文件
-                fileSys.uploadFile(that.data.question_answer.upload_photo_path,parameters);
+                fileSys.uploadFile(that.data.question_answer.photo_path,parameters);
               },
               fail: function() {
                 // fail

@@ -452,7 +452,7 @@ Page({
                   path : that.data.ask_question.upload_draw_path,
                   fileType : 'image',
                 };
-                fileSys.uploadFile(that.data.ask_question.upload_draw_path,parameters);
+                fileSys.uploadFile(that.data.ask_question.draw_path,parameters);
               },
               fail: function() {
                 // fail
