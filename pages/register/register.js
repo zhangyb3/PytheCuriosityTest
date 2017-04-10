@@ -307,7 +307,7 @@ Page({
   onShow:function(){
     
 
-    if(wx.getStorageSync(user.UserID)=='userID')
+    if(wx.getStorageSync(user.UserID)!='userID')
     {
       wx.setStorageSync('alreadyRegister', 'yes');
       wx.setStorageSync('fromRegister', 'yes');

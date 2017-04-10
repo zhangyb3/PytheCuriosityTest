@@ -5,8 +5,10 @@
     flex-direction: row;
     align-items: center;
     /*justify-content: center;*/
-    width: 100%;
+    width: auto;
     height: 50px;
+    margin-top: 70rpx;
+    margin-left: 14rpx;
 }
 
 .nickname_wrap{
@@ -25,7 +27,7 @@
     /*border-style: solid;
     border-width: 1px;*/
     
-    border-bottom: 1px solid #3AA4F1;
+    border-bottom: 1px solid #CCCCCC;
     /*font-family: 黑体;*/
     color: #0B0B0B;
     /*border-radius: 22px;*/
@@ -48,20 +50,24 @@
 .description_content_zone{
     display: flex;
     flex-direction: column;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 30rpx;
+    margin-top: 70rpx;
+    align-items: center;
 }
 
 .description_content_text_input {
     display: flex;
     flex-direction: row;
-    border: 1px solid #3AA4F1;
+    border: 1px solid #CCCCCC;
     height: 150px;
     font-size: 16px;
     overflow-x: auto; 
     overflow-y: visible;
-    color: #0B0B0B;
-    margin-top: 5px;
+    color: #333333;
+    margin-right: 30rpx;
+
+    margin-top: 36rpx;
+    border-radius: 10rpx;
 }
 
 .edit_commit_confirm{
@@ -74,5 +80,18 @@
     width: 80%;
     line-height: 30px;
     margin-top: 50px;
+    -webkit-text-fill-color: #ffffff;
+    font-size: 30rpx;
     background-color: #3AA4F1;
+}
+
+.title_wrap{
+    width: 100%;
+    height: auto;
+}
+.title{
+    color: #333333;
+    font-size: 30rpx;
+    width: 130rpx;
+    text-align: left;
 }
