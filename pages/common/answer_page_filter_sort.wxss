@@ -25,6 +25,7 @@
 
 .bar_item.active{
     color: #3AA4F1;
+    font-size: 36rpx;
     /*background-color: #3AA4F1;*/
 }
 

@@ -19,11 +19,12 @@
         <view class="phone_number_container">
             <text class="phone_hint">手机号:</text>
             <input class="phone_number_input" type="text"  bindinput="phoneNumberInput" ></input>
-            <button type="default" class="send_verification_code_button" bindtap="sendVerificationCode">{{countdownText}}</button>
+            
         </view>
         <view class="verification_code_container">
             <text class="verification_hint">验证码:</text>
             <input class="verification_code_input" type="text"  bindinput="verificationCodeInput" ></input>
+            <view type="default" class="send_verification_code_button" bindtap="sendVerificationCode">{{countdownText}}</view>
         </view>
         <view class="grade_container" hidden='{{hide_grade_selection}}'>
             <text class="grade_hint">年级    :</text>
@@ -45,7 +46,7 @@
     </view>
 
     <view class="register_confirm">
-        <button class="register_confirm_button" bindtap="registerToMainPage">登录</button>
+        <button class="register_confirm_button" bindtap="registerToMainPage">立即登录</button>
     </view>
 
     <view class="countdown_container" hidden="true">
