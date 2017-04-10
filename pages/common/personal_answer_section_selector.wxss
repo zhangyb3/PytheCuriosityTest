@@ -14,17 +14,21 @@
     text-align: center;
     /*border-right: 1px solid #D9D9D9;*/
     /*border: 1px;*/
-    color: #6E6E6E;
+    /*color: #6E6E6E;*/
     background-color: white;
     line-height: 30px;
     justify-content: center;
     align-items: center;
+    font-size: 30rpx;
+    color: #333333;
 }
 
 .bar_item.active{
     line-height: 30px;
     color: #3AA4F1;
     background-color: white;
+    font-size: 30rpx;
+    /*color: #333333;*/
 }
 
 .person_answer_middle_line{

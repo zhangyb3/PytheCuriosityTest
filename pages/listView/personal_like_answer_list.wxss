@@ -10,12 +10,12 @@
 
 .interval{
     height: 10px;
-    background-color: #ECEBF4;
+    background-color: #f5f5f5;
 }
     
 
 .personal_like_answer_list_container{
-    background-color: #ECEBF4;
+    background-color: #f5f5f5;
 }
 
 

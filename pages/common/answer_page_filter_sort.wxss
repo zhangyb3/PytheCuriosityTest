@@ -14,18 +14,19 @@
     /*height: 30px;*/
     text-align: center;
     /*border: 1px;*/
-    color: #6E6E6E;
+    color: #333333;
     background-color: white;
     /*border-right: 1rpx solid #D9D9D9;*/
     border-bottom: 1rpx solid #D9D9D9;
     justify-content: center;
     align-items: center;
+    font-size: 30rpx;
 }
 
 
 .bar_item.active{
     color: #3AA4F1;
-    font-size: 36rpx;
+    font-size: 30rpx;
     /*background-color: #3AA4F1;*/
 }
 

@@ -57,3 +57,8 @@
     text-align: center;
     color: black;
 }
+
+.sort_attribute_text {
+    font-size: 32rpx;
+    color: #333333;
+}

@@ -101,7 +101,7 @@
     flex-direction: row;*/
 
     width: 100%;
-    line-height: 60rpx;
+    line-height: 92rpx;
     font-size: 36rpx;
     background-color: #3AA4F1;
     -webkit-text-fill-color: #ffffff;

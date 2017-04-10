@@ -188,8 +188,8 @@
 }
 
 .like_answer:before{
-    background-image: url(../../images/like.png);
-    background-size: 18px; 
+    /*background-image: url(../../images/like.png);*/
+    /*background-size: 18px; */
 }
 
 .not_like_answer:before{

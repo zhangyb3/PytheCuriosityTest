@@ -16,7 +16,7 @@
     height: auto;
     /*margin-left:10px;*/
     width: auto;
-    margin-left: 38rpx;
+    margin-left: 8rpx;
     align-items: center;
     /*width: 300rpx;*/
     /*width: 22px;*/
@@ -26,7 +26,8 @@
     display: flex;
     color: #333333;
     font-size: 26rpx;
-    margin-top: 8rpx;
+    width: 70rpx;
+    /*margin-top: 8rpx;*/
 }
 
 .input{
@@ -62,18 +63,24 @@
     /*margin-top: 12rpx;*/
     /*background: url(../../images/nav_icon_menu@2x.png) no-repeat center center;*/
     background: none;
-    height: 45rpx;
-    width: 45rpx;
+    height: 90rpx;
+    width: 100rpx;
+    justify-content: flex-end;
+    /*margin-right: 20rpx;*/
     /*justify-content: space-around;*/
     /*background-size: 25px 25px;*/
 }
 
 .subject_button image{
-    margin-left: 3rpx;
+    margin-left: 40rpx;
     margin-top: 3rpx;
     height: 40rpx;
     width: 40rpx;
     display:block;
+}
+
+.subject_button text{
+    margin-left: 36rpx;
 }
 
 .subject_button:after{
@@ -85,18 +92,21 @@
     height: auto;
     width: auto;
     margin-right: 38rpx;
+    margin-left: 10rpx;
     align-items: center;
 }
 
 .search_button{
     /*background: url(../../images/nav_icon_search@2x.png) center center no-repeat;*/
     padding :0;
-    height: 45rpx;
-    width: 45rpx;
+    height: 90rpx;
+    width: 60rpx;
     background: none;
     /*background-size: 25px 25px;*/
 }
 .search_button image{
+    margin-left: 3rpx;
+    /*margin-top: 3rpx;*/
     height: 40rpx;
     width: 40rpx;
     display:block;
