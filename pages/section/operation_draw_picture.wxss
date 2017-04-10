@@ -52,7 +52,7 @@
 .canvas_tools {
 
     margin-top: 10px;
-    background-color: #3AA4F1;
+    background-color: #ffffff;
 
     width: 100%;
     height: 40px;
@@ -71,50 +71,57 @@
 
 .red_pen {
 
-    background-color: red;
-    color: white;
-    margin-left: 10px;
+    /*background-color: red;*/
+    color: #333333;
+    font-size: 30rpx;
+    padding-left: 10rpx;
+
+
 }
 
 .black_pen {
 
-    background-color: black;
-    color: white;
+    /*background-color: black;*/
+    color: #333333;
+    font-size: 30rpx;
     margin-right: 10px;
 }
 
 .eraser {
 
-    background-color: white;
-    color: black;
+    /*background-color: white;*/
+    color: #333333;
+    font-size: 30rpx;
 }
 
 .canvas_cancel_button{
     /*margin-top: 5px;*/
-    margin-left: 10px;
+    /*margin-left: 10px;*/
     /*margin-bottom: 5px;*/
-    background-color: #3AA4F1;
-    border-radius: 4px;
-    line-height: 30px;
-    width: 40px;
-    color: white;
+    background-color: #eeeeee;
+    /*border-radius: 4px;*/
+    line-height: 70rpx;
+    width: 50%;
+    color: #666666;
+    font-size: 30rpx;
 }
 
 .canvas_confirm_button{
     /*margin-top: 5px;*/
     /*padding-top: 5px;*/
-    margin-right: 10px;
+    /*margin-right: 10px;*/
     background-color: #3AA4F1;
-    border-radius: 4px;
-    line-height: 30px;
-    width: 40px;
+    /*border-radius: 4px;*/
+    line-height: 70rpx;
+    width: 50%;
     color: white;
     text-align: center;
+    font-size: 30rpx;
 }
 
 .canvas_confirm {
-    margin-top: 5px;
-    margin-bottom: 5px;
+    /*margin-top: 5px;*/
+    /*margin-bottom: 5px;*/
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -122,7 +129,25 @@
     background-color: white;
 
     width: 100%;
-    height: 30px;
+    height: 70rpx;
     text-align: center;
 
+}
+
+.tool_content_red_pen{
+    margin-right: 10rpx;
+    width: 37rpx;
+    height: 36rpx;
+}
+
+.tool_content_black_pen{
+    margin-right: 10rpx;
+    width: 37rpx;
+    height: 36rpx;
+}
+
+.tool_ersaer{
+    margin-right: 10rpx;
+    width: 40rpx;
+    height: 39rpx;
 }
