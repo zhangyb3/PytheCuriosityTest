@@ -49,10 +49,10 @@
     /*border-style: solid;
     border-color: lightgrey;*/
     height: 150px;
-    font-size: 16px;
+    font-size: 28rpx;
     overflow-x: auto; 
     overflow-y: visible;
-    color: #0B0B0B;
+    color: #333333;
 }
 
 
