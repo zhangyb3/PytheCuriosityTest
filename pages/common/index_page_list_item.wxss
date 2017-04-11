@@ -254,3 +254,12 @@ line-height: 27rpx;
     background-color: #F5F5F5;
 }
 
+.preview_img{
+    height: 30px;
+    width: 30px;
+    border: 1px solid #EEE;
+    
+}
+
+
+

@@ -25,7 +25,7 @@
                     <view class="bubble" data-question_voice='{{item.questioncontent.audio[0]}}' bindtap="playQuestionVoiceRecord">
                         <view class="bubble-tail"></view>
                         <view class="voice-wave"></view>
-                        <view>{{item.questioncontent.audio[1]h}}秒</view>
+                        <view>{{item.questioncontent.audio[1]}}秒</view>
                     </view>
 
                 </view>

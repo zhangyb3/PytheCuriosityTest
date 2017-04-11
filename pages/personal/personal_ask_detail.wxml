@@ -12,7 +12,7 @@
         <!--<view class="border_tab"/>-->
 
         <view class="personal_question_text_container">
-            <text class="personal_question_text_content">question_id:{{question.question_id}},reward:{{question.reward}}</text>
+            <text class="personal_question_text_content">question_id:{{question.question_id}},reward:{{question.reward}}.text_content:{{question.questioncontent.text[0]}}</text>
         </view>
 
         <view class="border_tab"/>
