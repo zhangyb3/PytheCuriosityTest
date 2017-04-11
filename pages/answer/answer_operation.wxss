@@ -61,7 +61,6 @@
     display: flex;
     margin-left: 30rpx;
     margin-right: 30rpx;
-    width: 100%;
     height: auto;
     font-size: 28rpx;
     color: #333333;
