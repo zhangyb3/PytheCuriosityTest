@@ -602,7 +602,7 @@ Page({
 
   selectReward1:function(e){
     console.log("￥ 1");
-    wx.setStorageSync('rewardNum', 1);
+    wx.setStorageSync('rewardNum', 0.01);
     
     pay.orderPay(
       (payResult)=>{
