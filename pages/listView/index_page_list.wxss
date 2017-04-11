@@ -29,7 +29,7 @@ background-color: #FFFFFF;
     
 
 .index_page_list_container{
-    height: 250rpx;
+    height: 340rpx;
     background-color: #FFFFFF;
 }
 

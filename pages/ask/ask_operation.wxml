@@ -10,9 +10,9 @@
 
 <view class="ask_operation_view"  data-item='{{ ask_item }}'>
     
-       <view class="input_select_view" >
+       <!--<view class="input_select_view" >
         <input class="input_content" type="text" placeholder="选择您的科目是:" bindinput="selectSubject" ></input>
-    </view>
+    </view>-->
         
         <!--<view class="border_tab"></view>
 
