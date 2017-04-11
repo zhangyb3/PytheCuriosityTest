@@ -3,7 +3,7 @@ var user = require('./user')
 
 const ORDER_URL = `${config.PytheRestfulServerURL}/user/pay/information`;//下单
 
-const ENCHASHMENT_URL = `${config.PytheRestfulServerURL}/user/pay/transfer`;//下单
+const ENCHASHMENT_URL = `${config.PytheRestfulServerURL}/user/pay/transfer`;
 
 /**
  * 下单
@@ -21,7 +21,7 @@ var requestOrder = (success, fail) => {
           total_fee : wx.getStorageSync('rewardNum')*100,
           notify_url : "https://www.haowen.mobi/",
           trade_type : "JSAPI",
-          openid : openID
+          openId : openID
 
       },
       method: 'POST',
