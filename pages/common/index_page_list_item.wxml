@@ -42,13 +42,17 @@
                 <view class="bubble-draw" data-question_photo='{{item.q_draw}}' bindtap="showDraw">
                     <view>手绘</view>
                 </view>
+           
+            </view>
+
+            <view class="like_wrap">
             </view>
 <view class="ctrls">
                     <text class='{{ item.is_liked == 1 ? "like" : "not-like" }}' bindtap='bindLike' data-index='{{ index }}'>{{ item.reward }}</text>
                     
          </view>
             </view>
-            
+             
             <view class="interval_inder"/>
             
     
