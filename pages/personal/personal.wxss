@@ -153,7 +153,7 @@
     /*justify-content: flex-end;*/
     line-height: 94rpx;
     width: 95%;
-    margin-left: 20rpx;
+    margin-left: 40rpx;
     border-bottom: 1px solid #EEE;
     border-width: 1px;
     margin-right: 20rpx;
@@ -162,7 +162,7 @@
 }
 
 .personal_operation_item image{
-    margin-top: 20rpx;
+    margin-top: 40rpx;
     margin-right: 30rpx;
     /*right: 30rpx;*/
     width: 13rpx;
@@ -178,8 +178,8 @@
 
 .personal_operation_item_text{
     width: 96%;
-    line-height: 60rpx;
-    font-size: 28rpx;
+    line-height: 94rpx;
+    font-size: 30rpx;
     color: #333333;
     text-align: left;
     

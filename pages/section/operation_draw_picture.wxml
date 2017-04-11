@@ -19,12 +19,15 @@
 
         <view class="canvas_tools">
             <view class="red_pen tool" bindtap="penColorSelect" data-pen_color="red">
+            <image  class="tool_content_red_pen" src="../../images/huaban_icon_pencle@2x.png"></image>
                 <text class="tool_content">红笔</text>
             </view>
             <view class="eraser tool" bindtap="clearCanvas">
+            <image  class="tool_ersaer" src="../../images/huaban_icon_xiangpi@2x.png"></image>
                 <text class="tool_content">橡皮擦</text>
             </view>
             <view class="black_pen tool" bindtap="penColorSelect" data-pen_color="black">
+            <image  class="tool_content_black_pen" src="../../images/huaban_icon_pencle@2x.png"></image>
                 <text class="tool_content">黑笔</text>
             </view>
             

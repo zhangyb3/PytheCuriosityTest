@@ -100,7 +100,7 @@
     line-height:60rpx;
     color:#333333;
     font-size:30rpx;
-    font-weight:bold;
+    /*font-weight:bold;*/
     margin-right:5px;
 }
 .phone_number_input{
@@ -141,7 +141,7 @@
     line-height:30px;
     color:#333333;
     font-size:30rpx;
-    font-weight:bold;
+    /*font-weight:bold;*/
     margin-right:5px;
 }
 .verification_code_input{
@@ -181,7 +181,7 @@
     line-height:30px;
     color:#333333;
     font-size:30rpx;
-    font-weight:bold;
+    /*font-weight:bold;*/
     margin-right:5px;
 }
 .grade_picker_wrap{
@@ -217,7 +217,7 @@
     line-height:30px;
     color:#333333;
     font-size:30rpx;
-    font-weight:bold;
+    /*font-weight:bold;*/
     /*margin-right:5px;*/
     margin-left: -20rpx;
 }
