@@ -229,3 +229,9 @@
     height:5px;
 }
 
+.border_tab_white{
+    height: 20rpx;
+    width: 100%;
+    background-color: #f5f5f5;
+}
+

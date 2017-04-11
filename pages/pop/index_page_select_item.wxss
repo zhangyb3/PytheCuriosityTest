@@ -93,6 +93,7 @@
     /*padding: 8px;*/
     display: flex;
     flex-direction: row;
+    height: 80rpx;
     background-color: #FFFFFF;
     
 }
@@ -103,8 +104,8 @@
 
 .select_answer_wrapper>image {
     
-    width: 88rpx;
-    height: 88rpx;
+    width: 60rpx;
+    height: 60rpx;
     margin-left: 20rpx;
     border-radius: 50%;
     background-size: contain;
@@ -112,7 +113,9 @@
 
 .select_lines {
     /*height: 250px;*/
-    font-size: 18px;
+    font-size: 28rpx;
+    min-height: 100rpx;
+    line-height: 29rpx;
     /*overflow-x: hidden; */
     /*overflow-y: auto;*/
 }
@@ -136,6 +139,7 @@
 .select_item_teacher_name{
     line-height: 88rpx;
     font-size: 28rpx;
+    margin-left: 10rpx;
     width: auto;
     color: #999999;
 }
