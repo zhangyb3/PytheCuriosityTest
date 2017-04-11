@@ -86,6 +86,32 @@ Page({
     console.log("see this answer");
     var select_item = result.currentTarget.dataset.item;
     console.log(select_item);
+
+    var that = this;
+    //加载一条答案的详情
+    wx.request({
+      url: config.PytheRestfulServerURL + base.MY_QUESTION_ANSWER_CONCRETE_URL,
+      data: {
+        answerId: select_item.answerid,
+      },
+      method: 'GET', 
+      success: function(res){
+        // success
+        console.log(res);
+        var concrete_answer = res.data.data;
+        concrete_answer.answercontent = JSON.parse(concrete_answer.answercontent);
+        that.setData({
+          select_item: concrete_answer,
+        });
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+
     this.setData({
       hide_select_answer: false,
       select_item: select_item,

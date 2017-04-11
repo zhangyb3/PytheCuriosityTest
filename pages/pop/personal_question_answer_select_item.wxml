@@ -27,7 +27,7 @@
             <view class="border_tab"></view>
 
             <view class="select_lines">
-                <text class="select_answer_content">{{ select_item.questioncontent.text[0] }}</text>
+                <text class="select_answer_content">{{ select_item.answercontent.text[0] }}</text>
             </view>
 
             <view class="border_tab"></view>
@@ -36,24 +36,24 @@
         </view>
 
         <view class="multi_tips">
-            <view wx:if="{{select_item.audio[0] != null}}" class="voice" >
+            <view wx:if="{{select_item.answercontent.audio[0] != null}}" class="voice" >
                 
-                <view class="bubble" data-select_item_voice='{{select_item.questioncontent.audio[0]}}' bindtap="playVoiceRecord">
+                <view class="bubble" data-select_item_voice='{{select_item.answercontent.audio[0]}}' bindtap="playVoiceRecord">
                     <view class="bubble-tail"></view>
                     <view class="voice-wave"></view>
-                    <view>{{select_item.questioncontent.audio[1]}}秒</view>
+                    <view>{{select_item.answercontent.audio[1]}}秒</view>
                 </view>
 
             </view>
 
-            <view wx:if="{{select_item.questioncontent.img[0] != null}}" class="photo" >
-                <view class="bubble-photo" data-select_item_photo='{{select_item.questioncontent.img[0]}}' bindtap="showPhoto">
+            <view wx:if="{{select_item.answercontent.img[0] != null}}" class="photo" >
+                <view class="bubble-photo" data-select_item_photo='{{select_item.answercontent.img[0]}}' bindtap="showPhoto">
                     <view>照片</view>
                 </view>
             </view>
 
-            <view wx:if="{{select_item.questioncontent.draw[0] != null}}" class="draw" >
-                <view class="bubble-draw" data-select_item_photo='{{select_item.questioncontent.draw[0]}}' bindtap="showDraw">
+            <view wx:if="{{select_item.answercontent.draw[0] != null}}" class="draw" >
+                <view class="bubble-draw" data-select_item_photo='{{select_item.answercontent.draw[0]}}' bindtap="showDraw">
                     <view>手绘</view>
                 </view>
             </view>
