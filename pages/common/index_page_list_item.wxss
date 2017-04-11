@@ -241,3 +241,8 @@
     background-color: #F5F5F5;
 }
 
+.template_img{
+    height: 30px;
+    width: 30px;
+}
+

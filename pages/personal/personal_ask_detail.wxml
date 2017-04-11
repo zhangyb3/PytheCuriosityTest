@@ -35,7 +35,7 @@
             </view>
 
             <view wx:if="{{question.questioncontent.draw[0] != null}}" class="photo" >
-                <view class="bubble-photo" data-question_photo='{{question.questioncontent.draw[0]}}' >
+                <view class="bubble-draw" data-question_photo='{{question.questioncontent.draw[0]}}' >
                     <view>手绘</view>
                 </view>
             </view>

@@ -8,7 +8,7 @@
  <view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
 
             <view class="answer_wrapper" bindtap='bindItem' data-index='{{ index }}'>
-                <image class="know_select_item_icon"  src='{{ item.avatar || "../../images/my_account_on.png" }}' />
+                <image class="know_select_item_icon"  src='{{ item.userimg || "../../images/my_account_on.png" }}' />
                 <text class="teacher_name">{{ item.username }}</text>
         <view class="ctrls">
                     <text class='{{ item.is_liked == 1 ? "like" : "not-like" }}' bindtap='bindLike' data-index='{{ index }}'>{{ item.likesnum || 0 }}</text>
@@ -35,8 +35,9 @@
                 </view>
 
                 <view wx:if="{{item.questioncontent.img[0] != null}}" class="photo" >
-                    <view class="bubble-photo" data-question_photo='{{item.questioncontent.img[0]}}' >
-                        <view>照片</view>
+                    <view  data-question_photo='{{item.questioncontent.img[0]}}' >
+                        <!--<view>照片</view>-->
+                        <image class='template_img' src="{{preview_img_url+item.questioncontent.img[0]}}"></image>
                     </view>
                 </view>
 

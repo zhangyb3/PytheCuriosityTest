@@ -20,10 +20,7 @@ App({
     wx.setStorageSync('logs', logs)
 
     wx.setStorageSync('alreadyRegister', 'no');
-    // utils.getUserAllData((userData) => {
-    //   console.log(userData);
-      
-    // });
+    
     
     wx.login({
       success: function(res){
@@ -74,7 +71,7 @@ App({
             //如果没注册过，则注册
             var registerInfo = userRegisterResult.data.data;
             
-            if(registerInfo != null)
+            if(registerInfo == null)
             {
               wx.setStorageSync('alreadyRegister', 'no');
               console.log("register : " + wx.getStorageSync('alreadyRegister'));

@@ -668,7 +668,7 @@ Page({
 
       var questionParams= {
         studentId: wx.getStorageSync(user.StudentID),
-        
+        teacherId: this.data.ask_question.ask_teacherId,
         questionContent:{
           text: [
             this.data.ask_question.text_content,

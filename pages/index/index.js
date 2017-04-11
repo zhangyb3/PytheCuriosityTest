@@ -17,11 +17,7 @@ var itemIndex;
 
 Page({
   data: {
-    second: 60,
-    grades: ['六年级', '初三', '高三'],
-    grade_index:0,
-    subjects: ['物理', '化学', '计算机'],
-    subject_index:0,
+    
     hide_subject_selection:false,
     hide_grade_selection:false,
     selectStudent:false,
@@ -35,7 +31,7 @@ Page({
     userInfo: {},
     val:[],
     
-
+    preview_img_url: config.PytheFileServerURL ,
     hide_show_image_page: true,
   },
   //事件处理函数
@@ -231,9 +227,15 @@ Page({
       icon: 'success',
       duration: 1000
     });
-    var voice_path = decodeURIComponent(e.currentTarget.dataset.voice);
+    var that = this;
+    
+    var voiceRemotePath = e.currentTarget.dataset.voice;
+    
+    var voicePath = fileSys.downloadFile(that,decodeURI(voiceRemotePath),'audio');
+    that.data.voicePath = voicePath;
+    
     wx.playVoice({
-      filePath: voice_path,
+      filePath: that.data.voicePath,
       success: function(res){
         // success
       },
@@ -244,6 +246,7 @@ Page({
         // complete
       }
     })
+
   },
 
   showPhoto:function(e){

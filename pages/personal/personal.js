@@ -175,6 +175,7 @@ Page({
 
     if(wx.getStorageSync('fixPersonalInfo')=='yes')
     {
+      var that = this;
       register.checkRegister(
           (userRegisterResult) => {
             console.log('check register : ' + JSON.stringify(userRegisterResult));
@@ -196,13 +197,24 @@ Page({
               wx.setStorageSync(user.GradeID, registerInfo.gradeid);
               wx.setStorageSync(user.UserDescription, registerInfo.description);
               wx.setStorageSync('userNickName', registerInfo.username);
+
+              wx.setStorageSync('fixPersonalInfo', 'no');
+
+              that.data.userAvatarUrl = wx.getStorageSync('userAvatarUrl');
+              that.data.userNickName = wx.getStorageSync('userNickName');
+              that.data.userDescription = wx.getStorageSync('UserDescription');
+              that.setData({
+                userAvatarUrl: that.data.userAvatarUrl,
+                userNickName: that.data.userNickName,
+                userDescription: that.data.userDescription,
+              });
             }
           },
           (userRegisterResult) => {
             console.log(userRegisterResult);
           },
         );
-        wx.setStorageSync('fixPersonalInfo', 'no');
+        
     }
   },
   onHide:function(){

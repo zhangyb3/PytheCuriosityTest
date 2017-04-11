@@ -6,20 +6,20 @@
 
             <view class="answer_question_container">
                 <view class="answer_questin_content">
-                    <text class="answer_question_content">questionid:{{ item.questionid }},answerid:{{item.answerid}}</text>
+                    <text class="answer_question_content">answerid:{{item.answerid}}，{{item.questioncontent.text[0]}}</text>
                 </view>
                 <view class="answer_question_bottom">
-                    <view class="answer_money_number"><image src="../../images/personal_icon_money@2x.png"></image><text class="collect_number_text">3.000</text></view>
-                    <view class="_answer_money_star"><image src="../../images/personal_icon_shoucang@2x.png"></image><text class="collect_number_text">3.000</text></view>
+                    <view class="answer_money_number"><image src="../../images/personal_icon_money@2x.png"></image><text class="collect_number_text">{{item.fee || 0}}</text></view>
+                    <view class="_answer_money_star"><image src="../../images/personal_icon_shoucang@2x.png"></image><text class="collect_number_text">{{item.likesnum || 0}}</text></view>
                 </view>
             </view>
 
             <view class="answer_tab_white"/>
 
             <view class="multi_tips">
-                <view wx:if="{{item.audio[0] != null}}" class="voice" >
+                <view wx:if="{{item.questioncontent.audio[0] != null}}" class="voice" >
                     
-                    <view class="bubble" data-question_voice='{{item.audio[0]}}' bindtap="playQuestionVoiceRecord">
+                    <view class="bubble" data-question_voice='{{item.questioncontent.audio[0]}}' bindtap="playQuestionVoiceRecord">
                         <view class="bubble-tail"></view>
                         <view class="voice-wave"></view>
                         <view>{{item.audio[1]}}秒</view>
@@ -27,14 +27,14 @@
 
                 </view>
 
-                <view wx:if="{{item.img[0] != null}}" class="photo" >
-                    <view class="bubble-photo" data-question_photo='{{item.img[0]}}' >
+                <view wx:if="{{item.questioncontent.img[0] != null}}" class="photo" >
+                    <view class="bubble-photo" data-question_photo='{{item.questioncontent.img[0]}}' >
                         <view>照片</view>
                     </view>
                 </view>
 
-                <view wx:if="{{item.draw[0] != null}}" class="photo" >
-                    <view class="bubble-photo" data-question_photo='{{item.draw[0]}}' >
+                <view wx:if="{{item.questioncontent.draw[0] != null}}" class="photo" >
+                    <view class="bubble-draw" data-question_photo='{{item.questioncontent.draw[0]}}' >
                         <view>手绘</view>
                     </view>
                 </view>

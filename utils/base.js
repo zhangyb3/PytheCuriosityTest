@@ -40,6 +40,7 @@ function getDetailContent(that,selectItem)
         for(var count = 0; count < answers.length; count++)
         {
           answers[count].questioncontent = JSON.parse(answers[count].questioncontent);
+          answers[count].answercontent = JSON.parse(answers[count].answercontent);
         }
         that.setData({
             answers: answers,

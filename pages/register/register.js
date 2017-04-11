@@ -305,11 +305,15 @@ Page({
     // 页面渲染完成
   },
   onShow:function(){
-    
+    while(wx.getStorageSync(user.UserID)=='userID')
+    {
+      if(wx.getStorageSync(user.UserID)!='userID')
+        return;
+    }
 
     if(wx.getStorageSync(user.UserID)!='userID')
     {
-      wx.setStorageSync('alreadyRegister', 'no');
+      wx.setStorageSync('alreadyRegister', 'yes');
       wx.setStorageSync('fromRegister', 'no');
       wx.navigateBack({
         delta: 1, // 回退前 delta(默认为1) 页面
@@ -325,6 +329,8 @@ Page({
       });
 
     }
+
+    
   },
   onHide:function(){
     // 页面隐藏

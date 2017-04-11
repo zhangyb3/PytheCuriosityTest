@@ -146,6 +146,7 @@ var remoteLogin = (success, fail) => {
                         wx.setStorageSync('OpenID', res.data.data.openid);
                         wx.setStorageSync('StudentID', 'StudentID');
                         wx.setStorageSync('TeacherID', 'TeacherID');
+                        console.log('openid : ' + wx.getStorageSync('OpenID'));
                         typeof success == "function" && success(res.data.data);
                     }
                 }
