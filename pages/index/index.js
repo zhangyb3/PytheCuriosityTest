@@ -94,7 +94,15 @@ Page({
 
   filterSubject:function(subject_data){
     console.log("subject filter");
-    this.setData({hide_pop_subject_list:false});
+    if(this.data.hide_pop_subject_list)
+    {
+      this.setData({hide_pop_subject_list:false});
+    }
+    else
+    {
+      this.setData({hide_pop_subject_list:true});
+    }
+    
     //加载科目列表
     var that = this;
     wx.request({

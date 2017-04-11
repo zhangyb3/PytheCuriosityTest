@@ -738,6 +738,7 @@ Page({
 
     // this.data.question_answer.knowledge_level2 = this.data.knowledge2s[e.detail.value].level2;
     this.data.question_answer.knowledge_level2 = this.data.knowledge2s[e.currentTarget.dataset.index].level2;
+    this.data.question_answer.knowledgeId = this.data.knowledge2s[e.currentTarget.dataset.index].knowledgeid;
     this.setData({
       hide_textarea: false,
       hide_knowledge_list: true,

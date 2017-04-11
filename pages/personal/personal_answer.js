@@ -174,12 +174,20 @@ Page({
 
   selectOneNotAnswer:function(result){
     var index = result.currentTarget.dataset.index;
-    var item = result.currentTarget.dataset.item;
-    console.log(JSON.stringify(item));
-    var parametersString = netUtil.json2Form(item);
+    var parametersJSON = result.currentTarget.dataset.item;
+    parametersJSON.question_id = parametersJSON.question.questionid;
+    parametersJSON.subject_id = parametersJSON.question.subjectid;
+    parametersJSON.student_id = parametersJSON.question.studentid;
+    parametersJSON.text_content = parametersJSON.question.questioncontent.text[0];
+    parametersJSON.photo_path = parametersJSON.question.questioncontent.img[0];
+    parametersJSON.draw_path = parametersJSON.question.questioncontent.draw[0];
+    parametersJSON.audio_path = parametersJSON.question.questioncontent.audio[0];
+    parametersJSON.audio_duration = parametersJSON.question.questioncontent.audio[1];
+    console.log(parametersJSON);
+    var parameters = netUtil.json2Form(parametersJSON);
     console.log(parametersString);
     wx.navigateTo({
-      url: '../answer/answer_operation' + '?' + parametersString,
+      url: '../answer/answer_operation' + '?' + parameters,
       success: function(res){
         // success
       },
