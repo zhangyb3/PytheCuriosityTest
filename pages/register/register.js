@@ -305,11 +305,7 @@ Page({
     // 页面渲染完成
   },
   onShow:function(){
-    while(wx.getStorageSync(user.UserID)=='userID')
-    {
-      if(wx.getStorageSync(user.UserID)!='userID')
-        return;
-    }
+    
 
     if(wx.getStorageSync(user.UserID)!='userID')
     {
