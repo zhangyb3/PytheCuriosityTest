@@ -139,6 +139,24 @@ Page({
     this.setData({
       personal_question_answer_list: this.data.personal_question_answer_list,
     });
+
+    wx.showToast({
+      title: '已选最佳答案',
+      icon: 'success',
+      duration: 1000
+    });
+    wx.navigateBack({
+      delta: 1, // 回退前 delta(默认为1) 页面
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
     
     
   },

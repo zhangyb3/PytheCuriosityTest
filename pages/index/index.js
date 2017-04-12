@@ -68,7 +68,7 @@ Page({
   getSearchContentList:function(e){
     var that = this;
     var searchParameters = {
-      q: this.data.search_content_text,
+      q: encodeURIComponent(this.data.search_content_text),
       pageSize: 3,
       pageNum: 1,
     };
