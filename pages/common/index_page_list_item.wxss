@@ -15,9 +15,23 @@
     background-color: white;
 }
 
+.index_page_select_item_content_wrap{
+    display: flex;
+    flex-direction: row;
+    margin-left: 40rpx;
+    margin-right: 30rpx;
+    height: auto;
+
+}
+
+.preview_img{
+    width: 300rpx;
+    height: 200rpx;
+}
+
 .question_wrapper{
     /*border-top: 1px solid #EEE;*/
-    /*display: flex;*/
+    display: flex;
     text-align: left;
     /*height: auto;*/
     height: 70px;
@@ -33,10 +47,11 @@
 }
 
 .question_content {
+    display: flex;
     /*padding-top: 10rpx;*/
-    /*margin-left: 10px;
-    margin-right: 10px;*/
-    padding-left: 20rpx;
+    margin-left: 30rpx;
+    /*margin-right: 10px;*/
+    /*padding-left: 20rpx;*/
     height: auto;
     font-size: 28rpx;
     /*开头空两格*/
@@ -73,7 +88,7 @@
     width: 100%;
     /*border-top: 1px solid #EEE;*/
     /*border-bottom: 1px solid #EEE;*/
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     height: 60rpx;
 }
 
@@ -99,14 +114,16 @@
 
 
 .teacher_name {
-    width: 100%;
-    color: #CBCBCB;
-    font-size: 16px;
-    height: 30px;
+    width: auto;
+    color: #999999;
+    font-size: 30rpx;
+    line-height: 60rpx;
+    margin-left: 10rpx;
     margin-bottom: 0;
 }
 
 .answer_content{
+    /*position: ab*/
     /*margin-left: 10px;*/
     /*margin-right: 10px;*/
     color: #6E6E6E;
@@ -125,13 +142,15 @@
 .knowledge_kind_content{
     display: flex;
     /*flex-direction: row;*/
-    width: 70rpx;
+    position: absolute;
+    width: auto;
     line-height: 60rpx;
     /*margin-right: 0px;*/
     /*margin-top: 0px;*/
     /*margin-left: 40rpx;*/
     font-size: 28rpx;
     text-align: right;
+    right: 20rpx;
     color: #3AA4F1;
 }
 
@@ -254,12 +273,12 @@ line-height: 27rpx;
     background-color: #F5F5F5;
 }
 
-.preview_img{
-    height: 30px;
+/*.preview_img{
+    height: 300rpx;
     width: 30px;
     border: 1px solid #EEE;
     
-}
+}*/
 
 
 
