@@ -1,10 +1,10 @@
 
 
 .personal_answer_section_selector_bar{
-    height: 5%;
+    height: 100rpx;
     display: flex;
     flex-direction: row;
-    /*border-top: 1px solid #EEE;*/
+    border-bottom: 1px solid #EEE;
 
 }
 
@@ -16,7 +16,7 @@
     /*border: 1px;*/
     /*color: #6E6E6E;*/
     background-color: white;
-    line-height: 30px;
+    line-height: 100rpx;
     justify-content: center;
     align-items: center;
     font-size: 30rpx;
@@ -24,7 +24,7 @@
 }
 
 .bar_item.active{
-    line-height: 30px;
+    line-height: 100rpx;
     color: #3AA4F1;
     background-color: white;
     font-size: 30rpx;
@@ -38,5 +38,5 @@
     /*top: 15rpx;*/
     /*bottom: 30rpx;*/
     margin-top: 10rpx;
-    height: 40rpx;
+    height: 60rpx;
 }

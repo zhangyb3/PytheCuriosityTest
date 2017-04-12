@@ -26,6 +26,6 @@
       <template is="answer_page_list" data="{{questionsForAnswer}}"></template>
     </view>
 
-    <view class="list_bottom"></view>
+    <!--<view class="list_bottom"></view>-->
 
 </view>

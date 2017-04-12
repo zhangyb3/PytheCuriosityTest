@@ -3,7 +3,7 @@
 .page_contain{
 display: flex;
 position: absolute;
-top: 98rpx;
+top: 110rpx;
 left: 0rpx;
 right: 0rpx;
 bottom: 0rpx;

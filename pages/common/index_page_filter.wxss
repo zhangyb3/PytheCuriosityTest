@@ -6,7 +6,7 @@
     align-items: center;
     background-color: #FFFFFF;
     border-bottom: 1px solid #EEE;
-    height: 98rpx;
+    height:100rpx;
 }
 
 .subject_view{
@@ -114,4 +114,11 @@
 
 .search_button:after{
     border:none;
+}
+
+
+.bottom_line_seprate{
+    width: 100%;
+    height: 1px;
+    background-color: #EEE;
 }
