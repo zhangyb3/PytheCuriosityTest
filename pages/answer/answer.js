@@ -48,7 +48,23 @@ Page({
   },
   onLoad:function(options){
 
-    
+    if(wx.getStorageSync('alreadyRegister')=='no')
+    {
+      // this.setData({hide_register_page:false});
+      // this.setData({hide_index_page:true});
+      wx.navigateTo({
+        url: '../register/register',
+        success: function(res){
+          // success
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      })
+    }
 
     this.setData({hide_pop_subject_list:true});
     this.setData({hide_pop_sort_attribute_list:true});
