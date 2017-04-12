@@ -12,7 +12,7 @@
 .subject_view{
     /*margin-top: 12rpx;*/
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     height: auto;
     /*margin-left:10px;*/
     width: auto;
@@ -64,8 +64,8 @@
     /*background: url(../../images/nav_icon_menu@2x.png) no-repeat center center;*/
     background: none;
     height: 90rpx;
-    width: 100rpx;
-    justify-content: flex-end;
+    width: 120rpx;
+    /*justify-content: flex-end;*/
     /*margin-right: 20rpx;*/
     /*justify-content: space-around;*/
     /*background-size: 25px 25px;*/

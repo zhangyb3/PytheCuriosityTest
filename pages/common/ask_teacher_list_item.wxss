@@ -94,11 +94,12 @@
     /*background: url(../../images/teacher_ask_icon.png) no-repeat center center;*/
     position: absolute;
     right: 20px;
-    bottom: 12px;
+    bottom: 8px;
     height: 20px;
     width: 20px;
+    padding-top: 20rpx;
     background: none;
-    align-items: center;
+    /*align-items: center;*/
     /*background-size: 30px 30px;*/
 }
 .teacher_ask_section image{
