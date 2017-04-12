@@ -40,7 +40,7 @@ Page({
     },
 
     countdownText : '发送验证码',
-    second: 10,
+    second: 60,
   },
   
   onLoad:function(options){
@@ -182,7 +182,7 @@ Page({
     var that = this;
     
     that.setData({  
-      second: 10,  
+      second: 60,  
       lock_countdown: true,
       }); 
     countdown(that);
@@ -225,7 +225,7 @@ Page({
         }
       });
     }
-    else
+    else if((that.data.registerParams.status == 1 && that.data.registerParams.subjectId != null) || (that.data.registerParams.status == 0 && that.data.registerParams.gradeId != null))
     {
       //注册
       wx.request({
@@ -236,7 +236,7 @@ Page({
           phoneNum: wx.getStorageSync('registerPhoneNum'),
           verificationCode: wx.getStorageSync('verificationCode'),
           gradeId: this.data.registerParams.gradeId,
-          subjecId: this.data.registerParams.subjectId,
+          subjectId: this.data.registerParams.subjectId,
           openId: wx.getStorageSync(user.OpenID),
           userImg: wx.getStorageSync('userAvatarUrl'),
         },
@@ -248,7 +248,7 @@ Page({
           {
             wx.showModal({
               title: '提示',
-              content: '登录失败，请重试',
+              content: res.data.msg,
               success: function(res) {
                 if (res.confirm) {
                   console.log('用户点击确定')

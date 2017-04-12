@@ -140,6 +140,14 @@ Page({
       personal_question_answer_list: this.data.personal_question_answer_list,
     });
 
+    
+    
+    
+  },
+  commitBestAnswer:function(e){
+    this.data.bestAnswerParams.answerIds = this.data.bestAnswerParams.answerIds.substr(0,this.data.bestAnswerParams.answerIds.length-1);
+    base.selectBestAnswer(this.data.bestAnswerParams);
+    
     wx.showToast({
       title: '已选最佳答案',
       icon: 'success',
@@ -157,12 +165,6 @@ Page({
         // complete
       }
     })
-    
-    
-  },
-  commitBestAnswer:function(e){
-    this.data.bestAnswerParams.answerIds = this.data.bestAnswerParams.answerIds.substr(0,this.data.bestAnswerParams.answerIds.length-1);
-    base.selectBestAnswer(this.data.bestAnswerParams);
   },
   complainOneAnswer:function(result){
     console.log("complain this answer " + result.currentTarget.dataset.item.answerid);
