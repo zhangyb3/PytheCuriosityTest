@@ -213,6 +213,7 @@ Page({
               wx.setStorageSync(user.GradeID, registerInfo.gradeid);
               wx.setStorageSync(user.UserDescription, registerInfo.description);
               wx.setStorageSync('userNickName', registerInfo.username);
+              wx.setStorageSync('userAvatarUrl', registerInfo.userimg);
 
               wx.setStorageSync('fixPersonalInfo', 'no');
 
