@@ -40,12 +40,11 @@
                 </view>
 
             </view>
-            <view class="border_tab"/>
-            <view class="border_tab_white"/>
+            <!--<view class="border_tab"/>-->
 
             <text class="time_zone">{{item.timer}}</text>
-
-            <view class="border_tab"/>
+<view class="border_tab_white"/>
+            <!--<view class="border_tab"/>-->
       
         
 </view>
