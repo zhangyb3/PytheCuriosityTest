@@ -112,21 +112,40 @@
     text-align:center;
 }
 
+button_wrap{
+    height: 76rpx;
+    line-height: 76rpx;
+    width: auto;
+    /*border:1px solid #CCCCCC;*/
+
+}
+
 .send_verification_code_button{
     font-size:30rpx;
-    height: 72rpx;
-    line-height:72rpx;
+    height: 76rpx;
+    line-height:76rpx;
     -webkit-text-fill-color: #3AA4F1;
-    background-color: #ffffff;
+    background: none;
+    /*color: purple;*/
     text-align: center;
     /*border-radius:0 8rpx 8rpx 0;*/
     border-top :1px solid #CCCCCC;
     border-bottom :1px solid #CCCCCC;
     border-right :1px solid #CCCCCC;
-    width:182rpx;
-    margin-left:0;
-    padding:0 5px;
+    width:210rpx;
+    /*margin-left:10rpx;*/
+    padding: 0;
+    /*border: 0;*/
+    border-radius: 0 0 0 0;
     
+}
+
+.send_verification_code_button:after{
+    border:0;
+    border-radius: 0 0 0 0;
+    /*border-top :2px solid #CCCCCC;
+    border-bottom :3px solid #CCCCCC;
+    border-right :3px solid #CCCCCC;*/
 }
 
 .verification_code_container{
@@ -147,7 +166,7 @@
 .verification_code_input{
     border:1px solid #CCCCCC;
     /*border-radius: 8rpx;*/
-    height: 30px;
+    height: 72rpx;
     width:226rpx;
     padding:0 5px;
     text-align:center;
@@ -193,7 +212,7 @@
     line-height:30px;
 }
 .grade_picker{
-    background:url(../../images/arr.png) right center no-repeat;
+    /*background:url(../../images/arr.png) right center no-repeat;*/
     background-size:8px 8px;
     font-size: 30rpx;
     -webkit-text-fill-color: #333333;
@@ -231,7 +250,7 @@
     margin-left: 12rpx;
 }
 .subject_picker{
-    background:url(../../images/arr.png) right center no-repeat;
+    /*background:url(../../images/arr.png) right center no-repeat;*/
     background-size:8px 8px;
     font-size: 30rpx;
     -webkit-text-fill-color: #333333;
