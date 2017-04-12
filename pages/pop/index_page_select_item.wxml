@@ -13,7 +13,7 @@
 
     <view class="info_zone">  
         <view class="cancel_wrap">
-        <image class="cacel_img" bindtap="returnIndexPage" src="index_icon_close@2x.png"></image>
+        <image class="cacel_img" bindtap="returnIndexPage" src="../../images/index_icon_close@2x.png"></image>
         </view>
 
         <view class="select_question_wrapper">
@@ -102,23 +102,24 @@
                     <view class="operation_zone" >
 
 
-                        <text class='{{ select_item.is_like == true ? "like_answer" : "not_like_answer" }}' data-selected="{{answer}}" data-answer_index="{{answer_index}}" bindtap='likeAnswer'><image src="../../images/personal_icon_org.money@2x.png"></image>{{answer.likesnum}}
-                        </text>
-
-                        <!--<view class='{{ select_item.is_like == true ? "like_answer" : "not_like_answer" }}' data-selected="{{answer}}" data-answer_index="{{answer_index}}" bindtap='likeAnswer'><image src="../../images/personal_icon_org.money@2x.png"></image><text class="personal_summary">{{{answer.likesnum}}</text></view>-->
+                        <view class="collect_wrap" data-selected="{{answer}}" data-answer_index="{{answer_index}}" bindtap='likeAnswer'><image class="collect_icon_img" src="../../images/question_icon_shoucang@2x.png"></image><text class="collect_num" >{{answer.likesnum}}</text></view>
 
 
 
-                        <text class="return_to_index_page" bindtap="returnIndexPage">返回
-                        </text>
-                        <text class="reward_answer" data-selected='{{answer}}' bindtap='rewardAnswer'>
-                        </text>
+                        <!--<text class="return_to_index_page" bindtap="returnIndexPage">返回
+                        </text>-->
+
+
+                        <!--<text class="reward_answer" data-selected='{{answer}}' bindtap='rewardAnswer'>
+                        </text>-->
+
+                        <view class="reward_answer" data-selected='{{answer}}'   bindtap='rewardAnswer'><image class="reward_icon_img" src="../../images/index_icon_money@2x.png"></image></view>
+
+
                     </view>
-
                     
-
                 </view>
-
+<view class="border_tab_seprateline"></view>
             </block>
         </view>
 
