@@ -113,10 +113,23 @@ Page({
         sub_dis: '春秋战国、分封制、诸子百家'
       },
 
-    ]
+    ],
 
-    },
+    hide_register_lock_cover: false,
+
+  },
   onLoad:function(options){
+
+    this.setData({
+      hide_register_lock_cover: false,
+    });
+    
+    if(wx.getStorageSync('alreadyRegister') == 'yes')
+    {
+      this.setData({
+        hide_register_lock_cover: true,
+      });
+    }
     
     if(wx.getStorageSync('alreadyRegister')=='no')
     {

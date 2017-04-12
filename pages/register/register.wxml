@@ -24,7 +24,7 @@
         <view class="verification_code_container">
             <text class="verification_hint">验证码:</text>
             <input class="verification_code_input" type="text"  bindinput="verificationCodeInput" ></input>
-            <view type="default" disabled="{{lock_countdown}}" class="send_verification_code_button" bindtap="sendVerificationCode">{{countdownText}}</view>
+            <button type="default" disabled="{{lock_countdown}}" class="send_verification_code_button" bindtap="sendVerificationCode">{{countdownText}}</button>
         </view>
         <view class="grade_container" hidden='{{hide_grade_selection}}'>
             <text class="grade_hint">年级    :</text>

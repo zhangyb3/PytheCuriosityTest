@@ -21,8 +21,21 @@ Page({
 
     userAvatarUrl:'../../images/image_1@2x.png',
     userNickName:'9527',
+
+    hide_register_lock_cover: false,
   },
   onLoad:function(options){
+
+    this.setData({
+      hide_register_lock_cover: false,
+    });
+
+    if(wx.getStorageSync('alreadyRegister') == 'yes')
+    {
+      this.setData({
+        hide_register_lock_cover: true,
+      });
+    }
     
     if(wx.getStorageSync('alreadyRegister')=='no')
     {

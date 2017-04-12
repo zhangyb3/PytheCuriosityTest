@@ -45,8 +45,21 @@ Page({
         sortName:'排序',
       },
     },
+
+    hide_register_lock_cover: false,
   },
   onLoad:function(options){
+
+    this.setData({
+      hide_register_lock_cover: false,
+    });
+
+    if(wx.getStorageSync('alreadyRegister') == 'yes')
+    {
+      this.setData({
+        hide_register_lock_cover: true,
+      });
+    }
 
     if(wx.getStorageSync('alreadyRegister')=='no')
     {

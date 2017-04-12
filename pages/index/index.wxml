@@ -11,6 +11,9 @@
         <template is="show_image_page" data="{{img_src}}"></template>
 </view>
 
+<import src="../pop/register_lock_cover.wxml" />
+<view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
+
 <!--<import src="../register/register.wxml" />-->
 
 

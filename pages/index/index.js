@@ -33,6 +33,8 @@ Page({
     
     preview_img_url: config.PytheFileServerURL ,
     hide_show_image_page: true,
+
+    
   },
   //事件处理函数
   bindViewTap: function() {
@@ -42,8 +44,9 @@ Page({
   },
   onLoad: function () {
     
-    
-    
+    this.setData({
+      hide_register_lock_cover: false,
+    });
     
     this.setData({hide_pop_subject_list:true});
     this.setData({hide_select_item:true});
@@ -368,6 +371,14 @@ Page({
   },
 
   onShow:function(){
+    
+    if(wx.getStorageSync('alreadyRegister') == 'yes')
+    {
+      this.setData({
+        hide_register_lock_cover: true,
+      });
+    }
+
     //判断注册了没有
     if(wx.getStorageSync('alreadyRegister')=='no')
     {

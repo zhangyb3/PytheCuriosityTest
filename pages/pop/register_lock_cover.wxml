@@ -1,0 +1,15 @@
+<!-- 弹出层 -->
+
+<template name="register_lock_cover">
+
+   
+    
+    
+    
+    <!-- 遮罩 -->
+    <view class="register_lock_cover"  ></view>
+    
+
+
+
+</template>

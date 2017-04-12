@@ -1,6 +1,7 @@
 <!--pages/personal/personal.wxml-->
 
-
+<import src="../pop/register_lock_cover.wxml" />
+<view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
 
 <view class="personal_page" hidden='{{hide_personal_page}}'>
 

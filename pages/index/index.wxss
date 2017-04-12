@@ -49,6 +49,7 @@
 
 
 @import "../pop/show_image_page.wxss";
+@import "../pop/register_lock_cover.wxss";
 
 
 
