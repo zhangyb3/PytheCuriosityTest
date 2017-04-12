@@ -12,7 +12,9 @@
     <view class="select_item_zone" >
 
     <view class="info_zone">  
-        <view class="border_tab"></view>
+        <view class="cancel_wrap">
+        <image class="cacel_img" bindtap="returnIndexPage" src="index_icon_close@2x.png"></image>
+        </view>
 
         <view class="select_question_wrapper">
                 <text class="question_content">{{ question.questioncontent.text[0] }}</text>
