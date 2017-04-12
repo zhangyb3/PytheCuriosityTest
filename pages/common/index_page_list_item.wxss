@@ -151,7 +151,7 @@
     /*margin-left: 40rpx;*/
     font-size: 28rpx;
     text-align: right;
-    right: 20rpx;
+    right: 40rpx;
     color: #3AA4F1;
 }
 
