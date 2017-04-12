@@ -1,4 +1,9 @@
 /**index.wxss**/
+.index_page_container{
+  width: 100%;
+  height: auto;
+}
+
 .userinfo {
   display: flex;
   flex-direction: column;

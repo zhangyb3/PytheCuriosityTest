@@ -5,8 +5,8 @@
     justify-content: space-between;
     align-items: center;
     background-color: #FFFFFF;
-    /*border-bottom: 1px solid #EEE;*/
-    height:auto;
+    border-bottom: 1px solid #EEE;
+    height:100rpx;
 }
 
 .subject_view{

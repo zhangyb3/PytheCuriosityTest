@@ -1,7 +1,9 @@
 
 
 .ask_page_section_selector_bar{
-    height: 80rpx;
+    /*margin-top: 20rpx;*/
+    /*padding-top: 120rpx;*/
+    height: 100rpx;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -14,12 +16,12 @@
     background-color: #CCCCCC;
     /*top: 15rpx;*/
     /*bottom: 30rpx;*/
-    height: 40rpx;
+    height: 60rpx;
 }
 .bar_item{
     
     width: 50%;
-    line-height: 80rpx;
+    line-height: 100rpx;
     text-align: center;
     /*border: 1px;*/
     color: #333333;

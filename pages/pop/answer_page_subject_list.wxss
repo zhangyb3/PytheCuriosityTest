@@ -1,7 +1,7 @@
 .pop_subject_list_cover {
     position: fixed;
     background-color: rgba(0, 0, 0, 0.5);
-    top: 30px;
+    top: 100rpx;
     right: 0;
     left: 0;
     bottom: 0;
@@ -9,16 +9,11 @@
     opacity: 1;
 }
 
-.subject_list_zone{
-    /*margin-top: 1px;*/
-    background-color: black;
-}
-
 .subject_list_zone {
     z-index: 12;
     position: fixed;
     /*margin-top: 100px;*/
-    top: 30px;
+    top: 100rpx;
     left: 0;
     right: 0;
     /*display: block;*/
@@ -31,7 +26,7 @@
     background-color: #FFF;
     z-index: 11;
     width: 100%;
-   border-top: 1rpx solid #D9D9D9;
+   /*border-top: 1rpx solid #D9D9D9;*/
     align-items: center;
 }
 
