@@ -15,13 +15,19 @@
     </view>
 </view>
             <view class="dotted_line"></view>
-            <view class="question_wrapper">
             <view class="border_tab_index_white"></view>
-                <text class="question_content">questionid:{{ item.questionid }},question_text_content:{{item.questioncontent.text[0]}}</text>
-              
+            <view class="index_page_select_item_content_wrap">
+            <image class="preview_img" src="{{preview_img_url+item.questioncontent.img[0]}}">
+            </image>
+            <view class="question_wrapper">
+            <!--<view class="border_tab_index_white"></view>-->
+                <text class="question_content">questionid:{{ item.questionid }},question_text_content:{{item.questioncontent.text[0]}}</text>   
             </view>
+            </view>
+            
+            
 
-            <view class="multi_tips">
+            <!--<view class="multi_tips">
                 <view wx:if="{{item.questioncontent.audio[0] != null}}" class="voice" >
                     
                     <view class="bubble" data-question_voice='{{item.questioncontent.audio[0]}}' bindtap="playVoiceRecord">
@@ -33,19 +39,19 @@
                 </view>
 
                 <view wx:if="{{item.questioncontent.img[0] != null}}" class="photo" bindtap="showPhoto">
-                    <view  data-question_photo='{{item.questioncontent.img[0]}}' >
+                    <view  data-question_photo='{{item.questioncontent.img[0]}}' >-->
                         <!--<view>照片</view>-->
-                        <image class="preview_img" src="{{preview_img_url+item.questioncontent.img[0]}}"></image>
+                        <!--<image class="preview_img" src="{{preview_img_url+item.questioncontent.img[0]}}"></image>
                     </view>
                 </view>
 
                 <view wx:if="{{item.questioncontent.draw[0] != null}}" class="draw" >
-                    <view  data-question_photo='{{item.questioncontent.draw[0]}}' bindtap="showDraw">
+                    <view  data-question_photo='{{item.questioncontent.draw[0]}}' bindtap="showDraw">-->
                         <!--<view>手绘</view>-->
-                        <image class="preview_img" src="{{preview_img_url+item.questioncontent.draw[0]}}"></image>
-                </view>
+                        <!--<image class="preview_img" src="{{preview_img_url+item.questioncontent.draw[0]}}"></image>
+                </view>-->
            
-            </view>
+            <!--</view>-->
 <!--<view class="ctrls">
                     <text class='{{ item.is_liked == 1 ? "like" : "not-like" }}' bindtap='bindLike' data-index='{{ index }}'>{{ item.reward }}</text>
                     
@@ -56,7 +62,7 @@
             </view>-->
 
 
-            </view>
+            <!--</view>-->
 
             <view class="like_wrap" bindtap='bindLike' data-index='{{ index }}'><image class="like_image" src="../../images/index_icon_dianzan@2x.png"></image><text class="like_number" >34{{item.popularity}}</text></view>
          
