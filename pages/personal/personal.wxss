@@ -28,6 +28,17 @@
     z-index: 1;
 }
 
+.earn_num_img{
+    width: 43rpx;
+    height: 38rpx;
+    margin-right:10rpx;
+}
+
+.teacherEarn{
+    font-size: 32rpx;
+    line-height: 40rpx;
+}
+
 .personal_description_image_zone{
     height: 100%;
     width: 20%;
@@ -67,18 +78,18 @@
 }
 
 .personal_summary_wrap{
-    height:20px;
+    height:40rpx;
     display:flex;
     margin-top: 20px;
     margin-bottom: 10px;
     line-height:20px;
 }
-.personal_summary_wrap image{
+/*.personal_summary_wrap image{
     width:43rpx;
     height: 38rpx;
     display:block;
     margin-right:5px;
-}
+}*/
 
 .personal_summary{
     /*margin-top: 15px;
@@ -88,7 +99,7 @@
     color: #FF9635;
     /*background-size:20px 20px;
     line-height:20px;*/
-    font-size: 16px;
+    font-size: 28rpx;
 }
 
 .person_edit_icon_view{
