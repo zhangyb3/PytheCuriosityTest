@@ -10,27 +10,7 @@ var user = require("../../utils/user.js");
 Page({
   data:{
     personal_question_answer_list:[
-      {
-        data:{
-          answerid:-1,
-          text: '答案一',
-        },
-        selected:false,
-      },
-      {
-        data:{
-          answerid:-2,
-          text: '答案二',
-        },
-        selected:false,
-      },
-      {
-        data:{
-          answerid:-3,
-          text: '答案三',
-        },
-        selected:false,
-      },
+      
     ],
     
 
