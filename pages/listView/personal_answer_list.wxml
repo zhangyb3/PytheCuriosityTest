@@ -10,7 +10,7 @@
       <block wx:for="{{personal_answer_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         <view class="interval"></view>
         <view class="personal_answer_list_container" >
-          <template is="personal_answer_list_item" data="{{item,index}}"></template>
+          <template is="personal_answer_list_item" data="{{item,index,preview_img_url}}"></template>
         </view>
       </block>
 

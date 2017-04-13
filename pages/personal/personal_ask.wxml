@@ -13,7 +13,7 @@
    
 
     <view class="personal_ask_list_container" >
-      <template is="personal_ask_list" data="{{personal_ask_list}}"></template>
+      <template is="personal_ask_list" data="{{personal_ask_list,preview_img_url}}"></template>
     </view>
 
     

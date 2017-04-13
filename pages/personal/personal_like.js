@@ -26,6 +26,7 @@ Page({
     hide_personal_like_answer_list:false,
     hide_personal_like_teacher_list:true,
 
+    preview_img_url: config.PytheFileServerURL ,
   },
   onLoad:function(parameters){
     console.log("from personal");

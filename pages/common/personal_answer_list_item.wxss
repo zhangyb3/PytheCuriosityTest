@@ -99,5 +99,10 @@ answer_tab_white{
     color: #999999;
 }
 
+.preview_img_classic{
+    width: 30px;
+    height: 30px;
+
+}
 
 

@@ -6,6 +6,7 @@ var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
 var user = require("../../utils/user.js");
+var fileSys = require("../../utils/file.js");
 
 Page({
   data:{
@@ -24,7 +25,9 @@ Page({
     },
 
     question:{},
+    preview_img_url: config.PytheFileServerURL ,
 
+    hide_show_image_page: true,
   },
   onLoad:function(params){
     console.log(params);
@@ -162,6 +165,70 @@ Page({
       hide_select_answer: true,
     });
   },
+
+
+
+  playVoiceRecord:function(e){
+    wx.showToast({
+      title: '播放录音',
+      icon: 'success',
+      duration: 1000
+    });
+    var that = this;
+    
+    var voiceRemotePath = e.currentTarget.dataset.voice;
+    
+    var voicePath = fileSys.downloadFile(that,decodeURI(voiceRemotePath),'audio');
+    that.data.voicePath = voicePath;
+    
+    wx.playVoice({
+      filePath: that.data.voicePath,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+
+  },
+
+  showPhoto:function(e){
+    var photo = decodeURIComponent(e.currentTarget.dataset.photo);
+    console.log("显示图片" + photo);
+    var photoPath = fileSys.downloadFile(this,photo,'image');
+    this.data.photo_path = photoPath;
+    this.setData({
+      hide_textarea: true,
+      hide_show_image_page: false,
+      // img_src: photo_path,
+    });
+
+  },
+  showDraw:function(e){
+    var draw = decodeURIComponent(e.currentTarget.dataset.draw);
+    console.log("显示手绘" + draw);
+    var drawPath = fileSys.downloadFile(this,draw,'image');
+    this.data.draw_path = drawPath;
+    this.setData({
+      hide_textarea: true,
+      hide_show_image_page: false,
+      // img_src: draw_path,
+    });
+  },
+  returnLoadImagePage:function(e){
+    this.setData({
+      hide_show_image_page: true,
+      img_src:null,
+      // hide_textarea : false,
+    });
+  },
+
+
+
 
   onReady:function(){
     // 页面渲染完成

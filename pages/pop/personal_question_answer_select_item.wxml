@@ -38,7 +38,7 @@
         <view class="multi_tips">
             <view wx:if="{{select_item.answercontent.audio[0] != null}}" class="voice" >
                 
-                <view class="bubble" data-select_item_voice='{{select_item.answercontent.audio[0]}}' bindtap="playVoiceRecord">
+                <view class="bubble" data-voice='{{select_item.answercontent.audio[0]}}' bindtap="playVoiceRecord">
                     <view class="bubble-tail"></view>
                     <view class="voice-wave"></view>
                     <view>{{select_item.answercontent.audio[1]}}秒</view>
@@ -47,14 +47,16 @@
             </view>
 
             <view wx:if="{{select_item.answercontent.img[0] != null}}" class="photo" >
-                <view class="bubble-photo" data-select_item_photo='{{select_item.answercontent.img[0]}}' bindtap="showPhoto">
-                    <view>照片</view>
+                <view  data-photo='{{select_item.answercontent.img[0]}}' bindtap="showPhoto">
+                    <!--<view>照片</view>-->
+                    <image class="preview_img_classic" src="{{preview_img_url + select_item.answercontent.img[0]}}"></image>
                 </view>
             </view>
 
             <view wx:if="{{select_item.answercontent.draw[0] != null}}" class="draw" >
-                <view class="bubble-draw" data-select_item_photo='{{select_item.answercontent.draw[0]}}' bindtap="showDraw">
-                    <view>手绘</view>
+                <view  data-draw='{{select_item.answercontent.draw[0]}}' bindtap="showDraw">
+                    <!--<view>手绘</view>-->
+                    <image class="preview_img_classic" src="{{preview_img_url + select_item.answercontent.draw[0]}}"></image>
                 </view>
             </view>
 
