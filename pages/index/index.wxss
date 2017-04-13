@@ -40,6 +40,12 @@
   color: #ECEBF4;
 }
 
+.preview_img_classic{
+    width: 30px;
+    height: 30px;
+
+}
+
 @import "../listView/index_page_list.wxss";
 @import "../common/index_page_filter.wxss";
 @import "../pop/index_page_subject_list.wxss";
