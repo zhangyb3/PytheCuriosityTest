@@ -146,7 +146,7 @@
 }
 
 .personal_operation_zone{
-    margin-top: 10px;
+    margin-top: 20rpx;
     width: 100%;
 
     display: flex;
@@ -163,11 +163,11 @@
     flex-direction: row;
     /*justify-content: flex-end;*/
     line-height: 94rpx;
-    width: 95%;
-    margin-left: 40rpx;
+    width: 100%;
+    /*margin-left: 40rpx;*/
     border-bottom: 1px solid #EEE;
     border-width: 1px;
-    margin-right: 20rpx;
+    /*margin-right: 20rpx;*/
     /*background:url(../../images/icon_more@2x.png) no-repeat right center;*/
 
 }
@@ -191,13 +191,14 @@
     width: 96%;
     line-height: 94rpx;
     font-size: 30rpx;
+    margin-left: 40rpx;
     color: #333333;
     text-align: left;
     
 }
 
 .about_us_zone{
-    margin-top: 10px;
+    margin-top: 20rpx;
     width: 100%;
 
     display: flex;

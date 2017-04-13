@@ -8,6 +8,7 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1rpx solid #EEE;
 
 }
 .middle_line{
@@ -26,7 +27,7 @@
     /*border: 1px;*/
     color: #333333;
     background-color: white;
-    border-bottom: 1rpx solid #D9D9D9;
+    
     justify-content: center;
     align-items: center;
     font-size: 30rpx;

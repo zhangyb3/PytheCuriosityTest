@@ -49,7 +49,7 @@
     margin-left: 30rpx;
     margin-right: 0rpx;
     height: auto;
-    font-size: 28rpx;
+    font-size: 30rpx;
     text-overflow: ellipsis;
     overflow: hidden;
     word-wrap: break-word;
@@ -261,7 +261,7 @@ line-height: 27rpx;
     height:5px;
 }
 .interval_inder{
-    height:30rpx;
+    height:20rpx;
     background-color: #F5F5F5;
 }
 

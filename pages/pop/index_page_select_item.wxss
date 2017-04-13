@@ -38,7 +38,7 @@
 .cacel_img{
     position: absolute;
     right: 20rpx;
-    top:10rpx;
+    top:20rpx;
     width: 48rpx;
     height: 48rpx;
 }
@@ -61,11 +61,12 @@
 
 .select_question_content {
     display: flex;
-    padding-left: 60rpx;
-    padding-right: 30rpx;
-    margin-top: 50rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    /*margin-top: 50rpx;*/
     text-align: left;
-    font-size: 28rpx;
+    font-size: 30rpx;
+    color: #333333;
     
 }
 
@@ -84,22 +85,24 @@
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
+    width: 100%;
     /*border-top: 1px solid #EEE;*/
     /*border-bottom: 1px solid #EEE;*/
-        padding: 0 40rpx;
+        /*padding: 0 40rpx;*/
     
 
     
 }
 
 .select_answer_content{
-    margin-top: 53rpx;
-    margin-left: 20rpx;
-    margin-right: 20rpx;
+    /*margin-top: 53rpx;*/
+    display: flex;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
     min-height: 80rpx;
     /*line-height: 30rpx;*/
     color: #333333;
-    font-size: 28rpx;
+    font-size: 30rpx;
     /*background: black;*/
 }
 
@@ -206,8 +209,8 @@
     height: 90rpx;
     display: flex;
     flex-direction: row;
-    margin-left: 20rpx;
-    margin-right: 20rpx;
+    margin-left: 40rpx;
+    margin-right: 40rpx;
     justify-content: space-between;
     
 }

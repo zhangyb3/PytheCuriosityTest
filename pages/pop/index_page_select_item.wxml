@@ -17,7 +17,7 @@
         </view>
 
         <view class="select_question_wrapper">
-                <text class="question_content">{{ question.questioncontent.text[0] }}</text>
+                <text class="select_question_content">{{ question.questioncontent.text[0] }}</text>
                 
         </view>
 
@@ -35,15 +35,15 @@
                 </view>
 
                 <view wx:if="{{question.questioncontent.img[0] != null}}" class="photo" >
-                    <view class="bubble-photo" data-photo='{{question.questioncontent.img[0]}}' bindtap="showPhoto">
-                        <view>照片</view>
-                    </view>
+                    <image class="bubble-photo" src='{{question.questioncontent.img[0]}}' bindtap="showPhoto">
+                        <!--<view>照片</view>-->
+                    </image>
                 </view>
 
                 <view wx:if="{{question.questioncontent.draw[0] != null}}" class="draw" >
-                    <view class="bubble-draw" data-draw='{{question.questioncontent.draw[0]}}' bindtap="showDraw">
-                        <view>手绘</view>
-                    </view>
+                    <image class="bubble-draw" src='{{question.questioncontent.draw[0]}}' bindtap="showDraw">
+                        <!--<view>手绘</view>-->
+                    </image>
                 </view>
 
             </view>
@@ -84,15 +84,15 @@
                         </view>
 
                         <view wx:if="{{answer.answercontent.img[0] != null}}" class="photo" >
-                            <view class="bubble-photo" data-photo='{{answer.answercontent.img[0]}}'bindtap="showPhoto">
-                                <view>照片</view>
-                            </view>
+                            <image class="bubble-photo" data-photo='{{answer.answercontent.img[0]}}'bindtap="showPhoto">
+                                <!--<view>照片</view>-->
+                            </image>
                         </view>
 
                         <view wx:if="{{answer.answercontent.draw[0] != null}}" class="photo" >
-                            <view class="bubble-draw" bindtap="showDraw" data-draw='{{answer.answercontent.draw[0]}}' >
-                                <view>手绘</view>
-                            </view>
+                            <image class="bubble-draw" bindtap="showDraw" data-draw='{{answer.answercontent.draw[0]}}' >
+                                <!--<view>手绘</view>-->
+                            </image>
                         </view>
 
                     </view>
