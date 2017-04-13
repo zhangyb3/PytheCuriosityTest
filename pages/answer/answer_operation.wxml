@@ -25,8 +25,8 @@
         </view>
 
         <!--<view class="border_tab"></view>-->
-
-        <view class="multi_tips">
+<view class="background_white">
+    <view class="multi_tips">
             <view wx:if="{{answer_question.audio_path != null}}" class="voice" >
                 
                 <view class="bubble" data-question_voice='{{answer_question.audio_path}}' bindtap="playQuestionVoiceRecord">
@@ -52,7 +52,7 @@
             </view>
 
         </view>
-
+</view>
         
         <view class="border_tab_white"></view>
 
@@ -65,13 +65,13 @@
             
             <view class="border_tab"></view>
 <view class="select_knowledge_container">
-            <text class="select_knowledge_button" bindtap="selectKnowledge">
+            <button class="select_knowledge_button" bindtap="selectKnowledge">
                 选择知识点：{{knowledge_point}}
-            </text>
+            </button>
             
         </view>
             <view class="answer_content_zone" hidden='{{hide_textarea}}'>
-                <textarea class="answer_content_text_input" placeholder="请输入答案..."  bindinput="getAnswerText" placeholder-style="font-size:28rpx; color:#333333"/>
+                <textarea class="answer_content_text_input" placeholder="请输入答案..."  bindinput="getAnswerText" placeholder-style="font-size:30rpx; color:#999999"/>
             </view>
 
             <view class="border_tab"></view>

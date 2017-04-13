@@ -229,7 +229,7 @@
 }
 
 .preview_img_classic{
-    width: 30px;
-    height: 30px;
+    width: 151rpx;
+    height: 118rpx;
 
 }

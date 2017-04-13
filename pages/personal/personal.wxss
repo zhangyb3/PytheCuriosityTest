@@ -24,6 +24,7 @@
     align-items: center;
     height: 202rpx;
     width: 100%;
+    justify-content: space-between;
     position: relative;
     z-index: 1;
 }
@@ -40,41 +41,48 @@
 }
 
 .personal_description_image_zone{
+    display: flex;
+    position: relative;
     height: 100%;
-    width: 20%;
+    width: 150rpx;
+    /*align-items: center;*/
     /*justify-content: space-around;*/
     /*align-items: center;*/
     /*align-content: center;*/
-    position: relative;
+    
 }
 
 .personal_avatar_container{
-    width: 88rpx;
-    height: 88rpx;
-    margin: auto;
+    display: flex;
+    width: 150rpx;
+    height: 150rpx;
+    /*margin: auto;*/
     
 }
 
 .personal_avartar_image{
-    margin-top: 50rpx;
-    width: 100%;
-    height: 100%;
-    border-radius: 44rpx;
+    margin-top: 35rpx;
+    margin-left: 30rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
 
 }
 
 .personal_description_text_zone{
-    height: 100%;
-    width: 75%;
     display: flex;
-    position: relative;
+    height: 100%;
+    /*margin-right: 30rpx;*/
+    width: auto;
+    left: 190rpx;
+    position: absolute;
     flex-direction: column;
 }
 
 .personal_nick_name{
     margin-top: 54rpx;
-    font-size: 28rpx;
-    color: #333333;
+    font-size: 30rpx;
+    color: #666666;
 }
 
 .personal_summary_wrap{
@@ -102,17 +110,33 @@
     font-size: 28rpx;
 }
 
+.personal_description_revise_zone{
+    display: flex;
+    height: 100%;
+    width: 100rpx;
+    /*background-color: yellow;*/
+}
+
 .person_edit_icon_view{
-    height: 5%;
-    color: black;
-    margin-right:0px;
+    /*position: absolute;*/
+    display: flex;
+    /*right: 30rpx;*/
+    margin-top: 55rpx;
+    margin-left: 20rpx;
+    height: 50rpx;
+    width: 50rpx;
+    /*background-color: black;*/
+    /*color: black;*/
+    /*margin-right:0px;*/
     /*width: 300rpx;*/
     /*background-color: white;*/
 }
 
 .person_edit_icon{
     /*background: url(../../images/icon_information@2x.png) no-repeat center center;*/
-    position: absolute;
+    /*position: absolute;*/
+    display: flex;
+
     /*padding: 0px;*/
     right: 0px;
     /*padding-right: 10;*/
@@ -127,6 +151,8 @@
 .person_edit_icon image{
     position: absolute;
     /*left: 0px;*/
+
+    left: 0rpx;
     right: 0px;
     height: 45rpx;
     width: 44rpx;
@@ -138,12 +164,12 @@
     border:none;
 }
 
-.personal_description_revise_zone{
+/*.personal_description_revise_zone{
     height: 100%;
     width: 5%;
 
     align-items: center;
-}
+}*/
 
 .personal_operation_zone{
     margin-top: 20rpx;

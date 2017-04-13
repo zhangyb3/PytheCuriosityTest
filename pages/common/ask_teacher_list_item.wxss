@@ -30,8 +30,8 @@
 
 .teacher_icon{
     position: absolute;
-    width: 80rpx;
-    height: 80rpx;
+    width: 120rpx;
+    height: 120rpx;
     top: 36rpx;
     left: 30rpx;
     border-radius: 50%;
@@ -40,7 +40,7 @@
 }
 
 .teacher_middle_wrapper{
-    margin-left: 130rpx;
+    margin-left: 170rpx;
     /*height: 120px;*/
     height: auto;
     display: flex;

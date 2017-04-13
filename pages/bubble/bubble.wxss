@@ -18,7 +18,7 @@
     display:inline-block;
     width: 150rpx;
     height: 118rpx;
-    margin-left: 36rpx;
+    /*margin-left: 36rpx;*/
     text-align: center;
 }
 
