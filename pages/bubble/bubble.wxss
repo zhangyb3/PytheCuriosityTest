@@ -3,15 +3,29 @@
 .voice{
     display:inline-block;
     position: relative;
+    height: 100rpx;
+    margin-top: 0rpx;
 }
 
 .photo{
     display:inline-block;
+    width: 150rpx;
+    height: 118rpx;
+    
+}
+
+.draw{
+    display:inline-block;
+    width: 150rpx;
+    height: 118rpx;
+    margin-left: 36rpx;
+    text-align: center;
 }
 
 .multi_tips{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
 .bubble{
@@ -19,18 +33,19 @@
     display: block;
     /*background-color: #1ccda6;*/
     background-color: #28aef5;
-    line-height: 30px;
-    height: 30px;
-    border-radius: 15px;
+    line-height: 60rpx;
+    height: 60rpx;
+    border-radius: 30rpx;
     text-align: center;
-    min-width: 6rem;
+    min-width: 200rpx;
     color: black;
     font-size: .8rem;
     text-decoration: none;
     position: relative;
     margin-right: .35rem;
-    margin-left: .35rem;
-    margin-top: 5px;
+    margin-top: 30rpx;
+    /*margin-left: .35rem;
+    margin-top: 5px;*/
 }
 
 .bubble-blue {
@@ -38,11 +53,13 @@
 }
 
 .bubble-tail {
-    width: .83rem;
-    height: 1.185rem;
+    width: 30rpx;
+    height: 30rpx;
     position: absolute;
     bottom: 0px;
-    left: -.3rem;
+    /*left: -.3rem;*/
+    left: -10rpx;
+    top: 40rpx;
     background-image: url('/images/bubble-tail-blue.png');
     background-size: .83rem 1.185rem;
 }
@@ -54,30 +71,37 @@
     height: .8rem;
     background-image: url('/images/bubble-wave.png');
     background-size: .8rem;
-    top: .65rem;
+    top: 16rpx;
     left: .65rem;
 }
 
 .bubble-photo{
     float: none;
     display: block;
-    background-image: url('/images/bubble-frame.png');
-    background-color: lightblue;
-    line-height: 30px;
-    height: 30px;
-    text-align: center;
-    min-width: 6rem;
-    color: black;
-    font-size: .8rem;
-    text-decoration: none;
+    /*background-image: url('/images/bubble-frame.png');*/
+    /*background-color: lightblue;*/
+    /*line-height: 30px;*/
+    height: 100%;
+    /*height: 30px;*/
+    /*text-align: center;*/
+    /*min-width: 6rem;*/
+    width: auto;
+    /*color: black;*/
+    /*font-size: .8rem;*/
+    /*text-decoration: none;*/
     position: relative;
-    margin-right: .35rem;
-    margin-left: .35rem;
-    margin-top: 5px;
+    /*margin-right: .35rem;*/
+    /*margin-left: .35rem;*/
+    /*margin-top: 5px;*/
 }
 
 .bubble-draw{
     float: none;
+    display: block;
+    height: 100%;
+    width: auto;
+    position: relative;
+    /*float: none;
     display: block;
     background-image: url('/images/bubble-frame.png');
     background-color: palegreen;
@@ -91,5 +115,5 @@
     position: relative;
     margin-right: .35rem;
     margin-left: .35rem;
-    margin-top: 5px;
+    margin-top: 5px;*/
 }
