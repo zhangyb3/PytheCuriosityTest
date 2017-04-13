@@ -25,6 +25,11 @@
     </view>
 
     <view class="personal_operation_zone">
+<view class="personal_ask personal_operation_item" bindtap='selectPersonalAsk'>
+            <text class="personal_ask personal_operation_item_text" src="../../images/icon_money_1@2x.png">钱包</text>
+            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+        </view>
+
         <view class="personal_ask personal_operation_item" bindtap='selectPersonalAsk'>
             <text class="personal_ask personal_operation_item_text" src="../../images/icon_money_1@2x.png">我的问</text>
             <image src="../../images/personal_icon_arrow_right@2x.png"></image>
