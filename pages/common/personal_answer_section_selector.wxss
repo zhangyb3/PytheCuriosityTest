@@ -20,7 +20,7 @@
     line-height: 100rpx;
     justify-content: center;
     align-items: center;
-    font-size: 30rpx;
+    font-size: 34rpx;
     color: #333333;
 }
 
@@ -28,7 +28,7 @@
     line-height: 100rpx;
     color: #3AA4F1;
     background-color: white;
-    font-size: 30rpx;
+    font-size: 34rpx;
     /*color: #333333;*/
 }
 

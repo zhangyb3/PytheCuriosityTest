@@ -88,8 +88,8 @@ answer_tab_white{
 }
 ._answer_money_star image{
     padding-top: 10rpx;
-    height:34rpx;
-    width:40rpx;
+    height:33rpx;
+    width:30rpx;
     margin:4px 0 4px 5px;
 }
 

@@ -125,27 +125,20 @@ button_wrap{
     height: 76rpx;
     line-height:76rpx;
     -webkit-text-fill-color: #3AA4F1;
-    background: none;
-    /*color: purple;*/
     text-align: center;
-    /*border-radius:0 8rpx 8rpx 0;*/
     border-top :1px solid #CCCCCC;
     border-bottom :1px solid #CCCCCC;
     border-right :1px solid #CCCCCC;
     width:210rpx;
-    /*margin-left:10rpx;*/
     padding: 0;
-    /*border: 0;*/
     border-radius: 0 0 0 0;
+    background: none;
     
 }
 
 .send_verification_code_button:after{
     border:0;
     border-radius: 0 0 0 0;
-    /*border-top :2px solid #CCCCCC;
-    border-bottom :3px solid #CCCCCC;
-    border-right :3px solid #CCCCCC;*/
 }
 
 .verification_code_container{
