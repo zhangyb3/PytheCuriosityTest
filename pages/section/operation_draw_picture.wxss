@@ -100,7 +100,7 @@
     /*margin-bottom: 5px;*/
     background-color: #eeeeee;
     /*border-radius: 4px;*/
-    line-height: 70rpx;
+    line-height: 100rpx;
     width: 50%;
     color: #666666;
     font-size: 30rpx;

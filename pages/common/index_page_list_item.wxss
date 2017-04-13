@@ -26,14 +26,14 @@
 
 .preview_img_wrap{
     display: flex;
-    width: 300rpx;
-    height: 200rpx;
+    width: 146rpx;
+    height: 146rpx;
     /*overflow: hidden;*/
 
 }
 .preview_img{
-    width: 100%;
-    height: 100%;
+    width: 146rpx;
+    height: 146rpx;
     /*overflow: hidden;*/
 
 }
