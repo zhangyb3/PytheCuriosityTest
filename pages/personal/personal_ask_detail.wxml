@@ -52,9 +52,13 @@
         <template is="personal_question_answer_list" data='{{personal_question_answer_list,preview_img_url}}'></template>
     </view>
 
-
-    <view wx:if="{{personal_question_answer_list.length == 0}}">
-    暂时没有答案     </view>
+<view class="answer_interval"></view>
+    <view class="no_answe_wrap" wx:if="{{personal_question_answer_list.length == 0}}">
+    <!--<view class="no_answer_wrap">-->
+    <text class="no_answer_wrap_content">
+    暂时没有答案...
+    </text>
+    </view> 
 
 
     <view class="select_best_answer_commit">

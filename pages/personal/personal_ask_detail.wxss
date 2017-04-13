@@ -27,12 +27,18 @@
     
 }
 
+.multi_tips{
+    width: auto;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+
 .personal_question_text_container{
     /*height: 100px;*/
     /*overflow-x: hidden; 
     overflow-y: auto;*/
     display: flex;
-    align-items: center;
+    /*align-items: center;*/
     
     height: 240rpx;
 }
@@ -43,7 +49,7 @@
     height: auto;
     margin-left: 20rpx;
     margin-right: 20rpx;
-    font-size: 28rpx;
+    font-size: 30rpx;
 
     color: #333333;
 }
@@ -94,6 +100,12 @@
     height:10px;
 }
 
+.answer_interval{
+    height:20rpx;
+    background-color: #f5f5f5;
+    width: 100%;
+}
+
 .ask_answer_interval{
     height: 30px;
 }
@@ -106,6 +118,26 @@
     left: 0;
     bottom: 0;
     
+}
+
+.no_answe_wrap{
+    display: flex;
+    width: 100%;
+    height: 100rpx;
+    background-color: #fff;
+    text-align: center;
+}
+
+.no_answer_wrap_content{
+    display: flex;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    width: auto;
+    height: 100rpx;
+    /*line-height: 100rpx;*/
+    font-size: 30rpx;
+    line-height: 30rpx;
+    color: #333333;
 }
 
 .best_answer_commit_button{

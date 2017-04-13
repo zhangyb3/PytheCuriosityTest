@@ -153,8 +153,8 @@
 }
 
 .preview_img_classic{
-    width: 30px;
-    height: 30px;
+    width: 150rpx;
+    height: 118rpx;
 
 }
 

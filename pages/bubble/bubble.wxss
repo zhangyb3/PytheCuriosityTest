@@ -4,7 +4,7 @@
     display:inline-block;
     position: relative;
     height: 100rpx;
-    margin-top: 0rpx;
+    margin-top: 40rpx;
 }
 
 .photo{
@@ -59,7 +59,7 @@
     bottom: 0px;
     /*left: -.3rem;*/
     left: -10rpx;
-    top: 40rpx;
+    top: 0rpx;
     background-image: url('/images/bubble-tail-blue.png');
     background-size: .83rem 1.185rem;
 }
