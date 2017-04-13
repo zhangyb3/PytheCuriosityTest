@@ -21,7 +21,7 @@
             </view>
             
             <view class="question_wrapper">
-                <text class="person_ask_question_content">questionid:{{ item.questionid }},studentid:{{ item.studentid }},{{item.questioncontent.text[0]}}</text>   
+                <text class="person_ask_question_content">{{item.questioncontent.text[0]}}</text>   
             </view>
 </view>
 
