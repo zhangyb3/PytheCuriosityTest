@@ -14,8 +14,15 @@
             <view class="answer_page_select_item_content_wrap">
 
             <view class="preview_img_wrap">
-            <image class="preview_img" src="{{preview_img_url+item.questioncontent.img[0]}}">
+            <!--<image class="preview_img" src="{{preview_img_url+item.questioncontent.img[0]}}">
+            </image>-->
+
+            <image class="preview_img" wx:if="{{item.question.questioncontent.img[0] != null}}" src="{{item.question.questioncontent.img[0]}}">
             </image>
+
+            <image class="preview_img" wx:if="{{item.question.questioncontent.img[0] == null}}" src="../../images/index_zhanwei@2x.png">
+            </image>
+
             </view>
 
             <view class="question_wrapper">
