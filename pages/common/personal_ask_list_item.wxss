@@ -236,3 +236,9 @@
 .border_tab{
     height:5px;
 }
+
+.preview_img_classic{
+    width: 30px;
+    height: 30px;
+
+}

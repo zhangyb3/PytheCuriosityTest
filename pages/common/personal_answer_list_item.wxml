@@ -28,14 +28,16 @@
                 </view>
 
                 <view wx:if="{{item.questioncontent.img[0] != null}}" class="photo" >
-                    <view class="bubble-photo" data-question_photo='{{item.questioncontent.img[0]}}' >
-                        <view>照片</view>
+                    <view  data-question_photo='{{item.questioncontent.img[0]}}' >
+                        <!--<view>照片</view>-->
+                        <image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.img[0]}}"></image>
                     </view>
                 </view>
 
                 <view wx:if="{{item.questioncontent.draw[0] != null}}" class="photo" >
-                    <view class="bubble-draw" data-question_photo='{{item.questioncontent.draw[0]}}' >
-                        <view>手绘</view>
+                    <view  data-question_photo='{{item.questioncontent.draw[0]}}' >
+                        <!--<view>手绘</view>-->
+                        <image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.draw[0]}}"></image>
                     </view>
                 </view>
 

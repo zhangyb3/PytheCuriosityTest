@@ -32,6 +32,7 @@ Page({
       }
     ],
 
+    preview_img_url: config.PytheFileServerURL ,
     hide_show_image_page: true,
     
   },

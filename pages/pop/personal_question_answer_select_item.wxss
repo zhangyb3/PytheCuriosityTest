@@ -152,3 +152,9 @@
     background-size: 18px; 
 }
 
+.preview_img_classic{
+    width: 30px;
+    height: 30px;
+
+}
+

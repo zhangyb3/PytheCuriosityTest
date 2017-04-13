@@ -33,7 +33,7 @@ Page({
 
     hide_personal_answer_list:false,
     hide_personal_not_answer_list:true,
-
+    preview_img_url: config.PytheFileServerURL ,
   },
   onLoad:function(parameters){
     console.log("from personal");

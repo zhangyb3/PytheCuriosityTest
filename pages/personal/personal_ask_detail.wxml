@@ -20,7 +20,7 @@
         <view class="multi_tips">
             <view wx:if="{{question.questioncontent.audio[0] != null}}" class="voice" >
                 
-                <view class="bubble" data-question_voice='{{question.questioncontent.audio[0]}}' bindtap="playQuestionVoiceRecord">
+                <view class="bubble" data-voice='{{question.questioncontent.audio[0]}}' bindtap="playVoiceRecord">
                     <view class="bubble-tail"></view>
                     <view class="voice-wave"></view>
                     <view>{{question.questioncontent.audio[1]}}秒</view>
@@ -28,15 +28,17 @@
 
             </view>
 
-            <view wx:if="{{question.questioncontent.img[0] != null}}" class="photo" >
-                <view class="bubble-photo" data-question_photo='{{question.questioncontent.audio[0]}}' >
-                    <view>照片</view>
+            <view wx:if="{{question.questioncontent.img[0] != null}}" class="photo" bindtap="showPhoto">
+                <view  data-photo='{{question.questioncontent.img[0]}}' >
+                    <!--<view>照片</view>-->
+                    <image class="preview_img_classic" src="{{preview_img_url + question.questioncontent.img[0]}}"></image>
                 </view>
             </view>
 
-            <view wx:if="{{question.questioncontent.draw[0] != null}}" class="photo" >
-                <view class="bubble-draw" data-question_photo='{{question.questioncontent.draw[0]}}' >
-                    <view>手绘</view>
+            <view wx:if="{{question.questioncontent.draw[0] != null}}" class="photo" bindtap="showDraw">
+                <view  data-draw='{{question.questioncontent.draw[0]}}' >
+                    <!--<view>手绘</view>-->
+                    <image class="preview_img_classic" src="{{preview_img_url + question.questioncontent.draw[0]}}"></image>
                 </view>
             </view>
 
@@ -47,8 +49,13 @@
     <!--<view class="ask_answer_interval"></view>-->
 
     <view class="personal_question_answer_zone">
-        <template is="personal_question_answer_list" data='{{personal_question_answer_list}}'></template>
+        <template is="personal_question_answer_list" data='{{personal_question_answer_list,preview_img_url}}'></template>
     </view>
+
+
+    <view wx:if="{{personal_question_answer_list.length == 0}}">
+    暂时没有答案     </view>
+
 
     <view class="select_best_answer_commit">
         <button class="best_answer_commit_button" bindtap="commitBestAnswer">
@@ -57,7 +64,7 @@
     </view>
 
     <view class="personal_question_answer_select_item_container" hidden='{{hide_select_answer}}'>
-        <template is="personal_question_answer_select_item" data="{{select_item}}"></template>
+        <template is="personal_question_answer_select_item" data="{{select_item,preview_img_url}}"></template>
     </view>
 
     
