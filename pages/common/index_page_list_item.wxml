@@ -25,7 +25,7 @@
             </image>-->
             <view class="question_wrapper">
             <!--<view class="border_tab_index_white"></view>-->
-                <text class="question_content">questionid:{{ item.questionid }},question_text_content:{{item.questioncontent.text[0]}}</text>   
+                <text class="question_content">{{item.questioncontent.text[0]}}</text>   
             </view>
             </view>
             
