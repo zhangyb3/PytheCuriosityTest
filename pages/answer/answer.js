@@ -46,6 +46,7 @@ Page({
       },
     },
 
+    preview_img_url: config.PytheFileServerURL ,
     hide_register_lock_cover: false,
   },
   onLoad:function(options){

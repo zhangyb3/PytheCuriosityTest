@@ -280,6 +280,12 @@ color: #999999;
     height: 200rpx;
 }
 
+.preview_img_classic{
+    width: 30px;
+    height: 30px;
+
+}
+
 @import "../section/operation_record_sound.wxss";
 @import "../section/operation_take_photo.wxss";
 @import "../section/operation_draw_picture.wxss";

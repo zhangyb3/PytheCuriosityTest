@@ -5,6 +5,7 @@ var fileSys = require("../../utils/file.js");
 var base = require("../../utils/base.js");
 var pay = require("../../utils/pay.js");
 var user = require("../../utils/user.js");
+var config = require("../../utils/config.js");
 
 Page({
   data:{
@@ -43,6 +44,8 @@ Page({
       },
     ],
     subject_index:0,
+
+    preview_img_url: config.PytheFileServerURL ,
 
     hasPaidReward: false,
   },

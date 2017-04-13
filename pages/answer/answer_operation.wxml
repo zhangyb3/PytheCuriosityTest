@@ -38,14 +38,16 @@
             </view>
 
             <view wx:if="{{answer_question.photo_path != null}}" class="photo" >
-                <view class="bubble-photo" data-question_photo='{{answer_question.photo_path}}' bindtap="showQuestionPhoto">
-                    <view>照片</view>
+                <view  data-question_photo='{{answer_question.photo_path}}' bindtap="showQuestionPhoto">
+                    <!--<view>照片</view>-->
+                    <image class="preview_img_classic" src="{{preview_img_url+answer_question.photo_path}}"></image>
                 </view>
             </view>
 
             <view wx:if="{{answer_question.draw_path != null}}" class="draw" >
-                <view class="bubble-draw" data-question_draw='{{answer_question.draw_path}}' bindtap="showQuestionDraw">
-                    <view>手绘</view>
+                <view  data-question_draw='{{answer_question.draw_path}}' bindtap="showQuestionDraw">
+                    <!--<view>手绘</view>-->
+                    <image class="preview_img_classic" src="{{preview_img_url+answer_question.draw_path}}"></image>
                 </view>
             </view>
 
@@ -88,14 +90,16 @@
             </view>
 
             <view wx:if="{{question_answer.photo_path != null}}" class="photo" >
-                <view class="bubble-photo" data-answer_photo='{{question_answer.photo_path}}' bindtap="showAnswerPhoto">
-                    <view>照片</view>
+                <view  data-answer_photo='{{question_answer.photo_path}}' bindtap="showAnswerPhoto">
+                    <!--<view>照片</view>-->
+                    <image class="preview_img_classic" src="{{question_answer.photo_path}}"></image>
                 </view>
             </view>
 
             <view wx:if="{{question_answer.draw_path != null}}" class="draw" >
-                <view class="bubble-draw" data-answer_draw='{{question_answer.draw_path}}' bindtap="showAnswerDraw">
-                    <view>手绘</view>
+                <view  data-answer_draw='{{question_answer.draw_path}}' bindtap="showAnswerDraw">
+                    <!--<view>手绘</view>-->
+                    <image class="preview_img_classic" src="{{question_answer.draw_path}}"></image>
                 </view>
             </view>
 
