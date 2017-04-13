@@ -181,12 +181,14 @@
 .collect_icon_img{
     /*display: flex;*/
     /*margin-left: 10rpx;*/
+    margin-top: 20rpx;
     width: 34rpx;
     height: 40rpx;
     line-height: 40rpx;
 }
 
 .collect_num{
+    margin-top: 20rpx;
     font-size: 28rpx;
     color: #999999;
     margin-left: 10rpx;
@@ -196,10 +198,12 @@
 .reward_icon_img{
     width: 40rpx;
     height: 40rpx;
+    margin-left: 20rpx;
+    margin-top: 20rpx;
 }
 
 .operation_zone{
-    height: 60rpx;
+    height: 90rpx;
     display: flex;
     flex-direction: row;
     margin-left: 20rpx;
@@ -256,8 +260,17 @@
     background-size: 18px; 
 }
 
-.reward_answer:before{
+/*.reward_answer:before{
     background-image: url(../../images/money.png);
     background-size: 18px; 
+}*/
+
+.reward_answer{
+width: 60rpx;
+height: 90rpx;
+/*margin-top: 20rpx;*/
+/*margin-right: 0rpx;*/
+/*padding-left: 20rpx;*/
+
 }
 
