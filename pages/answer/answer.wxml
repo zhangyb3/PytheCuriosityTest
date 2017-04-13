@@ -26,7 +26,7 @@
   
 
     <view class="answer_page_list_container" >
-      <template is="answer_page_list" data="{{questionsForAnswer}}"></template>
+      <template is="answer_page_list" data="{{questionsForAnswer,preview_img_url}}"></template>
     </view>
 
     <!--<view class="list_bottom"></view>-->

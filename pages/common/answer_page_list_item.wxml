@@ -17,7 +17,7 @@
             <!--<image class="preview_img" src="{{preview_img_url+item.questioncontent.img[0]}}">
             </image>-->
 
-            <image class="preview_img" wx:if="{{item.question.questioncontent.img[0] != null}}" src="{{item.question.questioncontent.img[0]}}">
+            <image class="preview_img" wx:if="{{item.question.questioncontent.img[0] != null}}" src="{{preview_img_url+item.question.questioncontent.img[0]}}">
             </image>
 
             <image class="preview_img" wx:if="{{item.question.questioncontent.img[0] == null}}" src="../../images/index_zhanwei@2x.png">

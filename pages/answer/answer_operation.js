@@ -61,6 +61,7 @@ Page({
     ],
     knowledge2_index:0,
 
+    preview_img_url: config.PytheFileServerURL ,
   },
   onLoad:function(parameters){
     console.log("from answer");
@@ -81,6 +82,8 @@ Page({
 
     var answer_question = parameters; 
     answer_question.text_content = decodeURI(answer_question.text_content);
+    answer_question.photo_path = decodeURIComponent(answer_question.photo_path);
+    answer_question.draw_path = decodeURI(answer_question.draw_path);
     this.data.question_answer.questionId = answer_question.questionid;
     this.setData({
       answer_question : answer_question,
