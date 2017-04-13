@@ -22,6 +22,7 @@
     align-items: center;
     overflow-x: hidden; 
     /*overflow-y: auto;*/
+    /*justify-content: space-between*/
     height: 188rpx;
     position: relative;
     z-index: 1;
@@ -31,7 +32,7 @@
     position: absolute;
     width: 80rpx;
     height: 80rpx;
-    top: 30rpx;
+    top: 36rpx;
     left: 30rpx;
     border-radius: 50%;
     
@@ -52,7 +53,7 @@
     margin-top: 30rpx;
     color: #0F0F0F;
     height: auto;
-    font-size: 34rpx;  
+    font-size: 30rpx;  
     /*font-weight:bold; */
 }
 .teacher_brief{
@@ -61,23 +62,25 @@
     margin-top: 20rpx;
     /*height: auto;*/
     min-height: 40rpx;
+    width: auto;
     /*margin-bottom: 15px;*/
     color: #999999;
 }
 
 .collect_icon_wrap{
-    height:28rpx;
+    margin-top: 10rpx;
+    height:50rpx;
     display:flex;
     flex-direction: row;
     margin-bottom: 10px;
-    line-height:28rpx;
+    line-height:50rpx;
     align-items: center;
     align-content: center;
     /*width: 33rpx;*/
 }
 .collect_icon_wrap image{
-    width:28rpx;
-    height: 33rpx;
+    width: 42rpx;
+    height: 50rpx;
     display:block;
     margin-bottom:8rpx;
     margin-right: 10rpx;
@@ -93,16 +96,36 @@
     /*align-items: center;
     justify-content: center;*/
     /*background: url(../../images/teacher_ask_icon.png) no-repeat center center;*/
-    position: absolute;
-    right: 20px;
-    bottom: 8px;
-    height: 20px;
-    width: 20px;
-    padding-top: 20rpx;
+    display: flex;
+    position: relative;
+    /*right: 20px;
+    bottom: 8px;*/
+    height: 62rpx;
+    width: 116rpx;
+    margin-right: 20rpx;
+    color: #3AA4F1;
+    font-size: 28rpx;
+    text-align: center;
+    border: 1px solid #3AA4F1;
     background: none;
-    /*align-items: center;*/
-    /*background-size: 30px 30px;*/
+    padding: 0;
+    border-radius: 31rpx;
+    background: none;
 }
+
+.teacher_ask_section text{
+    width: 100%;
+    height: 100%;
+    font-size: 28rpx;
+    color: #3AA4F1;
+    text-align: center;
+}
+
+.teacher_ask_section:after{
+    border:0;
+    border-radius: 0 0 0 0;
+}
+
 .teacher_ask_section image{
     /*padding-left: -10px;*/
     position: absolute;

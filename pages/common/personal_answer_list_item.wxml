@@ -10,7 +10,7 @@
                 </view>
                 <view class="answer_question_bottom">
                     <view class="answer_money_number"><image src="../../images/personal_icon_money@2x.png"></image><text class="collect_number_text">{{item.fee || 0}}</text></view>
-                    <view class="_answer_money_star"><image src="../../images/personal_icon_shoucang@2x.png"></image><text class="collect_number_text">{{item.likesnum || 0}}</text></view>
+                    <view class="_answer_money_star"><image src="../../images/question_icon_shoucang@2x.png"></image><text class="collect_number_text">{{item.likesnum || 0}}</text></view>
                 </view>
             </view>
 

@@ -185,13 +185,13 @@
     /*display: flex;*/
     /*margin-left: 10rpx;*/
     margin-top: 20rpx;
-    width: 34rpx;
-    height: 40rpx;
+    width: 43rpx;
+    height: 50rpx;
     line-height: 40rpx;
 }
 
 .collect_num{
-    margin-top: 20rpx;
+    margin-top: 26rpx;
     font-size: 28rpx;
     color: #999999;
     margin-left: 10rpx;
@@ -199,8 +199,8 @@
 }
 
 .reward_icon_img{
-    width: 40rpx;
-    height: 40rpx;
+    width: 52rpx;
+    height: 52rpx;
     margin-left: 20rpx;
     margin-top: 20rpx;
 }

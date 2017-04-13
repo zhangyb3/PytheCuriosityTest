@@ -20,13 +20,14 @@
     line-height: 100rpx;
     justify-content: center;
     align-items: center;
-    font-size: 30rpx;
+    font-size: 34rpx;
 }
 
 .bar_item.active{
     line-height: 100rpx;
     color: #3AA4F1;
     background-color: white;
+    font-size: 34rpx;
 }
 
 .person_like_middle_line{
