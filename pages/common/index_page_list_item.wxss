@@ -20,7 +20,7 @@
     flex-direction: row;
     margin-left: 40rpx;
     margin-right: 30rpx;
-    height: auto;
+    height: 122rpx;
 
 }
 
@@ -41,7 +41,7 @@
 .question_wrapper{
     display: flex;
     text-align: left;
-    height: 200rpx;
+    height: 150rpx;
 }
 
 .question_content {
