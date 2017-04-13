@@ -39,39 +39,21 @@
 }
 
 .question_wrapper{
-    /*border-top: 1px solid #EEE;*/
     display: flex;
     text-align: left;
-    /*height: auto;*/
     height: 200rpx;
-    /*width: 100%;*/
-    /*margin-left: 10rpx;
-    margin-right: 10rpx;*/
-    /*overflow-x: hidden; 
-    overflow: hidden;
-   word-wrap: break-word;
-    overflow-y: auto;
-
-    text-overflow: ellipsis;*/
 }
 
 .question_content {
     display: flex;
-    /*padding-top: 10rpx;*/
     margin-left: 30rpx;
     margin-right: 0rpx;
-    /*margin-right: 10px;*/
-    /*padding-right: 2rpx;*/
     height: auto;
     font-size: 28rpx;
-    /*开头空两格*/
-    /*-webkit-line-clamp: 2;*/
     text-overflow: ellipsis;
     overflow: hidden;
     word-wrap: break-word;
-
     color: #333333;
-    /*line-height:30rpx;*/
    
 }
 

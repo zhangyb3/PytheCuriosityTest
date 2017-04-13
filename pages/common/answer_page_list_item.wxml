@@ -10,13 +10,21 @@
              </view>
             <!--<view class="border_tab"/>-->
             <view class="dotted_line"></view>
-            <view class="question_wrapper">
-            <!--<view class="border_tab"/>-->
-                <text class="question_content">{{ item.question.questioncontent.text[0] }}</text>
-              
+            <view class="border_tab"/>
+            <view class="answer_page_select_item_content_wrap">
+
+            <view class="preview_img_wrap">
+            <image class="preview_img" src="{{preview_img_url+item.questioncontent.img[0]}}">
+            </image>
             </view>
 
-            <view class="multi_tips">
+            <view class="question_wrapper">
+                <text class="question_content">{{ item.question.questioncontent.text[0] }}
+                </text>
+            </view>
+            </view>
+
+            <!--<view class="multi_tips">
                 <view wx:if="{{item.question.questioncontent.audio[0] != null}}" class="voice" >
                     
                     <view class="bubble" data-question_voice='{{item.question.questioncontent.audio[0]}}' bindtap="playQuestionVoiceRecord">
@@ -25,27 +33,27 @@
                         <view>{{item.question.questioncontent.audio[1]}}秒</view>
                     </view>
 
-                </view>
+                </view>-->
 
-                <view wx:if="{{item.question.questioncontent.img[0] != null}}" class="photo" >
+                <!--<view wx:if="{{item.question.questioncontent.img[0] != null}}" class="photo" >
                     <view class="bubble-photo" data-question_photo='{{item.question.questioncontent.img[0]}}' >
                         <view>照片</view>
                     </view>
-                </view>
+                </view>-->
 
-                 <view wx:if="{{item.question.questioncontent.draw[0] != null}}" class="draw" >
+                 <!--<view wx:if="{{item.question.questioncontent.draw[0] != null}}" class="draw" >
                     <view class="bubble-draw" data-question_photo='{{item.question.questioncontent.draw[0]}}' >
                         <view>手绘</view>
                     </view>
                 </view>
 
-            </view>
-            <!--<view class="border_tab"/>-->
+            </view>-->
+            <view class="border_tab"/>
 
             <text class="time_zone">{{item.timer}}</text>
-<view class="border_tab_white"/>
-            <!--<view class="border_tab"/>-->
-      
+
+            <view class="border_tab"/>
+            <view class="border_tab_white"/>
         
 </view>
 

@@ -4,15 +4,26 @@
 
             <view class="border_tab"/>
 
-            <view class="question_wrapper">
+            <!--<view class="question_wrapper">
       
                 <text class="question_content">questionid:{{ item.questionid }},studentid:{{ item.studentid }},{{item.questioncontent.text[0]}}</text>
               
+            </view>-->
+
+            <view class="person_ask_page_select_item_content_wrap">
+            <view class="preview_img_wrap">
+            <image class="preview_img" src="{{item.questioncontent.img[0]}}">
+            </image>
             </view>
+            
+            <view class="question_wrapper">
+                <text class="person_ask_question_content">questionid:{{ item.questionid }},studentid:{{ item.studentid }},{{item.questioncontent.text[0]}}</text>   
+            </view>
+</view>
 
             <view class="border_tab"></view>
 
-            <view class="multi_tips">
+            <!--<view class="multi_tips">
                 <view wx:if="{{item.questioncontent.audio[0] != null}}" class="voice" >
                     
                     <view class="bubble" data-question_voice='{{item.questioncontent.audio[0]}}' bindtap="playQuestionVoiceRecord">
@@ -35,9 +46,9 @@
                     </view>
                 </view>
 
-            </view>
+            </view>-->
 
-            <view class="border_tab"/>
+            <!--<view class="border_tab"/>
 
             <view class="dotted_line"></view>
 
@@ -45,7 +56,7 @@
 
             
 
-            <view class="border_tab"/>
+            <view class="border_tab"/>-->
 
             
       
