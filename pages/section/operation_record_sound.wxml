@@ -43,7 +43,8 @@
  
  
     <view class="record-style">
-        <button class="btn-style" bindtouchstart="startRecordVoice" bindtouchend="finishRecordVoice">按住（重新）录音</button>
+        <button class="btn-style" bindtap="cleanRecordVoice"
+        bindtouchstart="startRecordVoice" bindtouchend="finishRecordVoice">按住（重新）录音</button>
     </view>
 
 </view>

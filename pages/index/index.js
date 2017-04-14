@@ -72,7 +72,7 @@ Page({
     var that = this;
     var searchParameters = {
       query: encodeURIComponent(this.data.search_content_text),
-      pageSize: 3,
+      pageSize: 5,
       pageNum: 1,
     };
 
@@ -154,55 +154,41 @@ Page({
     
 
     var that = this;
-    //先查是否已点赞过这道题
+    
+    //更新数据库
     wx.request({
-      url: config.PytheRestfulServerURL + '/user/question/likes',
+      url: config.PytheRestfulServerURL + '/likesnum',
       data: {
+        answerId: that.data.answers[answer_index].answerid,
         userId: wx.getStorageSync(user.UserID),
-        answerId: this.data.answers[answer_index].answerid,
+        questionId:  that.data.answers[answer_index].questionid,
       },
       method: 'GET', 
       success: function(res){
-        // 没点赞过
-        if(res.data.data == false)
+        // success
+        wx.showToast({
+          title: '点赞+1',
+          icon: 'success',
+          duration: 1000
+        });
+
+        if(res.data.data == 1)
         {
           that.data.answers[answer_index].likesnum++;
           that.setData({
             answers: that.data.answers,
           });
-          //更新数据库
-          wx.request({
-            url: config.PytheRestfulServerURL + '/likesnum',
-            data: {
-              answerId: that.data.answers[answer_index].answerid,
-              userId: wx.getStorageSync(user.UserID),
-              questionId:  that.data.answers[answer_index].questionid,
-            },
-            method: 'GET', 
-            success: function(res){
-              // success
-              wx.showToast({
-                title: '点赞+1',
-                icon: 'success',
-                duration: 1000
-              });
-            },
-            fail: function() {
-              // fail
-            },
-            complete: function() {
-              // complete
-            }
-          })
         }
+
       },
-      fail: function(res) {
+      fail: function() {
         // fail
       },
-      complete: function(res) {
+      complete: function() {
         // complete
       }
     })
+        
     
   },
 
@@ -319,7 +305,7 @@ Page({
     var that = this;
     var subjectParamters = {
       subjectId: e.currentTarget.dataset.subject_id,
-      pageSize: 3,
+      pageSize: 5,
       pageNum: 1,
       gradeId: wx.getStorageSync(user.GradeID),
     };
@@ -347,9 +333,9 @@ Page({
     var that = this;
     var simple_params = {
       gradeId : wx.getStorageSync(user.GradeID),
-      pageSize : 3,
+      pageSize : 5,
       pageNum : 1,
-      // subjectId: 1001,
+      
     };
     
     listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
