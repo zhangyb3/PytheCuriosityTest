@@ -230,9 +230,45 @@
     text-align: center;
 }
 .time_zone{
-    margin-left: 30rpx;
+    /*margin-left: 30rpx;*/
+    display: flex;
+    height: 35rpx;
+    line-height: 35rpx;
     font-size: 26rpx;
     color: #999999;
+}
+
+.bottom_wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 30rpx;
+    margin-right: 20rpx;
+    height: 40rpx;
+    background-color: #ffffff;
+}
+
+.price_wrap{
+    display: flex;
+    flex-direction: row;
+height: 35rpx;
+width: auto;
+}
+
+.price_image{
+/*margin-top: 50rpx;*/
+width: 35rpx;
+height: 35rpx;
+}
+
+.price_number{
+    display: flex;
+font-size: 28rpx;
+color: #3AA4F1;
+margin-left: 6rpx;
+height: 35rpx;
+line-height: 35rpx;
+margin-top: 6rpx;
 }
 
 .border_tab{

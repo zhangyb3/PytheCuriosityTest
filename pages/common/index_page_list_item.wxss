@@ -41,12 +41,14 @@
 .question_wrapper{
     display: flex;
     text-align: left;
+    margin-left: 20rpx;
+    /*margin-right: 20rpx;*/
     height: 150rpx;
 }
 
 .question_content {
     display: flex;
-    margin-left: 30rpx;
+    /*margin-left: 30rpx;*/
     margin-right: 0rpx;
     height: auto;
     font-size: 30rpx;

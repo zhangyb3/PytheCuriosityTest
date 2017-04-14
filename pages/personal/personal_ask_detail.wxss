@@ -40,7 +40,7 @@
     display: flex;
     /*align-items: center;*/
     
-    height: 240rpx;
+    height: auto;
 }
 
 .personal_question_text_content{
