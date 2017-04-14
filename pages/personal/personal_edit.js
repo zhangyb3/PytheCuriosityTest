@@ -17,6 +17,7 @@ Page({
   },
   onLoad:function(options){
     
+    this.data.user.username = wx.getStorageSync('userNickName');
   },
 
   getNicknameText:function(e){
@@ -33,37 +34,58 @@ Page({
 
   commitPersonalEdit:function(e){
     var that = this;
-    wx.request({
-      url: config.PytheRestfulServerURL + '/me/imformation',
-      data: {
-        userId: wx.getStorageSync(user.UserID),
-        username: that.data.user.username,
-        description: that.data.user.description,
-      },
-      method: 'GET', 
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    });
-    wx.setStorageSync('fixPersonalInfo', 'yes');
-    wx.navigateBack({
-      delta: 1, // 回退前 delta(默认为1) 页面
-      success: function(res){
-        // success
-      },
-      fail: function(res) {
-        // fail
-      },
-      complete: function(res) {
-        // complete
-      }
-    })
+
+    if(that.data.user.username == '' || that.data.user.description == '')
+    {
+      wx.showModal({
+        title: '提示',
+        content: '个人信息不能为空',
+        showCancel: false,
+        success: function (res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+            return
+          }
+        }
+      });
+    }
+    else
+    {
+       wx.request({
+        url: config.PytheRestfulServerURL + '/me/imformation',
+        data: {
+          userId: wx.getStorageSync(user.UserID),
+          username: that.data.user.username,
+          description: that.data.user.description,
+        },
+        method: 'GET', 
+        success: function(res){
+          // success
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      });
+
+      wx.setStorageSync('fixPersonalInfo', 'yes');
+      wx.navigateBack({
+        delta: 1, // 回退前 delta(默认为1) 页面
+        success: function(res){
+          // success
+        },
+        fail: function(res) {
+          // fail
+        },
+        complete: function(res) {
+          // complete
+        }
+      });
+    }
+   
+    
   },
 
 

@@ -291,11 +291,7 @@ Page({
         },
         method: 'GET', 
         success: function(res){
-          wx.showToast({
-            title: '点赞+1',
-            icon: 'success',
-            duration: 1000
-          });
+          
 
           console.log(res);
           if(res.data.data == 1)
@@ -303,6 +299,11 @@ Page({
             that.data.ask_teacher_list[teacher_index].popularity++;
             that.setData({
               ask_teacher_list: that.data.ask_teacher_list,
+            });
+            wx.showToast({
+              title: '点赞+1',
+              icon: 'success',
+              duration: 1000
             });
           }
           

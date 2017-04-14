@@ -166,17 +166,18 @@ Page({
       method: 'GET', 
       success: function(res){
         // success
-        wx.showToast({
-          title: '点赞+1',
-          icon: 'success',
-          duration: 1000
-        });
+        
 
         if(res.data.data == 1)
         {
           that.data.answers[answer_index].likesnum++;
           that.setData({
             answers: that.data.answers,
+          });
+          wx.showToast({
+            title: '点赞+1',
+            icon: 'success',
+            duration: 1000
           });
         }
 
