@@ -57,7 +57,10 @@
             </view>-->
             <view class="border_tab"/>
 
+            <view class="bottom_wrap">
             <text class="time_zone">{{item.timer}}</text>
+            <view class="price_wrap"><image class="price_image" src="../../images/answer_icon_money@2x.png"></image><text class="price_number" >{{item.likesnum}}10.00</text></view>
+            </view>
 
             <view class="border_tab"/>
             <view class="border_tab_white"/>

@@ -60,15 +60,15 @@
     flex-direction: row;
     border: 1px solid #CCCCCC;
     height: 150px;
-    font-size: 16px;
+    font-size: 30rpx;
     overflow-x: auto; 
     overflow-y: visible;
     color: #333333;
     margin-right: 30rpx;
-
     margin-top: 36rpx;
     border-radius: 10rpx;
 }
+
 
 .edit_commit_confirm{
     display: flex;
@@ -77,8 +77,8 @@
 }
 
 .edit_commit_button{
-    width: 80%;
-    line-height: 30px;
+    width: 90%;
+    line-height: 92rpx;
     margin-top: 50px;
     -webkit-text-fill-color: #ffffff;
     font-size: 30rpx;
