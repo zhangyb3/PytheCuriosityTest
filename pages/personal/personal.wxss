@@ -13,20 +13,21 @@
 }
 
 .personal_description_zone{
-    /*border-color: gray;*/
-    /*border-style: solid;*/
-    /*border-width: 1px;*/
-    border-top: 1px solid #EEE;
     display: flex;
     flex-direction: row;
-    background-color: white;
-    /*justify-content: space-around;*/
-    align-items: center;
-    height: 202rpx;
+    border-top: 1px solid #EEE;
+    background-color: #ffffff;
     width: 100%;
-    justify-content: space-between;
+    height: auto;
+    border-bottom: 20rpx solid #ffffff;
+    /*justify-content: space-between;*/
+    /*display: flex;
+    flex-direction: row;
+    height: auto;
+    width: 100%;
+    
     position: relative;
-    z-index: 1;
+    z-index: 1;*/
 }
 
 .earn_num_img{
@@ -40,24 +41,10 @@
     line-height: 40rpx;
 }
 
-.personal_description_image_zone{
-    display: flex;
-    position: relative;
-    height: 100%;
-    width: 150rpx;
-    /*align-items: center;*/
-    /*justify-content: space-around;*/
-    /*align-items: center;*/
-    /*align-content: center;*/
-    
-}
-
 .personal_avatar_container{
     display: flex;
     width: 150rpx;
-    height: 150rpx;
-    /*margin: auto;*/
-    
+    height: 150rpx;  
 }
 
 .personal_avartar_image{
@@ -72,32 +59,54 @@
 .personal_description_text_zone{
     display: flex;
     height: 100%;
-    /*margin-right: 30rpx;*/
     width: auto;
-    left: 190rpx;
-    position: absolute;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+    position: relative;
     flex-direction: column;
 }
 
+.personal_nick_name_wrap{
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin-top: 34rpx;
+}
+
 .personal_nick_name{
-    margin-top: 54rpx;
+    display: flex;
+    height: auto;
     font-size: 30rpx;
     color: #666666;
+}
+
+.person_discribe_wrap{
+    display: flex;
+    width: 100%;
+    height: auto;
+    margin-top: 20rpx;
+}
+
+.person_discribe{
+    display: flex;
+    font-size: 24rpx;
+    color: #999999;
+    /*height: auto;*/
 }
 
 .personal_summary_wrap{
     height:40rpx;
     display:flex;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    margin-top: 37rpx;
     line-height:20px;
 }
-/*.personal_summary_wrap image{
+.personal_summary_wrap image{
     width:43rpx;
     height: 38rpx;
     display:block;
     margin-right:5px;
-}*/
+    
+}
 
 .personal_summary{
     /*margin-top: 15px;
@@ -105,38 +114,35 @@
     margin-bottom: 10px;
     background:url(../../images/icon_money_1@2x.png) no-repeat left center;*/
     color: #FF9635;
-    /*background-size:20px 20px;
-    line-height:20px;*/
+    background-size:20px 20px;
+    line-height:20px;
     font-size: 28rpx;
 }
 
 .personal_description_revise_zone{
     display: flex;
-    height: 100%;
-    width: 100rpx;
+    position: absolute;
+    height: 200rpx;
+    width: auto;
+    /*margin-right: 20rpx;*/
+    right: 30rpx;
     /*background-color: yellow;*/
 }
 
 .person_edit_icon_view{
-    /*position: absolute;*/
     display: flex;
     /*right: 30rpx;*/
-    margin-top: 55rpx;
-    margin-left: 20rpx;
-    height: 50rpx;
+    /*margin-top: 55rpx;*/
+    /*margin-left: 20rpx;*/
+    height: 100%;
     width: 50rpx;
-    /*background-color: black;*/
-    /*color: black;*/
-    /*margin-right:0px;*/
-    /*width: 300rpx;*/
-    /*background-color: white;*/
 }
 
 .person_edit_icon{
     /*background: url(../../images/icon_information@2x.png) no-repeat center center;*/
     /*position: absolute;*/
     display: flex;
-
+    margin-top: 47rpx;
     /*padding: 0px;*/
     right: 0px;
     /*padding-right: 10;*/
@@ -280,6 +286,11 @@
     height: 47rpx;
     
     margin-left: 34rpx;
+}
+.tab_inteval{
+    height: 20rpx;
+    width: 100%;
+    background-color: #ffffff;
 }
 
 @import "../register/register.wxss";
