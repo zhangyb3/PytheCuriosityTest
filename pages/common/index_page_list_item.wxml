@@ -8,11 +8,13 @@
  <view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
 
             <view class="answer_wrapper" bindtap='bindItem' data-index='{{ index }}'>
-                <image class="know_select_item_icon"  src='{{ item.userimg || "../../images/my_account_on.png" }}' />
-                <text class="teacher_name">{{ item.teacherid }}</text>
+                <!--<image class="know_select_item_icon"  src='{{ item.userimg || "../../images/my_account_on.png" }}' />-->
+                <!--<text class="teacher_name">{{ item.teacherid }}</text>-->
         
                  <text class="knowledge_kind_content">{{item.knowledge}}</text>
-    </view>
+
+                 <view class="like_wrap" bindtap='bindLike' data-index='{{ index }}'><image class="like_image" src="../../images/index_icon_dianzan@2x.png"></image><text class="like_number" >{{item.likesnum}}</text></view>
+                 </view>
 </view>
             <view class="dotted_line"></view>
             <view class="border_tab_index_white"></view>
@@ -67,8 +69,6 @@
 
 
             <!--</view>-->
-
-            <view class="like_wrap" bindtap='bindLike' data-index='{{ index }}'><image class="like_image" src="../../images/index_icon_dianzan@2x.png"></image><text class="like_number" >{{item.likesnum}}</text></view>
          
          <view class="border_tab_index_white"></view>
              
