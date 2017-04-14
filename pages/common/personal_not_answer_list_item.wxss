@@ -228,6 +228,11 @@
     height:5px;
 }
 
+.multi_tips{
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+
 .preview_img_classic{
     width: 151rpx;
     height: 118rpx;
