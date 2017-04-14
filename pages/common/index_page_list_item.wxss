@@ -166,15 +166,15 @@
     height: 27rpx;
     line-height: 27rpx;
     margin-left: 10rpx;
-    margin-top: 0rpx;
+    margin-top: 6rpx;
     /*margin-right: 30rpx;*/
 
 }
 
 .like_image{
     display: flex;
-    width: 27rpx;
-    height: 24rpx;
+    width: 29rpx;
+    height: 25rpx;
     line-height: 24rpx;
     /*line-height: 60rpx;*/
 

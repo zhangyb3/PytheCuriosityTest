@@ -59,7 +59,7 @@
 .teacher_brief{
 
     font-size: 24rpx;
-    margin-top: 20rpx;
+    margin-top: 10rpx;
     /*height: auto;*/
     min-height: 40rpx;
     width: auto;
@@ -79,8 +79,8 @@
     /*width: 33rpx;*/
 }
 .collect_icon_wrap image{
-    width: 42rpx;
-    height: 50rpx;
+    width: 32rpx;
+    height: 38rpx;
     display:block;
     margin-bottom:8rpx;
     margin-right: 10rpx;
