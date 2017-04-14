@@ -214,10 +214,11 @@
 }
 
 .personal_operation_item_text{
-    width: 96%;
+    width: 90%;
     line-height: 94rpx;
     font-size: 32rpx;
-    margin-left: 26rpx;
+    margin-left: 16rpx;
+    padding-top: 6rpx;
     color: #333333;
     text-align: left;
     
@@ -265,19 +266,20 @@
 .menu_list_icon_like{
     width: 46rpx;
     height: 45rpx;
-    margin-left: 30rpx;
+    margin-left: 36rpx;
 }
 
 .menu_list_icon_detail{
     width: 41rpx;
     height: 48rpx;
-    margin-left: 30rpx;
+    margin-left: 36rpx;
 }
 
 .menu_list_icon_us{
     width: 47rpx;
     height: 47rpx;
-    margin-left: 30rpx;
+    
+    margin-left: 34rpx;
 }
 
 @import "../register/register.wxss";
