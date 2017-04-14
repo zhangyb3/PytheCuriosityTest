@@ -28,32 +28,50 @@
 
     <view class="personal_operation_zone">
 <view class="personal_ask personal_operation_item" bindtap='selectPersonalAsk'>
-            <text class="personal_ask personal_operation_item_text" src="../../images/icon_money_1@2x.png">钱包</text>
-            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+<view class="menu_list_icon_wrap">
+    <image class="menu_list_icon_wallet" src="../../images/personal_iocn_money@2x.png"></image>
+</view>
+            <text class="personal_ask personal_operation_item_text">钱包</text>
+            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
 
         <view class="personal_ask personal_operation_item" bindtap='selectPersonalAsk'>
-            <text class="personal_ask personal_operation_item_text" src="../../images/icon_money_1@2x.png">我的问</text>
-            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+<view class="menu_list_icon_wrap">
+    <image class="menu_list_icon_question" src="../../images/personal_iocn_myquestion@2x.png"></image>
+</view>
+            <text class="personal_ask personal_operation_item_text">我的问</text>
+            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
         <view class="personal_answer personal_operation_item" bindtap='selectPersonalAnswer'>
-            <text class="personal_answer personal_operation_item_text" src="../../images/icon_money_1@2x.png">我的答</text>
-            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+<view class="menu_list_icon_wrap">
+    <image class="menu_list_icon_answer" src="../../images/personal_iocn_myanswer@2x.png"></image>
+</view>
+            <text class="personal_answer personal_operation_item_text">我的答</text>
+            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
         <view class="personal_like personal_operation_item" bindtap='selectPersonalLike'>
-            <text class="personal_like personal_operation_item_text" src="../../images/icon_money_1@2x.png">我的点赞</text>
-            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+<view class="menu_list_icon_wrap">
+    <image class="menu_list_icon_like" src="../../images/personal_iocn_mydianzan@2x.png"></image>
+</view>
+            <text class="personal_like personal_operation_item_text">我的点赞</text>
+            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
     </view>
 
     <view class="about_us_zone">
         <view class="balance_detailed_rules personal_operation_item" bindtap='selectBalanceRules'>
-            <text class="rules personal_operation_item_text" src="../../images/icon_money_1@2x.png">结算细则</text>
-            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+<view class="menu_list_icon_wrap">
+    <image class="menu_list_icon_detail" src="../../images/personal_iocn_jiesuan@2x.png"></image>
+</view>
+            <text class="rules personal_operation_item_text">结算细则</text>
+            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
         <view class="about_us personal_operation_item" bindtap='selectAboutUs'>
-            <text class="about personal_operation_item_text" src="../../images/icon_money_1@2x.png">关于我们</text>
-            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+<view class="menu_list_icon_wrap">
+    <image class="menu_list_icon_us" src="../../images/personal_iocn_about@2x.png"></image>
+</view>
+            <text class="about personal_operation_item_text">关于我们</text>
+            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
     </view>
 </view>
