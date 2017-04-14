@@ -71,18 +71,18 @@ Page({
   getSearchContentList:function(e){
     var that = this;
     var searchParameters = {
-      q: encodeURIComponent(this.data.search_content_text),
+      query: encodeURIComponent(this.data.search_content_text),
       pageSize: 3,
       pageNum: 1,
     };
 
     listViewUtil.loadList(that,'index',config.PytheSearchServerURL,
-    "/index",
+    "",
     10,
         searchParameters,
         function (netData){
           //取出返回结果的列表
-          return netData.data.knowlegeList;
+          return netData.data;
         },
         function(item){
          

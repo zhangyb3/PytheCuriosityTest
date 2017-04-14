@@ -5,7 +5,8 @@ var MerchantID = "1438382702";
 
 var PytheRestfulServerURL = "https://www.haowen.mobi/rest";
 var PytheFileServerURL = "https://www.haowen.mobi";
-var PytheSearchServerURL = "https://searching.haowen.mobi:8443/search";
+// var PytheSearchServerURL = "https://searching.haowen.mobi:8443/search";
+var PytheSearchServerURL = "https://www.haowen.mobi/rest/index/search";
 
 module.exports = {
     AppID : AppID,
