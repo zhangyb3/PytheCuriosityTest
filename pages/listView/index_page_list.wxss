@@ -13,13 +13,15 @@ background-color: #FFFFFF;
 }
 
 .scroll_list{
-    /*display: flex;*/
-    /*position: relative;*/
+    display: flex;
+    position: relative;
     /*height: 500px;*/
     /*height: auto;*/
-    top: 0px;
+    /*margin: 0 0 0 0;*/
+    
+    /*top: 0px;
     bottom: 10px;
-    border-radius: 40rpx;
+    border-radius: 40rpx;*/
 }
 
 .interval{

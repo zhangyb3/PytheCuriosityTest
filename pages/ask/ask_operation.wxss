@@ -315,9 +315,14 @@ color: #999999;
 
 }
 
+.multi_tips{
+    margin-left: 20rpx;
+    margin-right: 20rpx;
+}
+
 .preview_img_classic{
-    width: 30px;
-    height: 30px;
+    width: 150rpx;
+    height: 118rpx;
 
 }
 

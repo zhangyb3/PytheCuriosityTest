@@ -27,20 +27,20 @@
 .question_wrapper{
     display: flex;
     text-align: left;
-    height: 200rpx;
+    height: 150rpx;
 }
 
 .preview_img_wrap{
     display: flex;
     width: 146rpx;
     height: 146rpx;
-    overflow: hidden;
+    /*overflow: hidden;*/
 
 }
 .preview_img{
     width: 146rpx;
     height: 146rpx;
-    overflow: hidden;
+    /*overflow: hidden;*/
 
 }
 
