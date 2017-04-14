@@ -21,50 +21,55 @@ Page({
     }],
 
     subjects:[
+      
       {
         subjectId:1001,
-        subject_name: '语文',
-      },
-      {
-        subjectId:2,
         subject_name: '数学',
       },
       {
-        subjectId:3,
+        subjectId:1002,
         subject_name: '英语',
       },
       {
-        subjectId:3,
-        subject_name: '生物',
+        subjectId:1003,
+        subject_name: '语文',
       },
       {
-        subjectId:3,
-        subject_name: '化学',
-      },
-      {
-        subjectId:3,
-        subject_name: '物理',
-      },
-      {
-        subjectId:3,
-        subject_name: '地理',
-      },
-      {
-        subjectId:3,
-        subject_name: '政治',
-      },
-      {
-        subjectId:3,
+        subjectId:1004,
         subject_name: '艺术',
       },
       {
-        subjectId:3,
+        subjectId:1005,
         subject_name: '健康',
       },
       {
-        subjectId:3,
+        subjectId:1006,
+        subject_name: '物理',
+      },
+      {
+        subjectId:1007,
+        subject_name: '化学',
+      },
+      {
+        subjectId:1008,
+        subject_name: '生物',
+      },
+      {
+        subjectId:1009,
+        subject_name: '地理',
+      },
+      {
+        subjectId:1010,
         subject_name: '历史',
-      }
+      },
+      {
+        subjectId:1011,
+        subject_name: '计算机',
+      },
+      
+      
+     
+      
     ],
 
      ask_teacher_list:[
@@ -276,50 +281,37 @@ Page({
     console.log(teacher_index);   
 
      var that = this; 
-    //先查是否已点赞过这老师
-    wx.request({
-      url: config.PytheRestfulServerURL + '/user/teacher/likes',
-      data: {
-        userId: wx.getStorageSync(user.UserID),
-        teacherId: teacher.teacherid,
-      },
-      method: 'GET', 
-      success: function(res){
-        // 没点赞过
-        if(res.data.data == false)
-        {
-          that.data.ask_teacher_list[teacher_index].popularity++;
-          that.setData({
-            ask_teacher_list: that.data.ask_teacher_list,
-          });
-          //通知数据库更新纪录
-          wx.request({
-            url: config.PytheRestfulServerURL + '/question/teacher/likes',
-            data: {
-              userId: wx.getStorageSync(user.UserID),
-              teacherId: teacher.teacherid,
-            },
-            method: 'GET', 
-            success: function(res){
-              console.log(res);
-            },
-            fail: function(res) {
-              console.log(res);
-            }
-          })
-        }
-        
-      },
-      fail: function(res) {
-        // fail
-      },
-      complete: function(res) {
-        // complete
-      }
-    })
-      
-
     
+      //通知数据库更新纪录
+      wx.request({
+        url: config.PytheRestfulServerURL + '/question/teacher/likes',
+        data: {
+          userId: wx.getStorageSync(user.UserID),
+          teacherId: teacher.teacherid,
+        },
+        method: 'GET', 
+        success: function(res){
+          wx.showToast({
+            title: '点赞+1',
+            icon: 'success',
+            duration: 1000
+          });
+
+          console.log(res);
+          if(res.data.data == 1)
+          {
+            that.data.ask_teacher_list[teacher_index].popularity++;
+            that.setData({
+              ask_teacher_list: that.data.ask_teacher_list,
+            });
+          }
+          
+        },
+        fail: function(res) {
+          console.log(res);
+        }
+      })
+        
     
   },
 

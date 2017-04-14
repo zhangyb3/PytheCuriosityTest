@@ -13,7 +13,7 @@
         
                  <text class="knowledge_kind_content">{{item.knowledge}}</text>
 
-                 <view class="like_wrap" bindtap='bindLike' data-index='{{ index }}'><image class="like_image" src="../../images/index_icon_xin@2x.png"></image><text class="like_number" >{{item.likesnum}}</text></view>
+                 <view class="like_wrap" bindtap='bindLike' data-index='{{ index }}'><image class="like_image" src="../../images/index_icon_dianzan@2x.png"></image><text class="like_number" >{{item.sumlikesnum}}</text></view>
                  </view>
 </view>
             <view class="dotted_line"></view>

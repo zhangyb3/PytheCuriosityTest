@@ -184,9 +184,28 @@ Page({
       },
       fail: function (res) {
         //录音失败
+        wx.stopRecord();
+        _this.setData({
+          isSpeaking: false,
+        })
+        clearInterval(_this.timer)
+
+        wx.getSavedFileList({
+          success: function(res) {
+            if (res.fileList.length > 0){
+              wx.removeSavedFile({
+                filePath: res.fileList[0].filePath,
+                complete: function(res) {
+                  console.log(res)
+                }
+              })
+            }
+          }
+        });
+
         wx.showModal({
           title: '提示',
-          content: '录音的姿势不对!',
+          content: '录音错误!',
           showCancel: false,
           success: function (res) {
             if (res.confirm) {
@@ -194,9 +213,18 @@ Page({
               return
             }
           }
-        })
+        });
+       
       }
     })
+    setTimeout(function() {
+      //超时结束录音  
+      wx.stopRecord()
+      _this.setData({
+        isSpeaking: false,
+      })
+      clearInterval(_this.timer)
+    }, 60000);
   },
 
 
@@ -208,6 +236,27 @@ Page({
     })
     clearInterval(this.timer)
     wx.stopRecord()
+  },
+  //轻触结束录音并清理文件
+  cleanRecordVoice:function(res){
+    wx.stopRecord();
+    this.setData({
+      isSpeaking: false,
+    })
+    clearInterval(this.timer)
+
+    wx.getSavedFileList({
+      success: function(res) {
+        if (res.fileList.length > 0){
+          wx.removeSavedFile({
+            filePath: res.fileList[0].filePath,
+            complete: function(res) {
+              console.log(res)
+            }
+          })
+        }
+      }
+    });
   },
 
 
