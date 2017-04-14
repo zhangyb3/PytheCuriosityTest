@@ -236,7 +236,7 @@
 .menu_list_icon_wrap{
     display: flex;
     align-items: center;
-    width: auto;
+    width: 100rpx;
     height: 100rpx;
 }
 /*.menu_list_icon{
