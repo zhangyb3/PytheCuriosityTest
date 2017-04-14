@@ -43,7 +43,8 @@
 .question_wrapper{
     display: flex;
     text-align: left;
-    height: 200rpx;
+    height: 150rpx;
+    margin-top: 10rpx;
 }
 
 .preview_img_wrap{

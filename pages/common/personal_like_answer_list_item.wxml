@@ -49,7 +49,7 @@
 
             
 
-            <view class="answer_wrapper" bindtap='bindItem' data-index='{{ index }}'>
+            <!--<view class="answer_wrapper" bindtap='bindItem' data-index='{{ index }}'>
                 <image  src='{{ item.avatar || "../../images/my_account_on.png" }}' />
                 <text class="teacher_name">{{ item.username }}</text>
                 
@@ -58,7 +58,7 @@
                     
                 </view>
                 
-            </view>
+            </view>-->
 
             
 

@@ -79,8 +79,9 @@
 .lines {
     
     font-size: 18px;
-    height: 100px;
-
+    height: 100rpx;
+    margin-left: 20rpx;
+    margin-right: 20rpx;
     overflow-x: hidden; 
     overflow-y: auto;
 }
@@ -213,6 +214,11 @@
 
 .border_tab{
     height:5px;
+}
+
+.multi_tips{
+    margin-left: 20rpx;
+    margin-right: 20rpx;
 }
 
 .preview_img_classic{
