@@ -58,7 +58,7 @@
             <view class="border_tab"/>
 <view class="item_bottom_wrap">
 
-<text class="time_zone">还剩{{item.timer}}，</text>
+<text class="time_zone">还剩{{item.timer}}</text>
             <view class="price_wrap"><image class="price_image" src="../../images/answer_icon_money@2x.png"></image><text class="price_number" >{{item.question.reward}}</text></view>
             </view>
 

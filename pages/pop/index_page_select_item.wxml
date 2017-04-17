@@ -104,7 +104,7 @@
                     <view class="operation_zone" >
 
 
-                        <view class="collect_wrap" data-selected="{{answer}}" data-answer_index="{{answer_index}}" bindtap='likeAnswer'><image class="collect_icon_img" src="../../images/index_icon_shoucang@2x.png"></image><text class="collect_num" >{{answer.likesnum}}</text></view>
+                        <view class="collect_wrap" data-selected="{{answer}}" data-answer_index="{{answer_index}}" bindtap='likeAnswer'><image wx:if="{{answer.isClick == 1}}" class="collect_icon_img" src="../../images/index_icon_shoucang_nor@2x.png"></image><image wx:if="{{answer.isClick == 0}}" class="collect_icon_img" src="../../images/index_icon_shoucang@2x.png"></image><text class="collect_num" >{{answer.likesnum}}</text></view>
 
 
 

@@ -38,6 +38,7 @@ var login = (success, fail) => {
               wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
               wx.setStorageSync(user.GradeID, registerInfo.gradeid);
               wx.setStorageSync(user.UserDescription, registerInfo.description);
+              wx.setStorageSync(user.UserNickName, registerInfo.username);
             }
           },
           (userRegisterResult) => {

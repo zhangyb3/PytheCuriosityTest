@@ -47,6 +47,7 @@ Page({
     var that = this;
     var myQuestionAnswersParams = {
       questionId: parameters.questionid,
+      userId: wx.getStorageSync(user.UserID),
     };    
     listViewUtil.loadList(that,'my_question_answer',config.PytheRestfulServerURL,
     base.MY_QUESTION_ANSWER_URL_DETAIL,
@@ -54,7 +55,7 @@ Page({
         myQuestionAnswersParams,
         function (netData){
           //取出返回结果的列表
-          return netData.data;
+          return netData.data.data;
         },
         function(item){
          
@@ -149,12 +150,21 @@ Page({
       }
     })
   },
+
+
   complainOneAnswer:function(result){
     console.log("complain this answer " + result.currentTarget.dataset.item.answerid);
+    
+    this.data.personal_question_answer_list[result.currentTarget.dataset.index].isClick = 0;
+    this.setData({
+      personal_question_answer_list: this.data.personal_question_answer_list,
+    });
+
     var theAnswer = result.currentTarget.dataset.item;
     var complainParams = {
       userId: wx.getStorageSync(user.UserID),
       complainedId: theAnswer.answerid,
+      answerId: theAnswer.answerid,
     };
     base.complainAnswer(complainParams);
   },

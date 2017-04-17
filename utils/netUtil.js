@@ -392,8 +392,18 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             {
                 temp.answercontent = JSON.parse(currentDatas[count].answercontent);
             }
+            if(list_type == 'teacher')
+            {
+                var isClick = temp.isClick;
+                temp = JSON.parse(temp.question);
+                temp.isClick = isClick;
+            }
             if(list_type == 'my_question_answer')
             {
+                
+                var isClick = temp.isClick;
+                temp = JSON.parse(temp.question);
+                temp.isClick = isClick;
                 temp.selected = false;
             }
             if(list_type == 'question')

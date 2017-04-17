@@ -34,15 +34,24 @@ function getDetailContent(that,selectItem)
       url: DETAIL_CONTENT_URL,
       data: {
         questionId: selectItem.questionid,
+        userId: wx.getStorageSync(user.UserID),
       },
       method: 'GET', 
       success: function(res){
         console.log(res);
         var answers = res.data.data;
+
         for(var count = 0; count < answers.length; count++)
         {
-          answers[count].questioncontent = JSON.parse(answers[count].questioncontent);
+          
+          var temp = answers[count];
+          var isClick = temp.isClick;
+          temp = JSON.parse(temp.question);
+          temp.isClick = isClick;
+          answers[count] = temp;
           answers[count].answercontent = JSON.parse(answers[count].answercontent);
+          answers[count].questioncontent = JSON.parse(answers[count].questioncontent);
+          
         }
         that.setData({
             answers: answers,
@@ -117,6 +126,7 @@ function complainAnswer(parameters)
     data: {
       userId: parameters.userId,
       complainedId: parameters.complainedId,
+      answerId: parameters.answerId,
     },
     method: 'GET', 
     success: function(res){

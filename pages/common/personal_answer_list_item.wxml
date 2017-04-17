@@ -6,7 +6,7 @@
 
             <view class="answer_question_container">
                 <view class="answer_questin_content">
-                    <text class="answer_question_content">answerid:{{item.answerid}}，{{item.questioncontent.text[0]}}</text>
+                    <text class="answer_question_content">{{item.questioncontent.text[0]}}</text>
                 </view>
                 <view class="answer_question_bottom">
                     <view class="answer_money_number"><image src="../../images/personal_icon_money@2x.png"></image><text class="collect_number_text">{{item.fee || 0}}</text></view>

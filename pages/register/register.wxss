@@ -220,8 +220,9 @@ button_wrap{
 .subject_container{
     display: flex;
     flex-direction: row;
-    text-align: center;
     margin-top:10px;
+    text-align: center;
+    margin-left: -14rpx;
 }
 .subject_hint{
     width:46px;
@@ -230,8 +231,7 @@ button_wrap{
     color:#333333;
     font-size:30rpx;
     /*font-weight:bold;*/
-    /*margin-right:5px;*/
-    margin-left: -20rpx;
+    margin-right:5px;
 }
 .subject_picker_wrap{
     border:1px solid #CCCCCC;

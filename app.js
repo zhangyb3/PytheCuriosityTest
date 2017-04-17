@@ -32,6 +32,7 @@ App({
             var rawData = JSON.parse(res.rawData);
             wx.setStorageSync('userAvatarUrl', rawData.avatarUrl);
             // wx.setStorageSync('userNickName', rawData.nickName);
+            wx.setStorageSync('wxNickName', rawData.nickName);
           },
           fail: function() {
             // fail
@@ -86,6 +87,7 @@ App({
               wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
               wx.setStorageSync(user.GradeID, registerInfo.gradeid);
               wx.setStorageSync(user.UserDescription, registerInfo.description);
+              wx.setStorageSync(user.UserNickName, registerInfo.username);
             }
           },
           (userRegisterResult) => {
