@@ -5,21 +5,24 @@
     <view class="subject_view" >
         <button class="subject_button"
          bindtap='filterSubject'> <image src="../../images/index_icon_kemu@2x.png"></image>
-         <text class="subject_name">科目</text>
+         
          </button>
+         <text class="subject_name" bindtap='filterSubject'>科目</text>
          
     </view>
 
     <view class="input_view" >
         <input class="input" type="text" placeholder="查询知识点" bindinput="listenerSearchInput" ></input>
+        <button class="search_button"    bindtap='getSearchContentList'><image src="../../images/index_icon_serch@2x.png"></image>
+        </button>
     </view>
 
-    <view class="search_button_view" >
+    <!--<view class="search_button_view" >
         <button class="search_button"    bindtap='getSearchContentList'><image src="../../images/index_icon_serch@2x.png"></image>
         <text class="subject_name">搜索</text>
         </button>
         
-    </view>
+    </view>-->
 
 </view>
 <!--<view class="bottom_line_seprate"/>-->

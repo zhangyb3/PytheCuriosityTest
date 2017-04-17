@@ -2,7 +2,7 @@
 .input_filter{
     display: flex;
     flex-direction:row;
-    justify-content: space-between;
+    /*justify-content: space-between;*/
     align-items: center;
     background-color: #FFFFFF;
     border-bottom: 1px solid #EEE;
@@ -16,7 +16,7 @@
     height: auto;
     /*margin-left:10px;*/
     width: auto;
-    margin-left: 8rpx;
+    /*margin-left: 8rpx;*/
     align-items: center;
     /*width: 300rpx;*/
     /*width: 22px;*/
@@ -33,13 +33,15 @@
 .input{
     /*align-items: center;*/
     text-align: center;
-    padding:0 5%;
-    width:100%;
+    /*padding:0 5%;*/
+    padding-left: 15%;
+    width:80%;
+    
 }
 
 .input_view{
     height: 68rpx;
-    width: 543rpx;
+    width: 73%;
 
     border-radius: 34rpx;
     display: flex;
@@ -64,7 +66,7 @@
     /*background: url(../../images/nav_icon_menu@2x.png) no-repeat center center;*/
     background: none;
     height: 90rpx;
-    width: 120rpx;
+    width: 90rpx;
     /*justify-content: flex-end;*/
     /*margin-right: 20rpx;*/
     /*justify-content: space-around;*/
@@ -72,8 +74,9 @@
 }
 
 .subject_button image{
-    margin-left: 40rpx;
-    margin-top: 3rpx;
+    margin-left: 30rpx;
+    margin-top: 25rpx;
+    margin-right: 20rpx;
     height: 40rpx;
     width: 40rpx;
     display:block;
@@ -98,9 +101,11 @@
 
 .search_button{
     /*background: url(../../images/nav_icon_search@2x.png) center center no-repeat;*/
-    padding :0;
-    height: 90rpx;
-    width: 60rpx;
+    /*padding :0;*/
+    padding-right: 30rpx;
+    padding-left: 0;
+    line-height: 68rpx;
+    width: auto;
     background: none;
     /*background-size: 25px 25px;*/
 }
