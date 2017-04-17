@@ -20,7 +20,7 @@
         <view class="select_answer_container" >
             <view class="select_answer_wrapper" >
                 <image  src='{{ select_item.avatar || "../../images/my_account_on.png" }}' />
-                <text class="teacher_name">teacher:{{select_item.answerTeacherid}},answerid:{{ select_item.answerid }}</text>
+                <text class="teacher_name"></text>
                 
             </view>
             

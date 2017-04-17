@@ -9,10 +9,10 @@
         <view class="personal_question_answer_container">
             <view class="personal_question_answer_complain" >
 
-                <view class="complain_container" data-item='{{ item }}' bindtap="complainOneAnswer">
+                <view class="complain_container" data-item='{{ item }}' data-index='{{ index }}' bindtap="complainOneAnswer">
                     <!--<image class="complain_image" src="../../images/button_simple@3x.png"></image>-->
-                    <image class="complain_image" wx:if="{{item.selected != true}}" src="../../images/button_simple@3x.png"></image>
-                    <image class="complain_image" wx:if="{{item.selected == true}}" src="../../images/button_simple_nor@3x.png"></image>
+                    <image class="complain_image" wx:if="{{item.isClick == 0}}" src="../../images/button_simple@3x.png"></image>
+                    <image class="complain_image" wx:if="{{item.isClick == 1}}" src="../../images/button_simple_nor@3x.png"></image>
                 </view>
 
 <view class="personal_question_answer_selector" >

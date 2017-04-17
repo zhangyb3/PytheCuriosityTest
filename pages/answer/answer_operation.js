@@ -81,9 +81,9 @@ Page({
     this.data.question_answer.teacherId = wx.getStorageSync(user.TeacherID);
 
     var answer_question = parameters; 
-    answer_question.text_content = decodeURI(answer_question.text_content);
+    answer_question.text_content = decodeURIComponent(answer_question.text_content);
     answer_question.photo_path = decodeURIComponent(answer_question.photo_path);
-    answer_question.draw_path = decodeURI(answer_question.draw_path);
+    answer_question.draw_path = decodeURIComponent(answer_question.draw_path);
     this.data.question_answer.questionId = answer_question.questionid;
     this.setData({
       answer_question : answer_question,
@@ -452,7 +452,13 @@ Page({
         this.isClear = true;
       }
   },
-  
+  //启动清空方法
+  truncateCanvas: function(){
+    const ctx = wx.createCanvasContext('draw_canvas');
+    
+    ctx.clearRect(0, 0, 375, 750);
+    ctx.draw();
+  },
   penColorSelect: function(e){ //更改画笔颜色的方法
     console.log(e.currentTarget.dataset.pen_color);
     this.data.pen.color = e.currentTarget.dataset.pen_color;

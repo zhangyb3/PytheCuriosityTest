@@ -11,5 +11,5 @@ module.exports = {
     GradeID: 'GradeID',
     SubjectID: 'SubjectID',
     UserDescription: 'UserDescription',
-    UserNickName: 'UserNickName',
+    UserNickName: 'userNickName',
 }

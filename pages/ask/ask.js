@@ -73,17 +73,7 @@ Page({
     ],
 
      ask_teacher_list:[
-      {
-        teacherid:0,
-        teacher_name: '都教授',
-      },{
-        teacher_name: '孙悟空',
-      },{
-        teacher_name: '猪八戒',
-      },
-      {
-        teacher_name: '白骨精',
-      },
+     
     ],
     subjects_discribe:[
       {
@@ -162,6 +152,7 @@ Page({
 
     var that = this;
     var simple_params = {
+      userId: wx.getStorageSync(user.UserID),
       pageSize : 3,
       pageNum : 1,
     };
@@ -297,6 +288,7 @@ Page({
           if(res.data.data == 1)
           {
             that.data.ask_teacher_list[teacher_index].popularity++;
+            that.data.ask_teacher_list[teacher_index].isClick = 0;
             that.setData({
               ask_teacher_list: that.data.ask_teacher_list,
             });

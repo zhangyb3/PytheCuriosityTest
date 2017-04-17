@@ -57,9 +57,14 @@
             </view>-->
             <view class="border_tab"/>
 
-            <text class="time_zone">还剩{{item.timer}}</text>
-            <view class="price_wrap"><image class="price_image" src="../../images/answer_icon_money@2x.png"></image><text class="price_number" >{{item.question.reward}}</text>
+<<<<<<< HEAD
+            <text class="time_zone">还剩{{item.timer}}，悬赏{{item.question.reward}}元</text>
+=======
+            <view class="bottom_wrap">
+            <text class="time_zone">{{item.timer}}</text>
+            <view class="price_wrap"><image class="price_image" src="../../images/answer_icon_money@2x.png"></image><text class="price_number" >{{item.likesnum}}10.00</text></view>
             </view>
+>>>>>>> a4651bc1a78b23850469888314f6c0f6d6b52f09
 
             <view class="border_tab"/>
             <view class="border_tab_white"/>

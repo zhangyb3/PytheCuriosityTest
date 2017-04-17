@@ -232,7 +232,7 @@ Page({
         url: config.PytheRestfulServerURL + '/user/register/',
         data: {
           status:this.data.registerParams.status,
-          userName: wx.getStorageSync('userNickName'),
+          userName: wx.getStorageSync('wxNickName'),
           phoneNum: wx.getStorageSync('registerPhoneNum'),
           verificationCode: wx.getStorageSync('verificationCode'),
           gradeId: this.data.registerParams.gradeId,

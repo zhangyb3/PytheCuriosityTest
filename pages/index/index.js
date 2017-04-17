@@ -171,6 +171,7 @@ Page({
         if(res.data.data == 1)
         {
           that.data.answers[answer_index].likesnum++;
+          that.data.answers[answer_index].isClick = 0;
           that.setData({
             answers: that.data.answers,
           });

@@ -70,7 +70,7 @@ Page({
     if(parameters.subjectId != null)
     {
       this.data.ask_question.subjectId = parameters.subjectId;
-      this.data.ask_question.ask_teacherId = -1;
+      // this.data.ask_question.ask_teacherId = -1;
     }
     console.log(this.data.ask_question);
     this.setData({
@@ -438,7 +438,13 @@ Page({
         this.isClear = true;
       }
   },
-  
+  //启动清空方法
+  truncateCanvas: function(){
+    const ctx = wx.createCanvasContext('draw_canvas');
+    
+    ctx.clearRect(0, 0, 375, 750);
+    ctx.draw();
+  },
   penColorSelect: function(e){ //更改画笔颜色的方法
     console.log(e.currentTarget.dataset.pen_color);
     this.data.pen.color = e.currentTarget.dataset.pen_color;
