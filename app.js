@@ -18,7 +18,11 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    wx.clearStorage()
+    try {
+        wx.clearStorageSync()
+    } catch(e) {
+      // Do something when catch error
+    }
 
     wx.setStorageSync('lastRemoteAudio', 'no');
     wx.setStorageSync('lastRemoteImg', 'no');
