@@ -63,7 +63,10 @@
     font-size: 30rpx;
     overflow-x: auto; 
     overflow-y: visible;
+    width: 90%;
+    padding: 20rpx;
     color: #333333;
+    text-align: left;
     margin-right: 30rpx;
     margin-top: 36rpx;
     border-radius: 10rpx;
