@@ -248,6 +248,16 @@
     background-color: #ffffff;
 }
 
+.item_bottom_wrap{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 30rpx;
+    margin-right: 20rpx;
+    height: 40rpx;
+    background-color: #ffffff;
+}
+
 .price_wrap{
     display: flex;
     flex-direction: row;
@@ -273,6 +283,7 @@ margin-top: 6rpx;
 
 .border_tab{
     height:5px;
+    background-color: white;
 }
 
 .border_tab_white{
