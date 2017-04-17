@@ -15,9 +15,14 @@ background-color: #FFFFFF;
 .scroll_list{
     display: flex;
     position: relative;
+    width: 100%;
+    /*width: 750rpx;*/
     /*height: 500px;*/
     /*height: auto;*/
-    /*margin: 0 0 0 0;*/
+    /*top: 0rpx;
+    left: 0rpx;
+    right: 0rpx;
+    bottom: 0rpx;*/
     
     /*top: 0px;
     bottom: 10px;
@@ -30,8 +35,13 @@ background-color: #FFFFFF;
 }
     
 
-.index_page_list_container{
+.index_page_list_item_container{
+    /*display: flex;*/
     height: auto;
+    /*width: 100%;*/
+    width: 750rpx;
+    margin-left: 0rpx;
+    margin-right: 0rpx;
     background-color: #FFFFFF;
 }
 
