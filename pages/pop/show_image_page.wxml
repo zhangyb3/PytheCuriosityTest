@@ -11,7 +11,7 @@
     <!-- 图片区域 -->
     <view class="show_image_zone" >
         
-        <image class="image_frame" src="{{img_src}}" data-image_source="{{img_src}}" bindtap='returnLoadImagePage' mode="aspectFill">  
+        <image class="image_frame" src="{{img_src}}" data-image_source="{{img_src}}" bindtap='returnLoadImagePage' mode="aspectFit">  
         </image>
         
     </view>

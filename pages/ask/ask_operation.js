@@ -262,27 +262,27 @@ Page({
     clearInterval(this.timer)
     wx.stopRecord()
   },
-  //轻触结束录音并清理文件
-  cleanRecordVoice:function(res){
-    wx.stopRecord();
-    this.setData({
-      isSpeaking: false,
-    })
-    clearInterval(this.timer)
+  // //轻触结束录音并清理文件
+  // cleanRecordVoice:function(res){
+  //   wx.stopRecord();
+  //   this.setData({
+  //     isSpeaking: false,
+  //   })
+  //   clearInterval(this.timer)
 
-    wx.getSavedFileList({
-      success: function(res) {
-        if (res.fileList.length > 0){
-          wx.removeSavedFile({
-            filePath: res.fileList[0].filePath,
-            complete: function(res) {
-              console.log(res)
-            }
-          })
-        }
-      }
-    });
-  },
+  //   wx.getSavedFileList({
+  //     success: function(res) {
+  //       if (res.fileList.length > 0){
+  //         wx.removeSavedFile({
+  //           filePath: res.fileList[0].filePath,
+  //           complete: function(res) {
+  //             console.log(res)
+  //           }
+  //         })
+  //       }
+  //     }
+  //   });
+  // },
 
   //点击播放录音
   gotoPlayVoice: function (e) {

@@ -26,7 +26,7 @@ Page({
     var that = this;
     var myQuestionParams = {
       studentId : wx.getStorageSync(user.StudentID),
-      pageSize : 3,
+      pageSize : 10,
       pageNum : 1,
       
     };    
