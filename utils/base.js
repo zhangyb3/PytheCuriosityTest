@@ -48,6 +48,7 @@ function getDetailContent(that,selectItem)
           var isClick = temp.isClick;
           temp = JSON.parse(temp.question);
           temp.isClick = isClick;
+          temp.playingVoice = false;
           answers[count] = temp;
           answers[count].answercontent = JSON.parse(answers[count].answercontent);
           answers[count].questioncontent = JSON.parse(answers[count].questioncontent);

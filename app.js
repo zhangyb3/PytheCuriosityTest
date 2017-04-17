@@ -18,7 +18,9 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    wx.setStorageSync('lastRemoteAudio', 'no');
+    wx.setStorageSync('lastRemoteImg', 'no');
+    wx.setStorageSync('playingVoice', 'no');
     wx.setStorageSync('alreadyRegister', 'no');
     
     

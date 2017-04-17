@@ -72,7 +72,7 @@ Page({
     var that = this;
     var searchParameters = {
       query: encodeURIComponent(this.data.search_content_text),
-      pageSize: 5,
+      pageSize: 10,
       pageNum: 1,
     };
 
@@ -139,6 +139,7 @@ Page({
 
     this.setData({hide_select_item:false});
 
+    selectItem.playingVoice = false;
     //进入详细列表
     base.getDetailContent(this,selectItem);
     
@@ -230,21 +231,8 @@ Page({
     
     var voiceRemotePath = e.currentTarget.dataset.voice;
     
-    var voicePath = fileSys.downloadFile(that,decodeURI(voiceRemotePath),'audio');
-    that.data.voicePath = voicePath;
+    fileSys.downloadFile(that,decodeURI(voiceRemotePath),'audio');
     
-    wx.playVoice({
-      filePath: that.data.voicePath,
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
 
   },
 
@@ -335,7 +323,7 @@ Page({
     var that = this;
     var simple_params = {
       gradeId : wx.getStorageSync(user.GradeID),
-      pageSize : 5,
+      pageSize : 10,
       pageNum : 1,
       
     };

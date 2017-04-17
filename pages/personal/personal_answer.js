@@ -43,7 +43,7 @@ Page({
     var that = this;
     var myAnsweredParams = {
       teacherId : wx.getStorageSync(user.TeacherID),
-      pageSize : 3,
+      pageSize : 10,
       pageNum : 1,
       
     };    
@@ -66,7 +66,7 @@ Page({
     var that = this;
     var myUnanswerParams = {
       teacherId : wx.getStorageSync(user.TeacherID),
-      pageSize : 3,
+      pageSize : 10,
       pageNum : 1,
       
     };    
