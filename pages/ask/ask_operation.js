@@ -623,7 +623,8 @@ Page({
   },
 
   playQuestionVoiceRecord:function(e){
-    this.setData({
+var that = this;
+    that.setData({
       isPlaying: true
     })
     wx.showToast({
@@ -631,12 +632,10 @@ Page({
       icon: 'success',
       duration: 1000
     });
+    
     wx.playVoice({
       filePath: this.data.ask_question.voice_path,
       success: function(res){
-         this.setData({
-      isPlaying: false
-    })
         console.log("播放结束啦啦啦啦啦啦啦啦啦" );
         // success
       },
@@ -645,7 +644,7 @@ Page({
       },
       complete: function() {
         // complete
-        this.setData({
+        that.setData({
       isPlaying: false
     })
     console.log("播放结束啦啦啦啦啦啦啦啦啦" );
