@@ -22,6 +22,8 @@ Page({
       voices: [],//音频数组
     },
 
+    isPlaying: false,//是否正在播放
+
     pen:{
       lineWidth: 2,
       color: 'black',
@@ -49,6 +51,18 @@ Page({
 
     hasPaidReward: false,
   },
+
+   //手指按下
+  touchdownRecord: function () {
+    console.log("手指按下了...")
+    console.log("new date : " + new Date)
+    var _this = this;
+    playing.call(this);
+    this.setData({
+      isPlaying: true
+    })
+  },
+
   onLoad:function(parameters){
     console.log("from ask");
   
@@ -58,6 +72,8 @@ Page({
       hide_draw_picture_section : true,
       hide_textarea: false,
     });
+
+    
     
     console.log(parameters);
     this.data.ask_question.studentId = wx.getStorageSync(user.StudentID);
@@ -280,6 +296,9 @@ Page({
     wx.playVoice({
       filePath: filePath,
       success: function () {
+        this.setData({
+      isPlaying: false
+    })
         wx.showToast({
           title: '播放结束',
           icon: 'success',
@@ -598,6 +617,9 @@ Page({
   },
 
   playQuestionVoiceRecord:function(e){
+    this.setData({
+      isPlaying: true
+    })
     wx.showToast({
       title: '播放录音',
       icon: 'success',
@@ -606,6 +628,10 @@ Page({
     wx.playVoice({
       filePath: this.data.ask_question.voice_path,
       success: function(res){
+         this.setData({
+      isPlaying: false
+    })
+        console.log("播放结束啦啦啦啦啦啦啦啦啦" );
         // success
       },
       fail: function() {
@@ -613,6 +639,10 @@ Page({
       },
       complete: function() {
         // complete
+        this.setData({
+      isPlaying: false
+    })
+    console.log("播放结束啦啦啦啦啦啦啦啦啦" );
       }
     })
   },

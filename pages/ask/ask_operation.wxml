@@ -42,7 +42,7 @@
         </view>
 
         <view class="multi_tips">
-            <view wx:if="{{ask_question.voice_path != null}}" class="voice" >
+            <!--<view wx:if="{{ask_question.voice_path != null}}" class="voice" >
                 
                 <view class="bubble" data-question_voice='{{ask_question.voice_path}}' bindtap="playQuestionVoiceRecord">
                     <view class="bubble-tail"></view>
@@ -50,7 +50,17 @@
                     <view>{{ask_question.voice_timeLength}}秒</view>
                 </view>
 
-            </view>
+            </view>-->
+
+        <view wx:if="{{ask_question.voice_path != null}}" class="speak_style_record" bindtap="playQuestionVoiceRecord">
+        <image wx:if="{{!isPlaying}}" class="sound_style_record" src="../../images/voice_static.png" ></image>
+        <image wx:if="{{isPlaying}}" class="sound_style_record" src="../../images/record.gif" ></image>
+        <text class="record_time">{{ask_question.voice_timeLength}}秒</text>
+
+ </view>
+
+
+
 
             <view wx:if="{{ask_question.photo_path != null}}" class="photo" >
                 <view  data-question_photo='{{ask_question.photo_path}}' bindtap="showPhoto">
@@ -132,13 +142,6 @@
                 发布
             </button>
         </view>
-
-
-        
-
-        
-
-
     </view>
 
     

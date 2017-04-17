@@ -61,8 +61,8 @@
     border: 1px solid #CCCCCC;
     height: 150px;
     font-size: 30rpx;
-    overflow-x: auto; 
-    overflow-y: visible;
+    /*overflow-x: auto; 
+    overflow-y: visible;*/
     width: 90%;
     padding: 20rpx;
     color: #333333;
