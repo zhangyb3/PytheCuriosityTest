@@ -252,13 +252,13 @@ button_wrap{
 .register_confirm{
     display: flex;
     /*height: 30px;*/
-    width: 80%;
+    width: 566rpx;
     /*align-items: center;*/
 }
 
 .register_confirm_button{
     /*height: 30px;*/
-    width: 100%;
+    width: 566rpx;
     line-height: 74rpx;
     border-radius:4px;
     background-color: #3AA4F1;
