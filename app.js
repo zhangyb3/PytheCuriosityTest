@@ -33,6 +33,7 @@ App({
             console.log(res.rawData);
             var rawData = JSON.parse(res.rawData);
             wx.setStorageSync('userAvatarUrl', rawData.avatarUrl);
+            // wx.setStorageSync('userNickName', rawData.nickName);
             wx.setStorageSync('wxNickName', rawData.nickName);
           },
           fail: function() {

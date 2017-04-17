@@ -272,10 +272,10 @@ height: 35rpx;
 }
 
 .price_number{
-    display: flex;
+display: flex;
 font-size: 28rpx;
 color: #3AA4F1;
-margin-left: 6rpx;
+margin-left: 10rpx;
 height: 35rpx;
 line-height: 35rpx;
 margin-top: 6rpx;

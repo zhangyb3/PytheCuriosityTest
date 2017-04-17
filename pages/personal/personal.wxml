@@ -11,7 +11,7 @@
                 <image class="personal_avartar_image" src="{{userAvatarUrl}}"></image>
             </view>
         <view class="personal_description_text_zone">
-            <view class="personal_nick_name_wrap"><text class="personal_nick_name">用户:{{userNickName}}</text></view>
+            <view class="personal_nick_name_wrap"><text class="personal_nick_name">{{userNickName}}</text></view>
             <view class="person_discribe_wrap"></view>
             <text class="person_discribe">{{userDescription}}
             </text>
