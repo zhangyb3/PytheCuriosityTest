@@ -222,7 +222,7 @@ button_wrap{
     flex-direction: row;
     margin-top:10px;
     text-align: center;
-    margin-left: -14rpx;
+    /*margin-left: -14rpx;*/
 }
 .subject_hint{
     width:100rpx;
@@ -240,7 +240,7 @@ button_wrap{
     width:432rpx;
     padding:0 5px;
     line-height:30px;
-    margin-left: 12rpx;
+    /*margin-left: 12rpx;*/
 }
 .subject_picker{
     /*background:url(../../images/arr.png) right center no-repeat;*/
