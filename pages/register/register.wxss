@@ -95,7 +95,7 @@
 }
 
 .phone_hint{
-    width:auto;
+    width:100rpx;
     text-align:right;
     line-height:60rpx;
     color:#333333;
@@ -148,7 +148,7 @@ button_wrap{
     /*text-align: center;*/
 }
 .verification_hint{
-    width:auto;
+    width:100rpx;
     text-align:right;
     line-height:30px;
     color:#333333;
@@ -184,11 +184,11 @@ button_wrap{
     flex-direction: row;
     margin-top:10px;
     text-align: center;
-    margin-left: -14rpx;
+    /*margin-left: -14rpx;*/
 }
 
 .grade_hint{
-    width:46px;
+    width:100rpx;
     text-align:right;
     line-height:30px;
     color:#333333;
@@ -225,7 +225,7 @@ button_wrap{
     margin-left: -14rpx;
 }
 .subject_hint{
-    width:46px;
+    width:100rpx;
     text-align:right;
     line-height:30px;
     color:#333333;
