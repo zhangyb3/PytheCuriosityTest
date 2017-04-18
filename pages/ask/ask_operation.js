@@ -137,10 +137,22 @@ Page({
   },
 
   recordSound:function(e){
-    console.log("录音功能");
-    this.setData({
-      hide_record_sound_section : false,
-      hide_textarea: true,
+    // console.log("录音功能");
+    // this.setData({
+    //   hide_record_sound_section : false,
+    //   hide_textarea: true,
+    // });
+    wx.navigateTo({
+      url: '../section/record_voice',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
     });
      
   },
@@ -216,7 +228,8 @@ Page({
 
         wx.getSavedFileList({
           success: function(res) {
-            if (res.fileList.length > 0){
+            var filePathLength = res.fileList[0].filePath.length;
+            if (res.fileList.length > 0 && res.fileList[0].filePath[filePathLength-1]=='k'){
               wx.removeSavedFile({
                 filePath: res.fileList[0].filePath,
                 complete: function(res) {
@@ -272,7 +285,8 @@ Page({
 
   //   wx.getSavedFileList({
   //     success: function(res) {
-  //       if (res.fileList.length > 0){
+  //       var filePathLength = res.fileList[0].filePath.length;
+  //       if (res.fileList.length > 0 && res.fileList[0].filePath[filePathLength-1]=='k'){
   //         wx.removeSavedFile({
   //           filePath: res.fileList[0].filePath,
   //           complete: function(res) {
@@ -342,7 +356,7 @@ Page({
           path : that.data.ask_question.upload_voice_path,
           fileType : 'audio',
         };
-        that.data.ask_question.photo_path = fileSys.uploadFile(that.data.ask_question.voice_path,parameters);
+        fileSys.uploadFile(that.data.ask_question.voice_path,parameters);
         
       },
       fail: function() {
@@ -493,6 +507,7 @@ Page({
             // success
             console.log(res.savedFilePath);
             that.data.ask_question.draw_path = res.savedFilePath;
+            wx.setStorageSync('recordLocalDraw',res.savedFilePath);
             wx.showModal({
               title: '图示已保存',
               content: res.savedFilePath,
@@ -572,6 +587,7 @@ Page({
             // success
             var savedFilePath = res.savedFilePath;
             that.data.ask_question.photo_path = savedFilePath;
+            wx.setStorageSync('recordLocalPhoto',savedFilePath);
             that.setData({
               ask_question : that.data.ask_question,
               // img_src : savedFilePath,
@@ -823,7 +839,49 @@ var that = this;
 
   onShow:function(){
     // 页面显示
-    
+    if(wx.getStorageSync('hasRecordVoice') == 'yes')
+    {
+      this.data.ask_question.voice_path = wx.getStorageSync('recordLocalVoicePath');
+      this.data.ask_question.voice_timeLength = wx.getStorageSync('recordLocalVoiceDuration');
+      this.data.ask_question.photo_path = wx.getStorageSync('recordLocalPhoto');
+      this.data.ask_question.draw_path = wx.getStorageSync('recordLocalDraw');
+      this.setData({
+        ask_question: this.data.ask_question,
+        hide_voice_bubble: false,
+      });
+      console.log(this.data.ask_question.voice_path);
+      wx.setStorageSync('hasRecordVoice', 'no');
+
+      var that = this;
+      wx.request({
+        url: config.PytheRestfulServerURL + '/file/uploadFilePrepare',
+        data: {
+          userFilePath: this.data.ask_question.voice_path,
+          fileType: 'audio',
+        },
+        method: 'POST', 
+        success: function(res){
+          // success
+          console.log(res.data.data)
+          var result = JSON.parse(res.data.data);
+          that.data.ask_question.upload_voice_path = result.path;
+
+          //上传录音
+          var parameters = {
+            path : that.data.ask_question.upload_voice_path,
+            fileType : 'audio',
+          };
+          fileSys.uploadFile(that.data.ask_question.voice_path,parameters);
+          
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      });
+    }
   },
   onHide:function(){
     // 页面隐藏
@@ -852,4 +910,5 @@ function speaking() {
     })
     _this.data.ask_question.voice_timeLength = count/10;
   }, 100);
+  count = 0;
 }

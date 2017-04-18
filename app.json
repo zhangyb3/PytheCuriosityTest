@@ -15,7 +15,8 @@
     "pages/knowledge/knowledge",
     "pages/register/register",
     "pages/reward/reward",
-    "pages/reward/other_reward"
+    "pages/reward/other_reward",
+    "pages/section/record_voice"
   ],
 
   "window":{

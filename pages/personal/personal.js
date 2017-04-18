@@ -155,6 +155,7 @@ Page({
           wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
           wx.setStorageSync(user.GradeID, registerInfo.gradeid);
           wx.setStorageSync(user.UserDescription, registerInfo.description);
+          wx.setStorageSync('userAvatarUrl', registerInfo.userimg);
         }
       },
       (userRegisterResult) => {

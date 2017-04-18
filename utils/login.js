@@ -39,6 +39,29 @@ var login = (success, fail) => {
               wx.setStorageSync(user.GradeID, registerInfo.gradeid);
               wx.setStorageSync(user.UserDescription, registerInfo.description);
               wx.setStorageSync(user.UserNickName, registerInfo.username);
+              wx.setStorageSync('userAvatarUrl', registerInfo.userimg);
+
+
+                if(wx.getStorageSync(user.UserID)!='userID')
+                {
+                    
+                    wx.setStorageSync('alreadyRegister', 'yes');
+                    wx.setStorageSync('fromRegister', 'no');
+                    wx.navigateBack({
+                        delta: 1, // 回退前 delta(默认为1) 页面
+                        success: function(res){
+                        // success
+                        },
+                        fail: function() {
+                        // fail
+                        },
+                        complete: function() {
+                        // complete
+                        }
+                    });
+
+                }
+
             }
           },
           (userRegisterResult) => {
