@@ -140,14 +140,31 @@
     height: 36rpx;
 }
 
-.tool_content_black_pen{
-    margin-right: 10rpx;
+.tool_content{
+    /*margin-right: 10rpx;
     width: 37rpx;
-    height: 36rpx;
+    height: 36rpx;*/
+    color: #333333;
+    font-size: 34rpx;
 }
 
 .tool_ersaer{
     margin-right: 10rpx;
     width: 40rpx;
     height: 39rpx;
+}
+
+.tool_clean{
+    margin-right: 10rpx;
+    width: 38rpx;
+    height: 39rpx;
+}
+
+.red_pen_tool{
+    margin-left: 20rpx;
+    /*padding-left: 40rpx;*/
+}
+
+.clean_tool{
+    margin-right: 20rpx;
 }
