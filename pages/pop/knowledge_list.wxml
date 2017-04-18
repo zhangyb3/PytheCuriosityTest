@@ -8,7 +8,6 @@
 <!-- 列表横向排列容器 -->
 <view class="knowledge_list_zone">
 
-  <view class="srcoll1">
   <!--列表-->
   <scroll-view  class="scroll_list"  scroll-y="true" 
                bindscrolltolower="onLoadMore" bindscrolltoupper="onRefesh" >
@@ -30,9 +29,7 @@
     </view>
 
   </scroll-view>
-  </view>
 
-  <view class="srcoll2">
   <scroll-view  class="scroll_list"  scroll-y="true" 
                bindscrolltolower="onLoadMore" bindscrolltoupper="onRefesh" >
 
@@ -53,7 +50,6 @@
     </view>
 
   </scroll-view>
-  </view>
 
 
 </view>

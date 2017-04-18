@@ -19,11 +19,12 @@
     z-index: 42;
     position: fixed;
     top: 0rpx;
-    /*left: 0;
+
+    left: 0;
     right: 0;
-    bottom: 0;*/
+    bottom: 0;
     
-    /*width: 100%;*/
+    width: 100%;
 }
 
 .knowledge_item_text{
@@ -31,19 +32,22 @@
     font-size: 30rpx;
 }
 
-.scroll1{
-    position: fixed;
+/*.scroll1{
+    display: flex;
     margin-left: 10px;
+    width: 50%;
 }
 
 .scroll2{
-    position: fixed;
+    display: flex;
     margin-left: 10px;
-}
+    width: 50%;
+}*/
 
 .scroll_list{
     /*flex-direction: column;*/
-    height: 300px;
+    height: 1400rpx;
+    width: 100%;
     /*width: 33.3333%;*/
 }
 
@@ -57,7 +61,7 @@
 
 .knowledge_item {
     
-    width: 120px;
+    width: 100%;
     
     text-align: center;
     /*height: 20px;*/

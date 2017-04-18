@@ -25,6 +25,9 @@ Page({
       speakingTimeLength: 0,//说话时长
       voices: [],//音频数组
     },
+
+    isPlaying: false,//是否正在播放
+
     pen:{
       lineWidth: 2,
       color: 'black',
@@ -63,6 +66,18 @@ Page({
 
     preview_img_url: config.PytheFileServerURL ,
   },
+
+ //手指按下
+  touchdownRecord: function () {
+    console.log("手指按下了...")
+    console.log("new date : " + new Date)
+    var _this = this;
+    playing.call(this);
+    this.setData({
+      isPlaying: true
+    })
+  },
+
   onLoad:function(parameters){
     console.log("from answer");
   
@@ -278,6 +293,12 @@ Page({
   //点击播放录音
   gotoPlayVoice: function (e) {
     var filePath = e.currentTarget.dataset.key;
+
+    var that = this;
+    that.setData({
+      isPlaying: true
+    })
+
     //点击开始播放
     wx.showToast({
       title: '开始播放',
@@ -638,12 +659,16 @@ Page({
   },
 
   playQuestionVoiceRecord:function(e){
+    var that = this;
+    that.setData({
+      isPlaying: true
+    })
     wx.showToast({
       title: '播放录音',
       icon: 'success',
       duration: 1000
     });
-    var that = this;
+    
     
     var questionVoiceRemotePath = e.currentTarget.dataset.question_voice;
     
@@ -659,6 +684,9 @@ Page({
         // fail
       },
       complete: function() {
+        that.setData({
+      isPlaying: false
+    })
         // complete
       }
     })
