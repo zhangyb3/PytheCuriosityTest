@@ -117,10 +117,24 @@ Page({
       console.log("classification");
       this.data.answer_page_menu[0].active = true;
       this.data.answer_page_menu[1].active = false;
-      //收起排序属性列表
-      this.setData({hide_pop_sort_attribute_list:true});
-      //弹出科目列表
-      this.setData({hide_pop_subject_list:false});
+      if(this.data.hide_pop_subject_list == true)
+      {
+        //收起排序属性列表
+        this.setData({hide_pop_sort_attribute_list:true});
+        //弹出科目列表
+        this.setData({hide_pop_subject_list:false});
+      }
+      else
+      {
+        //收起排序属性列表
+        this.setData({hide_pop_sort_attribute_list:true});
+        //弹出科目列表
+        this.setData({hide_pop_subject_list:true});
+
+        this.data.answer_page_menu[0].active = false;
+        this.data.answer_page_menu[1].active = false;
+      }
+      
     }
     else
     {
@@ -140,10 +154,24 @@ Page({
       console.log("sort");
       this.data.answer_page_menu[1].active = true;
       this.data.answer_page_menu[0].active = false;
-      //收起科目列表
-      this.setData({hide_pop_subject_list:true});
-      //弹出排序属性列表
-      this.setData({hide_pop_sort_attribute_list:false});
+      if(this.data.hide_pop_sort_attribute_list == true)
+      {
+        //收起科目列表
+        this.setData({hide_pop_subject_list:true});
+        //弹出排序属性列表
+        this.setData({hide_pop_sort_attribute_list:false});
+      }
+      else
+      {
+        //收起科目列表
+        this.setData({hide_pop_subject_list:true});
+        //弹出排序属性列表
+        this.setData({hide_pop_sort_attribute_list:true});
+
+        this.data.answer_page_menu[1].active = false;
+        this.data.answer_page_menu[0].active = false;
+      }
+      
     }
     else
     {

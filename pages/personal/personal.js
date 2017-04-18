@@ -19,7 +19,7 @@ Page({
     },
     countdownText : '发',
 
-    userAvatarUrl:'../../images/image_1@2x.png',
+    userAvatarUrl:'',
     userNickName:'9527',
 
     hide_register_lock_cover: false,

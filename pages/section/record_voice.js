@@ -8,7 +8,7 @@ var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
 
-const SAVE_VOICE = "选择录音"
+const SAVE_VOICE = "上传录音"
 
 var playTimeInterval
 var recordTimeInterval
