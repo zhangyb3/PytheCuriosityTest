@@ -1,0 +1,36 @@
+
+
+.aboutUs_container{
+position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.aboutUs_content_wrap{
+position: fixed;
+    top: 56rpx;
+    left: 30rpx;
+    right: 30rpx;
+    bottom: 0;
+    
+    display: flex;
+    flex-direction: column;
+
+}
+
+.aboutUs_title{
+    font-size: 34rpx;
+    color: #333333;
+    font-weight: bold;
+}
+
+.aboutUs_content{
+    font-size: 34rpx;
+    color: #333333;
+    margin-top: 45rpx;
+}

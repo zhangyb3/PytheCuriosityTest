@@ -15,7 +15,9 @@
     "pages/knowledge/knowledge",
     "pages/register/register",
     "pages/reward/reward",
-    "pages/reward/other_reward"
+    "pages/reward/other_reward",
+    "pages/personal/personal_about_us",
+    "pages/personal/personal_balance_rules"
   ],
 
   "window":{

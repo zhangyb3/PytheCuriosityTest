@@ -1,0 +1,7 @@
+
+<view class="aboutUs_container">
+<view class="aboutUs_content_wrap">
+    <text class="aboutUs_title">关于我们</text>
+    <text class="aboutUs_content">派知团队致力于构建智能助教机器人平台,实现“人人都是老师”的理想模式。</text>
+</view>
+</view>
