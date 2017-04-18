@@ -33,6 +33,7 @@ Page({
     
     preview_img_url: config.PytheFileServerURL ,
     hide_show_image_page: true,
+    isPlaying: false //是否正在播放
 
     
   },
@@ -222,6 +223,10 @@ Page({
 
 
   playVoiceRecord:function(e){
+    var that = this;
+    that.setData({
+      isPlaying: true
+    })
     wx.showToast({
       title: '播放录音',
       icon: 'success',

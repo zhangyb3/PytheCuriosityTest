@@ -283,3 +283,27 @@ height: 90rpx;
     background-color: #ffffff;
 }
 
+
+.speak_style_record{
+background-color: deepskyblue;
+    display: flex;
+    width: 200rpx;
+    height: 60rpx;
+    border-radius: 30rpx;
+    margin-top: 60rpx;
+}
+.sound_style_record{
+    width: 19rpx;
+    height: 29rpx;
+    margin-top: 16rpx;
+    margin-left: 30rpx;
+}
+
+.record_time{
+    font-size: 28rpx;
+    color: white;
+    text-align: center;
+    line-height: 60rpx;
+    width: 100rpx;
+}
+
