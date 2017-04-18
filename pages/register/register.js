@@ -45,6 +45,26 @@ Page({
   
   onLoad:function(options){
 
+    
+    if(wx.getStorageSync(user.UserID)!='userID' || wx.getStorageSync('alreadyRegister') == 'yes')
+    {
+      console.log('register show : ' + wx.getStorageSync('alreadyRegister'));
+      wx.setStorageSync('alreadyRegister', 'yes');
+      wx.setStorageSync('fromRegister', 'yes');
+      wx.navigateBack({
+        delta: 1, // 回退前 delta(默认为1) 页面
+        success: function(res){
+          // success
+        },
+        fail: function(res) {
+          // fail
+        },
+        complete: function(res) {
+          // complete
+        }
+      })
+    }
+
     this.data.registerParams.gradeId = null;
     this.data.registerParams.subjectId = null;
 
@@ -303,29 +323,13 @@ Page({
 
   onReady:function(){
     // 页面渲染完成
+    
+
   },
   onShow:function(){
     
-
-    if(wx.getStorageSync(user.UserID)!='userID')
-    {
-      wx.setStorageSync('alreadyRegister', 'yes');
-      wx.setStorageSync('fromRegister', 'no');
-      wx.navigateBack({
-        delta: 1, // 回退前 delta(默认为1) 页面
-        success: function(res){
-          // success
-        },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
-        }
-      });
-
-    }
-
+    
+    
     
   },
   onHide:function(){

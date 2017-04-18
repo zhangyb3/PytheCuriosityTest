@@ -525,6 +525,7 @@ Page({
             console.log(res.savedFilePath);
             that.data.question_answer.draw_path = res.savedFilePath;
             wx.setStorageSync('recordLocalDraw',res.savedFilePath);
+            wx.setStorageSync('hasDrawnPicture', 'yes');
             wx.showModal({
               title: '图示已保存',
               content: res.savedFilePath,
@@ -607,6 +608,7 @@ Page({
             var savedFilePath = res.savedFilePath;
             that.data.question_answer.photo_path = savedFilePath;
             wx.setStorageSync('recordLocalPhoto',savedFilePath);
+            wx.setStorageSync('hasTakenPhoto', 'yes');
             that.setData({
               question_answer : that.data.question_answer,
             })
@@ -881,6 +883,8 @@ Page({
     if(answerParams.answerContent.text[0]!=null && answerParams.knowledgeId!=null)
     {
       base.commitAnswer(answerParams);
+      wx.setStorageSync('hasTakenPhoto', 'no');
+      wx.setStorageSync('hasDrawnPicture', 'no');
       wx.navigateBack({
         delta: 1, // 回退前 delta(默认为1) 页面
         success: function(res){
@@ -958,8 +962,16 @@ Page({
     {
       this.data.question_answer.voice_path = wx.getStorageSync('recordLocalVoicePath');
       this.data.question_answer.voice_timeLength = wx.getStorageSync('recordLocalVoiceDuration');
-      this.data.question_answer.photo_path = wx.getStorageSync('recordLocalPhoto');
-      this.data.question_answer.draw_path = wx.getStorageSync('recordLocalDraw');
+
+      if(wx.getStorageSync('hasTakenPhoto') == 'yes')
+      {
+        this.data.question_answer.photo_path = wx.getStorageSync('recordLocalPhoto');
+      }
+      if(wx.getStorageSync('hasDrawnPicture') == 'yes')
+      {
+        this.data.question_answer.draw_path = wx.getStorageSync('recordLocalDraw');
+      }
+
       this.setData({
         question_answer: this.data.question_answer,
         hide_voice_bubble: false,

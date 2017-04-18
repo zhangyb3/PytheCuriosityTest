@@ -7,6 +7,9 @@
     background-color: #FFFFFF;
     border-bottom: 1px solid #EEE;
     height:100rpx;
+    width: 100%;
+    position: fixed;
+    top: 0;
 }
 
 .subject_view{
