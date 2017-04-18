@@ -160,7 +160,7 @@ button_wrap{
     border:1px solid #CCCCCC;
     /*border-radius: 8rpx;*/
     height: 72rpx;
-    width:226rpx;
+    width:224rpx;
     padding:0 5px;
     text-align:center;
 }

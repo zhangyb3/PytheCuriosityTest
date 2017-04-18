@@ -111,6 +111,38 @@ Page({
     })
   },
 
+  selectBalanceRules:function(e){
+    console.log('person Balance rules');
+    wx.navigateTo({
+      url: 'personal_balance_rules',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+
+    selectAboutUs:function(e){
+    console.log('person aboutUS');
+    wx.navigateTo({
+      url: 'personal_about_us',
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+
   personEditOperationPage:function(e){
     console.log('person Edit');
     wx.navigateTo({

@@ -16,9 +16,12 @@
     "pages/register/register",
     "pages/reward/reward",
     "pages/reward/other_reward",
-    "pages/section/record_voice",
+<<<<<<< HEAD
+    "pages/section/record_voice"
+=======
     "pages/personal/personal_about_us",
     "pages/personal/personal_balance_rules"
+>>>>>>> e0ac3d55a8ad5f271b0b16e564a0b1459eb7b7b0
   ],
 
   "window":{
