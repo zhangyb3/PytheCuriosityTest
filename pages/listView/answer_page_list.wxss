@@ -1,7 +1,7 @@
 
 .scroll_list{
-    margin-top: 10px;
-    
+    /*margin-top: 10px;*/
+    /*top: 100rpx;*/
 }
 
 .interval{

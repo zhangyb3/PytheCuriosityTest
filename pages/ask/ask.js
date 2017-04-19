@@ -26,56 +26,67 @@ Page({
         subjectId:1001,
         subject_name: '数学',
         sub_dis: '代数、几何、概率',
+        icon:'../../images/question1_icon_math@2x.png',
       },
       {
         subjectId:1002,
         subject_name: '英语',
         sub_dis: '翻译、作文、语法',
+        icon:'../../images/question1_icon_English@2x.png',
       },
       {
         subjectId:1003,
         subject_name: '语文',
         sub_dis: '文言文、古诗词解析、成语',
+        icon:'../../images/question1_icon_language@2x.png',
       },
       {
         subjectId:1004,
         subject_name: '艺术',
         sub_dis: '音乐、舞蹈、美术',
+        icon:'../../images/icon_art@2x.png',
       },
       {
         subjectId:1005,
         subject_name: '健康',
         sub_dis: '运动、养生',
+        icon:'../../images/icon_health@2x.png',
       },
       {
         subjectId:1006,
         subject_name: '物理',
         sub_dis: '能量守恒、自由落体、加速度',
+        icon:'../../images/question1_icon_physics@2x.png',
       },
       {
         subjectId:1007,
         subject_name: '化学',
         sub_dis: '元素周期表、化学方程式、分子',
+        icon:'../../images/question1_icon_chemical@2x.png',
       },
       {
         subjectId:1008,
         subject_name: '生物',
         sub_dis: '细胞、物种、食物链',
+        icon:'../../images/question1_icon_biont@2x.png',
       },
       {
         subjectId:1009,
         subject_name: '地理',
         sub_dis: '时区、地形、星系',
+        icon:'../../images/question1_icon_geography@2x.png',
       },
       {
         subjectId:1010,
         subject_name: '历史',
-        sub_dis: '春秋战国、分封制、诸子百家'
+        sub_dis: '春秋战国、分封制、诸子百家',
+        icon:'../../images/question1_icon_history@2x.png',
       },
       {
         subjectId:1011,
         subject_name: '计算机',
-        sub_dis: '数据结构、算法、机器码'
+        sub_dis: '数据结构、算法、机器码',
+        icon:'../../images/question1_icon_political@2x.png',
       },
       
       

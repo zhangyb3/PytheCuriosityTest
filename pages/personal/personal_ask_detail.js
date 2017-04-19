@@ -188,21 +188,10 @@ Page({
     
     var voiceRemotePath = e.currentTarget.dataset.voice;
     
-    var voicePath = fileSys.downloadFile(that,decodeURI(voiceRemotePath),'audio');
-    that.data.voicePath = voicePath;
+    fileSys.downloadFile(that,decodeURI(voiceRemotePath),'audio');
     
-    wx.playVoice({
-      filePath: that.data.voicePath,
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
+    
+    
 
   },
 

@@ -5,6 +5,11 @@
   background-color: #F5F5F5;
 }
 
+.answer_page_list_container{
+  margin-top: 100rpx;
+  width: 100%;
+}
+
 @import "../common/answer_page_filter_sort.wxss";
 @import "../listView/answer_page_list.wxss";
 @import "../pop/answer_page_subject_list.wxss";

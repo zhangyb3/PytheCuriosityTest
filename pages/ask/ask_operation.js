@@ -663,16 +663,17 @@ Page({
       },
       complete: function() {
         // complete
-        setTimeout(function() {
-        //超时结束播放特效  
         
-        that.setData({
-          isPlaying: false,
-        })
-        
-        }, that.data.ask_question.voice_timeLength*1000);
       }  
-    })
+    });
+    setTimeout(function() {
+      //超时结束播放特效  
+      
+      that.setData({
+        isPlaying: false,
+      })
+      
+      }, (that.data.ask_question.voice_timeLength-1)*1000);
   },
 
   showPhoto:function(e){
