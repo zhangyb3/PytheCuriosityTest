@@ -97,7 +97,6 @@ Page({
 
   },
 
-  
 
   filterSubject:function(subject_data){
     this.setData({hide_login_item:false});
