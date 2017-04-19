@@ -87,6 +87,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
+    
 }
 
 .phone_hint{
@@ -97,6 +98,8 @@
     font-size:30rpx;
     /*font-weight:bold;*/
     margin-right:5px;
+    margin-top: 8rpx;
+    /*margin-top: */
 }
 .phone_number_input{
     border:1px solid #CCCCCC;
