@@ -21,12 +21,12 @@
 <view class="register_input_container">
 
         <view class="phone_number_container">
-            <text class="phone_hint">手机号:</text>
+            <text class="phone_hint">手机号</text>
             <input class="phone_number_input" type="text"  bindinput="phoneNumberInput" ></input>
             
         </view>
         <view class="verification_code_container">
-            <text class="verification_hint">验证码:</text>
+            <text class="verification_hint">验证码</text>
             <input class="verification_code_input" type="text"  bindinput="verificationCodeInput" ></input>
             <view class="button_wrap">
             <button disabled="{{lock_countdown}}" class="send_verification_code_button" bindtap="sendVerificationCode">{{countdownText}}</button>
@@ -34,7 +34,7 @@
             
         </view>
         <view class="grade_container" wx:if="{{select_student}}" hidden='{{hide_grade_selection}}'>
-            <text class="grade_hint">年级:</text>
+            <text class="grade_hint">年 级</text>
             <picker mode="selector" bindchange="gradeChange" value="{{grade_index}}" range="{{gradeRange}}" class="grade_picker_wrap">
                 <view class="grade_picker">
                     {{gradeRange[grade_index]}}

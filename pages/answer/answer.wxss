@@ -6,8 +6,14 @@
 }
 
 .answer_page_list_container{
-  margin-top: 100rpx;
+  position: fixed;
+  /*margin-top: 100rpx;*/
+  top: 100rpx;
+  left: 0rpx;
+  right: 0rpx;
+  bottom: 0rpx;
   width: 100%;
+  background-color: #f5f5f5;
 }
 
 @import "../common/answer_page_filter_sort.wxss";

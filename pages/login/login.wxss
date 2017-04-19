@@ -90,7 +90,7 @@
 }
 
 .phone_hint{
-    width:100rpx;
+    width:20%;
     text-align:right;
     line-height:60rpx;
     color:#333333;
@@ -102,7 +102,7 @@
     border:1px solid #CCCCCC;
     /*border-radius: 8rpx 0 0 8rpx;*/
     height: 30px;
-    width:432rpx;
+    width:400rpx;
     padding:0 5px;
     text-align:left;
     color:#333333;
@@ -145,7 +145,7 @@ button_wrap{
     /*text-align: center;*/
 }
 .verification_hint{
-    width:100rpx;
+    width:20%;
     text-align:right;
     line-height:30px;
     color:#333333;
@@ -157,7 +157,7 @@ button_wrap{
     border:1px solid #CCCCCC;
     /*border-radius: 8rpx;*/
     height: 72rpx;
-    width:224rpx;
+    width:192rpx;
     padding:0 5px;
     text-align:left;
     color:#333333;
@@ -187,7 +187,7 @@ button_wrap{
 }
 
 .grade_hint{
-    width:100rpx;
+    width:20%;
     text-align:right;
     line-height:30px;
     color:#333333;
@@ -199,7 +199,7 @@ button_wrap{
     border:1px solid #CCCCCC;
     /*border-radius: 8rpx;*/
     height: 30px;
-    width:432rpx;
+    width:400rpx;
     padding:0 5px;
     line-height:30px;
 }
@@ -224,7 +224,7 @@ button_wrap{
     /*margin-left: -14rpx;*/
 }
 .subject_hint{
-    width:100rpx;
+    width:20%;
     text-align:right;
     line-height:30px;
     color:#333333;
@@ -236,7 +236,7 @@ button_wrap{
     border:1px solid #CCCCCC;
     /*border-radius: 8rpx;*/
     height: 30px;
-    width:432rpx;
+    width:400rpx;
     padding:0 5px;
     line-height:30px;
     /*margin-left: 12rpx;*/
