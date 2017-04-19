@@ -33,7 +33,10 @@ Page({
     
     preview_img_url: config.PytheFileServerURL ,
     hide_show_image_page: true,
-    isPlaying: false //是否正在播放
+    isPlaying: false, //是否正在播放
+
+
+    hide_login_item:true
 
     
   },
@@ -97,39 +100,41 @@ Page({
   
 
   filterSubject:function(subject_data){
-    console.log("subject filter");
-    if(this.data.hide_pop_subject_list)
-    {
-      this.setData({hide_pop_subject_list:false});
-    }
-    else
-    {
-      this.setData({hide_pop_subject_list:true});
-    }
+    this.setData({hide_login_item:false});
+    
+    // console.log("subject filter");
+    // if(this.data.hide_pop_subject_list)
+    // {
+    //   this.setData({hide_pop_subject_list:false});
+    // }
+    // else
+    // {
+    //   this.setData({hide_pop_subject_list:true});
+    // }
     
     //加载科目列表
-    var that = this;
-    wx.request({
-      url: config.PytheRestfulServerURL + '/index/subject/' + wx.getStorageSync(user.GradeID),
-    data: {
+    // var that = this;
+    // wx.request({
+    //   url: config.PytheRestfulServerURL + '/index/subject/' + wx.getStorageSync(user.GradeID),
+    // data: {
       
-    },
-      method: 'GET', 
-      success: function(res){
-        // success
+    // },
+    //   method: 'GET', 
+    //   success: function(res){
+        
       
-        that.data.subject_infos = res.data;
-        that.setData({
-          subject_infos : that.data.subject_infos,
-        });
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    });
+    //     that.data.subject_infos = res.data;
+    //     that.setData({
+    //       subject_infos : that.data.subject_infos,
+    //     });
+    //   },
+    //   fail: function() {
+
+    //   },
+    //   complete: function() {
+      
+    //   }
+    // });
   },
 
   selectOneItem:function(e){

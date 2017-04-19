@@ -64,7 +64,7 @@ Page({
       },
       {
         subjectId:1011,
-        subject_name: '计算机',
+        subject_name: '编程',
       },
       
       

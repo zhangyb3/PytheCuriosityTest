@@ -1,4 +1,6 @@
 <!--index.wxml-->
+<import src="../login/login.wxml" />
+
 
 <import src="../listView/index_page_list.wxml" />
 <import src="../common/index_page_filter.wxml" />
@@ -53,3 +55,6 @@
   </view>
   <!--<view class="list_bottom"></view>-->
 
+<view class="login_container" hidden='{{hide_login_item}}'>
+    <template is="login_view"></template>
+  </view>
