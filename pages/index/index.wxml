@@ -31,7 +31,7 @@
   </view>
 
   <view class="index_page_filter_container" >
-    <template is="index_page_filter"></template>
+    <template is="index_page_filter" data="{{subject_name}}"></template>
   </view>
 
   <!--<view class="index_page_list_container" >

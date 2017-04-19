@@ -22,6 +22,8 @@ Page({
     hide_grade_selection:false,
     select_student:true,
     select_teacher:false,
+
+    subject_name: '科目',
     subject_infos: [
     ],
 
@@ -315,7 +317,10 @@ Page({
     
     var selected_subject = e.currentTarget.dataset.name;
     console.log(selected_subject);
-    this.setData({hide_pop_subject_list:true});
+    this.setData({
+      hide_pop_subject_list:true,
+      subject_name : selected_subject,
+    });
 
     var that = this;
     var subjectParamters = {

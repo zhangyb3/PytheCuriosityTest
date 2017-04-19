@@ -84,9 +84,9 @@ Page({
       },
       {
         subjectId:1011,
-        subject_name: '计算机',
+        subject_name: '编程',
         sub_dis: '数据结构、算法、机器码',
-        icon:'../../images/question1_icon_political@2x.png',
+        icon:'../../images/icon_computer@2x.png',
       },
       
       

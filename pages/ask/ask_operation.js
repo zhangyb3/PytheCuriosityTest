@@ -731,7 +731,7 @@ Page({
   },
   selectReward5:function(e){
     console.log("￥ 5");
-    wx.setStorageSync('rewardNum', 5);
+    wx.setStorageSync('rewardNum', 0.05);
     
     pay.orderPay(
       (payResult)=>{
@@ -749,7 +749,7 @@ Page({
   },
   selectReward10:function(e){
     console.log("￥ 10");
-    wx.setStorageSync('rewardNum', 10);
+    wx.setStorageSync('rewardNum', 0.10);
     
     pay.orderPay(
       (payResult)=>{

@@ -7,7 +7,7 @@
          bindtap='filterSubject'> <image src="../../images/index_icon_kemu@2x.png"></image>
          
          </button>
-         <text class="subject_name" bindtap='filterSubject'>科目</text>
+         <text class="subject_name" bindtap='filterSubject'>{{subject_name}}</text>
          
     </view>
 
