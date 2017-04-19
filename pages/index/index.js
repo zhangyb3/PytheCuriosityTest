@@ -20,8 +20,8 @@ Page({
     
     hide_subject_selection:false,
     hide_grade_selection:false,
-    selectStudent:false,
-    selectTeacher:false,
+    select_student:true,
+    select_teacher:false,
     subject_infos: [
     ],
 
@@ -63,7 +63,22 @@ Page({
 
   },
 
-  
+  selectStudent:function(e){
+    console.log("学生");
+    this.setData({
+      select_student:true,
+      select_teacher:false
+    })
+  },
+  selectTeacher:function(e){
+    console.log("老师");
+    this.setData({
+      select_student:false,
+      select_teacher:true,
+      hide_subject_selection:false,
+      hide_grade_selection:true,
+    })
+  },
 
   //搜索
   listenerSearchInput:function(e){
@@ -97,11 +112,17 @@ Page({
 
   },
 
-  
 
   filterSubject:function(subject_data){
-    this.setData({hide_login_item:false});
-    
+    // this.setData({hide_login_item:false});
+    // if(this.data.hide_login_item)
+    // {
+    //   this.setData({hide_login_item:false});
+    // }
+    // else
+    // {
+    //   this.setData({hide_login_item:true});
+    // }
     console.log("subject filter");
     if(this.data.hide_pop_subject_list)
     {
@@ -293,6 +314,14 @@ Page({
           hide_select_item: true,
           hide_show_image_page: true,
           img_src:null,
+      });
+  },
+
+  //login遮罩层消失
+  returnLoginIndexPage: function(e) {
+      console.log("return to index page");
+      this.setData({
+          hide_login_item: true,
       });
   },
 

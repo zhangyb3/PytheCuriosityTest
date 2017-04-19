@@ -28,13 +28,12 @@
     border-width: 2rpx;
 }
 
-.student_avatar{
+/*.student_avatar{
     content: '';
     width: 250rpx;
     height: 320rpx;
     margin-top: 50rpx;
     border-radius: 20%;
-    /*background: url(../../images/not_select_student.png)0 0 no-repeat;*/
     background-size:contain;
 }
 
@@ -44,9 +43,8 @@
     height: 320rpx;
     margin-top: 50rpx;
     border-radius: 20%;
-    /*background: url(../../images/select_student.png)0 0 no-repeat;*/
     background-size:contain;
-}
+}*/
 
 .teacher_role_selection{
     display: flex;
@@ -60,13 +58,12 @@
     border-width: 2rpx;
 }
 
-.teacher_avatar{
+/*.teacher_avatar{
     content: '';
     width: 250rpx;
     height: 320rpx;
     margin-top: 50rpx;
     border-radius: 20%;
-    /*background: url(../../images/not_select_teacher.png) right 0 no-repeat;*/
     background-size:contain;
 }
 
@@ -76,9 +73,8 @@
     height: 320rpx;
     margin-top: 50rpx;
     border-radius: 20%;
-    /*background: url(../../images/select_teacher.png) right 0 no-repeat;*/
     background-size:contain;
-}
+}*/
 
 
 .register_input_container{
