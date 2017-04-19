@@ -118,6 +118,7 @@
 .multi_tips{
     margin-left: 40rpx;
     margin-right: 40rpx;
+    height: auto;
 }
 
 .select_answer_wrapper>image {
@@ -174,9 +175,19 @@
     background-color: #f5f5f5;
 }
 
+.collect_view_wrap{
+    display: flex;
+    flex-direction: row;
+    height: 60rpx;
+    width: auto;
+    background-color: #fff;
+}
+
 .collect_wrap{
     display: flex;
     flex-direction: row;
+    /*position: absolute;*/
+    margin-left: 40rpx;
     height: 60rpx;
     width: auto;
 }
@@ -269,11 +280,9 @@
 }*/
 
 .reward_answer{
-width: 60rpx;
-height: 90rpx;
-/*margin-top: 20rpx;*/
-/*margin-right: 0rpx;*/
-/*padding-left: 20rpx;*/
+    width: 60rpx;
+    height: 90rpx;
+
 
 }
 
