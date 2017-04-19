@@ -55,6 +55,6 @@
   </view>
   <!--<view class="list_bottom"></view>-->
 
-<view class="login_container" hidden='{{hide_select_item}}'>
+<view class="login_container" hidden='{{hide_login}}'>
     <template is="login_view" data="{{select_student,select_teacher}}"></template>
   </view>

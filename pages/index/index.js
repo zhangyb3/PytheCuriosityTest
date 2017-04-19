@@ -36,7 +36,7 @@ Page({
     isPlaying: false, //是否正在播放
 
 
-    hide_login_item:true
+    hide_login:true
 
     
   },
@@ -255,7 +255,7 @@ Page({
       isPlaying: true
     })
     wx.showToast({
-      title: '播放录音',
+      title: '下载录音',
       icon: 'success',
       duration: 1000
     });

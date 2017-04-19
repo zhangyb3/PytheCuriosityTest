@@ -1,4 +1,5 @@
 <!--pages/personal/personal.wxml-->
+<import src="../login/login.wxml" />
 
 <import src="../pop/register_lock_cover.wxml" />
 <view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
@@ -76,4 +77,11 @@
             <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
     </view>
+
+
+    <view class="login_container" hidden='{{hide_login}}'>
+        <template is="login_view" data="{{select_student,select_teacher}}"></template>
+    </view>
+
+
 </view>

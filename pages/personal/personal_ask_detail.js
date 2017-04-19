@@ -180,7 +180,7 @@ Page({
 
   playVoiceRecord:function(e){
     wx.showToast({
-      title: '播放录音',
+      title: '下载录音',
       icon: 'success',
       duration: 1000
     });

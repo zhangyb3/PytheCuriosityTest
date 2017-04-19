@@ -143,6 +143,11 @@ function downloadFile(that,download_file,fileType)
                 filePath: res.tempFilePath,
                 success: function(res){
                   // success
+                  wx.showToast({
+                    title: '播放录音',
+                    icon: 'success',
+                    duration: 1000
+                  });
                   wx.setStorageSync('playingVoice', 'yes');
                   wx.saveFile({
                     tempFilePath: tempFilePath,

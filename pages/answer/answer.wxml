@@ -1,4 +1,5 @@
 <!--pages/answer/answer.wxml-->
+<import src="../login/login.wxml" />
 
 <import src="../listView/answer_page_list.wxml" />
 <import src="../common/answer_page_filter_sort.wxml" />
@@ -30,5 +31,8 @@
     </view>
 
     <!--<view class="list_bottom"></view>-->
+    <view class="login_container" hidden='{{hide_login}}'>
+        <template is="login_view" data="{{select_student,select_teacher}}"></template>
+    </view>
 
 </view>
