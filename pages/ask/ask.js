@@ -25,46 +25,57 @@ Page({
       {
         subjectId:1001,
         subject_name: '数学',
+        sub_dis: '代数、几何、概率',
       },
       {
         subjectId:1002,
         subject_name: '英语',
+        sub_dis: '翻译、作文、语法',
       },
       {
         subjectId:1003,
         subject_name: '语文',
+        sub_dis: '文言文、古诗词解析、成语',
       },
       {
         subjectId:1004,
         subject_name: '艺术',
+        sub_dis: '音乐、舞蹈、美术',
       },
       {
         subjectId:1005,
         subject_name: '健康',
+        sub_dis: '运动、养生',
       },
       {
         subjectId:1006,
         subject_name: '物理',
+        sub_dis: '能量守恒、自由落体、加速度',
       },
       {
         subjectId:1007,
         subject_name: '化学',
+        sub_dis: '元素周期表、化学方程式、分子',
       },
       {
         subjectId:1008,
         subject_name: '生物',
+        sub_dis: '细胞、物种、食物链',
       },
       {
         subjectId:1009,
         subject_name: '地理',
+        sub_dis: '时区、地形、星系',
       },
       {
         subjectId:1010,
         subject_name: '历史',
+        sub_dis: '春秋战国、分封制、诸子百家'
       },
       {
         subjectId:1011,
         subject_name: '计算机',
+        sub_dis: '数据结构、算法、机器码'
       },
       
       
@@ -75,41 +86,7 @@ Page({
      ask_teacher_list:[
      
     ],
-    subjects_discribe:[
-      {
-        sub_dis: '文言文、古诗词解析、成语',
-      },{
-        sub_dis: '一次函数、数的认识、小数',
-      },{
-        sub_dis: '翻译、作文、语法',
-      },
-      {
-        sub_dis: '细胞、物种、食物链',
-      },
-      {
-        sub_dis: '元素周期表、化学方程式、分子',
-      },
-      {
-        sub_dis: '能量守恒、自由落体、加速度',
-      },
-      {
-        sub_dis: '时区、地形、星系',
-      },
-      {
-        sub_dis: '政治制度、党的制度',
-      },
-      {
-        sub_dis: '音乐、舞蹈、美术',
-      },
-      {
-        sub_dis: '运动、养生',
-      },
-      {
-        sub_dis: '春秋战国、分封制、诸子百家'
-      },
-
-    ],
-
+    
     hide_register_lock_cover: false,
 
   },
@@ -119,30 +96,13 @@ Page({
       hide_register_lock_cover: false,
     });
     
-    if(wx.getStorageSync('alreadyRegister') == 'yes')
-    {
+    
       this.setData({
         hide_register_lock_cover: true,
       });
-    }
     
-    if(wx.getStorageSync('alreadyRegister')=='no')
-    {
-      // this.setData({hide_register_page:false});
-      // this.setData({hide_index_page:true});
-      wx.navigateTo({
-        url: '../register/register',
-        success: function(res){
-          // success
-        },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
-        }
-      })
-    }
+    
+    
 
     this.setData({hide_ask_subject_list:false});
     this.setData({hide_ask_teacher_list:true});
@@ -153,11 +113,11 @@ Page({
     var that = this;
     var simple_params = {
       userId: wx.getStorageSync(user.UserID),
-      pageSize : 3,
+      pageSize : 10,
       pageNum : 1,
     };
     listViewUtil.loadList(that,'teacher',config.PytheRestfulServerURL,
-    "/question/teacherList/",
+    "/question/teacherList",
     10,
         simple_params,
         function (netData){
@@ -219,6 +179,10 @@ Page({
   },
 
   selectOneSubject:function(e){
+
+    //先判断是否已注册
+
+
       console.log("navigate to ask operation page");
       var parametersJSON = e.currentTarget.dataset.item;
       console.log(parametersJSON);
@@ -242,6 +206,10 @@ Page({
   },
 
   selectOneTeacher:function(e){
+
+    //先判断是否已注册
+
+    
       console.log("navigate to ask operation page");
       var parametersJSON = e.currentTarget.dataset.teacher;
       console.log(parametersJSON);
@@ -320,6 +288,10 @@ Page({
   },
   onShow:function(){
     // 页面显示
+
+    this.setData({
+      alreadyRegister: wx.getStorageSync('alreadyRegister'),
+    });
   },
   onHide:function(){
     // 页面隐藏

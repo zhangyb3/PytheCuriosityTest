@@ -55,31 +55,13 @@ Page({
       hide_register_lock_cover: false,
     });
 
-    if(wx.getStorageSync('alreadyRegister') == 'yes')
-    {
+    
       this.setData({
         hide_register_lock_cover: true,
       });
-    }
+   
 
-    if(wx.getStorageSync('alreadyRegister')=='no')
-    {
-      // this.setData({hide_register_page:false});
-      // this.setData({hide_index_page:true});
-      wx.navigateTo({
-        url: '../register/register',
-        success: function(res){
-          // success
-        },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
-        }
-      })
-    }
-
+   
     this.setData({hide_pop_subject_list:true});
     this.setData({hide_pop_sort_attribute_list:true});
 
@@ -283,6 +265,10 @@ Page({
   },
 
   selectOneItem:function(e){
+
+    //先判断是否已注册
+    
+     
       console.log("navigate to answer operation page");
       var parametersJSON = e.currentTarget.dataset.item;
       parametersJSON.question_id = parametersJSON.question.questionid;
@@ -325,9 +311,9 @@ Page({
     //获取科目列表
     var that = this;
     wx.request({
-      url: config.PytheRestfulServerURL + '/index/subject/' + wx.getStorageSync(user.GradeID),
+      url: config.PytheRestfulServerURL + '/index/subject' ,
       data: {
-        
+        gradeId: wx.getStorageSync(user.GradeID),
       },
       method: 'GET', 
       success: function(res){

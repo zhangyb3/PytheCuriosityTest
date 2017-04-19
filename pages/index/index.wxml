@@ -49,7 +49,7 @@
 </view>
 
 <view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
-    <template is="index_page_select_item" data="{{answers,question,preview_img_url}}"></template>
+    <template is="index_page_select_item" data="{{answers,question,preview_img_url,alreadyRegister}}"></template>
   </view>
   <!--<view class="list_bottom"></view>-->
 

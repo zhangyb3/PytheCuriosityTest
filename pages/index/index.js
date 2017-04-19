@@ -109,9 +109,9 @@ Page({
     //加载科目列表
     var that = this;
     wx.request({
-      url: config.PytheRestfulServerURL + '/index/subject/' + wx.getStorageSync(user.GradeID),
+      url: config.PytheRestfulServerURL + '/index/subject',
     data: {
-      
+      gradeId: wx.getStorageSync(user.GradeID),
     },
       method: 'GET', 
       success: function(res){
@@ -348,31 +348,16 @@ Page({
 
   onShow:function(){
     
-    if(wx.getStorageSync('alreadyRegister') == 'yes')
-    {
+    
       this.setData({
         hide_register_lock_cover: true,
       });
-    }
+   
 
-    //判断注册了没有
-    if(wx.getStorageSync('alreadyRegister')=='no')
-    {
-      // this.setData({hide_register_page:false});
-      // this.setData({hide_index_page:true});
-      wx.navigateTo({
-        url: '../register/register',
-        success: function(res){
-          // success
-        },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
-        }
-      })
-    }
+    this.setData({
+      alreadyRegister: wx.getStorageSync('alreadyRegister'),
+    });
+    
 
     //判断是否从注册页面返回
     if(wx.getStorageSync('fromRegister')=='yes')

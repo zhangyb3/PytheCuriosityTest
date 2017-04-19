@@ -52,7 +52,12 @@ image {
   width: 110rpx;
   height: 110rpx;
   border: 20rpx solid #fff;
-  background-color: #333333;
+  background-color: #FF0000;
   border-radius: 130rpx;
   margin: 0 auto;
+}
+
+
+.uploadButton{
+  background-color: lightskyblue;
 }

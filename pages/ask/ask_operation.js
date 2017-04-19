@@ -641,32 +641,37 @@ Page({
   },
 
   playQuestionVoiceRecord:function(e){
-var that = this;
-    that.setData({
-      isPlaying: true
-    })
+    var that = this;
+    
     wx.showToast({
       title: '播放录音',
       icon: 'success',
       duration: 1000
     });
-    
+    that.setData({
+      isPlaying: true
+    })
     wx.playVoice({
       filePath: this.data.ask_question.voice_path,
       success: function(res){
-        console.log("播放结束啦啦啦啦啦啦啦啦啦" );
+        console.log("播放啦啦啦啦啦啦啦啦啦" );
         // success
+        
       },
       fail: function() {
         // fail
       },
       complete: function() {
         // complete
+        setTimeout(function() {
+        //超时结束播放特效  
+        
         that.setData({
-      isPlaying: false
-    })
-    console.log("播放结束啦啦啦啦啦啦啦啦啦" );
-      }
+          isPlaying: false,
+        })
+        
+        }, that.data.ask_question.voice_timeLength*1000);
+      }  
     })
   },
 

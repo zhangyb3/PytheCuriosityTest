@@ -65,7 +65,7 @@
   </view>
   <view class="flex-row btn-list">
     <block wx:if="{{hasRecord === true}}">
-      <button type="primary" bindtap="saveVoice">{{saveVoice}}</button>
+      <button class="uploadButton" bindtap="saveVoice">{{saveVoice}}</button>
     </block>
   </view>
 </view>
