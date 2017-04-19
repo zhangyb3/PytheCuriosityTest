@@ -37,12 +37,12 @@
 
             </view>-->
 
-        <view wx:if="{{answer_question.audio_path != null}}" class="speak_style_record" bindtap="gotoPlayVoice">
+        <view wx:if="{{answer_question.audio_path != null}}" data-question_voice="{{answer_question.audio_path}}" class="speak_style_record" bindtap="playQuestionVoiceRecord">
         <image wx:if="{{!isPlaying}}" class="sound_style_record" src="../../images/voice_static.png" ></image>
         <image wx:if="{{isPlaying}}" class="sound_style_record" src="../../images/record.gif" ></image>
         <text class="record_time">{{answer_question.audio_duration}}秒</text>
 
- </view>
+        </view>
 
 
 
@@ -89,15 +89,12 @@
         </view>
 
         <view class="multi_tips">
-            <view wx:if="{{question_answer.voice_path != null}}" class="voice" >
-                
-                <view class="bubble" data-answer_voice='{{question_answer.voice_path}}' bindtap="playAnswerVoiceRecord">
-                    <view class="bubble-tail"></view>
-                    <view class="voice-wave"></view>
-                    <view>{{question_answer.voice_timeLength}}秒</view>
-                </view>
 
-            </view>
+            <view wx:if="{{question_answer.voice_path != null}}" class="speak_style_record" data-answer_voice="{{question_answer.voice_path}}" bindtap="playAnswerVoiceRecord">
+        <image wx:if="{{!isPlaying}}" class="sound_style_record" src="../../images/voice_static.png" ></image>
+        <image wx:if="{{isPlaying}}" class="sound_style_record" src="../../images/record.gif" ></image>
+        <text class="record_time">{{question_answer.voice_timeLength}}秒</text>
+            </view> 
 
             <view wx:if="{{question_answer.photo_path != null}}" class="photo" >
                 <view  data-answer_photo='{{question_answer.photo_path}}' bindtap="showAnswerPhoto">
