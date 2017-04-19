@@ -7,6 +7,11 @@
     overflow-x: hidden; 
     overflow-y: auto;
     align-items: center;
+    background-color: #fff;
+}
+
+.ask_operation_view{
+    background-color: #fff;
 }
 
 
