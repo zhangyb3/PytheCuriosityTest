@@ -63,22 +63,7 @@ Page({
 
   },
 
-  selectStudent:function(e){
-    console.log("学生");
-    this.setData({
-      select_student:true,
-      select_teacher:false
-    })
-  },
-  selectTeacher:function(e){
-    console.log("老师");
-    this.setData({
-      select_student:false,
-      select_teacher:true,
-      hide_subject_selection:false,
-      hide_grade_selection:true,
-    })
-  },
+  
 
   //搜索
   listenerSearchInput:function(e){

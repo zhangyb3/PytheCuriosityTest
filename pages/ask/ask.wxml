@@ -30,7 +30,7 @@
     </view>
 
     <view class="login_container" hidden='{{hide_login}}'>
-        <template is="login_view" data="{{select_student,select_teacher}}"></template>
+        <template is="login_view" data="{{select_student,select_teacher,lock_countdown,grade_index,gradeRange,subject_index,subjectRange,second,countdownText}}"></template>
     </view>
 
 </view>
