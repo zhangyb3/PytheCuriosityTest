@@ -8,14 +8,14 @@
     width: auto;
     height: 50px;
     margin-top: 70rpx;
-    margin-left: 14rpx;
+    /*margin-left: 14rpx;*/
 }
 
 .nickname_wrap{
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: 10px;
+    margin-left: 30rpx;
     width: auto;
     height: auto;
 }
@@ -38,7 +38,7 @@
     align-items: center;
     
     /*margin:2px 5px;*/
-    text-align: center;
+    text-align: left;
     
     background-color: white;
     background-size: 18px 18px;
