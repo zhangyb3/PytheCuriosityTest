@@ -19,3 +19,5 @@
 @import "../bubble/bubble.wxss";
 
 @import "../pop/register_lock_cover.wxss";
+
+@import "../login/login.wxss";
