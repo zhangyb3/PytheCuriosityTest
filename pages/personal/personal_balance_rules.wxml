@@ -2,9 +2,9 @@
 <view class="rules_container">
 <view class="rules_content_wrap">
     <text class="rules_title">结算细则</text>
-    <text class="para1">1、付费问题：10元可有3个答案供选择；5元有两个答案供选择；1元有1个答案供选择。</text>
-    <text class="para2">2、答案选择：付费提问者可选择最优答案（可多选），被选中答案的答主将平均分配付费金额。</text>
+    <text class="para1">1、付费问题：10元可有3个答案供选择；5元有2个答案供选择；1元有1个答案供选择。</text>
+    <text class="para2">2、答案选择：付费提问者选择最优答案（可多选），被选中答案的答主将平均分配付费金额。</text>
     <text class="para3">3、鼓励金：其他用户对某完整的内容（问题+答案）支付的鼓励金，由提问者和答主平分。</text>
-    <text class="para3">4、提现：每周限提现一次，提现返还至微信钱包。提现金额=显示金额*0.85，其中10%作为平台费用，5%作为学校合作推广费。</text>
+    <text class="para3">4、提现：每周限提现一次，提现返还至微信钱包。提现金额=显示金额*0.85，其中10%作为平台费用，5%作为学校合作推广费用。</text>
 </view>
 </view>

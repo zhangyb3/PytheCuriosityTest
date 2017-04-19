@@ -1,0 +1,18 @@
+<!-- 弹出层 -->
+
+<template name="login_view">
+
+    <view class="select_login_view">
+    
+    
+    
+    <!-- 遮罩 -->
+    <view class="select_login_cover" bindtap='returnIndexPage'></view>
+    <!-- 信息区域 -->
+
+<view class="test_view">1233121</view>
+
+
+    </view>
+
+</template>

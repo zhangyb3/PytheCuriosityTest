@@ -109,7 +109,9 @@
     height: 30px;
     width:432rpx;
     padding:0 5px;
-    text-align:center;
+    text-align:left;
+    color:#333333;
+    font-size:30rpx;
 }
 
 button_wrap{
@@ -162,7 +164,9 @@ button_wrap{
     height: 72rpx;
     width:224rpx;
     padding:0 5px;
-    text-align:center;
+    text-align:left;
+    color:#333333;
+    font-size:30rpx;
 }
 
 .resend_verification_code_button{

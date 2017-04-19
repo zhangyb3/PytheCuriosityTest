@@ -341,14 +341,6 @@ background-color: deepskyblue;
     margin-left: 30rpx;
 }
 
-/*.sound_style_record{
-    width: 19rpx;
-    height: 29rpx;
-    margin-top: 14rpx;
-    margin-left: 30rpx;
-    
-}*/
-
 .record_time{
     font-size: 28rpx;
     color: white;

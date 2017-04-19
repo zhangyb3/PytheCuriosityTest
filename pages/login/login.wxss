@@ -1,0 +1,21 @@
+.select_item_cover {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    opacity: 1;
+}
+
+.test_view{
+    width: 300rpx;
+    height: 200rpx;
+    background-color: black;
+}
+
+.login_view{
+   width: 300rpx;
+   height: 200rpx; 
+}

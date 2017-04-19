@@ -74,8 +74,12 @@ Page({
       },
       {
         subjectId:1011,
+<<<<<<< HEAD
         subject_name: '计算机',
         sub_dis: '数据结构、算法、机器码'
+=======
+        subject_name: '编程',
+>>>>>>> 97899f40aed88a32e52759e2e287110529cb7dde
       },
       
       
@@ -86,7 +90,6 @@ Page({
      ask_teacher_list:[
      
     ],
-
     
     hide_register_lock_cover: false,
 
@@ -98,13 +101,10 @@ Page({
     });
     
     
-    
       this.setData({
         hide_register_lock_cover: true,
       });
     
-    
-
     
     
 
