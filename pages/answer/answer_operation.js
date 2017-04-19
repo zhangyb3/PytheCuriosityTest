@@ -666,7 +666,7 @@ Page({
       isPlaying: true
     })
     wx.showToast({
-      title: '播放录音',
+      title: '下载录音',
       icon: 'success',
       duration: 1000
     });
@@ -674,46 +674,48 @@ Page({
     
     var questionVoiceRemotePath = e.currentTarget.dataset.question_voice;
     
-    var questionVoicePath = fileSys.downloadFile(that,decodeURI(questionVoiceRemotePath),'audio');
+    fileSys.downloadFile(that,decodeURI(questionVoiceRemotePath),'audio');
     that.data.answer_question.questionVoicePath = questionVoicePath;
     
-    wx.playVoice({
-      filePath: that.data.answer_question.questionVoicePath,
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        that.setData({
-      isPlaying: false
-    })
-        // complete
-      }
-    })
-
+   
     
   },
 
   playAnswerVoiceRecord:function(e){
+    
+    var that = this;
+    
     wx.showToast({
       title: '播放录音',
       icon: 'success',
       duration: 1000
     });
+    that.setData({
+      isPlaying: true
+    })
     wx.playVoice({
       filePath: this.data.question_answer.voice_path,
       success: function(res){
+        console.log("播放啦啦啦啦啦啦啦啦啦" );
         // success
+        
       },
       fail: function() {
         // fail
       },
       complete: function() {
         // complete
-      }
-    })
+        
+      }  
+    });
+    setTimeout(function() {
+      //超时结束播放特效  
+      
+      that.setData({
+        isPlaying: false,
+      })
+      
+      }, (that.data.question_answer.voice_timeLength-1)*1000);
   },
 
   showQuestionPhoto:function(e){

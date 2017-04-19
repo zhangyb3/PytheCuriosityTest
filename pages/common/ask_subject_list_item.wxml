@@ -5,7 +5,7 @@
             
             <!--<view class="dotted_line"></view>-->
             <view class="subject_wrapper">
-                <image class="subject_icon" src="../../images/icon_language@2x.png"
+                <image class="subject_icon" src="{{item.icon}}"
                 ></image>
                 <text class="subject_content">{{ item.subject_name }}</text>
                 <text class="subject_discribe">{{item.sub_dis}}</text>

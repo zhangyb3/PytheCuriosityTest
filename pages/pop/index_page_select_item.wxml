@@ -34,7 +34,7 @@
 
                 </view>-->
 
-            <view wx:if="{{question.questioncontent.audio[0] != null}}" class="speak_style_record" bindtap="playVoiceRecord">
+            <view wx:if="{{question.questioncontent.audio[0] != null}}" class="speak_style_record" data-voice="{{question.questioncontent.audio[0]}}" bindtap="playVoiceRecord">
         <image wx:if="{{!isPlaying}}" class="sound_style_record" src="../../images/voice_static.png" ></image>
         <image wx:if="{{isPlaying}}" class="sound_style_record" src="../../images/record.gif" ></image>
         <text class="record_time">{{question.questioncontent.audio[1]}}秒</text>
@@ -94,10 +94,10 @@
 
                         </view>-->
 
-                        <view wx:if="{{question.questioncontent.audio[0] != null}}" class="speak_style_record" bindtap="playVoiceRecord">
+                        <view wx:if="{{answer.answercontent.audio[0] != null}}" data-voice="{{answer.answercontent.audio[0]}}" class="speak_style_record" bindtap="playVoiceRecord">
         <image wx:if="{{!isPlaying}}" class="sound_style_record" src="../../images/voice_static.png" ></image>
         <image wx:if="{{isPlaying}}" class="sound_style_record" src="../../images/record.gif" ></image>
-        <text class="record_time">{{question.questioncontent.audio[1]}}秒</text>
+        <text class="record_time">{{answer.answercontent.audio[1]}}秒</text>
 
  </view>
 

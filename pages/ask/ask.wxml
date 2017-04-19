@@ -1,4 +1,5 @@
 <!--pages/ask/ask.wxml-->
+<import src="../login/login.wxml" />
 
 <import src="../listView/ask_page_subject_list.wxml" />
 <import src="../listView/ask_page_teacher_list.wxml" />
@@ -28,6 +29,8 @@
       <template is="ask_page_teacher_list" data="{{ask_teacher_list,alreadyRegister}}"></template>
     </view>
 
-    
+    <view class="login_container" hidden='{{hide_login}}'>
+        <template is="login_view" data="{{select_student,select_teacher}}"></template>
+    </view>
 
 </view>

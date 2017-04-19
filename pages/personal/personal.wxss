@@ -296,3 +296,5 @@
 @import "../register/register.wxss";
     
 @import "../pop/register_lock_cover.wxss";
+
+@import "../login/login.wxss";

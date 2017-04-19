@@ -47,6 +47,11 @@
 
 }
 
+.index_page_list_container{
+  margin-top: 100rpx;
+  width: 100%;
+}
+
 @import "../listView/index_page_list.wxss";
 @import "../common/index_page_filter.wxss";
 @import "../pop/index_page_subject_list.wxss";

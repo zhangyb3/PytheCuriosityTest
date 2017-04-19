@@ -180,7 +180,7 @@ Page({
 
   playVoiceRecord:function(e){
     wx.showToast({
-      title: '播放录音',
+      title: '下载录音',
       icon: 'success',
       duration: 1000
     });
@@ -188,21 +188,10 @@ Page({
     
     var voiceRemotePath = e.currentTarget.dataset.voice;
     
-    var voicePath = fileSys.downloadFile(that,decodeURI(voiceRemotePath),'audio');
-    that.data.voicePath = voicePath;
+    fileSys.downloadFile(that,decodeURI(voiceRemotePath),'audio');
     
-    wx.playVoice({
-      filePath: that.data.voicePath,
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
+    
+    
 
   },
 
