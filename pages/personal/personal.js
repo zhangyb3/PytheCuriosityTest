@@ -26,34 +26,19 @@ Page({
   },
   onLoad:function(options){
 
+    //先判断是否已注册
+
     this.setData({
       hide_register_lock_cover: false,
     });
 
-    if(wx.getStorageSync('alreadyRegister') == 'yes')
-    {
+    
       this.setData({
         hide_register_lock_cover: true,
       });
-    }
     
-    if(wx.getStorageSync('alreadyRegister')=='no')
-    {
-      // this.setData({hide_register_page:false});
-      // this.setData({hide_index_page:true});
-      wx.navigateTo({
-        url: '../register/register',
-        success: function(res){
-          // success
-        },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
-        }
-      })
-    }
+    
+    
 
   },
 

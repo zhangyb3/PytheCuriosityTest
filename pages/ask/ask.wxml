@@ -25,7 +25,7 @@
     </view>
 
     <view class="ask_page_list_container" hidden='{{hide_ask_teacher_list}}'>
-      <template is="ask_page_teacher_list" data="{{ask_teacher_list}}"></template>
+      <template is="ask_page_teacher_list" data="{{ask_teacher_list,alreadyRegister}}"></template>
     </view>
 
     

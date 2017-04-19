@@ -97,22 +97,23 @@ Page({
 
   },
 
+  
 
   filterSubject:function(subject_data){
     this.setData({hide_login_item:false});
     
-    console.log("subject filter");
-    if(this.data.hide_pop_subject_list)
-    {
-      this.setData({hide_pop_subject_list:false});
-    }
-    else
-    {
-      this.setData({hide_pop_subject_list:true});
-    }
+    // console.log("subject filter");
+    // if(this.data.hide_pop_subject_list)
+    // {
+    //   this.setData({hide_pop_subject_list:false});
+    // }
+    // else
+    // {
+    //   this.setData({hide_pop_subject_list:true});
+    // }
     
     //加载科目列表
-
+<<<<<<< HEAD
     var that = this;
     wx.request({
       url: config.PytheRestfulServerURL + '/index/subject',
@@ -121,20 +122,31 @@ Page({
     },
       method: 'GET', 
       success: function(res){
+        // success
+=======
+    // var that = this;
+    // wx.request({
+    //   url: config.PytheRestfulServerURL + '/index/subject/' + wx.getStorageSync(user.GradeID),
+    // data: {
+      
+    // },
+    //   method: 'GET', 
+    //   success: function(res){
         
+>>>>>>> 97899f40aed88a32e52759e2e287110529cb7dde
       
-        that.data.subject_infos = res.data;
-        that.setData({
-          subject_infos : that.data.subject_infos,
-        });
-      },
-      fail: function() {
+    //     that.data.subject_infos = res.data;
+    //     that.setData({
+    //       subject_infos : that.data.subject_infos,
+    //     });
+    //   },
+    //   fail: function() {
 
-      },
-      complete: function() {
+    //   },
+    //   complete: function() {
       
-      }
-    });
+    //   }
+    // });
   },
 
   selectOneItem:function(e){
@@ -358,14 +370,11 @@ Page({
 
   onShow:function(){
     
-
     
       this.setData({
         hide_register_lock_cover: true,
       });
-
    
-
 
     this.setData({
       alreadyRegister: wx.getStorageSync('alreadyRegister'),
