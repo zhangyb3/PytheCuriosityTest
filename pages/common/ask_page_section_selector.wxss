@@ -11,12 +11,22 @@
     border-bottom: 1rpx solid #EEE;
 
 }
+.middle_line_wrap{
+    display: flex;
+    width: 2px;
+    background-color: #fff;
+    /*top: 15rpx;*/
+    /*bottom: 30rpx;*/
+    height: 100rpx;
+}
+
 .middle_line{
     display: flex;
     width: 1px;
     background-color: #CCCCCC;
     /*top: 15rpx;*/
     /*bottom: 30rpx;*/
+    margin-top: 22rpx;
     height: 60rpx;
 }
 .bar_item{

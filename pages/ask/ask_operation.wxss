@@ -7,6 +7,16 @@
     overflow-x: hidden; 
     overflow-y: auto;
     align-items: center;
+    background-color: #fff;
+}
+
+.ask_operation_view{
+    position: fixed;
+    background-color: #fff;
+    top: 0rpx;
+    left: 0rpx;
+    right: 0rpx;
+    bottom: 0rpx;
 }
 
 
@@ -284,7 +294,7 @@ color: #999999;
     line-height: 93rpx;
     margin-top: 55rpx;
     width: 85%;
-    background-color: #3AA5F0;
+    background-color: #3AA4F1;
     font-size: 36rpx;
 }
 

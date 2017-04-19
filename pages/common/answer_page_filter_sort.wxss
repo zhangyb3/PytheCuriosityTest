@@ -35,6 +35,16 @@
     /*background-color: #3AA4F1;*/
 }
 
+.answer_middle_line_wrap{
+    display: flex;
+    width: 2px;
+    background-color: #fff;
+    /*top: 15rpx;*/
+    /*bottom: 30rpx;*/
+    /*margin-top: 22rpx;*/
+    height: auto;
+}
+
 .answer_middle_line{
     display: flex;
     width: 1px;

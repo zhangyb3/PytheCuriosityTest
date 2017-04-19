@@ -2,7 +2,7 @@
 
 .list_bottom{
   height: 20rpx;
-  background-color: #F5F5F5;
+  background-color: #fff;
 }
 
 .answer_page_list_container{

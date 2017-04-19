@@ -8,6 +8,7 @@ position: fixed;
     
     display: flex;
     flex-direction: column;
+    background-color: #f5f5f5;
 }
 
 .rules_content_wrap{
@@ -19,6 +20,7 @@ position: fixed;
     
     display: flex;
     flex-direction: column;
+    background-color: #f5f5f5;
 
 }
 
