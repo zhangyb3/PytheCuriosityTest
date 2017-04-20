@@ -42,7 +42,7 @@ Page({
     subjects: [
       {
         subjectId: null,
-        subject: '请选择',
+        subject: '请选择科目',
       },
     ],
     subject_index:0,
@@ -50,6 +50,9 @@ Page({
     preview_img_url: config.PytheFileServerURL ,
 
     hasPaidReward: false,
+    rewardTap1:false,
+    rewardTap5:false,
+    rewardTap10:false
   },
 
    //手指按下
@@ -96,7 +99,7 @@ Page({
     
     var that = this;
 
-    var subjectRange = ['请选择'];
+    var subjectRange = ['请选择科目'];
     //加载动态课程列表,年级列表
     wx.request({
       url: config.PytheRestfulServerURL + '/user/register/subject',
@@ -713,6 +716,11 @@ Page({
 
   selectReward1:function(e){
     console.log("￥ 1");
+    this.setData({
+      rewardTap1: true,
+      rewardTap5: false,
+      rewardTap10: false
+    })
     wx.setStorageSync('rewardNum', 0.01);
     
     pay.orderPay(
@@ -730,6 +738,12 @@ Page({
     
   },
   selectReward5:function(e){
+this.setData({
+      rewardTap1: false,
+      rewardTap5: true,
+      rewardTap10: false
+    })
+
     console.log("￥ 5");
     wx.setStorageSync('rewardNum', 0.05);
     
@@ -748,6 +762,11 @@ Page({
 
   },
   selectReward10:function(e){
+    this.setData({
+      rewardTap1: false,
+      rewardTap5: false,
+      rewardTap10: true
+    })
     console.log("￥ 10");
     wx.setStorageSync('rewardNum', 0.10);
     

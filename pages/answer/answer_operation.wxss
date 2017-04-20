@@ -280,7 +280,7 @@ color: #999999;
     width: 650rpx;
     font-size: 28rpx;
     border-radius: 37rpx;
-    border: 1rpx solid #EEE;
+    border: 1rpx solid #CCCCCC;
     /*-webkit-text-fill-color: #999999;*/
     background-color: #f5f5f5;
     text-align: center;

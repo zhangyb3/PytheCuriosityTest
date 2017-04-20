@@ -130,13 +130,17 @@
         </view>
         <view class="reward_number_container">
         <view class="reward_1" bindtap="selectReward1">
-            <image class="reward_img" src="../../images/question_icon_one_nor@2x.png"></image>
+            <image class="reward_img" wx:if="{{rewardTap1}}" src="../../images/question_icon_one_sel@2x.png"></image>
+            <image class="reward_img" wx:if="{{!rewardTap1}}" src="../../images/question_icon_one_nor@2x.png"></image>
         </view>
         <view class="reward_5" bindtap="selectReward5">
-            <image class="reward_img" src="../../images/question_icon_five_nor@2x.png"></image>
+            <image class="reward_img" wx:if="{{rewardTap5}}" src="../../images/question_icon_five_sel@2x.png"></image>
+            <image class="reward_img" wx:if="{{!rewardTap5}}" src="../../images/question_icon_five_nor@2x.png"></image>
+
         </view>
         <view class="reward_10" bindtap="selectReward10">
-            <image class="reward_img" src="../../images/question_icon_ten_nor@2x.png"></image>
+            <image class="reward_img" wx:if="{{rewardTap10}}" src="../../images/question_icon_ten_sel@2x.png"></image>
+            <image class="reward_img" wx:if="{{!rewardTap10}}" src="../../images/question_icon_ten_nor@2x.png"></image>
         </view>
     </view>
 
