@@ -21,23 +21,26 @@
     flex-direction: row;
     align-items: center;
     overflow-x: hidden; 
-    overflow-y: auto;
+    /*overflow-y: auto;*/
+    /*justify-content: space-between*/
+    height: 188rpx;
     position: relative;
     z-index: 1;
 }
 
 .teacher_icon{
-    width: 80rpx;
-    height: 80rpx;
-    left: 30rpx;
-    top: 30rpx;
     position: absolute;
+    width: 120rpx;
+    height: 120rpx;
+    top: 36rpx;
+    left: 30rpx;
+    border-radius: 50%;
+    
     /*margin-top: 3%;*/
 }
 
 .teacher_middle_wrapper{
-    margin-left: 130rpx;
-    margin-right: 20rpx;
+    margin-left: 170rpx;
     /*height: 120px;*/
     height: auto;
     display: flex;
@@ -48,45 +51,45 @@
 
 .teacher_content {
     margin-top: 30rpx;
-    color: #333333;
-    height: 50rpx;
+    color: #0F0F0F;
+    height: auto;
     font-size: 30rpx;  
     /*font-weight:bold; */
 }
 .teacher_brief{
 
-    font-size: 28rpx;
+    font-size: 24rpx;
     margin-top: 10rpx;
-    margin-bottom: 15px;
+    /*height: auto;*/
+    min-height: 40rpx;
+    width: auto;
+    /*margin-bottom: 15px;*/
     color: #999999;
 }
 
 .collect_icon_wrap{
+    margin-top: 10rpx;
     height:50rpx;
     display:flex;
-    margin-bottom: 20rpx;
+    flex-direction: row;
+    margin-bottom: 10px;
     line-height:50rpx;
-}
-.collect_icon{
-    color: #999999;
-    font-size: 28rpx;
+    align-items: center;
+    align-content: center;
+    /*width: 33rpx;*/
 }
 .collect_icon_wrap image{
-    width:34rpx;
-    height: 40rpx;
+    width: 32rpx;
+    height: 38rpx;
     display:block;
-    margin-right:10rpx;
+    margin-bottom:8rpx;
+    margin-right: 10rpx;
 }
 
-/*.collect_icon{
-    width: 25px;
-    height: 25px;
-    padding-left: 0px;
-    margin-bottom: 10px;
-    background:url(../../images/collect_icon.png) no-repeat left center;
-    background-size:25px 25px;
-    line-height:25px;
-}*/
+.collect_icon{
+    font-size: 24rpx;
+    color: #999999;
+}
 
 .teacher_ask_section{
     /*display: flex;*/
@@ -110,12 +113,30 @@
     border-radius: 31rpx;
     background: none;
 }
+
+.teacher_ask_section text{
+    width: 100%;
+    /*height: 100%;*/
+    line-height: 62rpx;
+    font-size: 28rpx;
+    /*padding-bottom: 10rpx;*/
+    /*margin-bottom: 40rpx;*/
+    color: #3AA4F1;
+    /*text-align: center;*/
+}
+
+.teacher_ask_section:after{
+    border:0;
+    border-radius: 0 0 0 0;
+}
+
 .teacher_ask_section image{
     /*padding-left: -10px;*/
     position: absolute;
-    left: 0px;
-    width: 20px;
-    height: 20px;
+    top: 10rpx;
+    left: 10rpx;
+    width: 34rpx;
+    height: 30rpx;
     display:block;
 }
 
@@ -124,12 +145,6 @@
     border:none;
 }
 
-/*.dotted_line{
-    
-    border-bottom: 1rpx solid #A9A9A9; 
-    margin-left: 5%;
-    margin-right: 5%;
-}*/
 
 .answer_container {
     /*padding: 8px;*/

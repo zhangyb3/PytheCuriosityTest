@@ -145,13 +145,6 @@
     border:none;
 }
 
-/*.dotted_line{
-    
-    border-bottom: 1rpx solid #A9A9A9; 
-    margin-left: 5%;
-    margin-right: 5%;
-}*/
-
 .answer_container {
     /*padding: 8px;*/
     display: flex;
