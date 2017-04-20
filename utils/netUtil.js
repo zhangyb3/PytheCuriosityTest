@@ -1,4 +1,4 @@
-
+var timer = require("../utils/wxTimer.js");
 
 function Actions(){
 
@@ -60,6 +60,8 @@ function requestConfig(){
         request(this);
     }
 }
+
+
 
 function isOptStrNull(str){
     if(str == undefined || str == null || str == '' || str == 'null'||str == '[]'||str == '{}'){
@@ -365,20 +367,6 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
 
 
 
-        //数据的一些处理,包括了一维和二维数组的处理,全部都解析到单个item层次返回
-        // currentDatas.forEach(function(info){
-        //     if(info instanceof Array){
-        //         console.log('handle path1');
-        //         info.forEach(function(item){
-        //             that.handldItemInfo(item);
-        //         });
-        //     }else {
-        //         console.log('handle path2');
-        //         that.handldItemInfo(info);
-        //     }
-        // });
-        // console.log(currentDatas);
-
         var concatDatas = [];
         for(var count = 0; count < currentDatas.length; count++)
         {
@@ -410,10 +398,35 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             {
                 temp.question = JSON.parse(currentDatas[count].question);
                 temp.question.questioncontent = JSON.parse(temp.question.questioncontent);
+                var wxTimerNew = new timer({
+                    beginTime: temp.timer,
+                    name:'wxTimer-question-'+temp.question.questionid,
+                    complete:function(){
+                        console.log("完成")
+                    }
+                });
+                wxTimerNew.start(that);
+                temp.wxTimerName = 'wxTimer-question-'+temp.question.questionid;
+                temp.countdown = wxTimerNew; 
+                
             }
             console.log(temp);
             concatDatas[count] = temp;
         }
+
+        //数据的一些处理,包括了一维和二维数组的处理,全部都解析到单个item层次返回
+        concatDatas.forEach(function(info){
+            if(info instanceof Array){
+                console.log('handle path s');
+                info.forEach(function(item){
+                    that.handldItemInfo(item);
+                });
+            }else {
+                console.log('handle path ');
+                that.handldItemInfo(info);
+            }
+        });
+        console.log(concatDatas);
 
         //根据操作的action不同而处理:
         if(action == request_firstIn){

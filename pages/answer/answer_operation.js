@@ -6,6 +6,7 @@ var fileSys = require("../../utils/file.js");
 var base = require("../../utils/base.js");
 var user = require("../../utils/user.js");
 var utils = require("../../utils/util.js");
+var wxTimer = require("../../utils/wxTimer.js");
 
 Page({
   
@@ -63,6 +64,8 @@ Page({
       // },       
     ],
     knowledge2_index:0,
+
+    
 
     preview_img_url: config.PytheFileServerURL ,
   },
