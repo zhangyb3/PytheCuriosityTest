@@ -19,7 +19,7 @@
 .answer_page_select_item_content_wrap{
     display: flex;
     flex-direction: row;
-    margin-left: 40rpx;
+    margin-left: 30rpx;
     margin-right: 30rpx;
     height: auto;
 }
@@ -33,14 +33,15 @@
 
 .preview_img_wrap{
     display: flex;
-    width: 146rpx;
-    height: 146rpx;
+    width: 156rpx;
+    height: 156rpx;
     /*overflow: hidden;*/
 
 }
 .preview_img{
-    width: 146rpx;
-    height: 146rpx;
+    width: 156rpx;
+    height: 156rpx;
+    border: 1px #999999 dashed;
     /*overflow: hidden;*/
 
 }
