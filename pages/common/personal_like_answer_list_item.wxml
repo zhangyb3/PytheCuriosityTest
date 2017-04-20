@@ -2,19 +2,15 @@
 
 <view class="list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneItem">
 
-            <!--<view class="border_tab"/>-->
-
-            <view class="question_wrapper">
-      <view class="border_tab"/>
-                
-              
+      <view class="answer_like_item_wrap">
+      <view class="preView_wrap">
+      <image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.img[0]}}"></image>
+      </view>
+      <view class="answer_like_question_wrap">
+      <text class="answer_like_question_content">{{item.questioncontent.text[0] }}</text>
             </view>
 
-            <view class="lines">
-                <text class="answer_content">{{ item.questioncontent.text[0] }}</text>
-            </view>
-
-            <view class="multi_tips">
+            <!--<view class="multi_tips">
                 <view wx:if="{{item.questioncontent.audio[0] != null}}" class="voice" >
                     
                     <view class="bubble" data-question_voice='{{item.questioncontent.audio[0]}}' bindtap="playQuestionVoiceRecord">
@@ -26,22 +22,22 @@
                 </view>
 
                 <view wx:if="{{item.questioncontent.img[0] != null}}" class="photo" >
-                    <view  data-question_photo='{{item.questioncontent.img[0]}}' >
+                    <view  data-question_photo='{{item.questioncontent.img[0]}}' >-->
                         <!--<view>照片</view>-->
-                        <image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.img[0]}}"></image>
+                        <!--<image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.img[0]}}"></image>
                     </view>
                 </view>
 
                 <view wx:if="{{item.questioncontent.draw[0] != null}}" class="photo" >
-                    <view  data-question_photo='{{item.questioncontent.draw[0]}}' >
+                    <view  data-question_photo='{{item.questioncontent.draw[0]}}' >-->
                         <!--<view>手绘</view>-->
-                        <image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.draw[0]}}"></image>
+                        <!--<image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.draw[0]}}"></image>
                     </view>
-                </view>
+                </view>-->
 
-            </view>
+            <!--</view>
 
-            <view class="border_tab"/>
+            <view class="border_tab"/>-->
 
            
 
@@ -60,11 +56,11 @@
                 
             </view>-->
 
-            
+            </view>
 
            
             
-            <view class="border_tab"/>
+            <!--<view class="border_tab"/>-->
 <view class="person_like_seprate_line"></view>
             
       

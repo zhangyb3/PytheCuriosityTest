@@ -2,33 +2,52 @@
 
 <view class="list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' >
 
-            <!--<view class="border_tab"></view>-->
 <!--名师区域  -->
             <view class="teacher_wrapper">
             <!--名师头像部分-->
-                <image class="teacher_icon" src="{{item.userimg}}"
+                <image class="teacher_icon"  src="{{item.userimg}}"
                 ></image>
             <!--名师中间部分:姓名,介绍,收藏-->
                 <view class= "teacher_middle_wrapper">
                 <!--教师姓名-->
-                    
+                    <text class="teacher_content">{{ item.subject }}老师</text>
                     <!--教师简介-->
-                    <text class="teacher_brief">{{item.subject}}老师：{{ item.username }}</text>
+                    <text class="teacher_brief">{{ item.username }}的简介：{{item.description}}</text>
                     <!--收藏数量-->
-                <view class="collect_icon_wrap" data-teacher="{{item}}" data-index='{{index}}' bindtap="likeTeacher"><image src="../../images/personal_icon_shoucang@2x.png"></image><text class="collect_icon" >{{item.popularity}}</text></view>
+                <view class="collect_icon_wrap" wx:if="{{alreadyRegister == 'yes'}}" data-teacher="{{item}}" data-index='{{index}}' bindtap="likeTeacher">
+                <image wx:if="{{item.isClick == 1}}" src="../../images/question_icon_shoucang_nor@2x.png"></image>
+                <image wx:if="{{item.isClick == 0}}" src="../../images/question_icon_shoucang@2x.png"></image><text class="collect_icon" >{{item.popularity}}</text></view>
                     <!--<text class="collect_icon" src="../../images/icon_language@2x.png">268
                 </text>-->
                 </view>
 
             <!--名师尾部部分-->
                 <!--<button class="search_button"    bindtap='filterSubject'></button>-->
-                 
+                <button class="teacher_ask_section" data-teacher="{{item}}" bindtap="selectOneTeacher">
+                <text>提问</text>  
+                </button> 
+                <!--<image src="../../images/question_icon_lianxi@2x.png">
+                </image>-->
+                <!--<text class="teacher_content">{{ item.teacher_name }}</text>-->
+              
+            </view>   
+
+
+
+
+            
+            <!--<view class="teacher_wrapper">
+                <image class="teacher_icon" src="{{item.userimg}}"
+                ></image>
+                <view class= "teacher_middle_wrapper">
+                    <text class="teacher_brief">{{item.subject}}老师：{{ item.username }}</text>
+                <view class="collect_icon_wrap" data-teacher="{{item}}" data-index='{{index}}' bindtap="likeTeacher"><image src="../../images/personal_icon_shoucang@2x.png"></image><text class="collect_icon" >{{item.popularity}}</text></view>
+                </view>
                 <button class="teacher_ask_section" data-teacher="{{item}}" bindtap="selectOneTeacher">
                 <text>提问</text>  
                 </button>
-                <!--<text class="teacher_content">{{ item.teacher_name }}</text>-->
               
-            </view>      
+            </view>      -->
 </view>
 
 </template>

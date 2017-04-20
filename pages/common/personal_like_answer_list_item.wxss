@@ -14,29 +14,50 @@
     background-color: white;
 }
 
-.question_wrapper{
-    /*border-top: 1px solid #EEE;*/
-    /*display: flex;*/
+.answer_like_item_wrap{
+display: flex;
+flex-direction: row;
+height: 200rpx;
+width: 100%;
+background-color: #fff;
+}
+
+.answer_like_question_wrap{
+
+position: fixed;
+    left: 216rpx;
+    right: 30rpx;
+    /*height: 130rpx;*/
+
+    flex-direction: column;
     text-align: left;
-    height: auto;
-    width: 100%;
-    margin-left: -10px;
-    overflow-x: hidden; 
-    overflow: hidden;
-    white-space: nowrap;
-    overflow-y: auto;
+    height: 156rpx;
+    margin-top: 20rpx;
 
-    /*text-overflow: ellipsis;*/
 }
 
-.question_content {
-    margin-left: 20px;
-    height: auto;
-    line-height: 30rpx;
-    font-size: 28rpx;
+.answer_like_question_content {
+
+   display: flex;
+    font-size: 30rpx;
     color: #333333;
-   
+    height: 120rpx;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
+
+.preView_wrap{
+margin-top: 20rpx;
+    margin-left: 30rpx;
+    width: 156rpx;
+    height: 156rpx;
+    border: 1px #999999 dashed;
+}
+
+
+
 
 .dotted_line{
     

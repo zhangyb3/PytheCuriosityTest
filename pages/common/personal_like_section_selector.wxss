@@ -36,6 +36,6 @@
     background-color: #CCCCCC;
     /*top: 15rpx;*/
     /*bottom: 30rpx;*/
-    margin-top: 10rpx;
+    margin-top: 22rpx;
     height: 60rpx;
 }

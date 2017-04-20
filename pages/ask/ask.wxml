@@ -7,6 +7,9 @@
 
 
 <import src="../pop/register_lock_cover.wxml" />
+
+<view class="background_color_wrap">
+
 <view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
 
 
@@ -32,5 +35,8 @@
     <view class="login_container" hidden='{{hide_login}}'>
         <template is="login_view" data="{{select_student,select_teacher,lock_countdown,grade_index,gradeRange,subject_index,subjectRange,second,countdownText}}"></template>
     </view>
+
+</view>
+
 
 </view>
