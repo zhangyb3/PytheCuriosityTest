@@ -20,6 +20,8 @@ Page({
         active:false
     }],
 
+    list_mode: 'my_like_answer',
+
     hide_show_image_page: true,
 
 
@@ -95,6 +97,8 @@ Page({
       this.setData({hide_personal_like_answer_list:false});
       
       this.setData({hide_personal_like_teacher_list:true});
+
+      this.data.list_mode = 'my_like_answer';
     }
     else
     {
@@ -118,6 +122,8 @@ Page({
       this.setData({hide_personal_like_answer_list:true});
       
       this.setData({hide_personal_like_teacher_list:false});
+
+      this.data.list_mode = 'my_like_teacher';
     }
     else
     {

@@ -1,6 +1,7 @@
 var netUtil=require("../utils/netUtil.js");
 var config=require("../utils/config.js");
 var user=require("../utils/user.js");
+var base=require("../utils/base.js");
 
 var actions = netUtil.action;
 
@@ -173,7 +174,32 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     };
 
     page.onReachBottom = function(){
-        netUtil.requestSimpleList(page,list_type,page.data.currentPageIndex +1,netUtil.action.request_loadmore);
+        if(page.data.list_mode == 'my_answered')
+        {
+            page.data.urlDetail = base.MY_ANSWERED_URL_DETAIL;
+            netUtil.requestSimpleList(page,'my_answered',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
+        }
+        else if(page.data.list_mode == 'my_unanswer')
+        {
+            page.data.urlDetail = base.MY_UNANSWER_URL_DETAIL;
+            netUtil.requestSimpleList(page,'my_unanswer',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
+        }
+        else if(page.data.list_mode == 'my_like_answer')
+        {
+            page.data.urlDetail = base.MY_ANSWER_COLLECTION_URL_DETAIL;
+            netUtil.requestSimpleList(page,'my_like_answer',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
+        }
+        else if(page.data.list_mode == 'my_like_teacher')
+        {
+            page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
+            netUtil.requestSimpleList(page,'my_like_teacher',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
+        }
+        else
+        {
+            netUtil.requestSimpleList(page,list_type,page.data.currentPageIndex +1,netUtil.action.request_loadmore);
+        }
+        
+
     };
 
     page.onLoadMore = page.onReachBottom;

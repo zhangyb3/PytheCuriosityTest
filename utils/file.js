@@ -104,14 +104,14 @@ function downloadFile(that,download_file,fileType)
   }
   else
   {
-    wx.request({
-      url: FILE_PREDOWNLOAD_URL,
-      data: {
-        path: decodeURIComponent(download_file),
-        // fileType : fileType,
-      },
-      method: 'GET', 
-      success: function(res){
+    // wx.request({
+    //   url: FILE_PREDOWNLOAD_URL,
+    //   data: {
+    //     path: decodeURIComponent(download_file),
+    //     // fileType : fileType,
+    //   },
+    //   method: 'GET', 
+    //   success: function(res){
         // 成功移动到缓冲区
 
         wx.downloadFile({
@@ -189,21 +189,21 @@ function downloadFile(that,download_file,fileType)
           }
         })
 
-      },
-      fail: function(res) {
-        // fail
-        console.log(res);
-        // wx.showModal({
-        //   title: '提示',
-        //   content: '文件不存在',
-        //   success: function(res) {
-        //     if (res.confirm) {
-        //       console.log('用户点击确定')
-        //     }
-        //   }
-        // });
-      }
-    })
+    //   },
+    //   fail: function(res) {
+    //     // fail
+    //     console.log(res);
+    //     wx.showModal({
+    //       title: '提示',
+    //       content: '文件不存在',
+    //       success: function(res) {
+    //         if (res.confirm) {
+    //           console.log('用户点击确定')
+    //         }
+    //       }
+    //     });
+    //   }
+    // });
   }
   
   

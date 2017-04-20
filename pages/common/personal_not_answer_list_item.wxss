@@ -32,7 +32,7 @@
     font-size: 28rpx; 
     color: #333333;
     overflow-x:hidden;
-    overflow-y:auto;
+    
 }
 .queation_button{
     width:30px;

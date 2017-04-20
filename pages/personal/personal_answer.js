@@ -28,6 +28,8 @@ Page({
       
     ],
 
+    list_mode:'my_answered',
+
     hide_show_image_page: true,
 
 
@@ -102,6 +104,8 @@ Page({
       this.setData({hide_personal_answer_list:false});
       
       this.setData({hide_personal_not_answer_list:true});
+
+      this.data.list_mode = 'my_answered';
     }
     else
     {
@@ -125,6 +129,8 @@ Page({
       this.setData({hide_personal_answer_list:true});
       
       this.setData({hide_personal_not_answer_list:false});
+
+      this.data.list_mode = 'my_unanswer';
     }
     else
     {
