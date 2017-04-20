@@ -35,7 +35,7 @@
 
             </view>-->
              <view class="personal_question_answer_content" data-item='{{ item }}' bindtap="seeOneAnswer">
-                <text class="personal_question_answer_text">{{item.text[0]}}</text>
+                <text class="personal_question_answer_text">{{item.answercontent.text[0]}}</text>
             </view>
         </view>
         <view class="border_tab"></view>
