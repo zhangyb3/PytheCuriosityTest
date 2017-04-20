@@ -16,7 +16,7 @@
     </view>
 
     
-    
+    <view class="personal_like_container">
   
 
     <view class="personal_like_answer_list_container" hidden='{{hide_personal_like_answer_list}}'>
@@ -27,6 +27,6 @@
       <template is="personal_like_teacher_list" data="{{personal_like_teacher_list}}"></template>
     </view>
 
-    
+    </view>   
 
 </view>

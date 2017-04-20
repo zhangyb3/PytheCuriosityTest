@@ -1,16 +1,16 @@
 
 
 .scroll_list{
-    margin-top: 0px;
+    /*margin-top: 0px;*/
     
 }
 
 .interval{
-    margin-top: 10px;
+    
 }
     
 
-.personal_not_answer_list_container{
+.personal_not_answer_container{
     background-color: #ECEBF4;
 }
 

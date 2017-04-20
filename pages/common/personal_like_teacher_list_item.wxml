@@ -6,14 +6,14 @@
 <!--名师区域  -->
             <view class="teacher_wrapper">
             <!--名师头像部分-->
-                <image class="teacher_icon" src="../../images/image_1@2x.png"
+                <image class="teacher_icon" src="{{item.userimg}}"
                 ></image>
             <!--名师中间部分:姓名,介绍,收藏-->
                 <view class= "teacher_middle_wrapper">
                 <!--教师姓名-->
-                    <text class="teacher_content">teacherid:{{ item.teacherid }}</text>
+                    
                     <!--教师简介-->
-                    <text class="teacher_brief">{{ item.teacher_name }}jgjgjgkgkjg收藏数量收藏数量收藏数量收藏数量收藏数量收藏数量收藏数量收藏数量收藏数量收藏数量</text>
+                    <text class="teacher_brief">{{item.subject}}老师：{{ item.username }}</text>
                     <!--收藏数量-->
                 <view class="collect_icon_wrap" data-teacher="{{item}}" data-index='{{index}}' bindtap="likeTeacher"><image src="../../images/personal_icon_shoucang@2x.png"></image><text class="collect_icon" >{{item.popularity}}</text></view>
                     <!--<text class="collect_icon" src="../../images/icon_language@2x.png">268
@@ -22,7 +22,10 @@
 
             <!--名师尾部部分-->
                 <!--<button class="search_button"    bindtap='filterSubject'></button>-->
-                <button class="teacher_ask_section" data-teacher="{{item}}" bindtap="selectOneTeacher"> <image src="../../images/teacher_ask_icon.png"></image></button> 
+                 
+                <button class="teacher_ask_section" data-teacher="{{item}}" bindtap="selectOneTeacher">
+                <text>提问</text>  
+                </button>
                 <!--<text class="teacher_content">{{ item.teacher_name }}</text>-->
               
             </view>      

@@ -16,17 +16,20 @@
     </view>
 
     
-    
+    <view class="personal_answer_or_not_container">
   
 
     <view class="personal_answer_list_container" hidden='{{hide_personal_answer_list}}'>
       <template is="personal_answer_list" data="{{personal_answer_list,preview_img_url}}"></template>
     </view>
 
+    <!--<view class="border_tab_white"></view>-->
+
     <view class="personal_not_answer_list_container" hidden='{{hide_personal_not_answer_list}}'>
       <template is="personal_not_answer_list" data="{{personal_not_answer_list,preview_img_url}}"></template>
     </view>
 
     
+    </view>
 
 </view>

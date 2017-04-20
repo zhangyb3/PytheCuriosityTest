@@ -6,7 +6,7 @@
 
             <view class="question_wrapper">
       <view class="border_tab"/>
-                <text class="question_content">questionid:{{ item.questionid }}</text>
+                
               
             </view>
 
@@ -35,7 +35,7 @@
                 <view wx:if="{{item.questioncontent.draw[0] != null}}" class="photo" >
                     <view  data-question_photo='{{item.questioncontent.draw[0]}}' >
                         <!--<view>手绘</view>-->
-                        <image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.img[0]}}"></image>
+                        <image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.draw[0]}}"></image>
                     </view>
                 </view>
 
