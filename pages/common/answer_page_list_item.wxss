@@ -26,6 +26,7 @@
 
 .question_wrapper{
     display: flex;
+    flex-direction: column;
     text-align: left;
     height: 150rpx;
     margin-top: 10rpx;
@@ -51,11 +52,19 @@
     margin-left: 30rpx;
     margin-right: 0rpx;
     height: auto;
+    /*width: 300rpx;*/
     font-size: 30rpx;
-    text-overflow: ellipsis;
+    /*text-overflow: ellipsis;
     overflow: hidden;
-    word-wrap: break-word;
+    word-wrap: break-word;*/
     color: #333333;
+
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 .dotted_line{
@@ -236,6 +245,7 @@
     height: 35rpx;
     line-height: 35rpx;
     font-size: 26rpx;
+    margin-top: 16rpx;
     color: #999999;
 }
 
@@ -264,6 +274,8 @@
     flex-direction: row;
 height: 35rpx;
 width: auto;
+/*padding-bottom: 6rpx;*/
+margin-top: 10rpx;
 }
 
 .price_image{

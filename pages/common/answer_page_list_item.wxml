@@ -4,12 +4,12 @@
 
             <!--<view class="border_tab"/>-->
             
-            <view class="questioner_info_wrap">
+            <!--<view class="questioner_info_wrap">
              <image class ="person_icon" src='{{ item.avatar || "../../images/my_account_on.png" }}'></image>
                 <text class="teacher_name">{{item.question.username}}</text>
              </view>
-            <!--<view class="border_tab"/>-->
-            <view class="dotted_line"></view>
+            <view class="border_tab"/>
+            <view class="dotted_line"></view>-->
             <view class="border_tab"/>
             <view class="answer_page_select_item_content_wrap">
 
@@ -26,8 +26,17 @@
             </view>
 
             <view class="question_wrapper">
-                <text class="question_content">{{ item.question.questioncontent.text[0] }}
+                <text class="question_content">{{ item.question.questioncontent.text[0]}}
                 </text>
+
+            <!--<view class="border_tab"/>-->
+            <view class="border_tab"/>
+            <view class="item_bottom_wrap">
+            <text class="time_zone">还剩{{item.timer}}</text>
+            <view class="price_wrap"><image class="price_image" src="../../images/answer_icon_money@2x.png"></image><text class="price_number" >{{item.question.reward}}</text></view>
+            </view>
+
+</view>
             </view>
             </view>
 
@@ -55,14 +64,8 @@
                 </view>
 
             </view>-->
-            <view class="border_tab"/>
-<view class="item_bottom_wrap">
 
-<text class="time_zone">还剩{{item.timer}}</text>
-            <view class="price_wrap"><image class="price_image" src="../../images/answer_icon_money@2x.png"></image><text class="price_number" >{{item.question.reward}}</text></view>
-            </view>
-
-</view>
+            <!--<view class="border_tab"/>-->
             <view class="border_tab"/>
             <view class="border_tab_white"/>
         

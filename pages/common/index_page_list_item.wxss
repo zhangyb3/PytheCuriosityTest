@@ -51,12 +51,14 @@
     display: flex;
     /*margin-left: 30rpx;*/
     margin-right: 0rpx;
-    height: auto;
+    line-height: 32rpx;
     font-size: 30rpx;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    word-wrap: break-word;
     color: #333333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
    
 }
 
