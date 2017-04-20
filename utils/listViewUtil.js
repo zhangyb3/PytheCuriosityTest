@@ -2,6 +2,7 @@ var netUtil=require("../utils/netUtil.js");
 var config=require("../utils/config.js");
 var user=require("../utils/user.js");
 var base=require("../utils/base.js");
+var wxTimer = require("../utils/wxTimer.js");
 
 var actions = netUtil.action;
 

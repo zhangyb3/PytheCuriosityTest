@@ -579,7 +579,7 @@ Page({
     var that = this;
     wx.chooseImage({
       count: 1, // 默认9
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+      sizeType: ['original','compressed'], // 可以指定是原图还是压缩图，默认二者都有
       sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
       success: function (res) {
         // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
@@ -682,6 +682,7 @@ Page({
   showPhoto:function(e){
     console.log("显示图片" );
     this.setData({
+      hide_textarea:true,
       hide_show_image_page: false,
       img_src: this.data.ask_question.photo_path,
     });
@@ -690,6 +691,7 @@ Page({
   showDraw:function(e){
     console.log("显示手绘" );
     this.setData({
+      hide_textarea:true,
       hide_show_image_page: false,
       img_src: this.data.ask_question.draw_path,
     });
@@ -697,6 +699,7 @@ Page({
   },
   returnLoadImagePage:function(e){
     this.setData({
+      hide_textarea:false,
       hide_show_image_page: true,
     });
   },

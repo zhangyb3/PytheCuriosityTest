@@ -88,6 +88,12 @@ Page({
         sub_dis: '数据结构、算法、机器码',
         icon:'../../images/icon_computer@2x.png',
       },
+      {
+        subjectId:1012,
+        subject_name: '政治',
+        sub_dis: '生产关系、代议制、所有制',
+        icon:'../../images/question1_icon_political@2x.png',
+      },
       
       
      

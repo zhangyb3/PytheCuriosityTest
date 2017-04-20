@@ -8,6 +8,7 @@ var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
 var user = require("../../utils/user.js");
+var timer = require("../../utils/wxTimer.js");
 
 Page({
   data:{
@@ -45,6 +46,8 @@ Page({
         sortName:'排序',
       },
     },
+
+    wxTimerList:[],
 
     preview_img_url: config.PytheFileServerURL ,
     hide_register_lock_cover: false,
@@ -119,7 +122,7 @@ Page({
           return netData.data;
         },
         function(item){
-         
+          item.countdown.start(that);
         },
         {},
         'GET',
@@ -284,7 +287,12 @@ Page({
           return netData.data;
         },
         function(item){
-         
+          wx.showToast({
+              title: item.question.questionid,
+              icon: 'success',
+              duration: 1500
+          })
+          runTimer.call(item,that);
         },
         {},
         'GET',
@@ -663,4 +671,9 @@ function countdown(that) {
     countdown(that);  
     }  
     ,1000)  
+}
+
+function runTimer(timer,that)
+{
+  timer.start(that);
 }
