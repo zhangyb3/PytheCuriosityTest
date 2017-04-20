@@ -103,6 +103,7 @@
     /*line-height: 30rpx;*/
     color: #333333;
     font-size: 30rpx;
+    line-height: 46rpx;
     /*background: black;*/
 }
 
@@ -156,7 +157,7 @@
 
 
 .select_item_teacher_name{
-    line-height: 88rpx;
+    line-height: 60rpx;
     font-size: 28rpx;
     margin-left: 10rpx;
     width: auto;

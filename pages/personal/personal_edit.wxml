@@ -1,5 +1,6 @@
 
-<view class="border_tab"></view>
+<!--<view class="border_tab"></view>-->
+<view class="person_zone">
 <view class="nickname_zone">
     <view class="nickname_wrap">
     <text class="title">修改昵称:</text>
@@ -8,7 +9,7 @@
 </view>
 
     
-    <view class="border_tab"></view>
+    <!--<view class="border_tab"></view>-->
 <view class="description_content_zone" >
 
     <view class="title_wrap">
@@ -25,4 +26,6 @@
     <button class="edit_commit_button" bindtap="commitPersonalEdit">
         确定
     </button>
+</view>
+
 </view>

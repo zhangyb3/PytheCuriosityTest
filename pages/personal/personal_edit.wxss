@@ -1,5 +1,14 @@
 /* pages/personal/personal_edit.wxss */
 
+.person_zone{
+    position: fixed;
+    background-color: #fff;
+    top: 0rpx;
+    left: 0rpx;
+    right: 0rpx;
+    bottom: 0rpx;
+}
+
 .nickname_zone{
     display: flex;
     flex-direction: row;

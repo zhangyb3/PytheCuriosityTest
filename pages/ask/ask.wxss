@@ -5,6 +5,15 @@
   background-color: #F5F5F5;
 }
 
+.background_color_wrap{
+    position: fixed;
+    top: 0rpx;
+    left: 0rpx;
+    right: 0rpx;
+    bottom: 0rpx;
+    background-color: #fff;
+}
+
 .ask_page_selector_container{
   /*margin-top: 20px;*/
   /*background-color: yellow;*/
