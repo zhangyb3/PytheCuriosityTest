@@ -65,13 +65,13 @@ Page({
   onLoad:function(options){
 
     //先判断是否已注册
-    if(wx.getStorageSync('alreadyRegister') == 'no')
-    {
-      this.setData({
-        hide_login: false,
-      });
-      loadingSelections.call(this);
-    }
+    // if(wx.getStorageSync('alreadyRegister') == 'no')
+    // {
+    //   this.setData({
+    //     hide_login: false,
+    //   });
+    //   loadingSelections.call(this);
+    // }
     
 
 
@@ -369,13 +369,16 @@ Page({
         console.log('check register : ' + JSON.stringify(userRegisterResult));
         //如果没注册过，则注册
         var registerInfo = userRegisterResult.data.data;
-        
-        if(registerInfo.userid == null)
+        console.log(registerInfo);
+        if( wx.getStorageSync('alreadyRegister') == 'no' || registerInfo.userid == null )
         {
           wx.setStorageSync('alreadyRegister', 'no');
           console.log("register : " + wx.getStorageSync('alreadyRegister'));
           //注册
-          
+          this.setData({
+            hide_login: false,
+          });
+          loadingSelections.call(this);
         }
         else
         {
@@ -446,7 +449,10 @@ Page({
               wx.setStorageSync('alreadyRegister', 'no');
               console.log("register : " + wx.getStorageSync('alreadyRegister'));
               //注册
-              
+              this.setData({
+                hide_login: false,
+              });
+              loadingSelections.call(this);
             }
             else
             {
