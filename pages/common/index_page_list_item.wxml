@@ -27,7 +27,7 @@
             </image>-->
             <view class="question_wrapper">
             <!--<view class="border_tab_index_white"></view>-->
-                <text class="question_content">发神经的楼房吉安死定了房间爱上了对方静安寺两地分居案件多发负担所发生的雷锋精神来得及发熟练度解放了圣诞节福利;圣诞节发牢骚;大家发牢骚;发生大龙凤吉林省会计法拉盛的解放啦;时间飞逝{{item.questioncontent.text[0]}}</text>   
+                <text class="question_content">{{item.questioncontent.text[0]}}</text>   
             </view>
             </view>
             
