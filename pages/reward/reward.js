@@ -23,6 +23,9 @@ Page({
     userInfo:{},
     payFee: false,
     payAnswerId:'',
+    rewardTap1: false,
+    rewardTap5: false,
+    rewardTap10: false
   },
   onLoad:function(parameters){
     
@@ -40,14 +43,29 @@ Page({
 
   
   selectReward1:function(e){
+    this.setData({
+      rewardTap1: true,
+      rewardTap5: false,
+      rewardTap10: false
+    })
     console.log("￥ 1");
     wx.setStorageSync('rewardNum', 1);
   },
   selectReward5:function(e){
+    this.setData({
+      rewardTap1: false,
+      rewardTap5: true,
+      rewardTap10: false
+    })
     console.log("￥ 5");
     wx.setStorageSync('rewardNum', 5);
   },
   selectReward10:function(e){
+    this.setData({
+      rewardTap1: false,
+      rewardTap5: false,
+      rewardTap10: true
+    })
     console.log("￥ 10");
     wx.setStorageSync('rewardNum', 10);
   },

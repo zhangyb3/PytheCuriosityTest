@@ -36,36 +36,42 @@
 }
 
 .other_reward_input{
-    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     width :100%;
-    /*垂直居中示例*/
-    position: relative; /*脱离文档流*/
-    top: 30%; /*偏移50%为居中，此处30%*/
-    transform: translateY(-50%);
+    position: relative;
+    top: 180rpx; 
+    align-items: center;
+    
 }
 
 .other_rewawrd_number_input{
-    margin:0 auto;
-    height: 15%;
+    /*margin:0 auto;*/
+    height: 60rpx;
     width: 80%;
     
     text-align: center;
     justify-content: center;
     border-style: solid;
-    border-width: 2rpx;
-    border-radius: 8rpx;
+    border-width: 1rpx;
+    /*border-radius: 8rpx;*/
+    border-color: #eee;
     
-    font-size: 24px;
+    font-size: 32rpx;
 
-    
+    padding-left: 120rpx;
 }
 
 .other_reward_confirm{
-    margin-top: 150px;
+    margin-top: 300rpx;
 }
 
 .other_reward_confirm_button{
-    margin:0 auto;
-    width:50%;
-    background-color: lightblue;
+    /*margin:0 auto;*/
+    width:300rpx;
+    line-height: 90rpx;
+    background-color: #3AA4F1;
+    font-size: 34rpx;
+    color: #fff;
 }
