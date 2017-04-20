@@ -49,20 +49,42 @@ Page({
       questionId: parameters.questionid,
       userId: wx.getStorageSync(user.UserID),
     };    
-    listViewUtil.loadList(that,'my_question_answer',config.PytheRestfulServerURL,
-    base.MY_QUESTION_ANSWER_URL_DETAIL,
-    10,
-        myQuestionAnswersParams,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data.data;
-        },
-        function(item){
-         
-        },
-        {},
-        'GET',
-    );
+    
+    wx.request({
+      url: config.PytheRestfulServerURL + base.MY_QUESTION_ANSWER_URL_DETAIL,
+      data: {
+        questionId: parameters.questionid,
+        userId: wx.getStorageSync(user.UserID),
+      },
+      method: 'GET', 
+      success: function(res){
+        
+        var answers = res.data.data.data;
+        console.log(answers);
+        for(var count = 0; count < answers.length; count++)
+        {
+          
+          var temp = answers[count];
+          var isClick = temp.isClick;
+          temp = JSON.parse(temp.question);
+          temp.isClick = isClick;
+          temp.answercontent = JSON.parse(temp.answercontent);
+          answers[count] = temp;
+          
+        }
+        that.setData({
+            personal_question_answer_list: answers,
+            
+        });
+        typeof success == "function" && success(res.data.data);
+      },
+      fail: function(res) {
+        console.log(res);
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
 
   },
 

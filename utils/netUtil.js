@@ -499,7 +499,52 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             loadMoreNoData(that);
         }else if (action == request_refresh){
             showSuccessToast(that,"没有新内容");
+            //清空现有列表
+            if(list_type == 'index'){
+                //滑动列表结尾追加数据
+                
+                that.setData({infos:[]});
+            }
+            if(list_type == 'teacher'){
+                //滑动列表结尾追加数据
+                            
+                that.setData({ask_teacher_list:[]});
+            }
+            if(list_type == 'question'){
+        
+                that.setData({questionsForAnswer:[]});
+            }
 
+            if(list_type == 'my_question'){
+            //personal question
+                
+                that.setData({personal_ask_list:[]});
+            }
+            if(list_type == 'my_question_answer'){
+            //personal question answer
+                
+                that.setData({personal_question_answer_list:[]});
+            }
+            if(list_type == 'my_answered'){
+            //personal answer
+                
+                that.setData({personal_answer_list:[]});
+            }
+            if(list_type == 'my_unanswer'){
+            //personal not answer
+                
+                that.setData({personal_not_answer_list:[]});
+            }
+            if(list_type == 'my_like_answer'){
+            //personal like answer
+                
+                that.setData({personal_like_answer_list:[]});
+            }
+            if(list_type == 'my_like_teacher'){
+            //personal like teacher
+                
+                that.setData({personal_like_teacher_list:[]});
+            }
             if (that.hasSuccessed){
                 showSuccessToast(that,"没有新内容");
             }else {

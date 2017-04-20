@@ -22,7 +22,7 @@
 
     left: 0;
     right: 0;
-    bottom: 0;
+    
     
     width: 100%;
 }
@@ -46,7 +46,7 @@
 
 .scroll_list{
     /*flex-direction: column;*/
-    height: 1000rpx;
+    height: 500rpx;
     width: 100%;
     border-right: 1px solid #EEE;
     /*width: 33.3333%;*/

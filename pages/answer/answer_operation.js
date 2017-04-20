@@ -45,7 +45,7 @@ Page({
       photo_path:null,
       knowledge_level1:'',
       knowledge_level2:'选择知识点',
-      knowledgeId:999,
+      knowledgeId:-1,
     },
 
     knowledge1s: [
@@ -662,9 +662,7 @@ Page({
 
   playQuestionVoiceRecord:function(e){
     var that = this;
-    that.setData({
-      isPlaying: true
-    })
+    
     wx.showToast({
       title: '下载录音',
       icon: 'success',
@@ -675,7 +673,6 @@ Page({
     var questionVoiceRemotePath = e.currentTarget.dataset.question_voice;
     
     fileSys.downloadFile(that,decodeURI(questionVoiceRemotePath),'audio');
-    that.data.answer_question.questionVoicePath = questionVoicePath;
     
    
     
@@ -921,6 +918,7 @@ Page({
     var knowledge1Range = [];
     var knowledge2Range = [];
     that.setData({
+      subject_id: that.data.answer_question.subject_id,
       knowledge1Range: knowledge1Range,
       knowledge2Range: knowledge2Range,
     });
