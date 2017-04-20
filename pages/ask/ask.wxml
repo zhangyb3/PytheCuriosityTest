@@ -8,7 +8,7 @@
 
 <import src="../pop/register_lock_cover.wxml" />
 
-<view class="background_color_wrap">
+<!--<view class="background_color_wrap">-->
 
 <view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
 
@@ -39,4 +39,4 @@
 </view>
 
 
-</view>
+<!--</view>-->
