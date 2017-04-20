@@ -74,7 +74,7 @@
             
             
             <view class="border_tab"></view>
-<view class="select_knowledge_container" hidden="{{subject_id == 1002 || subject_id == 1003 || subject_id == 1004 || subject_id == 1005 || subject_id == 1011 }}" >
+<view class="select_knowledge_container" hidden="{{subject_id == 1002 || subject_id == 1003 || subject_id == 1011 }}" >
             <button class="select_knowledge_button" bindtap="selectKnowledge">
                 选择知识点：{{knowledge_point}}
             </button>
