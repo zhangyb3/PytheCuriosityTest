@@ -8,7 +8,7 @@
 .answer_page_list_container{
   position: fixed;
   /*margin-top: 100rpx;*/
-  top: 120rpx;
+  top: 100rpx;
   left: 0rpx;
   right: 0rpx;
   bottom: 0rpx;

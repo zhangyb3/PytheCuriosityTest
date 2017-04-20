@@ -5,18 +5,25 @@
             <view class="answer_tab_white"/>
 
             <view class="answer_question_container">
-                <view class="answer_questin_content">
+            <!--<view class="preview_img">-->
+            <view class="preview_img_classic_dashed_wrap">
+            <image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.img[0]}}"></image>
+            </view>
+            
+            <!--</view>-->
+                <view class="answer_questin_content_wrap">
                     <text class="answer_question_content">{{item.questioncontent.text[0]}}</text>
-                </view>
-                <view class="answer_question_bottom">
+                    <view class="answer_question_bottom">
                     <view class="answer_money_number"><image src="../../images/personal_icon_money@2x.png"></image><text class="collect_number_text">{{item.fee || 0}}</text></view>
                     <view class="_answer_money_star"><image src="../../images/question_icon_shoucang@2x.png"></image><text class="collect_number_text">{{item.likesnum || 0}}</text></view>
                 </view>
             </view>
+                </view>
+                
 
             <view class="answer_tab_white"/>
 
-            <view class="multi_tips">
+            <!--<view class="multi_tips">
                 <view wx:if="{{item.questioncontent.audio[0] != null}}" class="voice" >
                     
                     <view class="bubble" data-question_voice='{{item.questioncontent.audio[0]}}' bindtap="playQuestionVoiceRecord">
@@ -29,23 +36,21 @@
 
                 <view wx:if="{{item.questioncontent.img[0] != null}}" class="photo" >
                     <view  data-question_photo='{{item.questioncontent.img[0]}}' >
-                        <!--<view>照片</view>-->
+                
                         <image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.img[0]}}"></image>
                     </view>
                 </view>
 
                 <view wx:if="{{item.questioncontent.draw[0] != null}}" class="photo" >
                     <view  data-question_photo='{{item.questioncontent.draw[0]}}' >
-                        <!--<view>手绘</view>-->
+                        
                         <image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.draw[0]}}"></image>
                     </view>
                 </view>
 
-            </view>
+            </view>-->
 
             <view class="answer_tab_white"/>
-
-            <!--<view class="dotted_line"></view>-->
 
             <view class="answer_tab_white"/>
 
