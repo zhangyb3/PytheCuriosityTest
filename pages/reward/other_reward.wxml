@@ -10,7 +10,7 @@
    
 
     <view class="other_reward_input">
-        <input class="other_rewawrd_number_input" type="digit" placeholder="输入金额" bindinput="otherRewardNumInput" ></input>
+        <input class="other_rewawrd_number_input" type="digit" placeholder="请输入金额" bindinput="otherRewardNumInput" ></input>
     </view>
 
     <view class="other_reward_confirm">

@@ -46,8 +46,9 @@
 
 .scroll_list{
     /*flex-direction: column;*/
-    height: 1400rpx;
+    height: 1000rpx;
     width: 100%;
+    border-right: 1px solid #EEE;
     /*width: 33.3333%;*/
 }
 
