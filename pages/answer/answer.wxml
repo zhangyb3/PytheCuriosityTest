@@ -35,4 +35,7 @@
         <template is="login_view" data="{{select_student,select_teacher,lock_countdown,grade_index,gradeRange,subject_index,subjectRange,second,countdownText}}"></template>
     </view>
 
+<view>显示计时器1的剩余时间：{{wxTimerList['wxTimer1'].wxTimer}}</view>
+<view>显示计时器2的剩余时间：{{wxTimerList['wxTimer2'].wxTimer}}</view>
+
 </view>

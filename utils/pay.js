@@ -29,8 +29,8 @@ var requestOrder = (success, fail) => {
           console.log("order result : " + res.data.msg);
           typeof success == "function" && success(res.data);
       },
-      fail: function() {
-          typeof success == "function" && fail(res.data);
+      fail: function(res) {
+          typeof fail == "function" && fail(res.data);
       },
       complete: function() {
         // complete
@@ -57,7 +57,7 @@ var orderPay = (success, fail) => {
           },
           fail: function(res) {
               console.log(res);
-              typeof success == "function" && fail(res);
+              typeof fail == "function" && fail(res);
           },
         })
         
@@ -91,7 +91,7 @@ var enchashment = (success, fail) => {
           typeof success == "function" && success(res.data);
       },
       fail: function() {
-          typeof success == "function" && fail(res.data);
+          typeof fail == "function" && fail(res.data);
       },
       complete: function() {
         // complete

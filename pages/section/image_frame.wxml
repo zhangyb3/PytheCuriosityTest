@@ -1,0 +1,10 @@
+<!--pages/section/image_frame.wxml-->
+
+<view class="frame-container">
+
+    <view class="image_container" bindtap="returnLastPage">
+        <image src="{{image_source}}" mode="aspectFit"></image>
+    </view>
+        
+</view>
+    

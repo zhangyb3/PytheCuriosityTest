@@ -18,7 +18,8 @@
     "pages/reward/other_reward",
     "pages/section/record_voice",
     "pages/personal/personal_about_us",
-    "pages/personal/personal_balance_rules"
+    "pages/personal/personal_balance_rules",
+    "pages/section/image_frame"
   ],
 
   "window":{

@@ -34,7 +34,10 @@ function uploadFilePrepare(filePath, fileType)
 
 function uploadFile(filePath, parameters)
 {
-  
+    wx.showLoading({
+      title: 'loading',
+      mask: true,
+    });
     console.log('upload file ' + filePath);
     console.log(' to ' + FILE_UPLOAD_URL);
     wx.uploadFile({
@@ -45,21 +48,38 @@ function uploadFile(filePath, parameters)
       formData: parameters,
       success: function(res){
         console.log(res);
-        
+        wx.hideLoading();
       },
       fail: function() {
         // console.log(res);
+        wx.hideLoading();
+        wx.showModal({
+          title: '上传失败',
+          content: res.errMsg,
+          success: function(res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        });
       },
       complete: function() {
         // console.log(res);
+        wx.hideLoading();
+
       }
     })
 }
 
-function downloadFile(that,download_file,fileType)
+function download(that,download_file,fileType)
 {
+  wx.showLoading({
+    title: 'loading',
+    mask: true,
+  });
   if(fileType == 'audio' && decodeURIComponent(download_file) == wx.getStorageSync('lastRemoteAudio') && wx.getStorageSync('playingVoice') == 'no')
   {
+    wx.hideLoading();
     wx.playVoice({
       filePath: wx.getStorageSync('tempAudio'),
       success: function(res){
@@ -83,6 +103,7 @@ function downloadFile(that,download_file,fileType)
   }
   else if(fileType == 'audio' && decodeURIComponent(download_file) == wx.getStorageSync('lastRemoteAudio') && wx.getStorageSync('playingVoice') == 'yes')
   {
+    wx.hideLoading();
     wx.pauseVoice({
       success: function(res){
         // success
@@ -98,6 +119,7 @@ function downloadFile(that,download_file,fileType)
   }
   else if(fileType == 'image' && decodeURIComponent(download_file) == wx.getStorageSync('lastRemoteImg'))
   {
+    wx.hideLoading();
     that.setData({
       img_src: wx.getStorageSync('tempImg'),
     });
@@ -130,9 +152,12 @@ function downloadFile(that,download_file,fileType)
                 tempFilePath: tempFilePath,
                 success: function(res){
                   // success
+                  wx.hideLoading();
                   wx.setStorageSync('tempImg', res.savedFilePath);
                 },
-                
+                complete: function(res){
+                  wx.hideLoading();
+                }
               });
               wx.setStorageSync('lastRemoteImg', decodeURIComponent(download_file));
             }
@@ -143,6 +168,7 @@ function downloadFile(that,download_file,fileType)
                 filePath: res.tempFilePath,
                 success: function(res){
                   // success
+                  wx.hideLoading();
                   wx.showToast({
                     title: '播放录音',
                     icon: 'success',
@@ -164,6 +190,7 @@ function downloadFile(that,download_file,fileType)
                 },
                 complete: function() {
                   // complete
+                  wx.hideLoading();
                   wx.setStorageSync('playingVoice', 'no');
                 }
               })
@@ -174,9 +201,10 @@ function downloadFile(that,download_file,fileType)
           },
           fail: function(res) {
             console.log(res);
+            wx.hideLoading();
             wx.showModal({
-              title: '提示',
-              content: '下载失败',
+              title: '下载失败',
+              content: res.errMsg,
               success: function(res) {
                 if (res.confirm) {
                   console.log('用户点击确定')
@@ -193,6 +221,7 @@ function downloadFile(that,download_file,fileType)
     //   fail: function(res) {
     //     // fail
     //     console.log(res);
+    //     wx.hideLoading();
     //     wx.showModal({
     //       title: '提示',
     //       content: '文件不存在',
@@ -209,8 +238,165 @@ function downloadFile(that,download_file,fileType)
   
 }
 
+function downloadFile(that,download_file,fileType,success,fail) 
+{
+  //存储超过20个文件即清除
+  wx.getSavedFileList({
+    success: function(res) {
+      if(res.fileList.length > 20)
+      {
+        res.fileList.forEach(function(file){
+            wx.removeSavedFile({
+              filePath: file.filePath,
+              complete: function(res) {
+                console.log(res);
+              }
+            });
+          }
+        );
+      }
+      
+    }
+  });
+
+  var download_file = decodeURIComponent(download_file);
+  //查看是否下载过
+  var syncStorageInfo = wx.getStorageInfoSync();
+  var whetherLoaded;
+  syncStorageInfo.keys.forEach(function(key){
+      if(key == download_file)
+      {
+        whetherLoaded = true;
+      }
+    }
+  )
+
+  // //已经下载过
+  if(whetherLoaded == true)
+  {
+    if(fileType = 'image')
+    {
+      typeof success == "function" && success(wx.getStorageSync(download_file));
+    }
+    if(fileType = 'audio')
+    {
+      wx.playVoice({
+        filePath: wx.getStorageSync(download_file),
+        success: function(res){
+          // success
+          wx.showToast({
+            title: '播放录音',
+            icon: 'success',
+            duration: 1000
+          });
+        },
+        fail: function(res) {
+          // fail
+        },
+        complete: function(res) {
+          // complete
+        }
+      })
+    }
+  }
+  //未下载过
+  else
+  {
+    wx.showLoading({
+      title: 'loading',
+      mask: true,
+    });
+    wx.downloadFile({
+      url: FILE_DOWNLOAD_URL + decodeURIComponent(download_file),
+      type: fileType, // 下载资源的类型，用于客户端识别处理，有效值：image/audio/video
+      success: function(res){
+        console.log(res);
+        
+        if(fileType == 'image')
+        {
+          that.setData({
+            img_src: res.tempFilePath,
+          });
+          var tempFilePath = res.tempFilePath;
+          wx.saveFile({
+            tempFilePath: tempFilePath,
+            success: function(res){
+              // success
+              wx.hideLoading();
+              wx.setStorageSync(download_file, res.savedFilePath);
+              typeof success == "function" && success(res.savedFilePath);
+            },
+            complete: function(res){
+              wx.hideLoading();
+            }
+          });
+          
+        }
+        if(fileType == 'audio')
+        {
+          var tempFilePath = res.tempFilePath;
+          wx.playVoice({
+            filePath: res.tempFilePath,
+            success: function(res){
+              // success
+              wx.hideLoading();
+              wx.showToast({
+                title: '播放录音',
+                icon: 'success',
+                duration: 1000
+              });
+              
+              wx.saveFile({
+                tempFilePath: tempFilePath,
+                success: function(res){
+                  // success
+                  wx.setStorageSync(download_file, res.savedFilePath);
+                  typeof success == "function" && success(res.savedFilePath);
+                },
+            
+              });
+              
+            },
+            fail: function() {
+              // fail
+            },
+            complete: function() {
+              // complete
+              wx.hideLoading();
+              
+            }
+          })
+        }
+
+        
+        
+      },
+      fail: function(res) {
+        console.log(res);
+        wx.hideLoading();
+        wx.showModal({
+          title: '下载失败',
+          content: res.errMsg,
+          success: function(res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        });
+      },
+      complete: function(res) {
+        console.log(res);
+      }
+    });
+
+  }
+
+  
+}
+
 module.exports = {
     uploadFilePrepare: uploadFilePrepare,
     uploadFile: uploadFile,
     downloadFile: downloadFile,
+    download: download,
 }
