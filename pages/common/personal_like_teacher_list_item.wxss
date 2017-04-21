@@ -40,10 +40,7 @@
 }
 
 .teacher_middle_wrapper{
-    position: fixed;
-
-    left: 170rpx;
-    right: 120rpx;
+    margin-left: 170rpx;
     /*height: 120px;*/
     height: auto;
     display: flex;
