@@ -31,7 +31,7 @@ Page({
     list_mode:'my_answered',
 
     hide_show_image_page: true,
-
+    hide_select_item: true,
 
     hide_personal_answer_list:false,
     hide_personal_not_answer_list:true,
@@ -125,8 +125,62 @@ Page({
     })
   },
 
+  selectOneItem:function(e){
+    var selectItem,itemIndex;
+    selectItem = e.currentTarget.dataset.item;
+    itemIndex = e.currentTarget.dataset.index;
+    console.log(JSON.stringify(selectItem) + "," + itemIndex);
+
+    this.setData({hide_select_item:false});
+    var that = this;
+    //请求具体数据
+    wx.request({
+      url: config.PytheRestfulServerURL + '/me/answer/detail',
+      data: {
+        questionId: selectItem.questionid,
+        teacherId: wx.getStorageSync(user.TeacherID),
+      },
+      method: 'GET', 
+      success: function(res){
+        console.log(res);
+        var answers = res.data.data;
+
+        for(var count = 0; count < answers.length; count++)
+        {
+          
+          var temp = answers[count];
+                    
+          answers[count] = temp;
+          answers[count].answercontent = JSON.parse(answers[count].answercontent);
+          
+          
+        }
+        that.setData({
+            answers: answers,
+            question:selectItem,
+        });
+        typeof success == "function" && success(res.data);
+      },
+      fail: function(res) {
+        console.log(res);
+      }
+    });
+  },
+  returnIndexPage: function(e) {
+      console.log("return to index page");
+      
+      this.setData({
+          hide_select_item: true,
+          hide_show_image_page: true,
+          img_src:null,
+      });
+  },
+
   onReady:function(){
     // 页面渲染完成
+    this.setData({
+      alreadyRegister: wx.getStorageSync('alreadyRegister'),
+    });
   },
   onShow:function(){
     // 页面显示
