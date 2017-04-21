@@ -1,6 +1,11 @@
 
 .container {
-  min-height: 100%;
+  /*min-height: 100%;*/
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   background-color: #f5f5f5;
 }
 
@@ -34,6 +39,7 @@ image {
 }
 .time-big {
   font-size: 60rpx;
+  color: #333333;
   margin: 20rpx;
 }
 .time-small {

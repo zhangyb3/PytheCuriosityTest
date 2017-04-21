@@ -10,6 +10,7 @@ position: fixed;
     display: flex;
     flex-direction: column;
     background-color: #fff;
+    border: 1px solid #eee;
 }
 
 .aboutUs_content_wrap{

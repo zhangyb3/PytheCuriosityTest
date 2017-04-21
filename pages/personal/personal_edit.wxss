@@ -104,6 +104,6 @@
 .title{
     color: #333333;
     font-size: 30rpx;
-    width: 130rpx;
+    width: 150rpx;
     text-align: left;
 }

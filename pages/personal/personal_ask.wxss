@@ -8,6 +8,7 @@
     bottom: 0;
     
     background-color: #f5f5f5;
+    border: 1px solid #eee;
 }
 
 .list_bottom{
