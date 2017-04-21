@@ -22,28 +22,7 @@ Page({
     console.log("from personal");
     console.log(parameters);
     
-    //加载个人问题列表
-    var that = this;
-    var myQuestionParams = {
-      studentId : wx.getStorageSync(user.StudentID),
-      pageSize : 10,
-      pageNum : 1,
-      
-    };    
-    listViewUtil.loadList(that,'my_question',config.PytheRestfulServerURL,
-    base.MY_QUESTION_URL_DETAIL,
-    10,
-        myQuestionParams,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-         
-        },
-        {},
-        'GET',
-    );
+    
   },
 
   selectOneQuestion:function(result){
@@ -71,6 +50,28 @@ Page({
   },
   onShow:function(){
     // 页面显示
+    //加载个人问题列表
+    var that = this;
+    var myQuestionParams = {
+      studentId : wx.getStorageSync(user.StudentID),
+      pageSize : 10,
+      pageNum : 1,
+      
+    };    
+    listViewUtil.loadList(that,'my_question',config.PytheRestfulServerURL,
+    base.MY_QUESTION_URL_DETAIL,
+    10,
+        myQuestionParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
   },
   onHide:function(){
     // 页面隐藏

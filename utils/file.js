@@ -240,6 +240,25 @@ function download(that,download_file,fileType)
 
 function downloadFile(that,download_file,fileType,success,fail) 
 {
+  //存储超过20个文件即清除
+  wx.getSavedFileList({
+    success: function(res) {
+      if(res.fileList.length > 20)
+      {
+        res.fileList.forEach(function(file){
+            wx.removeSavedFile({
+              filePath: file.filePath,
+              complete: function(res) {
+                console.log(res);
+              }
+            });
+          }
+        );
+      }
+      
+    }
+  });
+
   var download_file = decodeURIComponent(download_file);
   //查看是否下载过
   var syncStorageInfo = wx.getStorageInfoSync();

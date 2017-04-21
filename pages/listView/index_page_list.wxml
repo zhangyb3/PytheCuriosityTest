@@ -23,7 +23,7 @@
       <block wx:for="{{infos}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         <!--<view class="interval"></view>-->
         <view class="index_page_list_item_container" >
-          <template is="index_page_list_item" data="{{item,index,preview_img_url}}"></template>
+          <template is="index_page_list_item" data="{{item,index,preview_img_url,alreadyRegister}}"></template>
         </view>
       </block>
 

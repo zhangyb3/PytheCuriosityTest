@@ -41,51 +41,7 @@ Page({
     console.log("from personal");
     console.log(parameters);
     
-    //加载个人已答列表
-    var that = this;
-    var myAnsweredParams = {
-      teacherId : wx.getStorageSync(user.TeacherID),
-      pageSize : 10,
-      pageNum : 1,
-      
-    };    
-    listViewUtil.loadList(that,'my_answered',config.PytheRestfulServerURL,
-    base.MY_ANSWERED_URL_DETAIL,
-    10,
-        myAnsweredParams,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-          
-        },
-        {},
-        'GET',
-    );
-
-    //加载个人未答列表
-    var that = this;
-    var myUnanswerParams = {
-      teacherId : wx.getStorageSync(user.TeacherID),
-      pageSize : 10,
-      pageNum : 1,
-      
-    };    
-    listViewUtil.loadList(that,'my_unanswer',config.PytheRestfulServerURL,
-    base.MY_UNANSWER_URL_DETAIL,
-    10,
-        myUnanswerParams,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-         
-        },
-        {},
-        'GET',
-    );
+    
 
   },
 
@@ -174,6 +130,51 @@ Page({
   },
   onShow:function(){
     // 页面显示
+    //加载个人已答列表
+    var that = this;
+    var myAnsweredParams = {
+      teacherId : wx.getStorageSync(user.TeacherID),
+      pageSize : 10,
+      pageNum : 1,
+      
+    };    
+    listViewUtil.loadList(that,'my_answered',config.PytheRestfulServerURL,
+    base.MY_ANSWERED_URL_DETAIL,
+    10,
+        myAnsweredParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+          
+        },
+        {},
+        'GET',
+    );
+
+    //加载个人未答列表
+    var that = this;
+    var myUnanswerParams = {
+      teacherId : wx.getStorageSync(user.TeacherID),
+      pageSize : 10,
+      pageNum : 1,
+      
+    };    
+    listViewUtil.loadList(that,'my_unanswer',config.PytheRestfulServerURL,
+    base.MY_UNANSWER_URL_DETAIL,
+    10,
+        myUnanswerParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
   },
   onHide:function(){
     // 页面隐藏

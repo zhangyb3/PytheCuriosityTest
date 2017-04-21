@@ -24,6 +24,21 @@ App({
       // Do something when catch error
     }
 
+    wx.getSavedFileList({
+      success: function(res) {
+        console.log(res.fileList);
+        res.fileList.forEach(function(file){
+            wx.removeSavedFile({
+              filePath: file.filePath,
+              complete: function(res) {
+                console.log(res);
+              }
+            });
+          }
+        );
+      }
+    })
+
     wx.setStorageSync('lastRemoteAudio', 'no');
     wx.setStorageSync('lastRemoteImg', 'no');
     wx.setStorageSync('playingVoice', 'no');

@@ -526,6 +526,9 @@ Page({
     });
   },
 
+
+  
+
   
 
   onReady:function(){
@@ -557,6 +560,9 @@ Page({
   },
   onShow:function(){
     // 页面显示
+
+    
+
   },
   onHide:function(){
     // 页面隐藏
@@ -677,3 +683,4 @@ function runTimer(timer,that)
 {
   timer.start(that);
 }
+
