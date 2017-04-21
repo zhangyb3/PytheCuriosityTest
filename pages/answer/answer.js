@@ -121,7 +121,7 @@ Page({
           //取出返回结果的列表
           return netData.data;
         },
-        function(item){
+        function(item,that){
           item.countdown.start(that);
         },
         {},

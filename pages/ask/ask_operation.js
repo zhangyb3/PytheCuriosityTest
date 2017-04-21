@@ -701,6 +701,7 @@ Page({
     this.setData({
       hide_textarea:false,
       hide_show_image_page: true,
+      img_src:null,
     });
   },
   getImageSource:function(e){

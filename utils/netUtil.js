@@ -423,7 +423,7 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
                 });
             }else {
                 console.log('handle path ');
-                that.handldItemInfo(info);
+                that.handldItemInfo(info,that);
             }
         });
         console.log(concatDatas);

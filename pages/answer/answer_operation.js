@@ -6,6 +6,7 @@ var fileSys = require("../../utils/file.js");
 var base = require("../../utils/base.js");
 var user = require("../../utils/user.js");
 var utils = require("../../utils/util.js");
+var netUtil=require("../../utils/netUtil.js");
 var wxTimer = require("../../utils/wxTimer.js");
 
 Page({
@@ -721,25 +722,74 @@ Page({
   showQuestionPhoto:function(e){
     var question_photo = decodeURIComponent(e.currentTarget.dataset.question_photo);
     console.log("显示图片" + question_photo);
-    var questionPhotoPath = fileSys.downloadFile(this,question_photo,'image');
-    this.data.answer_question.photo_path = questionPhotoPath;
-    this.setData({
-      hide_textarea: true,
-      hide_show_image_page: false,
-      img_src: questionPhotoPath,
-    });
+    // var questionPhotoPath = fileSys.downloadFile(this,question_photo,'image');
+    // this.data.answer_question.photo_path = questionPhotoPath;
+    // this.setData({
+    //   hide_textarea: true,
+    //   hide_show_image_page: false,
+    //   img_src: questionPhotoPath,
+    // });
+    fileSys.downloadFile(this,question_photo,'image',
+      (successReturn)=>{
+        console.log(successReturn);
+        var parametersJSON = {
+          image_source : successReturn,
+        };
+        var parameters = netUtil.json2Form(parametersJSON);
+        wx.navigateTo({
+          url: '../section/image_frame'+'?'+ parameters,
+          success: function(res){
+            // success
+          },
+          fail: function(res) {
+            // fail
+          },
+          complete: function(res) {
+            // complete
+          }
+        });
+      },
+      (failReturn)=>{
+
+      }
+    );
 
   },
   showQuestionDraw:function(e){
     var question_draw = decodeURIComponent(e.currentTarget.dataset.question_draw);
     console.log("显示手绘" + question_draw);
-    var questionDrawPath = fileSys.downloadFile(this,question_draw,'image');
-    this.data.answer_question.draw_path = questionDrawPath;
-    this.setData({
-      hide_textarea: true,
-      hide_show_image_page: false,
-      img_src: questionDrawPath,
-    });
+    // var questionDrawPath = fileSys.downloadFile(this,question_draw,'image');
+    // this.data.answer_question.draw_path = questionDrawPath;
+    // this.setData({
+    //   hide_textarea: true,
+    //   hide_show_image_page: false,
+    //   img_src: questionDrawPath,
+    // });
+    fileSys.downloadFile(this,question_draw,'image',
+      (successReturn)=>{
+        console.log(successReturn);
+        var parametersJSON = {
+          image_source : successReturn,
+        };
+        var parameters = netUtil.json2Form(parametersJSON);
+        wx.navigateTo({
+          url: '../section/image_frame'+'?'+ parameters,
+          success: function(res){
+            // success
+          },
+          fail: function(res) {
+            // fail
+          },
+          complete: function(res) {
+            // complete
+          }
+        });
+      },
+      (failReturn)=>{
+
+      }
+    );
+  
   },
 
   showAnswerPhoto:function(e){

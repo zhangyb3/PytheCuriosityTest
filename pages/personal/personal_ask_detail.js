@@ -220,25 +220,74 @@ Page({
   showPhoto:function(e){
     var photo = decodeURIComponent(e.currentTarget.dataset.photo);
     console.log("显示图片" + photo);
-    var photoPath = fileSys.downloadFile(this,photo,'image');
-    this.data.photo_path = photoPath;
-    this.setData({
-      hide_textarea: true,
-      hide_show_image_page: false,
-      // img_src: photo_path,
-    });
+    // var photoPath = fileSys.downloadFile(this,photo,'image');
+    // this.data.photo_path = photoPath;
+    // this.setData({
+    //   hide_textarea: true,
+    //   hide_show_image_page: false,
+    //   // img_src: photo_path,
+    // });
+    fileSys.downloadFile(this,photo,'image',
+      (successReturn)=>{
+        console.log(successReturn);
+        var parametersJSON = {
+          image_source : successReturn,
+        };
+        var parameters = netUtil.json2Form(parametersJSON);
+        wx.navigateTo({
+          url: '../section/image_frame'+'?'+ parameters,
+          success: function(res){
+            // success
+          },
+          fail: function(res) {
+            // fail
+          },
+          complete: function(res) {
+            // complete
+          }
+        });
+      },
+      (failReturn)=>{
+
+      }
+    );
 
   },
   showDraw:function(e){
     var draw = decodeURIComponent(e.currentTarget.dataset.draw);
     console.log("显示手绘" + draw);
-    var drawPath = fileSys.downloadFile(this,draw,'image');
-    this.data.draw_path = drawPath;
-    this.setData({
-      hide_textarea: true,
-      hide_show_image_page: false,
-      // img_src: draw_path,
-    });
+    // var drawPath = fileSys.downloadFile(this,draw,'image');
+    // this.data.draw_path = drawPath;
+    // this.setData({
+    //   hide_textarea: true,
+    //   hide_show_image_page: false,
+    //   // img_src: draw_path,
+    // });
+    fileSys.downloadFile(this,draw,'image',
+      (successReturn)=>{
+        console.log(successReturn);
+        var parametersJSON = {
+          image_source : successReturn,
+        };
+        var parameters = netUtil.json2Form(parametersJSON);
+        wx.navigateTo({
+          url: '../section/image_frame'+'?'+ parameters,
+          success: function(res){
+            // success
+          },
+          fail: function(res) {
+            // fail
+          },
+          complete: function(res) {
+            // complete
+          }
+        });
+      },
+      (failReturn)=>{
+
+      }
+    );
+
   },
   returnLoadImagePage:function(e){
     this.setData({
