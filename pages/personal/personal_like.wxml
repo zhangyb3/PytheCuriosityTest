@@ -9,6 +9,11 @@
         <template is="show_image_page" data="{{img_src}}"></template>
 </view>
 
+<import src="../pop/index_page_select_item.wxml" />
+<view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
+    <template is="index_page_select_item" data="{{answers,question,preview_img_url,alreadyRegister}}"></template>
+  </view>
+
 <view class="personal_like_page">
   
     <view class="personal_like_selector_container" >

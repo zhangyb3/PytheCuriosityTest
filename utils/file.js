@@ -1,5 +1,6 @@
 
 var config = require('./config')
+var base = require('./base')
 
 const FILE_UPLOAD_URL = `${config.PytheRestfulServerURL}/file/uploadFile`;//文件上传服务
 
@@ -241,23 +242,7 @@ function download(that,download_file,fileType)
 function downloadFile(that,download_file,fileType,success,fail) 
 {
   //存储超过20个文件即清除
-  wx.getSavedFileList({
-    success: function(res) {
-      if(res.fileList.length > 20)
-      {
-        res.fileList.forEach(function(file){
-            wx.removeSavedFile({
-              filePath: file.filePath,
-              complete: function(res) {
-                console.log(res);
-              }
-            });
-          }
-        );
-      }
-      
-    }
-  });
+  base.cleanCacheFile(20);
 
   var download_file = decodeURIComponent(download_file);
   //查看是否下载过
@@ -323,7 +308,8 @@ function downloadFile(that,download_file,fileType,success,fail)
             success: function(res){
               // success
               wx.hideLoading();
-              wx.setStorageSync(download_file, res.savedFilePath);
+              wx.setStorageSync(download_file,res.savedFilePath);
+              wx.setStorageSync(res.savedFilePath,download_file);
               typeof success == "function" && success(res.savedFilePath);
             },
             complete: function(res){
@@ -350,7 +336,8 @@ function downloadFile(that,download_file,fileType,success,fail)
                 tempFilePath: tempFilePath,
                 success: function(res){
                   // success
-                  wx.setStorageSync(download_file, res.savedFilePath);
+                  wx.setStorageSync(download_file,res.savedFilePath);
+                  wx.setStorageSync(res.savedFilePath,download_file);
                   typeof success == "function" && success(res.savedFilePath);
                 },
             

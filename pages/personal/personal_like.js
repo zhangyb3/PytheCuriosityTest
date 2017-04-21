@@ -23,7 +23,7 @@ Page({
     list_mode: 'my_like_answer',
 
     hide_show_image_page: true,
-
+    hide_select_item:true,
 
     hide_personal_like_answer_list:false,
     hide_personal_like_teacher_list:true,
@@ -157,12 +157,39 @@ Page({
       })
   },
 
+  selectOneItem:function(e){
+    var selectItem,itemIndex;
+    selectItem = e.currentTarget.dataset.item;
+    itemIndex = e.currentTarget.dataset.index;
+    console.log(JSON.stringify(selectItem) + "," + itemIndex);
+
+    this.setData({hide_select_item:false});
+
+    selectItem.playingVoice = false;
+    //进入详细列表
+    // base.cleanCacheFile(20);
+    base.getDetailContent(this,selectItem);
+    
+    // this.setData({select_item:selectItem});
+  },
+  returnIndexPage: function(e) {
+      console.log("return to index page");
+      
+      this.setData({
+          hide_select_item: true,
+          hide_show_image_page: true,
+          img_src:null,
+      });
+  },
   
 
   
 
   onReady:function(){
     // 页面渲染完成
+    this.setData({
+      alreadyRegister: wx.getStorageSync('alreadyRegister'),
+    });
   },
   onShow:function(){
     // 页面显示

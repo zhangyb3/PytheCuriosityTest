@@ -156,6 +156,7 @@ Page({
 
     selectItem.playingVoice = false;
     //进入详细列表
+    // base.cleanCacheFile(20);
     base.getDetailContent(this,selectItem);
     
     // this.setData({select_item:selectItem});
