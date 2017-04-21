@@ -25,10 +25,8 @@
     height: 156rpx;
     border: 1px #999999 dashed;
 }
-.lines {
-    display: flex;
+/*.lines {
     flex-direction: column;
-    /*width:100%;*/
     margin-top: 20rpx;
     min-height: 110rpx;
     margin-left: 20rpx;
@@ -37,10 +35,11 @@
     color: #333333;
     overflow-x:hidden;
     background-color: #FFFFFF;
-    position:relative;
-}
+    position:fixed;
+}*/
 .question_wrap{
      position: fixed;
+     /*top: 20rpx;*/
     left: 216rpx;
     right: 30rpx;
     /*height: 130rpx;*/
@@ -48,7 +47,7 @@
     flex-direction: column;
     text-align: left;
     height: 156rpx;
-    /*margin-top: 20rpx;*/
+    margin-top: 20rpx;
 
 }
 .question_content {
@@ -80,7 +79,7 @@
     color:#c8c8c8;
     font-size:16px;
     position:relative;
-    margin-top: 10rpx;
+    margin-top: 14rpx;
 }
 
 .notAnswer_money_count{
@@ -263,7 +262,7 @@
 }
 
 .preview_img_classic{
-    width: 151rpx;
-    height: 118rpx;
+    width: 156rpx;
+    height: 156rpx;
 
 }

@@ -22,7 +22,9 @@
         <view class="page-body-buttons">
           <view class="page-body-button"></view>
           <view class="page-body-button" bindtap="stopRecord">
-            <view class="button-stop-record"></view>
+            <!--<view class="button-stop-record">-->
+            <image src="/images/icon_record_sel.gif"></image>
+            <!--</view>-->
           </view>
           <view class="page-body-button"></view>
         </view>

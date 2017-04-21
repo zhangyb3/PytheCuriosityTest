@@ -18,7 +18,7 @@
     border-top: 1px solid #EEE;
     background-color: #ffffff;
     width: 100%;
-    height: auto;
+    height: 200rpx;
     border-bottom: 20rpx solid #ffffff;
     /*justify-content: space-between;*/
     /*display: flex;
@@ -57,12 +57,13 @@
 }
 
 .personal_description_text_zone{
-    display: flex;
-    height: 100%;
+    /*display: flex;*/
+    position: fixed;
+    height: 180rpx;
     width: auto;
-    margin-left: 20rpx;
-    margin-right: 20rpx;
-    position: relative;
+    left: 170rpx;
+    right: 20rpx;
+    /*position: relative;*/
     flex-direction: column;
 }
 
@@ -85,19 +86,30 @@
     width: 100%;
     height: auto;
     margin-top: 20rpx;
+    margin-right: 80rpx;
 }
 
 .person_discribe{
-    display: flex;
+    /*display: flex;*/
+    position: fixed;
+    left: 170rpx;
+    right: 80rpx;
+    margin-top: 10rpx;
     font-size: 24rpx;
     color: #999999;
+    height: 80rpx;
+    line-height: 28rpx;
     /*height: auto;*/
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
 }
 
 .personal_summary_wrap{
     height:40rpx;
     display:flex;
-    margin-top: 37rpx;
+    margin-top: 100rpx;
     line-height:20px;
 }
 .personal_summary_wrap image{
@@ -154,8 +166,7 @@
     /*background-size: 20px 20px;*/
 }
 
-.person_edit_icon image{
-    position: absolute;
+.person_edit_icon image{                               position: absolute;
     /*left: 0px;*/
 
     left: 0rpx;
