@@ -12,7 +12,7 @@
             
             </view>
 
-            <view class="lines">
+            <!--<view class="lines">-->
                 <view class="question_wrap">
                  <view class="question_content"><text>{{item.questioncontent.text[0]}}</text></view>
 
@@ -20,7 +20,7 @@
                     <view class="money_number"><image src="../../images/personal_icon_money@2x.png"></image><text class="notAnswer_money_count">{{item.reward }}</text></view>
                 </view>
                 </view>
-                </view>  
+                <!--</view>  -->
                 
                     <!--<view class="queation_button"><image src="../../images/icon_answer@2x.png"></image></view>
                 </view>-->
