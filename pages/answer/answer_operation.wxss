@@ -94,12 +94,12 @@ background-color: deepskyblue;
 
 .question_content{
     display: flex;
-    margin-left: 30rpx;
+    margin-left: 40rpx;
     margin-right: 30rpx;
     height: auto;
-    font-size: 28rpx;
+    font-size: 30rpx;
     color: #333333;
-    margin-top: 28rpx;
+    margin-top: 30rpx;
 }
 
 .answer_content_text_input {
