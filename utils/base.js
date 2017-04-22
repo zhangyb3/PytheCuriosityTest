@@ -29,6 +29,7 @@ const SELECT_BEST_ANSWER_URL = `${config.PytheRestfulServerURL}/me/question/sele
 
 function getDetailContent(that,selectItem)
 {
+  
     //请求具体数据
     wx.request({
       url: DETAIL_CONTENT_URL,
@@ -178,6 +179,35 @@ function selectBestAnswer(parameters)
   })
 }
 
+function cleanCacheFile(quantity)
+{
+  //存储超过20个文件即清除
+  wx.getSavedFileList({
+    success: function(res) {
+      if(res.fileList.length > quantity)
+      {
+        res.fileList.forEach(function(file){
+          //清除缓存中“云-本地”的key-value对
+          try {
+            wx.removeStorageSync(wx.getStorageSync(file.filePath));
+            wx.removeStorageSync(file.filePath);
+          } catch (e) {
+            // Do something when catch error
+          }
+            wx.removeSavedFile({
+              filePath: file.filePath,
+              complete: function(res) {
+                console.log(res);
+              }
+            });
+          }
+        );
+      }
+      
+    }
+  });
+}
+
 
 
 module.exports = {
@@ -195,6 +225,8 @@ module.exports = {
 
     complainAnswer: complainAnswer,
     selectBestAnswer: selectBestAnswer,
+
+    cleanCacheFile: cleanCacheFile,
 
     MY_QUESTION_URL_DETAIL: MY_QUESTION_URL_DETAIL,
 

@@ -31,6 +31,9 @@ Page({
   },
   onLoad:function(params){
     console.log(params);
+    base.cleanCacheFile(20);
+
+
     var parameters = JSON.parse(decodeURIComponent(params.P));
     
     this.data.question.questioncontent = parameters.questioncontent;

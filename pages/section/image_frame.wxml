@@ -1,10 +1,11 @@
 <!--pages/section/image_frame.wxml-->
 
 <view class="frame-container">
-
-    <view class="image_container" bindtap="returnLastPage">
-        <image src="{{image_source}}" mode="aspectFit"></image>
-    </view>
-        
+    <view>
+    <!--<scroll-view scroll-y="true" scroll-x="true"  bindtap="returnLastPage">  -->
+        <image class = "SFimg" catchtouchend="endtap" catchtouchmove="movetap" bindload = "imgload"  
+ style="width:{{ scaleWidth }}px;height:{{ scaleHeight }}px" mode="aspectFit" src="{{dataimg}}"></image> 
+    <!--</scroll-view>  -->
+    </view>   
 </view>
     

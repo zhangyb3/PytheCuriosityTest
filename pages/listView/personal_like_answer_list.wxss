@@ -23,3 +23,5 @@
 @import "../common/personal_like_answer_list_item.wxss";
 @import "../bubble/bubble.wxss";
 
+@import "../pop/index_page_select_item.wxss";
+

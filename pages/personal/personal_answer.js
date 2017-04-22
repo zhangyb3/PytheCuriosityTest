@@ -7,6 +7,7 @@ var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
 var user = require("../../utils/user.js");
+var fileSys = require("../../utils/file.js");
 
 Page({
   data:{
@@ -31,7 +32,7 @@ Page({
     list_mode:'my_answered',
 
     hide_show_image_page: true,
-
+    hide_select_item: true,
 
     hide_personal_answer_list:false,
     hide_personal_not_answer_list:true,
@@ -125,8 +126,145 @@ Page({
     })
   },
 
+  selectOneItem:function(e){
+    var selectItem,itemIndex;
+    selectItem = e.currentTarget.dataset.item;
+    itemIndex = e.currentTarget.dataset.index;
+    console.log(JSON.stringify(selectItem) + "," + itemIndex);
+
+    this.setData({hide_select_item:false});
+    var that = this;
+    //请求具体数据
+    wx.request({
+      url: config.PytheRestfulServerURL + '/me/answer/detail',
+      data: {
+        questionId: selectItem.questionid,
+        teacherId: wx.getStorageSync(user.TeacherID),
+      },
+      method: 'GET', 
+      success: function(res){
+        console.log(res);
+        var answers = res.data.data;
+
+        for(var count = 0; count < answers.length; count++)
+        {
+          
+          var temp = answers[count];
+                    
+          answers[count] = temp;
+          answers[count].answercontent = JSON.parse(answers[count].answercontent);
+          
+          
+        }
+        that.setData({
+            answers: answers,
+            question:selectItem,
+        });
+        typeof success == "function" && success(res.data);
+      },
+      fail: function(res) {
+        console.log(res);
+      }
+    });
+  },
+  returnIndexPage: function(e) {
+      console.log("return to index page");
+      
+      this.setData({
+          hide_select_item: true,
+          hide_show_image_page: true,
+          img_src:null,
+      });
+  },
+
+
+  playVoiceRecord:function(e){
+    var that = this;
+    that.setData({
+      isPlaying: true
+    })
+    wx.showToast({
+      title: '下载录音',
+      icon: 'success',
+      duration: 1000
+    });
+    var that = this;
+    
+    var voiceRemotePath = e.currentTarget.dataset.voice;
+    
+    fileSys.downloadFile(that,decodeURI(voiceRemotePath),'audio');
+    
+
+  },
+
+  showPhoto:function(e){
+    var photo = decodeURIComponent(e.currentTarget.dataset.photo);
+    console.log("显示图片" + photo);
+    fileSys.downloadFile(this,photo,'image',
+      (successReturn)=>{
+        console.log(successReturn);
+        var parametersJSON = {
+          image_source : successReturn,
+        };
+        var parameters = netUtil.json2Form(parametersJSON);
+        wx.navigateTo({
+          url: '../section/image_frame'+'?'+ parameters,
+          success: function(res){
+            // success
+          },
+          fail: function(res) {
+            // fail
+          },
+          complete: function(res) {
+            // complete
+          }
+        });
+      },
+      (failReturn)=>{
+
+      }
+    );
+    
+    
+    
+   
+
+  },
+  showDraw:function(e){
+    var draw = decodeURIComponent(e.currentTarget.dataset.draw);
+    console.log("显示手绘" + draw);
+    fileSys.downloadFile(this,draw,'image',
+      (successReturn)=>{
+        console.log(successReturn);
+        var parametersJSON = {
+          image_source : successReturn,
+        };
+        var parameters = netUtil.json2Form(parametersJSON);
+        wx.navigateTo({
+          url: '../section/image_frame'+'?'+ parameters,
+          success: function(res){
+            // success
+          },
+          fail: function(res) {
+            // fail
+          },
+          complete: function(res) {
+            // complete
+          }
+        });
+      },
+      (failReturn)=>{
+
+      }
+    );
+    
+  },
+
   onReady:function(){
     // 页面渲染完成
+    this.setData({
+      alreadyRegister: wx.getStorageSync('alreadyRegister'),
+    });
   },
   onShow:function(){
     // 页面显示

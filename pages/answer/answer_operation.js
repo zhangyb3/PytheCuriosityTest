@@ -84,6 +84,8 @@ Page({
 
   onLoad:function(parameters){
     console.log("from answer");
+    // base.cleanCacheFile(20);
+ 
   
     this.setData({
       hide_record_sound_section : true,
