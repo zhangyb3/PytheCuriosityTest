@@ -7,6 +7,7 @@ var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
 var user = require("../../utils/user.js");
+var fileSys = require("../../utils/file.js");
 
 Page({
   data:{
@@ -174,6 +175,89 @@ Page({
           hide_show_image_page: true,
           img_src:null,
       });
+  },
+
+
+  playVoiceRecord:function(e){
+    var that = this;
+    that.setData({
+      isPlaying: true
+    })
+    wx.showToast({
+      title: '下载录音',
+      icon: 'success',
+      duration: 1000
+    });
+    var that = this;
+    
+    var voiceRemotePath = e.currentTarget.dataset.voice;
+    
+    fileSys.downloadFile(that,decodeURI(voiceRemotePath),'audio');
+    
+
+  },
+
+  showPhoto:function(e){
+    var photo = decodeURIComponent(e.currentTarget.dataset.photo);
+    console.log("显示图片" + photo);
+    fileSys.downloadFile(this,photo,'image',
+      (successReturn)=>{
+        console.log(successReturn);
+        var parametersJSON = {
+          image_source : successReturn,
+        };
+        var parameters = netUtil.json2Form(parametersJSON);
+        wx.navigateTo({
+          url: '../section/image_frame'+'?'+ parameters,
+          success: function(res){
+            // success
+          },
+          fail: function(res) {
+            // fail
+          },
+          complete: function(res) {
+            // complete
+          }
+        });
+      },
+      (failReturn)=>{
+
+      }
+    );
+    
+    
+    
+   
+
+  },
+  showDraw:function(e){
+    var draw = decodeURIComponent(e.currentTarget.dataset.draw);
+    console.log("显示手绘" + draw);
+    fileSys.downloadFile(this,draw,'image',
+      (successReturn)=>{
+        console.log(successReturn);
+        var parametersJSON = {
+          image_source : successReturn,
+        };
+        var parameters = netUtil.json2Form(parametersJSON);
+        wx.navigateTo({
+          url: '../section/image_frame'+'?'+ parameters,
+          success: function(res){
+            // success
+          },
+          fail: function(res) {
+            // fail
+          },
+          complete: function(res) {
+            // complete
+          }
+        });
+      },
+      (failReturn)=>{
+
+      }
+    );
+    
   },
 
   onReady:function(){
