@@ -46,9 +46,9 @@
 
 </view>
 
-<view class="index_page_list_container" >
-    <template is="index_page_list" data="{{infos,preview_img_url}}"></template>
-</view>
+<!--<view class="index_page_list_container" >-->
+    <template is="index_page_list" data="{{infos,preview_img_url,scrollHeight}}"></template>
+<!--</view>-->
 
 <view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
     <template is="index_page_select_item" data="{{answers,question,preview_img_url,alreadyRegister}}"></template>
