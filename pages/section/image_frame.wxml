@@ -1,11 +1,10 @@
-<!--pages/section/image_frame.wxml-->
+<!--scale.wxml-->
+<view class="container" >
+  
+  <view class="img"
+catchtouchstart="touchstartCallback"  catchtouchmove="touchmoveCallback" catchtouchend="touchendCallback"  >
+    <image mode="aspectFit" style=" transform:translate({{stv.offsetX}}px, {{stv.offsetY}}px) scale({{stv.scale}});" src="{{image_source}}"></image>
+  </view>
 
-<view class="frame-container">
-    <view>
-    <!--<scroll-view scroll-y="true" scroll-x="true"  bindtap="returnLastPage">  -->
-        <image class = "SFimg" catchtouchend="endtap" catchtouchmove="movetap" bindload = "imgload"  
- style="width:{{ scaleWidth }}px;height:{{ scaleHeight }}px" mode="aspectFit" src="{{dataimg}}"></image> 
-    <!--</scroll-view>  -->
-    </view>   
+  
 </view>
-    

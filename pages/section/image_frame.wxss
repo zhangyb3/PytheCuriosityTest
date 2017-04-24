@@ -1,6 +1,11 @@
 /* pages/section/image_frame.wxss */
 
+.img {
+  
 
-.frame-container{
+  background: black;
+}
+
+.container{
     background-color: black;
 }
