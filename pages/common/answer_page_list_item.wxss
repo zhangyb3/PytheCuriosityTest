@@ -25,12 +25,13 @@
 }
 
 .question_wrapper{
-    /*display: flex;*/
+    display: flex;
 
- position: fixed;
-    left: 216rpx;
-    right: 30rpx;
+ /*position: fixed;*/
+    margin-left: 20rpx;
+    /*right: 30rpx;*/
     /*height: 130rpx;*/
+    width: 75%;
 
     flex-direction: column;
     text-align: left;
