@@ -136,6 +136,21 @@
     margin-left: 20rpx;
 }
 
+.knowledge_kind_content_view{
+ display: flex;
+    /*flex-direction: row;*/
+    /*position: absolute;*/
+    width: auto;
+    line-height: 60rpx;
+    /*margin-right: 0px;*/
+    /*margin-top: 0px;*/
+    /*margin-left: 40rpx;*/
+    /*font-size: 28rpx;*/
+    /*text-align: right;*/
+    left: 40rpx;
+    /*color: #3AA4F1;*/
+}
+
 
 .knowledge_kind_content{
     display: flex;
