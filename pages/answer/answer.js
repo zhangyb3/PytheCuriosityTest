@@ -110,7 +110,7 @@ Page({
     // 获取默认问题列表
     var that = this;
     var questionListParams = {
-      pageSize: 3,
+      pageSize: 10,
       pageNum: 1,
     };
     listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
@@ -227,7 +227,7 @@ Page({
       condition: that.data.answer_page_filter.selectSort.sortId,
       order: 'desc',     
       pageNum: 1,
-      pageSize: 3,   
+      pageSize: 10,   
     };
     listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
     "/answer/conditionList",
@@ -263,7 +263,7 @@ Page({
         subjectId: that.data.answer_page_filter.selectSubject.subjectId,
         order: 'desc',     
         pageNum: 1,
-        pageSize: 3,   
+        pageSize: 10,   
     };
     that.data.answer_page_filter.selectSort.sortName = selected_sort_attribute;
     if(selected_sort_attribute == "按金额")

@@ -95,14 +95,8 @@ Page({
   },
   
 
-
-  rewardOtherNum:function(e) {
-    console.log("其他金额");
-    this.setData({
-      hide_other_reward_page: false,
-    });
-
-  },
+  
+  
   otherRewardNumInput:function(e){
     console.log(e.detail.value);
     var rewardNum = e.detail.value;

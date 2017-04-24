@@ -3,12 +3,12 @@
 <template name="answer_page_list">
 
 <!--列表-->
-  <scroll-view    scroll-y="true" 
+  <scroll-view  class="scroll_list"  scroll-y="true" 
                bindscrolltolower="onLoadMore" bindscrolltoupper="onRefesh" >
 
     
       <block wx:for="{{questionsForAnswer}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
-        <!--<view class="interval"></view>-->
+        
         <view class="answer_page_filter_container" >
           <template is="answer_page_list_item" data="{{item,preview_img_url,wxTimerList}}"></template>
         </view>

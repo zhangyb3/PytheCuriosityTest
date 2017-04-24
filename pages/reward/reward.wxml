@@ -42,8 +42,9 @@
         </view>-->
     </view>
 
-    <view class="reward_number_other_container" bindtap="rewardOtherNum">
-        <text class="reward_number_other">其它金额</text>
+    <view class="reward_number_other_container" >
+        <!--<text class="reward_number_other">其它金额</text>-->
+        <input type="digit" placeholder="其他金额" bindinput="otherRewardNumInput" auto-focus/>
     </view>
 
     <view class="reward_confirm_container" bindtap="rewardConfirm">

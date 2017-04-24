@@ -8,7 +8,7 @@
 
     
       <block wx:for="{{ask_teacher_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
-        <view class="interval"></view>
+        
         <view class="ask_teacher_list_container" >
           <template is="ask_teacher_list_item" data="{{item,index,alreadyRegister}}"></template>
         </view>
