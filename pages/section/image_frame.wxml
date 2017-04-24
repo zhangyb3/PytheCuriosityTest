@@ -1,5 +1,5 @@
 <!--scale.wxml-->
-<view class="container" >
+<view class="container" style="height:{{scaleHeight}}px">
   
   <view class="img"
 catchtouchstart="touchstartCallback"  catchtouchmove="touchmoveCallback" catchtouchend="touchendCallback"  >

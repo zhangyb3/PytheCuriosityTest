@@ -27,7 +27,6 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "派知好问",
     "navigationBarTextStyle":"black",
-    "enablePullDownRefresh": true,
     "backgroundColor": "#fff"
   },
 
