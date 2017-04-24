@@ -3,7 +3,7 @@
 <template name="ask_page_subject_list">
 
 <!--列表-->
-  <scroll-view    scroll-y="true" 
+  <scroll-view  scroll-y="true" 
                bindscrolltolower="onLoadMore" bindscrolltoupper="onRefesh" >
 
     

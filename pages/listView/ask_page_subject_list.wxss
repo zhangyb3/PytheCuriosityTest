@@ -5,8 +5,8 @@
     
 }
 
-.interval{
-    /*margin-top: 10px;*/
+.ask_list_view{
+    margin-top: 100rpx;
 }
     
 

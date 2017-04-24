@@ -39,7 +39,7 @@ Page({
 
 
     hide_login:true,
-    scrollHeight:500
+    scrollHeight:300
 
     
   },
