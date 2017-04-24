@@ -3,7 +3,7 @@
 
 <template name="index_page_list">
 
-<view class="page_contain">
+<!--<view class="page_contain">-->
 
 <!--<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
         class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
@@ -17,7 +17,7 @@
     </scroll-view>-->
 
 <!--列表-->
-  <scroll-view wx:if="{{!netStateBean.contentHidden}}" class="scroll_list"  scroll-y="true" lower-threshold="50" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
+  <scroll-view wx:if="{{!netStateBean.contentHidden}}" class="scroll_list"  scroll-y="true" lower-threshold="50" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
 
     
       <block wx:for="{{infos}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
@@ -35,6 +35,6 @@
   </scroll-view>
 
 
-</view>
+<!--</view>-->
 
 </template>

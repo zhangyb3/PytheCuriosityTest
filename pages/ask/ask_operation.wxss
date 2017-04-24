@@ -42,7 +42,6 @@
     height: auto;
     align-items: center;
 
-    
 }
 
 .ask_content_zone{
