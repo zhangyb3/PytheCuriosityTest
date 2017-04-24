@@ -61,7 +61,7 @@
 
         <view class="dotted_line"></view>
 
-        <view class="border_tab_index_white"></view>
+        <!--<view class="border_tab_index_white"></view>-->
 
         <view class="answers">
         
@@ -134,7 +134,8 @@
                         <!--<text class="reward_answer" data-selected='{{answer}}' bindtap='rewardAnswer'>
                         </text>-->
 
-                        <view class="reward_answer" data-selected='{{answer}}'   bindtap='rewardAnswer'><image class="reward_icon_img" src="../../images/index_icon_money@2x.png"></image></view>
+                        <!--<view class="reward_answer" data-selected='{{answer}}'   bindtap='rewardAnswer'><image class="reward_icon_img" src="../../images/index_icon_money@2x.png"></image></view>-->
+                        <view class="reward_answer" data-selected='{{answer}}'   bindtap='rewardAnswer'>鼓励一下</view>
 
 
                     </view>

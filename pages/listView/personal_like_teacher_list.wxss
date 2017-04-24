@@ -17,4 +17,4 @@
 }
 
 @import "../common/personal_like_teacher_list_item.wxss";
-
+@import "../common/ask_teacher_list_item.wxss";
