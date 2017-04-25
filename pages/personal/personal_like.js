@@ -35,51 +35,7 @@ Page({
     console.log("from personal");
     console.log(parameters);
     
-    //加载个人精选列表
-    var that = this;
-    var myLikeAnswerParams = {
-      userId : wx.getStorageSync(user.UserID),
-      pageSize : 3,
-      pageNum : 1,
-      
-    };    
-    listViewUtil.loadList(that,'my_like_answer',config.PytheRestfulServerURL,
-    base.MY_ANSWER_COLLECTION_URL_DETAIL,
-    10,
-        myLikeAnswerParams,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-         
-        },
-        {},
-        'GET',
-    );
-
-    //加载个人名师列表
-    var that = this;
-    var myLikeTeacherParams = {
-      userId : wx.getStorageSync(user.UserID),
-      pageSize : 3,
-      pageNum : 1,
-      
-    };    
-    listViewUtil.loadList(that,'my_like_teacher',config.PytheRestfulServerURL,
-    base.MY_TEACHER_COLLECTION_URL_DETAIL,
-    10,
-        myLikeTeacherParams,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-         
-        },
-        {},
-        'GET',
-    );
+    
     
   },
 
@@ -274,6 +230,51 @@ Page({
   },
   onShow:function(){
     // 页面显示
+    //加载个人精选列表
+    var that = this;
+    var myLikeAnswerParams = {
+      userId : wx.getStorageSync(user.UserID),
+      pageSize : 3,
+      pageNum : 1,
+      
+    };    
+    listViewUtil.loadList(that,'my_like_answer',config.PytheRestfulServerURL,
+    base.MY_ANSWER_COLLECTION_URL_DETAIL,
+    10,
+        myLikeAnswerParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
+
+    //加载个人名师列表
+    var that = this;
+    var myLikeTeacherParams = {
+      userId : wx.getStorageSync(user.UserID),
+      pageSize : 3,
+      pageNum : 1,
+      
+    };    
+    listViewUtil.loadList(that,'my_like_teacher',config.PytheRestfulServerURL,
+    base.MY_TEACHER_COLLECTION_URL_DETAIL,
+    10,
+        myLikeTeacherParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
   },
   onHide:function(){
     // 页面隐藏

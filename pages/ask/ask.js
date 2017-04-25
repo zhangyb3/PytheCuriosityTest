@@ -169,26 +169,7 @@ Page({
     this.setData({ask_subject_list: this.data.subjectList});
     // this.setData({ask_teacher_list: this.data.teachers});
 
-    var that = this;
-    var simple_params = {
-      userId: wx.getStorageSync(user.UserID),
-      pageSize : 10,
-      pageNum : 1,
-    };
-    listViewUtil.loadList(that,'teacher',config.PytheRestfulServerURL,
-    "/question/teacherList",
-    10,
-        simple_params,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-         
-        },
-        {},
-        'GET',
-    );
+    
   },
 
   subject_filter:function(e){
@@ -534,6 +515,27 @@ Page({
     this.setData({
       alreadyRegister: wx.getStorageSync('alreadyRegister'),
     });
+
+    var that = this;
+    var simple_params = {
+      userId: wx.getStorageSync(user.UserID),
+      pageSize : 10,
+      pageNum : 1,
+    };
+    listViewUtil.loadList(that,'teacher',config.PytheRestfulServerURL,
+    "/question/teacherList",
+    10,
+        simple_params,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
   },
   onHide:function(){
     // 页面隐藏
