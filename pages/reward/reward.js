@@ -49,7 +49,7 @@ Page({
       rewardTap10: false
     })
     console.log("￥ 1");
-    wx.setStorageSync('rewardNum', 0.01);
+    wx.setStorageSync('rewardNum', 1);
   },
   selectReward5:function(e){
     this.setData({
@@ -58,7 +58,7 @@ Page({
       rewardTap10: false
     })
     console.log("￥ 5");
-    wx.setStorageSync('rewardNum', 0.05);
+    wx.setStorageSync('rewardNum', 5);
   },
   selectReward10:function(e){
     this.setData({
@@ -67,7 +67,7 @@ Page({
       rewardTap10: true
     })
     console.log("￥ 10");
-    wx.setStorageSync('rewardNum', 0.10);
+    wx.setStorageSync('rewardNum', 10);
   },
   rewardConfirm:function(e){
     console.log("reward confirm");

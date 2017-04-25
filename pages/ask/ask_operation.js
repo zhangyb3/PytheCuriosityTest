@@ -726,7 +726,7 @@ Page({
       rewardTap5: false,
       rewardTap10: false
     })
-    wx.setStorageSync('rewardNum', 0.01);
+    wx.setStorageSync('rewardNum', 1);
     
     pay.orderPay(
       (payResult)=>{
@@ -750,7 +750,7 @@ this.setData({
     })
 
     console.log("￥ 5");
-    wx.setStorageSync('rewardNum', 0.05);
+    wx.setStorageSync('rewardNum', 5);
     
     pay.orderPay(
       (payResult)=>{
@@ -773,7 +773,7 @@ this.setData({
       rewardTap10: true
     })
     console.log("￥ 10");
-    wx.setStorageSync('rewardNum', 0.10);
+    wx.setStorageSync('rewardNum', 10);
     
     pay.orderPay(
       (payResult)=>{

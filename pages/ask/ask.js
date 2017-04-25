@@ -146,6 +146,7 @@ Page({
     second: 60,
 
     list_height: 0,
+    list_mode:'subject_list',
 
   },
   onLoad:function(options){
@@ -194,6 +195,7 @@ Page({
       this.setData({hide_ask_teacher_list:true});
       
       this.setData({hide_ask_subject_list:false});
+      this.data.list_mode = 'subject_list';
     }
     else
     {
@@ -217,6 +219,7 @@ Page({
       this.setData({hide_ask_subject_list:true});
       
       this.setData({hide_ask_teacher_list:false});
+      this.data.list_mode = 'teacher_list';
     }
     else
     {

@@ -141,32 +141,40 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             }
 
         }
-        if(list_type == 'teacher'){
+        else if(list_type == 'teacher' && page.data.list_mode == 'teacher_list'){
             page.data.ask_teacher_list = [];//老师列表
         }
-        if(list_type == 'question'){
+        else if(list_type == 'question'){
             page.data.questionsForAnswer = [];//问题列表
         }
 
-        if(list_type == 'my_question'){
+        else if(list_type == 'my_question'){
             page.data.personal_ask_list = [];//personal问题列表
         }
-        if(list_type == 'my_question_answer'){
+        else if(list_type == 'my_question_answer'){
             page.data.personal_question_answer_list = [];//personal问题列表答案集
         }
-        if(list_type == 'my_answered'){
+        else if( page.data.list_mode == 'my_answered'){
             page.data.personal_answer_list = [];//personal已答列表
+            page.data.urlDetail = base.MY_ANSWERED_URL_DETAIL;
+            netUtil.requestSimpleList(page,'my_answered',1,netUtil.action.request_refresh);
         }
-        if(list_type == 'my_unanswer'){
+        else if( page.data.list_mode == 'my_unanswer'){
             page.data.personal_not_answer_list = [];//personal未答列表
+            page.data.urlDetail = base.MY_UNANSWER_URL_DETAIL;
+            netUtil.requestSimpleList(page,'my_unanswer',1,netUtil.action.request_refresh);
         }
-        if(list_type == 'my_like_answer'){
+        else if( page.data.list_mode == 'my_like_answer'){
             page.data.personal_like_answer_list = [];//like answer列表
+            page.data.urlDetail = base.MY_ANSWER_COLLECTION_URL_DETAIL;
+            netUtil.requestSimpleList(page,'my_like_answer',1,netUtil.action.request_refresh);
         }
-        if(list_type == 'my_like_teacher'){
+        else if( page.data.list_mode == 'my_like_teacher'){
             page.data.personal_like_teacher_list = [];//like teacher列表
+            page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
+            netUtil.requestSimpleList(page,'my_like_teacher',1,netUtil.action.request_refresh);
         }
-        if(list_type != 'index')
+        else 
         {
             netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
         }
@@ -174,7 +182,11 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     };
 
     page.onReachBottom = function(){
-        if(page.data.list_mode == 'my_answered')
+        if(page.data.list_mode == 'subject_list')
+        {
+            wx.stopPullDownRefresh();
+        }
+        else if(page.data.list_mode == 'my_answered')
         {
             page.data.urlDetail = base.MY_ANSWERED_URL_DETAIL;
             netUtil.requestSimpleList(page,'my_answered',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
