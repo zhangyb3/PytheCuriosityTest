@@ -49,6 +49,7 @@ Page({
 
     preview_img_url: config.PytheFileServerURL ,
 
+    hide_bounty_page: true,
     hasPaidReward: false,
     rewardTap1:false,
     rewardTap5:false,
@@ -734,6 +735,10 @@ Page({
         if(payResult.errMsg == "requestPayment:ok")
         {
           this.data.hasPaidReward = true;
+          commitQuestion.call(this);
+          this.setData({
+            hide_bounty_page: true,
+          });
         }
       },
       (payResult)=>{
@@ -743,7 +748,7 @@ Page({
     
   },
   selectReward5:function(e){
-this.setData({
+    this.setData({
       rewardTap1: false,
       rewardTap5: true,
       rewardTap10: false
@@ -758,6 +763,10 @@ this.setData({
         if(payResult.errMsg == "requestPayment:ok")
         {
           this.data.hasPaidReward = true;
+          commitQuestion.call(this);
+          this.setData({
+            hide_bounty_page: true,
+          });
         }
       },
       (payResult)=>{
@@ -781,6 +790,10 @@ this.setData({
         if(payResult.errMsg == "requestPayment:ok")
         {
           this.data.hasPaidReward = true;
+          commitQuestion.call(this);
+          this.setData({
+            hide_bounty_page: true,
+          });
         }
       },
       (payResult)=>{
@@ -790,86 +803,20 @@ this.setData({
     
   },
 
-  commitQuestion:function(result){
-    console.log("commit question");
-    //先检查是否选好悬赏金额
-    //接着开始请求支付
-    //示支付结果而定是否上传ask_question
-    if(this.data.hasPaidReward)
-    {
-      this.data.ask_question.studentId = wx.getStorageSync(user.StudentID);
-      this.data.ask_question.rewardNum = wx.getStorageSync('rewardNum')
-      // base.commitQuestion(this.data.ask_question);
+  commitConfirm:function(result){
+    console.log('before commit question');
+    this.setData({
+      hide_bounty_page: false,
+    });
 
-      var questionParams= {
-        studentId: wx.getStorageSync(user.StudentID),
-        teacherId: this.data.ask_question.ask_teacherId,
-        questionContent:{
-          text: [
-            this.data.ask_question.text_content,
-          ],
-          img: [
-            this.data.ask_question.upload_photo_path,
-          ],
-          audio:[
-            this.data.ask_question.upload_voice_path,
-            this.data.ask_question.voice_timeLength,
-          ],
-          draw:[
-            this.data.ask_question.upload_draw_path,
-          ],
-        },
-        subjectId: this.data.ask_question.subjectId,
-        
-        // reward: wx.getStorageSync('rewardNum'),
-        reward: wx.getStorageSync("rewardNum"),
-      };
-      
-      if(questionParams.questionContent.text[0]!=null)
-      {
-        base.commitQuestion(questionParams);
-        wx.setStorageSync('hasTakenPhoto', 'no');
-        wx.setStorageSync('hasDrawnPicture', 'no');
-        this.data.hasPaidReward = false;
-        wx.navigateBack({
-          delta: 1, // 回退前 delta(默认为1) 页面
-          success: function(res){
-            // success
-          },
-          fail: function(res) {
-            // fail
-          },
-          complete: function(res) {
-            // complete
-          }
-        })
-      }
-      else
-      {
-        wx.showModal({
-          title: '提示',
-          content: '题目内容不能为空',
-          success: function(res) {
-            if (res.confirm) {
-              console.log('用户点击确定')
-            }
-          }
-        });
-      }
-    }
-    else
-    {
-      wx.showModal({
-        title: '提示',
-        content: '请选择悬赏金额',
-        success: function(res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          }
-        }
-      });
-    }
+
   },
+  cancelBounty:function(e){
+    this.setData({
+      hide_bounty_page: true,
+    });
+  },
+  
 
   onShow:function(){
     // 页面显示
@@ -953,4 +900,86 @@ function speaking() {
     _this.data.ask_question.voice_timeLength = count/10;
   }, 100);
   count = 0;
+}
+
+//上传问题
+function commitQuestion() {
+  console.log("commit question");
+    //先检查是否选好悬赏金额
+    //接着开始请求支付
+    //示支付结果而定是否上传ask_question
+    if(this.data.hasPaidReward)
+    {
+      this.data.ask_question.studentId = wx.getStorageSync(user.StudentID);
+      this.data.ask_question.rewardNum = wx.getStorageSync('rewardNum')
+      // base.commitQuestion(this.data.ask_question);
+
+      var questionParams= {
+        studentId: wx.getStorageSync(user.StudentID),
+        teacherId: this.data.ask_question.ask_teacherId,
+        questionContent:{
+          text: [
+            this.data.ask_question.text_content,
+          ],
+          img: [
+            this.data.ask_question.upload_photo_path,
+          ],
+          audio:[
+            this.data.ask_question.upload_voice_path,
+            this.data.ask_question.voice_timeLength,
+          ],
+          draw:[
+            this.data.ask_question.upload_draw_path,
+          ],
+        },
+        subjectId: this.data.ask_question.subjectId,
+        
+        // reward: wx.getStorageSync('rewardNum'),
+        reward: wx.getStorageSync("rewardNum"),
+      };
+      
+      if(questionParams.questionContent.text[0]!=null)
+      {
+        base.commitQuestion(questionParams);
+        wx.setStorageSync('hasTakenPhoto', 'no');
+        wx.setStorageSync('hasDrawnPicture', 'no');
+        this.data.hasPaidReward = false;
+        wx.navigateBack({
+          delta: 1, // 回退前 delta(默认为1) 页面
+          success: function(res){
+            // success
+          },
+          fail: function(res) {
+            // fail
+          },
+          complete: function(res) {
+            // complete
+          }
+        })
+      }
+      else
+      {
+        wx.showModal({
+          title: '提示',
+          content: '题目内容不能为空',
+          success: function(res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        });
+      }
+    }
+    else
+    {
+      wx.showModal({
+        title: '提示',
+        content: '请选择悬赏金额',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      });
+    }
 }

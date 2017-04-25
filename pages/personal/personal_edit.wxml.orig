@@ -4,7 +4,11 @@
 <view class="nickname_zone">
     <view class="nickname_wrap">
     <text class="title">修改昵称:</text>
+<<<<<<< HEAD
+    <input class="nickname_content_text_input" placeholder="字数请不要超过10" bindinput="getNicknameText" auto-focus/>
+=======
     <input class="nickname_content_text_input" maxlength="8" bindinput="getNicknameText" auto-focus/>
+>>>>>>> e21b15153ce011ba98411488611b32b00f0e2265
     </view>
 </view>
 

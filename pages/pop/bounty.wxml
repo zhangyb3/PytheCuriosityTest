@@ -1,0 +1,41 @@
+<template name="bounty_page">
+
+
+
+<view class="reward_page_container">
+
+    <view class="reward_page_motto_container">
+        <text class="reward_page_motto">润物细无声</text>
+    </view>
+<view class="reward_motto_image_contain">
+    <image class="reward_motto_image" src="../../images/question_icon_zhifu@2x.png"></image>
+</view>
+
+    <view class="reward_number_container">
+
+    <view class="reward_1" bindtap="selectReward1">
+            <image class="reward_1_img" wx:if="{{rewardTap1}}" src="../../images/question_icon_one_sel@2x.png"></image>
+            <image class="reward_1_img" wx:if="{{!rewardTap1}}" src="../../images/question_icon_one_nor@2x.png"></image>
+        </view>
+        <view class="reward_5" bindtap="selectReward5">
+            <image class="reward_1_img" wx:if="{{rewardTap5}}" src="../../images/question_icon_five_sel@2x.png"></image>
+            <image class="reward_1_img" wx:if="{{!rewardTap5}}" src="../../images/question_icon_five_nor@2x.png"></image>
+
+        </view>
+        <view class="reward_10" bindtap="selectReward10">
+            <image class="reward_1_img" wx:if="{{rewardTap10}}" src="../../images/question_icon_ten_sel@2x.png"></image>
+            <image class="reward_1_img" wx:if="{{!rewardTap10}}" src="../../images/question_icon_ten_nor@2x.png"></image>
+        </view>
+       
+    </view>
+
+    
+
+    <view class="reward_confirm_container" bindtap="cancelBounty">
+        <button class="reward_confirm_button">取消</button>
+    </view>
+
+
+</view>
+
+</template>

@@ -14,7 +14,7 @@
     <template is="index_page_select_item" data="{{answers,question,preview_img_url,alreadyRegister}}"></template>
   </view>
 
-<view class="personal_like_page">
+<!--<view class="personal_like_page">-->
   
     <view class="personal_like_selector_container" >
         <template is="personal_like_section_selector" data="{{personal_like_menu}}" ></template>
@@ -26,7 +26,7 @@
 
     <!--</view>   -->
 
-</view>
+<!--</view>-->
 
 <view class="personal_like_answer_list_container" hidden='{{hide_personal_like_answer_list}}'>
       <template is="personal_like_answer_list" data="{{personal_like_answer_list,preview_img_url,scrollHeight}}"></template>

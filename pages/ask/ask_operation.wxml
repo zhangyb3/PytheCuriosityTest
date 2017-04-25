@@ -9,6 +9,12 @@
         <template is="show_image_page" data="{{img_src}}"></template>
 </view>
 
+<import src="../pop/bounty.wxml" />
+<view class="bounty_container" hidden='{{hide_bounty_page}}'>
+        <template is="bounty_page" 
+        data="{{rewardTap1,rewardTap5,rewardTap10}}"></template>
+</view>
+
 <view class="ask_operation_view"  data-item='{{ ask_item }}'>
     
        <!--<view class="input_select_view" >
@@ -44,16 +50,6 @@
         </view>
 
         <view class="multi_tips">
-            <!--<view wx:if="{{ask_question.voice_path != null}}" class="voice" >
-                
-                <view class="bubble" data-question_voice='{{ask_question.voice_path}}' bindtap="playQuestionVoiceRecord">
-                    <view class="bubble-tail"></view>
-                    <view class="voice-wave"></view>
-                    <view>{{ask_question.voice_timeLength}}秒</view>
-                </view>
-
-            </view>-->
-
         <view wx:if="{{ask_question.voice_path != null}}" class="speak_style_record" bindtap="playQuestionVoiceRecord">
         <image wx:if="{{!isPlaying}}" class="sound_style_record" src="../../images/voice_static.png" ></image>
         <image wx:if="{{isPlaying}}" class="sound_style_record" src="../../images/record.gif" ></image>
@@ -124,12 +120,12 @@
         </view>
 
         
-        <view class="reward_number_text_comtain">
+        <!--<view class="reward_number_text_comtain">
         <text class="reward_number_text">
         请选择悬赏金额
         </text>
         </view>
-        <view class="reward_number_container">
+    <view class="reward_number_container">
         <view class="reward_1" bindtap="selectReward1">
             <image class="reward_img" wx:if="{{rewardTap1}}" src="../../images/question_icon_one_sel@2x.png"></image>
             <image class="reward_img" wx:if="{{!rewardTap1}}" src="../../images/question_icon_one_nor@2x.png"></image>
@@ -143,12 +139,12 @@
             <image class="reward_img" wx:if="{{rewardTap10}}" src="../../images/question_icon_ten_sel@2x.png"></image>
             <image class="reward_img" wx:if="{{!rewardTap10}}" src="../../images/question_icon_ten_nor@2x.png"></image>
         </view>
-    </view>
+    </view>-->
 
         <!--<view class="border_tab"></view>-->
 
         <view class="ask_commit_confirm">
-            <button style="color:#FFFFFF" class="ask_commit_button" bindtap="commitQuestion">
+            <button style="color:#FFFFFF" class="ask_commit_button" bindtap="commitConfirm">
                 发布
             </button>
         </view>
