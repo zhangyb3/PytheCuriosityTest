@@ -16,6 +16,7 @@
 
 .personal_like_answer_list_container{
     background-color: #f5f5f5;
+    /*margin-top: 100rpx;*/
 }
 
 

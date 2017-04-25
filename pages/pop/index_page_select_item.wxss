@@ -76,7 +76,7 @@
 }
 
 .dotted_line{
-    
+    margin-top: 40rpx;
     border-bottom: 1px dashed #A9A9A9; 
 }
 
