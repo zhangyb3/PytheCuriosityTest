@@ -72,6 +72,7 @@ Page({
           temp = JSON.parse(temp.question);
           temp.isClick = isClick;
           temp.answercontent = JSON.parse(temp.answercontent);
+          temp.blacklistId = -1;
           answers[count] = temp;
           
         }
@@ -180,18 +181,52 @@ Page({
   complainOneAnswer:function(result){
     console.log("complain this answer " + result.currentTarget.dataset.item.answerid);
     
-    this.data.personal_question_answer_list[result.currentTarget.dataset.index].isClick = 0;
-    this.setData({
-      personal_question_answer_list: this.data.personal_question_answer_list,
-    });
+    if(this.data.personal_question_answer_list[result.currentTarget.dataset.index].isClick == 1)
+    {
+      this.data.personal_question_answer_list[result.currentTarget.dataset.index].isClick = 0;
+      this.setData({
+        personal_question_answer_list: this.data.personal_question_answer_list,
+      });
 
-    var theAnswer = result.currentTarget.dataset.item;
-    var complainParams = {
-      userId: wx.getStorageSync(user.UserID),
-      complainedId: theAnswer.answerid,
-      answerId: theAnswer.answerid,
-    };
-    base.complainAnswer(complainParams);
+      var theAnswer = result.currentTarget.dataset.item;
+      var complainParams = {
+        userId: wx.getStorageSync(user.UserID),
+        complainedId: theAnswer.answerid,
+        answerId: theAnswer.answerid,
+      };
+      
+      base.complainAnswer(complainParams,
+        (blacklistId)=>{
+          console.log(blacklistId);
+          this.data.personal_question_answer_list[result.currentTarget.dataset.index].blacklistId = blacklistId.data;
+          this.setData({
+            personal_question_answer_list: this.data.personal_question_answer_list,
+          });
+        }
+
+      );
+    }
+    else 
+    {
+      this.data.personal_question_answer_list[result.currentTarget.dataset.index].isClick = 1;
+      this.setData({
+        personal_question_answer_list: this.data.personal_question_answer_list,
+      });
+
+      var theAnswer = result.currentTarget.dataset.item;
+      var recallComplainParams = {
+        userId: wx.getStorageSync(user.UserID),
+        answerId: theAnswer.answerid,
+        blacklistId: theAnswer.blacklistId,
+      };
+      base.recallComplainAnswer(recallComplainParams);
+      this.data.personal_question_answer_list[result.currentTarget.dataset.index].blacklistId = -1;
+      this.setData({
+        personal_question_answer_list: this.data.personal_question_answer_list,
+      });
+    }
+    
+
   },
 
   returnPersonalAnswerDetailPage:function(result){

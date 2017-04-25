@@ -24,6 +24,8 @@ const MY_TEACHER_COLLECTION_URL_DETAIL = `/me/collection/teacher`;
 
 const COMPLAIN_URL = `${config.PytheRestfulServerURL}/me/question/report`;
 
+const RECALL_COMPLAIN_URL = `${config.PytheRestfulServerURL}/me/question/recall`;
+
 const SELECT_BEST_ANSWER_URL = `${config.PytheRestfulServerURL}/me/question/select`;
 
 
@@ -121,7 +123,7 @@ function commitQuestion(parameters)
 }
 
 
-function complainAnswer(parameters)
+function complainAnswer(parameters,returnBlacklistId)
 {
   wx.request({
     url: COMPLAIN_URL,
@@ -139,6 +141,36 @@ function complainAnswer(parameters)
         icon: 'success',
         duration: 1500
       });
+      typeof returnBlacklistId == "function" && returnBlacklistId(res.data);
+    },
+    fail: function() {
+      // fail
+    },
+    complete: function() {
+      // complete
+    }
+  })
+}
+
+function recallComplainAnswer(parameters)
+{
+  wx.request({
+    url: RECALL_COMPLAIN_URL,
+    data: {
+      userId: parameters.userId,
+      answerId: parameters.answerId,
+      blacklistId: parameters.blacklistId,
+    },
+    method: 'GET', 
+    success: function(res){
+      // success
+      console.log(res);
+      wx.showToast({
+        title: '撤销举报',
+        icon: 'success',
+        duration: 1500
+      });
+      
     },
     fail: function() {
       // fail
@@ -224,6 +256,7 @@ module.exports = {
     commitQuestion: commitQuestion,
 
     complainAnswer: complainAnswer,
+    recallComplainAnswer: recallComplainAnswer,
     selectBestAnswer: selectBestAnswer,
 
     cleanCacheFile: cleanCacheFile,

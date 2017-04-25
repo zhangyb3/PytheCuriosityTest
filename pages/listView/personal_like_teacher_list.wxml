@@ -4,7 +4,7 @@
 
 <!--列表-->
   <scroll-view    scroll-y="true" 
-               bindscrolltolower="onLoadMore" bindscrolltoupper="onRefesh" >
+               bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
 
     
       <block wx:for="{{personal_like_teacher_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">

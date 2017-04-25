@@ -27,7 +27,7 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "派知好问",
     "navigationBarTextStyle":"black",
-    "backgroundColor": "#fff"
+    "backgroundColor": "#ccc"
   },
 
   "tabBar": {
