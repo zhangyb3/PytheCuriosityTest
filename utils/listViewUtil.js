@@ -202,7 +202,7 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
 
     };
 
-    // page.onLoadMore = page.onReachBottom;
+    page.onLoadMore = page.onReachBottom;
     page.onRefresh = page.onPullDownRefresh;
     page.onRetry = function(){
         netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
