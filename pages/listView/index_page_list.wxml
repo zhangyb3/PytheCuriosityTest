@@ -3,18 +3,6 @@
 
 <template name="index_page_list">
 
-<!--<view class="page_contain">-->
-
-<!--<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" 
-        class="list" bindscrolltolower="bindDownLoad" bindscroll="scroll" bindscrolltoupper="refresh">
-        <view class="item" wx:for="{{list}}">
-            <image class="img" src="{{item.pic_url}}"></image>
-            <view class="text">
-                <text class="title">{{item.name}}</text>
-                <text class="description">{{item.short_description}}</text>
-            </view>
-        </view>
-    </scroll-view>-->
 
 <!--列表-->
   <scroll-view wx:if="{{!netStateBean.contentHidden}}" class="scroll_list"  scroll-y="true" upper-threshold="0px" lower-threshold="0px" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
