@@ -3,10 +3,8 @@
 <template name="answer_page_list">
 
 <!--列表-->
-  <scroll-view  class="scroll_list"  upper-threshold="0px" lower-threshold="0px" scroll-y="true" 
-               bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
+  <scroll-view  class="scroll_list"  upper-threshold="0px" lower-threshold="0px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
 
-    
       <block wx:for="{{questionsForAnswer}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         
         <view class="answer_page_filter_container" >

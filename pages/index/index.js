@@ -39,21 +39,14 @@ Page({
 
 
     hide_login:true,
-    scrollHeight:300
+    scrollHeight:0
 
     
   },
 
  //页面显示获取设备屏幕高度，以适配scroll-view组件高度
   onShow: function () {
-    wx.getSystemInfo({
-      success: (res) => {
-        this.setData({
-          // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750) //80为顶部搜索框区域高度 rpx转px 屏幕宽度/750
-          scrollHeight: res.windowHeight - 300
-        });
-      }
-    })
+    
   },
 
 
@@ -65,6 +58,15 @@ Page({
   },
   onLoad: function () {
     
+  wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750) //80为顶部搜索框区域高度 rpx转px 屏幕宽度/750
+          scrollHeight: res.windowHeight - (100 * res.windowWidth / 750)
+        });
+      }
+    })
+
     this.setData({
       hide_register_lock_cover: false,
     });

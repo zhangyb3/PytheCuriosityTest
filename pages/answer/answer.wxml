@@ -27,7 +27,7 @@
   
 
     <!--<view class="answer_page_list_container" >-->
-      <template is="answer_page_list" data="{{questionsForAnswer,preview_img_url,wxTimerList}}"></template>
+      <template is="answer_page_list" data="{{questionsForAnswer,preview_img_url,wxTimerList,scrollHeight}}"></template>
     <!--</view>-->
 
     <!--<view class="list_bottom"></view>-->
