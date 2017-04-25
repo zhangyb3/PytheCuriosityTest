@@ -17,7 +17,7 @@
                  <view class="like_wrap" bindtap='bindLike' data-index='{{ index }}'><image class="like_image" src="../../images/index_icon_dianzan@2x.png"></image><text class="like_number" >{{item.sumlikesnum}}</text></view>
                  </view>
 </view>
-            <view class="dotted_line"></view>
+            <view class="index_dotted_line"></view>
             <view class="border_tab_index_white"></view>
             <view class="index_page_select_item_content_wrap">
             <view class="preview_img_wrap">

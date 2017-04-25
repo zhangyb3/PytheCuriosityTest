@@ -52,7 +52,7 @@
     /*margin-left: 30rpx;*/
     margin-right: 0rpx;
     line-height: 32rpx;
-    font-size: 30rpx;
+    font-size: 32rpx;
     color: #333333;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -62,7 +62,7 @@
    
 }
 
-.dotted_line{
+.index_dotted_line{
     
     border-bottom: 1px dashed #A9A9A9; 
 }
@@ -161,7 +161,7 @@
     /*margin-right: 0px;*/
     /*margin-top: 0px;*/
     /*margin-left: 40rpx;*/
-    font-size: 28rpx;
+    font-size: 32rpx;
     text-align: right;
     left: 40rpx;
     color: #3AA4F1;
