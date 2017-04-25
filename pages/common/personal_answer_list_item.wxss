@@ -27,9 +27,11 @@
 }
 
 .answer_questin_content_wrap{
-    position: fixed;
-    left: 216rpx;
-    right: 30rpx;
+    display: flex;
+
+     margin-left: 20rpx;
+     width: 68%;
+    /*right: 30rpx;*/
     /*height: 130rpx;*/
 
     flex-direction: column;

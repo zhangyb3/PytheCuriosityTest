@@ -22,8 +22,9 @@
 
 .multi_tips{
     background: white;
-    margin-left: 30rpx;
-    margin-right: 30rpx;
+    /*margin-left: 30rpx;
+    margin-right: 30rpx;*/
+    padding: 0 30rpx;
 }
 
 .speak_style_record{

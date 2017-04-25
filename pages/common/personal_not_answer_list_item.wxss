@@ -38,11 +38,12 @@
     position:fixed;
 }*/
 .question_wrap{
-     position: fixed;
+     display: flex;
      /*top: 20rpx;*/
-    left: 216rpx;
-    right: 30rpx;
+    margin-left: 20rpx;
+    /*right: 30rpx;*/
     /*height: 130rpx;*/
+    width: 68%;
 
     flex-direction: column;
     text-align: left;

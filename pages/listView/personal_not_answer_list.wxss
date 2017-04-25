@@ -1,8 +1,8 @@
 
 
-.scroll_list{
+.not_answer_scroll_list{
     /*margin-top: 0px;*/
-    
+    height: 1000rpx;
 }
 
 .interval{
