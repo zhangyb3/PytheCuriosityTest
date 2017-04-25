@@ -19,6 +19,10 @@
   /*background-color: yellow;*/
 }
 
+.ask_page_list_container{
+  height: 1000rpx;
+}
+
 @import "../common/ask_page_section_selector.wxss";
 @import "../listView/ask_page_subject_list.wxss";
 @import "../listView/ask_page_teacher_list.wxss";

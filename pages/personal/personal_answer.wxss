@@ -24,12 +24,12 @@
 
 .personal_answer_list_container{
   width: 100%;
-  height: auto;
+  height: 1000rpx;
 }
 
 .personal_not_answer_list_container{
   width: 100%;
-  height: auto;
+  height: 1000rpx;
 }
 
 .border_tab_white{

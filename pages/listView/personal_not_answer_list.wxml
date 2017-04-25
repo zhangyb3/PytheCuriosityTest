@@ -3,8 +3,17 @@
 <template name="personal_not_answer_list">
 
 <!--列表-->
+<<<<<<< HEAD
+<<<<<<< HEAD
+  <scroll-view  class="not_answer_scroll_list"  scroll-y="true" 
+               bindscrolltolower="onLoadMore" bindscrolltoupper="onRefesh" >
+=======
+  <scroll-view  class="scroll_list"  scroll-y="true" 
+=======
   <scroll-view  class="scroll_list" upper-threshold="0px" lower-threshold="0px" scroll-y="true" 
+>>>>>>> 83012cafbcd7b5b8380bf684db9f9f5f5bc7089a
                bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
+>>>>>>> 7473b0c0a99775f7ecea39d0aea21dd115a3c8a8
 
     
       <block wx:for="{{personal_not_answer_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
