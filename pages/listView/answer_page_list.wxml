@@ -3,7 +3,7 @@
 <template name="answer_page_list">
 
 <!--列表-->
-  <scroll-view  class="scroll_list"  scroll-y="true" 
+  <scroll-view  class="scroll_list"  upper-threshold="0px" lower-threshold="0px" scroll-y="true" 
                bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
 
     

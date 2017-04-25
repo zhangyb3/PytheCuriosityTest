@@ -17,7 +17,7 @@
     </scroll-view>-->
 
 <!--列表-->
-  <scroll-view wx:if="{{!netStateBean.contentHidden}}" class="scroll_list"  scroll-y="true" lower-threshold="50" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
+  <scroll-view wx:if="{{!netStateBean.contentHidden}}" class="scroll_list"  scroll-y="true" upper-threshold="0px" lower-threshold="0px" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
 
     
       <block wx:for="{{infos}}" wx:for-item="item" wx:for-index="index" wx:key="unique">

@@ -4,10 +4,14 @@
 
 <!--列表-->
 <<<<<<< HEAD
+<<<<<<< HEAD
   <scroll-view  class="scrollView"  scroll-y="true" 
                bindscrolltolower="onLoadMore" bindscrolltoupper="onRefesh" >
 =======
   <scroll-view  class="scroll_list"  scroll-y="true" 
+=======
+  <scroll-view  class="scroll_list"  upper-threshold="0px" lower-threshold="0px" scroll-y="true" 
+>>>>>>> 83012cafbcd7b5b8380bf684db9f9f5f5bc7089a
                bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
 
     
