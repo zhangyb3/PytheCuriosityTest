@@ -107,27 +107,7 @@ Page({
     this.setData({hide_pop_subject_list:true});
     this.setData({hide_pop_sort_attribute_list:true});
 
-    // 获取默认问题列表
-    var that = this;
-    var questionListParams = {
-      pageSize: 10,
-      pageNum: 1,
-    };
-    listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
-    "/answer/defaultList",
-    10,
-        questionListParams,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item,that){
-          item.countdown.start(that);
-        },
-        {},
-        'GET',
-    );
-
+    
     
     
   },
@@ -561,7 +541,27 @@ Page({
   onShow:function(){
     // 页面显示
 
-    
+    // 获取默认问题列表
+    var that = this;
+    var questionListParams = {
+      pageSize: 10,
+      pageNum: 1,
+    };
+    listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
+    "/answer/defaultList",
+    10,
+        questionListParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item,that){
+          item.countdown.start(that);
+        },
+        {},
+        'GET',
+    );
+
 
   },
   onHide:function(){

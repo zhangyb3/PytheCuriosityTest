@@ -405,6 +405,25 @@ Page({
     
     
     
+    
+
+  },
+
+  onShow:function(){
+    
+
+    
+      this.setData({
+        hide_register_lock_cover: true,
+      });
+
+   
+
+
+    this.setData({
+      alreadyRegister: wx.getStorageSync('alreadyRegister'),
+    });
+
     var that = this;
     var simple_params = {
       gradeId : wx.getStorageSync(user.GradeID),
@@ -428,23 +447,6 @@ Page({
         'GET',
     );
     wx.setStorageSync('index_load_type', 'one');
-
-  },
-
-  onShow:function(){
-    
-
-    
-      this.setData({
-        hide_register_lock_cover: true,
-      });
-
-   
-
-
-    this.setData({
-      alreadyRegister: wx.getStorageSync('alreadyRegister'),
-    });
     
 
     //判断是否从注册页面返回
