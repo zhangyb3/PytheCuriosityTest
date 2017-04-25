@@ -30,7 +30,7 @@
     </view>
 
     <view class="personal_operation_zone">
-<view class="personal_ask personal_operation_item" bindtap='selectPersonalAsk'>
+<view class="personal_ask personal_operation_item" bindtap='selectPersonalWallet'>
 <view class="menu_list_icon_wrap">
     <image class="menu_list_icon_wallet" src="../../images/personal_iocn_money@2x.png"></image>
 </view>

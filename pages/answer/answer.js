@@ -211,6 +211,11 @@ Page({
     this.data.answer_page_menu[1].active = false;
     this.setData({answer_page_menu : answer_page_menu});
 
+    var teacherId = -1;
+    if(wx.getStorageSync(user.UserID) != 'TeacherID')
+    {
+      teacherId = wx.getStorageSync(user.UserID);
+    }
     var that = this;
     var conditionQuestionParams = {
       subjectId: that.data.answer_page_filter.selectSubject.subjectId,
@@ -218,6 +223,7 @@ Page({
       order: 'desc',     
       pageNum: 1,
       pageSize: 10,   
+      teacherId: teacherId,
     };
     listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
     "/answer/conditionList",
@@ -247,13 +253,18 @@ Page({
     this.data.answer_page_menu[1].active = false;
     this.setData({answer_page_menu : answer_page_menu});
 
-
+    var teacherId = -1;
+    if(wx.getStorageSync(user.UserID) != 'TeacherID')
+    {
+      teacherId = wx.getStorageSync(user.UserID);
+    }
     var that= this;
     var conditionQuestionParams = {
         subjectId: that.data.answer_page_filter.selectSubject.subjectId,
         order: 'desc',     
         pageNum: 1,
         pageSize: 10,   
+        teacherId: teacherId,
     };
     that.data.answer_page_filter.selectSort.sortName = selected_sort_attribute;
     if(selected_sort_attribute == "按金额")
@@ -552,11 +563,16 @@ Page({
     // 页面显示
 
     // 获取默认问题列表
-    
+    var teacherId = -1;
+    if(wx.getStorageSync(user.UserID) != 'TeacherID')
+    {
+      teacherId = wx.getStorageSync(user.UserID);
+    }
     var that = this;
     var questionListParams = {
       pageSize: 10,
       pageNum: 1,
+      teacherId: teacherId,
     };
     listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
     "/answer/defaultList",

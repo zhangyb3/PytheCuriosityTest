@@ -397,6 +397,7 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             }
             if(list_type == 'question')
             {
+                
                 temp.question = JSON.parse(currentDatas[count].question);
                 temp.question.questioncontent = JSON.parse(temp.question.questioncontent);
                 var wxTimerNew = new timer({

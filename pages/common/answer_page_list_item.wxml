@@ -1,6 +1,6 @@
 <template name="answer_page_list_item">
 
-<view class="list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneItem">
+<view class="list-item" wx:if="{{item.isAnswered == 1}}" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneItem">
 
             <!--<view class="border_tab"/>-->
             

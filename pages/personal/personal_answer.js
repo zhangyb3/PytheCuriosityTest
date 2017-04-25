@@ -160,7 +160,7 @@ Page({
                     
           answers[count] = temp;
           answers[count].answercontent = JSON.parse(answers[count].answercontent);
-          
+          answers[count].isClick = 0;
           
         }
         that.setData({
