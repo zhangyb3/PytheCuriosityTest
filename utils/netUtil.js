@@ -393,7 +393,7 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
                 temp = JSON.parse(temp.question);
                 temp.isClick = isClick;
                 temp.selected = false;
-                temp.blackListId = -1;
+                temp.blacklistId = -1;
             }
             if(list_type == 'question')
             {
