@@ -14,7 +14,7 @@
 
 
 
-<view class="ask_page_container" hidden='{{hide_ask_page}}'>
+<!--<view class="ask_page_container" hidden='{{hide_ask_page}}'>-->
   
     <view class="ask_page_selector_container" >
         <template is="ask_page_section_selector" data="{{ask_page_menu}}" ></template>
@@ -36,7 +36,7 @@
         <template is="login_view" data="{{select_student,select_teacher,lock_countdown,grade_index,gradeRange,subject_index,subjectRange,second,countdownText}}"></template>
     </view>
 
-</view>
+<!--</view>-->
 
 
 <!--</view>-->
