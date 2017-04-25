@@ -25,7 +25,7 @@
   
 
     <view class="ask_page_list_container" hidden='{{hide_ask_subject_list}}'>
-      <template is="ask_page_subject_list" data="{{ask_subject_list}}"></template>
+      <template is="ask_page_subject_list" data="{{ask_subject_list,list_height}}"></template>
     </view>
 
     <view class="ask_page_list_container" hidden='{{hide_ask_teacher_list}}'>

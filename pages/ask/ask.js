@@ -145,6 +145,8 @@ Page({
     countdownText : '发送验证码',
     second: 60,
 
+    list_height: 0,
+
   },
   onLoad:function(options){
 
@@ -158,8 +160,15 @@ Page({
         hide_register_lock_cover: true,
       });
     
-    
-
+    var that = this;
+    wx.getSystemInfo({
+      success: function(res) {
+        console.log(res);
+        that.setData({
+          list_height: res.windowHeight ,
+        });
+      }
+    })
     
     
 
