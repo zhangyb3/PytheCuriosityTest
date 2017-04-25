@@ -18,11 +18,13 @@
 }
 
 .personal_like_answer_list_container{
-  height: 100px;
+  /*height: 100px;*/
+  margin-top: 100rpx;
 }
 
 .personal_like_teacher_list_container{
-  height: 100px;
+  /*height: 100px;*/
+  margin-top: 100rpx;
 }
 
 @import "../common/personal_like_section_selector.wxss";

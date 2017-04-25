@@ -29,7 +29,7 @@
     </view>
 
     <view class="ask_page_list_container" hidden='{{hide_ask_teacher_list}}'>
-      <template is="ask_page_teacher_list" data="{{ask_teacher_list,alreadyRegister}}"></template>
+      <template is="ask_page_teacher_list" data="{{ask_teacher_list,alreadyRegister,list_height}}"></template>
     </view>
 
     <view class="login_container" hidden='{{hide_login}}'>

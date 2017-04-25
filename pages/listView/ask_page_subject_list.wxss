@@ -1,19 +1,5 @@
 
 
-.scroll_list{
-    margin-top: 10px;
-    /*height: 500rpx;*/
-}
-
-.ask_list_view{
-    margin-top: 100rpx;
-}
-
-.scrollView{
-    height: 1000rpx;
-}
-    
-
 .index_page_list_container{
     background-color: #f5f5f5;
 }

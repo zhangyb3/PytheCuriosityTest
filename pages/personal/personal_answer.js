@@ -33,6 +33,7 @@ Page({
 
     hide_show_image_page: true,
     hide_select_item: true,
+    scrollHeight:0,
 
     hide_personal_answer_list:false,
     hide_personal_not_answer_list:true,
@@ -42,8 +43,14 @@ Page({
     console.log("from personal");
     console.log(parameters);
     
-    
-
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750) //80为顶部搜索框区域高度 rpx转px 屏幕宽度/750
+          scrollHeight: res.windowHeight - (100 * res.windowWidth / 750)
+        });
+      }
+    })
   },
 
 
