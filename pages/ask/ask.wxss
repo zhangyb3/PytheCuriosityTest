@@ -20,8 +20,9 @@
 }
 
 .ask_page_list_container{
+  
   margin-top: 100rpx;
-  height: 1000rpx;
+  /*height: 1000rpx;*/
 }
 
 @import "../common/ask_page_section_selector.wxss";
