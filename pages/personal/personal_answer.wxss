@@ -25,6 +25,7 @@
 .personal_answer_list_container{
   width: 100%;
   height: 1000rpx;
+  background-color: #CCC;
 }
 
 .personal_not_answer_list_container{
