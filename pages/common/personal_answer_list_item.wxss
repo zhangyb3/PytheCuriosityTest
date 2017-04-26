@@ -40,15 +40,21 @@
     margin-top: 20rpx;
 }
 
+.answer_question_content_box{
+    height: 110rpx;
+}
+
 .answer_question_content{
     display: flex;
-    font-size: 30rpx;
+    font-size: 32rpx;
     color: #333333;
-    height: 110rpx;
+   text-overflow: -o-ellipsis-lastline;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+
 }
 
 

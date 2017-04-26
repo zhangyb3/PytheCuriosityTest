@@ -7,7 +7,7 @@
       <image class="preview_img_classic" src="{{preview_img_url + item.questioncontent.img[0]}}"></image>
       </view>
       <view class="answer_like_question_wrap">
-      <text class="answer_like_question_content">{{item.questioncontent.text[0] }}</text>
+      <text class="answer_like_question_content">{{item.questioncontent.text[0] }}埃及水电费拉手剪短发拉手剪短发拉手剪短发拉手剪短发老实交代聊飞机哎说多了;  拉萨的积分拉斯打开积分拉斯接待来访静安寺代理费; 房间爱上邓丽君法拉盛大姐夫了;爱神的箭弗利萨接待来访;安静飞机撒的聊飞机</text>
             </view>
 
             <!--<view class="multi_tips">

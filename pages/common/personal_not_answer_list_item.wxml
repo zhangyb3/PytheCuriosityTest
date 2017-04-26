@@ -14,8 +14,10 @@
 
             <!--<view class="lines">-->
                 <view class="question_wrap">
-                 <view class="question_content"><text>{{item.questioncontent.text[0]}}</text></view>
-
+                 <view class="question_content">
+                 <text>{{item.questioncontent.text[0]}}
+                 </text>
+                 </view>
                  <view class="question_bottom">
                     <view class="money_number"><image src="../../images/personal_icon_money@2x.png"></image><text class="notAnswer_money_count">{{item.reward }}</text></view>
                 </view>
