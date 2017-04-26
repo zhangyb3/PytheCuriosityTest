@@ -1,4 +1,14 @@
 
+.pop_reward_cover {
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0rpx;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    opacity: 1;
+}
 
 .reward_page_container{
 
@@ -6,17 +16,17 @@
     flex-direction: column;
     align-items: center;
     background-color: #fff;
-    top: 0rpx;
-    left: 0rpx;
-    right: 0rpx;
-    bottom: 0rpx;
-    z-index: 5;
+    top: 90rpx;
+    left: 20rpx;
+    right: 20rpx;
+    height: 930rpx;
+    z-index: 10;
 }
 
 .reward_page_motto_container{
     display: flex;
     justify-content: center;
-    margin-top: 50px;
+    margin-top: 148rpx;
 }
 
 .reward_page_motto{
@@ -47,45 +57,47 @@
     width: 100%;
     /*align-items: center;*/
     justify-content: space-around;
-    margin-top: 150rpx;
+    margin-top: 88rpx;
 }
 
 .reward_1{
-     width: 80px;
-    height: 80px;
+     width: 130rpx;
+    height: 130rpx;
     /*border-radius: 100%;*/
     background-size: container;
+    margin-left: 60rpx;
     /*background: url(../../images/reward_1.png)*/
 }
 
 .reward_5{
-    width: 80px;
-    height: 80px;
+    width: 130rpx;
+    height: 130rpx;
     /*border-radius: 100%;*/
     background-size: container;
     /*background: url(../../images/reward_5.png)*/
 }
 
 .reward_10{
-     width: 80px;
-    height: 80px;
+     width: 130rpx;
+    height: 130rpx;
     /*border-radius: 100%;*/
     background-size: container;
+    margin-right: 60rpx;
     /*background: url(../../images/reward_10.png)*/
 }
 .reward_1_img{
-     width: 80px;
-    height: 80px;
+     width: 130rpx;
+    height: 130rpx;
 }
 
 .reward_5_img{
-     width: 80px;
-    height: 80px;
+     width: 130rpx;
+    height: 130rpx;
 }
 
 .reward_10_img{
-     width: 80px;
-    height: 80px;
+     width: 130rpx;
+    height: 130rpx;
 }
 
 .reward_number_other_container{
@@ -103,7 +115,7 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin-top: 50px;
+    margin-top: 43px;
     justify-content: center;
 }
 
@@ -111,7 +123,7 @@
     /*display: flex;
     flex-direction: row;*/
 
-    width: 80%;
+    width: 75%;
     line-height: 92rpx;
     font-size: 36rpx;
     background-color: #3AA4F1;

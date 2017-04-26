@@ -1,6 +1,6 @@
 <template name="bounty_page">
 
-
+<view class="pop_reward_cover"  bindtap='cancelBounty'></view>
 
 <view class="reward_page_container">
 
