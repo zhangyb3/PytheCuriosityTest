@@ -136,6 +136,7 @@ Page({
   },
 
   getQuestionText:function(e){
+    this.data.ask_question.text_content = null;
     var text_input = e.detail.value;
     console.log(text_input);
     this.data.ask_question.text_content = text_input;
@@ -805,9 +806,40 @@ Page({
 
   commitConfirm:function(result){
     console.log('before commit question');
-    this.setData({
-      hide_bounty_page: false,
-    });
+
+    if(this.data.ask_question.text_content == '' || this.data.ask_question.text_content == null)
+    {
+      
+      wx.showModal({
+        title: '提示',
+        content: '题目内容不能为空',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      });
+    }
+    else if(this.data.ask_question.subjectId == null)
+    {
+      wx.showModal({
+        title: '提示',
+        content: '题目科目不能为空',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      });
+    }
+    else
+    {
+      this.setData({
+        hide_bounty_page: false,
+      });
+    }
+
+    
 
 
   },
@@ -938,8 +970,7 @@ function commitQuestion() {
         reward: wx.getStorageSync("rewardNum"),
       };
       
-      if(questionParams.questionContent.text[0]!=null)
-      {
+     
         base.commitQuestion(questionParams);
         wx.setStorageSync('hasTakenPhoto', 'no');
         wx.setStorageSync('hasDrawnPicture', 'no');
@@ -955,31 +986,8 @@ function commitQuestion() {
           complete: function(res) {
             // complete
           }
-        })
-      }
-      else
-      {
-        wx.showModal({
-          title: '提示',
-          content: '题目内容不能为空',
-          success: function(res) {
-            if (res.confirm) {
-              console.log('用户点击确定')
-            }
-          }
         });
-      }
+      
     }
-    else
-    {
-      wx.showModal({
-        title: '提示',
-        content: '请选择悬赏金额',
-        success: function(res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          }
-        }
-      });
-    }
+    
 }
