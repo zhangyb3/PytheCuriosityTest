@@ -27,7 +27,7 @@
 
             <view class="question_wrapper">
                 <view class="question_content_view">
-                <text class="question_content">{{ item.question.questioncontent.text[0]}}ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+                <text class="question_content">{{ item.question.questioncontent.text[0]}}
                 </text>
                 </view>
 
