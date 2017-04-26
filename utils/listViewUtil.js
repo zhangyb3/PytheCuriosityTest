@@ -143,9 +143,11 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
         }
         else if(list_type == 'teacher' && page.data.list_mode == 'teacher_list'){
             page.data.ask_teacher_list = [];//老师列表
+            netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
         }
         else if(list_type == 'question'){
             page.data.questionsForAnswer = [];//问题列表
+            netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
         }
 
         else if(list_type == 'my_question'){
