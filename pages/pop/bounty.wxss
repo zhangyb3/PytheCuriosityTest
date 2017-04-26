@@ -21,6 +21,7 @@
     right: 20rpx;
     height: 930rpx;
     z-index: 10;
+    border-radius: 10rpx;
 }
 
 .reward_page_motto_container{
