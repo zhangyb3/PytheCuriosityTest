@@ -117,5 +117,11 @@
     -webkit-text-fill-color: #ffffff;
 }
 
+.otherRewardInput{
+    text-align: center;
+    font-size: 30rpx;
+    border: 1px solid #3AA4F1;
+}
+
 
 @import "other_reward.wxss";
