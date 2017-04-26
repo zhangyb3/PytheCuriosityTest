@@ -54,22 +54,20 @@
 
 }
 
-.question_content {
-    display: flex;
-   
-    /*width: 300rpx;*/
-    font-size: 30rpx;
-    /*text-overflow: ellipsis;
+.question_content_view {
+  
+
+    display: -webkit-box ;
+
     overflow: hidden;
-    word-wrap: break-word;*/
-    color: #333333;
-    height: 110rpx;
-    text-overflow: -o-ellipsis-lastline;
-    overflow: hidden;
+
     text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
+
+    word-break: break-all;
+
     -webkit-box-orient: vertical;
+
+    -webkit-line-clamp:2; 
 }
 
 .dotted_line{
