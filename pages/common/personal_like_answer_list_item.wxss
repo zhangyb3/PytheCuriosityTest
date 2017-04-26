@@ -24,29 +24,27 @@ background-color: #fff;
 
 .answer_like_question_wrap{
 
-    display: flex;
+    /*display: flex;*/
     margin-left: 20rpx;
-    /*right: 30rpx;*/
-    width: 80%;
-    /*height: 130rpx;*/
-
-    flex-direction: column;
-    text-align: left;
+    /*width: 80%;*/
     height: 156rpx;
     margin-top: 20rpx;
+
 
 }
 
 .answer_like_question_content {
 
    display: flex;
-    font-size: 30rpx;
+    font-size: 32rpx;
     color: #333333;
-    height: 120rpx;
+    text-overflow: -o-ellipsis-lastline;
     overflow: hidden;
     text-overflow: ellipsis;
+    display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
+
 }
 
 .preView_wrap{

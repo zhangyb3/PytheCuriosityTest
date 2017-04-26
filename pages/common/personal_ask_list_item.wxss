@@ -41,10 +41,8 @@
 }
 
 .question_wrapper{
-    display: flex;
-    text-align: left;
     height: 150rpx;
-    margin-top: 10rpx;
+    /*margin-top: 10rpx;*/
 }
 
 .preview_img_wrap{
@@ -62,12 +60,14 @@
     display: flex;
     margin-left: 30rpx;
     margin-right: 0rpx;
-    height: auto;
-    font-size: 28rpx;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    word-wrap: break-word;
+    font-size: 32rpx;
     color: #333333;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 

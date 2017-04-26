@@ -13,6 +13,16 @@
     flex-direction: column;
     background-color: white;
 }
+.person_teacher_middle_wrapper{
+    height: 170rpx;
+     margin-left: 170rpx;
+    right: 140rpx;
+    width: 55%;
+    display: flex;
+    
+    flex-direction: column;
+    align-items: flex-start;
+}
 
 .teacher_wrapper{
     /*border-top: 1px solid #EEE;*/
@@ -53,18 +63,26 @@
     margin-top: 30rpx;
     color: #0F0F0F;
     height: auto;
-    font-size: 30rpx;  
+    font-size: 32rpx;  
     /*font-weight:bold; */
 }
-.teacher_brief{
+.teacher_brief_box{
+    height: 100rpx;
+}
 
-    font-size: 24rpx;
+.teacher_brief{
+    display: flex;
+    font-size: 30rpx;
     margin-top: 10rpx;
-    /*height: auto;*/
-    min-height: 40rpx;
-    width: auto;
-    /*margin-bottom: 15px;*/
     color: #999999;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    width: 100%;
+
 }
 
 .collect_icon_wrap{

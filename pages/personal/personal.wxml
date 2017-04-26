@@ -14,8 +14,10 @@
         <view class="personal_description_text_zone">
             <view class="personal_nick_name_wrap"><text class="personal_nick_name">{{userNickName}}</text></view>
             <!--<view class="person_discribe_wrap"></view>-->
+            <view class="person_discribe_box">
             <text class="person_discribe">{{userDescription}}
             </text>
+            </view>
         <view class="personal_summary_wrap"><image  class="earn_num_img" src="../../images/personal_icon_org.money@2x.png"></image><text class="personal_summary">{{teacherEarn}}</text></view>
             <!--<text class="personal_summary" src="../../images/icon_money_1@2x.png">265</text>-->
         </view>

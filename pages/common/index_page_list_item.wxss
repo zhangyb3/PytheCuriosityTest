@@ -41,10 +41,21 @@
 
 .question_wrapper{
     display: flex;
-    text-align: left;
     margin-left: 20rpx;
     /*margin-right: 20rpx;*/
     height: 150rpx;
+
+    display: -webkit-box ;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    word-break: break-all;
+
+    -webkit-box-orient: vertical;
+
+    -webkit-line-clamp:4; 
 }
 
 .question_content {

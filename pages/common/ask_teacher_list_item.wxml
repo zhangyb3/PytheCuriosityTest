@@ -13,7 +13,9 @@
                 <!--教师姓名-->
                     <text class="teacher_content">{{ item.subject }}老师</text>
                     <!--教师简介-->
+                    <view class="teacher_brief_wrap">
                     <text class="teacher_brief">{{ item.username }}的简介：{{item.description}}</text>
+                    </view>
                     <!--收藏数量-->
                 <view class="collect_icon_wrap" wx:if="{{alreadyRegister == 'yes'}}" data-teacher="{{item}}" data-index='{{index}}' bindtap="likeTeacher">
                 <image wx:if="{{item.isClick == 1}}" src="../../images/question_icon_shoucang_nor@2x.png"></image>
