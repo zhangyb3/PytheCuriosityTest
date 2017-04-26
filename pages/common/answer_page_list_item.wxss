@@ -55,25 +55,20 @@
 }
 
 .question_content_view {
-  
 
-    display: -webkit-box ;
-
-    overflow: hidden;
-
-    text-overflow: ellipsis;
-
-    word-break: break-all;
-
-    -webkit-box-orient: vertical;
-
-    -webkit-line-clamp:3; 
-    height: 110rpx;
+    height: 120rpx;
 }
 
 .question_content{
     font-size: 32rpx;
     color: #333333;
+    display: -webkit-box ;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
 }
 
 .dotted_line{
