@@ -61,7 +61,7 @@
 
 .teacher_brief_wrap{
     margin-top: 10rpx;
-    height: 110rpx;
+    height: 90rpx;
 }
 
 .teacher_brief{

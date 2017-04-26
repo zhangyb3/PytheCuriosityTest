@@ -20,14 +20,6 @@
     width: 100%;
     height: 230rpx;
     border-bottom: 20rpx solid #ffffff;
-    /*justify-content: space-between;*/
-    /*display: flex;
-    flex-direction: row;
-    height: auto;
-    width: 100%;
-    
-    position: relative;
-    z-index: 1;*/
 }
 
 .earn_num_img{
@@ -100,11 +92,12 @@
     right: 80rpx;
     font-size: 30rpx;
     color: #999999;
+    
     text-overflow: -o-ellipsis-lastline;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 

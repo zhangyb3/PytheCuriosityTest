@@ -21,7 +21,7 @@
             </view>
             
             <view class="question_wrapper">
-                <text class="person_ask_question_content">{{item.questioncontent.text[0]}}就的撒;飞机阿萨德飞机世纪东方老司机阿道夫哎说多了辅导教师李开复都放假了看电视剧发打飞机阿萨德看风景阿萨德分解落实到副科级阿萨德飞机阿萨德 </text>   
+                <text class="person_ask_question_content">{{item.questioncontent.text[0]}}</text>   
             </view>
 </view>
 
