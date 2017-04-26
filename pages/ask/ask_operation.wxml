@@ -101,8 +101,8 @@
             <!--<text class="draw_picture" bindtap='drawPicture'>画板
             </text>-->
         </view>
-<view class="border_tab"></view>
-<view class="border_tab"></view>
+<!--<view class="border_tab"></view>-->
+<!--<view class="border_tab"></view>-->
         <view class="record_sound_section_container" hidden='true'>
              <template is="operation_record_sound_section" data='{{isSpeaking,loop,voices}}'></template>
         </view>
@@ -120,7 +120,7 @@
         </view>
 
         
-        <view class="reward_number_text_comtain">
+        <!--<view class="reward_number_text_comtain">
         <text class="reward_number_text">
         请选择悬赏金额
         </text>
@@ -139,7 +139,7 @@
             <image class="reward_img" wx:if="{{rewardTap10}}" src="../../images/question_icon_ten_sel@2x.png"></image>
             <image class="reward_img" wx:if="{{!rewardTap10}}" src="../../images/question_icon_ten_nor@2x.png"></image>
         </view>
-    </view>
+    </view>-->
 
         <!--<view class="border_tab"></view>-->
 

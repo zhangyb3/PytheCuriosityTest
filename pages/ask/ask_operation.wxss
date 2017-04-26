@@ -80,12 +80,13 @@
 
 .ask_operation_zone{
     /*border-top: 1px solid #ECEBF4;*/
-    /*border-bottom: 1px solid #ECEBF4;*/
+    border-bottom: 1px solid #ECEBF4;
     height: 50px;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+
     
 }
 
@@ -364,7 +365,10 @@ background-color: deepskyblue;
     height: 30rpx;
     background-color: #fff;
 }
+.ask_commit_confirm{
 
+    margin-top: 100rpx;
+}
 
 @import "../section/operation_record_sound.wxss";
 @import "../section/operation_record_voice.wxss";
