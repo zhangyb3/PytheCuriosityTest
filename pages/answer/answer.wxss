@@ -17,6 +17,14 @@
   background-color: #f5f5f5;
 }
 
+.my_answer_entrance{
+  position: fixed;
+  z-index: 2;
+  top:500rpx;
+  right: 50rpx;
+
+}
+
 @import "../common/answer_page_filter_sort.wxss";
 @import "../listView/answer_page_list.wxss";
 @import "../pop/answer_page_subject_list.wxss";

@@ -35,10 +35,10 @@ function uploadFilePrepare(filePath, fileType)
 
 function uploadFile(filePath, parameters)
 {
-    wx.showLoading({
-      title: 'loading',
-      mask: true,
-    });
+    // wx.showLoading({
+    //   title: 'loading',
+    //   mask: true,
+    // });
     console.log('upload file ' + filePath);
     console.log(' to ' + FILE_UPLOAD_URL);
     wx.uploadFile({
@@ -49,11 +49,11 @@ function uploadFile(filePath, parameters)
       formData: parameters,
       success: function(res){
         console.log(res);
-        wx.hideLoading();
+        // wx.hideLoading();
       },
       fail: function() {
         // console.log(res);
-        wx.hideLoading();
+        // wx.hideLoading();
         wx.showModal({
           title: '上传失败',
           content: res.errMsg,
@@ -66,7 +66,7 @@ function uploadFile(filePath, parameters)
       },
       complete: function() {
         // console.log(res);
-        wx.hideLoading();
+        // wx.hideLoading();
 
       }
     })
@@ -74,13 +74,13 @@ function uploadFile(filePath, parameters)
 
 function download(that,download_file,fileType)
 {
-  wx.showLoading({
-    title: 'loading',
-    mask: true,
-  });
+  // wx.showLoading({
+  //   title: 'loading',
+  //   mask: true,
+  // });
   if(fileType == 'audio' && decodeURIComponent(download_file) == wx.getStorageSync('lastRemoteAudio') && wx.getStorageSync('playingVoice') == 'no')
   {
-    wx.hideLoading();
+    // wx.hideLoading();
     wx.playVoice({
       filePath: wx.getStorageSync('tempAudio'),
       success: function(res){
@@ -104,7 +104,7 @@ function download(that,download_file,fileType)
   }
   else if(fileType == 'audio' && decodeURIComponent(download_file) == wx.getStorageSync('lastRemoteAudio') && wx.getStorageSync('playingVoice') == 'yes')
   {
-    wx.hideLoading();
+    // wx.hideLoading();
     wx.pauseVoice({
       success: function(res){
         // success
@@ -120,7 +120,7 @@ function download(that,download_file,fileType)
   }
   else if(fileType == 'image' && decodeURIComponent(download_file) == wx.getStorageSync('lastRemoteImg'))
   {
-    wx.hideLoading();
+    // wx.hideLoading();
     that.setData({
       img_src: wx.getStorageSync('tempImg'),
     });
@@ -153,11 +153,11 @@ function download(that,download_file,fileType)
                 tempFilePath: tempFilePath,
                 success: function(res){
                   // success
-                  wx.hideLoading();
+                  // wx.hideLoading();
                   wx.setStorageSync('tempImg', res.savedFilePath);
                 },
                 complete: function(res){
-                  wx.hideLoading();
+                  // wx.hideLoading();
                 }
               });
               wx.setStorageSync('lastRemoteImg', decodeURIComponent(download_file));
@@ -169,7 +169,7 @@ function download(that,download_file,fileType)
                 filePath: res.tempFilePath,
                 success: function(res){
                   // success
-                  wx.hideLoading();
+                  // wx.hideLoading();
                   wx.showToast({
                     title: '播放录音',
                     icon: 'success',
@@ -191,7 +191,7 @@ function download(that,download_file,fileType)
                 },
                 complete: function() {
                   // complete
-                  wx.hideLoading();
+                  // wx.hideLoading();
                   wx.setStorageSync('playingVoice', 'no');
                 }
               })
@@ -202,7 +202,7 @@ function download(that,download_file,fileType)
           },
           fail: function(res) {
             console.log(res);
-            wx.hideLoading();
+            // wx.hideLoading();
             wx.showModal({
               title: '下载失败',
               content: res.errMsg,
@@ -287,10 +287,10 @@ function downloadFile(that,download_file,fileType,success,fail)
   //未下载过
   else
   {
-    wx.showLoading({
-      title: 'loading',
-      mask: true,
-    });
+    // wx.showLoading({
+    //   title: 'loading',
+    //   mask: true,
+    // });
     wx.downloadFile({
       url: FILE_DOWNLOAD_URL + decodeURIComponent(download_file),
       type: fileType, // 下载资源的类型，用于客户端识别处理，有效值：image/audio/video
@@ -307,13 +307,13 @@ function downloadFile(that,download_file,fileType,success,fail)
             tempFilePath: tempFilePath,
             success: function(res){
               // success
-              wx.hideLoading();
+              // wx.hideLoading();
               wx.setStorageSync(download_file,res.savedFilePath);
               wx.setStorageSync(res.savedFilePath,download_file);
               typeof success == "function" && success(res.savedFilePath);
             },
             complete: function(res){
-              wx.hideLoading();
+              // wx.hideLoading();
             }
           });
           
@@ -325,7 +325,7 @@ function downloadFile(that,download_file,fileType,success,fail)
             filePath: res.tempFilePath,
             success: function(res){
               // success
-              wx.hideLoading();
+              // wx.hideLoading();
               wx.showToast({
                 title: '播放录音',
                 icon: 'success',
@@ -349,7 +349,7 @@ function downloadFile(that,download_file,fileType,success,fail)
             },
             complete: function() {
               // complete
-              wx.hideLoading();
+              // wx.hideLoading();
               
             }
           })
@@ -360,7 +360,7 @@ function downloadFile(that,download_file,fileType,success,fail)
       },
       fail: function(res) {
         console.log(res);
-        wx.hideLoading();
+        // wx.hideLoading();
         wx.showModal({
           title: '下载失败',
           content: res.errMsg,

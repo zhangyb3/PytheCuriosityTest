@@ -978,7 +978,7 @@ Page({
       knowledge2Range: knowledge2Range,
     });
 
-    //加载动态课程列表,年级列表
+    //加载知识点列表
     wx.request({
       url: config.PytheRestfulServerURL + '/answer/knowledgeList/one',
       data: {

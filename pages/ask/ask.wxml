@@ -13,6 +13,9 @@
 <view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
 
 
+<view class="my_ask_entrance" wx:if="{{alreadyRegister == 'yes'}}">
+    <button class="ask_entrance_button" bindtap="enterPersonalAsk">我的问</button>
+</view>
 
 <!--<view class="ask_page_container" hidden='{{hide_ask_page}}'>-->
   

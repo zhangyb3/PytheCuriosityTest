@@ -528,7 +528,25 @@ Page({
   },
 
 
-  
+  enterPersonalAnswer:function(e){
+    console.log('enter personal answer page');
+    if(wx.getStorageSync('TeacherID') != 'TeacherID')
+    {
+      wx.navigateTo({
+        url: '../personal/personal_answer' ,
+        success: function(res){
+          // success
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      })
+    }
+
+  },
 
   
 
@@ -561,6 +579,10 @@ Page({
   },
   onShow:function(){
     // 页面显示
+
+    this.setData({
+      alreadyRegister: wx.getStorageSync('alreadyRegister'),
+    });
 
     // 获取默认问题列表
     var teacherId = -1;

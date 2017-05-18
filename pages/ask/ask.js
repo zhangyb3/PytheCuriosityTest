@@ -516,7 +516,25 @@ Page({
   },
 
 
+  enterPersonalAsk:function(e){
+    console.log('enter personal ask page');
+    if(wx.getStorageSync('StudentID') != 'StudentID')
+    {
+      wx.navigateTo({
+        url: '../personal/personal_ask' ,
+        success: function(res){
+          // success
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      })
+    }
 
+  },
 
   onReady:function(){
     // 页面渲染完成

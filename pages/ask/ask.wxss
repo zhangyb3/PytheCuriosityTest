@@ -25,6 +25,15 @@
   /*height: 1000rpx;*/
 }
 
+.my_ask_entrance{
+  position: fixed;
+  z-index: 2;
+  top:500rpx;
+  right: 50rpx;
+
+}
+
+
 @import "../common/ask_page_section_selector.wxss";
 @import "../listView/ask_page_subject_list.wxss";
 @import "../listView/ask_page_teacher_list.wxss";
