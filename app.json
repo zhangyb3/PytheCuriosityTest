@@ -24,17 +24,17 @@
 
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "派知好问",
+    "navigationBarBackgroundColor": "#d2cea9",
+    "navigationBarTitleText": "派知好学",
     "navigationBarTextStyle":"black",
-    "backgroundColor": "#CCC",
+    "backgroundColor": "#f3f1e4",
     "enablePullDownRefresh": true
   },
 
   "tabBar": {
-      "color":"#0F0F0F",
+      "color":"#ffffff",
       "selectedColor":"#3AA4F1",
-      "backgroundColor":"#fff",
+      "backgroundColor":"#d2cea9",
       "list": [
       {
         "pagePath": "pages/index/index",
@@ -52,7 +52,7 @@
         "selectedColor":"lightblue",
         "iconPath":"images/tab_icon_question_nor@2x.png",
         "selectedIconPath":"images/tab_icon_question_sel@2x.png",
-        "text":"问"
+        "text":"学"
       },
       {
         "pagePath": "pages/answer/answer",
@@ -61,7 +61,7 @@
         "selectedColor":"lightblue",
         "iconPath":"images/tab_icon_answer_nor@2x.png",
         "selectedIconPath":"images/tab_icon_answer_sel@2x.png",
-        "text":"答"
+        "text":"教"
       },
       {
         "pagePath": "pages/personal/personal",

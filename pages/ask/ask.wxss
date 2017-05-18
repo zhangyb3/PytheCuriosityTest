@@ -11,12 +11,7 @@
     left: 0rpx;
     right: 0rpx;
     bottom: 0rpx;
-    background-color: #fff;
-}
-
-.ask_page_selector_container{
-  /*margin-top: 20px;*/
-  /*background-color: yellow;*/
+    background-color: #f3f1e4;
 }
 
 .ask_page_list_container{
@@ -28,9 +23,21 @@
 .my_ask_entrance{
   position: fixed;
   z-index: 2;
-  top:500rpx;
-  right: 50rpx;
+  bottom:35rpx;
+  right: 20rpx;
+  width: 134rpx;
+  height: 134rpx;
 
+}
+.ask_entrance_button{
+padding :0;
+width: 134rpx;
+line-height: 134rpx;
+border-radius: 67rpx;
+background: none;
+background-color: #96d6ea;
+color: #fff;
+font-size: 30rpx;
 }
 
 

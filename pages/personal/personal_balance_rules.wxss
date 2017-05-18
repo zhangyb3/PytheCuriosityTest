@@ -8,7 +8,7 @@ position: fixed;
     
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #f3f1e4;
     border: 1px solid #eee;
 }
 
@@ -21,7 +21,7 @@ position: fixed;
     
     display: flex;
     flex-direction: column;
-    background-color: #ffffff;
+    background-color: #f3f1e4;
 
 }
 

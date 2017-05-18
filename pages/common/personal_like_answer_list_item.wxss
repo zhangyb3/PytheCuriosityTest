@@ -65,8 +65,8 @@ margin-top: 20rpx;
 
 .person_like_seprate_line{
     width: 100%;
-    height: 30rpx;
-    background-color: #F5F5F5;
+    height: 20rpx;
+    background-color: #f3f1e4;
 }
 
 .answer_container {

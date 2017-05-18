@@ -12,11 +12,11 @@ var fileSys = require("../../utils/file.js");
 Page({
   data:{
     personal_answer_menu:[{
-        name:"已答",
+        name:"已教",
         value:"already answer",
         active:true
     },{
-        name:"未答",
+        name:"未教",
         value:"not answer",
         active:false
     }],

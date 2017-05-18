@@ -43,7 +43,7 @@
     box-sizing: border-box;
     /*border-right: 1rpx solid #D9D9D9;*/
     /*border-bottom: 1rpx solid #D9D9D9;*/
-    background-color: white;
+    background-color: #f3f1e4;
     -webkit-text-fill-color: black;
 }
 

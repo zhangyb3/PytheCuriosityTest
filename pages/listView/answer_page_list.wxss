@@ -4,6 +4,7 @@
     /*top: 100rpx;*/
     /*height: 1000rpx;*/
     margin-top: 100rpx;
+    background-color:#f3f1e4;
 }
 
 .interval{
@@ -12,7 +13,7 @@
 }
     
 .answer_page_list_container{
-    background-color: #F5F5F5;
+    background-color: #f3f1e4;
     /*height: auto;*/
 }
 

@@ -1,7 +1,7 @@
 
 .draw_picture_section_cover {
     position: fixed;
-    background-color: white;
+    background-color: #f3f1e4;
     top: 0;
     right: 0;
     left: 0;
@@ -35,7 +35,7 @@
 
 .canvas_area {
 
-    background-color: white;
+    background-color: #f3f1e4;
 
     width: 100%;
     height: 80%;
@@ -52,7 +52,7 @@
 .canvas_tools {
 
     margin-top: 10px;
-    background-color: #ffffff;
+    background-color: #f3f1e4;
 
     width: 100%;
     height: 40px;
@@ -110,7 +110,7 @@
     /*margin-top: 5px;*/
     /*padding-top: 5px;*/
     /*margin-right: 10px;*/
-    background-color: #3AA4F1;
+    background-color: #d2cea9;
     /*border-radius: 4px;*/
     line-height: 100rpx;
     width: 50%;

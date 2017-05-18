@@ -10,7 +10,7 @@
 <view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
 
 <view class="my_answer_entrance" wx:if="{{alreadyRegister == 'yes'}}">
-    <button class="answer_entrance_button" bindtap="enterPersonalAnswer">我的答</button>
+    <button class="answer_entrance_button" bindtap="enterPersonalAnswer">我教</button>
 </view>
 
 <import src="../pop/show_image_page.wxml" />

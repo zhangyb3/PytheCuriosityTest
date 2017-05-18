@@ -48,7 +48,7 @@
     box-sizing: border-box;
     /*border-right: 1rpx solid #D9D9D9;*/
     /*border-top: 1rpx solid #D9D9D9;*/
-    background-color: white;
+    background-color: #f3f1e4;
 }
 
 .sort_attribute_item_content {

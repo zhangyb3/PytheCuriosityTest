@@ -9,6 +9,7 @@
     position: fixed;
     top: 0;
     z-index: 2;
+    /*background-color: #d2cea9;*/
 }
 
 .bar_item{
@@ -18,8 +19,8 @@
     /*height: 30px;*/
     text-align: center;
     /*border: 1px;*/
-    color: #333333;
-    background-color: white;
+    color: #fff;
+    background-color: #d2cea9;
     /*border-right: 1rpx solid #D9D9D9;*/
     /*border-bottom: 1rpx solid #D9D9D9;*/
     justify-content: center;
@@ -32,13 +33,13 @@
     color: #3AA4F1;
     font-size: 34rpx;
     line-height: 100rpx;
-    /*background-color: #3AA4F1;*/
+    background-color: #d2cea9;
 }
 
 .answer_middle_line_wrap{
     display: flex;
     width: 2px;
-    background-color: #fff;
+    background-color: #d2cea9;
     /*top: 15rpx;*/
     /*bottom: 30rpx;*/
     /*margin-top: 22rpx;*/
@@ -48,7 +49,7 @@
 .answer_middle_line{
     display: flex;
     width: 1px;
-    background-color: #CCCCCC;
+    background-color: #fff;
     /*top: 15rpx;*/
     /*bottom: 30rpx;*/
     margin-top: 22rpx;

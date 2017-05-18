@@ -32,15 +32,15 @@
     </view>
 
     <view class="personal_operation_zone">
-<view class="personal_ask personal_operation_item" bindtap='selectPersonalWallet'>
+<!--<view class="personal_ask personal_operation_item" bindtap='selectPersonalWallet'>
 <view class="menu_list_icon_wrap">
     <image class="menu_list_icon_wallet" src="../../images/personal_iocn_money@2x.png"></image>
 </view>
             <text class="personal_ask personal_operation_item_text">钱包</text>
             <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-        </view>
+        </view>-->
 
-        <view class="personal_ask personal_operation_item" bindtap='selectPersonalAsk'>
+        <!--<view class="personal_ask personal_operation_item" bindtap='selectPersonalAsk'>
 <view class="menu_list_icon_wrap">
     <image class="menu_list_icon_question" src="../../images/personal_iocn_myquestion@2x.png"></image>
 </view>
@@ -53,7 +53,7 @@
 </view>
             <text class="personal_answer personal_operation_item_text">我的答</text>
             <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-        </view>
+        </view>-->
         <view class="personal_like personal_operation_item" bindtap='selectPersonalLike'>
 <view class="menu_list_icon_wrap">
     <image class="menu_list_icon_like" src="../../images/personal_iocn_mydianzan@2x.png"></image>

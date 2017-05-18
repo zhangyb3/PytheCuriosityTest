@@ -2,7 +2,7 @@
 
 .person_zone{
     position: fixed;
-    background-color: #fff;
+    background-color: #f3f1e4;
     top: 0rpx;
     left: 0rpx;
     right: 0rpx;
@@ -49,7 +49,7 @@
     /*margin:2px 5px;*/
     text-align: left;
     
-    background-color: white;
+    /*background-color: white;*/
     /*background-size: 18px 18px;
     background-position: center left 10px;*/
     font-size: 30rpx;
@@ -79,6 +79,7 @@
     margin-right: 30rpx;
     margin-top: 36rpx;
     border-radius: 10rpx;
+    background-color: #fff;
 }
 
 
@@ -93,8 +94,8 @@
     line-height: 92rpx;
     margin-top: 50px;
     -webkit-text-fill-color: #ffffff;
-    font-size: 30rpx;
-    background-color: #3AA4F1;
+    font-size: 36rpx;
+    background-color: #d2cea9;
 }
 
 .title_wrap{
@@ -104,6 +105,6 @@
 .title{
     color: #333333;
     font-size: 30rpx;
-    width: 150rpx;
+    width: 160rpx;
     text-align: left;
 }

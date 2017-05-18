@@ -20,9 +20,20 @@
 .my_answer_entrance{
   position: fixed;
   z-index: 2;
-  top:500rpx;
-  right: 50rpx;
-
+  bottom:35rpx;
+  right: 20rpx;
+  width: 134rpx;
+  height: 134rpx;
+}
+.answer_entrance_button{
+  padding :0;
+  width: 134rpx;
+  line-height: 134rpx;
+  border-radius: 67rpx;
+  background: none;
+  background-color: #96d6ea;
+  color: #fff;
+  font-size: 30rpx;
 }
 
 @import "../common/answer_page_filter_sort.wxss";

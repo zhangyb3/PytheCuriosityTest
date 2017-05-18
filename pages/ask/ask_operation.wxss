@@ -7,12 +7,12 @@
     overflow-x: hidden; 
     overflow-y: auto;
     align-items: center;
-    background-color: #fff;
+    background-color: #f3f1e4;
 }
 
 .ask_operation_view{
     position: fixed;
-    background-color: #fff;
+    /*background-color: #fff;*/
     top: 0rpx;
     left: 0rpx;
     right: 0rpx;
@@ -41,6 +41,7 @@
     width: 100%;
     height: auto;
     align-items: center;
+    background-color: #fff;
 
 }
 
@@ -80,7 +81,8 @@
 
 .ask_operation_zone{
     /*border-top: 1px solid #ECEBF4;*/
-    border-bottom: 1px solid #ECEBF4;
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
     height: 50px;
     width: 100%;
     display: flex;
@@ -294,9 +296,9 @@ color: #999999;
 
 .ask_commit_button{
     line-height: 93rpx;
-    margin-top: 55rpx;
+    /*margin-top: 55rpx;*/
     width: 85%;
-    background-color: #3AA4F1;
+    background-color: #d2cea9;
     font-size: 36rpx;
 }
 
@@ -330,6 +332,7 @@ color: #999999;
 .multi_tips{
     margin-left: 20rpx;
     margin-right: 20rpx;
+    background-color: #fff;
 }
 
 .preview_img_classic{
@@ -365,9 +368,17 @@ background-color: deepskyblue;
     height: 30rpx;
     background-color: #fff;
 }
+
+.background{
+  height: 55rpx;
+  width: 100%;
+  background-color: #f3f1e4;
+}
 .ask_commit_confirm{
 
-    margin-top: 100rpx;
+    /*margin-top: 100rpx;*/
+    height: 680rpx;
+    background-color: #f3f1e4;
 }
 
 @import "../section/operation_record_sound.wxss";

@@ -12,9 +12,9 @@
     <view class="reward_page_motto_container">
         <text class="reward_page_motto">润物细无声</text>
     </view>
-<view class="reward_motto_image_contain">
+<!--<view class="reward_motto_image_contain">
     <image class="reward_motto_image" src="../../images/question_icon_zhifu@2x.png"></image>
-</view>
+</view>-->
 
     <view class="reward_number_container">
 
