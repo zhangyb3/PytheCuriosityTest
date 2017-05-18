@@ -730,22 +730,7 @@ Page({
     })
     wx.setStorageSync('rewardNum', 1);
     
-    pay.orderPay(
-      (payResult)=>{
-        console.log(payResult);
-        if(payResult.errMsg == "requestPayment:ok")
-        {
-          this.data.hasPaidReward = true;
-          commitQuestion.call(this);
-          this.setData({
-            hide_bounty_page: true,
-          });
-        }
-      },
-      (payResult)=>{
-        console.log(payResult);
-      },
-    );
+    
     
   },
   selectReward5:function(e){
@@ -758,22 +743,7 @@ Page({
     console.log("￥ 5");
     wx.setStorageSync('rewardNum', 5);
     
-    pay.orderPay(
-      (payResult)=>{
-        console.log(payResult);
-        if(payResult.errMsg == "requestPayment:ok")
-        {
-          this.data.hasPaidReward = true;
-          commitQuestion.call(this);
-          this.setData({
-            hide_bounty_page: true,
-          });
-        }
-      },
-      (payResult)=>{
-        console.log(payResult);
-      },
-    );
+    
 
   },
   selectReward10:function(e){
@@ -785,22 +755,7 @@ Page({
     console.log("￥ 10");
     wx.setStorageSync('rewardNum', 10);
     
-    pay.orderPay(
-      (payResult)=>{
-        console.log(payResult);
-        if(payResult.errMsg == "requestPayment:ok")
-        {
-          this.data.hasPaidReward = true;
-          commitQuestion.call(this);
-          this.setData({
-            hide_bounty_page: true,
-          });
-        }
-      },
-      (payResult)=>{
-        console.log(payResult);
-      },
-    );
+    
     
   },
 
@@ -847,6 +802,24 @@ Page({
     this.setData({
       hide_bounty_page: true,
     });
+  },
+  confirmBounty:function(e){
+    pay.orderPay(
+      (payResult)=>{
+        console.log(payResult);
+        if(payResult.errMsg == "requestPayment:ok")
+        {
+          this.data.hasPaidReward = true;
+          commitQuestion.call(this);
+          this.setData({
+            hide_bounty_page: true,
+          });
+        }
+      },
+      (payResult)=>{
+        console.log(payResult);
+      },
+    );
   },
   
 

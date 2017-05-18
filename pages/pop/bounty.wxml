@@ -31,8 +31,8 @@
 
     
 
-    <view class="reward_confirm_container" bindtap="cancelBounty">
-        <button class="reward_confirm_button">取消</button>
+    <view class="reward_confirm_container" bindtap="confirmBounty">
+        <button class="reward_confirm_button">确定</button>
     </view>
 
 

@@ -101,6 +101,11 @@ Page({
     console.log(e.detail.value);
     var rewardNum = e.detail.value;
     wx.setStorageSync('rewardNum', rewardNum);
+    this.setData({
+      rewardTap1: false,
+      rewardTap5: false,
+      rewardTap10: false
+    })
   },
 
   rewardConfirm:function(e){
