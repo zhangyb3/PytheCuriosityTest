@@ -51,7 +51,7 @@
 .personal_description_text_zone{
     /*display: flex;*/
     position: fixed;
-    height: 180rpx;
+    height: 230rpx;
     width: auto;
     left: 170rpx;
     right: 20rpx;
@@ -83,7 +83,7 @@
 
 .person_discribe_box{
     margin-top: 10rpx;
-    height: 120rpx;
+    height: 110rpx;
 }
 .person_discribe{
     /*display: flex;*/
@@ -97,15 +97,17 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 
 .personal_summary_wrap{
     height:40rpx;
     display:flex;
-    margin-top: 5rpx;
+    position: fixed;
+    /*margin-top: 5rpx;*/
     line-height:20px;
+    top: 200rpx;
 }
 .personal_summary_wrap image{
     width:43rpx;
