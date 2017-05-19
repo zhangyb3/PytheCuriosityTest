@@ -11,7 +11,7 @@
     
     /*display: flex;*/
     flex-direction: column;
-    background-color: white;
+    background-color: #f3f1e4;
 }
 
 .answer_like_item_wrap{
@@ -29,7 +29,7 @@ background-color: #fff;
     /*width: 80%;*/
     height: 156rpx;
     margin-top: 20rpx;
-
+    background-color: #fff
 
 }
 

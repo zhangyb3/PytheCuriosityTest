@@ -1,7 +1,7 @@
 
 
 .answer_operation_view{
-    background-color: #F5F5F5;
+    background-color: #f3f1e4;
 }
 .answer_question_wrapper{
     /*margin-top: 10px;*/
@@ -309,7 +309,7 @@ color: #999999;
     /*width: 100%;
     height: 300rpx;*/
     display: flex;
-    background-color: #fff;
+    background-color: #f3f1e4;
     margin-top: 0rpx;
     /*top: 0rpx;
     left: 0;
@@ -319,7 +319,7 @@ color: #999999;
 
 .answer_commit_button{
     margin-top: 60rpx;
-    background-color: #3AA4F1;
+    background-color: #d2cea9;
     line-height: 92rpx;
     width: 80%;
     font-size: 34rpx;
@@ -327,11 +327,15 @@ color: #999999;
 }
 
 .background{
-    background-color: #F5F5F5;
+    background-color: #f3f1e4;
     width: 100%;
     /*margin-bottom: 0;*/
     height: 200rpx;
 }
+/*.backgroundline{
+  height: 300rpx;
+  width: 100%;
+}*/
 
 .preview_img_classic{
     width: 151rpx;

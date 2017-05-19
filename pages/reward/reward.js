@@ -49,7 +49,7 @@ Page({
       rewardTap10: false
     })
     console.log("￥ 1");
-    wx.setStorageSync('rewardNum', 1);
+    wx.setStorageSync('rewardNum', 0.01);
   },
   selectReward5:function(e){
     this.setData({

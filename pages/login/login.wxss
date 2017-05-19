@@ -45,7 +45,7 @@
 .student_avatar_after{
     width: 50%;
     line-height: 84rpx;
-    background-color: #ffffff;
+    background-color: #f3f1e4;
     color: #3AA4F1;
     font-size: 34rpx;
     text-align: center;
@@ -63,7 +63,7 @@
 .teacher_avatar_after{
     width: 50%;
     line-height: 84rpx;
-    background-color: #ffffff;
+    background-color: #f3f1e4;
     color: #3AA4F1;
     font-size: 34rpx;
     text-align: center;
@@ -78,7 +78,7 @@
     left: 50rpx;
     right: 50rpx;
     height: auto;
-    background-color: #fff;
+    /*background-color: #fff;*/
 }
 
 
@@ -124,7 +124,8 @@ button_wrap{
     font-size:30rpx;
     height: 76rpx;
     line-height:76rpx;
-    -webkit-text-fill-color: #d2cea9;
+    -webkit-text-fill-color: #fff;
+    background-color: #d2cea9;
     text-align: center;
     border-top :1px solid #CCCCCC;
     border-bottom :1px solid #CCCCCC;
@@ -266,11 +267,11 @@ button_wrap{
     bottom: 30rpx;
     line-height: 74rpx;
     border-radius:4px;
-    background-color: #3AA4F1;
+    background-color: #d2cea9;
     /*align-items: center;*/
     /*argin-top: 100px;*/
     border:none;
     font-size: 36rpx;
-    -webkit-text-fill-color: #d2cea9;
+    -webkit-text-fill-color: #fff;
     margin-top:40px;
 }

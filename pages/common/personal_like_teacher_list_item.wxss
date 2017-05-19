@@ -36,6 +36,7 @@
     height: 188rpx;
     position: relative;
     z-index: 1;
+    border-bottom: 1px solid #fff;
 }
 
 .teacher_icon{

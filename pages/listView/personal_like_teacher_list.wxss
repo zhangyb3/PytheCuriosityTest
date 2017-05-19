@@ -8,6 +8,7 @@
 
 .personal_like_teacher_list_container{
     background-color: #f3f1e4;
+    /*border-bottom: 1rpx solid #fff;*/
 }
 
 .seprate_line{
@@ -17,9 +18,9 @@
 }
 
 .seprate_line_background{
-  height: 30rpx;
+  height: 1rpx;
   width: 100%;
-  background-color: #f3f1e4;
+  background-color: #fff;
 }
 
 @import "../common/personal_like_teacher_list_item.wxss";

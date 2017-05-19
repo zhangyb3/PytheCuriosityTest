@@ -2,7 +2,7 @@
 
 <view class="list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneNotAnswer">
 
-            <view class="border_tab"/>
+            <!--<view class="border_tab"/>-->
 
            
 

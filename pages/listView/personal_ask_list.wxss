@@ -5,15 +5,15 @@
     
 }
 
-.interval{
+.interva_tabb{
     margin-top: 10px;
-    background-color: #F5F5F5;
+    background-color: #f3f1e4;
 }
     
 
 .personal_ask_list_container{
     height: auto;
-    background-color: #F5F5F5;
+    background-color: #f3f1e4;
 }
 
 
