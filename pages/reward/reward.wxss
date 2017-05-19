@@ -50,31 +50,31 @@
 }
 
 .reward_1{
-     width: 80px;
-    height: 80px;
+     width: 315rpx;
+    height: 148rpx;
     /*border-radius: 100%;*/
     background-size: container;
     /*background: url(../../images/reward_1.png)*/
 }
 
 .reward_5{
-    width: 80px;
-    height: 80px;
+    width: 315rpx;
+    height: 148rpx;
     /*border-radius: 100%;*/
     background-size: container;
     /*background: url(../../images/reward_5.png)*/
 }
 
 .reward_10{
-     width: 80px;
-    height: 80px;
+     width: 315rpx;
+    height: 148rpx;
     /*border-radius: 100%;*/
     background-size: container;
     /*background: url(../../images/reward_10.png)*/
 }
 .reward_1_img{
-     width: 80px;
-    height: 80px;
+     width: 315rpx;
+    height: 148rpx;
 }
 
 .reward_5_img{
@@ -90,7 +90,8 @@
 .reward_number_other_container{
     margin-top: 50px;
     display: flex;
-    justify-content: center;
+    /*justify-content: center;*/
+    justify-content: space-around;
 }
 
 .reward_number_other{

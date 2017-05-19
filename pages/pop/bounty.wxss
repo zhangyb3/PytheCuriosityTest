@@ -15,11 +15,11 @@
     position: fixed;
     flex-direction: column;
     align-items: center;
-    background-color: #fff;
-    top: 90rpx;
+    background-color: #f3f1e4;
+    top: 290rpx;
     left: 20rpx;
     right: 20rpx;
-    height: 930rpx;
+    height: 540rpx;
     z-index: 10;
     border-radius: 10rpx;
 }
@@ -27,7 +27,7 @@
 .reward_page_motto_container{
     display: flex;
     justify-content: center;
-    margin-top: 148rpx;
+    margin-top: 89rpx;
 }
 
 .reward_page_motto{
@@ -62,8 +62,8 @@
 }
 
 .reward_1{
-     width: 130rpx;
-    height: 130rpx;
+     width: 176rpx;
+    height: 83rpx;
     /*border-radius: 100%;*/
     background-size: container;
     margin-left: 60rpx;
@@ -71,34 +71,34 @@
 }
 
 .reward_5{
-    width: 130rpx;
-    height: 130rpx;
+    width: 176rpx;
+    height: 83rpx;
     /*border-radius: 100%;*/
     background-size: container;
     /*background: url(../../images/reward_5.png)*/
 }
 
 .reward_10{
-     width: 130rpx;
-    height: 130rpx;
+     width: 176rpx;
+    height: 83rpx;
     /*border-radius: 100%;*/
     background-size: container;
     margin-right: 60rpx;
     /*background: url(../../images/reward_10.png)*/
 }
 .reward_1_img{
-     width: 130rpx;
-    height: 130rpx;
+     width: 176rpx;
+    height: 83rpx;
 }
 
 .reward_5_img{
-     width: 130rpx;
-    height: 130rpx;
+     width: 176rpx;
+    height: 83rpx;
 }
 
 .reward_10_img{
-     width: 130rpx;
-    height: 130rpx;
+    width: 176rpx;
+    height: 83rpx;
 }
 
 .reward_number_other_container{

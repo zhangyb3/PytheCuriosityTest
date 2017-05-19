@@ -19,31 +19,27 @@
     <view class="reward_number_container">
 
     <view class="reward_1" bindtap="selectReward1">
-            <image class="reward_1_img" wx:if="{{rewardTap1}}" src="../../images/question_icon_one_sel@2x.png"></image>
-            <image class="reward_1_img" wx:if="{{!rewardTap1}}" src="../../images/question_icon_one_nor@2x.png"></image>
+            <image class="reward_1_img" wx:if="{{rewardTap1}}" src="../../images/index_icon_dashang1_sel@2x.png"></image>
+            <image class="reward_1_img" wx:if="{{!rewardTap1}}" src="../../images/index_icon_dashang1_nor@2x.png"></image>
         </view>
         <view class="reward_5" bindtap="selectReward5">
-            <image class="reward_1_img" wx:if="{{rewardTap5}}" src="../../images/question_icon_five_sel@2x.png"></image>
-            <image class="reward_1_img" wx:if="{{!rewardTap5}}" src="../../images/question_icon_five_nor@2x.png"></image>
-
+            <image class="reward_1_img" wx:if="{{rewardTap5}}" src="../../images/index_icon_dashang5_sel@2x.png"></image>
+            <image class="reward_1_img" wx:if="{{!rewardTap5}}" src="../../images/index_icon_dashang5_nor@2x.png"></image>
         </view>
-        <view class="reward_10" bindtap="selectReward10">
-            <image class="reward_1_img" wx:if="{{rewardTap10}}" src="../../images/question_icon_ten_sel@2x.png"></image>
-            <image class="reward_1_img" wx:if="{{!rewardTap10}}" src="../../images/question_icon_ten_nor@2x.png"></image>
-        </view>
-        <!--<view class="reward_1" bindtap="selectReward1">
-            <image class="reward_1_img" src="../../images/question_icon_one_nor@2x.png"></image>
-        </view>
-        <view class="reward_5" bindtap="selectReward5">
-            <image class="reward_5_img" src="../../images/question_icon_five_nor@2x.png"></image>
-        </view>
-        <view class="reward_10" bindtap="selectReward10">
-            <image class="reward_1_img" src="../../images/question_icon_ten_nor@2x.png"></image>
-        </view>-->
     </view>
 
     <view class="reward_number_other_container" >
-        <button class="reward_number_other" bindtap="selectOtherRewardNum">其它金额</button>
+
+ <view class="reward_10" bindtap="selectReward10">
+            <image class="reward_1_img" wx:if="{{rewardTap10}}" src="../../images/index_icon_dashang10_sel@2x.png"></image>
+            <image class="reward_1_img" wx:if="{{!rewardTap10}}" src="../../images/index_icon_dashang10_nor@2x.png"></image>
+        </view>
+
+<view class="reward_other" bindtap="selectOtherRewardNum">
+            <image class="reward_1_img"  src="../../images/index_icon_dashang_other_nor@2x.png"></image>
+        </view>
+
+        <!--<button class="reward_number_other" bindtap="selectOtherRewardNum">其它金额</button>-->
         <!--<input class="otherRewardInput" type="digit" placeholder="其他金额" bindinput="otherRewardNumInput" auto-focus/>-->
     </view>
 
