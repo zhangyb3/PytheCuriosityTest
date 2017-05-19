@@ -128,10 +128,6 @@ answer_tab_white{
     margin-right: 20rpx;
 }
 
-.preview_img_classic{
-    width: 30px;
-    height: 30px;
 
-}
 
 

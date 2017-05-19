@@ -40,6 +40,12 @@
 
 }
 
+.preview_img_classic{
+    width: 100%;
+    height: 100%;
+
+}
+
 @import "../common/personal_answer_section_selector.wxss";
 @import "../listView/personal_answer_list.wxss";
 @import "../listView/personal_not_answer_list.wxss";
