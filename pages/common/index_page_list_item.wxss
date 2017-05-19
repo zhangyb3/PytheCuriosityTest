@@ -299,8 +299,8 @@
     height:5px;
 }
 .interval_inder{
-    height:20rpx;
-    background-color: #f3f1e4;
+    height:0rpx;
+    background-color: white;
 }
 
 /*.preview_img{

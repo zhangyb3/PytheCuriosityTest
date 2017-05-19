@@ -19,8 +19,8 @@
 }
 
 .reward_page_motto{
-    color: #999999;
-    font-size: 36rpx;
+    color: #3aa4f1;
+    font-size: 40rpx;
     
 }
 
@@ -78,13 +78,13 @@
 }
 
 .reward_5_img{
-     width: 80px;
-    height: 80px;
+    width: 315rpx;
+    height: 148rpx;
 }
 
 .reward_10_img{
-     width: 80px;
-    height: 80px;
+     width: 315rpx;
+    height: 148rpx;
 }
 
 .reward_number_other_container{
