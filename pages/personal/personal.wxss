@@ -83,7 +83,7 @@
 
 .person_discribe_box{
     margin-top: 10rpx;
-    height: 110rpx;
+    height: 80rpx;
 }
 .person_discribe{
     /*display: flex;*/

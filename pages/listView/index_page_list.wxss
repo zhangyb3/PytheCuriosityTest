@@ -7,7 +7,7 @@ top: 100rpx;
 left: 0rpx;
 right: 0rpx;
 bottom: 0rpx;
-background-color: #FFFFFF;
+background-color:#f3f1e4;
 /*background-color: yellow;*/
 /*border-radius: 40rpx;*/
 }
@@ -17,6 +17,7 @@ background-color: #FFFFFF;
     position: relative;
     margin-top: 100rpx;
     width: 100%;
+    background-color:#f3f1e4;
     /*width: 750rpx;*/
     /*height: 500px;*/
     /*height: auto;*/
@@ -43,12 +44,14 @@ background-color: #FFFFFF;
     width: 750rpx;
     margin-left: 0rpx;
     margin-right: 0rpx;
-    background-color: #FFFFFF;
+    /*background-color: #FFFFFF;*/
+    background-color: #f3f1e4;
+    border-bottom: 1rpx solid white;
 }
 
 .border_tab_index_white{
     height: 30rpx;
-    background-color: white;
+    background-color: #f3f1e4;
 }
 
 
