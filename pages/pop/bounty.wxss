@@ -127,7 +127,7 @@
     width: 75%;
     line-height: 92rpx;
     font-size: 36rpx;
-    background-color: #3AA4F1;
+    background-color: #d2cea9;
     -webkit-text-fill-color: #ffffff;
 }
 

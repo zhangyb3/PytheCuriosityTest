@@ -96,7 +96,11 @@ Page({
   
 
   
-  
+  selectOtherRewardNum:function(e){
+    this.setData({
+      hide_other_reward_page : false,
+    })
+  },
   otherRewardNumInput:function(e){
     console.log(e.detail.value);
     var rewardNum = e.detail.value;
