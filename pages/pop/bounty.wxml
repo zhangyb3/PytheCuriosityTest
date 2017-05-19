@@ -5,10 +5,10 @@
 <view class="reward_page_container">
 
     <view class="reward_page_motto_container">
-        <text class="reward_page_motto">润物细无声</text>
+        <text class="reward_page_motto">请选择悬赏金额</text>
     </view>
 <view class="reward_motto_image_contain">
-    <image class="reward_motto_image" src="../../images/question_icon_zhifu@2x.png"></image>
+    <!--<image class="reward_motto_image" src="../../images/question_icon_zhifu@2x.png"></image>-->
 </view>
 
     <view class="reward_number_container">

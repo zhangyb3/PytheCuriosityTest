@@ -56,7 +56,7 @@
     border-style: solid;
     border-width: 1rpx;
     /*border-radius: 8rpx;*/
-    border-color: #eee;
+    border-color: #d2cea9;
     
     font-size: 32rpx;
 
@@ -71,7 +71,7 @@
     /*margin:0 auto;*/
     width:300rpx;
     line-height: 90rpx;
-    background-color: #3AA4F1;
+    background-color: #d2cea9;
     font-size: 34rpx;
     color: #fff;
 }
