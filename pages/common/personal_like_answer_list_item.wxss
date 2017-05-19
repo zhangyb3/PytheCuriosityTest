@@ -241,8 +241,3 @@ margin-top: 20rpx;
     margin-right: 20rpx;
 }
 
-.preview_img_classic{
-    width: 156rpx;
-    height: 156rpx;
-
-}
