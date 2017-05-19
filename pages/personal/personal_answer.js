@@ -16,7 +16,7 @@ Page({
         value:"already answer",
         active:true
     },{
-        name:"未教",
+        name:"待教",
         value:"not answer",
         active:false
     }],
