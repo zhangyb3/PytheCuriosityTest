@@ -7,17 +7,6 @@
 <view class="show_image_page_container" hidden='{{hide_show_image_page}}'>
         <template is="show_image_page" data="{{img_src}}"></template>
 </view>
-
-<view class="personal_ask_container">
   
    
-
-    <view class="personal_ask_list_container" >
       <template is="personal_ask_list" data="{{personal_ask_list,preview_img_url}}"></template>
-    </view>
-
-    
-
-    
-
-</view>

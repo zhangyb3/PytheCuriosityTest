@@ -728,7 +728,7 @@ Page({
       rewardTap5: false,
       rewardTap10: false
     })
-    wx.setStorageSync('rewardNum', 1);
+    wx.setStorageSync('rewardNum', 0.01);
     
     
     

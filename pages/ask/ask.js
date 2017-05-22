@@ -93,11 +93,7 @@ Page({
         subject_name: '政治',
         sub_dis: '生产关系、代议制、所有制',
         icon:'../../images/question1_icon_political@2x.png',
-      },
-      
-      
-     
-      
+      },  
     ],
 
      ask_teacher_list:[

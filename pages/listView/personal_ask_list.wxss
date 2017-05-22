@@ -2,11 +2,12 @@
 
 .scroll_list{
     margin-top: 0px;
+    /*height: 100px;*/
     
 }
 
 .interva_tabb{
-    margin-top: 10px;
+    margin-top: 1px;
     background-color: #fff;
 }
     
