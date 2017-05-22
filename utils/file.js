@@ -51,8 +51,8 @@ function uploadFile(filePath, parameters)
         console.log(res);
         // wx.hideLoading();
       },
-      fail: function() {
-        // console.log(res);
+      fail: function(res) {
+        console.log(res);
         // wx.hideLoading();
         wx.showModal({
           title: '上传失败',
@@ -64,8 +64,8 @@ function uploadFile(filePath, parameters)
           }
         });
       },
-      complete: function() {
-        // console.log(res);
+      complete: function(res) {
+        console.log(res);
         // wx.hideLoading();
 
       }
