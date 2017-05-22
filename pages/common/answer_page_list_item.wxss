@@ -22,6 +22,7 @@
     margin-left: 30rpx;
     margin-right: 30rpx;
     height: auto;
+    /*background-color: yellow;*/
 }
 
 .question_wrapper{
@@ -249,7 +250,7 @@
     height: 35rpx;
     line-height: 35rpx;
     font-size: 26rpx;
-    margin-top: 16rpx;
+    margin-top: -4rpx;
     color: #999999;
 }
 
@@ -261,6 +262,7 @@
     /*margin-right: 20rpx;*/
     height: 40rpx;
     background-color: #ffffff;
+   
 }
 
 .item_bottom_wrap{
@@ -269,8 +271,9 @@
     justify-content: space-between;
     /*margin-left: 30rpx;
     margin-right: 20rpx;*/
-    height: 40rpx;
-    background-color: #ffffff;
+    height: 30rpx;
+    background-color: #f3f1e4;
+     /*bottom: 10rpx;*/
 }
 
 .price_wrap{
@@ -279,7 +282,7 @@
 height: 35rpx;
 width: auto;
 /*padding-bottom: 6rpx;*/
-margin-top: 10rpx;
+margin-top: -10rpx;
 }
 
 .price_image{
@@ -300,12 +303,12 @@ margin-top: 6rpx;
 
 .border_tab{
     height:5px;
-    background-color: white;
+    background-color: #f3f1e4;
 }
 
 .border_tab_white{
-    height: 20rpx;
+    height: 1px;
     width: 100%;
-    background-color: #f5f5f5;
+    background-color: #fff;
 }
 

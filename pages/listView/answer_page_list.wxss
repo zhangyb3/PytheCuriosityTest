@@ -9,9 +9,13 @@
 
 .interval{
     margin-top: 20rpx;
-    background-color: #F5F5F5;
+    background-color: #fff;
 }
-    
+
+.answer_page_filter_container{
+  background-color: #f3f1e4;
+}
+
 .answer_page_list_container{
     background-color: #f3f1e4;
     /*height: auto;*/

@@ -10,9 +10,9 @@
     
 }
 
-/*.interval{
-    margin-top: 10px;
-}*/
+.interval{
+    height: 1px;
+}
     
 
 .personal_answer_container{

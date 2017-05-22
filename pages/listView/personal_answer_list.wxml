@@ -6,10 +6,11 @@
 
   <scroll-view  class="scroll_list"  upper-threshold="0px" lower-threshold="0px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
       <block wx:for="{{personal_answer_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
-        <view class="interval"></view>
+        
         <view class="personal_answer_container" >
           <template is="personal_answer_list_item" data="{{item,index,preview_img_url}}"></template>
         </view>
+        <view class="interval"></view>
       </block>
 
 
