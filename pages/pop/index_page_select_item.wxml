@@ -135,7 +135,7 @@
                         </text>-->
 
                         <!--<view class="reward_answer" data-selected='{{answer}}'   bindtap='rewardAnswer'><image class="reward_icon_img" src="../../images/index_icon_money@2x.png"></image></view>-->
-                        <view class="reward_answer" data-selected='{{answer}}'   bindtap='rewardAnswer'>鼓励一下</view>
+                        <view class="reward_answer" data-selected='{{answer}}'  data-question='{{question}}' bindtap='rewardAnswer'>鼓励一下</view>
 
 
                     </view>

@@ -32,6 +32,7 @@ Page({
     console.log(parameters);
     this.data.payFee = parameters.payFee;
     this.data.payAnswerId = parameters.answerId;
+    this.data.payQuestionId = parameters.questionId;
 
     var that = this;
     this.setData({
@@ -121,8 +122,10 @@ Page({
           wx.request({
             url: config.PytheRestfulServerURL + '/rewardnum',
             data: {
+              questionId: this.data.payQuestionId,
               answerId: this.data.payAnswerId,
               f: wx.getStorageSync('rewardNum'),
+              openId: wx.getStorageSync('OpenID'),
             },
             method: 'GET', 
             success: function(res){

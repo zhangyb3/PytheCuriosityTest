@@ -231,8 +231,10 @@ Page({
   //打赏答案
   rewardAnswer:function(e){
     var selected = e.currentTarget.dataset.selected;
+    var question = e.currentTarget.dataset.question;
     console.log(selected);
     var parametersJSON ={
+      questionId: question.questionid,
       answerId: selected.answerid,
       payFee: true,
     };
