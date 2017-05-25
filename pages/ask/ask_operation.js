@@ -6,6 +6,7 @@ var base = require("../../utils/base.js");
 var pay = require("../../utils/pay.js");
 var user = require("../../utils/user.js");
 var config = require("../../utils/config.js");
+var netUtil=require("../../utils/netUtil.js");
 
 Page({
   data:{
@@ -684,19 +685,49 @@ Page({
 
   showPhoto:function(e){
     console.log("显示图片" );
-    this.setData({
-      hide_textarea:true,
-      hide_show_image_page: false,
-      img_src: this.data.ask_question.photo_path,
+    
+
+    console.log("显示图片" + this.data.ask_question.photo_path);
+    
+    var parametersJSON = {
+      image_source : this.data.ask_question.photo_path,
+    };
+    var parameters = netUtil.json2Form(parametersJSON);
+    wx.navigateTo({
+      url: '../section/image_frame'+'?'+ parameters,
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
     });
     
   },
   showDraw:function(e){
     console.log("显示手绘" );
-    this.setData({
-      hide_textarea:true,
-      hide_show_image_page: false,
-      img_src: this.data.ask_question.draw_path,
+
+
+    console.log("显示图片" + this.data.ask_question.draw_path);
+    
+    var parametersJSON = {
+      image_source : this.data.ask_question.draw_path,
+    };
+    var parameters = netUtil.json2Form(parametersJSON);
+    wx.navigateTo({
+      url: '../section/image_frame'+'?'+ parameters,
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
     });
     
   },
@@ -728,7 +759,7 @@ Page({
       rewardTap5: false,
       rewardTap10: false
     })
-    wx.setStorageSync('rewardNum', 0.01);
+    wx.setStorageSync('rewardNum', 1);
     
     
     

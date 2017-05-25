@@ -38,7 +38,7 @@
 
 
         <view class="multi_tips">
-        <view wx:if="{{select_item.answercontent.audio[0] != null}}" class="speak_style_record" bindtap="playVoiceRecord">
+        <view wx:if="{{select_item.answercontent.audio[0] != null}}" class="speak_style_record" data-voice="{{select_item.answercontent.audio[0]}}" bindtap="playVoiceRecord">
         <image wx:if="{{!isPlaying}}" class="sound_style_record" src="../../images/voice_static.png" ></image>
         <image wx:if="{{isPlaying}}" class="sound_style_record" src="../../images/record.gif" ></image>
         <text class="record_time">{{select_item.answercontent.audio[1]}}秒</text>
@@ -49,14 +49,14 @@
 
 
             <view wx:if="{{select_item.answercontent.img[0] != null}}" class="photo" >
-                <view  data-question_photo='{{select_item.answercontent.img[0]}}' bindtap="showPhoto">
+                <view  data-photo='{{select_item.answercontent.img[0]}}' bindtap="showPhoto">
                     <!--<view>照片</view>-->
-                    <image class="preview_img_classic" src="{{ask_question.photo_path}}"></image>
+                    <image class="preview_img_classic" src="{{preview_img_url + select_item.answercontent.img[0]}}"></image>
                 </view>
             </view>
 
             <view wx:if="{{select_item.answercontent.draw[0] != null}}" class="draw" >
-                <view  data-question_photo='{{select_item.answercontent.draw[0]}}' bindtap="showDraw">
+                <view  data-draw='{{select_item.answercontent.draw[0]}}' bindtap="showDraw">
                     <!--<view>手绘</view>-->
                     <image class="preview_img_classic" src="{{preview_img_url + select_item.answercontent.draw[0]}}"></image>
                 </view>

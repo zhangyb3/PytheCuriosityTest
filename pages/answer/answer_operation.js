@@ -795,22 +795,53 @@ Page({
   },
 
   showAnswerPhoto:function(e){
-    console.log("显示图片" );
+    
     this.data.question_answer.photo_path = e.currentTarget.dataset.answer_photo;
-    this.setData({
-      hide_textarea: true,
-      hide_show_image_page: false,
-      img_src: this.data.question_answer.photo_path,
+    
+    console.log("显示图片" + this.data.question_answer.photo_path);
+    
+    var parametersJSON = {
+      image_source : this.data.question_answer.photo_path,
+    };
+    var parameters = netUtil.json2Form(parametersJSON);
+    wx.navigateTo({
+      url: '../section/image_frame'+'?'+ parameters,
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
     });
 
   },
   showAnswerDraw:function(e){
     console.log("显示手绘" );
     this.data.question_answer.draw_path = e.currentTarget.dataset.answer_draw;
-    this.setData({
-      hide_show_image_page: false,
-      img_src: this.data.question_answer.draw_path,
+    
+
+    console.log("显示图片" + this.data.question_answer.draw_path);
+    
+    var parametersJSON = {
+      image_source : this.data.question_answer.draw_path,
+    };
+    var parameters = netUtil.json2Form(parametersJSON);
+    wx.navigateTo({
+      url: '../section/image_frame'+'?'+ parameters,
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
     });
+
   },
   returnLoadImagePage:function(e){
     this.setData({
