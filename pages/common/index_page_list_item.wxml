@@ -21,7 +21,11 @@
             <view class="border_tab_index_white"></view>
             <view class="index_page_select_item_content_wrap">
             <view class="preview_img_wrap">
-            <image class="preview_img" src="{{preview_img_url+item.questioncontent.img[0]}}">
+            <!--<image c`-->
+            <image class="preview_img" wx:if="{{item.questioncontent.img[0] != null}}" src="{{preview_img_url + item.questioncontent.img[0]}}">
+            </image>
+
+            <image class="preview_img" wx:if="{{item.questioncontent.img[0] == null}}" src="../../images/index_zhanwei@2x.png">
             </image>
             </view>
             <!--<image class="preview_img" src="{{preview_img_url+item.questioncontent.img[0]}}">
