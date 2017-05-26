@@ -303,6 +303,10 @@
     background-color: white;
 }
 
+.border_tab_index_white1{
+  height: 20rpx;
+}
+
 /*.preview_img{
     height: 300rpx;
     width: 30px;

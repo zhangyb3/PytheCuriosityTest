@@ -3,7 +3,7 @@
 <view class="list-item" style="background-color:#f3f1e4" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneItem">
 
             <!--<view class="border_tab"/>-->
-            <!--<view class="border_tab_index_white"></view>-->
+            <view class="border_tab_index_white1"></view>
 
  <view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
 
@@ -18,7 +18,7 @@
                  </view>
 </view>
             <view class="index_dotted_line"></view>
-            <!--<view class="border_tab_index_white"></view>-->
+            <view class="border_tab_index_white1"></view>
             <view class="index_page_select_item_content_wrap">
             <view class="preview_img_wrap">
             <!--<image c`-->
