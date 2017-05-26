@@ -69,7 +69,7 @@
 .personal_nick_name{
     display: flex;
     height: auto;
-    font-size: 34rpx;
+    font-size: 40rpx;
     color: #666666;
 }
 
@@ -90,7 +90,7 @@
     position: fixed;
     left: 170rpx;
     right: 80rpx;
-    font-size: 30rpx;
+    font-size: 36rpx;
     color: #999999;
     
     text-overflow: -o-ellipsis-lastline;
@@ -125,7 +125,7 @@
     color: #FF9635;
     background-size:20px 20px;
     line-height:20px;
-    font-size: 28rpx;
+    font-size: 32rpx;
 }
 
 .personal_description_revise_zone{
@@ -231,7 +231,7 @@
 .personal_operation_item_text{
     width: 90%;
     line-height: 94rpx;
-    font-size: 32rpx;
+    font-size: 40rpx;
     margin-left: 16rpx;
     padding-top: 6rpx;
     color: #333333;

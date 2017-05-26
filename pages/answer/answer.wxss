@@ -33,7 +33,7 @@
   background: none;
   background-color: #96d6ea;
   color: #fff;
-  font-size: 30rpx;
+  font-size: 40rpx;
 }
 
 @import "../common/answer_page_filter_sort.wxss";

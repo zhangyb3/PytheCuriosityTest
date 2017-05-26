@@ -46,7 +46,7 @@
 
 .answer_question_content{
     display: flex;
-    font-size: 32rpx;
+    font-size: 36rpx;
     color: #333333;
    text-overflow: -o-ellipsis-lastline;
     overflow: hidden;
@@ -93,6 +93,7 @@ answer_tab_white{
 .answer_money_number{
     height:100%;
     display:flex;
+    font-size: 32rpx;
     /*margin-left: 20rpx;*/
 
 }
@@ -119,7 +120,7 @@ answer_tab_white{
 
 .collect_number_text{
     margin-left: 10rpx;
-    font-size: 26rpx;
+    font-size: 32rpx;
     color: #999999;
 }
 

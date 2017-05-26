@@ -41,13 +41,13 @@
     
     justify-content: center;
     align-items: center;
-    font-size: 34rpx;
+    font-size: 40rpx;
 }
 
 .bar_item.active{
     color: #3AA4F1;
     background-color: #d2cea9;
-    font-size: 34rpx;
+    font-size: 40rpx;
 }
 
 .bottom_line{

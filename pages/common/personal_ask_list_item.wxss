@@ -60,7 +60,7 @@
     display: flex;
     margin-left: 30rpx;
     margin-right: 0rpx;
-    font-size: 32rpx;
+    font-size: 36rpx;
     color: #333333;
     text-overflow: -o-ellipsis-lastline;
     overflow: hidden;

@@ -62,8 +62,8 @@
     display: flex;
     /*margin-left: 30rpx;*/
     margin-right: 0rpx;
-    line-height: 32rpx;
-    font-size: 32rpx;
+    line-height: 36rpx;
+    font-size: 36rpx;
     color: #333333;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -75,7 +75,7 @@
 
 .index_dotted_line{
     
-    border-bottom: 1px dashed #A9A9A9; 
+    /*border-bottom: 1px dashed #A9A9A9; */
 }
 
 .answer_container {
@@ -172,7 +172,7 @@
     /*margin-right: 0px;*/
     /*margin-top: 0px;*/
     /*margin-left: 40rpx;*/
-    font-size: 32rpx;
+    font-size: 38rpx;
     text-align: right;
     left: 40rpx;
     color: #3AA4F1;

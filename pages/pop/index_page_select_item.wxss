@@ -72,7 +72,7 @@
     margin-right: 20rpx;
     /*margin-top: 50rpx;*/
     text-align: left;
-    font-size: 30rpx;
+    font-size: 36rpx;
     color: #333333;
     
 }
@@ -109,7 +109,7 @@
     min-height: 80rpx;
     /*line-height: 30rpx;*/
     color: #333333;
-    font-size: 30rpx;
+    font-size: 36rpx;
     line-height: 46rpx;
     /*background: black;*/
     background-color: #f3f1e4;
@@ -155,7 +155,7 @@
     position: relative;
     width: auto;
     color: #999999;
-    line-height: 30rpx;
+    line-height: 36rpx;
     margin-left: 15rpx;
     font-size: 26rpx;
     margin-bottom: 0;
@@ -299,7 +299,7 @@
     
     line-height: 50rpx;
     color: #3aa4f1;
-    font-size: 30rpx;
+    font-size: 32rpx;
     border-radius: 14rpx;
     border: 1rpx solid #3aa4f1;
     text-align: center;
