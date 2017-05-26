@@ -1,6 +1,6 @@
 <template name="personal_not_answer_list_item">
 
-<view class="list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneNotAnswer">
+<view class="list-item" style="background-color:#f3f1e4" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneNotAnswer">
 
             <!--<view class="border_tab"/>-->
 
