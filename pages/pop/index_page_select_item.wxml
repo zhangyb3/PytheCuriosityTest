@@ -12,8 +12,8 @@
     <view class="select_item_zone" >
 
     <view class="info_zone">  
-        <view class="cancel_wrap">
-        <image class="cacel_img" bindtap="returnIndexPage" src="../../images/index_icon_close@2x.png"></image>
+        <view class="cancel_wrap" bindtap="returnIndexPage" >
+        <image class="cacel_img" src="../../images/index_icon_close@2x.png"></image>
         </view>
 
         <view class="select_question_wrapper">
