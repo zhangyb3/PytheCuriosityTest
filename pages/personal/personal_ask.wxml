@@ -8,5 +8,5 @@
         <template is="show_image_page" data="{{img_src}}"></template>
 </view>
   
-   
+ 
       <template is="personal_ask_list" data="{{personal_ask_list,preview_img_url}}"></template>

@@ -18,6 +18,8 @@ Page({
   onLoad:function(options){
     
     this.data.user.username = wx.getStorageSync('userNickName');
+
+    
   },
 
   getNicknameText:function(e){

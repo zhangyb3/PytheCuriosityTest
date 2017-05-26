@@ -26,7 +26,7 @@
 
             <!--名师尾部部分-->
                 <!--<button class="search_button"    bindtap='filterSubject'></button>-->
-                <button class="teacher_ask_section" data-teacher="{{item}}" bindtap="selectOneTeacher">
+                <button class="teacher_ask_section" data-teacher="{{item}}" >
                 <text>请教</text>  
                 </button> 
                 <!--<image src="../../images/question_icon_lianxi@2x.png">

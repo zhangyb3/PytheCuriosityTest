@@ -172,6 +172,27 @@ background-color: deepskyblue;
     width: 100rpx;
 }
 
+.my_selection_mark{
+    position: fixed;
+    z-index: 2;
+    bottom:35rpx;
+    right: 20rpx;
+  
+}
+
+.selection_mark{
+    width: 85px;
+    height: 37px;
+}
+
+.personal_question_answer_select_item_container{
+    position: fixed;
+    z-index: 3;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
 
 @import "../listView/personal_question_answer_list.wxss";
 @import "../pop/personal_question_answer_select_item.wxss";

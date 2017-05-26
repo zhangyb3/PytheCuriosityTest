@@ -6,6 +6,10 @@
         <template is="show_image_page" data="{{img_src}}"></template>
 </view>
 
+ <view class="my_selection_mark" wx:if="{{personal_question_answer_list[0].usersSelected != null}}">
+    <image class="selection_mark" src="../../images/yida_icon_yihuida@2x.png"></image>
+</view> 
+
 <view class="personal_ask_detail_page">
 
     <view class="personal_question_zone">
@@ -53,12 +57,7 @@
      <view class="border_tab"/>
     </view>
 
-    <view class="no_answe_wrap" wx:if="{{personal_question_answer_list[0].usersSelected != null}}">
-    <!--<view class="no_answer_wrap">-->
-    <text class="no_answer_wrap_content">
-    已选择最佳答案
-    </text>
-    </view>
+    
 
     <!--<view class="ask_answer_interval"></view>-->
 
