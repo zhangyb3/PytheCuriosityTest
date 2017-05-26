@@ -77,7 +77,7 @@
     color: #333333;
     text-align: left;
     margin-right: 30rpx;
-    margin-top: 36rpx;
+    margin-top: 40rpx;
     border-radius: 10rpx;
     background-color: #fff;
 }

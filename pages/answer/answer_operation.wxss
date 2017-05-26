@@ -115,7 +115,7 @@ background-color: deepskyblue;
     border-color: lightgrey;*/
     height: 150px;
     line-height: 30rpx;
-    font-size: 30rpx;
+    font-size: 40rpx;
     overflow-x: auto; 
     overflow-y: visible;
     color: #333333;

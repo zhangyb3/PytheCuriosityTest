@@ -64,7 +64,7 @@
     /*border-style: solid;
     border-color: lightgrey;*/
     height: 150px;
-    font-size: 30rpx;
+    font-size: 40rpx;
     overflow-x: auto; 
     /*overflow-y: visible;*/
     color: #333333;
