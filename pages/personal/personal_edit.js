@@ -19,7 +19,7 @@ Page({
     
     this.data.user.username = wx.getStorageSync('userNickName');
 
-    
+
   },
 
   getNicknameText:function(e){
@@ -97,6 +97,10 @@ Page({
   },
   onShow:function(){
     // 页面显示
+    this.setData({
+      nickname: wx.getStorageSync('userNickName'),
+      userdesc: wx.getStorageSync('UserDescription'),
+    });
   },
   onHide:function(){
     // 页面隐藏
