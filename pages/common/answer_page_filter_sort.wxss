@@ -25,13 +25,13 @@
     /*border-bottom: 1rpx solid #D9D9D9;*/
     justify-content: center;
     align-items: center;
-    font-size: 34rpx;
+    font-size: 40rpx;
 }
 
 
 .bar_item.active{
     color: #3AA4F1;
-    font-size: 34rpx;
+    font-size: 40rpx;
     line-height: 100rpx;
     background-color: #d2cea9;
 }

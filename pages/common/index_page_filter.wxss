@@ -29,8 +29,8 @@
 .subject_name{
     display: flex;
     color: #3aa4f1;
-    font-size: 32rpx;
-    width: 70rpx;
+    font-size: 40rpx;
+    width: 80rpx;
     /*margin-top: 8rpx;*/
 }
 

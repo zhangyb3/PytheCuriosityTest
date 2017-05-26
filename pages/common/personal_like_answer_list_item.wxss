@@ -36,7 +36,7 @@ background-color: #f3f1e4;
 .answer_like_question_content {
 
    display: flex;
-    font-size: 32rpx;
+    font-size: 36rpx;
     color: #333333;
     text-overflow: -o-ellipsis-lastline;
     overflow: hidden;

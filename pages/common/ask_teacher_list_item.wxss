@@ -56,7 +56,7 @@
     margin-top: 30rpx;
     color: #0F0F0F;
     height: auto;
-    font-size: 32rpx;  
+    font-size: 36rpx;  
     /*font-weight:bold; */
 }
 
@@ -68,7 +68,7 @@
 
 .teacher_brief{
     display: flex;
-    font-size: 30rpx;
+    font-size: 32rpx;
     /*margin-top: 10rpx;*/
     /*line-height: 26rpx;*/
     /*line-height: 25rpx;*/

@@ -52,7 +52,7 @@
     /*background-color: white;*/
     /*background-size: 18px 18px;
     background-position: center left 10px;*/
-    font-size: 30rpx;
+    font-size: 32rpx;
 
 }
 
@@ -69,7 +69,7 @@
     flex-direction: row;
     border: 1px solid #CCCCCC;
     height: 150px;
-    font-size: 30rpx;
+    font-size: 32rpx;
     /*overflow-x: auto; 
     overflow-y: visible;*/
     width: 90%;
@@ -94,7 +94,7 @@
     line-height: 92rpx;
     margin-top: 50px;
     -webkit-text-fill-color: #ffffff;
-    font-size: 36rpx;
+    font-size: 40rpx;
     background-color: #d2cea9;
 }
 
@@ -104,7 +104,7 @@
 }
 .title{
     color: #333333;
-    font-size: 30rpx;
-    width: 160rpx;
+    font-size: 36rpx;
+    width: 180rpx;
     text-align: left;
 }
