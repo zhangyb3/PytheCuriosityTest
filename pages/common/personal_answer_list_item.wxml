@@ -1,6 +1,6 @@
 <template name="personal_answer_list_item">
 
-<view class="answer_list-item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneItem">
+<view class="answer_list-item" style="background-color:#f3f1e4" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneItem">
 
             <view class="answer_tab_white"/>
 

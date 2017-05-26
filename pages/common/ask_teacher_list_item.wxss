@@ -43,7 +43,7 @@
 .teacher_middle_wrapper{
     margin-left: 170rpx;
     right: 140rpx;
-    width: 55%;
+    width: 400rpx;
     height: 220rpx;
     display: flex;
     
@@ -63,6 +63,7 @@
 .teacher_brief_wrap{
     margin-top: 10rpx;
     height: 70rpx;
+    width: 400rpx;
 }
 
 .teacher_brief{

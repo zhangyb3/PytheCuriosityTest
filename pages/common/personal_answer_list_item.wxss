@@ -2,7 +2,7 @@
 .answer_list-item{
     width:100%;
     border-top: 1px solid #EEE;
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid #fff;
     height:auto;
     display: flex;
     flex-direction: column;

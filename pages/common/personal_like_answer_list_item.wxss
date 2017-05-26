@@ -2,7 +2,7 @@
 .list_item{
 
     border-top: 1px solid #EEE;
-    border-bottom: 1px solid #EEE;
+    border-bottom: 1px solid #fff;
     
     margin-top: 2px;
     margin-bottom: 2px;
@@ -19,7 +19,7 @@ display: flex;
 flex-direction: row;
 height: 200rpx;
 width: 100%;
-background-color: #fff;
+background-color: #f3f1e4;
 }
 
 .answer_like_question_wrap{
@@ -29,7 +29,7 @@ background-color: #fff;
     /*width: 80%;*/
     height: 156rpx;
     margin-top: 20rpx;
-    background-color: #fff
+    background-color: #f3f1e4;
 
 }
 
@@ -65,8 +65,8 @@ margin-top: 20rpx;
 
 .person_like_seprate_line{
     width: 100%;
-    height: 20rpx;
-    background-color: #f3f1e4;
+    height: 1rpx;
+    background-color: #fff;
 }
 
 .answer_container {
