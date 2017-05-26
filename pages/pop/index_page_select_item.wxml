@@ -70,7 +70,7 @@
                 <view class="select_answer_container" >
                 <view class="border_tab_index_background"></view>
                     <view class="select_answer_wrapper" >
-                        <image  src='{{ answer.userimg || "../../images/my_account_on.png" }}' />
+                        <image  src='{{ answer.userimg || null }}' />
                         <text class="select_item_teacher_name">{{ answer.username }}</text>
                         
                     </view>
