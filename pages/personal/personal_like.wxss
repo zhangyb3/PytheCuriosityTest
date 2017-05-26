@@ -29,8 +29,9 @@
 }
 
 .preview_img_classic{
-    /*width: 100%;*/
+    width: 146px;
     height: 100%;
+
 
 }
 

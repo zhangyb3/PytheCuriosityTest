@@ -201,7 +201,8 @@ color: #999999;
     text-align: center;
     justify-content: center;
     /*margin-top:10px;*/
-    margin-bottom: 20rpx;
+    /*margin-bottom: 20rpx;*/
+    background-color: #fff;
 }
 .subject_hint{
     width:auto;
@@ -366,7 +367,7 @@ background-color: deepskyblue;
 
 .ask_background_line{
     height: 30rpx;
-    background-color: #f3f1e4;
+    background-color: #fff;
 }
 
 .background{
