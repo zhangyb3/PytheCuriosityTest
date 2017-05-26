@@ -52,7 +52,7 @@ margin-top: 20rpx;
     margin-left: 30rpx;
     width: 156rpx;
     height: 156rpx;
-    border: 1px #999999 dashed;
+    /*border: 1px #999999 dashed;*/
 }
 
 

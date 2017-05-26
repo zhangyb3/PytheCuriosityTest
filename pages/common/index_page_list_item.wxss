@@ -28,7 +28,7 @@
     display: flex;
     width: 156rpx;
     height: 146rpx;
-    border: 1px #999999 dashed;
+    /*border: 1px #999999 dashed;*/
     /*overflow: hidden;*/
 
 }
