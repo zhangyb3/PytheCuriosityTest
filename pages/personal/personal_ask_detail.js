@@ -156,6 +156,7 @@ Page({
   },
   commitBestAnswer:function(e){
     this.data.bestAnswerParams.answerIds = this.data.bestAnswerParams.answerIds.substr(0,this.data.bestAnswerParams.answerIds.length-1);
+    this.data.bestAnswerParams.userId = wx.getStorageSync(user.UserID),
     base.selectBestAnswer(this.data.bestAnswerParams);
     
     wx.showToast({

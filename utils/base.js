@@ -186,6 +186,7 @@ function selectBestAnswer(parameters)
   wx.request({
     url: SELECT_BEST_ANSWER_URL,
     data: {
+      userId: parameters.userId,
       questionId: parameters.questionId,
       answerIds: parameters.answerIds,
     },

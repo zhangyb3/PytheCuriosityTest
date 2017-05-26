@@ -53,6 +53,13 @@
      <view class="border_tab"/>
     </view>
 
+    <view class="no_answe_wrap" wx:if="{{personal_question_answer_list[0].usersSelected != null}}">
+    <!--<view class="no_answer_wrap">-->
+    <text class="no_answer_wrap_content">
+    已选择最佳答案
+    </text>
+    </view>
+
     <!--<view class="ask_answer_interval"></view>-->
 
     <view class="personal_question_answer_zone">
@@ -66,6 +73,8 @@
     暂时没有答案...
     </text>
     </view> 
+
+    
 
 
     <view class="select_best_answer_commit">

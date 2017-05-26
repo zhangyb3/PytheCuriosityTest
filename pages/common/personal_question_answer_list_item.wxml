@@ -15,7 +15,7 @@
                     <image class="complain_image" wx:if="{{item.isClick == 1}}" src="../../images/button_simple_nor@3x.png"></image>
                 </view>
 
-<view class="personal_question_answer_selector" >
+<view class="personal_question_answer_selector" wx:if="{{item.usersSelected == null}}">
                 <view class="answer_selector_container" data-item='{{ item }}' data-index='{{index}}' bindtap="selectBestAnswer">
                     <image class="answer_selector_image" wx:if="{{item.selected != true}}" src="../../images/icon_choose_nor@2x.png"></image>
                     <image class="answer_selector_image" wx:if="{{item.selected == true}}" src="../../images/icon_choose_sel@2x.png"></image>
