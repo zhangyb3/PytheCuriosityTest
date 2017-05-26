@@ -23,7 +23,7 @@
     overflow-x: hidden; 
     /*overflow-y: auto;*/
     /*justify-content: space-between*/
-    height: 200rpx;
+    height: 220rpx;
     position: relative;
     z-index: 1;
     background-color: #f3f1e4;

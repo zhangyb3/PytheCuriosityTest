@@ -366,7 +366,7 @@ background-color: deepskyblue;
 
 .ask_background_line{
     height: 30rpx;
-    background-color: #fff;
+    background-color: #f3f1e4;
 }
 
 .background{
