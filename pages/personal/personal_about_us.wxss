@@ -27,13 +27,13 @@ position: fixed;
 }
 
 .aboutUs_title{
-    font-size: 34rpx;
+    font-size: 40rpx;
     color: #333333;
     font-weight: bold;
 }
 
 .aboutUs_content{
-    font-size: 34rpx;
+    font-size: 36rpx;
     color: #333333;
     margin-top: 45rpx;
 }
