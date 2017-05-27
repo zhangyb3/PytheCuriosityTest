@@ -52,11 +52,11 @@
 .subject_discribe{
     margin-left: 10rpx;
     color: #999999;
-    line-height: 36rpx;
+    line-height: 28rpx;
     /*margin-top: 3%;*/
     margin-right: 10rpx;
     width: 60%;
-    font-size: 36rpx;
+    font-size: 28rpx;
 
 }
 

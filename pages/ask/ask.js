@@ -61,7 +61,7 @@ Page({
       {
         subjectId:1007,
         subject_name: '化学',
-        sub_dis: '元素周期表、化学方程式、分子',
+        sub_dis: '元素周期表、化学方程式',
         icon:'../../images/question1_icon_chemical@2x.png',
       },
       {

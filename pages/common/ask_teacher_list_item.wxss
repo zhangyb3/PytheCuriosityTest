@@ -62,13 +62,14 @@
 
 .teacher_brief_wrap{
     margin-top: 10rpx;
-    height: 70rpx;
+    height: 60rpx;
     width: 400rpx;
 }
 
 .teacher_brief{
     display: flex;
     font-size: 32rpx;
+    line-height: 32rpx;
     /*margin-top: 10rpx;*/
     /*line-height: 26rpx;*/
     /*line-height: 25rpx;*/
@@ -80,7 +81,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
 }
 

@@ -28,7 +28,7 @@
             <view class="question_wrapper">
                 <view class="question_content_view">
                 
-                <text class="question_content">{{ item.question.questioncontent.text[0]}}</text>
+                <text class="question_content">{{ item.question.questioncontent.text[0]}}发货撒即可粉红色大家分开惊世毒妃拉风了萨芬接发的是垃圾分类;撒打飞机家乐福爱上了;大姐夫阿萨德了涉及到法律大解放了</text>
                 </view>
 
             <!--<view class="border_tab"/>-->

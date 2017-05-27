@@ -62,13 +62,15 @@
 
 .question_content{
     font-size: 36rpx;
+    line-height: 36rpx;
     color: #333333;
-    display: -webkit-box ;
+    padding-bottom: 10rpx;
+    /*display: -webkit-box ;*/
     text-overflow: -o-ellipsis-lastline;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 }
 
