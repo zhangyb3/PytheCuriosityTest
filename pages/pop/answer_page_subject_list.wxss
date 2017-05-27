@@ -58,6 +58,6 @@
 }
 
 .subject_item_text {
-    font-size: 32rpx;
+    font-size: 36rpx;
     color: #333333;
 }
