@@ -62,13 +62,13 @@
     display: flex;
     /*margin-left: 30rpx;*/
     margin-right: 0rpx;
-    line-height: 36rpx;
+    line-height: 38rpx;
     font-size: 36rpx;
     color: #333333;
     overflow: hidden;
     text-overflow: ellipsis;
     display: -webkit-box;
-    -webkit-line-clamp: 5;
+    -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
    
 }

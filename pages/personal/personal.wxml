@@ -18,7 +18,7 @@
             <text class="person_discribe">{{userDescription}}
             </text>
             </view>
-        <view class="personal_summary_wrap"><image  class="earn_num_img" src="../../images/personal_icon_org.money@2x.png"></image><text class="personal_summary">{{teacherEarn}}</text></view>
+        <view class="personal_summary_wrap"><view class="person_summary_box"><image  class="earn_num_img" src="../../images/personal_icon_org.money@2x.png"></image><text class="personal_summary">{{teacherEarn}}</text></view></view>
             <!--<text class="personal_summary" src="../../images/icon_money_1@2x.png">265</text>-->
         </view>
         
