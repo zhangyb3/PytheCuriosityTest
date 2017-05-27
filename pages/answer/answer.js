@@ -596,6 +596,10 @@ Page({
       pageNum: 1,
       teacherId: teacherId,
     };
+    wx.showLoading({
+      title: '加载中···',
+      mask: true,
+    });
     listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
     "/answer/defaultList",
     10,
@@ -605,12 +609,12 @@ Page({
           return netData.data;
         },
         function(item,that){
-          item.countdown.start(that);
+          // item.countdown.start(that);
         },
         {},
         'GET',
     );
-
+    // wx.hideLoading();
 
   },
   onHide:function(){

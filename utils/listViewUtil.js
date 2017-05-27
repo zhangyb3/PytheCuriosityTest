@@ -55,7 +55,7 @@ var actions = netUtil.action;
  */
 function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getListFromNetData,handldItemInfo,emptyMsg,requestMethod)
 {
-
+    
     console.log('load ' + list_type + " list ");
 
     page.data.currentPageIndex = 1;
@@ -227,6 +227,7 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     page.handldItemInfo = handldItemInfo;
     netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
 
+    
 }
 
 
