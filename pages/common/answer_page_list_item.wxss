@@ -64,7 +64,8 @@
     font-size: 36rpx;
     line-height: 36rpx;
     color: #333333;
-    padding-bottom: 10rpx;
+    height: 108rpx;
+    /*padding-bottom: 10rpx;*/
     /*display: -webkit-box ;*/
     text-overflow: -o-ellipsis-lastline;
     overflow: hidden;

@@ -46,7 +46,7 @@ background-color:#f3f1e4;
     margin-right: 0rpx;
     /*background-color: #FFFFFF;*/
     background-color: #f3f1e4;
-    border-bottom: 6rpx solid white;
+    border-bottom: 10rpx solid white;
 }
 
 .border_tab_index_white{
