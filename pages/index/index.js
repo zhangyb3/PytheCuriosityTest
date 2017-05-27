@@ -39,8 +39,9 @@ Page({
 
 
     hide_login:true,
-    scrollHeight:0
+    scrollHeight:0,
 
+    hide_loading: true,
     
   },
 
@@ -436,7 +437,9 @@ Page({
       pageNum : 1,
       
     };
-    
+    this.setData({
+      hide_loading: false,
+    });
     listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
     "/index/defaultList",
     10,
@@ -445,8 +448,10 @@ Page({
           //取出返回结果的列表
           return netData.data;
         },
-        function(item){
-         
+        function(item,that){
+          that.setData({
+            hide_loading: true,
+          });
         },
         {},
         'GET',

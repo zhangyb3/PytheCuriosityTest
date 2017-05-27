@@ -144,6 +144,8 @@ Page({
     list_height: 0,
     list_mode:'subject_list',
 
+    hide_loading: true,
+
   },
   onLoad:function(options){
 
@@ -548,6 +550,9 @@ Page({
       pageSize : 10,
       pageNum : 1,
     };
+    this.setData({
+      hide_loading: false,
+    });
     listViewUtil.loadList(that,'teacher',config.PytheRestfulServerURL,
     "/question/teacherList",
     10,
@@ -556,8 +561,10 @@ Page({
           //取出返回结果的列表
           return netData.data;
         },
-        function(item){
-         
+        function(item,that){
+          that.setData({
+            hide_loading: true,
+          });
         },
         {},
         'GET',

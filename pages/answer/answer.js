@@ -89,7 +89,9 @@ Page({
 
     countdownText : '发送验证码',
     second: 60,
-    scrollHeight:0
+    scrollHeight:0,
+
+    hide_loading: true,
   },
   onLoad:function(options){
 
@@ -597,9 +599,9 @@ Page({
       pageNum: 1,
       teacherId: teacherId,
     };
-    wx.showLoading({
-      title: '加载中···',
-      mask: true,
+    
+    this.setData({
+      hide_loading: false,
     });
     listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
     "/answer/defaultList",
@@ -611,6 +613,9 @@ Page({
         },
         function(item,that){
           // item.countdown.start(that);
+          that.setData({
+            hide_loading: true,
+          });
         },
         {},
         'GET',

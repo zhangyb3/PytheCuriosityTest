@@ -55,3 +55,6 @@
   </view>
   <!--<view class="list_bottom"></view>-->
 
+
+  <loading hidden="{{hide_loading}}">正在加载</loading>
+
