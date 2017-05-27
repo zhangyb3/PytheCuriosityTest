@@ -1,6 +1,7 @@
 .select_item_cover {
     position: fixed;
-    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 4;
+    background-color: rgba(0, 0, 0, 1);
     top: 0;
     right: 0;
     left: 0;
@@ -16,6 +17,7 @@
     background-color: white;
     
     position: fixed;
+    z-index: 5;
     top: 30px;
     left: 0;
     right: 0;
