@@ -400,16 +400,16 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
                 
                 temp.question = JSON.parse(currentDatas[count].question);
                 temp.question.questioncontent = JSON.parse(temp.question.questioncontent);
-                var wxTimerNew = new timer({
-                    beginTime: temp.timer,
-                    name:'wxTimer-question-'+temp.question.questionid,
-                    complete:function(){
-                        console.log("完成")
-                    }
-                });
-                wxTimerNew.start(that);
-                temp.wxTimerName = 'wxTimer-question-'+temp.question.questionid;
-                temp.countdown = wxTimerNew; 
+                // var wxTimerNew = new timer({
+                //     beginTime: temp.timer,
+                //     name:'wxTimer-question-'+temp.question.questionid,
+                //     complete:function(){
+                //         console.log("完成")
+                //     }
+                // });
+                // wxTimerNew.start(that);
+                // temp.wxTimerName = 'wxTimer-question-'+temp.question.questionid;
+                // temp.countdown = wxTimerNew; 
                 
             }
             console.log(temp);

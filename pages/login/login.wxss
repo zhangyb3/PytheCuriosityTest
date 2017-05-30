@@ -124,7 +124,7 @@ button_wrap{
     font-size:30rpx;
     height: 76rpx;
     line-height:76rpx;
-    -webkit-text-fill-color: #fff;
+    -webkit-text-fill-color: #333;
     background-color: #d2cea9;
     text-align: center;
     border-top :1px solid #CCCCCC;

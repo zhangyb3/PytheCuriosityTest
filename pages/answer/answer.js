@@ -89,7 +89,9 @@ Page({
 
     countdownText : '发送验证码',
     second: 60,
-    scrollHeight:0
+    scrollHeight:0,
+
+    hide_loading: true,
   },
   onLoad:function(options){
 
@@ -97,7 +99,8 @@ Page({
       success: (res) => {
         this.setData({
           // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750) //80为顶部搜索框区域高度 rpx转px 屏幕宽度/750
-          scrollHeight: res.windowHeight - (100 * res.windowWidth / 750)
+          // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750)
+          scrollHeight: 450
         });
       }
     })
@@ -596,9 +599,9 @@ Page({
       pageNum: 1,
       teacherId: teacherId,
     };
-    wx.showLoading({
-      title: '加载中···',
-      mask: true,
+    
+    this.setData({
+      hide_loading: false,
     });
     listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
     "/answer/defaultList",
@@ -610,11 +613,14 @@ Page({
         },
         function(item,that){
           // item.countdown.start(that);
+          that.setData({
+            hide_loading: true,
+          });
         },
         {},
         'GET',
     );
-    // wx.hideLoading();
+    wx.hideLoading();
 
   },
   onHide:function(){

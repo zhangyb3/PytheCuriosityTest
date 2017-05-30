@@ -12,6 +12,7 @@
                 <!--<text class="teacher_name">{{ item.teacherid }}</text>-->
         <view class="knowledge_kind_content_view">
         <text class="knowledge_kind_content" wx:if="{{item.knowledge != null ? true:false}}">{{item.knowledge}}</text>
+        <text class="knowledge_kind_content" wx:if="{{item.knowledge == null ? true:false}}">{{item.subject}}</text>
         </view>   
 
                  <view class="like_wrap" bindtap='bindLike' data-index='{{ index }}'><image class="like_image" src="../../images/index_icon_dianzan@2x.png"></image><text class="like_number" >{{item.likesnum}}</text></view>
