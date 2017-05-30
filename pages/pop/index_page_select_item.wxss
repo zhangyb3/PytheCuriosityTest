@@ -36,7 +36,7 @@
   position: absolute;
   right: 0rpx;
     top:0rpx;
-    width: 68rpx;
+    width: 168rpx;
     height: 68rpx;
 
 }
