@@ -487,11 +487,18 @@ Page({
             wx.setStorageSync(user.StudentID, res.data.data.studentid);
             wx.setStorageSync(user.TeacherID, res.data.data.teacherid);
             wx.setStorageSync(user.GradeID, res.data.data.gradeid);
+            wx.setStorageSync(user.UserNickName, res.data.data.username);
+            wx.setStorageSync(user.UserDescription, res.data.data.description);
 
             //判断注册是否成功，成功则返回index页面
             wx.setStorageSync('alreadyRegister', 'yes');
             that.setData({
               hide_login:true,
+            });
+            that.setData({
+              userAvatarUrl: wx.getStorageSync('userAvatarUrl'),
+              userNickName: wx.getStorageSync(user.UserNickName),
+              userDescription: wx.getStorageSync(user.UserDescription),
             });
           }
           

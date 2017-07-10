@@ -506,6 +506,9 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
     };
 
     config.callback.onEmpty = function(){
+        that.setData({
+            hide_loading: true,
+        });
 
         that.data.currentAction = request_none;
         if(action == request_firstIn){
@@ -572,7 +575,9 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
     config.callback.onError= function(msgCanShow,code,hiddenMsg){
         that.data.currentAction = request_none;
         console.log(hiddenMsg+"--"+code);
-
+        that.setData({
+            hide_loading: true,
+        });
 
         if(action == request_firstIn){
             showErrorPage(that,msgCanShow);
@@ -591,7 +596,9 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
         if (action == request_refresh){
             stopPullRefresh(that);
         }
-
+        that.setData({
+            hide_loading: true,
+        });
         hideLoadingDialog(that);
     };
 

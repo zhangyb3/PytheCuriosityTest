@@ -172,7 +172,7 @@ Page({
     console.log(JSON.stringify(selectItem) + "," + itemIndex);
 
     this.setData({hide_select_item:false});
-
+    this.setData({hide_loading:false});
     selectItem.playingVoice = false;
     //进入详细列表
     // base.cleanCacheFile(20);

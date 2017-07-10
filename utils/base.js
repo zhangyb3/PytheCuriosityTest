@@ -65,7 +65,12 @@ function getDetailContent(that,selectItem)
       },
       fail: function(res) {
         console.log(res);
-      }
+      },
+      complete: function(res) {
+        that.setData({
+          hide_loading: true,
+        });
+      },
     })
     
 }
