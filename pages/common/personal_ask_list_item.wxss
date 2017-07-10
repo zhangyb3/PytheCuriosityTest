@@ -61,6 +61,7 @@
     margin-left: 30rpx;
     margin-right: 0rpx;
     font-size: 36rpx;
+    height: 150rpx;
     color: #333333;
     text-overflow: -o-ellipsis-lastline;
     overflow: hidden;
