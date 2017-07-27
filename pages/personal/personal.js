@@ -74,9 +74,9 @@ Page({
     // }
     
 
-     this.setData({
-      hide_register_lock_cover: false,
-    });
+      this.setData({
+        hide_register_lock_cover: false,
+      });
     
     
     
@@ -129,6 +129,22 @@ Page({
     var parametersString = netUtil.json2Form(parametersJSON);
     wx.navigateTo({
       url: 'personal_like' + '?' + parametersString,
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
+
+  selectOrganizationManagement:function(e){
+    console.log('personal organization management');
+    wx.navigateTo({
+      url: 'organization_management',
       success: function(res){
         // success
       },
@@ -488,6 +504,11 @@ Page({
         );
         
     }
+
+
+    this.setData({
+      hide_register_lock_cover: true,
+    });
   },
   onHide:function(){
     // 页面隐藏

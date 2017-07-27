@@ -1,0 +1,28 @@
+<import src="../listView/search_teacher_list.wxml" />
+
+<view class="teacher_phone_search_container" >
+    <view class="input_view" >
+        <input class="input" type="text" value="{{joinTeacherPhone}}" bindinput="inputTeacherPhone" ></input>
+        <view class="search_button"    bindtap='searchTeacherByPhone'><image src="../../images/index_icon_serch@2x.png"></image>
+        </view>
+    </view>
+
+    <view class="cancel_container" bindtap="cleanSearchTeacherPhone">
+        <text class="cancel">取消</text>
+    </view>
+
+
+    
+</view>
+
+<view class="border_template"></view> 
+
+<view class="search_teacher_list_container" >
+      <template is="search_teacher_list" data="{{search_teacher_list,add_teacher_page}}"></template>
+</view>
+
+<view class="no teacher notification" wx:if="{{search_teacher_list == null}}">
+    <text class='no teacher'>
+        暂无此老师
+    </text>
+</view>

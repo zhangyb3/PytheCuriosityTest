@@ -1,0 +1,45 @@
+<!--pages/personal/organization_edit.wxml-->
+
+<view class="organization_edit_page">
+
+    <view class="organization_edit_zone">
+        
+        <view class="organization_name organization_operation_item" >
+            <view class="organization_name_text">
+                <text >机构名称</text>
+            </view>
+            <view class="input_organization_name">
+                <input  bindinput="inputOrganizationName" value="{{orgInfo.name}}" auto-focus/>
+            </view>
+        </view>
+
+    </view>
+
+    <view class="organization_edit_zone">
+        
+        <view class="organization_name organization_operation_item" >
+            <view class="organization_name_text">
+                <text >添加成员</text>
+            </view>
+            <view class="input_teacher_phone">
+                <input  bindinput="inputTeacherPhone" value="输入电话号码" auto-focus/>
+            </view>
+            <view class="search_button_view">
+                <view class="search_button"    bindtap='searchTeacherByPhone'>
+                    <image src="../../images/index_icon_serch@2x.png"></image>
+                </view>
+            </view>
+        </view>
+    </view>
+
+    <view class="teacher_display_list_container" >
+      <template is="member_display_list" data="{{member_display_list,organization_edit_page}}"></template>
+    </view>
+
+
+    <view class="update_organization" bindtap="updateOrganization">
+        <text class="organization_update_text">确定
+        </text>
+    </view>
+
+</view>

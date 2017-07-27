@@ -1,0 +1,37 @@
+
+
+
+<view class="organization_management_page">
+
+    <view class="organization_description_zone" wx:if="{{teacherInformation.organization == null}}">
+            <view class="organization_image_container">
+                <image class="organization_image" src="{{userAvatarUrl}}"></image>
+            </view>
+        <view class="organization_description_text_zone">
+            <view class="organization_name_wrap"><text class="organization_name">机构</text></view>
+            
+            <view class="organization_discribe_box">
+            <text class="organization_discribe">机构描述
+            </text>
+            </view>
+      
+        </view>
+
+        <view class="organization_description_revise_zone">
+            <view class="organization_edit_icon_view">
+                <button class="organization_edit_icon" bindtap='organizationEditOperationPage'>
+                    <image  src="../../images/info_edit.png">
+                    </image>
+                </button>
+            </view>
+        </view>
+  
+    </view>
+
+
+    <view class="add_organization" wx:if="{{teacherInformation.organization == null}}" bindtap="addOrganization">
+        <text class="organization_add_text">建立机构
+        </text>
+    </view>
+
+</view>

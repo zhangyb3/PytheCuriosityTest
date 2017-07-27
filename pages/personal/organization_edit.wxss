@@ -1,0 +1,74 @@
+/* pages/personal/organization_edit.wxss */
+
+.organization_operation_item{
+    /*width: 100%;*/
+    display: flex;
+    flex-direction: row;
+    /*justify-content: flex-end;*/
+    line-height: 100rpx;
+    width: 100%;
+    /*margin-left: 40rpx;*/
+    /*border-bottom: 1px solid #fff;*/
+    /*border-width: 1px;*/
+    background-color: #f3f1e4;
+    /*margin-right: 20rpx;*/
+    /*background:url(../../images/icon_more@2x.png) no-repeat right center;*/
+    border-bottom:1px solid #fff;
+
+
+}
+
+.organization_name_text text{
+    vertical-align:middle;
+}
+
+.input_organization_name{
+    margin-left: 20rpx;
+    background-color: lightgoldenrodyellow;
+}
+
+.input_organization_name input{
+    line-height: 100rpx;
+    vertical-align:middle;
+    align-items: center;
+    padding: 0px 0px;
+}
+
+.input_teacher_phone{
+    margin-left: 20rpx;
+    background-color: lightgray;
+    border-radius: 5%;
+}
+
+.input_teacher_phone input{
+    line-height: 100rpx;
+    vertical-align:middle;
+    align-items: center;
+    padding: 0px 0px;
+}
+
+.search_button{
+    background: none;
+}
+
+.search_button image{
+    vertical-align:middle;
+    height: 40rpx;
+    width: 40rpx;
+    border:none;
+}
+
+.update_organization{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;
+    background:#d2cea9;
+    clear:both;
+    text-align: center;
+}
+
+
+.organization_add_text{
+    vertical-align: middle;
+}

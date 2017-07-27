@@ -63,6 +63,14 @@
         </view>
     </view>
 
+    <view class="organization_management personal_operation_item" bindtap='selectOrganizationManagement'>
+<view class="menu_list_icon_wrap">
+    <image class="menu_list_icon_detail" src="../../images/personal_iocn_jiesuan@2x.png"></image>
+</view>
+            <text class="organization personal_operation_item_text">机构管理</text>
+            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
+        </view>
+
     <view class="about_us_zone">
         <view class="balance_detailed_rules personal_operation_item" bindtap='selectBalanceRules'>
 <view class="menu_list_icon_wrap">
@@ -79,6 +87,13 @@
             <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
     </view>
+
+    <contact-button 
+    type="default-light" 
+    size="20"
+    session-from="weapp"
+    >
+    </contact-button>
 
 
     <view class="login_container" hidden='{{hide_login}}'>

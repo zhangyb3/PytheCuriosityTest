@@ -1,0 +1,31 @@
+<!-- 弹出层 -->
+
+<template name="member_display_list">
+
+    <view class="display_list_view" >
+    
+    
+    
+    <!-- 遮罩 -->
+    <view class="display_list_cover"  bindtap='returnIndexPage'></view>
+    <!-- 课程列表区域 -->
+    <view class="display_list_zone" >
+        <view class="members">
+            <block wx:for-items="{{member_display_list}}"  >
+                <view class="subject_item" hover-class="" data-name="{{item.username}}" data-memberId="{{item.userid}}"bindtap="getSelectSubjectList" >
+                    <view class="member_item_icon">
+                        <text class="member_item_text ">{{item.username}}</text>
+                    </view>
+                </view>
+            </block>
+            
+        </view>
+        
+    </view>
+
+
+    </view>
+
+
+
+</template>

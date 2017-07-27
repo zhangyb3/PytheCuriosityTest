@@ -1,0 +1,167 @@
+
+
+.organization_management_page{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f1e4;
+}
+
+.organization_description_zone{
+    display: flex;
+    flex-direction: row;
+    /*border-top: 1px solid #EEE;*/
+    background-color: #f3f1e4;
+    width: 100%;
+    min-height: 270rpx;
+    border-bottom: 20rpx solid #fff;
+}
+
+.earn_num_img{
+    width: 43rpx;
+    height: 38rpx;
+    margin-right:10rpx;
+}
+
+.teacherEarn{
+    font-size: 32rpx;
+    line-height: 40rpx;
+}
+
+.organization_image_container{
+    display: flex;
+    width: 150rpx;
+    height: 250rpx;  
+}
+
+.organization_image{
+    margin-top: 35rpx;
+    margin-left: 30rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+
+}
+
+.organization_description_text_zone{
+    /*display: flex;*/
+    position: fixed;
+    height: auto;
+    width: auto;
+    left: 170rpx;
+    right: 20rpx;
+    /*position: relative;*/
+    flex-direction: column;
+}
+
+.organization_name_wrap{
+    display: flex;
+    height: auto;
+    width: 100%;
+    margin-top: 34rpx;
+}
+
+.organization_name{
+    display: flex;
+    height: auto;
+    font-size: 40rpx;
+    color: #666666;
+}
+
+
+
+.organization_discribe_box{
+    margin-top: 10rpx;
+    height: 110rpx;
+}
+.organization_discribe{
+    display: flex;
+    /*position: fixed;*/
+    /*left: 170rpx;
+    right: 80rpx;*/
+    width: 90%;
+    height: 106rpx;
+    font-size: 36rpx;
+    color: #999999;
+    padding-bottom: -20rpx;
+    line-height: 37rpx;
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+
+.organization_description_revise_zone{
+    display: flex;
+    position: absolute;
+    height: 200rpx;
+    width: auto;
+    /*margin-right: 20rpx;*/
+    right: 30rpx;
+    /*background-color: yellow;*/
+}
+
+.organization_edit_icon_view{
+    display: flex;
+    /*right: 30rpx;*/
+    /*margin-top: 55rpx;*/
+    /*margin-left: 20rpx;*/
+    height: 100%;
+    width: 50rpx;
+}
+
+.organization_edit_icon{
+    /*background: url(../../images/icon_information@2x.png) no-repeat center center;*/
+    /*position: absolute;*/
+    display: flex;
+    margin-top: 47rpx;
+    /*padding: 0px;*/
+    right: 0px;
+    /*padding-right: 10;*/
+    bottom: 5rpx;
+    height: 80rpx;
+    width: 80rpx;
+    background: none;
+    /*display: block;*/
+    /*background-size: 20px 20px;*/
+}
+
+.organization_edit_icon image{                               
+    position: absolute;
+    /*left: 0px;*/
+
+    left: 0rpx;
+    right: 0px;
+    height: 45rpx;
+    width: 44rpx;
+    display:block;
+}
+
+/*去掉button的边框*/
+.organization_edit_icon:after{
+    border:none;
+}
+
+
+.add_organization{
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;
+    background:#d2cea9;
+    clear:both;
+    text-align: center;
+}
+
+
+.organization_add_text{
+    vertical-align: middle;
+}
