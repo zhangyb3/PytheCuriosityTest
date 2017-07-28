@@ -1,5 +1,17 @@
 /* pages/personal/organization_edit.wxss */
 
+.organization_edit_page{
+    background-color: #f3f1e4;
+}
+
+.teacher_display_list_container{
+    background-color: #f3f1e4;
+}
+
+.organization_edit_zone{
+    /*border: 1px solid black;*/
+}
+
 .organization_operation_item{
     /*width: 100%;*/
     display: flex;
@@ -10,7 +22,7 @@
     /*margin-left: 40rpx;*/
     /*border-bottom: 1px solid #fff;*/
     /*border-width: 1px;*/
-    background-color: #f3f1e4;
+    background-color: white;
     /*margin-right: 20rpx;*/
     /*background:url(../../images/icon_more@2x.png) no-repeat right center;*/
     border-bottom:1px solid #fff;
@@ -24,7 +36,7 @@
 
 .input_organization_name{
     margin-left: 20rpx;
-    background-color: lightgoldenrodyellow;
+    background-color: white;
 }
 
 .input_organization_name input{
@@ -32,11 +44,19 @@
     vertical-align:middle;
     align-items: center;
     padding: 0px 0px;
+    border: 1px solid black;
+}
+
+.input_organization_description textarea{
+    vertical-align:middle;
+    align-items: center;
+    padding: 0px 0px;
+    border: 1px solid black;
 }
 
 .input_teacher_phone{
     margin-left: 20rpx;
-    background-color: lightgray;
+    background-color: white;
     border-radius: 5%;
 }
 
@@ -45,6 +65,7 @@
     vertical-align:middle;
     align-items: center;
     padding: 0px 0px;
+    border: 1px solid black;
 }
 
 .search_button{
@@ -66,9 +87,12 @@
     background:#d2cea9;
     clear:both;
     text-align: center;
+    z-index: 5;
 }
 
 
 .organization_add_text{
     vertical-align: middle;
 }
+
+@import "../listView/member_display_list.wxss";

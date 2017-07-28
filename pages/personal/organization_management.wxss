@@ -159,6 +159,7 @@
     background:#d2cea9;
     clear:both;
     text-align: center;
+    z-index:5;
 }
 
 

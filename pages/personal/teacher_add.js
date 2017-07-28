@@ -67,7 +67,7 @@ Page({
 
   cleanSearchTeacherPhone:function(e){
     this.setData({
-      joinTeacherPhone:null,
+      joinTeacherPhone:'',
     });
   },
 
@@ -86,6 +86,11 @@ Page({
         // success
         if(res.data.msg=='OK')
         {
+          wx.showToast({
+            title: '添加老师成功',
+            icon: 'success',
+            duration: 1000
+          });
           wx.navigateBack({
             delta: 1, // 回退前 delta(默认为1) 页面
             success: function(res){

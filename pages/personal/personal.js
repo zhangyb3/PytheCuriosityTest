@@ -144,7 +144,7 @@ Page({
   selectOrganizationManagement:function(e){
     console.log('personal organization management');
     wx.navigateTo({
-      url: 'organization_management',
+      url: 'organization_management' ,
       success: function(res){
         // success
       },

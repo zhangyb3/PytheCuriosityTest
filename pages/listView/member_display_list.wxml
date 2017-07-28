@@ -7,15 +7,23 @@
     
     
     <!-- 遮罩 -->
-    <view class="display_list_cover"  bindtap='returnIndexPage'></view>
-    <!-- 课程列表区域 -->
+    <!--<view class="display_list_cover"  bindtap='returnIndexPage'></view>-->
+
+    <!-- 成员列表区域 -->
     <view class="display_list_zone" >
         <view class="members">
             <block wx:for-items="{{member_display_list}}"  >
-                <view class="subject_item" hover-class="" data-name="{{item.username}}" data-memberId="{{item.userid}}"bindtap="getSelectSubjectList" >
-                    <view class="member_item_icon">
-                        <text class="member_item_text ">{{item.username}}</text>
+                <view class="member_item" hover-class="" data-name="{{item.username}}" data-memberId="{{item.userid}}" bindtap="getSelectSubjectList" >
+                    <view class="member_item_container">
+
+                        <view class="member_img_container">
+                            <image class="member_img" src="{{item.userimg}}"></image>
+                            <image class="member_delete" src="../../images/cancel.png" bindtap="orgDeleteTeacher" data-teacher="{{item}}"/>
+                        </view>
+                        
+                        <text>{{item.username}}</text>
                     </view>
+                    
                 </view>
             </block>
             

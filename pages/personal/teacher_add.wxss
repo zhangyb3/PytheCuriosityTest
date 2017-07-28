@@ -66,6 +66,10 @@
     vertical-align: middle;
 }
 
+.no teacher notification{
+    text-align: center;
+}
+
 .border_template{
     height: 10px;
     color: white;

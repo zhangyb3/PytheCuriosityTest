@@ -1,4 +1,5 @@
 <!--pages/personal/organization_edit.wxml-->
+<import src="../listView/member_display_list.wxml" />
 
 <view class="organization_edit_page">
 
@@ -10,6 +11,19 @@
             </view>
             <view class="input_organization_name">
                 <input  bindinput="inputOrganizationName" value="{{orgInfo.name}}" auto-focus/>
+            </view>
+        </view>
+
+    </view>
+
+    <view class="organization_edit_zone">
+        
+        <view class="organization_description organization_operation_item" >
+            <view class="organization_description_text">
+                <text >详情</text>
+            </view>
+            <view class="input_organization_description">
+                <textarea  bindinput="inputOrganizationDescription" value="{{orgInfo.description}}" maxlength="100" auto-focus/>
             </view>
         </view>
 
@@ -36,10 +50,14 @@
       <template is="member_display_list" data="{{member_display_list,organization_edit_page}}"></template>
     </view>
 
-
-    <view class="update_organization" bindtap="updateOrganization">
-        <text class="organization_update_text">确定
+    <view class="no teacher notification" wx:if="{{member_display_list == null}}">
+        <text class='no teacher'>
+            暂无老师
         </text>
     </view>
+
+    <button class="update_organization" bindtap="updateOrganization">
+        确定
+    </button>
 
 </view>
