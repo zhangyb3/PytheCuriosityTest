@@ -1,6 +1,7 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/index/search",
     "pages/logs/logs",
     "pages/ask/ask",
     "pages/ask/ask_operation",

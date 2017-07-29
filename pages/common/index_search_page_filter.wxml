@@ -1,0 +1,21 @@
+<template name="index_search_page_filter">
+
+<view class="input_filter" >
+
+    
+
+    <view class="input_view" >
+        <input class="input" type="text" placeholder="查询" bindinput="listenerSearchInput" ></input>
+        <button class="search_button"    bindtap='getSearchContentList'><image src="../../images/index_icon_serch@2x.png"></image>
+        </button>
+    </view>
+
+    <view class="cancel_view" >
+        <button class="cancel_button"
+         bindtap='filterSubject'>取消
+         </button>        
+    </view>
+
+</view>
+<!--<view class="bottom_line_seprate"/>-->
+</template>
