@@ -1,8 +1,8 @@
 <template name="index_search_section_selector">
 
 <view class="index_search_section_selector_bar">
-        <view class="bar_item {{ask_page_menu[0].active ? 'active' : ''}}" bindtap='subject_filter' data-index='0' data-value="{{ask_page_menu[0].value}}">
-            <text class="subject_filter_text " data-value="{{ask_page_menu[0].value}}">{{ask_page_menu[0].name}}</text>
+        <view class="bar_item {{index_search_menu[0].active ? 'active' : ''}}" bindtap='knowledgeFilter' data-index='0' data-value="{{index_search_menu[0].value}}">
+            <text class="subject_filter_text " data-value="{{index_search_menu[0].value}}">{{index_search_menu[0].name}}</text>
         </view>
 
         <view class="middle_line_wrap">
@@ -10,16 +10,16 @@
         </view>
         
 
-        <view class="bar_item {{ask_page_menu[1].active ? 'active' : ''}}" bindtap='teacher_filter' data-index='1' data-value="{{ask_page_menu[1].value}}">
-            <text class="teacher_filter_text " data-value="{{ask_page_menu[1].value}}">{{ask_page_menu[1].name}}</text>
+        <view class="bar_item {{index_search_menu[1].active ? 'active' : ''}}" bindtap='teacherFilter' data-index='1' data-value="{{index_search_menu[1].value}}">
+            <text class="teacher_filter_text " data-value="{{index_search_menu[1].value}}">{{index_search_menu[1].name}}</text>
         </view>
 
         <view class="middle_line_wrap">
         <view class="middle_line"></view>
         </view>
 
-        <view class="bar_item {{ask_page_menu[2].active ? 'active' : ''}}" bindtap='org_filter' data-index='1' data-value="{{ask_page_menu[2].value}}">
-            <text class="org_filter_text " data-value="{{ask_page_menu[1].value}}">{{ask_page_menu[2].name}}</text>
+        <view class="bar_item {{index_search_menu[2].active ? 'active' : ''}}" bindtap='orgFilter' data-index='1' data-value="{{index_search_menu[2].value}}">
+            <text class="org_filter_text " data-value="{{index_search_menu[2].value}}">{{index_search_menu[2].name}}</text>
         </view>
 
 

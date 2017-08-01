@@ -11,16 +11,16 @@
 
 
 <import src="../pop/register_lock_cover.wxml" />
-<view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
 
 
 
-<view class="index_page_container" hidden='{{hide_index_page}}'>
+
+<view class="index_page_container" >
   
 
 
   <view class="index_search_page_filter_container" >
-    <template is="index_search_page_filter" data="{{subject_name}}"></template>
+    <template is="index_search_page_filter" data="{{searchContent}}"></template>
   </view>
 
   
@@ -35,9 +35,9 @@
     <template is="index_page_list" data="{{infos,preview_img_url,scrollHeight}}"></template>
 
 
-<view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
+<!--<view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
     <template is="index_page_select_item" data="{{answers,question,preview_img_url,alreadyRegister}}"></template>
-  </view>
+  </view>-->
 
 </view>
 

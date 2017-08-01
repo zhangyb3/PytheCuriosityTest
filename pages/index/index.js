@@ -116,6 +116,19 @@ Page({
         'GET',
     );
 
+    wx.navigateTo({
+      url: 'search',
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+
   },
 
 

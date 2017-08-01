@@ -5,14 +5,14 @@
     
 
     <view class="input_view" >
-        <input class="input" type="text" placeholder="查询" bindinput="listenerSearchInput" ></input>
-        <button class="search_button"    bindtap='getSearchContentList'><image src="../../images/index_icon_serch@2x.png"></image>
+        <input class="input" type="text" value="{{searchContent}}" bindinput="listenSearchInput" ></input>
+        <button class="search_button"    bindtap='searchByContent'><image src="../../images/index_icon_serch@2x.png"></image>
         </button>
     </view>
 
     <view class="cancel_view" >
         <button class="cancel_button"
-         bindtap='filterSubject'>取消
+         bindtap='cancelSearchInput'>取消
          </button>        
     </view>
 
