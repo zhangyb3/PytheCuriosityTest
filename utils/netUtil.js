@@ -412,6 +412,13 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
                 // temp.countdown = wxTimerNew; 
                 
             }
+            if(list_type == 'index_search_teacher')
+            {
+                
+                var collectOrNot = temp.collectOrNot;
+                temp = JSON.parse(temp.teacher);
+                temp["collectOrNot"] = collectOrNot;
+            }
             console.log(temp);
             concatDatas[count] = temp;
         }
@@ -500,6 +507,12 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             that.data.personal_like_teacher_list=that.data.personal_like_teacher_list.concat(concatDatas);
             console.log('before setData----------'+that.data.personal_like_teacher_list);
             that.setData({personal_like_teacher_list:that.data.personal_like_teacher_list});
+        }
+
+        if(list_type == 'index_search_teacher'){
+            that.data.search_teacher_list=that.data.search_teacher_list.concat(concatDatas);
+            console.log('before setData----------'+that.data.search_teacher_list);
+            that.setData({search_teacher_list:that.data.search_teacher_list});
         }
         
 

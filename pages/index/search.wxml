@@ -3,6 +3,7 @@
 
 
 <import src="../listView/index_page_list.wxml" />
+<import src="../listView/search_teacher_list.wxml" />
 <import src="../common/index_search_page_filter.wxml" />
 <import src="../common/index_search_section_selector.wxml" />
 
@@ -32,7 +33,11 @@
     </view>
 
 
-    <template is="index_page_list" data="{{infos,preview_img_url,scrollHeight}}"></template>
+    <!--<template is="index_page_list" data="{{infos,preview_img_url,scrollHeight}}"></template>-->
+
+    <view class="search_teacher_list_container" >
+      <template is="search_teacher_list" data="{{search_teacher_list,index_search_page}}"></template>
+</view>
 
 
 <!--<view class="index_page_select_item_container" hidden='{{hide_select_item}}'>

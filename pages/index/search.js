@@ -30,6 +30,10 @@ Page({
     hide_teacher_list: true,
     hide_org_list: true,
 
+    index_search_page: true,
+
+    list_mode: 'index_search_teacher',
+
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -48,7 +52,63 @@ Page({
     });
   },
   searchByContent:function(e){
-    console.log(this.data.searchContent);
+    var search_content = this.data.searchContent
+    console.log(search_content);
+    
+    var that = this;
+    var searchParameters = {
+      query: search_content,
+      userId: -1,
+      pageNum: 1,
+      pageSize: 10
+    };
+
+    //三种列表
+   listViewUtil.loadList(that,'index_search_knowledge',config.PytheRestfulServerURL,
+    "/index/search/knowledge",
+    10,
+        searchParameters,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
+
+    listViewUtil.loadList(that,'index_search_teacher',config.PytheRestfulServerURL,
+    "/index/search/teacher",
+    10,
+        searchParameters,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
+
+    listViewUtil.loadList(that,'index_search_org',config.PytheRestfulServerURL,
+    "/index/search/organization",
+    10,
+        searchParameters,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
+
 
   },
   cancelSearchInput:function(e){

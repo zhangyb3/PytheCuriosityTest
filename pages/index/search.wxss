@@ -54,6 +54,8 @@
 }
 
 @import "../listView/index_page_list.wxss";
+@import "../listView/search_teacher_list.wxss";
+
 @import "../common/index_search_page_filter.wxss";
 @import "../common/index_search_section_selector.wxss";
 

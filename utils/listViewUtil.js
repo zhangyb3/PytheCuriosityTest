@@ -105,6 +105,16 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     if(list_type == 'my_like_teacher'){
         page.data.personal_like_teacher_list = [];//like teacher列表
     }
+    if(list_type == 'index_search_knowledge'){
+        page.data.search_knowledge_list = [];
+    }
+    if(list_type == 'index_search_teacher'){
+        page.data.search_teacher_list = [];
+    }
+    if(list_type == 'index_search_org'){
+        page.data.search_org_list = [];
+    }
+
 
     page.onPullDownRefresh = function(){
         if(list_type == 'index'){
@@ -176,6 +186,22 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
             netUtil.requestSimpleList(page,'my_like_teacher',1,netUtil.action.request_refresh);
         }
+        else if(page.data.list_mode == 'index_search_knowledge'){
+            page.data.personal_like_teacher_list = [];//like teacher列表
+            page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
+            netUtil.requestSimpleList(page,'index_search_knowledge',1,netUtil.action.request_refresh);
+        }
+        else if(page.data.list_mode == 'index_search_teacher'){
+            page.data.search_teacher_list = [];//like teacher列表
+            page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
+            netUtil.requestSimpleList(page,'index_search_teacher',1,netUtil.action.request_refresh);
+        }
+        else if(page.data.list_mode == 'index_search_org'){
+            page.data.personal_like_teacher_list = [];//like teacher列表
+            page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
+            netUtil.requestSimpleList(page,'index_search_org',1,netUtil.action.request_refresh);
+        }
+        
         else 
         {
             netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
