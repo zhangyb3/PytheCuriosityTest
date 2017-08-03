@@ -1,0 +1,20 @@
+<import src="../common/search_org_list_item.wxml" />
+
+<template name="search_org_list"  >
+
+<!--列表-->
+
+  <scroll-view  class="org_scroll_list"  wx:if="{{hide_org_list == false}}" upper-threshold="0px" lower-threshold="0px" scroll-y="true" style="height:{{list_height}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh">
+
+      <block wx:for="{{search_org_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
+        
+        <view class="search_org_list_container" >
+          <template is="search_org_list_item" data="{{item,index,alreadyRegister,index_search_page}}"></template>
+        </view>
+      </block>
+
+
+
+  </scroll-view>
+
+</template>

@@ -18,7 +18,7 @@
 <view class="border_template"></view> 
 
 <view class="search_teacher_list_container" >
-      <template is="search_teacher_list" data="{{search_teacher_list,add_teacher_page}}"></template>
+      <template is="search_teacher_list" data="{{search_teacher_list,hide_teacher_list,add_teacher_page}}"></template>
 </view>
 
 <view class="no teacher notification" wx:if="{{search_teacher_list == null}}">

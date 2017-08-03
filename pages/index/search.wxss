@@ -53,8 +53,10 @@
   background-color: #f3f1e4;
 }
 
-@import "../listView/index_page_list.wxss";
+
+@import "../listView/search_knowledge_list.wxss";
 @import "../listView/search_teacher_list.wxss";
+@import "../listView/search_org_list.wxss";
 
 @import "../common/index_search_page_filter.wxss";
 @import "../common/index_search_section_selector.wxss";

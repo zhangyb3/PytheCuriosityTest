@@ -1,6 +1,6 @@
 <template name="search_teacher_list_item">
 
-<view class="list-item" style="background-color:white" data-item='{{ item }}' data-teacher='{{item}}' data-index='{{index}}' bindtap="selectOneTeacher">
+<view class="list-item" style="background-color:white" data-item='{{ item }}' data-teacher='{{item}}' data-index='{{index}}' >
 
             
 <!--名师区域  -->
@@ -17,13 +17,18 @@
                     <text class="teacher_brief">{{ item.username }}的简介：{{item.description}}</text>
                     </view>
                     <!--收藏数量-->
-                <view class="collect_icon_wrap" wx:if="{{alreadyRegister == 'yes'}}" data-teacher="{{item}}" data-index='{{index}}' bindtap="likeTeacher">
-                <image wx:if="{{item.isClick == 1}}" src="../../images/question_icon_shoucang_nor@2x.png"></image>
-                <image wx:if="{{item.isClick == 0}}" src="../../images/question_icon_shoucang@2x.png"></image><text class="collect_icon" >{{item.popularity}}</text></view>
+                <view class="collect_icon_wrap" wx:if="{{index_search_page == true}}" data-teacher="{{item}}" data-index='{{index}}' bindtap="likeTeacher">
+                <image wx:if="{{item.collectOrNot == false}}" src="../../images/question_icon_shoucang_nor@2x.png"></image>
+                <image wx:if="{{item.collectOrNot == true}}" src="../../images/question_icon_shoucang@2x.png"></image>
+                <!--<text class="collect_icon" >{{item.popularity}}</text>-->
+                </view>
                     <!--<text class="collect_icon" src="../../images/icon_language@2x.png">268
                 </text>-->
                 </view>
 
+                <button class="teacher_ask_section" wx:if="{{index_search_page == true}}" data-teacher="{{item}}" bindtap="askOneTeacher">
+                <text>请教</text>  
+                </button>
 
                 <view class="add_teacher_button" wx:if="{{add_teacher_page == true}}" bindtap='organizationAddTeacher' data-teacher="{{item}}">
                     <image src="../../images/icon_choose_sel@2x.png"></image>

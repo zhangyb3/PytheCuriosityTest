@@ -94,6 +94,7 @@ Page({
       this.data.ask_question.subjectId = parameters.subjectId;
       // this.data.ask_question.ask_teacherId = -1;
     }
+    
     console.log(this.data.ask_question);
     this.setData({
       ask_question: this.data.ask_question,

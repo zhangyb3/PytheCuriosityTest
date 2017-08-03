@@ -1,0 +1,37 @@
+<template name="search_org_list_item">
+
+<view class="list-item" style="background-color:white" data-item='{{ item }}' data-org='{{item}}' data-index='{{index}}' >
+
+            
+<!--名师区域  -->
+            <view class="org_wrapper">
+            <!--头像部分-->
+                <image class="org_icon"  src="{{item.userimg}}"
+                ></image>
+            <!--介绍-->
+                <view class= "org_middle_wrapper">
+                <!--机构介绍-->
+                    <text class="org_name">{{ item.name }}</text>
+                    <!--简介-->
+                    <view class="org_brief_wrap">
+                    <text class="org_brief">简介：{{item.description}}</text>
+                    </view>
+                    
+                </view>
+                    
+
+                <button class="org_ask_section" wx:if="{{index_search_page == true}}" data-org="{{item}}" bindtap="askOneOrg">
+                <text>查看详情</text>  
+                </button>
+
+                
+                
+                <!--<image src="../../images/question_icon_lianxi@2x.png">
+                </image>-->
+                <!--<text class="teacher_content">{{ item.teacher_name }}</text>-->
+              
+            </view>   
+            <view class="border_tab"></view>   
+</view>
+
+</template>

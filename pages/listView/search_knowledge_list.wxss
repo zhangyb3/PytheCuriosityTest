@@ -1,0 +1,61 @@
+
+
+.page_contain{
+display: flex;
+position: absolute;
+top: 100rpx;
+left: 0rpx;
+right: 0rpx;
+bottom: 0rpx;
+background-color:#f3f1e4;
+/*background-color: yellow;*/
+/*border-radius: 40rpx;*/
+}
+
+.scroll_list{
+    display: flex;
+    position: relative;
+    margin-top: 100rpx;
+    width: 100%;
+    /*background-color:#f3f1e4;*/
+    /*width: 750rpx;*/
+    /*height: 300px;*/
+    /*height: auto;*/
+    /*top: 0rpx;
+    left: 0rpx;
+    right: 0rpx;
+    bottom: 0rpx;*/
+    
+    /*top: 0px;
+    bottom: 10px;
+    border-radius: 40rpx;*/
+}
+
+.interval{
+    height: 30rpx;
+    background-color: #F5F5F5;
+}
+    
+
+.index_page_list_item_container{
+    /*display: flex;*/
+    height: auto;
+    /*width: 100%;*/
+    width: 750rpx;
+    margin-left: 0rpx;
+    margin-right: 0rpx;
+    /*background-color: #FFFFFF;*/
+    background-color: #f3f1e4;
+    border-bottom: 10rpx solid white;
+}
+
+.border_tab_index_white{
+    height: 30rpx;
+    background-color: #f3f1e4;
+}
+
+
+
+@import "../common/search_knowledge_list_item.wxss";
+@import "../bubble/bubble.wxss";
+

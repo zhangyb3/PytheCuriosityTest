@@ -27,7 +27,7 @@ function requestConfig(){
     this.params={
         pageIndex:1,
         pageSize:10,
-        session_id:getApp().globalData.session_id
+        // session_id:getApp().globalData.session_id
     };
     this.netMethod='';
     this.callback={
@@ -514,6 +514,12 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             console.log('before setData----------'+that.data.search_teacher_list);
             that.setData({search_teacher_list:that.data.search_teacher_list});
         }
+        if(list_type == 'index_search_org'){
+            that.data.search_org_list=that.data.search_org_list.concat(concatDatas);
+            console.log('before setData----------'+that.data.search_org_list);
+            that.setData({search_org_list:that.data.search_org_list});
+        }
+
         
 
     };

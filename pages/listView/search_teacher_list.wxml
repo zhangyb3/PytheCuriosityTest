@@ -1,15 +1,15 @@
 <import src="../common/search_teacher_list_item.wxml" />
 
-<template name="search_teacher_list">
+<template name="search_teacher_list"  >
 
 <!--列表-->
 
-  <scroll-view  class="teacher_scroll_list" upper-threshold="0px" lower-threshold="0px" scroll-y="true" style="height:{{list_height}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh">
+  <scroll-view  class="teacher_scroll_list"  wx:if="{{hide_teacher_list == false}}"upper-threshold="0px" lower-threshold="0px" scroll-y="true" style="height:{{list_height}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh">
 
       <block wx:for="{{search_teacher_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         
         <view class="search_teacher_list_container" >
-          <template is="search_teacher_list_item" data="{{item,index,alreadyRegister,add_teacher_page}}"></template>
+          <template is="search_teacher_list_item" data="{{item,index,alreadyRegister,add_teacher_page,index_search_page}}"></template>
         </view>
       </block>
 

@@ -24,16 +24,20 @@ Page({
         active:false
     }],
 
-    searchContent:'查询',
+    // searchContent:'查询',
 
     hide_knowledge_list:false,
     hide_teacher_list: true,
     hide_org_list: true,
 
+    search_knowledge_list:[],
+    search_teacher_list:[],
+    search_org_list:[],
+
     index_search_page: true,
 
-    list_mode: 'index_search_teacher',
-
+    list_mode: 'index_search_knowledge',
+    list_type: 'index',
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -52,7 +56,7 @@ Page({
     });
   },
   searchByContent:function(e){
-    var search_content = this.data.searchContent
+    var search_content = this.data.searchContent;
     console.log(search_content);
     
     var that = this;
@@ -62,6 +66,12 @@ Page({
       pageNum: 1,
       pageSize: 10
     };
+
+    this.setData({
+      search_knowledge_list: [],
+      search_teacher_list: [],
+      search_org_list: [],
+    });
 
     //三种列表
    listViewUtil.loadList(that,'index_search_knowledge',config.PytheRestfulServerURL,
@@ -132,7 +142,10 @@ Page({
       this.setData({hide_org_list:true});
       
       this.setData({hide_knowledge_list:false});
-      this.data.list_mode = 'knowledge_list';
+      this.data.list_mode = 'index_search_knowledge';
+      // this.setData({
+      //   search_knowledge_list: this.data.search_knowledge_list
+      // });
     }
     
     this.setData({index_search_menu : index_search_menu});
@@ -154,7 +167,10 @@ Page({
       this.setData({hide_org_list:true});
       
       this.setData({hide_teacher_list:false});
-      this.data.list_mode = 'teacher_list';
+      this.data.list_mode = 'index_search_teacher';
+      // this.setData({
+      //   search_teacher_list: this.data.teacher_list
+      // });
     }
     
     this.setData({index_search_menu : index_search_menu});
@@ -167,7 +183,7 @@ Page({
     var index_search_menu = this.data.index_search_menu;
     if(index_search_menu[2].value == value)
     {
-      console.log("teacher");
+      console.log("organization");
       this.data.index_search_menu[2].active = true;
       this.data.index_search_menu[0].active = false;
       this.data.index_search_menu[1].active = false;
@@ -176,11 +192,59 @@ Page({
       this.setData({hide_teacher_list:true});
       
       this.setData({hide_org_list:false});
-      this.data.list_mode = 'org_list';
+      this.data.list_mode = 'index_search_org';
+      // this.setData({
+      //   search_org_list: this.data.search_org_list
+      // });
     }
     
     this.setData({index_search_menu : index_search_menu});
 
+  },
+
+  askOneTeacher:function(e){
+    var teacher = e.currentTarget.dataset.teacher;
+    console.log(teacher);
+
+    //先判断是否已注册
+    // if(wx.getStorageSync('alreadyRegister') == 'no')
+    // {
+    //   this.setData({
+    //     hide_login: false,
+    //   });
+    //   loadingSelections.call(this);
+    // }
+    // if(wx.getStorageSync('alreadyRegister') == 'yes')
+    {
+      console.log("navigate to ask operation page");
+      teacher['teacherid'] = teacher.userid;
+      teacher['subjectId'] = teacher.subjectid;
+      var parametersJSON = teacher;
+      
+      console.log(parametersJSON);
+      var parameters = netUtil.json2Form(parametersJSON);
+      // console.log(parameters);
+      wx.navigateTo({
+        url: '../ask/ask_operation' + '?' + parameters,
+        success: function(res){
+          // success
+          // console.log(res);
+        },
+        fail: function() {
+          // fail
+          // console.log(res);
+        },
+        complete: function() {
+          // complete
+          // console.log(res);
+        }
+      })
+    }
+  },
+
+  askOneOrg:function(e){
+    var org = e.currentTarget.dataset.org;
+    console.log(org);
   },
 
   onHide:function(){

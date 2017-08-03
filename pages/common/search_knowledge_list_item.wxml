@@ -1,0 +1,86 @@
+<template name="search_knowledge_list_item">
+
+<view class="list-item" style="background-color:#f3f1e4" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneItem">
+
+            <!--<view class="border_tab"/>-->
+            <view class="border_tab_index_white1"></view>
+
+ <view class="answer_container" bindtap='bindItem' data-index='{{ index }}'>
+
+            <view class="answer_wrapper" bindtap='bindItem' data-index='{{ index }}'>
+                <!--<image class="know_select_item_icon"  src='{{ item.userimg || "../../images/my_account_on.png" }}' />-->
+                <!--<text class="teacher_name">{{ item.teacherid }}</text>-->
+        <view class="knowledge_kind_content_view">
+        <text class="knowledge_kind_content" wx:if="{{item.knowledge != null ? true:false}}">{{item.knowledge}}</text>
+        <text class="knowledge_kind_content" wx:if="{{item.knowledge == null ? true:false}}">{{item.subject}}</text>
+        </view>   
+
+                 <view class="like_wrap" bindtap='bindLike' data-index='{{ index }}'><image class="like_image" src="../../images/index_icon_dianzan@2x.png"></image><text class="like_number" >{{item.likesnum}}</text></view>
+                 </view>
+</view>
+            <view class="index_dotted_line"></view>
+            <view class="border_tab_index_white1"></view>
+            <view class="index_page_select_item_content_wrap">
+            <view class="preview_img_wrap">
+            <!--<image c`-->
+            <image class="preview_img" wx:if="{{item.questioncontent.img[0] != null}}" src="{{preview_img_url + item.questioncontent.img[0]}}">
+            </image>
+
+            <image class="preview_img" wx:if="{{item.questioncontent.img[0] == null}}" src="../../images/index_zhanwei@2x.png">
+            </image>
+            </view>
+            <!--<image class="preview_img" src="{{preview_img_url+item.questioncontent.img[0]}}">
+            </image>-->
+            <view class="question_wrapper">
+            <!--<view class="border_tab_index_white"></view>-->
+                <text class="question_content">{{item.questioncontent.text[0]}}</text>   
+            </view>
+            </view>
+            
+            
+
+            <!--<view class="multi_tips">
+                <view wx:if="{{item.questioncontent.audio[0] != null}}" class="voice" >
+                    
+                    <view class="bubble" data-question_voice='{{item.questioncontent.audio[0]}}' bindtap="playVoiceRecord">
+                        <view class="bubble-tail"></view>
+                        <view class="voice-wave"></view>
+                        <view>{{item.questioncontent.audio[1}}秒</view>
+                    </view>
+
+                </view>
+
+                <view wx:if="{{item.questioncontent.img[0] != null}}" class="photo" bindtap="showPhoto">
+                    <view  data-question_photo='{{item.questioncontent.img[0]}}' >-->
+                        <!--<view>照片</view>-->
+                        <!--<image class="preview_img" src="{{preview_img_url+item.questioncontent.img[0]}}"></image>
+                    </view>
+                </view>
+
+                <view wx:if="{{item.questioncontent.draw[0] != null}}" class="draw" >
+                    <view  data-question_photo='{{item.questioncontent.draw[0]}}' bindtap="showDraw">-->
+                        <!--<view>手绘</view>-->
+                        <!--<image class="preview_img" src="{{preview_img_url+item.questioncontent.draw[0]}}"></image>
+                </view>-->
+           
+            <!--</view>-->
+<!--<view class="ctrls">
+                    <text class='{{ item.is_liked == 1 ? "like" : "not-like" }}' bindtap='bindLike' data-index='{{ index }}'>{{ item.reward }}</text>
+                    
+         </view>-->
+         <!--<view class="like_wrap">
+
+         
+            </view>-->
+
+
+            <!--</view>-->
+         
+         <view class="border_tab_index_white"></view>
+             
+            <!--<view class="interval_inder"/>-->
+            
+    
+</view>
+
+</template>

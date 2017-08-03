@@ -79,6 +79,9 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
 
     if(list_type == 'index'){
         page.data.infos=[];//知列表
+        page.data.search_knowledge_list = [];
+        page.data.search_teacher_list = [];
+        page.data.search_org_list = [];
     }
     if(list_type == 'teacher'){
         page.data.ask_teacher_list = [];//老师列表
@@ -187,18 +190,18 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             netUtil.requestSimpleList(page,'my_like_teacher',1,netUtil.action.request_refresh);
         }
         else if(page.data.list_mode == 'index_search_knowledge'){
-            page.data.personal_like_teacher_list = [];//like teacher列表
-            page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
+            page.data.search_knowledge_list = [];
+            // page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
             netUtil.requestSimpleList(page,'index_search_knowledge',1,netUtil.action.request_refresh);
         }
         else if(page.data.list_mode == 'index_search_teacher'){
-            page.data.search_teacher_list = [];//like teacher列表
-            page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
+            page.data.search_teacher_list = [];
+            // page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
             netUtil.requestSimpleList(page,'index_search_teacher',1,netUtil.action.request_refresh);
         }
         else if(page.data.list_mode == 'index_search_org'){
-            page.data.personal_like_teacher_list = [];//like teacher列表
-            page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
+            page.data.personal_like_teacher_list = [];
+            // page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
             netUtil.requestSimpleList(page,'index_search_org',1,netUtil.action.request_refresh);
         }
         
@@ -234,6 +237,23 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
             netUtil.requestSimpleList(page,'my_like_teacher',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
         }
+
+        else if(page.data.list_mode == 'index_search_knowledge'){
+            page.data.search_knowledge_list = [];
+            // page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
+            netUtil.requestSimpleList(page,'index_search_knowledge',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+        }
+        else if(page.data.list_mode == 'index_search_teacher'){
+            page.data.search_teacher_list = [];
+            // page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
+            netUtil.requestSimpleList(page,'index_search_teacher',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+        }
+        else if(page.data.list_mode == 'index_search_org'){
+            page.data.personal_like_teacher_list = [];
+            // page.data.urlDetail = base.MY_TEACHER_COLLECTION_URL_DETAIL;
+            netUtil.requestSimpleList(page,'index_search_org',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+        }
+
         else
         {
             netUtil.requestSimpleList(page,list_type,page.data.currentPageIndex +1,netUtil.action.request_loadmore);

@@ -13,6 +13,8 @@ Page({
     joinTeacherId:-1,
     joinTeacherPhone:12345678910,
     add_teacher_page:true,
+    
+    hide_teacher_list:false,
   },
   onLoad:function(parameters){
     console.log(parameters);
