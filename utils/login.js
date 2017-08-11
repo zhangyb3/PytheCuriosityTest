@@ -34,13 +34,15 @@ var login = (success, fail) => {
             {
               wx.setStorageSync('alreadyRegister', 'yes');
               wx.setStorageSync(user.UserID, registerInfo.userid);
-              wx.setStorageSync(user.StudentID, registerInfo.studentid);
-              wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
+            //   wx.setStorageSync(user.StudentID, registerInfo.studentid);
+            //   wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
               wx.setStorageSync(user.GradeID, registerInfo.gradeid);
               wx.setStorageSync(user.UserDescription, registerInfo.description);
               wx.setStorageSync(user.UserNickName, registerInfo.username);
               wx.setStorageSync('userAvatarUrl', registerInfo.userimg);
 
+              wx.setStorageSync(user.StudentID, registerInfo.userid);
+              wx.setStorageSync(user.TeacherID, registerInfo.userid);
 
                 if(wx.getStorageSync(user.UserID)!='userID')
                 {

@@ -52,7 +52,8 @@ var orderPay = (success, fail) => {
           signType: 'MD5',
           paySign: prepay_result_data.paySign,
           success: function(res){
-              console.log(res);
+              console.log(res);       
+              wx.setStorageSync('last_pay_id', prepay_result_data.prepay_id);      
               typeof success == "function" && success(res);
           },
           fail: function(res) {
@@ -100,8 +101,33 @@ var enchashment = (success, fail) => {
 }
 
 
+function recordQuestionPay(parameters)
+{
+    wx.request({
+      url: config.PytheRestfulServerURL + '/record/askQuestion',
+      data: {
+        studentId: parameters.studentId,
+        teacherId: parameters.teacherId,
+        questionId: wx.getStorageSync('last_commit_question_id'),
+        money: wx.getStorageSync('rewardNum'),
+        payId: wx.getStorageSync('last_pay_id'),
+      },
+      method: 'POST', 
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+}
+
 module.exports = {
     requestOrder : requestOrder,
     orderPay : orderPay,
     enchashment: enchashment,
+    recordQuestionPay: recordQuestionPay,
 }

@@ -19,7 +19,7 @@
 
         <view class="organization_description_revise_zone">
             <view class="organization_edit_icon_view">
-                <button class="organization_edit_icon" bindtap='organizationEditOperationPage'>
+                <button class="organization_edit_icon" data-org='{{organization}}' bindtap='organizationEditOperationPage'>
                     <image  src="../../images/info_edit.png">
                     </image>
                 </button>

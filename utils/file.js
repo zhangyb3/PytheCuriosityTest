@@ -1,6 +1,7 @@
 
 var config = require('./config')
 var base = require('./base')
+var pay = require("./pay");
 
 const FILE_UPLOAD_URL = `${config.PytheRestfulServerURL}/file/uploadFile`;//文件上传服务
 

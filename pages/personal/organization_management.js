@@ -27,8 +27,8 @@ Page({
     wx.request({
       url: config.PytheRestfulServerURL + '/org/managerQuery',
       data: {
-        // managerId: wx.getStorageSync(user.TeacherID),
-        managerId: 1,
+        managerId: wx.getStorageSync(user.TeacherID),
+        // managerId: 1,
       },
       method: 'GET', 
       success: function(res){
@@ -64,10 +64,11 @@ Page({
     });
   },
 
-  organizationEditOperationPage:function(){
+  organizationEditOperationPage:function(e){
     console.log('go to organization edit page');
     wx.navigateTo({
-      url: 'organization_edit?editOrganization=true',
+      url: 'organization_edit?editOrganization=true&'
+            +'orgId='+e.currentTarget.dataset.org.id,
       success: function(res){
         // success
       },

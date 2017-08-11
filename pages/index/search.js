@@ -24,7 +24,7 @@ Page({
         active:false
     }],
 
-    // searchContent:'查询',
+    searchContent:'',
 
     hide_knowledge_list:false,
     hide_teacher_list: true,
@@ -39,8 +39,9 @@ Page({
     list_mode: 'index_search_knowledge',
     list_type: 'index',
   },
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+  onLoad:function(parameters){
+    console.log(parameters);
+    this.data.searchContent = parameters.searchContent;
   },
   onReady:function(){
     // 页面渲染完成

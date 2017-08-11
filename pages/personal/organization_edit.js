@@ -22,6 +22,7 @@ Page({
   onLoad:function(parameters){
     editOrg = parameters.editOrganization;
     setupOrg = parameters.setupOrganization;
+    this.data.organizationId = parameters.orgId;
     console.log(parameters);
     var that = this;
     if(setupOrg)
@@ -29,8 +30,8 @@ Page({
       wx.request({
         url: config.PytheRestfulServerURL + '/teacher/setupOrg',
         data: {
-          // teacherId:wx.getStorageSync(user.TeacherID),
-          teacherId:2,
+          teacherId:wx.getStorageSync(user.TeacherID),
+          // teacherId:2,
         },
         method: 'GET', 
         success: function(res){
@@ -50,6 +51,10 @@ Page({
           // complete
         }
       });
+    }
+    if(editOrg)
+    {
+
     }
 
   },

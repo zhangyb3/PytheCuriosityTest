@@ -760,7 +760,7 @@ Page({
       rewardTap5: false,
       rewardTap10: false
     })
-    wx.setStorageSync('rewardNum', 1);
+    wx.setStorageSync('rewardNum', 0.01);
     
     
     
@@ -977,6 +977,8 @@ function commitQuestion() {
       
      
         base.commitQuestion(questionParams);
+        // pay.recordQuestionPay(questionParams);
+
         wx.setStorageSync('hasTakenPhoto', 'no');
         wx.setStorageSync('hasDrawnPicture', 'no');
         this.data.hasPaidReward = false;

@@ -101,23 +101,23 @@ Page({
       pageNum: 1,
     };
 
-    listViewUtil.loadList(that,'index',config.PytheSearchServerURL,
-    "",
-    10,
-        searchParameters,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
+    // listViewUtil.loadList(that,'index',config.PytheSearchServerURL,
+    // "",
+    // 10,
+    //     searchParameters,
+    //     function (netData){
+    //       //取出返回结果的列表
+    //       return netData.data;
+    //     },
+    //     function(item){
          
-        },
-        {},
-        'GET',
-    );
+    //     },
+    //     {},
+    //     'GET',
+    // );
 
     wx.navigateTo({
-      url: 'search',
+      url: 'search?searchContent='+this.data.search_content_text,
       success: function(res){
         // success
       },

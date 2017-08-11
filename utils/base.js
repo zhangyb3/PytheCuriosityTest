@@ -1,6 +1,7 @@
 var config = require('./config')
 var user = require('./user')
 var login = require('login.js')
+var pay = require("./pay");
 
 const DETAIL_CONTENT_URL = `${config.PytheRestfulServerURL}/index2/question_answers`;
 
@@ -14,9 +15,9 @@ const MY_QUESTION_ANSWER_URL_DETAIL = `/me/question/click`;
 
 const MY_QUESTION_ANSWER_CONCRETE_URL = `/me/question/answers`;
 
-const MY_ANSWERED_URL_DETAIL = `/me/answer/is`;
+const MY_ANSWERED_URL_DETAIL = `/teacher/answer/is`;
 
-const MY_UNANSWER_URL_DETAIL = `/me/answer/isnot`;
+const MY_UNANSWER_URL_DETAIL = `/teacher/answer/isnot`;
 
 const MY_ANSWER_COLLECTION_URL_DETAIL = `/me/collection/question`;
 
@@ -112,6 +113,9 @@ function commitQuestion(parameters)
     success: function(res){
       // success
       console.log(res);
+      wx.setStorageSync('last_commit_question_id', res.data.data);
+      //提交问题之后纪录付款技能
+      pay.recordQuestionPay(parameters);
       wx.showToast({
         title: '已发布',
         icon: 'success',
