@@ -52,9 +52,7 @@ Page({
 
   listenSearchInput:function(e){
     console.log(e.detail.value);
-    this.setData({
-      searchContent: e.detail.value,
-    });
+    this.data.searchContent = e.detail.value
   },
   searchByContent:function(e){
     var search_content = this.data.searchContent;
@@ -246,6 +244,18 @@ Page({
   askOneOrg:function(e){
     var org = e.currentTarget.dataset.org;
     console.log(org);
+    wx.navigateTo({
+      url: 'orgInfo?orgId=' + org.id,
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
   },
 
   onHide:function(){

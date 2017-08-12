@@ -2,6 +2,7 @@
   "pages":[
     "pages/index/index",
     "pages/index/search",
+    "pages/index/orgInfo",
     "pages/logs/logs",
     "pages/ask/ask",
     "pages/ask/ask_operation",

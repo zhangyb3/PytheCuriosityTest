@@ -15,6 +15,7 @@ Page({
     teacherPhone:13828494261,
     organizationName:'辅导班',
     organizationDescription:'渣和无用改革',
+    organizationAddress:'',
     organizationId:123,
     organization:{},
 
@@ -78,6 +79,9 @@ Page({
           var members = res.data.data.members;
           var organization = res.data.data.organization;
           that.data.organization = organization;
+          that.data.organizationName = organization.name;
+          that.data.organizationDescription = organization.description;
+          that.data.organizationAddress = organization.address;
           that.setData({
             member_display_list:members,
             orgInfo:organization,
@@ -97,23 +101,17 @@ Page({
 
   inputOrganizationName:function(e){
     console.log(e.detail.value);
-    this.setData({
-      organizationName:e.detail.value,
-    });
+    this.data.organizationName=e.detail.value;
   },
 
   inputOrganizationDescription:function(e){
     console.log(e.detail.value);
-    this.setData({
-      organizationDescription:e.detail.value,
-    });
+    this.data.organizationDescription=e.detail.value;
   },
 
   inputTeacherPhone:function(e){
     console.log(e.detail.value);
-    this.setData({
-      teacherPhone:e.detail.value,
-    });
+    this.data.teacherPhone=e.detail.value;
   },
 
   searchTeacherByPhone:function(e){
@@ -166,6 +164,41 @@ Page({
         // complete
       }
     })
+  },
+
+  updateOrganization:function(e){
+    console.log('edit org');
+    wx.request({
+      url: config.PytheRestfulServerURL + '/teacher/editOrg',
+      data: {
+        managerId: wx.getStorageSync(user.TeacherID),
+        orgName: this.data.organizationName,
+        description: this.data.organizationDescription,
+      },
+      method: 'POST', 
+      success: function(res){
+        // success
+        wx.navigateBack({
+          delta: 1, // 回退前 delta(默认为1) 页面
+          success: function(res){
+            // success
+          },
+          fail: function(res) {
+            // fail
+          },
+          complete: function(res) {
+            // complete
+          }
+        })
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    });
+
   },
 
   onHide:function(){

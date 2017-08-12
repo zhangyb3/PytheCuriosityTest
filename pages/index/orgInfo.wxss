@@ -1,0 +1,17 @@
+/* pages/index/orgInfo.wxss */
+
+
+.index_page_container{
+  width: 100%;
+  height: auto;
+}
+
+
+
+
+
+
+
+
+
+@import "../listView/search_teacher_list.wxss";

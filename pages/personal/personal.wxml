@@ -65,7 +65,7 @@
 
     <view class="organization_management personal_operation_item" bindtap='selectOrganizationManagement'>
 <view class="menu_list_icon_wrap">
-    <image class="menu_list_icon_detail" src="../../images/personal_iocn_jiesuan@2x.png"></image>
+    <image class="menu_list_icon_detail" src="../../images/organization_icon.png"></image>
 </view>
             <text class="organization personal_operation_item_text">机构管理</text>
             <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>

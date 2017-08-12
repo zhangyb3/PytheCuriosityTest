@@ -9,7 +9,7 @@
       <block wx:for="{{search_teacher_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         
         <view class="search_teacher_list_container" >
-          <template is="search_teacher_list_item" data="{{item,index,alreadyRegister,add_teacher_page,index_search_page}}"></template>
+          <template is="search_teacher_list_item" data="{{item,index,alreadyRegister,add_teacher_page,index_search_page,teacher_edit}}"></template>
         </view>
       </block>
 

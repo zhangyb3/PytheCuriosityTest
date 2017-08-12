@@ -33,6 +33,16 @@
                 <view class="add_teacher_button" wx:if="{{add_teacher_page == true}}" bindtap='organizationAddTeacher' data-teacher="{{item}}">
                     <image src="../../images/icon_choose_sel@2x.png"></image>
                 </view>
+
+                <view class="horizontal_scroll_container" wx:if="{{teacher_edit == true}}">
+  
+                    <scroll-view class="horizontal_scroll_handle" scroll-x="true" style=" white-space: nowrap; width: 50px; height: 50px; display: flex">
+                        <view class="original" style="width: 50px; height: 50px; display: inline-block"></view>
+                        <view class="delete" style="width: 50px; height: 50px; display: inline-block">
+                        </view>
+                        
+                    </scroll-view>
+                </view>
                 
                 <!--<image src="../../images/question_icon_lianxi@2x.png">
                 </image>-->

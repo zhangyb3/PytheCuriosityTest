@@ -333,3 +333,11 @@
     margin-left: 5%;
     margin-right: 5%;
 }
+
+.original{
+    background-color: #f3f1e4;
+}
+
+.delete{
+    background-color: red;
+}
