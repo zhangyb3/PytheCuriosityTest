@@ -40,7 +40,7 @@ var login = (success, fail) => {
               wx.setStorageSync(user.UserDescription, registerInfo.description);
               wx.setStorageSync(user.UserNickName, registerInfo.username);
               wx.setStorageSync('userAvatarUrl', registerInfo.userimg);
-
+              wx.setStorageSync(user.Status, registerInfo.status);
               wx.setStorageSync(user.StudentID, registerInfo.userid);
               wx.setStorageSync(user.TeacherID, registerInfo.userid);
 
@@ -51,6 +51,10 @@ var login = (success, fail) => {
                     wx.setStorageSync('fromRegister', 'no');
                    
 
+                }
+                if(wx.getStorageSync(user.Status) == 1)
+                {
+                    wx.setStorageSync(user.OrganizationID, registerInfo.organizationid);
                 }
 
             }

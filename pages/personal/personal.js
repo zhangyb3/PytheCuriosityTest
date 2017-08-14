@@ -460,6 +460,31 @@ Page({
       }
     });
 
+    wx.request({
+      url: config.PytheRestfulServerURL + '/org/query',
+      data: {
+        orgId: wx.getStorageSync(user.OrganizationID),
+        
+      },
+      method: 'GET', 
+      success: function(res){
+        // success
+        if(res.data.status == 200)
+        {
+          that.setData({
+            teacherEarn: res.data.data.organization.name,
+          });
+        }
+        
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    });
+
     if(wx.getStorageSync('fixPersonalInfo')=='yes')
     {
       var that = this;

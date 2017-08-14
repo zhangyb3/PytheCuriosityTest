@@ -13,4 +13,5 @@ module.exports = {
     SubjectID: 'SubjectID',
     UserDescription: 'UserDescription',
     UserNickName: 'userNickName',
+    Status: 'Status',
 }

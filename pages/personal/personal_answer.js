@@ -11,15 +11,18 @@ var fileSys = require("../../utils/file.js");
 
 Page({
   data:{
-    personal_answer_menu:[{
-        name:"已教",
-        value:"already answer",
-        active:true
-    },{
+    personal_answer_menu:[
+    {
         name:"待教",
         value:"not answer",
+        active:true
+    },
+    {
+        name:"已教",
+        value:"already answer",
         active:false
-    }],
+    }
+    ],
 
     personal_answer_list:[
       
@@ -29,14 +32,14 @@ Page({
       
     ],
 
-    list_mode:'my_answered',
+    list_mode:'my_unanswer',
 
     hide_show_image_page: true,
     hide_select_item: true,
     scrollHeight:0,
 
-    hide_personal_answer_list:false,
-    hide_personal_not_answer_list:true,
+    hide_personal_answer_list:true,
+    hide_personal_not_answer_list:false,
     preview_img_url: config.PytheFileServerURL ,
   },
   onLoad:function(parameters){
@@ -59,11 +62,11 @@ Page({
     var value = e.target.dataset.value; // 获取当前点击标签的值
     console.log(value);
     var personal_answer_menu = this.data.personal_answer_menu;
-    if(personal_answer_menu[0].value == value)
+    if(personal_answer_menu[1].value == value)
     {
       console.log("已答");
-      this.data.personal_answer_menu[0].active = true;
-      this.data.personal_answer_menu[1].active = false;
+      this.data.personal_answer_menu[1].active = true;
+      this.data.personal_answer_menu[0].active = false;
       
       this.setData({hide_personal_answer_list:false});
       
@@ -73,8 +76,8 @@ Page({
     }
     else
     {
-      this.data.personal_answer_menu[0].active = false;
-      this.data.personal_answer_menu[1].active = true;
+      this.data.personal_answer_menu[1].active = false;
+      this.data.personal_answer_menu[0].active = true;
     }
     this.setData({personal_answer_menu : personal_answer_menu});
     
@@ -84,11 +87,11 @@ Page({
     var value = e.target.dataset.value; // 获取当前点击标签的值
     console.log(value);
     var personal_answer_menu = this.data.personal_answer_menu;
-    if(personal_answer_menu[1].value == value)
+    if(personal_answer_menu[0].value == value)
     {
       console.log("未答");
-      this.data.personal_answer_menu[1].active = true;
-      this.data.personal_answer_menu[0].active = false;
+      this.data.personal_answer_menu[0].active = true;
+      this.data.personal_answer_menu[1].active = false;
       
       this.setData({hide_personal_answer_list:true});
       

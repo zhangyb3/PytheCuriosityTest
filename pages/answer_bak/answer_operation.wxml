@@ -1,0 +1,199 @@
+
+<import src="../section/operation_take_photo.wxml" />
+<import src="../section/operation_record_sound.wxml" />
+<import src="../section/operation_draw_picture.wxml" />
+
+<import src="../pop/show_image_page.wxml" />
+<view class="show_image_page_container" hidden='{{hide_show_image_page}}'>
+        <template is="show_image_page" data="{{img_src}}"></template>
+</view>
+
+<import src="../pop/knowledge_list.wxml" />
+<view class="knowledge_container" hidden='{{hide_knowledge_list}}'>
+        <template is="knowledge_list" data="{{knowledge1Range,knowledge2Range}}"></template>
+</view>
+
+<view class="answer_operation_view" data-item='{{ answer_item }}'>
+    
+       
+         
+        <!--<view class="border_tab"></view>-->
+
+        <view class="answer_question_wrapper">
+                <text class="question_content">{{answer_question.text_content}}</text>
+                
+        </view>
+
+        <!--<view class="border_tab"></view>-->
+<view class="background_white">
+    <view class="multi_tips">
+            <!--<view wx:if="{{answer_question.audio_path != null}}" class="voice" >
+                
+                <view class="bubble" data-question_voice='{{answer_question.audio_path}}' bindtap="playQuestionVoiceRecord">
+                    <view class="bubble-tail"></view>
+                    <view class="voice-wave"></view>
+                    <view>{{answer_question.audio_duration}}秒</view>
+                </view>
+
+            </view>-->
+
+        <view wx:if="{{answer_question.audio_path != null}}" data-question_voice="{{answer_question.audio_path}}" class="speak_style_record" bindtap="playQuestionVoiceRecord">
+        <image wx:if="{{!isPlaying}}" class="sound_style_record" src="../../images/voice_static.png" ></image>
+        <image wx:if="{{isPlaying}}" class="sound_style_record" src="../../images/record.gif" ></image>
+        <text class="record_time">{{answer_question.audio_duration}}秒</text>
+
+        </view>
+
+
+
+
+            <view wx:if="{{answer_question.photo_path != null}}" class="photo" >
+                <view  data-question_photo='{{answer_question.photo_path}}' bindtap="showQuestionPhoto">
+                    <!--<view>照片</view>-->
+                    <image class="preview_img_classic" src="{{preview_img_url+answer_question.photo_path}}"></image>
+                </view>
+            </view>
+
+            <view wx:if="{{answer_question.draw_path != null}}" class="draw" >
+                <view  data-question_draw='{{answer_question.draw_path}}' bindtap="showQuestionDraw">
+                    <!--<view>手绘</view>-->
+                    <image class="preview_img_classic" src="{{preview_img_url+answer_question.draw_path}}"></image>
+                </view>
+            </view>
+
+        </view>
+</view>
+        
+        <view class="border_tab_white"></view>
+
+        <!--<view class="dotted_line"></view>-->
+
+        <!--<view class="border_tab"></view>-->
+
+        <view class="answer_container" >
+            
+            
+            <view class="border_tab"></view>
+<view class="select_knowledge_container" hidden="{{subject_id == 1002 || subject_id == 1003 || subject_id == 1010 || subject_id == 1011 || subject_id == 1012}}" >
+            <button class="select_knowledge_button" bindtap="selectKnowledge">
+                选择知识点：{{knowledge_point}}
+            </button>
+            
+        </view>
+            <view class="answer_content_zone" hidden='{{hide_textarea}}'>
+                <textarea class="answer_content_text_input" placeholder="请输入答案..."  bindinput="getAnswerText" placeholder-style="font-size:30rpx; color:#999999" maxlength="-1" />
+            </view>
+
+            <view class="border_tab"></view>
+
+        </view>
+
+        <view class="multi_tips">
+
+            <view wx:if="{{question_answer.voice_path != null}}" class="speak_style_record" data-answer_voice="{{question_answer.voice_path}}" bindtap="playAnswerVoiceRecord">
+        <image wx:if="{{!isPlaying}}" class="sound_style_record" src="../../images/voice_static.png" ></image>
+        <image wx:if="{{isPlaying}}" class="sound_style_record" src="../../images/record.gif" ></image>
+        <text class="record_time">{{question_answer.voice_timeLength}}秒</text>
+            </view> 
+
+            <view wx:if="{{question_answer.photo_path != null}}" class="photo" >
+                <view  data-answer_photo='{{question_answer.photo_path}}' bindtap="showAnswerPhoto">
+                    <!--<view>照片</view>-->
+                    <image class="preview_img_classic" src="{{question_answer.photo_path}}"></image>
+                </view>
+            </view>
+
+            <view wx:if="{{question_answer.draw_path != null}}" class="draw" >
+                <view  data-answer_draw='{{question_answer.draw_path}}' bindtap="showAnswerDraw">
+                    <!--<view>手绘</view>-->
+                    <image class="preview_img_classic" src="{{question_answer.draw_path}}"></image>
+                </view>
+            </view>
+
+        </view>
+
+        <view class="border_tab_white"></view>
+
+<!--<view class="grade_zone">
+<view class="border_tab_white"></view>
+    <view class="grade_container" >
+            <text class="grade_hint"> 一级: </text>
+            <picker mode="selector" bindchange="knowledge1Change" value="{{knowledge1_index}}" range="{{knowledge1Range}}" class="grade_picker_wrap">
+                <view class="grade_picker">
+                    {{knowledge1Range[knowledge1_index]}}
+                </view>
+            </picker>
+        </view>
+<view class="border_tab_white"></view>
+        <view class="grade_container" >
+            <text class="grade_hint"> 二级: </text>
+            <picker mode="selector" bindchange="knowledge2Change" value="{{knowledge2_index}}" range="{{knowledge2Range}}" class="grade_picker_wrap">
+                <view class="grade_picker">
+                    {{knowledge2Range[knowledge2_index]}}
+                </view>
+            </picker>
+        </view>
+        <view class="border_tab_white"></view>
+</view>-->
+        <!--<view class="border_tab_white"></view>-->
+
+        <view class="answer_operation_zone" >
+            <!--<text class='record_sound' bindtap='recordSound'>录音
+            </text>
+            <text class="take_photo" bindtap="takePhoto">拍照
+            </text>
+            <text class="draw_picture" bindtap='drawPicture'>画板
+            </text>-->
+<view class="record_sound" bindtap="recordSound">
+        <image class="record_sound_image" src="../../images/question_icon_record@2x.png"></image>
+        <text class="record_sound_text" >录音</text>
+        </view>
+
+        <view class="take_photo" bindtap="takePhoto">
+        <image class="take_photo_image" src="../../images/question_icon_pic@2x.png"></image>
+        <text class="record_sound_text" >拍照</text>
+        </view>
+
+        <view class="draw_picture" bindtap="drawPicture">
+        <image class="draw_picture_image" src="../../images/question_icon_huaban@2x.png"></image>
+        <text class="record_sound_text" >画板</text>
+        </view>
+
+
+
+        </view>
+
+        <view class="record_sound_section_container" hidden='{{hide_record_sound_section}}'>
+             <template is="operation_record_sound_section" data='{{isSpeaking,loop,voices}}'></template>
+        </view>
+
+        <view class="take_photo_section_container" hidden='{{hide_take_photo_section}}'>
+             <template is="operation_take_photo_section" ></template>
+        </view>
+
+        <view class="draw_picture_section_container" hidden='{{hide_draw_picture_section}}'>
+             <template is="operation_draw_picture_section" data='{{pen}}'></template>
+        </view>
+
+        <!--<view class="border_tab"></view>-->
+
+        <!--<view class="select_knowledge_container">
+            <button class="select_knowledge_button" bindtap="selectKnowledge">
+                选择知识点：{{knowledge_point}}
+            </button>
+            
+        </view>-->
+
+        <view class="answer_commit_confirm">
+            <button class="answer_commit_button" bindtap="commitAnswer">
+                确定
+            </button>
+        </view>
+        <view class="background"></view>
+
+<!--<view class="background"></view>-->
+    </view>
+
+    
+
+    

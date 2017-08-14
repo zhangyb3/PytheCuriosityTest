@@ -1,106 +1,55 @@
-// pages/ask/ask.js
+// pages/answer/answer.js
 
-var netUtil=require("../../utils/netUtil.js");
+
 var listViewUtil=require("../../utils/listViewUtil.js");
+var netUtil=require("../../utils/netUtil.js");
 var utils=require("../../utils/util.js");
-var user = require("../../utils/user.js");
 var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
+var user = require("../../utils/user.js");
+var timer = require("../../utils/wxTimer.js");
 
 Page({
   data:{
-    ask_page_menu:[{
-        name:"科目",
-        value:"subject",
-        active:true
+    answer_page_sections:['分类','排序'],
+    answer_page_menu:[{
+        name:"分类",
+        value:"classification",
+        active:false
     },{
-        name:"名师",
-        value:"teacher",
+        name:"排序",
+        value:"sort",
         active:false
     }],
-
-    subjectList:[
-      
-      {
-        subjectId:1001,
-        subject_name: '数学',
-        sub_dis: '代数、几何、概率',
-        icon:'../../images/question1_icon_math@2x.png',
-      },
-      {
-        subjectId:1002,
-        subject_name: '英语',
-        sub_dis: '翻译、作文、语法',
-        icon:'../../images/question1_icon_English@2x.png',
-      },
-      {
-        subjectId:1003,
-        subject_name: '语文',
-        sub_dis: '文言文、古诗词解析、成语',
-        icon:'../../images/question1_icon_language@2x.png',
-      },
-      {
-        subjectId:1004,
-        subject_name: '艺术',
-        sub_dis: '音乐、舞蹈、美术',
-        icon:'../../images/icon_art@2x.png',
-      },
-      {
-        subjectId:1005,
-        subject_name: '健康',
-        sub_dis: '运动、养生',
-        icon:'../../images/icon_health@2x.png',
-      },
-      {
-        subjectId:1006,
-        subject_name: '物理',
-        sub_dis: '能量守恒、自由落体、加速度',
-        icon:'../../images/question1_icon_physics@2x.png',
-      },
-      {
-        subjectId:1007,
-        subject_name: '化学',
-        sub_dis: '元素周期表、化学方程式',
-        icon:'../../images/question1_icon_chemical@2x.png',
-      },
-      {
-        subjectId:1008,
-        subject_name: '生物',
-        sub_dis: '细胞、物种、食物链',
-        icon:'../../images/question1_icon_biont@2x.png',
-      },
-      {
-        subjectId:1009,
-        subject_name: '地理',
-        sub_dis: '时区、地形、星系',
-        icon:'../../images/question1_icon_geography@2x.png',
-      },
-      {
-        subjectId:1010,
-        subject_name: '历史',
-        sub_dis: '春秋战国、分封制、诸子百家',
-        icon:'../../images/question1_icon_history@2x.png',
-      },
-      {
-        subjectId:1011,
-        subject_name: '编程',
-        sub_dis: '数据结构、算法、机器码',
-        icon:'../../images/icon_computer@2x.png',
-      },
-      {
-        subjectId:1012,
-        subject_name: '政治',
-        sub_dis: '生产关系、代议制、所有制',
-        icon:'../../images/question1_icon_political@2x.png',
-      },  
-    ],
-
-    ask_teacher_list:[
+    subject_infos: [
      
     ],
-    search_teacher_list:[],
     
+    questionsForAnswer:[
+          
+    ],
+    selectSubject:'',
+    sortSortAttribute:'',
+    sort_attributes:[
+      { key: 1, name: '按时间' },
+      { key: 2, name: '按金额' }
+    ],
+    
+    answer_page_filter:{
+      selectSubject:{
+        subjectId:-1,
+        subjectName:'科目',
+      },
+      selectSort:{
+        sortId:'startTime',
+        sortName:'排序',
+      },
+    },
+
+    wxTimerList:[],
+
+    preview_img_url: config.PytheFileServerURL ,
     hide_register_lock_cover: false,
 
     hide_login:true,
@@ -140,104 +89,244 @@ Page({
 
     countdownText : '发送验证码',
     second: 60,
-
-    list_height: 0,
-    list_mode:'subject_list',
+    scrollHeight:0,
 
     hide_loading: true,
-
-    searchParameters : {
-      query: '',
-      subjectId: -1,
-      userId: -1,
-      pageNum: 1,
-      pageSize: 10
-    },
-
   },
   onLoad:function(options){
+
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750) //80为顶部搜索框区域高度 rpx转px 屏幕宽度/750
+          // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750)
+          scrollHeight: 450
+        });
+      }
+    })
+
 
     this.setData({
       hide_register_lock_cover: false,
     });
-    
-    
+
     
       this.setData({
         hide_register_lock_cover: true,
       });
-    
-    var that = this;
-    wx.getSystemInfo({
-      success: function(res) {
-        console.log(res);
-        that.setData({
-          list_height: res.windowHeight ,
-        });
-      }
-    })
-    
-    
+   
 
-    this.setData({hide_ask_subject_list:false});
-    this.setData({hide_ask_teacher_list:true});
+   
+    this.setData({hide_pop_subject_list:true});
+    this.setData({hide_pop_sort_attribute_list:true});
 
-    this.setData({ask_subject_list: this.data.subjectList});
-    // this.setData({ask_teacher_list: this.data.teachers});
-
+   wx.navigateTo({
+     url: '../personal/personal_answer',
+     success: function(res){
+       // success
+     },
+     fail: function(res) {
+       // fail
+     },
+     complete: function(res) {
+       // complete
+     }
+   })
+    
     
   },
 
   subject_filter:function(e){
     var value = e.target.dataset.value; // 获取当前点击标签的值
     console.log(value);
-    var ask_page_menu = this.data.ask_page_menu;
-    if(ask_page_menu[0].value == value)
+    var answer_page_menu = this.data.answer_page_menu;
+    if(answer_page_menu[0].value == value)
     {
-      console.log("subject");
-      this.data.ask_page_menu[0].active = true;
-      this.data.ask_page_menu[1].active = false;
+      console.log("classification");
+      this.data.answer_page_menu[0].active = true;
+      this.data.answer_page_menu[1].active = false;
+      if(this.data.hide_pop_subject_list == true)
+      {
+        //收起排序属性列表
+        this.setData({hide_pop_sort_attribute_list:true});
+        //弹出科目列表
+        this.setData({hide_pop_subject_list:false});
+      }
+      else
+      {
+        //收起排序属性列表
+        this.setData({hide_pop_sort_attribute_list:true});
+        //弹出科目列表
+        this.setData({hide_pop_subject_list:true});
+
+        this.data.answer_page_menu[0].active = false;
+        this.data.answer_page_menu[1].active = false;
+      }
       
-      this.setData({hide_ask_teacher_list:true});
-      
-      this.setData({hide_ask_subject_list:false});
-      this.data.list_mode = 'subject_list';
     }
     else
     {
-      this.data.ask_page_menu[0].active = false;
-      this.data.ask_page_menu[1].active = true;
+      this.data.answer_page_menu[0].active = false;
+      this.data.answer_page_menu[1].active = true;
     }
-    this.setData({ask_page_menu : ask_page_menu});
+    this.setData({answer_page_menu : answer_page_menu});
     
   },
 
-  teacher_filter:function(e){
+  sort_by_attribute:function(e){
     var value = e.target.dataset.value; // 获取当前点击标签的值
-    // console.log(value);
-    var ask_page_menu = this.data.ask_page_menu;
-    if(ask_page_menu[1].value == value)
+    console.log(value);
+    var answer_page_menu = this.data.answer_page_menu;
+    if(answer_page_menu[1].value == value)
     {
-      console.log("teacher");
-      this.data.ask_page_menu[1].active = true;
-      this.data.ask_page_menu[0].active = false;
+      console.log("sort");
+      this.data.answer_page_menu[1].active = true;
+      this.data.answer_page_menu[0].active = false;
+      if(this.data.hide_pop_sort_attribute_list == true)
+      {
+        //收起科目列表
+        this.setData({hide_pop_subject_list:true});
+        //弹出排序属性列表
+        this.setData({hide_pop_sort_attribute_list:false});
+      }
+      else
+      {
+        //收起科目列表
+        this.setData({hide_pop_subject_list:true});
+        //弹出排序属性列表
+        this.setData({hide_pop_sort_attribute_list:true});
+
+        this.data.answer_page_menu[1].active = false;
+        this.data.answer_page_menu[0].active = false;
+      }
       
-      this.setData({hide_ask_subject_list:true});
-      
-      this.setData({hide_ask_teacher_list:false});
-      this.data.list_mode = 'teacher_list';
-      this.setData({hide_teacher_list:false});
     }
     else
     {
-      this.data.ask_page_menu[1].active = false;
-      this.data.ask_page_menu[0].active = true;
+      this.data.answer_page_menu[1].active = false;
+      this.data.answer_page_menu[0].active = true;
     }
-    this.setData({ask_page_menu : ask_page_menu});
+    this.setData({answer_page_menu : answer_page_menu});
 
   },
 
-  selectOneSubject:function(e){
+  selectSubject:function(e){
+    
+    var select_subject = e.currentTarget.dataset.select_subject;
+    console.log(select_subject.subject);
+    
+    this.data.answer_page_filter.selectSubject.subjectName = select_subject.subject;
+    this.data.answer_page_filter.selectSubject.subjectId = select_subject.subjectid;
+    this.setData({answer_page_filter: this.data.answer_page_filter});
+    this.setData({hide_pop_subject_list:true});
+
+    var answer_page_menu = this.data.answer_page_menu;
+    this.data.answer_page_menu[0].active = false;
+    this.data.answer_page_menu[1].active = false;
+    this.setData({answer_page_menu : answer_page_menu});
+
+    var teacherId = -1;
+    if(wx.getStorageSync(user.UserID) != 'TeacherID')
+    {
+      teacherId = wx.getStorageSync(user.UserID);
+    }
+    var that = this;
+    var conditionQuestionParams = {
+      subjectId: that.data.answer_page_filter.selectSubject.subjectId,
+      condition: that.data.answer_page_filter.selectSort.sortId,
+      order: 'desc',     
+      pageNum: 1,
+      pageSize: 10,   
+      teacherId: teacherId,
+    };
+    listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
+    "/answer/conditionList",
+    10,
+        conditionQuestionParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+         
+        },
+        {},
+        'GET',
+    );
+  },
+
+  selectSortAttribute:function(e){
+    
+    var selected_sort_attribute = e.currentTarget.dataset.name;
+    console.log(selected_sort_attribute);
+    
+    this.setData({hide_pop_sort_attribute_list:true});
+    
+    var answer_page_menu = this.data.answer_page_menu;
+    this.data.answer_page_menu[0].active = false;
+    this.data.answer_page_menu[1].active = false;
+    this.setData({answer_page_menu : answer_page_menu});
+
+    var teacherId = -1;
+    if(wx.getStorageSync(user.UserID) != 'TeacherID')
+    {
+      teacherId = wx.getStorageSync(user.UserID);
+    }
+    var that= this;
+    var conditionQuestionParams = {
+        subjectId: that.data.answer_page_filter.selectSubject.subjectId,
+        order: 'desc',     
+        pageNum: 1,
+        pageSize: 10,   
+        teacherId: teacherId,
+    };
+    that.data.answer_page_filter.selectSort.sortName = selected_sort_attribute;
+    if(selected_sort_attribute == "按金额")
+    {
+      conditionQuestionParams.condition = 'reward';
+       that.data.answer_page_filter.selectSort.sortId = 'reward';
+    }
+    if(selected_sort_attribute == "按时间")
+    {
+      conditionQuestionParams.condition = 'startTime';
+      that.data.answer_page_filter.selectSort.sortId = 'startTime';
+    }
+    that.setData({answer_page_filter: this.data.answer_page_filter});
+
+    listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
+    "/answer/conditionList",
+    10,
+        conditionQuestionParams,
+        function (netData){
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function(item){
+          wx.showToast({
+              title: item.question.questionid,
+              icon: 'success',
+              duration: 1500
+          })
+          runTimer.call(item,that);
+        },
+        {},
+        'GET',
+    );
+
+  },
+
+  returnAnswerPage: function(e) {
+      console.log("return to answer page");
+      this.setData({hide_pop_subject_list:true});
+      this.setData({hide_pop_sort_attribute_list:true});
+
+      var answer_page_menu = this.data.answer_page_menu;
+      this.data.answer_page_menu[0].active = false;
+      this.data.answer_page_menu[1].active = false;
+      this.setData({answer_page_menu : answer_page_menu});
+  },
+
+  selectOneItem:function(e){
 
     //先判断是否已注册
     if(wx.getStorageSync('alreadyRegister') == 'no')
@@ -249,85 +338,21 @@ Page({
     }
     if(wx.getStorageSync('alreadyRegister') == 'yes')
     {
-      // console.log("navigate to ask operation page");
-      // var parametersJSON = e.currentTarget.dataset.item;
-      // console.log(parametersJSON);
-      // var parameters = netUtil.json2Form(parametersJSON);
-      // // console.log(parameters);
-      // wx.navigateTo({
-      //   url: 'ask_operation' + '?' + parameters,
-      //   success: function(res){
-      //     // success
-      //     // console.log(res);
-      //   },
-      //   fail: function() {
-      //     // fail
-      //     // console.log(res);
-      //   },
-      //   complete: function() {
-      //     // complete
-      //     // console.log(res);
-      //   }
-      // })
-
-      var that = this;
-      console.log("teacher");
-      this.data.ask_page_menu[1].active = true;
-      this.data.ask_page_menu[0].active = false;
-      
-      this.setData({hide_ask_subject_list:true});
-      
-      this.setData({hide_ask_teacher_list:false});
-      this.data.list_mode = 'teacher_list';
-      that.setData({
-        ask_page_menu : this.data.ask_page_menu,
-        hide_teacher_list: false,
-      });
-
-      this.data.searchParameters.subjectId = e.currentTarget.dataset.item.subjectId;
-      if(wx.getStorageSync(user.StudentID) != 'StudentID')
-      {
-        this.data.searchParameters.userId = wx.getStorageSync(user.StudentID);
-      }
-       
-      
-      listViewUtil.loadList(that,'index_search_teacher',config.PytheRestfulServerURL,
-      "/index/search/teacher",
-      10,
-          this.data.searchParameters,
-          function (netData){
-            //取出返回结果的列表
-            return netData.data;
-          },
-          function(item){
-          
-          },
-          {},
-          'GET',
-      );
-    }
-      
-  },
-
-  selectOneTeacher:function(e){
-
-    //先判断是否已注册
-    if(wx.getStorageSync('alreadyRegister') == 'no')
-    {
-      this.setData({
-        hide_login: false,
-      });
-      loadingSelections.call(this);
-    }
-    if(wx.getStorageSync('alreadyRegister') == 'yes')
-    {
-      console.log("navigate to ask operation page");
-      var parametersJSON = e.currentTarget.dataset.teacher;
+      console.log("navigate to answer operation page");
+      var parametersJSON = e.currentTarget.dataset.item;
+      parametersJSON.question_id = parametersJSON.question.questionid;
+      parametersJSON.subject_id = parametersJSON.question.subjectid;
+      parametersJSON.student_id = parametersJSON.question.studentid;
+      parametersJSON.text_content = parametersJSON.question.questioncontent.text[0];
+      parametersJSON.photo_path = parametersJSON.question.questioncontent.img[0];
+      parametersJSON.draw_path = parametersJSON.question.questioncontent.draw[0];
+      parametersJSON.audio_path = parametersJSON.question.questioncontent.audio[0];
+      parametersJSON.audio_duration = parametersJSON.question.questioncontent.audio[1];
       console.log(parametersJSON);
       var parameters = netUtil.json2Form(parametersJSON);
       // console.log(parameters);
       wx.navigateTo({
-        url: 'ask_operation' + '?' + parameters,
+        url: 'answer_operation' + '?' + parameters,
         success: function(res){
           // success
           // console.log(res);
@@ -342,57 +367,10 @@ Page({
         }
       })
     }
+     
       
   },
 
-
-  likeTeacher:function(e){
-    var teacher = e.currentTarget.dataset.teacher;
-    console.log(teacher);
-    var teacher_index = e.currentTarget.dataset.index;
-    console.log(teacher_index);   
-
-     var that = this; 
-    
-      //通知数据库更新纪录
-      wx.request({
-        url: config.PytheRestfulServerURL + '/question/teacher/likes',
-        data: {
-          userId: wx.getStorageSync(user.UserID),
-          teacherId: teacher.teacherid,
-        },
-        method: 'GET', 
-        success: function(res){
-          
-
-          console.log(res);
-          if(res.data.data == 1)
-          {
-            that.data.ask_teacher_list[teacher_index].popularity++;
-            that.data.ask_teacher_list[teacher_index].isClick = 0;
-            that.setData({
-              ask_teacher_list: that.data.ask_teacher_list,
-            });
-            wx.showToast({
-              title: '点赞+1',
-              icon: 'success',
-              duration: 1000
-            });
-          }
-          
-        },
-        fail: function(res) {
-          console.log(res);
-        }
-      })
-        
-    
-  },
-  cancelRegister:function(e){
-    this.setData({
-      hide_login: true,
-    });
-  },
 
 
   selectStudent:function(e){
@@ -564,14 +542,19 @@ Page({
       });
     }
   },
+  cancelRegister:function(e){
+    this.setData({
+      hide_login: true,
+    });
+  },
 
 
-  enterPersonalAsk:function(e){
-    console.log('enter personal ask page');
-    if(wx.getStorageSync('StudentID') != 'StudentID')
+  enterPersonalAnswer:function(e){
+    console.log('enter personal answer page');
+    if(wx.getStorageSync('TeacherID') != 'TeacherID')
     {
       wx.navigateTo({
-        url: '../personal/personal_ask' ,
+        url: '../personal/personal_answer' ,
         success: function(res){
           // success
         },
@@ -586,61 +569,80 @@ Page({
 
   },
 
+  
+
   onReady:function(){
     // 页面渲染完成
+
+    //获取科目列表
+    var that = this;
+    wx.request({
+      url: config.PytheRestfulServerURL + '/index/subject' ,
+      data: {
+        gradeId: wx.getStorageSync(user.GradeID),
+      },
+      method: 'GET', 
+      success: function(res){
+        // success
+        
+        that.data.subject_infos = res.data;
+        that.setData({
+          subject_infos : that.data.subject_infos,
+        });
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    });
   },
   onShow:function(){
     // 页面显示
+    // this.data.answer_page_filter.selectSubject.subjectName = '科目';
+    // this.data.answer_page_filter.selectSort.sortName = '排序';
 
     this.setData({
       alreadyRegister: wx.getStorageSync('alreadyRegister'),
     });
 
-    var that = this;
-    // var simple_params = {
-    //   userId: wx.getStorageSync(user.UserID),
-    //   pageSize : 10,
-    //   pageNum : 1,
-    // };
-    // this.setData({
-    //   hide_loading: false,
-    // });
-    // listViewUtil.loadList(that,'teacher',config.PytheRestfulServerURL,
-    // "/question/teacherList",
-    // 10,
-    //     simple_params,
-    //     function (netData){
-    //       //取出返回结果的列表
-    //       return netData.data;
-    //     },
-    //     function(item,that){
-    //       that.setData({
-    //         hide_loading: true,
-    //       });
-    //     },
-    //     {},
-    //     'GET',
-    // );
-    
-    if(wx.getStorageSync(user.StudentID) != 'StudentID')
+    // 获取默认问题列表
+    var teacherId = -1;
+    if(wx.getStorageSync(user.UserID) != 'TeacherID')
     {
-      this.data.searchParameters.userId = wx.getStorageSync(user.StudentID);
+      teacherId = wx.getStorageSync(user.UserID);
     }
-       
-    listViewUtil.loadList(that,'index_search_teacher',config.PytheRestfulServerURL,
-    "/index/search/teacher",
+    var that = this;
+    var questionListParams = {
+      pageSize: 10,
+      pageNum: 1,
+      teacherId: teacherId,
+    };
+    
+    this.setData({
+      hide_loading: false,
+    });
+    listViewUtil.loadList(that,'question',config.PytheRestfulServerURL,
+    "/answer/defaultList",
     10,
-        this.data.searchParameters,
+        questionListParams,
         function (netData){
           //取出返回结果的列表
           return netData.data;
         },
-        function(item){
-        
+        function(item,that){
+          // item.countdown.start(that);
+          that.setData({
+            hide_loading: true,
+          });
         },
         {},
         'GET',
     );
+    that.setData({
+      hide_loading: true,
+    });
 
   },
   onHide:function(){
@@ -648,7 +650,8 @@ Page({
   },
   onUnload:function(){
     // 页面关闭
-  }
+  },
+
 })
 
 //注册准备
@@ -756,3 +759,9 @@ function countdown(that) {
     }  
     ,1000)  
 }
+
+function runTimer(timer,that)
+{
+  timer.start(that);
+}
+

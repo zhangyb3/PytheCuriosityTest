@@ -53,7 +53,7 @@ App({
             // success
             console.log(res.rawData);
             var rawData = JSON.parse(res.rawData);
-            wx.setStorageSync('userAvatarUrl', rawData.avatarUrl);
+            wx.setStorageSync('avatarUrl', rawData.avatarUrl);
             // wx.setStorageSync('userNickName', rawData.nickName);
             wx.setStorageSync('wxNickName', rawData.nickName);
           },
@@ -112,7 +112,8 @@ App({
               wx.setStorageSync(user.UserDescription, registerInfo.description);
               wx.setStorageSync(user.UserNickName, registerInfo.username);
               wx.setStorageSync('userAvatarUrl', registerInfo.userimg);
-
+              wx.setStorageSync(user.Status, registerInfo.status);
+              wx.setStorageSync(user.TeacherID, registerInfo.userid);
               wx.setStorageSync(user.StudentID, registerInfo.userid);
               wx.setStorageSync(user.TeacherID, registerInfo.userid);
 
@@ -122,6 +123,10 @@ App({
                 wx.setStorageSync('fromRegister', 'no');
                 
 
+              }
+              if(wx.getStorageSync(user.Status) == 1)
+              {
+                wx.setStorageSync(user.OrganizationID, registerInfo.organizationid);
               }
 
             }

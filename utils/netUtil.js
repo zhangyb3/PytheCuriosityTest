@@ -412,6 +412,18 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
                 // temp.countdown = wxTimerNew; 
                 
             }
+            if(list_type == 'my_answered')
+            {
+                
+                temp = (currentDatas[count].question);
+                temp.questioncontent = JSON.parse(temp.questioncontent);
+            }
+            if(list_type == 'my_unanswer')
+            {
+                
+                temp = (currentDatas[count].question);
+                temp.questioncontent = JSON.parse(temp.questioncontent);
+            }
             if(list_type == 'index_search_teacher')
             {
                 

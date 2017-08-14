@@ -1,0 +1,44 @@
+<!--pages/answer/answer.wxml-->
+<import src="../login/login.wxml" />
+
+<import src="../listView/answer_page_list.wxml" />
+<import src="../common/answer_page_filter_sort.wxml" />
+<import src="../pop/answer_page_subject_list.wxml" />
+<import src="../pop/answer_page_sort_attribute_list.wxml" />
+
+<import src="../pop/register_lock_cover.wxml" />
+<view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
+
+<view class="my_answer_entrance" wx:if="{{alreadyRegister == 'yes'}}">
+    <button class="answer_entrance_button" bindtap="enterPersonalAnswer">我教</button>
+</view>
+
+<import src="../pop/show_image_page.wxml" />
+
+<!--<view class="answer_page_container" hidden='{{hide_answer_page}}'>-->
+  
+    <view class="answer_page_filter_sort_container" >
+        <template is="answer_page_filter_sort" data="{{answer_page_sections,answer_page_menu,answer_page_filter}}" ></template>
+    </view>
+
+    <view class="answer_page_subject_list_container" hidden='{{hide_pop_subject_list}}'>
+        <template is="answer_page_subject_list" data="{{subject_infos}}"></template>
+    </view>
+
+    <view class="answer_page_sort_attributes_container" hidden='{{hide_pop_sort_attribute_list}}'>
+        <template is="answer_page_sort_attribute_list" data="{{sort_attributes}}"></template>
+    </view>
+  
+
+    <!--<view class="answer_page_list_container" >-->
+      <template is="answer_page_list" data="{{questionsForAnswer,preview_img_url,wxTimerList,scrollHeight}}"></template>
+    <!--</view>-->
+
+    <!--<view class="list_bottom"></view>-->
+    <view class="login_container" hidden='{{hide_login}}'>
+        <template is="login_view" data="{{select_student,select_teacher,lock_countdown,grade_index,gradeRange,subject_index,subjectRange,second,countdownText}}"></template>
+    </view>
+
+    <loading hidden="{{hide_loading}}">正在加载</loading>
+
+<!--</view>-->

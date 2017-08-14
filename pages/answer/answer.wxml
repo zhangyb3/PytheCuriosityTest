@@ -1,44 +1,42 @@
-<!--pages/answer/answer.wxml-->
-<import src="../login/login.wxml" />
 
-<import src="../listView/answer_page_list.wxml" />
-<import src="../common/answer_page_filter_sort.wxml" />
-<import src="../pop/answer_page_subject_list.wxml" />
-<import src="../pop/answer_page_sort_attribute_list.wxml" />
 
-<import src="../pop/register_lock_cover.wxml" />
-<view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
-
-<view class="my_answer_entrance" wx:if="{{alreadyRegister == 'yes'}}">
-    <button class="answer_entrance_button" bindtap="enterPersonalAnswer">我教</button>
-</view>
+<import src="../listView/personal_answer_list.wxml" />
+<import src="../listView/personal_not_answer_list.wxml" />
+<import src="../common/personal_answer_section_selector.wxml" />
 
 <import src="../pop/show_image_page.wxml" />
+<view class="show_image_page_container" hidden='{{hide_show_image_page}}'>
+        <template is="show_image_page" data="{{img_src}}"></template>
+</view>
 
-<!--<view class="answer_page_container" hidden='{{hide_answer_page}}'>-->
+<import src="../pop/index_page_select_item.wxml" />
+<view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
+    <template is="index_page_select_item" data="{{answers,question,preview_img_url,alreadyRegister}}"></template>
+  </view>
+
+<view class="personal_answer_page">
   
-    <view class="answer_page_filter_sort_container" >
-        <template is="answer_page_filter_sort" data="{{answer_page_sections,answer_page_menu,answer_page_filter}}" ></template>
+    <view class="personal_answer_selector_container" >
+        <template is="personal_answer_section_selector" data="{{personal_answer_menu}}" ></template>
     </view>
 
-    <view class="answer_page_subject_list_container" hidden='{{hide_pop_subject_list}}'>
-        <template is="answer_page_subject_list" data="{{subject_infos}}"></template>
-    </view>
-
-    <view class="answer_page_sort_attributes_container" hidden='{{hide_pop_sort_attribute_list}}'>
-        <template is="answer_page_sort_attribute_list" data="{{sort_attributes}}"></template>
-    </view>
+    
+    <!--<view class="personal_answer_or_not_container">-->
   
 
-    <!--<view class="answer_page_list_container" >-->
-      <template is="answer_page_list" data="{{questionsForAnswer,preview_img_url,wxTimerList,scrollHeight}}"></template>
+    
+
+    
     <!--</view>-->
 
-    <!--<view class="list_bottom"></view>-->
-    <view class="login_container" hidden='{{hide_login}}'>
-        <template is="login_view" data="{{select_student,select_teacher,lock_countdown,grade_index,gradeRange,subject_index,subjectRange,second,countdownText}}"></template>
+</view>
+
+<view class="personal_answer_list_container" hidden='{{hide_personal_answer_list}}'>
+      <template is="personal_answer_list" data="{{personal_answer_list,preview_img_url,scrollHeight}}"></template>
     </view>
 
-    <loading hidden="{{hide_loading}}">正在加载</loading>
+    <!--<view class="border_tab_white"></view>-->
 
-<!--</view>-->
+    <view class="personal_not_answer_list_container" hidden='{{hide_personal_not_answer_list}}'>
+      <template is="personal_not_answer_list" data="{{personal_not_answer_list,preview_img_url,scrollHeight}}"></template>
+    </view>

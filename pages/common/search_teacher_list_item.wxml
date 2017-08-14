@@ -36,17 +36,19 @@
 
                 <view class="horizontal_scroll_container" wx:if="{{teacher_edit == true}}">
   
-                    <scroll-view class="horizontal_scroll_handle" scroll-x="true" style=" white-space: nowrap; width: 50px; height: 50px; display: flex">
-                        <view class="original" style="width: 50px; height: 50px; display: inline-block"></view>
-                        <view class="delete" style="width: 50px; height: 50px; display: inline-block">
+                    <scroll-view class="horizontal_scroll_handle" scroll-x="true" wx:if="{{user.teacherId == item.userid || org.managerId == user.teacherId}}" style=" white-space: nowrap; width: 100px; height: 50px; display: flex">
+                        <view class="original" style="width: 100px; height: 50px; display: inline-block">
+                                <image style="width: 100px; height: 50px; " src="../../images/personal_icon_arrow_left.png"></image>
+                        </view>
+                        <view class="delete" style="width: 100px; height: 50px; display: inline-block" data-teacher="{{item}}"  bindtap="cancelTeacherFromOrg">
+                            <button wx:if="{{user.teacherId == item.userid}}" style="background-color:red">退出</button>
+                            <button wx:if="{{org.managerId == user.teacherId}}" style="background-color:red">解除</button>
                         </view>
                         
                     </scroll-view>
                 </view>
                 
-                <!--<image src="../../images/question_icon_lianxi@2x.png">
-                </image>-->
-                <!--<text class="teacher_content">{{ item.teacher_name }}</text>-->
+               
               
             </view>   
             <view class="border_tab"></view>   

@@ -45,7 +45,7 @@ font-size: 40rpx;
 @import "../common/ask_page_section_selector.wxss";
 @import "../listView/ask_page_subject_list.wxss";
 @import "../listView/ask_page_teacher_list.wxss";
-
+@import "../listView/search_teacher_list.wxss";
 @import "../register/register.wxss";
 
 @import "../pop/register_lock_cover.wxss";

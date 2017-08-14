@@ -5,7 +5,7 @@
 <import src="../listView/ask_page_teacher_list.wxml" />
 <import src="../common/ask_page_section_selector.wxml" />
 
-
+<import src="../listView/search_teacher_list.wxml" />
 <import src="../pop/register_lock_cover.wxml" />
 
 <!--<view class="background_color_wrap">-->
@@ -32,7 +32,8 @@
     </view>
 
     <view class="ask_page_list_container" hidden='{{hide_ask_teacher_list}}'>
-      <template is="ask_page_teacher_list" data="{{ask_teacher_list,alreadyRegister,list_height}}"></template>
+      <!--<template is="ask_page_teacher_list" data="{{ask_teacher_list,alreadyRegister,list_height}}"></template>-->
+      <template is="search_teacher_list" data="{{search_teacher_list,hide_teacher_list,index_search_page}}"></template>
     </view>
 
     <view class="login_container" hidden='{{hide_login}}'>

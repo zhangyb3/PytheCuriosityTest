@@ -61,6 +61,7 @@ Page({
     var that = this;
     var searchParameters = {
       query: search_content,
+      subjectId: -1,
       userId: -1,
       pageNum: 1,
       pageSize: 10
@@ -245,7 +246,10 @@ Page({
     var org = e.currentTarget.dataset.org;
     console.log(org);
     wx.navigateTo({
-      url: 'orgInfo?orgId=' + org.id,
+      url: 'orgInfo?' 
+          + 'orgId=' + org.id + '&'
+          + 'orgManagerId=' + org.managerId + '&'
+          ,
       success: function(res){
         // success
       },
@@ -256,6 +260,12 @@ Page({
         // complete
       }
     })
+  },
+
+  likeTeacher:function(e){
+    var teacher = e.currentTarget.dataset.teacher;
+    console.log('student ' + wx.getStorageSync(user.StudentID) + " like teacher " + teacher.username);
+
   },
 
   onHide:function(){

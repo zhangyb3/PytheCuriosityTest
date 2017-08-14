@@ -17,4 +17,6 @@
 
   </scroll-view>
 
+  <text wx:if="{{hide_org_list == false && search_org_list.length == 0}}">没找到符合条件的机构</text>
+
 </template>

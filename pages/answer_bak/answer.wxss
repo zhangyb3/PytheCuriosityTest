@@ -1,0 +1,49 @@
+/* pages/answer/answer.wxss */
+
+.list_bottom{
+  height: 20rpx;
+  background-color: #fff;
+}
+
+.answer_page_list_container{
+  position: fixed;
+  /*margin-top: 100rpx;*/
+  top: 100rpx;
+  left: 0rpx;
+  right: 0rpx;
+  /*bottom: 0rpx;*/
+  height: auto;
+  width: 100%;
+  background-color: #f5f5f5;
+}
+
+.my_answer_entrance{
+  position: fixed;
+  z-index: 2;
+  bottom:35rpx;
+  right: 20rpx;
+  width: 134rpx;
+  height: 134rpx;
+}
+.answer_entrance_button{
+  padding :0;
+  width: 134rpx;
+  line-height: 134rpx;
+  border-radius: 67rpx;
+  background: none;
+  background-color: #96d6ea;
+  color: #fff;
+  font-size: 40rpx;
+}
+
+@import "../common/answer_page_filter_sort.wxss";
+@import "../listView/answer_page_list.wxss";
+@import "../pop/answer_page_subject_list.wxss";
+@import "../pop/answer_page_sort_attribute_list.wxss";
+
+@import "../register/register.wxss";
+@import "../bubble/bubble.wxss";
+
+@import "../pop/register_lock_cover.wxss";
+
+@import "../login/login.wxss";
