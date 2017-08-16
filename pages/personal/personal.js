@@ -472,7 +472,7 @@ Page({
         if(res.data.status == 200)
         {
           that.setData({
-            teacherEarn: res.data.data.organization.name,
+            orgName: res.data.data.organization.name,
           });
         }
         

@@ -85,25 +85,7 @@
     -webkit-box-orient: vertical;
 }
 
-.collect_icon_wrap{
-    margin-top: 20rpx;
-    height:50rpx;
-    width: 150rpx;
-    display:flex;
-    flex-direction: row;
-    margin-bottom: 10rpx;
-    line-height:50rpx;
-    align-items: center;
-    align-content: center;
-    /*width: 33rpx;*/
-}
-.collect_icon_wrap image{
-    width: 32rpx;
-    height: 38rpx;
-    display:block;
-    margin-bottom:8rpx;
-    margin-right: 10rpx;
-}
+
 
 .collect_icon{
     font-size: 24rpx;

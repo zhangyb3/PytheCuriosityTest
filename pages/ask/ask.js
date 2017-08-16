@@ -153,6 +153,7 @@ Page({
       pageNum: 1,
       pageSize: 10
     },
+    ask_page: true,
 
   },
   onLoad:function(options){
@@ -270,46 +271,63 @@ Page({
       //   }
       // })
 
-      var that = this;
-      console.log("teacher");
-      this.data.ask_page_menu[1].active = true;
-      this.data.ask_page_menu[0].active = false;
+    //   var that = this;
+    //   console.log("teacher");
+    //   this.data.ask_page_menu[1].active = true;
+    //   this.data.ask_page_menu[0].active = false;
       
-      this.setData({hide_ask_subject_list:true});
+    //   this.setData({hide_ask_subject_list:true});
       
-      this.setData({hide_ask_teacher_list:false});
-      this.data.list_mode = 'teacher_list';
-      that.setData({
-        ask_page_menu : this.data.ask_page_menu,
-        hide_teacher_list: false,
-      });
+    //   this.setData({hide_ask_teacher_list:false});
+    //   this.data.list_mode = 'teacher_list';
+    //   that.setData({
+    //     ask_page_menu : this.data.ask_page_menu,
+    //     hide_teacher_list: false,
+    //   });
 
-      this.data.searchParameters.subjectId = e.currentTarget.dataset.item.subjectId;
-      if(wx.getStorageSync(user.StudentID) != 'StudentID')
-      {
-        this.data.searchParameters.userId = wx.getStorageSync(user.StudentID);
-      }
+    //   this.data.searchParameters.subjectId = e.currentTarget.dataset.item.subjectId;
+    //   if(wx.getStorageSync(user.StudentID) != 'StudentID')
+    //   {
+    //     this.data.searchParameters.userId = wx.getStorageSync(user.StudentID);
+    //   }
        
       
-      listViewUtil.loadList(that,'index_search_teacher',config.PytheRestfulServerURL,
-      "/index/search/teacher",
-      10,
-          this.data.searchParameters,
-          function (netData){
-            //取出返回结果的列表
-            return netData.data;
-          },
-          function(item){
+    //   listViewUtil.loadList(that,'index_search_teacher',config.PytheRestfulServerURL,
+    //   "/index/search/teacher",
+    //   10,
+    //       this.data.searchParameters,
+    //       function (netData){
+    //         //取出返回结果的列表
+    //         return netData.data;
+    //       },
+    //       function(item){
           
-          },
-          {},
-          'GET',
-      );
+    //       },
+    //       {},
+    //       'GET',
+    //   );
+
+
+
     }
+
+    console.log(e.currentTarget.dataset.item);
+    wx.navigateTo({
+      url: 'teachers?subjectId=' + e.currentTarget.dataset.item.subjectId,
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
       
   },
 
-  selectOneTeacher:function(e){
+  askOneTeacher:function(e){
 
     //先判断是否已注册
     if(wx.getStorageSync('alreadyRegister') == 'no')
@@ -354,12 +372,15 @@ Page({
 
      var that = this; 
     
+    if(that.data.search_teacher_list[teacher_index].collectOrNot == false)
+    {
       //通知数据库更新纪录
       wx.request({
         url: config.PytheRestfulServerURL + '/question/teacher/likes',
         data: {
           userId: wx.getStorageSync(user.UserID),
-          teacherId: teacher.teacherid,
+          // teacherId: teacher.teacherid,
+          teacherId: teacher.userid,
         },
         method: 'GET', 
         success: function(res){
@@ -379,13 +400,26 @@ Page({
               duration: 1000
             });
           }
+
+          if(res.data.data == '关注成功')
+          {
+            that.data.search_teacher_list[teacher_index].collectOrNot = true;
+            that.setData({
+              search_teacher_list: that.data.search_teacher_list,
+            });
+            wx.showToast({
+              title: '收藏成功',
+              icon: 'success',
+              duration: 1000
+            });
+          }
           
         },
         fail: function(res) {
           console.log(res);
         }
-      })
-        
+      });
+    }   
     
   },
   cancelRegister:function(e){

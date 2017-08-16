@@ -89,9 +89,19 @@ Page({
       this.data.ask_question.ask_teacherId = parameters.teacherid;
       this.data.ask_question.not_select_subject = true;
     }
-    if(parameters.subjectId != null)
+    if(parameters.status == 1)
+    {
+      this.data.ask_question.ask_teacherId = parameters.userid;
+      this.data.ask_question.not_select_subject = true;
+    }
+    if(parameters.subjectId != null )
     {
       this.data.ask_question.subjectId = parameters.subjectId;
+      // this.data.ask_question.ask_teacherId = -1;
+    }
+    if(parameters.subjectid != null )
+    {
+      this.data.ask_question.subjectId = parameters.subjectid;
       // this.data.ask_question.ask_teacherId = -1;
     }
     

@@ -1,0 +1,12 @@
+
+
+<import src="../listView/search_teacher_list.wxml" />
+
+<view class="ask_page_list_container" hidden='{{hide_ask_teacher_list}}'>
+      <template is="search_teacher_list" data="{{search_teacher_list,hide_teacher_list,index_search_page,ask_page}}"></template>
+    </view>
+
+
+
+    
+    <loading hidden="{{hide_loading}}">正在加载</loading>

@@ -72,7 +72,16 @@ Page({
       
       this.setData({hide_personal_not_answer_list:true});
 
+      
       this.data.list_mode = 'my_answered';
+      if(wx.getStorageSync(user.Status) == 1)
+      {
+        this.data.list_mode = 'teacher_answered';
+      }
+      if(wx.getStorageSync(user.Status) == 0)
+      {
+        this.data.list_mode = 'student_answered';
+      }
     }
     else
     {
@@ -98,6 +107,14 @@ Page({
       this.setData({hide_personal_not_answer_list:false});
 
       this.data.list_mode = 'my_unanswer';
+      if(wx.getStorageSync(user.Status) == 1)
+      {
+        this.data.list_mode = 'teacher_unanswer';
+      }
+      if(wx.getStorageSync(user.Status) == 0)
+      {
+        this.data.list_mode = 'student_unanswer';
+      }
     }
     else
     {
@@ -136,47 +153,81 @@ Page({
     })
   },
 
-  selectOneItem:function(e){
-    var selectItem,itemIndex;
-    selectItem = e.currentTarget.dataset.item;
-    itemIndex = e.currentTarget.dataset.index;
-    console.log(JSON.stringify(selectItem) + "," + itemIndex);
-
-    this.setData({hide_select_item:false});
-    var that = this;
-    //请求具体数据
-    wx.request({
-      url: config.PytheRestfulServerURL + '/me/answer/detail',
-      data: {
-        questionId: selectItem.questionid,
-        teacherId: wx.getStorageSync(user.TeacherID),
-      },
-      method: 'GET', 
-      success: function(res){
-        console.log(res);
-        var answers = res.data.data;
-
-        for(var count = 0; count < answers.length; count++)
-        {
-          
-          var temp = answers[count];
-                    
-          answers[count] = temp;
-          answers[count].answercontent = JSON.parse(answers[count].answercontent);
-          answers[count].isClick = 0;
-          
+  selectOneItem:function(result){
+    
+    if(this.data.hide_personal_answer_list)
+    {
+      var index = result.currentTarget.dataset.index;
+      var parametersJSON = result.currentTarget.dataset.item;
+      parametersJSON.question_id = parametersJSON.questionid;
+      parametersJSON.subject_id = parametersJSON.subjectid;
+      parametersJSON.student_id = parametersJSON.studentid;
+      parametersJSON.text_content = parametersJSON.questioncontent.text[0];
+      parametersJSON.photo_path = parametersJSON.questioncontent.img[0];
+      parametersJSON.draw_path = parametersJSON.questioncontent.draw[0];
+      parametersJSON.audio_path = parametersJSON.questioncontent.audio[0];
+      parametersJSON.audio_duration = parametersJSON.questioncontent.audio[1];
+      console.log(parametersJSON);
+      var parameters = netUtil.json2Form(parametersJSON);
+      console.log(parameters);
+      wx.navigateTo({
+        url: '../answer/answer_operation' + '?' + parameters,
+        success: function(res){
+          // success
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
         }
-        that.setData({
-            answers: answers,
-            question:selectItem,
-        });
-        typeof success == "function" && success(res.data);
-      },
-      fail: function(res) {
-        console.log(res);
-      }
-    });
+      });
+    }
+    if(this.data.hide_personal_not_answer_list)
+    {
+      var selectItem,itemIndex;
+      selectItem = result.currentTarget.dataset.item;
+      itemIndex = result.currentTarget.dataset.index;
+      console.log(JSON.stringify(selectItem) + "," + itemIndex);
+
+      this.setData({hide_select_item:false});
+      var that = this;
+      //请求具体数据
+      wx.request({
+        url: config.PytheRestfulServerURL + '/index2/question_answers',
+        data: {
+          questionId: selectItem.questionid,
+          userId: wx.getStorageSync(user.UserID),
+        },
+        method: 'GET', 
+        success: function(res){
+          console.log(res);
+          var answers = res.data.data;
+
+          for(var count = 0; count < answers.length; count++)
+          {
+            
+            var temp = answers[count];
+                      
+            answers[count] = temp;
+            answers[count].answercontent = JSON.parse(answers[count].answercontent);
+            answers[count].isClick = 0;
+            
+          }
+          that.setData({
+              answers: answers,
+              question:selectItem,
+          });
+          typeof success == "function" && success(res.data);
+        },
+        fail: function(res) {
+          console.log(res);
+        }
+      });
+    }
+
   },
+
   returnIndexPage: function(e) {
       console.log("return to index page");
       
@@ -278,51 +329,102 @@ Page({
   },
   onShow:function(){
     // 页面显示
-    //加载个人已答列表
+    //加载已答列表
     var that = this;
-    var myAnsweredParams = {
-      teacherId : wx.getStorageSync(user.TeacherID),
-      pageSize : 10,
-      pageNum : 1,
-      
-    };    
-    listViewUtil.loadList(that,'my_answered',config.PytheRestfulServerURL,
-    base.MY_ANSWERED_URL_DETAIL,
-    10,
-        myAnsweredParams,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-          
-        },
-        {},
-        'GET',
-    );
 
-    //加载个人未答列表
-    var that = this;
-    var myUnanswerParams = {
-      teacherId : wx.getStorageSync(user.TeacherID),
-      pageSize : 10,
-      pageNum : 1,
-      
-    };    
-    listViewUtil.loadList(that,'my_unanswer',config.PytheRestfulServerURL,
-    base.MY_UNANSWER_URL_DETAIL,
-    10,
-        myUnanswerParams,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-         
-        },
-        {},
-        'GET',
-    );
+    if(wx.getStorageSync(user.Status) == 1)
+    {
+      var myAnsweredParams = {
+        teacherId : wx.getStorageSync(user.TeacherID),
+        pageSize : 10,
+        pageNum : 1,
+        
+      };    
+      listViewUtil.loadList(that,'teacher_answered',config.PytheRestfulServerURL,
+      base.TEACHER_ANSWERED_URL_DETAIL,
+      10,
+          myAnsweredParams,
+          function (netData){
+            //取出返回结果的列表
+            return netData.data;
+          },
+          function(item){
+            
+          },
+          {},
+          'GET',
+      );
+
+      //加载未答列表
+      var that = this;
+      var myUnanswerParams = {
+        teacherId : wx.getStorageSync(user.TeacherID),
+        pageSize : 10,
+        pageNum : 1,
+        
+      };    
+      listViewUtil.loadList(that,'teacher_unanswer',config.PytheRestfulServerURL,
+      base.TEACHER_UNANSWER_URL_DETAIL,
+      10,
+          myUnanswerParams,
+          function (netData){
+            //取出返回结果的列表
+            return netData.data;
+          },
+          function(item){
+          
+          },
+          {},
+          'GET',
+      );
+    }
+    if(wx.getStorageSync(user.Status) == 0)
+    {
+      var myAnsweredParams = {
+        teacherId : wx.getStorageSync(user.TeacherID),
+        pageSize : 10,
+        pageNum : 1,
+        
+      };    
+      listViewUtil.loadList(that,'student_answered',config.PytheRestfulServerURL,
+      base.STUDENT_ANSWERED_URL_DETAIL,
+      10,
+          myAnsweredParams,
+          function (netData){
+            //取出返回结果的列表
+            return netData.data;
+          },
+          function(item){
+            
+          },
+          {},
+          'GET',
+      );
+
+      //加载未答列表
+      var that = this;
+      var myUnanswerParams = {
+        teacherId : wx.getStorageSync(user.TeacherID),
+        pageSize : 10,
+        pageNum : 1,
+        
+      };    
+      listViewUtil.loadList(that,'student_unanswer',config.PytheRestfulServerURL,
+      base.STUDENT_UNANSWER_URL_DETAIL,
+      10,
+          myUnanswerParams,
+          function (netData){
+            //取出返回结果的列表
+            return netData.data;
+          },
+          function(item){
+          
+          },
+          {},
+          'GET',
+      );
+    }
+    
   },
   onHide:function(){
     // 页面隐藏

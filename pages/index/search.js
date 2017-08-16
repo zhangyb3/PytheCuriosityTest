@@ -42,6 +42,7 @@ Page({
   onLoad:function(parameters){
     console.log(parameters);
     this.data.searchContent = parameters.searchContent;
+    searchByContent(this);
   },
   onReady:function(){
     // 页面渲染完成
@@ -55,71 +56,7 @@ Page({
     this.data.searchContent = e.detail.value
   },
   searchByContent:function(e){
-    var search_content = this.data.searchContent;
-    console.log(search_content);
-    
-    var that = this;
-    var searchParameters = {
-      query: search_content,
-      subjectId: -1,
-      userId: -1,
-      pageNum: 1,
-      pageSize: 10
-    };
-
-    this.setData({
-      search_knowledge_list: [],
-      search_teacher_list: [],
-      search_org_list: [],
-    });
-
-    //三种列表
-   listViewUtil.loadList(that,'index_search_knowledge',config.PytheRestfulServerURL,
-    "/index/search/knowledge",
-    10,
-        searchParameters,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-         
-        },
-        {},
-        'GET',
-    );
-
-    listViewUtil.loadList(that,'index_search_teacher',config.PytheRestfulServerURL,
-    "/index/search/teacher",
-    10,
-        searchParameters,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-         
-        },
-        {},
-        'GET',
-    );
-
-    listViewUtil.loadList(that,'index_search_org',config.PytheRestfulServerURL,
-    "/index/search/organization",
-    10,
-        searchParameters,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-         
-        },
-        {},
-        'GET',
-    );
-
-
+    searchByContent(this);
   },
   cancelSearchInput:function(e){
     this.setData({
@@ -266,6 +203,57 @@ Page({
     var teacher = e.currentTarget.dataset.teacher;
     console.log('student ' + wx.getStorageSync(user.StudentID) + " like teacher " + teacher.username);
 
+    var that = this; 
+    
+    if(that.data.search_teacher_list[teacher_index].collectOrNot == false)
+    {
+      //通知数据库更新纪录
+      wx.request({
+        url: config.PytheRestfulServerURL + '/question/teacher/likes',
+        data: {
+          userId: wx.getStorageSync(user.UserID),
+          // teacherId: teacher.teacherid,
+          teacherId: teacher.userid,
+        },
+        method: 'GET', 
+        success: function(res){
+          
+
+          console.log(res);
+          if(res.data.data == 1)
+          {
+            that.data.ask_teacher_list[teacher_index].popularity++;
+            that.data.ask_teacher_list[teacher_index].isClick = 0;
+            that.setData({
+              ask_teacher_list: that.data.ask_teacher_list,
+            });
+            wx.showToast({
+              title: '点赞+1',
+              icon: 'success',
+              duration: 1000
+            });
+          }
+
+          if(res.data.data == '关注成功')
+          {
+            that.data.search_teacher_list[teacher_index].collectOrNot = true;
+            that.setData({
+              search_teacher_list: that.data.search_teacher_list,
+            });
+            wx.showToast({
+              title: '收藏成功',
+              icon: 'success',
+              duration: 1000
+            });
+          }
+          
+        },
+        fail: function(res) {
+          console.log(res);
+        }
+      });
+    }   
+
   },
 
   onHide:function(){
@@ -275,3 +263,75 @@ Page({
     // 页面关闭
   }
 })
+
+
+function searchByContent(the)
+{
+  var search_content = the.data.searchContent;
+  console.log(search_content);
+  
+  var that = the;
+  var searchParameters = {
+    query: search_content,
+    subjectId: -1,
+    userId: -1,
+    pageNum: 1,
+    pageSize: 10
+  };
+  if(wx.getStorageSync(user.StudentID) != 'StudentID')
+  {
+    searchParameters.userId = wx.getStorageSync(user.StudentID);
+  }
+
+  the.setData({
+    search_knowledge_list: [],
+    search_teacher_list: [],
+    search_org_list: [],
+  });
+
+  //三种列表
+  listViewUtil.loadList(that,'index_search_knowledge',config.PytheRestfulServerURL,
+  "/index/search/knowledge",
+  10,
+      searchParameters,
+      function (netData){
+        //取出返回结果的列表
+        return netData.data;
+      },
+      function(item){
+        
+      },
+      {},
+      'GET',
+  );
+
+  listViewUtil.loadList(that,'index_search_teacher',config.PytheRestfulServerURL,
+  "/index/search/teacher",
+  10,
+      searchParameters,
+      function (netData){
+        //取出返回结果的列表
+        return netData.data;
+      },
+      function(item){
+        
+      },
+      {},
+      'GET',
+  );
+
+  listViewUtil.loadList(that,'index_search_org',config.PytheRestfulServerURL,
+  "/index/search/organization",
+  10,
+      searchParameters,
+      function (netData){
+        //取出返回结果的列表
+        return netData.data;
+      },
+      function(item){
+        
+      },
+      {},
+      'GET',
+  );
+}

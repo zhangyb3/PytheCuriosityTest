@@ -1,0 +1,12 @@
+/* pages/ask/teachers.wxss */
+
+
+
+.ask_page_list_container{
+  
+  margin-top: 100rpx;
+  background-color:#f3f1e4; 
+  /*height: 1000rpx;*/
+}
+
+@import "../listView/search_teacher_list.wxss";

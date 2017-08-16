@@ -87,8 +87,8 @@
 
 .collect_icon_wrap{
     margin-top: 20rpx;
-    height:50rpx;
-    width: 150rpx;
+    /*height:50rpx;*/
+    /*width: 150rpx;*/
     display:flex;
     flex-direction: row;
     margin-bottom: 10rpx;
@@ -98,8 +98,8 @@
     /*width: 33rpx;*/
 }
 .collect_icon_wrap image{
-    width: 32rpx;
-    height: 38rpx;
+    width: 40px;
+    height: 20px;
     display:block;
     margin-bottom:8rpx;
     margin-right: 10rpx;
@@ -340,4 +340,12 @@
 
 .delete{
     background-color: red;
+}
+
+.arr_icon{
+    margin-top: 40rpx;
+    margin-right: 30rpx;
+    /*right: 30rpx;*/
+    width: 13rpx;
+    height: 25rpx;
 }

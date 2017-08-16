@@ -1,0 +1,66 @@
+<template name="question_answer_list_item">
+
+<view class="question_answer_list-item_container">
+
+<view class="question_answer_list-item"  data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneItem">
+
+    <view class="answer_tab_white"/>
+
+    <view class="top_zone">
+        <view class="asker_zone">
+            <view class="asker_avatar_container">
+                <image class="asker_avatar" src="{{item.studentimg}}"></image>
+            </view>
+            <view class="asker_name_container">
+                <text class="asker_name">{{item.studentname}}</text>
+            </view>
+        </view>
+        <view class="liker_zone" wx:if="{{item.likesnum != null && item.likesnum >= 0}}">
+            <view class="liker_num_container">
+                <text class="liker_num">{{item.likesnum}}</text>
+            </view>
+            <view class="liker_img_container">
+                <image class="liker_img" src="../../images/liked.png"></image>
+            </view>
+
+        </view>
+    </view>
+
+    <view class="middle_zone">
+        <view class="img_zone">
+             <view class="question_img_container">
+                <image class="question_img" src="{{preview_img_url + item.questioncontent.img[0]}}"></image>
+            </view>
+        </view>
+        <view class="text_zone">
+            <view class="question_text_container">
+                <text class="question_text">{{item.questioncontent.text[0]}}</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="bottom_zone">
+        <view class="solver_zone">
+            <view class="solver_name_container">
+                <text class="solver_name">  ·由{{item.teachername}}老师解答该问题</text>
+            </view>
+        </view>
+        <view class="reward_zone" wx:if="{{true}}">
+            <view class="reward_num_container">
+                <text class="reward_num">{{item.rewardnum}}</text>
+            </view>
+            <view class="reward_img_container">
+                <image class="reward_img" src="../../images/personal_icon_org.money@2x.png"></image>
+            </view>
+            <view class="time_container">
+                <text class="time">{{item.starttime}}</text>
+            </view>
+        </view>
+    </view>
+            
+            
+</view>
+
+</view>
+
+</template>

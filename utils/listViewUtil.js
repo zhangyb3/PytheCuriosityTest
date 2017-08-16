@@ -102,6 +102,18 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     if(list_type == 'my_unanswer'){
         page.data.personal_not_answer_list = [];//personal未答列表
     }
+    if(list_type == 'teacher_answered'){
+        page.data.personal_answer_list = [];//personal已答列表
+    }
+    if(list_type == 'teacher_unanswer'){
+        page.data.personal_not_answer_list = [];//personal未答列表
+    }
+    if(list_type == 'student_answered'){
+        page.data.personal_answer_list = [];//personal已答列表
+    }
+    if(list_type == 'student_unanswer'){
+        page.data.personal_not_answer_list = [];//personal未答列表
+    }
     if(list_type == 'my_like_answer'){
         page.data.personal_like_answer_list = [];//like answer列表
     }
@@ -116,6 +128,9 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     }
     if(list_type == 'index_search_org'){
         page.data.search_org_list = [];
+    }
+    if(list_type == 'subject_teacher'){
+        page.data.search_teacher_list = [];
     }
 
 
@@ -184,6 +199,26 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             page.data.urlDetail = base.MY_UNANSWER_URL_DETAIL;
             netUtil.requestSimpleList(page,'my_unanswer',1,netUtil.action.request_refresh);
         }
+        else if( page.data.list_mode == 'teacher_answered'){
+            page.data.personal_answer_list = [];//personal已答列表
+            page.data.urlDetail = base.TEACHER_ANSWERED_URL_DETAIL;
+            netUtil.requestSimpleList(page,'teacher_answered',1,netUtil.action.request_refresh);
+        }
+        else if( page.data.list_mode == 'teacher_unanswer'){
+            page.data.personal_not_answer_list = [];//personal未答列表
+            page.data.urlDetail = base.TEACHER_UNANSWER_URL_DETAIL;
+            netUtil.requestSimpleList(page,'teacher_unanswer',1,netUtil.action.request_refresh);
+        }
+        else if( page.data.list_mode == 'student_answered'){
+            page.data.personal_answer_list = [];//personal已答列表
+            page.data.urlDetail = base.STUDENT_ANSWERED_URL_DETAIL;
+            netUtil.requestSimpleList(page,'student_answered',1,netUtil.action.request_refresh);
+        }
+        else if( page.data.list_mode == 'student_unanswer'){
+            page.data.personal_not_answer_list = [];//personal未答列表
+            page.data.urlDetail = base.STUDENT_UNANSWER_URL_DETAIL;
+            netUtil.requestSimpleList(page,'student_unanswer',1,netUtil.action.request_refresh);
+        }
         else if( page.data.list_mode == 'my_like_answer'){
             page.data.personal_like_answer_list = [];//like answer列表
             page.data.urlDetail = base.MY_ANSWER_COLLECTION_URL_DETAIL;
@@ -208,6 +243,12 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             page.data.personal_like_teacher_list = [];
             
             netUtil.requestSimpleList(page,'index_search_org',1,netUtil.action.request_refresh);
+        }
+
+        else if(page.data.list_mode == 'subject_teacher'){
+            page.data.search_teacher_list = [];
+            
+            netUtil.requestSimpleList(page,'subject_teacher',1,netUtil.action.request_refresh);
         }
         
         else 
@@ -236,6 +277,26 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             page.data.urlDetail = base.MY_UNANSWER_URL_DETAIL;
             netUtil.requestSimpleList(page,'my_unanswer',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
         }
+        else if(page.data.list_mode == 'teacher_answered')
+        {
+            page.data.urlDetail = base.TEACHER_ANSWERED_URL_DETAIL;
+            netUtil.requestSimpleList(page,'teacher_answered',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
+        }
+        else if(page.data.list_mode == 'teacher_unanswer')
+        {
+            page.data.urlDetail = base.TEACHER_UNANSWER_URL_DETAIL;
+            netUtil.requestSimpleList(page,'teacher_unanswer',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
+        }
+        else if(page.data.list_mode == 'student_answered')
+        {
+            page.data.urlDetail = base.STUDENT_ANSWERED_URL_DETAIL;
+            netUtil.requestSimpleList(page,'student_answered',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
+        }
+        else if(page.data.list_mode == 'student_unanswer')
+        {
+            page.data.urlDetail = base.STUDENT_UNANSWER_URL_DETAIL;
+            netUtil.requestSimpleList(page,'student_unanswer',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
+        }
         else if(page.data.list_mode == 'my_like_answer')
         {
             page.data.urlDetail = base.MY_ANSWER_COLLECTION_URL_DETAIL;
@@ -261,6 +322,11 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             // page.data.personal_like_teacher_list = [];
             
             netUtil.requestSimpleList(page,'index_search_org',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+        }
+        else if(page.data.list_mode == 'subject_teacher'){
+            // page.data.search_teacher_list = [];
+            
+            netUtil.requestSimpleList(page,'subject_teacher',page.data.currentPageIndex +1,netUtil.action.request_refresh);
         }
 
         else

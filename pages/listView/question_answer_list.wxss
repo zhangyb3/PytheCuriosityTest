@@ -1,0 +1,39 @@
+
+
+.answer_scroll_list{
+
+    /*margin-top: 10px;*/
+    /*line-height: 675;*/
+    width: 100%;
+    /*height: 1000rpx;*/
+
+    
+}
+
+.interval{
+    height: 5px;
+}
+    
+
+.personal_answer_container{
+    display: flex;
+    /*position: relative;*/
+    /*height: 100px;*/
+    height:auto;
+    width: 100%;
+    /*height: 200rpx;*/
+    background-color: #f3f1e4;
+}
+
+.personal_answer_list{
+    display: flex;
+    position: relative;
+    height: 100px;
+    /*width: 100%;*/
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: blue;
+}
+
+@import "../common/question_answer_list_item.wxss";
+

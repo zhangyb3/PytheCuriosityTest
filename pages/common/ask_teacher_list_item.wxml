@@ -1,6 +1,6 @@
 <template name="ask_teacher_list_item">
 
-<view class="list-item" style="background-color:white" data-item='{{ item }}' data-teacher='{{item}}' data-index='{{index}}' bindtap="selectOneTeacher">
+<view class="list-item" style="background-color:white" data-item='{{ item }}' data-teacher='{{item}}' data-index='{{index}}' bindtap="askOneTeacher">
 
             
 <!--名师区域  -->

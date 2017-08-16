@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: row;
     /*border-top: 1px solid #EEE;*/
-    background-color: #f3f1e4;
+    background-color: white;
     width: 100%;
     min-height: 270rpx;
     border-bottom: 20rpx solid #fff;

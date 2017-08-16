@@ -415,10 +415,37 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             if(list_type == 'my_answered')
             {
                 
+                temp = (currentDatas[count]);
+                // temp.questioncontent = JSON.parse(temp.questioncontent);
+                // temp.answercontent = JSON.parse(temp.answercontent);
+            }
+            if(list_type == 'my_unanswer')
+            {
+                
                 temp = (currentDatas[count].question);
                 temp.questioncontent = JSON.parse(temp.questioncontent);
             }
-            if(list_type == 'my_unanswer')
+            if(list_type == 'teacher_answered')
+            {
+                
+                temp = (currentDatas[count]);
+                // temp.questioncontent = JSON.parse(temp.questioncontent);
+                // temp.answercontent = JSON.parse(temp.answercontent);
+            }
+            if(list_type == 'teacher_unanswer')
+            {
+                
+                temp = (currentDatas[count].question);
+                temp.questioncontent = JSON.parse(temp.questioncontent);
+            }
+            if(list_type == 'student_answered')
+            {
+                
+                temp = (currentDatas[count]);
+                // temp.questioncontent = JSON.parse(temp.questioncontent);
+                // temp.answercontent = JSON.parse(temp.answercontent);
+            }
+            if(list_type == 'student_unanswer')
             {
                 
                 temp = (currentDatas[count].question);
@@ -430,6 +457,19 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
                 var collectOrNot = temp.collectOrNot;
                 temp = JSON.parse(temp.teacher);
                 temp["collectOrNot"] = collectOrNot;
+            }
+            if(list_type == 'subject_teacher')
+            {
+                var collectOrNot = temp.isClick;
+                temp = JSON.parse(temp.question);
+                if(collectOrNot == 1)
+                {
+                    temp["collectOrNot"] = true;
+                }
+                else
+                {
+                    temp["collectOrNot"] = false;
+                }
             }
             console.log(temp);
             concatDatas[count] = temp;
@@ -508,6 +548,30 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             console.log('before setData----------'+that.data.personal_not_answer_list);
             that.setData({personal_not_answer_list:that.data.personal_not_answer_list});
         }
+        if(list_type == 'teacher_answered'){
+           //teacher answer
+            that.data.personal_answer_list=that.data.personal_answer_list.concat(concatDatas);
+            console.log('before setData----------'+that.data.personal_answer_list);
+            that.setData({personal_answer_list:that.data.personal_answer_list});
+        }
+        if(list_type == 'teacher_unanswer'){
+           //teacher not answer
+            that.data.personal_not_answer_list=that.data.personal_not_answer_list.concat(concatDatas);
+            console.log('before setData----------'+that.data.personal_not_answer_list);
+            that.setData({personal_not_answer_list:that.data.personal_not_answer_list});
+        }
+        if(list_type == 'student_answered'){
+           //student answer
+            that.data.personal_answer_list=that.data.personal_answer_list.concat(concatDatas);
+            console.log('before setData----------'+that.data.personal_answer_list);
+            that.setData({personal_answer_list:that.data.personal_answer_list});
+        }
+        if(list_type == 'student_unanswer'){
+           //student not answer
+            that.data.personal_not_answer_list=that.data.personal_not_answer_list.concat(concatDatas);
+            console.log('before setData----------'+that.data.personal_not_answer_list);
+            that.setData({personal_not_answer_list:that.data.personal_not_answer_list});
+        }
         if(list_type == 'my_like_answer'){
            //personal like answer
             that.data.personal_like_answer_list=that.data.personal_like_answer_list.concat(concatDatas);
@@ -532,6 +596,11 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             that.setData({search_org_list:that.data.search_org_list});
         }
 
+        if(list_type == 'subject_teacher'){
+            that.data.search_teacher_list=that.data.search_teacher_list.concat(concatDatas);
+            console.log('before setData----------'+that.data.search_teacher_list);
+            that.setData({search_teacher_list:that.data.search_teacher_list});
+        }
         
 
     };
@@ -581,6 +650,26 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             }
             if(list_type == 'my_unanswer'){
             //personal not answer
+                
+                that.setData({personal_not_answer_list:[]});
+            }
+            if(list_type == 'teacher_answered'){
+            //teacher answer
+                
+                that.setData({personal_answer_list:[]});
+            }
+            if(list_type == 'teacher_unanswer'){
+            //teacher not answer
+                
+                that.setData({personal_not_answer_list:[]});
+            }
+            if(list_type == 'student_answered'){
+            //student answer
+                
+                that.setData({personal_answer_list:[]});
+            }
+            if(list_type == 'student_unanswer'){
+            //student not answer
                 
                 that.setData({personal_not_answer_list:[]});
             }

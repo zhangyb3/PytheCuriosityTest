@@ -52,11 +52,22 @@ Page({
       success: function(res){
         // success
         console.log(res);
+        if(res.data.status == 200)
+      {
         teachers[0] = (res.data.data);
         that.setData({
           search_teacher_list:teachers,
           add_teacher_page:that.data.add_teacher_page,
         });
+      }
+      if(res.data.status == 400)
+      {
+        console.log('400');
+        that.setData({
+          search_teacher_list:[],
+          add_teacher_page:that.data.add_teacher_page,
+        });
+      }
       },
       fail: function(res) {
         // fail
@@ -136,11 +147,22 @@ function searchTeacherByPhone(that){
     success: function(res){
       // success
       console.log(res);
-      teachers[0] = (res.data.data);
-      that.setData({
-        search_teacher_list:teachers,
-        add_teacher_page:that.data.add_teacher_page,
-      });
+      if(res.data.status == 200)
+      {
+        teachers[0] = (res.data.data);
+        that.setData({
+          search_teacher_list:teachers,
+          add_teacher_page:that.data.add_teacher_page,
+        });
+      }
+      if(res.data.status == 400)
+      {
+        console.log('400');
+        that.setData({
+          search_teacher_list:[],
+          add_teacher_page:that.data.add_teacher_page,
+        });
+      }
     },
     fail: function(res) {
       // fail

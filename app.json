@@ -6,6 +6,7 @@
     "pages/logs/logs",
     "pages/ask/ask",
     "pages/ask/ask_operation",
+    "pages/ask/teachers",
     "pages/answer/answer",
     "pages/answer/answer_operation",
     "pages/personal/personal",
