@@ -21,6 +21,7 @@ Page({
 
     userAvatarUrl:'',
     userNickName:'9527',
+    userStatus: 0,
 
     hide_register_lock_cover: false,
 
@@ -423,10 +424,12 @@ Page({
     this.data.userAvatarUrl = wx.getStorageSync('userAvatarUrl');
     this.data.userNickName = wx.getStorageSync('userNickName');
     this.data.userDescription = wx.getStorageSync('UserDescription');
+    this.data.userStatus = wx.getStorageSync('Status');
     this.setData({
       userAvatarUrl: this.data.userAvatarUrl,
       userNickName: this.data.userNickName,
       userDescription: this.data.userDescription,
+      userStatus: this.data.userStatus,
     });
     var that = this;
     //查看赚了多少钱

@@ -42,6 +42,8 @@ Page({
     scrollHeight:0,
 
     hide_loading: true,
+
+    recommend: true,
     
   },
 

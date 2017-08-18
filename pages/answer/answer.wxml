@@ -33,13 +33,13 @@
 </view>
 
 <view class="personal_answer_list_container" hidden='{{hide_personal_answer_list}}'>
-      <template is="question_answer_list" data="{{personal_answer_list,preview_img_url,scrollHeight}}"></template>
+      <template is="question_answer_list" data="{{personal_answer_list,preview_img_url,scrollHeight,recommend}}"></template>
     </view>
 
     <!--<view class="border_tab_white"></view>-->
 
     <view class="personal_not_answer_list_container" hidden='{{hide_personal_not_answer_list}}'>
-      <template is="question_not_answer_list" data="{{personal_not_answer_list,preview_img_url,scrollHeight}}"></template>
+      <template is="question_not_answer_list" data="{{personal_not_answer_list,preview_img_url,scrollHeight,recommend}}"></template>
     </view>
 
 

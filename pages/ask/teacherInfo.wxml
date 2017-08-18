@@ -1,0 +1,48 @@
+
+<import src="../listView/search_teacher_list.wxml" />
+
+<view class="description_container_background" >
+    <image src="{{checkTeacher.icon}}"></image>
+</view>
+
+<view class="teacher_info_container" >
+ 
+    
+    <view class="description_container">
+        <view class="avatar_container">
+            <image class="avatar" src="{{checkTeacher.icon}}"></image>
+        </view>
+        <view class="teacher_name_container">
+            <text style="font-size:50rpx;">{{checkTeacher.name}}</text>
+        </view>
+        <view class="org_name_container">
+            <text style="font-size:40rpx;">{{}}</text>
+        </view>
+        <view class="teacher_description_container">
+            <view class="teacher_description">
+                <text style="font-size:30rpx;">{{checkTeacher.description}}</text>
+            </view>
+            
+        </view>
+        <view class="interval" style="height:50rpx;"></view>
+    </view>
+
+    <view class="statistic_container">
+        <view class="bar_item ">
+            <text  >已解答{{checkTeacher.solvedCount}}题</text>
+        </view>
+
+        <view class="middle_line_wrap">
+        <view class="middle_line"></view>
+        </view>      
+
+        <view class="bar_item " >
+            <text  >{{checkTeacher.populairyCount}}人关注TA</text>
+        </view>
+    </view>
+
+    <view class="answer_questions_container">
+        <template is="search_teacher_list" data="{{search_teacher_list,hide_teacher_list,index_search_page,ask_page,teacher_info}}"></template>
+    </view>
+
+</view>

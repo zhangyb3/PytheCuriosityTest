@@ -83,7 +83,8 @@
 
 .asker_name{
     display:inline-block;
-    
+    font-size: 42rpx;
+    font-weight: bold;
 }
 
 .liker_zone{
@@ -153,8 +154,8 @@
 
 .question_img_container{
     float: left;
-    width: 200rpx;
-    height: 200rpx;
+    width: 180rpx;
+    height: 180rpx;
     /*display:table-cell;
     vertical-align:middle;
     text-align: center;*/
@@ -164,8 +165,8 @@
 }
 
 .question_img{
-    width: 150rpx;
-    height: 150rpx;
+    width: 120rpx;
+    height: 120rpx;
     /*border-radius: 50%;*/
 
     /*position: relative;
@@ -183,8 +184,8 @@
     text-align: center;*/
 
     display: flex;
-    font-size: 36rpx;
-    color: #333333;
+    
+    
     word-break:break-all;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -195,7 +196,8 @@
 
 .question_text{
     display:inline-block;
-    
+    color: gray;
+    font-size: 36rpx;
 }
 
 
@@ -231,6 +233,13 @@
     justify-content:center;
     align-items:center;
     display:-webkit-flex;
+
+    word-break:break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
 }
 
 .solver_name{
@@ -280,6 +289,7 @@
 .reward_num{
     display:inline-block;
     font-size: 30rpx;
+    font-weight: bold;
 }
 
 .time_container{

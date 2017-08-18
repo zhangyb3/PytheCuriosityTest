@@ -6,13 +6,17 @@
 <!--名师区域  -->
             <view class="teacher_wrapper">
             <!--名师头像部分-->
+            <view class="icon_container" data-teacher='{{item}}' bindtap="checkTeacherInfo">
                 <image class="teacher_icon"  src="{{item.userimg}}"
                 ></image>
+            </view>
             <!--名师中间部分:姓名,介绍,收藏-->
-                <view class= "teacher_middle_wrapper">
+                <view class= "teacher_middle_wrapper" data-teacher='{{item}}'>
                 <!--教师姓名-->
+                    <view style="height:10rpx;"></view>
                     <text class="teacher_content">{{ item.username }}</text>
                     <!--教师简介-->
+                    <view style="height:20rpx;"></view>
                     <view class="teacher_brief_wrap">
                     <text class="teacher_brief">{{ item.subject }} | {{item.description}}</text>
                     </view>
@@ -30,20 +34,26 @@
                 <text>请教</text>  
                 </button>
 
-                <view class="add_teacher_button" wx:if="{{add_teacher_page == true}}" bindtap='organizationAddTeacher' data-teacher="{{item}}">
+                <view class="add_teacher_button_container" wx:if="{{add_teacher_page == true}}" bindtap='organizationAddTeacher' data-teacher="{{item}}">
                     <image src="../../images/add_teacher.png"></image>
                 </view>
 
                 <view class="horizontal_scroll_container" wx:if="{{teacher_edit == true}}">
   
-                    <scroll-view class="horizontal_scroll_handle" scroll-x="true" wx:if="{{user.teacherId == item.userid || org.managerId == user.teacherId}}" style=" white-space: nowrap; width: 100px; height: 220rpx; display: flex">
-                        <view class="original" style="width: 100px; height: 220rpx;; display: inline-block">
-                                <image class="arr_icon" src="../../images/personal_icon_arrow_left.png"></image>
-                        </view>
-                        <view class="delete" style="width: 100px; height: 220rpx; display: inline-block" data-teacher="{{item}}"  bindtap="cancelTeacherFromOrg">
-                            <button wx:if="{{user.teacherId == item.userid}}" style="background-color:red">退出</button>
-                            <button wx:if="{{org.managerId == user.teacherId}}" style="background-color:red">解除</button>
-                        </view>
+                    <scroll-view class="horizontal_scroll_handle" scroll-x="true" wx:if="{{user.teacherId == item.userid || org.managerId == user.teacherId}}" >
+
+                        <!--<view class="original_container" style="width: 100%">
+                            <view class="original" >
+                                    <image class="arr_icon" src="../../images/personal_icon_arrow_left.png"></image>
+                            </view>
+                        </view>-->
+
+                        <!--<view class="delete_container" style="width: 100%">-->
+                            <view class="delete"  data-teacher="{{item}}"  bindtap="cancelTeacherFromOrg">
+                                <button class="delete_button" wx:if="{{user.teacherId == item.userid}}" >退出机构</button>
+                                <button class="delete_button" wx:if="{{org.managerId == user.teacherId}}" >解除老师</button>
+                            </view>
+                        <!--</view>-->
                         
                     </scroll-view>
                 </view>

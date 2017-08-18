@@ -41,6 +41,8 @@ Page({
     hide_personal_answer_list:true,
     hide_personal_not_answer_list:false,
     preview_img_url: config.PytheFileServerURL ,
+
+    recommend: false,
   },
   onLoad:function(parameters){
     console.log("from personal");

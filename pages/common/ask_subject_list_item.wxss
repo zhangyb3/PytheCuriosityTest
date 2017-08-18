@@ -62,16 +62,23 @@
 
 .subject_icon_ask{
     width: 116rpx;
-    line-height: 62rpx;
-    font-size: 30rpx;
-    color: #3aa4f1;
-    text-align: center;
-    border: 1px solid #3AA4F1;
-    margin-right: 20px;
-    border-radius: 33rpx;
-    /*justify-content: flex-end;*/
-    /*margin-top: 3%;*/
+    height: 100%;
+    /*font-size: 30rpx;*/
+    /*color: #3aa4f1;*/
+    /*text-align: center;*/
+    /*border: 1px solid #3AA4F1;*/
+    /*margin-right: 20px;*/
+    /*border-radius: 33rpx;*/
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
 }
+
+/*.arr_icon{
+    width: 20%;
+    height: 20%;
+}*/
 
 .dotted_line{
     

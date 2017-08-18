@@ -1,16 +1,17 @@
 
 .list_item{
 
+    width: 100%;
     border-top: 1px solid #EEE;
     border-bottom: 1px solid #fff;
     
-    margin-top: 2px;
+    /*margin-top: 2px;
     margin-bottom: 2px;
     margin-left: 2px;
     margin-right: 2px;
     
     display: flex;
-    flex-direction: column;
+    flex-direction: column;*/
     background-color: #f3f1e4;
 }
 
@@ -20,50 +21,59 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    overflow-x: hidden; 
+    /*overflow-x: hidden; */
     /*overflow-y: auto;*/
     /*justify-content: space-between*/
+    width: 100%;
     height: 220rpx;
-    position: relative;
+    /*position: relative;*/
     z-index: 1;
     background-color: #f3f1e4;
 }
 
+.icon_container{
+    width: 20%;
+    height: 100%;
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
 .teacher_icon{
-    position: absolute;
+    /*position: absolute;*/
     width: 120rpx;
     height: 120rpx;
-    top: 36rpx;
-    left: 30rpx;
+    /*top: 36rpx;*/
+    /*left: 30rpx;*/
     border-radius: 50%;
     
     /*margin-top: 3%;*/
 }
 
 .teacher_middle_wrapper{
-    margin-left: 170rpx;
-    right: 140rpx;
-    width: 400rpx;
-    height: 220rpx;
+    /*margin-left: 170rpx;*/
+    /*right: 140rpx;*/
+    width: 60%;
+    height: 100%;
     display: flex;
     
     flex-direction: column;
-    align-items: flex-start;
+    /*align-items: flex-start;*/
     
 }
 
 .teacher_content {
-    margin-top: 30rpx;
+    /*margin-top: 30rpx;*/
     color: #0F0F0F;
     height: auto;
-    font-size: 36rpx;  
-    /*font-weight:bold; */
+    font-size: 42rpx;  
+    font-weight:bold; 
 }
 
 .teacher_brief_wrap{
-    margin-top: 10rpx;
-    height: 60rpx;
-    width: 400rpx;
+    /*margin-top: 10rpx;*/
+    height: 80rpx;
+    width: 100%;
 }
 
 .teacher_brief{
@@ -74,7 +84,7 @@
     /*line-height: 26rpx;*/
     /*line-height: 25rpx;*/
     /*height: auto;*/
-    /*width: auto;*/
+    width: 100%;
     /*margin-bottom: 15px;*/
     color: #999999;
     text-overflow: -o-ellipsis-lastline;
@@ -86,12 +96,12 @@
 }
 
 .collect_icon_wrap{
-    margin-top: 20rpx;
+    /*margin-top: 20rpx;*/
     /*height:50rpx;*/
     /*width: 150rpx;*/
     display:flex;
     flex-direction: row;
-    margin-bottom: 10rpx;
+    /*margin-bottom: 10rpx;*/
     line-height:50rpx;
     align-items: center;
     align-content: center;
@@ -100,9 +110,9 @@
 .collect_icon_wrap image{
     width: 40px;
     height: 20px;
-    display:block;
+    /*display:block;
     margin-bottom:8rpx;
-    margin-right: 10rpx;
+    margin-right: 10rpx;*/
 }
 
 .collect_icon{
@@ -115,19 +125,20 @@
     /*align-items: center;
     justify-content: center;*/
     /*background: url(../../images/teacher_ask_icon.png) no-repeat center center;*/
-    display: flex;
-    position: relative;
-    /*right: 20px;
-    bottom: 8px;*/
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+    
     line-height: 62rpx;
-    width: 116rpx;
-    margin-right: 20rpx;
+    width: 20%;
+    
     color: #3AA4F1;
     font-size: 28rpx;
     text-align: center;
     border: 1px solid #3AA4F1;
     background: none;
-    /*padding: 0;*/
+    
     padding: 0;
     border-radius: 33rpx;
     background: none;
@@ -162,6 +173,14 @@
 /*去掉button的边框*/
 .teacher_ask_section:after{
     border:none;
+}
+
+.add_teacher_button_container{
+    height: 100%;
+    width: 20%;
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
 }
 
 .add_teacher_button image{
@@ -334,18 +353,52 @@
     margin-right: 5%;
 }
 
-.original{
-    background-color: #f3f1e4;
+.horizontal_scroll_container{
+    width: 20%;
+    height: 100%;
+    /*justify-content:center;
+    align-items:center;
+    display:-webkit-flex;*/
 }
 
-.delete{
-    background-color: red;
+.horizontal_scroll_handle{
+    
+    width: 100%;
+    height: 100%;
+    
+    /*display: flex;*/
+    /*flex-direction: row;*/
+}
+
+
+
+.original{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: #f3f1e4;
+    /*justify-content:center;
+    align-items:center;
+    display:-webkit-flex;*/
 }
 
 .arr_icon{
-    margin-top: 40rpx;
-    margin-right: 30rpx;
-    /*right: 30rpx;*/
-    width: 13rpx;
-    height: 25rpx;
+    width: 20%;
+    height: 20%;
+}
+
+
+
+.delete{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    /*justify-content:center;
+    align-items:center;
+    display:-webkit-flex;*/
+}
+
+.delete_button{
+    background-color: red;
 }

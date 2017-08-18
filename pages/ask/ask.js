@@ -661,8 +661,8 @@ Page({
       this.data.searchParameters.userId = wx.getStorageSync(user.StudentID);
     }
        
-    listViewUtil.loadList(that,'index_search_teacher',config.PytheRestfulServerURL,
-    "/index/search/teacher",
+    listViewUtil.loadList(that,'collection_teacher',config.PytheRestfulServerURL,
+    "/collection/teacher",
     10,
         this.data.searchParameters,
         function (netData){

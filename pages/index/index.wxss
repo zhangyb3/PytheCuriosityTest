@@ -53,7 +53,9 @@
   background-color: #f3f1e4;
 }
 
-@import "../listView/index_page_list.wxss";
+@import "../listView/recommend_list.wxss";
+/*@import "../listView/question_answer_list.wxss";*/
+/*@import "../listView/index_page_list.wxss";*/
 @import "../common/index_page_filter.wxss";
 @import "../pop/index_page_subject_list.wxss";
 @import "../register/register.wxss";

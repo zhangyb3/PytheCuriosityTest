@@ -18,6 +18,10 @@
     background-color: lightgray;
 }
 
+.search_teacher_list_container{
+    width: 100%;
+}
+
 
 
 @import "../common/search_teacher_list_item.wxss";

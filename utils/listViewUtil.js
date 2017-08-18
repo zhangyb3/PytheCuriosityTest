@@ -132,6 +132,9 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     if(list_type == 'subject_teacher'){
         page.data.search_teacher_list = [];
     }
+    if(list_type == 'collection_teacher'){
+        page.data.search_teacher_list = [];
+    }
 
 
     page.onPullDownRefresh = function(){
@@ -250,6 +253,11 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             
             netUtil.requestSimpleList(page,'subject_teacher',1,netUtil.action.request_refresh);
         }
+        else if(page.data.list_mode == 'collection_teacher'){
+            page.data.search_teacher_list = [];
+            
+            netUtil.requestSimpleList(page,'collection_teacher',1,netUtil.action.request_refresh);
+        }
         
         else 
         {
@@ -327,6 +335,11 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             // page.data.search_teacher_list = [];
             
             netUtil.requestSimpleList(page,'subject_teacher',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+        }
+        else if(page.data.list_mode == 'collection_teacher'){
+            // page.data.search_teacher_list = [];
+            
+            netUtil.requestSimpleList(page,'collection_teacher',page.data.currentPageIndex +1,netUtil.action.request_refresh);
         }
 
         else

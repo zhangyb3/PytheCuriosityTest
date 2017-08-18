@@ -7,6 +7,7 @@
     "pages/ask/ask",
     "pages/ask/ask_operation",
     "pages/ask/teachers",
+    "pages/ask/teacherInfo",
     "pages/answer/answer",
     "pages/answer/answer_operation",
     "pages/personal/personal",

@@ -44,6 +44,60 @@ Page({
     );
 
   },
+
+  checkTeacherInfo:function(e){
+    var teacher = (e.currentTarget.dataset.teacher);
+
+    wx.navigateTo({
+      url: 'teacherInfo?userId=' + teacher.userid,
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+  },
+
+  askOneTeacher:function(e){
+
+    //先判断是否已注册
+    if(wx.getStorageSync('alreadyRegister') == 'no')
+    {
+      this.setData({
+        hide_login: false,
+      });
+      loadingSelections.call(this);
+    }
+    if(wx.getStorageSync('alreadyRegister') == 'yes')
+    {
+      console.log("navigate to ask operation page");
+      var parametersJSON = e.currentTarget.dataset.teacher;
+      console.log(parametersJSON);
+      var parameters = netUtil.json2Form(parametersJSON);
+      // console.log(parameters);
+      wx.navigateTo({
+        url: 'ask_operation' + '?' + parameters,
+        success: function(res){
+          // success
+          // console.log(res);
+        },
+        fail: function() {
+          // fail
+          // console.log(res);
+        },
+        complete: function() {
+          // complete
+          // console.log(res);
+        }
+      })
+    }
+      
+  },
+  
   onHide:function(){
     // 页面隐藏
   },

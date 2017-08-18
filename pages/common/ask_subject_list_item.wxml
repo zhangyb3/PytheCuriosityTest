@@ -9,8 +9,9 @@
                 ></image>
                 <text class="subject_content">{{ item.subject_name }}</text>
                 <text class="subject_discribe">{{item.sub_dis}}</text>
-                <view class="subject_icon_ask"
-                >请教</view>
+                <view class="subject_icon_ask">
+                    <image class="arr_icon"  src="../../images/personal_icon_arrow_right@2x.png"></image>
+                </view>
             </view>
             <view class="border_tab"/>
 

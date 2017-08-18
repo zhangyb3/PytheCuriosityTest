@@ -15,9 +15,10 @@
                 <text class="asker_name">{{item.studentname}}</text>
             </view>
         </view>
-        <view class="liker_zone" wx:if="{{item.likesnum != null && item.likesnum >= 0}}">
+        <view class="liker_zone" wx:if="{{ (item.likesnum != null && item.likesnum >= 0) || recommend == true }}">
             <view class="liker_num_container">
-                <text class="liker_num">{{item.likesnum}}</text>
+                <text class="liker_num" hidden="{{!reommend}}">{{item.likesnum}}</text>
+                <text class="liker_num" hidden="{{reommend}}">{{item.answerlikenum}}</text>
             </view>
             <view class="liker_img_container">
                 <image class="liker_img" src="../../images/liked.png"></image>
@@ -28,7 +29,7 @@
 
     <view class="middle_zone">
         <view class="img_zone">
-             <view class="question_img_container">
+             <view class="question_img_container" wx:if="{{item.questioncontent.img[0] != null}}">
                 <image class="question_img" src="{{preview_img_url + item.questioncontent.img[0]}}"></image>
             </view>
         </view>
@@ -42,7 +43,7 @@
     <view class="bottom_zone">
         <view class="solver_zone">
             <view class="solver_name_container">
-                <text class="solver_name">  ·由{{item.teachername}}老师解答该问题</text>
+                <text class="solver_name">  ·由{{item.teachername}}老师解答</text>
             </view>
         </view>
         <view class="reward_zone" wx:if="{{true}}">
@@ -53,7 +54,8 @@
                 <image class="reward_img" src="../../images/personal_icon_org.money@2x.png"></image>
             </view>
             <view class="time_container">
-                <text class="time">{{item.starttime}}</text>
+                <text class="time" hidden="{{!reommend}}">{{item.starttime}} </text>
+                <text class="time" hidden="{{reommend}}">{{item.answertime}} </text>
             </view>
         </view>
     </view>
