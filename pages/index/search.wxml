@@ -35,7 +35,7 @@
     </view>
 
     <view class="search_knowledge_list_container" >
-      <template is="search_knowledge_list" data="{{search_knowledge_list,hide_knowledge_list,index_search_page,preview_img_url,scrollHeight}}"></template>
+      <template is="search_knowledge_list" data="{{infos,search_knowledge_list,hide_knowledge_list,index_search_page,preview_img_url,scrollHeight}}"></template>
     </view>
 
     <view class="search_teacher_list_container" >

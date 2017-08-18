@@ -56,6 +56,6 @@ background-color:#f3f1e4;
 
 
 
-@import "../common/search_knowledge_list_item.wxss";
+@import "../common/question_answer_list_item.wxss";
 @import "../bubble/bubble.wxss";
 

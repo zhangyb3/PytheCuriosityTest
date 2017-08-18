@@ -30,6 +30,7 @@ Page({
     hide_teacher_list: true,
     hide_org_list: true,
 
+    infos: [],
     search_knowledge_list:[],
     search_teacher_list:[],
     search_org_list:[],

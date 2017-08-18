@@ -122,6 +122,7 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     }
     if(list_type == 'index_search_knowledge'){
         page.data.search_knowledge_list = [];
+        page.data.infos = [];
     }
     if(list_type == 'index_search_teacher'){
         page.data.search_teacher_list = [];
@@ -234,7 +235,7 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
         }
         else if(page.data.list_mode == 'index_search_knowledge'){
             page.data.search_knowledge_list = [];
-            
+            page.data.infos = [];
             netUtil.requestSimpleList(page,'index_search_knowledge',1,netUtil.action.request_refresh);
         }
         else if(page.data.list_mode == 'index_search_teacher'){
