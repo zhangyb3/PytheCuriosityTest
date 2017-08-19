@@ -10,7 +10,7 @@
     <!--<view class="display_list_cover"  bindtap='returnIndexPage'></view>-->
 
     <!-- 成员列表区域 -->
-    <view class="display_list_zone" >
+    <scroll-view class="display_list_zone" scroll-y="true" >
         <view class="members">
             <block wx:for-items="{{member_display_list}}"  >
                 <view class="member_item" hover-class="" data-name="{{item.username}}" data-memberId="{{item.userid}}" bindtap="getSelectSubjectList" >
@@ -29,7 +29,7 @@
             
         </view>
         
-    </view>
+    </scroll-view>
 
 
     </view>

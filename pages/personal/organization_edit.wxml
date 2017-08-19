@@ -7,7 +7,7 @@
         
         <view class="organization_name organization_operation_item" >
             <view class="organization_name_text">
-                <text >机构名称</text>
+                <text class="input_hint">机构名称</text>
             </view>
             <view class="input_organization_name">
                 <input  bindinput="inputOrganizationName" value="{{orgInfo.name}}" auto-focus/>
@@ -20,10 +20,10 @@
         
         <view class="organization_description organization_operation_item" >
             <view class="organization_description_text">
-                <text >详情</text>
+                <text class="input_hint">详情介绍</text>
             </view>
             <view class="input_organization_description">
-                <textarea  bindinput="inputOrganizationDescription" value="{{orgInfo.description}}" maxlength="100" auto-focus/>
+                <textarea  bindinput="inputOrganizationDescription" value="{{orgInfo.description}}" maxlength="100" auto-focus="true"/>
             </view>
         </view>
 
@@ -33,7 +33,7 @@
         
         <view class="organization_name organization_operation_item" >
             <view class="organization_name_text">
-                <text >添加成员</text>
+                <text class="input_hint">添加成员</text>
             </view>
             <view class="input_teacher_phone">
                 <input  bindinput="inputTeacherPhone" value="输入电话号码" auto-focus/>

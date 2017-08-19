@@ -19,7 +19,9 @@
     /*right: 0;*/
     /*display: block;*/
     /*bottom: 386px;*/
-    background-color: #f3f1e4;
+    /*background-color: #f3f1e4;*/
+    /*height: auto;*/
+    overflow-y: auto;
 }
 
 

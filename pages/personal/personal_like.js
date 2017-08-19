@@ -263,27 +263,27 @@ Page({
     );
 
     //加载个人名师列表
-    var that = this;
-    var myLikeTeacherParams = {
-      userId : wx.getStorageSync(user.UserID),
-      pageSize : 3,
-      pageNum : 1,
+    // var that = this;
+    // var myLikeTeacherParams = {
+    //   userId : wx.getStorageSync(user.UserID),
+    //   pageSize : 3,
+    //   pageNum : 1,
       
-    };    
-    listViewUtil.loadList(that,'my_like_teacher',config.PytheRestfulServerURL,
-    base.MY_TEACHER_COLLECTION_URL_DETAIL,
-    10,
-        myLikeTeacherParams,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
+    // };    
+    // listViewUtil.loadList(that,'my_like_teacher',config.PytheRestfulServerURL,
+    // base.MY_TEACHER_COLLECTION_URL_DETAIL,
+    // 10,
+    //     myLikeTeacherParams,
+    //     function (netData){
+    //       //取出返回结果的列表
+    //       return netData.data;
+    //     },
+    //     function(item){
          
-        },
-        {},
-        'GET',
-    );
+    //     },
+    //     {},
+    //     'GET',
+    // );
   },
   onHide:function(){
     // 页面隐藏

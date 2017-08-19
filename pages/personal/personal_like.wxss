@@ -20,7 +20,8 @@
 .personal_like_answer_list_container{
   height: 100px;
   /*margin-top: 100rpx;*/
-  border-bottom: 1px solid #fff;
+  /*border-bottom: 1px solid #fff;*/
+  background-color: #f3f1e4;
 }
 
 .personal_like_teacher_list_container{
@@ -35,8 +36,9 @@
 
 }
 
-@import "../common/personal_like_section_selector.wxss";
+@import "../listView/question_answer_list.wxss";
+/*@import "../common/personal_like_section_selector.wxss";
 @import "../listView/personal_like_answer_list.wxss";
-@import "../listView/personal_like_teacher_list.wxss";
+@import "../listView/personal_like_teacher_list.wxss";*/
 @import "../pop/show_image_page.wxss";
 @import "../bubble/bubble.wxss";
