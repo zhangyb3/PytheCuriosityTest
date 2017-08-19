@@ -14,8 +14,8 @@ background-color:#f3f1e4;
 
 .scroll_list{
     display: flex;
-    position: relative;
-    margin-top: 100rpx;
+    /*position: relative;*/
+    /*margin-top: 100rpx;*/
     width: 100%;
     /*background-color:#f3f1e4;*/
     /*width: 750rpx;*/

@@ -451,6 +451,11 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
                 temp = (currentDatas[count].question);
                 temp.questioncontent = JSON.parse(temp.questioncontent);
             }
+            if(list_type == 'index_search_knowledge')
+            {
+                
+                
+            }
             if(list_type == 'index_search_teacher')
             {
                 
@@ -589,7 +594,12 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             console.log('before setData----------'+that.data.personal_like_teacher_list);
             that.setData({personal_like_teacher_list:that.data.personal_like_teacher_list});
         }
-
+        if(list_type == 'index_search_knowledge'){
+            //滑动列表结尾追加数据
+            that.data.infos=that.data.infos.concat(concatDatas);
+            console.log('before setData----------'+that.data.infos);
+            that.setData({infos:that.data.infos});
+        }
         if(list_type == 'index_search_teacher'){
             that.data.search_teacher_list=that.data.search_teacher_list.concat(concatDatas);
             console.log('before setData----------'+that.data.search_teacher_list);

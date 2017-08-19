@@ -285,6 +285,7 @@ function searchByContent(the)
   }
 
   the.setData({
+    infos: [],
     search_knowledge_list: [],
     search_teacher_list: [],
     search_org_list: [],
