@@ -27,7 +27,7 @@
     width: 100%;
     height: 220rpx;
     /*position: relative;*/
-    z-index: 1;
+    /*z-index: 1;*/
     background-color: #f3f1e4;
 }
 
@@ -365,21 +365,29 @@
     
     width: 100%;
     height: 100%;
+    white-space: nowrap;
+    display: block;
+    /*align-items: center;*/
     
-    /*display: flex;*/
-    /*flex-direction: row;*/
+    /*display: flex;
+    flex-direction: row;*/
 }
 
-
+.original_container{
+    display: inline-block;
+    
+    width: 100%;
+    height: 100%;
+}
 
 .original{
-    display: inline-block;
+    
     width: 100%;
     height: 100%;
     background-color: #f3f1e4;
-    /*justify-content:center;
+    justify-content:center;
     align-items:center;
-    display:-webkit-flex;*/
+    display:-webkit-flex;
 }
 
 .arr_icon{
@@ -387,18 +395,26 @@
     height: 20%;
 }
 
-
+.delete_container{
+    display: inline-block;
+    
+    width: 100%;
+    height: 100%;
+}
 
 .delete{
-    display: inline-block;
+    
     width: 100%;
     height: 100%;
     background-color: red;
-    /*justify-content:center;
+    justify-content:center;
     align-items:center;
-    display:-webkit-flex;*/
+    display:-webkit-flex;
 }
 
 .delete_button{
     background-color: red;
+    font-size: 36rpx;
+    
+    font-weight: bold;
 }

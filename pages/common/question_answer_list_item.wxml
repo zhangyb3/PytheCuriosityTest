@@ -6,7 +6,7 @@
 
     <view class="answer_tab_white"/>
 
-    <view class="top_zone">
+    <view class="top_zone" hidden="{{teacher_info}}">
         <view class="asker_zone">
             <view class="asker_avatar_container">
                 <image class="asker_avatar" src="{{item.studentimg}}"></image>
@@ -27,6 +27,8 @@
         </view>
     </view>
 
+    <view class="interval" style="height: 10rpx;"></view>
+
     <view class="middle_zone">
         <view class="img_zone">
              <view class="question_img_container" wx:if="{{item.questioncontent.img[0] != null}}">
@@ -40,7 +42,7 @@
         </view>
     </view>
 
-    <view class="bottom_zone">
+    <view class="bottom_zone" hidden="{{teacher_info}}">
         <view class="solver_zone">
             <view class="solver_name_container">
                 <text class="solver_name">  ·由{{item.teachername}}老师解答</text>

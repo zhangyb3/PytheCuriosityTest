@@ -15,12 +15,11 @@
         <view class="cancel_wrap" bindtap="returnIndexPage" >
         <image class="cacel_img" src="../../images/index_icon_close@2x.png"></image>
         </view>
-
         <view class="select_question_wrapper">
-                <text class="select_question_content">{{ question.questioncontent.text[0] }}</text>
-                
-        </view>
-
+            <view class="select_question_content_container">
+                    <text class="select_question_content">{{ question.questioncontent.text[0] }}</text>
+            </view>
+       </view>
         <!--<view class="border_tab"></view>-->
 
         <view class="multi_tips">
@@ -70,17 +69,17 @@
                 <view class="select_answer_container" >
                 <view class="border_tab_index_background"></view>
                     <view class="select_answer_wrapper" >
-                        <image  src='{{ answer.userimg || null }}' />
-                        <text class="select_item_teacher_name">{{ answer.username }}</text>
+                        <image  src='{{ answer.teacherimg || null }}' />
+                        <text class="select_item_teacher_name">{{ answer.teachername }}</text>
                         
                     </view>
                     
                     <!--<view class="border_tab"></view>-->
-
-                    <view class="select_lines">
+                <view class="select_answer_content_wrapper">
+                    <view class="select_answer_content_container">
                         <text class="select_answer_content">{{ answer.answercontent.text[0] }}</text>
                     </view>
-
+                </view>
                     <!--<view class="border_tab"></view>-->
 
                     <view class="multi_tips">
@@ -121,7 +120,7 @@
                     <view class="operation_zone" >
 
                         <view class="collect_view_wrap">
-                        <view class="collect_wrap" wx:if="{{alreadyRegister == 'yes'}}" data-selected="{{answer}}" data-answer_index="{{answer_index}}" bindtap='likeAnswer'><image wx:if="{{answer.isClick == 1}}" class="collect_icon_img" src="../../images/index_icon_shoucang_nor@2x.png"></image><image wx:if="{{answer.isClick == 0}}" class="collect_icon_img" src="../../images/index_icon_shoucang@2x.png"></image><text class="collect_num" >{{answer.likesnum}}</text></view>
+                        <view class="collect_wrap" wx:if="{{alreadyRegister == 'yes'}}" data-selected="{{answer}}" data-answer_index="{{answer_index}}" bindtap='likeAnswer'><image wx:if="{{answer.isClick == 0}}" class="collect_icon_img" src="../../images/index_icon_shoucang_nor@2x.png"></image><image wx:if="{{answer.isClick == 1}}" class="collect_icon_img" src="../../images/index_icon_shoucang@2x.png"></image><text class="collect_num" >{{answer.likesnum}}</text></view>
                         </view>
                         
 

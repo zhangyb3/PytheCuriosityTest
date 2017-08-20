@@ -10,6 +10,7 @@ var base = require("../../utils/base.js");
 Page({
   data:{
     checkTeacher: {},
+    teacher_info: true,
   },
   onLoad:function(parameters){
     
@@ -34,6 +35,27 @@ Page({
         that.setData({
           checkTeacher: that.data.checkTeacher,
         });
+
+        var myAnsweredParams = {
+          teacherId : wx.getStorageSync(user.TeacherID),
+          pageSize : 10,
+          pageNum : 1,
+          
+        };    
+        listViewUtil.loadList(that,'teacher_answered',config.PytheRestfulServerURL,
+        base.TEACHER_ANSWERED_URL_DETAIL,
+        10,
+            myAnsweredParams,
+            function (netData){
+              //取出返回结果的列表
+              return netData.data;
+            },
+            function(item){
+              
+            },
+            {},
+            'GET',
+        );
       },
       fail: function(res) {
         // fail

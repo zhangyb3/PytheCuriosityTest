@@ -51,21 +51,33 @@ function getDetailContent(that,selectItem)
       method: 'GET', 
       success: function(res){
         console.log(res);
-        var answers = res.data.data;
+        // var answers = res.data.data;
 
-        for(var count = 0; count < answers.length; count++)
-        {
+        // for(var count = 0; count < answers.length; count++)
+        // {
           
-          var temp = answers[count];
-          var isClick = temp.isClick;
-          temp = JSON.parse(temp.question);
-          temp.isClick = isClick;
-          temp.playingVoice = false;
-          answers[count] = temp;
-          answers[count].answercontent = JSON.parse(answers[count].answercontent);
-          answers[count].questioncontent = JSON.parse(answers[count].questioncontent);
+        //   var temp = answers[count];
+        //   var isClick = temp.isClick;
+        //   temp = JSON.parse(temp.question);
+        //   temp.isClick = isClick;
+        //   temp.playingVoice = false;
+        //   answers[count] = temp;
+        //   answers[count].answercontent = JSON.parse(answers[count].answercontent);
+        //   answers[count].questioncontent = JSON.parse(answers[count].questioncontent);
           
-        }
+        // }
+
+        var temp = res.data.data;
+        var content = JSON.parse(temp.question);
+        var answer = {};
+        answer = content;
+        answer.answercontent = JSON.parse(answer.answercontent);
+        answer["isClick"] = temp.isClick;
+
+        var answers = [];
+        answers[0] = answer;
+
+
         that.setData({
             answers: answers,
             question:selectItem,

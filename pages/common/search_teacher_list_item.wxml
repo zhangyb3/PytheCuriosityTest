@@ -38,22 +38,22 @@
                     <image src="../../images/add_teacher.png"></image>
                 </view>
 
-                <view class="horizontal_scroll_container" wx:if="{{teacher_edit == true}}">
+                <view class="horizontal_scroll_container" wx:if="{{teacher_edit == true && (user.teacherId == item.userid || org.managerId == user.teacherId)}}">
   
-                    <scroll-view class="horizontal_scroll_handle" scroll-x="true" wx:if="{{user.teacherId == item.userid || org.managerId == user.teacherId}}" >
+                    <scroll-view class="horizontal_scroll_handle" scroll-x="true" >
 
-                        <!--<view class="original_container" style="width: 100%">
+                        <view class="original_container" style="width: 100%">
                             <view class="original" >
                                     <image class="arr_icon" src="../../images/personal_icon_arrow_left.png"></image>
                             </view>
-                        </view>-->
+                        </view>
 
-                        <!--<view class="delete_container" style="width: 100%">-->
+                        <view class="delete_container" style="width: 100%">
                             <view class="delete"  data-teacher="{{item}}"  bindtap="cancelTeacherFromOrg">
-                                <button class="delete_button" wx:if="{{user.teacherId == item.userid}}" >退出机构</button>
-                                <button class="delete_button" wx:if="{{org.managerId == user.teacherId}}" >解除老师</button>
+                                <text class="delete_button" wx:if="{{user.teacherId == item.userid}}" >退出机构</text>
+                                <text class="delete_button" wx:if="{{org.managerId == user.teacherId}}" >解除老师</text>
                             </view>
-                        <!--</view>-->
+                        </view>
                         
                     </scroll-view>
                 </view>

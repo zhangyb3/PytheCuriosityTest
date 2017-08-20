@@ -18,8 +18,11 @@
     /*border-top: 1px solid #EEE;*/
     background-color: #f3f1e4;
     width: 100%;
-    min-height: 270rpx;
+    /*min-height: 300rpx;*/
     border-bottom: 20rpx solid #fff;
+    height: auto;
+
+    align-items: center;
 }
 
 .earn_num_img{
@@ -33,15 +36,23 @@
     line-height: 40rpx;
 }
 
+.personal_avatar_zone{
+    
+    width: 20%;
+    height: 100%;  
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
 .personal_avatar_container{
-    display: flex;
-    width: 150rpx;
-    height: 250rpx;  
+    width: 120rpx;
+    height: 120rpx;
 }
 
 .personal_avartar_image{
-    margin-top: 35rpx;
-    margin-left: 30rpx;
+    /*margin-top: 35rpx;*/
+    /*margin-left: 30rpx;*/
     width: 120rpx;
     height: 120rpx;
     border-radius: 50%;
@@ -50,11 +61,11 @@
 
 .personal_description_text_zone{
     /*display: flex;*/
-    position: fixed;
-    height: auto;
-    width: auto;
-    left: 170rpx;
-    right: 20rpx;
+    /*position: fixed;*/
+    height: 100%;
+    width: 70%;
+    /*left: 170rpx;*/
+    /*right: 20rpx;*/
     /*position: relative;*/
     flex-direction: column;
 }
@@ -155,11 +166,11 @@
 
 .personal_description_revise_zone{
     display: flex;
-    position: absolute;
-    height: 200rpx;
-    width: auto;
+    /*position: absolute;*/
+    height: 100%;
+    width: 10%;
     /*margin-right: 20rpx;*/
-    right: 30rpx;
+    /*right: 30rpx;*/
     /*background-color: yellow;*/
 }
 
@@ -321,10 +332,10 @@
     
     margin-left: 34rpx;
 }
-.tab_inteval{
+.tab_interval{
     height: 20rpx;
     width: 100%;
-    background-color: #ffffff;
+    /*background-color: #ffffff;*/
 }
 
 @import "../register/register.wxss";
