@@ -3,14 +3,14 @@
 
 <view class="teacher_info_page_container">
 
-<view class="description_container_background" >
+<!--<view class="description_container_background" >
     <image src="{{checkTeacher.icon}}"></image>
-</view>
+</view>-->
 
 <view class="teacher_info_container" >
  
     
-    <view class="description_container">
+    <view class="description_container"  >
         <view class="avatar_container">
             <image class="avatar" src="{{checkTeacher.icon}}"></image>
         </view>

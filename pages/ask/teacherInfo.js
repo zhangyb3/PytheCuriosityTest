@@ -13,6 +13,7 @@ Page({
     teacher_info: true,
   },
   onLoad:function(parameters){
+    var that = this;
     wx.getSystemInfo({
       success: function(res) {
         console.log(res);
@@ -38,7 +39,7 @@ Page({
       success: function(res){
         // success
         console.log(res);
-        var teacherId = this.data.checkTeacher.userId;
+        var teacherId = that.data.checkTeacher.userId;
         that.data.checkTeacher = res.data.data;
         that.data.checkTeacher.teacherId = teacherId;
         that.setData({
