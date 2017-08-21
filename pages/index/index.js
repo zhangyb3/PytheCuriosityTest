@@ -64,9 +64,9 @@ Page({
   wx.getSystemInfo({
       success: (res) => {
         this.setData({
-          // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750) //80为顶部搜索框区域高度 rpx转px 屏幕宽度/750
-          // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750) -100
-          scrollHeight: 450
+          // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750) //80为顶部搜索框区域高度 rpx转px 屏幕宽度/750,
+          scrollHeight: res.windowHeight - (50 * res.windowHeight / 750),
+          // scrollHeight: 450
         });
       }
     })
@@ -217,12 +217,12 @@ Page({
       method: 'GET', 
       success: function(res){
         // success
-        
+        console.log(res.data.data);
 
-        if(res.data.data == 1)
+        if(res.data.data.data == '点赞成功')
         {
           that.data.answers[answer_index].likesnum++;
-          that.data.answers[answer_index].isClick = 0;
+          that.data.answers[answer_index].isClick = 1;
           that.setData({
             answers: that.data.answers,
           });

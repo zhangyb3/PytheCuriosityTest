@@ -2,6 +2,7 @@ var config = require('./config')
 var user = require('./user')
 var login = require('login.js')
 var pay = require("./pay");
+var util = require("./util");
 
 const DETAIL_CONTENT_URL = `${config.PytheRestfulServerURL}/index2/question_answers`;
 
@@ -73,6 +74,7 @@ function getDetailContent(that,selectItem)
         answer = content;
         answer.answercontent = JSON.parse(answer.answercontent);
         answer["isClick"] = temp.isClick;
+        answer.answercontent.answertime = util.formatDate(answer.answercontent.answertime);
 
         var answers = [];
         answers[0] = answer;

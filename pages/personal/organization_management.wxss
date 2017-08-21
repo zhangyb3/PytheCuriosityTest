@@ -12,6 +12,26 @@
     background-color: #f3f1e4;
 }
 
+.my_create{
+
+    height: 100rpx;
+    margin-top: 100rpx; 
+    background-color: white;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.my_create_view{
+    width: 90%;
+    height: 50rpx;
+    border-bottom: 2rpx solid #EEE;
+    font-weight: bold;
+}
+
+
+
 .organization_description_zone{
     display: flex;
     flex-direction: row;
@@ -71,12 +91,13 @@
     height: auto;
     font-size: 40rpx;
     color: #666666;
+    font-weight: bold;
 }
 
 
 
 .organization_discribe_box{
-    margin-top: 10rpx;
+    margin-top: 30rpx;
     height: 110rpx;
 }
 .organization_discribe{
@@ -86,7 +107,7 @@
     right: 80rpx;*/
     width: 90%;
     height: 106rpx;
-    font-size: 36rpx;
+    font-size: 32rpx;
     color: #999999;
     padding-bottom: -20rpx;
     line-height: 37rpx;

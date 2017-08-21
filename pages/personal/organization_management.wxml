@@ -3,7 +3,12 @@
 
 <view class="organization_management_page">
 
-    <text>我创建的</text>
+    <view class="my_create">
+        <view class="my_create_view">
+            <text>我创建的</text>
+        </view>     
+    </view>
+    
     <view class="organization_description_zone" wx:if="{{organization != null}}">
             <view class="organization_image_container">
                 <image class="organization_image" src="{{userAvatarUrl}}"></image>

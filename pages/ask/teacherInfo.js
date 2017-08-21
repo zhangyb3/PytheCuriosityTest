@@ -13,7 +13,14 @@ Page({
     teacher_info: true,
   },
   onLoad:function(parameters){
-    
+    wx.getSystemInfo({
+      success: function(res) {
+        console.log(res);
+        that.setData({
+          scrollHeight: res.windowHeight ,
+        });
+      }
+    });
     console.log(parameters);
     this.data.checkTeacher.userId = parameters.userId;
   },
@@ -31,13 +38,15 @@ Page({
       success: function(res){
         // success
         console.log(res);
+        var teacherId = this.data.checkTeacher.userId;
         that.data.checkTeacher = res.data.data;
+        that.data.checkTeacher.teacherId = teacherId;
         that.setData({
           checkTeacher: that.data.checkTeacher,
         });
 
         var myAnsweredParams = {
-          teacherId : wx.getStorageSync(user.TeacherID),
+          teacherId : teacherId,
           pageSize : 10,
           pageNum : 1,
           

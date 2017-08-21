@@ -7,11 +7,26 @@
 }
 
 
+.member_text_container{
+  /*margin-top: 50rpx;*/
+  height: 50rpx;
+  background-color: #f3f1e4;
 
+  justify-content:center;
+  align-items:center;
+  display:-webkit-flex;
+}
 
+.member_text_view{
 
+  font-size: 36rpx;
+  font-weight: bold;
 
+}
 
+.search_teacher_list_container{
+  /*margin-top: 50rpx;*/
+}
 
 
 @import "../listView/search_teacher_list.wxss";

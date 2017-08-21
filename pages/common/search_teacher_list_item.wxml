@@ -61,7 +61,7 @@
                
               
             </view>   
-            <view class="border_tab"></view>   
+            <!--<view class="border_tab"></view>   -->
 </view>
 
 </template>

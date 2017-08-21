@@ -15,7 +15,7 @@ Page({
         value:"subject",
         active:true
     },{
-        name:"名师",
+        name:"我的老师",
         value:"teacher",
         active:false
     }],
@@ -173,10 +173,11 @@ Page({
       success: function(res) {
         console.log(res);
         that.setData({
+          scrollHeight: res.windowHeight ,
           list_height: res.windowHeight ,
         });
       }
-    })
+    });
     
     
 

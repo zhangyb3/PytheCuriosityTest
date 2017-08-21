@@ -11,7 +11,7 @@
 .question_answer_list-item{
     width:90%;
     height:90%;
-    border-top: 1px solid #EEE;
+    border-top: 2px solid #EEE;
     border-bottom: 1px solid #fff;
 
     display: flex;
@@ -154,8 +154,8 @@
 
 .question_img_container{
     float: left;
-    width: 180rpx;
-    height: 180rpx;
+    width: 150rpx;
+    height: 150rpx;
     /*display:table-cell;
     vertical-align:middle;
     text-align: center;*/
@@ -178,17 +178,15 @@
 .question_text_container{
     float: right;
 
-    height: 200rpx;
-    /*display:table-cell;
-    vertical-align:middle;
-    text-align: center;*/
+    height: 150rpx;
+    /*white-space:nowrap; */
 
-    display: flex;
+    /*display: flex;*/
     
     
     word-break:break-all;
     overflow: hidden;
-    text-overflow: ellipsis;
+    text-overflow: ellipsis ;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
@@ -264,8 +262,8 @@
 }
 
 .reward_img{
-    width: 30rpx;
-    height: 30rpx;
+    width: 40rpx;
+    height: 40rpx;
     /*border-radius: 50%;*/
 
     /*position: relative;
@@ -294,7 +292,7 @@
 
 .time_container{
     float: right;
-    width: 150rpx;
+    width: 250rpx;
     height: 50rpx;
     
     justify-content:center;
@@ -304,15 +302,11 @@
 
 .time{
     font-size: 26rpx;
-    color: red;
+    color: gray;
 }
 
 
-answer_tab_white{
-    width:100%;
-    height:20rpx;
-    background-color: #FFFFFF;
-}
+
 
 
 

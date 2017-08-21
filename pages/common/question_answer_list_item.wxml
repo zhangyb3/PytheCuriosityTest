@@ -6,7 +6,12 @@
 
     <view class="answer_tab_white"/>
 
+    <view style="height: 20rpx;"></view>
+
     <view class="top_zone" hidden="{{teacher_info}}">
+
+        
+
         <view class="asker_zone">
             <view class="asker_avatar_container">
                 <image class="asker_avatar" src="{{item.studentimg}}"></image>
@@ -27,7 +32,7 @@
         </view>
     </view>
 
-    <view class="interval" style="height: 10rpx;"></view>
+    <view style="height: 10rpx;"></view>
 
     <view class="middle_zone">
         <view class="img_zone">
@@ -53,7 +58,7 @@
                 <text class="reward_num">{{item.rewardnum}}</text>
             </view>
             <view class="reward_img_container">
-                <image class="reward_img" src="../../images/personal_icon_org.money@2x.png"></image>
+                <image class="reward_img" src="../../images/icon_money.png"></image>
             </view>
             <view class="time_container">
                 <text class="time" hidden="{{!reommend}}">{{item.starttime}} </text>
@@ -61,7 +66,8 @@
             </view>
         </view>
     </view>
-            
+
+    <view style="height: 20rpx;"></view>       
             
 </view>
 

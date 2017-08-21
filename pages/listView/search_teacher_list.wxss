@@ -6,9 +6,7 @@
     
 }
 
-.interval{
-    /*margin-top: 10px;*/
-}
+
 
 .scrollView{
     height: 1000rpx;
@@ -20,9 +18,12 @@
 
 .search_teacher_list_container{
     width: 100%;
+    /*background-color:#f3f1e4;*/
 }
 
-
+.interval{
+    height: 10rpx;
+}
 
 @import "../common/search_teacher_list_item.wxss";
 

@@ -4,19 +4,21 @@
 
 <!--列表-->
 
-  <scroll-view  class="org_scroll_list"  wx:if="{{hide_org_list == false}}" upper-threshold="0px" lower-threshold="0px" scroll-y="true" style="height:{{list_height}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh">
+  <scroll-view  class="org_scroll_list"  wx:if="{{hide_org_list == false}}" upper-threshold="0px" lower-threshold="0px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh">
 
       <block wx:for="{{search_org_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         
         <view class="search_org_list_container" >
           <template is="search_org_list_item" data="{{item,index,alreadyRegister,index_search_page}}"></template>
         </view>
+
+        <view class="interval"></view>
       </block>
 
-
+      
 
   </scroll-view>
 
-  <text wx:if="{{hide_org_list == false && search_org_list.length == 0}}">没找到符合条件的机构</text>
+  <text class="no_content_hint" wx:if="{{hide_org_list == false && search_org_list.length == 0}}">没找到符合条件的机构</text>
 
 </template>

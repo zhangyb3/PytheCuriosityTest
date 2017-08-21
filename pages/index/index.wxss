@@ -1,7 +1,7 @@
 /**index.wxss**/
 .index_page_container{
   width: 100%;
-  height: auto;
+  height: 10%;
 }
 
 .userinfo {
@@ -29,6 +29,8 @@
     background-color: #f3f1e4;
     width: 100%;
     z-index: 3;
+    margin-top: 100rpx;
+
 }
 
 .list_bottom{
@@ -47,11 +49,7 @@
 
 }
 
-.index_page_list_container{
-  margin-top: 100rpx;
-  width: 100%;
-  background-color: #f3f1e4;
-}
+
 
 @import "../listView/recommend_list.wxss";
 /*@import "../listView/question_answer_list.wxss";*/

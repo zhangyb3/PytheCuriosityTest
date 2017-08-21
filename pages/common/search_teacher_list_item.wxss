@@ -28,7 +28,10 @@
     height: 220rpx;
     /*position: relative;*/
     /*z-index: 1;*/
-    background-color: #f3f1e4;
+    /*background-color: #f3f1e4;*/
+
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
 }
 
 .icon_container{
@@ -384,7 +387,7 @@
     
     width: 100%;
     height: 100%;
-    background-color: #f3f1e4;
+    /*background-color: #f3f1e4;*/
     justify-content:center;
     align-items:center;
     display:-webkit-flex;

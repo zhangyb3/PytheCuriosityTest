@@ -18,6 +18,9 @@
     background-color: lightgray;
 }
 
+.interval{
+    height: 10rpx;
+}
 
 
 @import "../common/search_org_list_item.wxss";

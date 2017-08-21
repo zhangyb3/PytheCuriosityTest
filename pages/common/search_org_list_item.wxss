@@ -26,7 +26,10 @@
     height: 220rpx;
     position: relative;
     z-index: 1;
-    background-color: #f3f1e4;
+    /*background-color: #f3f1e4;*/
+
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
 }
 
 .org_icon{
@@ -57,11 +60,11 @@
     color: #0F0F0F;
     height: auto;
     font-size: 36rpx;  
-    /*font-weight:bold; */
+    font-weight:bold; 
 }
 
 .org_brief_wrap{
-    margin-top: 10rpx;
+    margin-top: 30rpx;
     height: 60rpx;
     width: 400rpx;
 }

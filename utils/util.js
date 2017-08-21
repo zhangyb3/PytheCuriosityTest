@@ -51,7 +51,7 @@ function formatDate(time) {
   return ([date.getFullYear(), date.getMonth() + 1, date.getDate()]).map(function(item) {
     let _item = item.toString()
     return _item[1] ? _item : '0'.concat(_item)
-  }).join("/").concat(" ").concat(([date.getHours(), date.getMinutes(), date.getSeconds()]).map(function(item) {
+  }).join("/").concat(" ").concat(([date.getHours(), date.getMinutes()]).map(function(item) {
     let _item = item.toString()
     return _item[1] ? _item : '0'.concat(_item)
   }).join(":"))

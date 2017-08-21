@@ -3,7 +3,13 @@
 
 <view class="index_page_container" >
 
-    <text>机构成员</text>
+    <view class="member_text_container">
+      <view class="member_text_view">
+        <text>机构成员</text>
+      </view>
+      
+    </view>
+    
 
     <view class="search_teacher_list_container" >
       <template is="search_teacher_list" data="{{search_teacher_list,hide_teacher_list,index_search_page,teacher_edit,user,org}}"></template>

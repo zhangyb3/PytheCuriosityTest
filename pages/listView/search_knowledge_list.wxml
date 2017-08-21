@@ -13,15 +13,15 @@
         <view class="question_answer_container" >
           <template is="question_answer_list_item" data="{{item,index,preview_img_url,alreadyRegister,recommend}}"></template>
         </view>
+        
         <view class="interval"></view>
       </block>
 
 
-    <view class="loadmore_view" wx:if="{{!netStateBean.loadmoreHidden && infos.length>8 }}" >
-      {{netStateBean.loadmoreMsg}}
-    </view>
 
   </scroll-view>
+
+  <text class="no_content_hint" wx:if="{{(hide_knowledge_list == false || ask_page == true) && infos.length == 0}}">没找到符合条件的题目</text>
 
 
 <!--</view>-->

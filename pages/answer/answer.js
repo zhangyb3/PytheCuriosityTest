@@ -52,7 +52,7 @@ Page({
       success: (res) => {
         this.setData({
           // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750) //80为顶部搜索框区域高度 rpx转px 屏幕宽度/750
-          scrollHeight: res.windowHeight - (100 * res.windowWidth / 750)
+          scrollHeight: res.windowHeight - (50 * res.windowHeight / 750)
         });
       }
     })
@@ -195,37 +195,7 @@ Page({
       this.setData({hide_select_item:false});
       var that = this;
       //请求具体数据
-      wx.request({
-        url: config.PytheRestfulServerURL + '/index2/question_answers',
-        data: {
-          questionId: selectItem.questionid,
-          userId: wx.getStorageSync(user.UserID),
-        },
-        method: 'GET', 
-        success: function(res){
-          console.log(res);
-          var answers = res.data.data;
-
-          for(var count = 0; count < answers.length; count++)
-          {
-            
-            var temp = answers[count];
-                      
-            answers[count] = temp;
-            answers[count].answercontent = JSON.parse(answers[count].answercontent);
-            answers[count].isClick = 0;
-            
-          }
-          that.setData({
-              answers: answers,
-              question:selectItem,
-          });
-          typeof success == "function" && success(res.data);
-        },
-        fail: function(res) {
-          console.log(res);
-        }
-      });
+      base.getDetailContent(this,selectItem);
     }
 
   },

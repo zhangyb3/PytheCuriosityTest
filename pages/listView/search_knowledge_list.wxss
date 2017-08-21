@@ -31,10 +31,7 @@ background-color:#f3f1e4;
     border-radius: 40rpx;*/
 }
 
-.interval{
-    height: 30rpx;
-    background-color: #F5F5F5;
-}
+
     
 
 .index_page_list_item_container{
@@ -54,7 +51,9 @@ background-color:#f3f1e4;
     background-color: #f3f1e4;
 }
 
-
+.interval{
+    height: 10rpx;
+}
 
 @import "../common/question_answer_list_item.wxss";
 @import "../bubble/bubble.wxss";

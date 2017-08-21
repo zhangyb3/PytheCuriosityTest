@@ -1,5 +1,7 @@
 var timer = require("../utils/wxTimer.js");
 
+var util = require("./util.js");
+
 function Actions(){
 
 };
@@ -380,6 +382,14 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             {
                 temp.answercontent = JSON.parse(currentDatas[count].answercontent);
             }
+            if(temp.starttime != null)
+            {
+                temp.starttime = util.formatDate(temp.starttime);
+            }
+            if(temp.answertime != null)
+            {
+                temp.answertime = util.formatDate(temp.answertime);
+            }
             if(list_type == 'teacher')
             {
                 var isClick = temp.isClick;
@@ -431,12 +441,14 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
                 temp = (currentDatas[count]);
                 // temp.questioncontent = JSON.parse(temp.questioncontent);
                 // temp.answercontent = JSON.parse(temp.answercontent);
+                temp.starttime = util.formatDate(temp.starttime);
             }
             if(list_type == 'teacher_unanswer')
             {
                 
                 temp = (currentDatas[count].question);
                 temp.questioncontent = JSON.parse(temp.questioncontent);
+                temp.starttime = util.formatDate(temp.starttime);
             }
             if(list_type == 'student_answered')
             {
@@ -444,16 +456,18 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
                 temp = (currentDatas[count]);
                 // temp.questioncontent = JSON.parse(temp.questioncontent);
                 // temp.answercontent = JSON.parse(temp.answercontent);
+                temp.starttime = util.formatDate(temp.starttime);
             }
             if(list_type == 'student_unanswer')
             {
                 
                 temp = (currentDatas[count].question);
                 temp.questioncontent = JSON.parse(temp.questioncontent);
+                temp.starttime = util.formatDate(temp.starttime);
             }
             if(list_type == 'index_search_knowledge')
             {
-                
+                 temp.answertime = util.formatDate(temp.answertime);
                 
             }
             if(list_type == 'index_search_teacher')
@@ -480,6 +494,14 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             {
 
                 temp["collectOrNot"] = true;
+            }
+            if(list_type == 'my_like_answer')
+            {
+                
+                temp = (currentDatas[count]);
+                // temp.questioncontent = JSON.parse(temp.questioncontent);
+                // temp.answercontent = JSON.parse(temp.answercontent);
+                temp.starttime = util.formatDate(temp.starttime);
             }
             console.log(temp);
             concatDatas[count] = temp;

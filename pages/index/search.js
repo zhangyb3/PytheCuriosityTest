@@ -41,6 +41,14 @@ Page({
     list_type: 'index',
   },
   onLoad:function(parameters){
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          scrollHeight: res.windowHeight - (100 * res.windowHeight / 750),
+          // scrollHeight: 450
+        });
+      }
+    });
     console.log(parameters);
     this.data.searchContent = parameters.searchContent;
     searchByContent(this);

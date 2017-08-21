@@ -39,7 +39,10 @@
 
 
 
-
+.member_item_wrapper{
+    display: flex;
+    flex-direction: column;
+}
 
 
 
@@ -64,7 +67,7 @@
     display: block;
     /*width: 100rpx;*/
     /*height: 100rpx;*/
-    margin: 0 auto;
+    /*margin: 0 auto;*/
     /*box-shadow: 3px 3px 5px #bbb;*/
     text-align: center;
     color: #0F0F0F;
@@ -89,4 +92,10 @@
     width: 15px;
     height: 15px;
     z-index: 2;
+}
+
+.member_name{
+    text-align: center;
+    font-weight: bold;
+    font-size: 32rpx;
 }

@@ -4,19 +4,21 @@
 
 <!--列表-->
 
-  <scroll-view  class="teacher_scroll_list"  wx:if="{{hide_teacher_list == false}}"upper-threshold="0px" lower-threshold="0px" scroll-y="true" style="height:{{list_height}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh">
+  <scroll-view  class="teacher_scroll_list"  wx:if="{{hide_teacher_list == false}}"upper-threshold="0px" lower-threshold="0px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh">
 
       <block wx:for="{{search_teacher_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         
         <view class="search_teacher_list_container" >
           <template is="search_teacher_list_item" data="{{item,index,alreadyRegister,add_teacher_page,index_search_page,teacher_edit,user,org,ask_page}}"></template>
         </view>
+
+        <view class="interval"></view>
       </block>
 
-
+      
 
   </scroll-view>
 
-  <text wx:if="{{(hide_teacher_list == false || ask_page == true) && search_teacher_list.length == 0}}">没找到符合条件的老师</text>
+  <text class="no_content_hint" wx:if="{{(hide_teacher_list == false || ask_page == true) && search_teacher_list.length == 0}}">没找到符合条件的老师</text>
 
 </template>
