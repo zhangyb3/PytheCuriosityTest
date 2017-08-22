@@ -28,7 +28,9 @@
 .index_page_list_container{
     background-color: #f3f1e4;
     width: 100%;
-    /*z-index: 3;*/
+    z-index: 3;
+    position: fixed;
+    top: 0;
 }
 
 .list_bottom{
@@ -39,6 +41,9 @@
 .index_search_page_filter{
   width: 10%;
   color: #ECEBF4;
+  z-index:4;
+  position: fixed;
+  top: 100rpx;
 }
 
 .preview_img_classic{
@@ -54,7 +59,24 @@
 }
 
 .search_knowledge_list_container{
+  width: 100%;
   background-color: #f3f1e4;
+  /*margin-top: 200rpx;*/
+  
+}
+
+.search_teacher_list_container{
+  width: 100%;
+  background-color: #f3f1e4;
+  /*margin-top: 200rpx;*/
+  
+}
+
+.search_org_list_container{
+  width: 100%;
+  background-color: #f3f1e4;
+  margin-top: 200rpx;
+  
 }
 
 

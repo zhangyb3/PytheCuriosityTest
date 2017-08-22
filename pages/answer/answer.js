@@ -42,7 +42,9 @@ Page({
     hide_personal_not_answer_list:false,
     preview_img_url: config.PytheFileServerURL ,
 
-    recommend: false,
+    finished: false,
+    answer_page: true,
+    
   },
   onLoad:function(parameters){
     console.log("from personal");
@@ -52,7 +54,8 @@ Page({
       success: (res) => {
         this.setData({
           // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750) //80为顶部搜索框区域高度 rpx转px 屏幕宽度/750
-          scrollHeight: res.windowHeight - (50 * res.windowHeight / 750)
+          // scrollHeight: res.windowHeight - (50 * res.windowHeight / 750)
+          scrollHeight: res.windowHeight,
         });
       }
     })

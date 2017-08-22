@@ -5,6 +5,7 @@
 <!--列表-->
 
   <scroll-view  class="teacher_scroll_list"  wx:if="{{hide_teacher_list == false}}"upper-threshold="0px" lower-threshold="0px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh">
+      <view class="occupy" wx:if="{{index_search_page}}" style="height:200rpx;"></view>
 
       <block wx:for="{{search_teacher_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         

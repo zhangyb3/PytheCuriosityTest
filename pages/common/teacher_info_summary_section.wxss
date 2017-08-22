@@ -1,22 +1,17 @@
-
-.teacher_info_page_container{
-    width: 100%;
-    /*height: auto;*/
-
-}
-
-.description_container_background{
+.teacher_info_summary_section{
     width: 100%;
     /*height: 100%;*/
-    height: auto;
-    filter: blur(10px);
-    z-index: 1;
-    /*opacity: 50;*/
+    z-index: 2;
+    position: fixed;
+    top: 0;
+    /*left: 0;*/
+    /*right: 0;*/
+    /*bottom: 0;*/
 }
 
 .description_container{
     width: 100%;
-    /*height: auto;*/
+    height: auto;
 }
 
 .avatar_container{
@@ -109,15 +104,3 @@
     align-items: center;
     font-size: 40rpx;
 }
-
-.answer_questions_container{
-    width: 100%;
-    /*height: 100%;*/
-    /*bottom: 0;*/
-    background-color: #f3f1e4;
-    /*overflow-y: auto;*/
-}
-
-/*@import "../common/teacher_info_summary_section.wxss";*/
-
-@import "../listView/question_answer_list.wxss";

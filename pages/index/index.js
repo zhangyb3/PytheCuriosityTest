@@ -43,12 +43,7 @@ Page({
 
     hide_loading: true,
 
-    recommend: true,
-    
-  },
-
- //页面显示获取设备屏幕高度，以适配scroll-view组件高度
-  onShow: function () {
+    finished: true,
     
   },
 
@@ -65,8 +60,8 @@ Page({
       success: (res) => {
         this.setData({
           // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750) //80为顶部搜索框区域高度 rpx转px 屏幕宽度/750,
-          scrollHeight: res.windowHeight - (50 * res.windowHeight / 750),
-          // scrollHeight: 450
+          // scrollHeight: res.windowHeight - (50 * res.windowHeight / 750),
+          scrollHeight: res.windowHeight,
         });
       }
     })

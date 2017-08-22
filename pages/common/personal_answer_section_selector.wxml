@@ -1,5 +1,7 @@
 <template name="personal_answer_section_selector">
 
+<view class="personal_answer_section_selector">
+
 <view class="personal_answer_section_selector_bar">
 
 
@@ -13,6 +15,8 @@
         <view class="bar_item {{personal_answer_menu[1].active ? 'active' : ''}}" bindtap='selectAlreadyAnswer' data-index='1' data-value="{{personal_answer_menu[1].value}}">
             <text class="select_answer_text " data-value="{{personal_answer_menu[1].value}}">{{personal_answer_menu[1].name}}</text>
         </view>
+
+</view>
 
 </view>
 

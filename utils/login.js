@@ -66,7 +66,7 @@ var login = (success, fail) => {
         console.log("已登录");
     }, () => {
         remoteLogin(success, fail)
-    });
+    })
 }
 
 /**

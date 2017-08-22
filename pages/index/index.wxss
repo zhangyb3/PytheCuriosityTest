@@ -29,7 +29,7 @@
     background-color: #f3f1e4;
     width: 100%;
     z-index: 3;
-    margin-top: 100rpx;
+    /*margin-top: 100rpx;*/
 
 }
 

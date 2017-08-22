@@ -6,11 +6,11 @@
 
 <!--列表-->
   <scroll-view wx:if="{{hide_knowledge_list == false}}" class="scroll_list"  scroll-y="true" upper-threshold="0px" lower-threshold="0px" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
-
+      <view class="occupy" style="height:200rpx;"></view>
     
       <block wx:for="{{infos}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         <!--<view class="interval"></view>-->
-        <view class="question_answer_container" >
+        <view class="answer_question_container" >
           <template is="question_answer_list_item" data="{{item,index,preview_img_url,alreadyRegister,recommend}}"></template>
         </view>
         

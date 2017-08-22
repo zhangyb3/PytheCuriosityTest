@@ -5,6 +5,8 @@
 <!--列表-->
 
   <scroll-view  class="scroll_list"  upper-threshold="0px" lower-threshold="0px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
+      <view class="occupy" wx:if="{{answer_page}}" style="height:100rpx;"></view>
+      
       <block wx:for="{{personal_not_answer_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         
         <view class="personal_answer_container" >

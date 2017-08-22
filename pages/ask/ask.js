@@ -11,7 +11,7 @@ var base = require("../../utils/base.js");
 Page({
   data:{
     ask_page_menu:[{
-        name:"科目",
+        name:"科目老师",
         value:"subject",
         active:true
     },{
@@ -678,6 +678,25 @@ Page({
     );
 
   },
+
+
+  checkTeacherInfo:function(e){
+    var teacher = (e.currentTarget.dataset.teacher);
+
+    wx.navigateTo({
+      url: 'teacherInfo?userId=' + teacher.userid,
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+  },
+
   onHide:function(){
     // 页面隐藏
   },

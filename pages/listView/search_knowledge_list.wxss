@@ -13,7 +13,7 @@ background-color:#f3f1e4;
 }
 
 .scroll_list{
-    display: flex;
+    /*display: flex;*/
     /*position: relative;*/
     /*margin-top: 100rpx;*/
     width: 100%;

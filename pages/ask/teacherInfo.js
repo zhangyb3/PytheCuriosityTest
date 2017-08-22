@@ -11,6 +11,7 @@ Page({
   data:{
     checkTeacher: {},
     teacher_info: true,
+    preview_img_url: config.PytheFileServerURL ,
   },
   onLoad:function(parameters){
     var that = this;

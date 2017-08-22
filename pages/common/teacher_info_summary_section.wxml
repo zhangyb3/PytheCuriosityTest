@@ -1,17 +1,5 @@
+<template name="teacher_info_summary_section">
 
-<import src="../listView/question_answer_list.wxml" />
-<import src="../common/teacher_info_summary_section.wxml" />
-
-<!--<view class="teacher_info_page_container">-->
-
-<!--<view class="description_container_background" >
-    <image src="{{checkTeacher.icon}}"></image>
-</view>-->
-
-
-<!--<view class="teacher_info_container" >-->
- 
-    
     <view class="description_container"  >
         <view class="avatar_container">
             <image class="avatar" src="{{checkTeacher.icon}}"></image>
@@ -45,13 +33,5 @@
         </view>
     </view>
 
-    <!--<template is="teacher_info_summary_section" data="{{checkTeacher}}"></template>-->
 
-    <view class="answer_questions_container">
-        <template is="question_answer_list" data="{{personal_answer_list,preview_img_url,scrollHeight,recommend,teacher_info}}"></template>
-    </view>
-
-<!--</view>-->
-
-
-<!--</view>-->
+</template>

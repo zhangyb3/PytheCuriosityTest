@@ -145,32 +145,32 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             /**
              * 下拉时更新不同模式的知列表，requestSimpleList是异步加载，所以要有信号量判断是否已加载完成，否则无法使用另一种模式
              */
-            if(wx.getStorageSync('index_load_type') == 'one' && wx.getStorageSync('end_load') == 'yes')
-            {
-                // page.data.urlDetail = page.data.urlDetail + '/two';
-                page.setNetparams.q = null;
-                page.setNetparams.gradeId = wx.getStorageSync(user.GradeID);
-                page.getListFromNetData = getListFromNetData;
-                page.data.basic_url = config.PytheRestfulServerURL;
-                page.data.urlDetail = '/index/defaultList/two';
-                wx.setStorageSync('end_load', 'no');
-                netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
-                wx.setStorageSync('index_load_type', 'two');
-            }
-            if(wx.getStorageSync('index_load_type') == 'two' && wx.getStorageSync('end_load') == 'yes')
-            {
-                // var urlstr = page.data.urlDetail;
-                // urlstr = urlstr.slice(0,urlstr.length-4);
-                // page.data.urlDetail = urlstr;
-                page.setNetparams.q = null;
-                page.setNetparams.gradeId = wx.getStorageSync(user.GradeID);
-                page.getListFromNetData = getListFromNetData;
-                page.data.basic_url = config.PytheRestfulServerURL;
-                page.data.urlDetail = '/index/defaultList';
-                wx.setStorageSync('end_load', 'no');
-                netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
-                wx.setStorageSync('index_load_type', 'one');
-            }
+            // if(wx.getStorageSync('index_load_type') == 'one' && wx.getStorageSync('end_load') == 'yes')
+            // {
+            //     // page.data.urlDetail = page.data.urlDetail + '/two';
+            //     page.setNetparams.q = null;
+            //     page.setNetparams.gradeId = wx.getStorageSync(user.GradeID);
+            //     page.getListFromNetData = getListFromNetData;
+            //     page.data.basic_url = config.PytheRestfulServerURL;
+            //     page.data.urlDetail = '/index/defaultList/two';
+            //     wx.setStorageSync('end_load', 'no');
+            //     netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
+            //     wx.setStorageSync('index_load_type', 'two');
+            // }
+            // if(wx.getStorageSync('index_load_type') == 'two' && wx.getStorageSync('end_load') == 'yes')
+            // {
+            //     // var urlstr = page.data.urlDetail;
+            //     // urlstr = urlstr.slice(0,urlstr.length-4);
+            //     // page.data.urlDetail = urlstr;
+            //     page.setNetparams.q = null;
+            //     page.setNetparams.gradeId = wx.getStorageSync(user.GradeID);
+            //     page.getListFromNetData = getListFromNetData;
+            //     page.data.basic_url = config.PytheRestfulServerURL;
+            //     page.data.urlDetail = '/index/defaultList';
+            //     wx.setStorageSync('end_load', 'no');
+            //     netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
+            //     wx.setStorageSync('index_load_type', 'one');
+            // }
 
         }
         else if(list_type == 'teacher' && page.data.list_mode == 'teacher_list'){
@@ -244,7 +244,7 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             netUtil.requestSimpleList(page,'index_search_teacher',1,netUtil.action.request_refresh);
         }
         else if(page.data.list_mode == 'index_search_org'){
-            page.data.personal_like_teacher_list = [];
+            page.data.search_org_list = [];
             
             netUtil.requestSimpleList(page,'index_search_org',1,netUtil.action.request_refresh);
         }
@@ -319,17 +319,17 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
 
         else if(page.data.list_mode == 'index_search_knowledge'){
             // page.data.search_knowledge_list = [];
-            
+            page.data.urlDetail = "/index/search/knowledge";
             netUtil.requestSimpleList(page,'index_search_knowledge',page.data.currentPageIndex +1,netUtil.action.request_refresh);
         }
         else if(page.data.list_mode == 'index_search_teacher'){
             // page.data.search_teacher_list = [];
-            
+            page.data.urlDetail = "/index/search/teacher";
             netUtil.requestSimpleList(page,'index_search_teacher',page.data.currentPageIndex +1,netUtil.action.request_refresh);
         }
         else if(page.data.list_mode == 'index_search_org'){
             // page.data.personal_like_teacher_list = [];
-            
+            page.data.urlDetail = "/index/search/organization";
             netUtil.requestSimpleList(page,'index_search_org',page.data.currentPageIndex +1,netUtil.action.request_refresh);
         }
         else if(page.data.list_mode == 'subject_teacher'){

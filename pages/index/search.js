@@ -44,8 +44,8 @@ Page({
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
-          scrollHeight: res.windowHeight - (100 * res.windowHeight / 750),
-          // scrollHeight: 450
+          // scrollHeight: res.windowHeight - (100 * res.windowHeight / 750),
+          scrollHeight: res.windowHeight
         });
       }
     });
@@ -263,6 +263,23 @@ Page({
       });
     }   
 
+  },
+
+  checkTeacherInfo:function(e){
+    var teacher = (e.currentTarget.dataset.teacher);
+
+    wx.navigateTo({
+      url: 'teacherInfo?userId=' + teacher.userid,
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
   },
 
   onHide:function(){

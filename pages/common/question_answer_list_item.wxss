@@ -11,8 +11,8 @@
 .question_answer_list-item{
     width:90%;
     height:90%;
-    border-top: 2px solid #EEE;
-    border-bottom: 1px solid #fff;
+    border-bottom: 1rpx solid #EEE;
+    border-top: 1rpx solid #fff;
 
     display: flex;
     flex-direction: column;
@@ -292,7 +292,7 @@
 
 .time_container{
     float: right;
-    width: 250rpx;
+    width: 150rpx;
     height: 50rpx;
     
     justify-content:center;

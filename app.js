@@ -1,6 +1,6 @@
 //app.js
 
-import utils from '/utils/base';
+import base from '/utils/base';
 import pay from '/utils/pay';
 import register from '/utils/register';
 import login from '/utils/login';
@@ -75,10 +75,10 @@ App({
     })
     
     //登录
-    utils.login(
+    base.login(
       () => {
 
-        utils.getUserInfo(
+        base.getUserInfo(
           (userInfo) => {
             console.log("已获取数据", userInfo);
             // app.data.userInfo = userInfo;
