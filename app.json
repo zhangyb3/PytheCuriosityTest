@@ -34,8 +34,8 @@
     "navigationBarBackgroundColor": "#d2cea9",
     "navigationBarTitleText": "派知好学",
     "navigationBarTextStyle":"black",
-    "backgroundColor": "#f3f1e4",
-    "enablePullDownRefresh": true
+    "backgroundColor": "#f3f1e4"
+    
   },
 
   "tabBar": {

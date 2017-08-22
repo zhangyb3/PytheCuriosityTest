@@ -43,13 +43,13 @@
 
 
                 <view wx:if="{{question.questioncontent.img[0] != null}}" class="photo" >
-                    <image class="preview_img_classic" data-photo="{{question.questioncontent.img[0]}}" src='{{preview_img_url + question.questioncontent.img[0]}}' bindtap="showPhoto">
+                    <image class="preview_img_classic" data-photo="{{question.questioncontent.img[0]}}" src='{{preview_img_url + question.questioncontent.img[0]}}' bindtap="showPhoto" mode="aspectFit">
                         <!--<view>照片</view>-->
                     </image>
                 </view>
 
                 <view wx:if="{{question.questioncontent.draw[0] != null}}" class="draw" >
-                    <image class="preview_img_classic" data-draw="{{question.questioncontent.draw[0]}}" src='{{preview_img_url + question.questioncontent.draw[0]}}' bindtap="showDraw">
+                    <image class="preview_img_classic" data-draw="{{question.questioncontent.draw[0]}}" src='{{preview_img_url + question.questioncontent.draw[0]}}' bindtap="showDraw" mode="aspectFit">
                         <!--<view>手绘</view>-->
                     </image>
                 </view>
@@ -102,13 +102,13 @@
 
 
                         <view wx:if="{{answer.answercontent.img[0] != null}}" class="photo" >
-                            <image class="preview_img_classic" data-photo='{{answer.answercontent.img[0]}}' src='{{preview_img_url + answer.answercontent.img[0]}}' bindtap="showPhoto">
+                            <image class="preview_img_classic" data-photo='{{answer.answercontent.img[0]}}' src='{{preview_img_url + answer.answercontent.img[0]}}' bindtap="showPhoto" mode="aspectFit">
                                 <!--<view>照片</view>-->
                             </image>
                         </view>
 
-                        <view wx:if="{{answer.answercontent.draw[0] != null}}" class="photo" >
-                            <image class="preview_img_classic" data-draw='{{answer.answercontent.draw[0]}}' src='{{preview_img_url + answer.answercontent.draw[0]}}' bindtap="showDraw">
+                        <view wx:if="{{answer.answercontent.draw[0] != null}}" class="draw" >
+                            <image class="preview_img_classic" data-draw='{{answer.answercontent.draw[0]}}' src='{{preview_img_url + answer.answercontent.draw[0]}}' bindtap="showDraw" mode="aspectFit">
                                 <!--<view>手绘</view>-->
                             </image>
                         </view>

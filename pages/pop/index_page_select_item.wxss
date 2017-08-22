@@ -372,3 +372,13 @@ background-color: deepskyblue;
     width: 100rpx;
 }
 
+.photo{
+    width: 270px;
+    height: 270px;
+}
+
+.draw{
+    width: 270px;
+    height: 270px;
+}
+
