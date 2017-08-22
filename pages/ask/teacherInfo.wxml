@@ -1,5 +1,6 @@
 
-<import src="../listView/question_answer_list.wxml" />
+<!--<import src="../listView/question_answer_list.wxml" />-->
+<import src="../common/question_answer_list_item.wxml" />
 <import src="../common/teacher_info_summary_section.wxml" />
 
 <!--<view class="teacher_info_page_container">-->
@@ -11,7 +12,8 @@
 
 <!--<view class="teacher_info_container" >-->
  
-    
+  <scroll-view  class="scroll_list"  upper-threshold="50px" lower-threshold="50px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
+
     <view class="description_container"  >
         <view class="avatar_container">
             <image class="avatar" src="{{checkTeacher.icon}}"></image>
@@ -47,9 +49,20 @@
 
     <!--<template is="teacher_info_summary_section" data="{{checkTeacher}}"></template>-->
 
-    <view class="answer_questions_container">
-        <template is="question_answer_list" data="{{personal_answer_list,preview_img_url,scrollHeight,recommend,teacher_info}}"></template>
-    </view>
+    <!--<view class="answer_questions_container">
+        <template is="question_answer_list" data="{{personal_answer_list,preview_img_url,scrollHeight,finished,teacher_info}}"></template>
+    </view>-->
+
+    <block wx:for="{{personal_answer_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
+        
+        <view class="personal_answer_container" >
+          <template is="question_answer_list_item" data="{{item,index,preview_img_url,finished,teacher_info}}"></template>
+        </view>
+        <view class="interval"></view>
+
+    </block>
+
+  </scroll-view>
 
 <!--</view>-->
 
