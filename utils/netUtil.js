@@ -503,6 +503,11 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
                 // temp.answercontent = JSON.parse(temp.answercontent);
                 temp.starttime = util.formatDate(temp.starttime);
             }
+            if(list_type == 'teacher_bill')
+            {
+                temp.day = util.formatDay(temp.operationTime);
+                temp.hms = util.formatHMS(temp.operationTime);
+            }
             console.log(temp);
             concatDatas[count] = temp;
         }
@@ -642,6 +647,12 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             that.data.search_teacher_list=that.data.search_teacher_list.concat(concatDatas);
             console.log('before setData----------'+that.data.search_teacher_list);
             that.setData({search_teacher_list:that.data.search_teacher_list});
+        }
+
+        if(list_type == 'teacher_bill'){
+            that.data.teacher_bill_list=that.data.teacher_bill_list.concat(concatDatas);
+            console.log('before setData----------'+that.data.search_org_list);
+            that.setData({teacher_bill_list:that.data.teacher_bill_list});
         }
 
     };

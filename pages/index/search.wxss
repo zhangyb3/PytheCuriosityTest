@@ -75,7 +75,7 @@
 .search_org_list_container{
   width: 100%;
   background-color: #f3f1e4;
-  margin-top: 200rpx;
+  /*margin-top: 200rpx;*/
   
 }
 

@@ -136,7 +136,9 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     if(list_type == 'collection_teacher'){
         page.data.search_teacher_list = [];
     }
-
+    if(list_type == 'teacher_bill'){
+        page.data.teacher_bill_list = [];
+    }
 
     page.onPullDownRefresh = function(){
         if(list_type == 'index'){
@@ -259,6 +261,12 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             
             netUtil.requestSimpleList(page,'collection_teacher',1,netUtil.action.request_refresh);
         }
+
+        else if(page.data.list_mode == 'teacher_bill'){
+            page.data.teacher_bill_list = [];
+            
+            netUtil.requestSimpleList(page,'teacher_bill',1,netUtil.action.request_refresh);
+        }
         
         else 
         {
@@ -341,6 +349,10 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             // page.data.search_teacher_list = [];
             
             netUtil.requestSimpleList(page,'collection_teacher',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+        }
+        else if(page.data.list_mode == 'teacher_bill'){
+            
+            netUtil.requestSimpleList(page,'teacher_bill',page.data.currentPageIndex +1,netUtil.action.request_refresh);
         }
 
         else

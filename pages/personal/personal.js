@@ -378,6 +378,41 @@ Page({
     }
   },
 
+  checkPersonalBill:function(e){
+
+    if(wx.getStorageSync(user.Status) == 1)
+    {
+      wx.navigateTo({
+        url: 'teacher_bill',
+        success: function(res){
+          // success
+        },
+        fail: function(res) {
+          // fail
+        },
+        complete: function(res) {
+          // complete
+        }
+      })
+    }
+    if(wx.getStorageSync(user.Status) == 0)
+    {
+      wx.navigateTo({
+        url: 'student_bill',
+        success: function(res){
+          // success
+        },
+        fail: function(res) {
+          // fail
+        },
+        complete: function(res) {
+          // complete
+        }
+      })
+    }
+
+  },
+
 
 
   onReady:function(){

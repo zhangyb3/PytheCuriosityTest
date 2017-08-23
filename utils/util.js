@@ -66,8 +66,52 @@ function formatDate(time) {
   }).join(":"))
 }
 
+function formatDay(time) {
+  let _time = time
+  if (typeof _time !== 'number' || _time < 0) {
+    return _time
+  }
+  if (_time.toString().length === 10) {
+    _time = parseInt(_time.toString().concat('000'))
+  }
+
+  let date = new Date(_time)
+
+  return ([
+    // date.getFullYear(), 
+    date.getMonth() + 1, 
+    date.getDate()
+    ]).map(function(item) {
+    let _item = item.toString()
+    return _item[1] ? _item : '0'.concat(_item)
+  }).join("/")
+}
+
+function formatHMS(time) {
+  let _time = time
+  if (typeof _time !== 'number' || _time < 0) {
+    return _time
+  }
+  if (_time.toString().length === 10) {
+    _time = parseInt(_time.toString().concat('000'))
+  }
+
+  let date = new Date(_time)
+
+  return ([
+    date.getHours(), 
+    date.getMinutes(),
+    //date.getSeconds()
+    ]).map(function(item) {
+    let _item = item.toString()
+    return _item[1] ? _item : '0'.concat(_item)
+  }).join(":")
+}
+
 module.exports = {
   formatTime: formatTime,
   formatLocation: formatLocation,
-  formatDate: formatDate
+  formatDate: formatDate,
+  formatDay: formatDay,
+  formatHMS: formatHMS
 }
