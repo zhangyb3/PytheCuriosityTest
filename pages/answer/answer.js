@@ -44,6 +44,8 @@ Page({
 
     finished: false,
     answer_page: true,
+
+
     
   },
   onLoad:function(parameters){
@@ -306,9 +308,10 @@ Page({
     // 页面显示
     //加载已答列表
     var that = this;
-
+    that.data.finished = false;
     if(wx.getStorageSync(user.Status) == 1)
     {
+      that.data.userRole = 1;
       var myAnsweredParams = {
         teacherId : wx.getStorageSync(user.TeacherID),
         pageSize : 10,
@@ -355,6 +358,7 @@ Page({
     }
     if(wx.getStorageSync(user.Status) == 0)
     {
+      that.data.userRole = 0;
       var myAnsweredParams = {
         teacherId : wx.getStorageSync(user.TeacherID),
         pageSize : 10,
@@ -401,6 +405,15 @@ Page({
     }
     
   },
+
+
+  abandonQuestion:function(e){
+    var question = e.currentTarget.dataset.question;
+    console.log("abandon " + JSON.stringify(question));
+
+  },
+
+
   onHide:function(){
     // 页面隐藏
   },

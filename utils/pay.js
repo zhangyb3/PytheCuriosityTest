@@ -53,7 +53,8 @@ var orderPay = (success, fail) => {
           paySign: prepay_result_data.paySign,
           success: function(res){
               console.log(res);       
-              wx.setStorageSync('last_pay_id', prepay_result_data.prepay_id);      
+              wx.setStorageSync('last_pay_id', prepay_result_data.prepay_id);  
+              wx.setStorageSync('last_out_trade_no', prepay_result_data.out_trade_no);     
               typeof success == "function" && success(res);
           },
           fail: function(res) {
@@ -111,6 +112,7 @@ function recordQuestionPay(parameters)
         questionId: wx.getStorageSync('last_commit_question_id'),
         money: wx.getStorageSync('rewardNum'),
         payId: wx.getStorageSync('last_pay_id'),
+        outTradeNo: wx.getStorageSync('last_out_trade_no'),
       },
       method: 'POST', 
       success: function(res){
