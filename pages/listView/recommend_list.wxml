@@ -13,7 +13,7 @@
         <view class="question_answer_container" >
           <template is="question_answer_list_item" data="{{item,index,preview_img_url,alreadyRegister,recommend}}"></template>
         </view>
-        
+        <view style="height:10rpx;"></view>
       </block>
 
       <!--<view class="interval"></view>-->

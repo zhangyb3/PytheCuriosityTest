@@ -1,8 +1,8 @@
 
 <import src="../listView/question_answer_list.wxml" />
 <import src="../listView/question_not_answer_list.wxml" />
-<import src="../listView/personal_answer_list.wxml" />
-<import src="../listView/personal_not_answer_list.wxml" />
+<!--<import src="../listView/personal_answer_list.wxml" />-->
+<!--<import src="../listView/personal_not_answer_list.wxml" />-->
 <import src="../common/personal_answer_section_selector.wxml" />
 
 <import src="../pop/show_image_page.wxml" />
