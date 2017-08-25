@@ -65,11 +65,11 @@
                 <image class="reward_img" src="../../images/icon_money.png"></image>
             </view>
             <view class="time_container">
-                <text class="time" hidden="{{finished == false}}">{{item.starttime}} </text>
-                <text class="time" hidden="{{finished == true}}">{{item.answertime}} </text>
+                <text class="time" hidden="{{finished == true}}">{{item.starttime}} </text>
+                <text class="time" hidden="{{finished == false}}">{{item.answertime}} </text>
             </view>
 
-            <view class="refund_container" hidden="{{userRole == 0}}" bindtap="abandonQuestion" style="background-image:url(../../images/refund_color.png);background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;" data-question="{{item}}">
+            <view class="refund_container" wx:if="{{userRole == 1 && answer_page == true }}" bindtap="abandonQuestion" style="background-image:url(../../images/refund_color.png);background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;" data-question="{{item}}">
                 <text class="refund_text">结束提问</text>
             </view>
 

@@ -411,6 +411,9 @@ Page({
     var question = e.currentTarget.dataset.question;
     console.log("abandon " + JSON.stringify(question));
 
+    abandonQuestionToRefund(question);
+
+
   },
 
 
@@ -421,3 +424,66 @@ Page({
     // 页面关闭
   }
 })
+
+function handleQuestionBillData(question)
+{
+  
+  wx.request({
+    url: config.PytheRestfulServerURL + '/bill/mapQuestion',
+    data: {
+      questionId: question.questionid,
+      studentId: wx.getStorageSync(user.StudentID),
+    },
+    method: 'POST',
+    success: function(res){
+      // success
+      console.log(res.data.data);
+      var bill = res.data.data;
+      
+       wx.showModal({
+        title: '结束提问？',
+        content: '结束提问后会自动退还赏金',
+        success: function(res) {
+          if (res.confirm) {
+           refund(bill);
+          } 
+        }
+      });
+
+    },
+    fail: function(res) {
+      // fail
+    },
+    complete: function(res) {
+      // complete
+    }
+  })
+  
+}
+
+function refund(bill)
+{
+  wx.request({
+    url: config.PytheRestfulServerURL + '/user/pay/refund',
+    data: {
+      out_trade_no: bill.outTradeNo,
+      total_fee: bill.money * 100,
+      refund_fee: bill.money * 100,
+    },
+    method: 'POST', 
+    success: function(res){
+      // success
+    },
+    fail: function(res) {
+      // fail
+    },
+    complete: function(res) {
+      // complete
+    }
+  })
+}
+
+function abandonQuestionToRefund(question)
+{
+  handleQuestionBillData(question);
+}

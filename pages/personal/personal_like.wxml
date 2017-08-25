@@ -38,7 +38,7 @@
 
 
     <view class="personal_like_answer_list_container" >
-      <template is="personal_like_answer_list" data="{{personal_like_answer_list,preview_img_url,scrollHeight,recommend}}"></template>
+      <template is="personal_like_answer_list" data="{{personal_like_answer_list,preview_img_url,scrollHeight,finished}}"></template>
     </view>
 
 </view>
