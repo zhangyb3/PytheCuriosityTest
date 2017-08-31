@@ -56,7 +56,7 @@ Page({
   },
   onLoad: function () {
     
-  wx.getSystemInfo({
+    wx.getSystemInfo({
       success: (res) => {
         this.setData({
           // scrollHeight: res.windowHeight - (100 * res.windowWidth / 750) //80为顶部搜索框区域高度 rpx转px 屏幕宽度/750,
@@ -76,7 +76,25 @@ Page({
     console.log('onLoad');
 
     
-    
+    wx.getSavedFileList({
+      success: function(res) {
+        console.log(res.fileList);
+        res.fileList.forEach(function(file){
+            wx.removeSavedFile({
+              filePath: file.filePath,
+              complete: function(res) {
+                console.log(res);
+              }
+            });
+          }
+        );
+      }
+    })
+
+    wx.setStorageSync('lastRemoteAudio', 'no');
+    wx.setStorageSync('lastRemoteImg', 'no');
+    wx.setStorageSync('playingVoice', 'no');
+    wx.setStorageSync('alreadyRegister', 'no');
 
 
   },
@@ -181,14 +199,27 @@ Page({
     itemIndex = e.currentTarget.dataset.index;
     console.log(JSON.stringify(selectItem) + "," + itemIndex);
 
-    this.setData({hide_select_item:false});
-    this.setData({hide_loading:false});
+    // this.setData({hide_select_item:false});
+    // this.setData({hide_loading:false});
     selectItem.playingVoice = false;
+
+
     //进入详细列表
     // base.cleanCacheFile(20);
-    base.getDetailContent(this,selectItem);
-    
-    // this.setData({select_item:selectItem});
+    //base.getDetailContent(this,selectItem);
+    wx.navigateTo({
+      url: '../section/concrete_content?selectItem=' + JSON.stringify(selectItem),
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    });
+
   },
 
   //点赞答案
@@ -426,56 +457,233 @@ Page({
   },
 
   onShow:function(){
-    
 
     
-      this.setData({
-        hide_register_lock_cover: true,
-      });
+    this.setData({
+      hide_register_lock_cover: true,
+    });
 
    
-
-
-    this.setData({
-      alreadyRegister: wx.getStorageSync('alreadyRegister'),
-    });
-
     var that = this;
-    var simple_params = {
-      gradeId : wx.getStorageSync(user.GradeID),
-      pageSize : 10,
-      pageNum : 1,
+    
+    if(wx.getStorageSync('alreadyRegister') == 'no')
+    {
+      wx.login({
+        success: function(res){
+          // success
+          wx.getUserInfo({
+            success: function(res){
+              // success
+              console.log(res.rawData);
+              var rawData = JSON.parse(res.rawData);
+              wx.setStorageSync('avatarUrl', rawData.avatarUrl);
+              // wx.setStorageSync('userNickName', rawData.nickName);
+              wx.setStorageSync('wxNickName', rawData.nickName);
+            },
+            fail: function() {
+              // fail
+            },
+            complete: function() {
+              // complete
+            }
+          })
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      })
       
-    };
-    this.setData({
-      hide_loading: false,
-    });
-    listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
-    "/index/defaultList",
-    10,
-        simple_params,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item,that){
-          that.setData({
-            hide_loading: true,
-          });
-        },
-        {},
-        'GET',
-    );
-    wx.setStorageSync('index_load_type', 'one');
+      //登录
+      base.login(
+        () => {
+
+          base.getUserInfo(
+            (userInfo) => {
+              console.log("已获取数据", userInfo);
+              // app.data.userInfo = userInfo;
+
+            }, 
+            () => {
+              console.log("用户拒绝提供信息");
+            }
+          );
+
+          // 检查是否有注册过
+          register.checkRegister(
+            (userRegisterResult) => {
+              console.log('check register : ' + JSON.stringify(userRegisterResult));
+              //如果没注册过，则注册
+              var registerInfo = userRegisterResult.data.data;
+              
+              if(registerInfo.userid == null)
+              {
+                wx.setStorageSync('alreadyRegister', 'no');
+                console.log("register : " + wx.getStorageSync('alreadyRegister'));
+                //注册
+                
+              }
+              else
+              {
+                wx.setStorageSync('alreadyRegister', 'yes');
+                wx.setStorageSync(user.UserID, registerInfo.userid);
+                // wx.setStorageSync(user.StudentID, registerInfo.studentid);
+                // wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
+                wx.setStorageSync(user.GradeID, registerInfo.gradeid);
+                wx.setStorageSync(user.UserDescription, registerInfo.description);
+                wx.setStorageSync(user.UserNickName, registerInfo.username);
+                wx.setStorageSync('userAvatarUrl', registerInfo.userimg);
+                wx.setStorageSync(user.Status, registerInfo.status);
+                wx.setStorageSync(user.TeacherID, registerInfo.userid);
+                wx.setStorageSync(user.StudentID, registerInfo.userid);
+                wx.setStorageSync(user.TeacherID, registerInfo.userid);
+
+                if(wx.getStorageSync('avatarUrl') != wx.getStorageSync('userAvatarUrl'))
+                {
+                  wx.request({
+                    url: config.PytheRestfulServerURL + '/user/updateAvatar',
+                    data: {
+                      userId: wx.getStorageSync(user.UserID),
+                      avatar: wx.getStorageSync('avatarUrl'),
+                    },
+                    method: 'GET', 
+                    success: function(res){
+                      // success
+                      wx.setStorageSync('userAvatarUrl', wx.getStorageSync('avatarUrl'));
+                    },
+                    fail: function(res) {
+                      // fail
+                    },
+                    complete: function(res) {
+                      // complete
+                    }
+                  })
+                }
+
+                if(wx.getStorageSync(user.UserID)!='userID')
+                {
+                  wx.setStorageSync('alreadyRegister', 'yes');
+                  wx.setStorageSync('fromRegister', 'no');
+                  
+                  var simple_params = {
+                    gradeId : wx.getStorageSync(user.GradeID),
+                    pageSize : 10,
+                    pageNum : 1,
+                    
+                  };
+                  this.setData({
+                    hide_loading: false,
+                  });
+                  listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
+                  "/index/defaultList",
+                  10,
+                      simple_params,
+                      function (netData){
+                        //取出返回结果的列表
+                        return netData.data;
+                      },
+                      function(item,that){
+                        that.setData({
+                          hide_loading: true,
+                        });
+                      },
+                      {},
+                      'GET',
+                  );
+                  wx.setStorageSync('index_load_type', 'one');
+
+                }
+                if(wx.getStorageSync(user.Status) == 1)
+                {
+                  wx.setStorageSync(user.OrganizationID, registerInfo.organizationid);
+                }
+
+              }
+            },
+            (userRegisterResult) => {
+              console.log(userRegisterResult);
+            },
+          );
+        
+        }
+      );
+    }
+    else
+    {
+      var simple_params = {
+        gradeId : wx.getStorageSync(user.GradeID),
+        pageSize : 10,
+        pageNum : 1,
+        
+      };
+      this.setData({
+        hide_loading: false,
+      });
+      listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
+      "/index/defaultList",
+      10,
+          simple_params,
+          function (netData){
+            //取出返回结果的列表
+            return netData.data;
+          },
+          function(item,that){
+            that.setData({
+              hide_loading: true,
+            });
+          },
+          {},
+          'GET',
+      );
+      wx.setStorageSync('index_load_type', 'one');
+    }
+
+
+
+    // this.setData({
+    //   alreadyRegister: wx.getStorageSync('alreadyRegister'),
+    // });
+
+    // var that = this;
+    // var simple_params = {
+    //   gradeId : wx.getStorageSync(user.GradeID),
+    //   pageSize : 10,
+    //   pageNum : 1,
+      
+    // };
+    // this.setData({
+    //   hide_loading: false,
+    // });
+    // listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
+    // "/index/defaultList",
+    // 10,
+    //     simple_params,
+    //     function (netData){
+    //       //取出返回结果的列表
+    //       return netData.data;
+    //     },
+    //     function(item,that){
+    //       that.setData({
+    //         hide_loading: true,
+    //       });
+    //     },
+    //     {},
+    //     'GET',
+    // );
+    // wx.setStorageSync('index_load_type', 'one');
     
 
-    //判断是否从注册页面返回
-    if(wx.getStorageSync('fromRegister')=='yes')
-    {
+    // //判断是否从注册页面返回
+    // if(wx.getStorageSync('fromRegister')=='yes')
+    // {
       
 
-      wx.setStorageSync('fromRegister', 'no');
-    }
+    //   wx.setStorageSync('fromRegister', 'no');
+    // }
+
+
   },
 
   

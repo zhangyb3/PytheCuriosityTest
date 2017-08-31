@@ -28,7 +28,8 @@
     "pages/personal/teacher_add",
     "pages/personal/teacher_bill",
     "pages/personal/student_bill",
-    "pages/section/image_frame"
+    "pages/section/image_frame",
+    "pages/section/concrete_content"
   ],
 
   "window":{

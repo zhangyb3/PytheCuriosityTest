@@ -55,6 +55,8 @@ var orderPay = (success, fail) => {
               console.log(res);       
               wx.setStorageSync('last_pay_id', prepay_result_data.prepay_id);  
               wx.setStorageSync('last_out_trade_no', prepay_result_data.out_trade_no);     
+
+              
               typeof success == "function" && success(res);
           },
           fail: function(res) {
@@ -117,12 +119,32 @@ function recordQuestionPay(parameters)
       method: 'POST', 
       success: function(res){
         // success
+        console.log('record : ' + res);
+        wx.request({
+            url: config.PytheRestfulServerURL + '/ask/push/information',
+            data: {
+                prepay_id: wx.getStorageSync('last_pay_id'),
+            },
+            method: 'GET', 
+            success: function(res){
+                // success
+            },
+            fail: function(res) {
+                // fail
+            },
+            complete: function(res) {
+                // complete
+                console.log(res);
+            }
+        });
       },
       fail: function(res) {
         // fail
       },
       complete: function(res) {
         // complete
+        console.log('record : ' + res);
+
       }
     })
 }

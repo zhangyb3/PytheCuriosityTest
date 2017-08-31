@@ -30,13 +30,25 @@
     </view>
 
     <view class="organization_edit_zone">
+        <view class="organization_location organization_operation_item" >
+            <view class="organization_location_text">
+                <text class="input_hint">机构地址</text>
+            </view>
+            <view class="input_location">
+                <text bindtap="chooseOrgLocation" wx:if="{{orgInfo.address != null}}" data-address="{{orgInfo.address}}" data-org="{{orgInfo}}" auto-focus>{{orgInfo.address}}</text>
+                <text bindtap="chooseOrgLocation" wx:if="{{orgInfo.address == null}}" auto-focus>点击编辑机构地址</text>
+            </view>
+        </view>
+    </view>
+
+    <view class="organization_edit_zone">
         
         <view class="organization_name organization_operation_item" >
             <view class="organization_name_text">
                 <text class="input_hint">添加成员</text>
             </view>
             <view class="input_teacher_phone">
-                <input  bindinput="inputTeacherPhone" value="输入电话号码" auto-focus/>
+                <input  bindinput="inputTeacherPhone" placeholder="输入电话号码" auto-focus/>
             </view>
             <view class="search_button_view">
                 <view class="search_button"    bindtap='searchTeacherByPhone'>
@@ -47,7 +59,7 @@
     </view>
 
     <view class="teacher_display_list_container" >
-      <template is="member_display_list" data="{{member_display_list,organization_edit_page}}"></template>
+      <template is="member_display_list" data="{{member_display_list,organization_edit_page,scrollHeight}}"></template>
     </view>
 
     <view class="no teacher notification" wx:if="{{member_display_list == null}}">

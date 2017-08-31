@@ -833,6 +833,7 @@ Page({
     {
       this.setData({
         hide_bounty_page: false,
+        hide_textarea: true,
       });
     }
 
@@ -843,6 +844,7 @@ Page({
   cancelBounty:function(e){
     this.setData({
       hide_bounty_page: true,
+      hide_textarea: false,
     });
   },
   confirmBounty:function(e){
@@ -855,6 +857,7 @@ Page({
           commitQuestion.call(this);
           this.setData({
             hide_bounty_page: true,
+            hide_textarea: false,
           });
         }
       },

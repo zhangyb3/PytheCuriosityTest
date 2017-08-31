@@ -63,7 +63,7 @@
     /*padding: 0 40rpx;*/
     /*border-style: solid;
     border-color: lightgrey;*/
-    height: 150px;
+    height: 250px;
     font-size: 40rpx;
     overflow-x: auto; 
     /*overflow-y: visible;*/
@@ -75,7 +75,7 @@
 
 
 .border_tab{
-    height:5px;
+    height:20px;
     background-color: #F5F5F5;
 }
 
@@ -142,7 +142,7 @@
 
 .record_sound_text{
 margin-left: 10rpx;
-font-size: 24rpx;
+font-size: 30rpx;
 color: #999999;
 }
 
@@ -209,7 +209,7 @@ color: #999999;
     text-align:right;
     line-height:30px;
     color:#333333;
-    font-size:30rpx;
+    font-size:36rpx;
     /*font-weight:bold;*/
     margin-right:10rpx;
 }
@@ -218,8 +218,9 @@ color: #999999;
     /*flex-direction: row;*/
     border:1px solid #CCCCCC;
     border-radius: 30rpx;
-    height: 60rpx;
-    width:216px;
+    height: 70rpx;
+    width:280px;
+    font-size: 36rpx;
     /*margin-left: 90rpx;
     margin-right: 90rpx;*/
     padding:0 5px;
@@ -237,7 +238,8 @@ color: #999999;
     /*background:url(../../images/arr.png) right center no-repeat;
     /*background-size:8px 8px;*/
     /*width: 100rpx;*/
-    font-size: 28rpx;
+    font-size: 36rpx;
+    font-family: Arial, Helvetica, sans-serif;
     color: #999999;
 }
 .reward_number_text_comtain{
@@ -249,7 +251,7 @@ color: #999999;
 }
 
 .reward_number_text{
-    font-size: 24rpx;
+    font-size: 28rpx;
     color: #999999;
     text-align: center
 }

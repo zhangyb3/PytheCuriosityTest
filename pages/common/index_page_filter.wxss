@@ -61,7 +61,7 @@
     /*margin:2px 5px;*/
     text-align: center;
     /*background-color: #EEE;*/
-    font-size: 30rpx;
+    font-size: 36rpx;
     color: #999999;
     background-color: #f5f5f5;
     margin-left: 10rpx;

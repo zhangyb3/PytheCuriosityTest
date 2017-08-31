@@ -62,7 +62,7 @@
     
     flex-direction: column;
     /*align-items: flex-start;*/
-    
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .teacher_content {
@@ -190,13 +190,14 @@
 
 .add_teacher_button_container{
     height: 100%;
-    width: 20%;
+    width: 30%;
+
     justify-content:center;
     align-items:center;
     display:-webkit-flex;
 }
 
-.add_teacher_button image{
+.add_teacher_button_container image{
     /*padding-left: -10px;*/
     
     width: 50rpx;

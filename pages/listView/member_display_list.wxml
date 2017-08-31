@@ -10,7 +10,7 @@
     <!--<view class="display_list_cover"  bindtap='returnIndexPage'></view>-->
 
     <!-- 成员列表区域 -->
-    <scroll-view class="display_list_zone" scroll-y="true" >
+    <scroll-view class="display_list_zone" scroll-y="true" style="height:{{scrollHeight}}px"  >
         <view class="members">
             <block wx:for-items="{{member_display_list}}"  >
                 <view class="member_item_wrapper" >

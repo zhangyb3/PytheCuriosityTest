@@ -16,7 +16,7 @@
     display: flex;
     flex-direction: row;
     /*justify-content: flex-end;*/
-    line-height: 100rpx;
+    line-height: 50px;
     width: 100%;
     /*margin-left: 40rpx;*/
     /*border-bottom: 1px solid #fff;*/
@@ -36,6 +36,7 @@
 
 .organization_name_text{
     width: 30%;
+
     justify-content:center;
     align-items:center;
     display:-webkit-flex;
@@ -43,6 +44,7 @@
 
 .input_organization_name{
     width: 70%;
+
     justify-content:center;
     align-items:center;
     display:-webkit-flex;
@@ -78,14 +80,43 @@
     /*border: 1px solid gray;*/
     font-size: 36rpx;
     width: 90%;
+    height: 100px;
 
-    text-overflow: -o-ellipsis-lastline;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 4;
-    -webkit-box-orient: vertical;
+    /*text-overflow: -o-ellipsis-lastline;*/
+    overflow: auto;
+    /*text-overflow: ellipsis;*/
+    /*display: -webkit-box;*/
+    /*-webkit-line-clamp: 3;*/
+    /*-webkit-box-orient: vertical;*/
 }
+
+.organization_location_text{
+    width: 30%;
+    height: 50px;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.input_location{
+    width: 70%;
+    height: 50px;
+    
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+
+    white-space:nowrap;
+    text-overflow: ellipsis;
+    overflow-x: scroll;
+}
+
+.input_location text{
+    font-size: 32rpx;
+    width: 90%;
+}
+
 
 .input_teacher_phone{
     width: 60%;
@@ -127,7 +158,7 @@
     position:absolute;
     bottom:0;
     width:100%;
-    height:60px;
+    height:100rpx;
     background:#d2cea9;
     clear:both;
     text-align: center;

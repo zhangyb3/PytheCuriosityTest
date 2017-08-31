@@ -420,7 +420,7 @@ Page({
   },
   onShow:function(){
     // 页面显示
-
+    
     register.checkRegister(
       (userRegisterResult) => {
         console.log('check register : ' + JSON.stringify(userRegisterResult));

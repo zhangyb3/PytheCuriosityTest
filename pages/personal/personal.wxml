@@ -6,6 +6,7 @@
 
 <view class="personal_page" hidden='{{hide_personal_page}}'>
 
+    <view style="height:20rpx;color:white;"></view>
 
     <view class="personal_description_zone">
         <view class="personal_avatar_zone">
@@ -14,31 +15,43 @@
             </view>
         </view>
         <view class="personal_description_text_zone">
-            <view class="personal_nick_name_wrap"><text class="personal_nick_name">{{userNickName}}</text></view>
-            <!--<view class="person_discribe_wrap"></view>-->
-            <view class="person_discribe_box">
-            <text class="person_discribe">{{userDescription}}
-            </text>
+            <view class="personal_nick_name_wrap"><text class="personal_nick_name">{{userNickName}}</text>
             </view>
-            <text class="person_org" wx:if="{{userStatus == 1}}">就职于 {{orgName}}
-            </text>
-            
-        <view class="personal_summary_wrap">
-            <view class="person_summary_box" bindtap="checkPersonalBill">
-                <image  class="earn_num_img" src="../../images/personal_icon_org.money@2x.png">
-                </image>
-                <text class="personal_summary">{{teacherEarn}}
+            <!--<view class="person_discribe_wrap"></view>-->
+            <!--<view class="person_discribe_box">
+                <text class="person_discribe">{{userDescription}}
+                </text>
+            </view>-->
+
+            <view class="person_org_view" wx:if="{{userStatus == 1 && orgName != null}}">
+                <text class="person_org" >就职于 {{orgName}}
                 </text>
             </view>
-        </view>
-            <!--<text class="personal_summary" src="../../images/icon_money_1@2x.png">265</text>-->
 
-        <view class="tab_interval"></view>
+            <view class="person_org_view" wx:if="{{orgName == null}}">
+                <text class="person_org" style="color:white;" >
+                FREELANCE
+                </text>
+            </view>
+            
+            <!--<view class="personal_summary_wrap">
+                <view class="person_summary_box" bindtap="checkPersonalBill">
+                    <image  class="earn_num_img" src="../../images/personal_icon_org.money@2x.png">
+                    </image>
+                    <text class="personal_summary">{{teacherEarn}}
+                    </text>
+                </view>
+            </view>-->
+                <!--<text class="personal_summary" src="../../images/icon_money_1@2x.png">265</text>-->
+
+            <view class="tab_interval"></view>
         </view>
         
         <view class="personal_description_revise_zone">
 <view class="person_edit_icon_view">
-        <button class="person_edit_icon" bindtap='personEditOperationPage'><image src="../../images/personal_icon_change@2x.png"></image></button>
+            <button class="person_edit_icon" bindtap='personEditOperationPage'>
+                <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+            </button>
         </view>
 
         </view>
@@ -101,6 +114,19 @@
             <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
     </view>
+
+
+    <view class="about_us_zone">
+        <view class="balance_detailed_rules personal_operation_item" bindtap="checkPersonalBill">
+<view class="menu_list_icon_wrap">
+    <image class="menu_list_icon_detail" src="../../images/personal_iocn_jiesuan@2x.png"></image>
+</view>
+            <text class="rules personal_operation_item_text">钱包</text>
+            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
+        </view>
+        
+    </view>
+
 
     <contact-button 
     type="default-light" 

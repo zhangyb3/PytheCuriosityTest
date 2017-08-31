@@ -1,0 +1,144 @@
+<view class="select_item_container" data-answers='{{ answers }}' data-question='{{ question }}'>
+    
+    
+  
+    <!-- 信息区域 -->
+    <view class="select_item_zone" >
+
+    <view class="info_zone">  
+<!--
+        <view class="cancel_wrap" bindtap="returnIndexPage" >
+        <image class="cacel_img" src="../../images/index_icon_close@2x.png"></image>
+        </view>-->
+
+        <view class="select_question_wrapper">
+            <view class="select_question_content_container">
+                    <text class="select_question_content">{{ question.questioncontent.text[0] }}</text>
+            </view>
+       </view>
+        <!--<view class="border_tab"></view>-->
+
+        <view class="multi_tips">
+                
+
+            <view wx:if="{{question.questioncontent.audio[0] != null}}" class="speak_style_record" data-voice="{{question.questioncontent.audio[0]}}" bindtap="playVoiceRecord">
+        <image wx:if="{{!isPlaying}}" class="sound_style_record" src="../../images/voice_static.png" ></image>
+        <image wx:if="{{isPlaying}}" class="sound_style_record" src="../../images/record.gif" ></image>
+        <text class="record_time">{{question.questioncontent.audio[1]}}秒</text>
+
+ </view>
+
+
+
+                <view wx:if="{{question.questioncontent.img[0] != null}}" class="photo" >
+                    <image class="preview_img_classic" data-photo="{{question.questioncontent.img[0]}}" src='{{preview_img_url + question.questioncontent.img[0]}}' bindtap="showPhoto" mode="aspectFit">
+                        <!--<view>照片</view>-->
+                    </image>
+                </view>
+
+                <view wx:if="{{question.questioncontent.draw[0] != null}}" class="draw" >
+                    <image class="preview_img_classic" data-draw="{{question.questioncontent.draw[0]}}" src='{{preview_img_url + question.questioncontent.draw[0]}}' bindtap="showDraw" mode="aspectFit">
+                        <!--<view>手绘</view>-->
+                    </image>
+                </view>
+
+            </view>
+
+            <view class="border_tab"/>
+
+        <view class="dotted_line"></view>
+
+        <!--<view class="border_tab_index_white"></view>-->
+
+        <view class="answers">
+        
+            <block wx:for="{{answers}}" wx:for-item="answer" wx:for-index="answer_index" wx:key="unique">
+
+                <view class="select_answer_container" >
+                <view class="border_tab_index_background"></view>
+                    <view class="select_answer_wrapper" >
+                        <image  src='{{ answer.teacherimg || null }}' />
+                        <text class="select_item_teacher_name">{{ answer.teachername }}</text>
+                        
+                    </view>
+                    
+                    <!--<view class="border_tab"></view>-->
+                <view class="select_answer_content_wrapper">
+                    <view class="select_answer_content_container">
+                        <text class="select_answer_content">{{ answer.answercontent.text[0] }}</text>
+                    </view>
+                </view>
+                    <!--<view class="border_tab"></view>-->
+
+                    <view class="multi_tips">
+                        <!--<view wx:if="{{answer.answercontent.audio[0] != null}}" class="voice" >
+                            
+                            <view class="bubble" data-voice='{{answer.answercontent.audio[0]}}' bindtap="playVoiceRecord">
+                                <view class="bubble-tail"></view>
+                                <view class="voice-wave"></view>
+                                <view>{{answer.answercontent.audio[1]}}秒</view>
+                            </view>
+
+                        </view>-->
+
+                        <view wx:if="{{answer.answercontent.audio[0] != null}}" data-voice="{{answer.answercontent.audio[0]}}" class="speak_style_record" bindtap="playVoiceRecord">
+        <image wx:if="{{!isPlaying}}" class="sound_style_record" src="../../images/voice_static.png" ></image>
+        <image wx:if="{{isPlaying}}" class="sound_style_record" src="../../images/record.gif" ></image>
+        <text class="record_time">{{answer.answercontent.audio[1]}}秒</text>
+
+ </view>
+
+
+                        <view wx:if="{{answer.answercontent.img[0] != null}}" class="photo" >
+                            <image class="preview_img_classic" data-photo='{{answer.answercontent.img[0]}}' src='{{preview_img_url + answer.answercontent.img[0]}}' bindtap="showPhoto" mode="aspectFit">
+                                <!--<view>照片</view>-->
+                            </image>
+                        </view>
+
+                        <view wx:if="{{answer.answercontent.draw[0] != null}}" class="draw" >
+                            <image class="preview_img_classic" data-draw='{{answer.answercontent.draw[0]}}' src='{{preview_img_url + answer.answercontent.draw[0]}}' bindtap="showDraw" mode="aspectFit">
+                                <!--<view>手绘</view>-->
+                            </image>
+                        </view>
+
+                    </view>
+
+                    <!--<view class="border_tab"/>-->
+
+                    <view class="operation_zone" >
+
+                        <view class="collect_view_wrap">
+                        <view class="collect_wrap" wx:if="{{alreadyRegister == 'yes'}}" data-selected="{{answer}}" data-answer_index="{{answer_index}}" bindtap='likeAnswer'><image wx:if="{{answer.isClick == 0}}" class="collect_icon_img" src="../../images/unlike.png"></image><image wx:if="{{answer.isClick == 1}}" class="collect_icon_img" src="../../images/liked.png"></image><text class="collect_num" >{{answer.likesnum}}</text></view>
+                        </view>
+                        
+
+
+
+                        <!--<text class="return_to_index_page" bindtap="returnIndexPage">返回
+                        </text>-->
+
+
+                        <!--<text class="reward_answer" data-selected='{{answer}}' bindtap='rewardAnswer'>
+                        </text>-->
+
+                        <!--<view class="reward_answer" data-selected='{{answer}}'   bindtap='rewardAnswer'><image class="reward_icon_img" src="../../images/index_icon_money@2x.png"></image></view>-->
+                        <view class="reward_answer" data-selected='{{answer}}'  data-question='{{question}}' bindtap='rewardAnswer'>鼓励一下</view>
+
+
+                    </view>
+                    
+                </view>
+<view class="border_tab_seprateline"></view>
+            </block>
+        </view>
+
+    </view>  
+
+        
+
+
+    </view>
+
+    
+
+</view>

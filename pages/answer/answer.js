@@ -197,10 +197,25 @@ Page({
       itemIndex = result.currentTarget.dataset.index;
       console.log(JSON.stringify(selectItem) + "," + itemIndex);
 
-      this.setData({hide_select_item:false});
+      // this.setData({hide_select_item:false});
       var that = this;
       //请求具体数据
-      base.getDetailContent(this,selectItem);
+      // base.getDetailContent(this,selectItem);
+
+      wx.navigateTo({
+        url: '../section/concrete_content?selectItem=' + JSON.stringify(selectItem),
+        success: function(res){
+          // success
+        },
+        fail: function(res) {
+          // fail
+        },
+        complete: function(res) {
+          // complete
+        }
+      });
+
+
     }
 
   },

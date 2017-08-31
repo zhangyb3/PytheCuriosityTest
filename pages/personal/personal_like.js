@@ -130,14 +130,25 @@ Page({
     itemIndex = e.currentTarget.dataset.index;
     console.log(JSON.stringify(selectItem) + "," + itemIndex);
 
-    this.setData({hide_select_item:false});
+    // this.setData({hide_select_item:false});
 
     selectItem.playingVoice = false;
     //进入详细列表
     // base.cleanCacheFile(20);
-    base.getDetailContent(this,selectItem);
+    // base.getDetailContent(this,selectItem);
     
-    // this.setData({select_item:selectItem});
+    wx.navigateTo({
+      url: '../section/concrete_content?selectItem=' + JSON.stringify(selectItem),
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    });
   },
   returnIndexPage: function(e) {
       console.log("return to index page");

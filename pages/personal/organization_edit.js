@@ -25,6 +25,9 @@ Page({
     setupOrg = parameters.setupOrganization;
     this.data.organizationId = parameters.orgId;
     console.log(parameters);
+
+    
+
     var that = this;
     if(setupOrg)
     {
@@ -65,6 +68,17 @@ Page({
   onShow:function(){
     // 页面显示
     var that = this;
+    
+    wx.getSystemInfo({
+      success: function(res) {
+        console.log(res);
+        that.setData({
+          scrollHeight: res.windowHeight -300,
+        });
+      }
+    });
+
+    
     if(editOrg)
     {
       wx.request({
@@ -102,11 +116,13 @@ Page({
   inputOrganizationName:function(e){
     console.log(e.detail.value);
     this.data.organizationName=e.detail.value;
+    this.data.organization.name = e.detail.value;
   },
 
   inputOrganizationDescription:function(e){
     console.log(e.detail.value);
     this.data.organizationDescription=e.detail.value;
+    this.data.organization.description=e.detail.value;
   },
 
   inputTeacherPhone:function(e){
@@ -168,12 +184,17 @@ Page({
 
   updateOrganization:function(e){
     console.log('edit org');
+
+    var organization = this.data.organization;
     wx.request({
       url: config.PytheRestfulServerURL + '/teacher/editOrg',
       data: {
         managerId: wx.getStorageSync(user.TeacherID),
-        orgName: this.data.organizationName,
-        description: this.data.organizationDescription,
+        orgName: organization.name,
+        description: organization.description,
+        address: organization.address,
+        latitude: organization.latitude,
+        longitude: organization.longitude,
       },
       method: 'POST', 
       success: function(res){
@@ -199,6 +220,78 @@ Page({
       }
     });
 
+  },
+
+  chooseOrgLocation:function(e){
+    var that = this;
+    wx.chooseLocation({
+      success: function(res){
+        // success
+        console.log(res);
+        that.data.organization.address = res.address;
+        that.data.organization.latitude = res.latitude;
+        that.data.organization.longitude = res.longitude;
+
+        var organization = that.data.organization;
+        wx.request({
+          url: config.PytheRestfulServerURL + '/teacher/editOrg',
+          data: {
+            managerId: wx.getStorageSync(user.TeacherID),
+            orgName: organization.name,
+            description: organization.description,
+            address: organization.address,
+            latitude: organization.latitude,
+            longitude: organization.longitude,
+          },
+          method: 'POST', 
+          success: function(res){
+            
+          },
+          fail: function(res) {
+            // fail
+          },
+          complete: function(res) {
+            // complete
+            console.log(res);
+          }
+        });
+
+        that.setData({
+          orgInfo: that.data.organization,
+        });
+
+
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+
+  },
+
+  checkOrgLocation:function(e){
+    
+    console.log("go to " + e.currentTarget.dataset.address);
+    var org = e.currentTarget.dataset.org;
+    console.log(org.latitude + ' , ' + org.longitude);
+
+    wx.openLocation({
+      latitude: org.latitude, // 纬度，范围为-90~90，负数表示南纬
+      longitude: org.longitude, // 经度，范围为-180~180，负数表示西经
+      scale: 28, // 缩放比例
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
   },
 
   onHide:function(){

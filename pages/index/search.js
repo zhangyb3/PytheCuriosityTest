@@ -282,6 +282,35 @@ Page({
     })
   },
 
+  selectOneItem:function(e){
+    
+    selectItem = e.currentTarget.dataset.item;
+    itemIndex = e.currentTarget.dataset.index;
+    console.log(JSON.stringify(selectItem) + "," + itemIndex);
+
+    // this.setData({hide_select_item:false});
+    // this.setData({hide_loading:false});
+    selectItem.playingVoice = false;
+
+
+    //进入详细列表
+    // base.cleanCacheFile(20);
+    //base.getDetailContent(this,selectItem);
+    wx.navigateTo({
+      url: '../section/concrete_content?selectItem=' + JSON.stringify(selectItem),
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+
+  },
+
   onHide:function(){
     // 页面隐藏
   },

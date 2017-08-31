@@ -1,7 +1,7 @@
 /* pages/personal/personal.wxss */
 
 .personal_page{
-    position: fixed;
+    /*position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -9,7 +9,7 @@
     
     display: flex;
     flex-direction: column;
-    background-color: #f3f1e4;
+    background-color: #f3f1e4;*/
 }
 
 .personal_description_zone{
@@ -19,10 +19,10 @@
     background-color: #f3f1e4;
     width: 100%;
     /*min-height: 300rpx;*/
-    border-bottom: 20rpx solid #fff;
+    border-bottom: 50rpx solid #fff;
     height: auto;
 
-    align-items: center;
+    /*align-items: center;*/
 }
 
 .earn_num_img{
@@ -40,14 +40,17 @@
     
     width: 20%;
     height: 100%;  
-    justify-content:center;
-    align-items:center;
-    display:-webkit-flex;
+
+    /*justify-content:center;*/
+    /*align-items:center;*/
+    /*display:-webkit-flex;*/
 }
 
 .personal_avatar_container{
     width: 120rpx;
     height: 120rpx;
+    margin-top: 20rpx;
+    margin-left: 20rpx;
 }
 
 .personal_avartar_image{
@@ -55,8 +58,11 @@
     /*margin-left: 30rpx;*/
     width: 120rpx;
     height: 120rpx;
-    border-radius: 50%;
-
+    /*border-radius: 50%;*/
+    border-radius: 20rpx;
+    border-style: solid;
+    border-width: 0.5px;
+    border-color: lightgray;
 }
 
 .personal_description_text_zone{
@@ -75,12 +81,13 @@
     height: auto;
     width: 100%;
     margin-top: 34rpx;
+    margin-left: 10rpx;
 }
 
 .personal_nick_name{
     display: flex;
     height: auto;
-    font-size: 50rpx;
+    font-size: 45rpx;
     font-weight: bold;
     color: #666666;
 }
@@ -96,6 +103,8 @@
 .person_discribe_box{
     margin-top: 10rpx;
     height: 80rpx;
+
+    word-break: break-all;
     text-overflow: -o-ellipsis-lastline;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -115,16 +124,26 @@
     
 }
 
+.person_org_view{
+    margin-top: 10rpx;
+    /*width: 100%;*/
+    height: 50rpx;
+
+    display:inline-block;
+}
+
 .person_org{
-    display: flex;
+    /*margin-top: 10rpx;*/
+    /*display: flex;*/
     /*position: fixed;*/
     /*left: 170rpx;
     right: 80rpx;*/
-    width: 90%;
+    /*width: 100%;*/
     height: 50rpx;
     font-size: 32rpx;
     color: black;
-    padding-bottom: -20rpx;
+    /*float: left;*/
+    /*padding-bottom: -20rpx;*/
     
 }
 
@@ -132,7 +151,7 @@
     height:40rpx;
     display:flex;
     /*position: fixed;*/
-    /*margin-top: 30rpx;*/
+    margin-top: 10rpx;
     /*margin-left: 60rpx;*/
     line-height:20px;
     /*top: 200rpx;*/
@@ -149,7 +168,7 @@
     width:43rpx;
     height: 38rpx;
     display:block;
-    margin-right:5px;
+    /*margin-right:5px;*/
     
 }
 
@@ -167,7 +186,8 @@
 .personal_description_revise_zone{
     display: flex;
     /*position: absolute;*/
-    height: 100%;
+    /*height: 100%;*/
+    height:auto;
     width: 10%;
     /*margin-right: 20rpx;*/
     /*right: 30rpx;*/
@@ -179,34 +199,46 @@
     /*right: 30rpx;*/
     /*margin-top: 55rpx;*/
     /*margin-left: 20rpx;*/
-    height: 100%;
-    width: 50rpx;
+    /*height: 100%;*/
+    height: auto;
+    /*width: 50rpx;*/
 }
 
 .person_edit_icon{
     /*background: url(../../images/icon_information@2x.png) no-repeat center center;*/
     /*position: absolute;*/
-    display: flex;
-    margin-top: 47rpx;
+    /*display: flex;*/
+    /*margin-top: 47rpx;*/
     /*padding: 0px;*/
-    right: 0px;
     /*padding-right: 10;*/
+
+    /*right: 0px;
     bottom: 5rpx;
     height: 80rpx;
-    width: 80rpx;
+    width: 80rpx;*/
+
     background: none;
     /*display: block;*/
     /*background-size: 20px 20px;*/
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
 }
 
-.person_edit_icon image{                               position: absolute;
-    /*left: 0px;*/
 
-    left: 0rpx;
+
+.person_edit_icon image{                               
+    /*position: absolute;*/
+    /*left: 0px;*/
+    width:13rpx;
+    height:25rpx;
+
+    /*left: 0rpx;
     right: 0px;
     height: 45rpx;
     width: 44rpx;
-    display:block;
+    display:block;*/
 }
 
 /*去掉button的边框*/
@@ -241,7 +273,7 @@
     line-height: 100rpx;
     width: 100%;
     /*margin-left: 40rpx;*/
-    border-bottom: 1px solid #fff;
+    border-bottom: 5px solid #fff;
     border-width: 1px;
     background-color: #f3f1e4;
     /*margin-right: 20rpx;*/
@@ -267,12 +299,12 @@
 .personal_operation_item_text{
     width: 90%;
     line-height: 94rpx;
-    font-size: 40rpx;
-    margin-left: 16rpx;
+    font-size: 34rpx;
+    /*font-weight: bold;*/
+    margin-left: 30rpx;
     padding-top: 6rpx;
     color: #333333;
     text-align: left;
-    
 }
 
 .about_us_zone{
