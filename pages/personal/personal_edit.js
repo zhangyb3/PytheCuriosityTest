@@ -17,7 +17,8 @@ Page({
   },
   onLoad:function(options){
     
-    this.data.user.username = wx.getStorageSync('userNickName');
+    this.data.user.username = wx.getStorageSync(user.UserNickName);
+     this.data.user.description = wx.getStorageSync(user.UserDescription);
 
 
   },
@@ -26,11 +27,15 @@ Page({
     
     this.data.user.username = e.detail.value;
     console.log(this.data.user.username);
+    wx.setStorageSync(user.UserNickName, e.detail.value);
+
   },
 
   getDescriptionText:function(e){
+
     console.log(e.detail.value);
     this.data.user.description = e.detail.value;
+    wx.setStorageSync(user.UserDescription, e.detail.value);
     
   },
 
@@ -98,8 +103,8 @@ Page({
   onShow:function(){
     // 页面显示
     this.setData({
-      nickname: wx.getStorageSync('userNickName'),
-      userdesc: wx.getStorageSync('UserDescription'),
+      nickname: wx.getStorageSync(user.UserNickName),
+      userdesc: wx.getStorageSync(user.UserDescription),
     });
   },
   onHide:function(){

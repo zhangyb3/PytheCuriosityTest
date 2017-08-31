@@ -190,10 +190,19 @@ Page({
     })
   },
 
-  personEditOperationPage:function(e){
-    console.log('person Edit');
+  personalDescriptionPage:function(e){
+    console.log('person description');
+
+    var personalInfo = {
+      id: wx.getStorageSync(user.UserID),
+      name: wx.getStorageSync(user.UserNickName),
+      description: wx.getStorageSync(user.UserDescription),
+      avatar: wx.getStorageSync('userAvatarUrl'),
+      orgId: wx.getStorageSync(user.OrganizationID),
+    };
+
     wx.navigateTo({
-      url: 'personal_edit',
+      url: 'personal_description?personalInfo='+JSON.stringify(personalInfo),
       success: function(res){
         // success
       },
@@ -450,27 +459,28 @@ Page({
           wx.setStorageSync(user.StudentID, registerInfo.userid);
           wx.setStorageSync(user.TeacherID, registerInfo.userid);
 
-          if(wx.getStorageSync('avatarUrl') != wx.getStorageSync('userAvatarUrl'))
-          {
-            wx.request({
-              url: config.PytheRestfulServerURL + '/user/updateAvatar',
-              data: {
-                userId: wx.getStorageSync(user.UserID),
-                avatar: wx.getStorageSync('avatarUrl'),
-              },
-              method: 'GET', 
-              success: function(res){
-                // success
-                wx.setStorageSync('userAvatarUrl', wx.getStorageSync('avatarUrl'));
-              },
-              fail: function(res) {
-                // fail
-              },
-              complete: function(res) {
-                // complete
-              }
-            })
-          }
+          //自动更新头像
+          // if(wx.getStorageSync('avatarUrl') != wx.getStorageSync('userAvatarUrl'))
+          // {
+          //   wx.request({
+          //     url: config.PytheRestfulServerURL + '/user/updateAvatar',
+          //     data: {
+          //       userId: wx.getStorageSync(user.UserID),
+          //       avatar: wx.getStorageSync('avatarUrl'),
+          //     },
+          //     method: 'GET', 
+          //     success: function(res){
+          //       // success
+          //       wx.setStorageSync('userAvatarUrl', wx.getStorageSync('avatarUrl'));
+          //     },
+          //     fail: function(res) {
+          //       // fail
+          //     },
+          //     complete: function(res) {
+          //       // complete
+          //     }
+          //   })
+          // }
 
         }
       },
@@ -480,7 +490,7 @@ Page({
     );
 
     this.data.userAvatarUrl = wx.getStorageSync('userAvatarUrl');
-    this.data.userNickName = wx.getStorageSync('userNickName');
+    this.data.userNickName = wx.getStorageSync('UserNickName');
     this.data.userDescription = wx.getStorageSync('UserDescription');
     this.data.userStatus = wx.getStorageSync('Status');
     this.setData({
@@ -578,7 +588,7 @@ Page({
               wx.setStorageSync('fixPersonalInfo', 'no');
 
               that.data.userAvatarUrl = wx.getStorageSync('userAvatarUrl');
-              that.data.userNickName = wx.getStorageSync('userNickName');
+              that.data.userNickName = wx.getStorageSync('UserNickName');
               that.data.userDescription = wx.getStorageSync('UserDescription');
               that.setData({
                 userAvatarUrl: that.data.userAvatarUrl,

@@ -540,27 +540,27 @@ Page({
                 wx.setStorageSync(user.StudentID, registerInfo.userid);
                 wx.setStorageSync(user.TeacherID, registerInfo.userid);
 
-                if(wx.getStorageSync('avatarUrl') != wx.getStorageSync('userAvatarUrl'))
-                {
-                  wx.request({
-                    url: config.PytheRestfulServerURL + '/user/updateAvatar',
-                    data: {
-                      userId: wx.getStorageSync(user.UserID),
-                      avatar: wx.getStorageSync('avatarUrl'),
-                    },
-                    method: 'GET', 
-                    success: function(res){
-                      // success
-                      wx.setStorageSync('userAvatarUrl', wx.getStorageSync('avatarUrl'));
-                    },
-                    fail: function(res) {
-                      // fail
-                    },
-                    complete: function(res) {
-                      // complete
-                    }
-                  })
-                }
+                // if(wx.getStorageSync('avatarUrl') != wx.getStorageSync('userAvatarUrl'))
+                // {
+                //   wx.request({
+                //     url: config.PytheRestfulServerURL + '/user/updateAvatar',
+                //     data: {
+                //       userId: wx.getStorageSync(user.UserID),
+                //       avatar: wx.getStorageSync('avatarUrl'),
+                //     },
+                //     method: 'GET', 
+                //     success: function(res){
+                //       // success
+                //       wx.setStorageSync('userAvatarUrl', wx.getStorageSync('avatarUrl'));
+                //     },
+                //     fail: function(res) {
+                //       // fail
+                //     },
+                //     complete: function(res) {
+                //       // complete
+                //     }
+                //   })
+                // }
 
                 if(wx.getStorageSync(user.UserID)!='userID')
                 {

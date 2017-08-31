@@ -49,7 +49,7 @@
         
         <view class="personal_description_revise_zone">
 <view class="person_edit_icon_view">
-            <button class="person_edit_icon" bindtap='personEditOperationPage'>
+            <button class="person_edit_icon" bindtap='personalDescriptionPage'>
                 <image src="../../images/personal_icon_arrow_right@2x.png"></image>
             </button>
         </view>

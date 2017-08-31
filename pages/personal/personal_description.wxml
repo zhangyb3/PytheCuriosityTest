@@ -1,0 +1,142 @@
+
+<view class="personal_description_page">
+
+<view style="height:100rpx;"></view>
+
+<view class="personal_description_item_container">
+
+    
+
+    <view class="personal_description_item_wrapper">
+
+        <view style="height:10rpx;"></view>
+
+        <view class="personal_description_item">
+
+            <view class="item_hint_container">
+                
+                <view class="item_hint">
+                    <text class="item_hint_text">头像</text>
+                </view>
+
+            </view>
+
+            <view class="item_content_container">
+                
+                <view class="item_content" bindtap="changeAvatar">
+                    <image class="item_content_avatar" src="{{personalInfo.avatar}}"></image>
+                </view>
+
+            </view>
+
+        </view>
+
+        <view style="height:10rpx;"></view>
+
+    </view>
+
+    
+
+</view>
+
+<view class="personal_description_item_container">
+
+    <view class="personal_description_item_wrapper">
+
+        <view style="height:10rpx;"></view>
+
+        <view class="personal_description_item" bindtap="personalEditPage">
+
+            <view class="item_hint_container">
+                
+                <view class="item_hint">
+                    <text class="item_hint_text">昵称</text>
+                </view>
+
+            </view>
+
+            <view class="item_content_container">
+                
+                <view class="item_content">
+                    <text class="item_content_text">{{personalInfo.name}}</text>
+                </view>
+
+            </view>
+
+        </view>
+
+        <view style="height:10rpx;"></view>
+
+    </view>
+
+</view>
+
+<view class="personal_description_item_container">
+
+    <view class="personal_description_item_wrapper">
+
+        <view style="height:10rpx;"></view>
+
+        <view class="personal_description_item">
+
+            <view class="item_hint_container">
+                
+                <view class="item_hint">
+                    <text class="item_hint_text">机构</text>
+                </view>
+
+            </view>
+
+            <view class="item_content_container">
+                
+                <view class="item_content">
+                     <text class="item_content_text_null" wx:if="{{personalInfo.orgName == null}}">尚无</text>
+                    <text class="item_content_text" wx:if="{{personalInfo.orgName != null}}">{{personalInfo.orgId}}</text>
+                </view>
+
+            </view> 
+
+        </view>
+
+        <view style="height:10rpx;"></view>
+
+    </view>
+
+</view>
+
+<view class="personal_description_item_container">
+
+    <view class="personal_description_item_wrapper">
+
+        <view style="height:10rpx;"></view>
+
+        <view class="personal_description_zone" bindtap="personalEditPage">
+
+            <view class="item_hint_container_">
+                
+                <!--<view class="item_hint">-->
+                    <text class="item_hint_text">简介:</text>
+                <!--</view>-->
+
+            </view>
+
+            <view style="height:20rpx;"></view>
+
+            <view class="item_content_container_">
+                
+                <!--<view class="item_content">-->
+                     <text class="item_content_text_null" wx:if="{{personalInfo.description == null}}">尚无介绍</text>
+                    <text class="item_content_text" wx:if="{{personalInfo.description != null}}">{{personalInfo.description}}</text>
+                <!--</view>-->
+
+            </view> 
+
+        </view>
+
+        <view style="height:10rpx;"></view>
+
+    </view>
+
+</view>
+
+</view>
