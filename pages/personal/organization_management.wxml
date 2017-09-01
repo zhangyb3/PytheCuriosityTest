@@ -9,9 +9,10 @@
         </view>     
     </view>
     
-    <view class="organization_description_zone" wx:if="{{organization != null}}">
+    <view class="organization_description_zone" >
             <view class="organization_image_container">
-                <image class="organization_image" src="{{userAvatarUrl}}"></image>
+                <image class="organization_image" wx:if="{{organization.avatar == null}}" src="../../images/add_op.png"></image>
+                <image class="organization_image" wx:if="{{organization.avatar != null}}" src="{{organization.avatar}}"></image>
             </view>
         <view class="organization_description_text_zone">
             <view class="organization_name_wrap"><text class="organization_name">{{organization.name}}</text></view>

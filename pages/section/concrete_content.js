@@ -28,6 +28,9 @@ Page({
   },
   onShow:function(){
     
+    this.setData({
+      alreadyRegister: wx.getStorageSync('alreadyRegister'),
+    });
     base.getDetailContent(this,this.data.selectItem);
 
   },

@@ -37,7 +37,7 @@
                 </view>
 
                 <view class="add_teacher_button_container" wx:if="{{add_teacher_page == true}}" bindtap='organizationAddTeacher' data-teacher="{{item}}">
-                    <image src="../../images/add_teacher.png"></image>
+                    <image src="../../images/add_op.png"></image>
                 </view>
 
                 <view class="horizontal_scroll_container" wx:if="{{teacher_edit == true && (user.teacherId == item.userid || org.managerId == user.teacherId)}}">

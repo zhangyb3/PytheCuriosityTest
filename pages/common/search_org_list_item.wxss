@@ -39,6 +39,7 @@
     top: 36rpx;
     left: 30rpx;
     border-radius: 50%;
+    border: 1rpx dashed #A9A9A9;
     
     /*margin-top: 3%;*/
 }

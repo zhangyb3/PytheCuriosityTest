@@ -6,7 +6,9 @@
 <!--名师区域  -->
             <view class="org_wrapper">
             <!--头像部分-->
-                <image class="org_icon"  src="{{item.userimg}}"
+                <image class="org_icon" wx:if="{{item.avatar != null}}"  src="{{item.avatar}}"
+                ></image>
+                <image class="org_icon" wx:if="{{item.avatar == null}}"  src="../../images/add_op.png"
                 ></image>
             <!--介绍-->
                 <view class= "org_middle_wrapper">

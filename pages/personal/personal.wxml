@@ -90,7 +90,7 @@
         </view>
     </view>
 
-    <view class="organization_management personal_operation_item" bindtap='selectOrganizationManagement'>
+    <view class="organization_management personal_operation_item" wx:if="{{userStatus == 1}}" bindtap='selectOrganizationManagement'>
 <view class="menu_list_icon_wrap">
     <image class="menu_list_icon_detail" src="../../images/organization_icon.png"></image>
 </view>
