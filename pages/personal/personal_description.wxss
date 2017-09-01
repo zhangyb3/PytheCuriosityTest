@@ -107,3 +107,9 @@ page{
     height: 150rpx;
 
 }
+
+.item_content_container_{
+
+    widows: 90%;
+    word-break: break-all;
+}

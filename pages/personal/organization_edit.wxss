@@ -82,7 +82,7 @@
     font-size: 36rpx;
     width: 90%;
     height: 100px;
-
+    word-break: break-all;
     /*text-overflow: -o-ellipsis-lastline;*/
     overflow: auto;
     /*text-overflow: ellipsis;*/

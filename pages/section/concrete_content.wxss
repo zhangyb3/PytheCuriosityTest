@@ -149,8 +149,17 @@
     height: auto;
 
     justify-content:center;
-    /*align-items:center;*/
-    display:-webkit-flex;
+    align-items:center;
+    /*display:-webkit-flex;*/
+    display: flex;
+    flex-direction: column;
+}
+
+.multi_tips_min{
+    
+    width: 80%;
+    height: auto;
+    
 }
 
 .select_answer_wrapper>image {
