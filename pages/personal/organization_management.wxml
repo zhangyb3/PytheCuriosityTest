@@ -5,7 +5,8 @@
 
     <view class="my_create">
         <view class="my_create_view">
-            <text>我创建的</text>
+            <text wx:if="{{alreadySetupOrg == true}}">我创建的</text>
+            <text wx:if="{{alreadySetupOrg == false}}">尚未创建</text>
         </view>     
     </view>
     

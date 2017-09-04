@@ -10,6 +10,8 @@ var user = require("../../utils/user.js");
 Page({
   data:{
     
+    alreadySetupOrg: false,
+
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -34,6 +36,14 @@ Page({
       success: function(res){
         // success
         console.log(res);
+        if(res.data.status == 200)
+        {
+          that.data.alreadySetupOrg = true;
+          that.setData({
+            alreadySetupOrg: that.data.alreadySetupOrg,
+          });
+        }
+
         that.setData({
           organization: res.data.data,
         });

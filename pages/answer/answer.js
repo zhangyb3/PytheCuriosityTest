@@ -44,7 +44,7 @@ Page({
 
     finished: false,
     answer_page: true,
-
+    userRole: 0,
 
     
   },
@@ -418,6 +418,12 @@ Page({
           'GET',
       );
     }
+
+    this.setData({
+      finished: this.data.finished,
+      answer_page: this.data.answer_page,
+      userRole: this.data.userRole,
+    });
     
   },
 

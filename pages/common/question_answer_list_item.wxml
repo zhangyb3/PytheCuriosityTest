@@ -69,7 +69,7 @@
                 <text class="time" hidden="{{finished == false}}">{{item.answertime}} </text>
             </view>
 
-            <view class="refund_container" wx:if="{{ userRole == 1 && answer_page == true }}" bindtap="abandonQuestion" style="background-image:url(../../images/refund_color.png);background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;" data-question="{{item}}">
+            <view class="refund_container" wx:if="{{ userRole == 1 && answer_page == true && item.status == 1}}" bindtap="abandonQuestion" style="background-image:url(../../images/refund_color.png);background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;" data-question="{{item}}">
                 <text class="refund_text">结束提问</text>
             </view>
 
