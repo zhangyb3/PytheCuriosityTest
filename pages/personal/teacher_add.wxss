@@ -69,7 +69,7 @@
     vertical-align: middle;
 }
 
-.no teacher notification{
+.no_teacher_notification{
     text-align: center;
 }
 

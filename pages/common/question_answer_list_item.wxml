@@ -49,9 +49,9 @@
 
     <view style="height:10rpx;width:100%;"></view>
 
-    <view class="bottom_zone" hidden="{{teacher_info}}">
-        <view class="solver_zone" hidden="{{answer_page == true && hide_personal_answer_list == true}}">
-            <view class="solver_name_container">
+    <view class="bottom_zone" hidden="{{teacher_info}}" >
+        <view class="solver_zone" hidden="{{answer_page == true && hide_personal_answer_list == true}}" >
+            <view class="solver_name_container" wx:if="{{item.status != 1}}">
                 <text class="solver_name">  ·由{{item.teachername}}老师解答</text>
             </view>
         </view>

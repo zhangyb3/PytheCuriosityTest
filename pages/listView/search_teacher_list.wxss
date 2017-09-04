@@ -19,10 +19,16 @@
 .search_teacher_list_container{
     width: 100%;
     /*background-color:#f3f1e4;*/
+    align-items: center;
 }
 
 .interval{
     height: 10rpx;
+}
+
+.no_content_hint{
+    width: 100;
+    text-align: center;
 }
 
 @import "../common/search_teacher_list_item.wxss";
