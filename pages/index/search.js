@@ -297,7 +297,7 @@ Page({
     // base.cleanCacheFile(20);
     //base.getDetailContent(this,selectItem);
     wx.navigateTo({
-      url: '../section/concrete_content?selectItem=' + JSON.stringify(selectItem),
+      url: '../section/concrete_content?selectItem=' + JSON.stringify(selectItem) + '&from_page=' + 'home_page',
       success: function(res){
         // success
       },

@@ -8,7 +8,7 @@
 
     <view style="height: 20rpx;"></view>
 
-    <view class="top_zone" hidden="{{teacher_info}}">
+    <view class="top_zone" hidden="{{teacher_info || item.studentname == null}}">
 
         
 

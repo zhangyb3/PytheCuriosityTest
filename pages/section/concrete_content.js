@@ -13,14 +13,14 @@ Page({
   data:{
     preview_img_url: config.PytheFileServerURL ,
     selectItem: {},
-
+    from_page: 'home_page',
   },
   onLoad:function(parameters){
    
     console.log(parameters.selectItem);
 
     this.data.selectItem = JSON.parse(decodeURIComponent(parameters.selectItem)); 
-    
+    this.data.from_page = parameters.from_page;
 
   },
   onReady:function(){
@@ -31,7 +31,15 @@ Page({
     this.setData({
       alreadyRegister: wx.getStorageSync('alreadyRegister'),
     });
-    base.getDetailContent(this,this.data.selectItem);
+
+    if(this.data.from_page == 'home_page')
+    {
+      base.getDetailContent(this,this.data.selectItem);
+    }
+    if(this.data.from_page == 'answer_page')
+    {
+      base.getDetailContent(this,this.data.selectItem);
+    }
 
   },
 

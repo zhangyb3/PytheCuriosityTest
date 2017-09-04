@@ -11,7 +11,7 @@
     </view>
     
     <view class="organization_description_zone" >
-            <view class="organization_image_container">
+            <view class="organization_image_container" data-org='{{organization}}' bindtap="changeOrgAvatar">
                 <image class="organization_image" wx:if="{{organization.avatar == null}}" src="../../images/add_op.png"></image>
                 <image class="organization_image" wx:if="{{organization.avatar != null}}" src="{{organization.avatar}}"></image>
             </view>

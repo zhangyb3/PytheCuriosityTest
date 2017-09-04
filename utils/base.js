@@ -6,6 +6,8 @@ var util = require("./util");
 
 const DETAIL_CONTENT_URL = `${config.PytheRestfulServerURL}/index2/question_answers`;
 
+const ANSWER_DETAIL_CONTENT_URL = `${config.PytheRestfulServerURL}/answer/detail`;
+
 const COMMIT_ANSWER_URL = `${config.PytheRestfulServerURL}/answer/insert/`;
 
 const COMMIT_QUESTION_URL = `${config.PytheRestfulServerURL}/question/insert/`;
@@ -43,10 +45,19 @@ const SELECT_BEST_ANSWER_URL = `${config.PytheRestfulServerURL}/me/question/sele
 
 function getDetailContent(that,selectItem)
 {
-  
+    var URL ;
+    if(that.data.from_page == 'home_page')
+    {
+      URL = DETAIL_CONTENT_URL;
+    }
+    if(that.data.from_page == 'answer_page')
+    {
+      URL = ANSWER_DETAIL_CONTENT_URL;
+    }
+
     //请求具体数据
     wx.request({
-      url: DETAIL_CONTENT_URL,
+      url: URL,
       data: {
         questionId: selectItem.questionid,
         userId: wx.getStorageSync(user.UserID),

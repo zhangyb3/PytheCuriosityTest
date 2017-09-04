@@ -12,7 +12,7 @@ var setupOrg;
 Page({
   data:{
 
-    teacherPhone:13828494261,
+    teacherPhone:'',
     organizationName:'辅导班',
     organizationDescription:'渣和无用改革',
     organizationAddress:'',

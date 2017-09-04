@@ -60,7 +60,7 @@ Page({
             var result = JSON.parse(res.data.data);
             that.data.upload_avatar_path = result.path;
 
-            //上传录音
+            
             var parameters = {
               path : that.data.upload_avatar_path,
               fileType : 'image',
