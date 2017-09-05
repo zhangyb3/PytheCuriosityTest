@@ -59,13 +59,22 @@
     height: 250rpx;  
 }
 
-.organization_image{
+.organization_image_null{
     margin-top: 35rpx;
     margin-left: 30rpx;
     width: 120rpx;
     height: 120rpx;
     border-radius: 50%;
     border: 1rpx dashed #999999;
+}
+
+.organization_image{
+    margin-top: 35rpx;
+    margin-left: 30rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+
 }
 
 .organization_description_text_zone{

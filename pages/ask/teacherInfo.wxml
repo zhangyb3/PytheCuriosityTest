@@ -14,7 +14,7 @@
  
   <scroll-view  class="scroll_list"  upper-threshold="50px" lower-threshold="50px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
 
-    <view class="description_container" style="background-image:url( {{checkTeacher.icon}});background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;" >
+    <view class="description_container" style="background-image:url( {{checkTeacher.icon}}) ;background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;" >
         <view class="avatar_container">
             <image class="avatar" src="{{checkTeacher.icon}}"></image>
         </view>

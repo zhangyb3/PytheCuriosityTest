@@ -28,6 +28,7 @@
                 </view>
                     <!--<text class="collect_icon" src="../../images/icon_language@2x.png">268
                 </text>-->
+                <view style="height:10rpx;"></view>
                 </view>
 
                 <view class="teacher_ask_section" wx:if="{{index_search_page == true || ask_page == true}}">

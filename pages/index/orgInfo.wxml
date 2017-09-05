@@ -1,6 +1,8 @@
 
 <import src="../listView/search_teacher_list.wxml" />
 
+
+
 <view class="index_page_container" >
 
     <view class="member_text_container">

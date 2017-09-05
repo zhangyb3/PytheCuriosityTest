@@ -13,7 +13,7 @@ Page({
     
     alreadySetupOrg: false,
     preview_img_url: config.PytheFileServerURL ,
-    
+    organization: {},
   },
   onLoad:function(options){
     // 页面初始化 options为页面跳转所带来的参数
@@ -46,6 +46,7 @@ Page({
           });
         }
 
+        that.data.organization = res.data.data;
         that.setData({
           organization: res.data.data,
         });
@@ -135,11 +136,9 @@ Page({
               method: 'GET', 
               success: function(res){
                 // success
-                wx.setStorageSync('userAvatarUrl', that.data.preview_img_url + parameters.path);
-                
-                that.data.personalInfo.avatar = that.data.preview_img_url + parameters.path;
+                that.data.organization.avatar = that.data.preview_img_url + parameters.path;
                 that.setData({
-                  personalInfo: that.data.personalInfo,
+                  organization: that.data.organization,
                 });
               },
               fail: function(res) {

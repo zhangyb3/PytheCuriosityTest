@@ -71,7 +71,7 @@
 
 .asker_name_container{
     float: left;
-    width: 50rpx;
+    /*width: 50rpx;*/
     height: 50rpx;
     /*display:table-cell;
     vertical-align:middle;

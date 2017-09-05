@@ -1,5 +1,8 @@
 /* pages/index/orgInfo.wxss */
 
+page{
+  background-color:#f3f1e4;
+}
 
 .index_page_container{
   width: 100%;

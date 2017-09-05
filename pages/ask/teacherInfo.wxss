@@ -17,6 +17,13 @@
 .description_container{
     width: 100%;
     /*height: auto;*/
+    color: black;
+
+}
+
+.description_container:before{
+    width: 100%;
+    background:rgba(255,255,255,0.1);
 }
 
 .avatar_container{
@@ -31,11 +38,13 @@
     width: 120rpx;
     height: 120rpx;
     border-radius: 50%;
+    opacity: 1.0;
 }
 
 .teacher_name_container{
     width: 100%;
     height: 100rpx;
+    color: black;
     justify-content:center;
     align-items:center;
     display:-webkit-flex;
@@ -44,6 +53,7 @@
 .org_name_container{
     width: 100%;
     height: 100rpx;
+    color: black;
     justify-content:center;
     align-items:center;
     display:-webkit-flex;
@@ -52,6 +62,7 @@
 .teacher_description_container{
     width: 100%;
     height: 150rpx;
+    color: black;
     justify-content:center;
     align-items:center;
     display:-webkit-flex;
