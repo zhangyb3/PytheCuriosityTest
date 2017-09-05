@@ -311,6 +311,65 @@ Page({
 
   },
 
+  likeTeacher:function(e){
+    var teacher = e.currentTarget.dataset.teacher;
+    console.log(teacher);
+    var teacher_index = e.currentTarget.dataset.index;
+    console.log(teacher_index);   
+
+     var that = this; 
+    
+    if(that.data.search_teacher_list[teacher_index].collectOrNot == false)
+    {
+      //通知数据库更新纪录
+      wx.request({
+        url: config.PytheRestfulServerURL + '/question/teacher/likes',
+        data: {
+          userId: wx.getStorageSync(user.UserID),
+          // teacherId: teacher.teacherid,
+          teacherId: teacher.userid,
+        },
+        method: 'GET', 
+        success: function(res){
+          
+
+          console.log(res);
+          if(res.data.data == 1)
+          {
+            that.data.ask_teacher_list[teacher_index].popularity++;
+            that.data.ask_teacher_list[teacher_index].isClick = 0;
+            that.setData({
+              ask_teacher_list: that.data.ask_teacher_list,
+            });
+            wx.showToast({
+              title: '点赞+1',
+              icon: 'success',
+              duration: 1000
+            });
+          }
+
+          if(res.data.data == '关注成功')
+          {
+            that.data.search_teacher_list[teacher_index].collectOrNot = true;
+            that.setData({
+              search_teacher_list: that.data.search_teacher_list,
+            });
+            wx.showToast({
+              title: '收藏成功',
+              icon: 'success',
+              duration: 1000
+            });
+          }
+          
+        },
+        fail: function(res) {
+          console.log(res);
+        }
+      });
+    }   
+    
+  },
+
   onHide:function(){
     // 页面隐藏
   },

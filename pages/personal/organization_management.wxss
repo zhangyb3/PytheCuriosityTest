@@ -55,7 +55,8 @@
 
 .organization_image_container{
     display: flex;
-    width: 150rpx;
+    width: 25%;
+    /*width: 150rpx;*/
     height: 250rpx;  
 }
 
@@ -79,11 +80,12 @@
 
 .organization_description_text_zone{
     /*display: flex;*/
-    position: fixed;
+    /*position: fixed;*/
     height: auto;
-    width: auto;
-    left: 170rpx;
-    right: 20rpx;
+    width: 60%;
+    /*width: auto;*/
+    /*left: 170rpx;*/
+    /*right: 20rpx;*/
     /*position: relative;*/
     flex-direction: column;
 }

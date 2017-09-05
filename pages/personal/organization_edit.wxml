@@ -10,7 +10,7 @@
                 <text class="input_hint">机构名称</text>
             </view>
             <view class="input_organization_name">
-                <input  bindinput="inputOrganizationName" value="{{orgInfo.name}}" auto-focus/>
+                <input  bindinput="inputOrganizationName" value="{{orgInfo.name}}" maxlength="10" auto-focus/>
             </view>
         </view>
 

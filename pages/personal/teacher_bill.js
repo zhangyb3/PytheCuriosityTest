@@ -56,6 +56,12 @@ Page({
     }
 
   },
+
+  checkQuestionAnswer:function(e){
+    var bill = e.currentTarget.dataset.bill;
+    console.log('check ' + JSON.stringify(bill) + " QA");
+  },
+
   onHide:function(){
     // 页面隐藏
   },

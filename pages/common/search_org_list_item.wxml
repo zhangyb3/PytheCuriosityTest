@@ -16,7 +16,7 @@
                     <text class="org_name">{{ item.name }}</text>
                     <!--简介-->
                     <view class="org_brief_wrap">
-                    <text class="org_brief">简介：{{item.description}}</text>
+                        <text class="org_brief">简介：{{item.description}}</text>
                     </view>
                     
                 </view>

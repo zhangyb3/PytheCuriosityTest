@@ -320,6 +320,10 @@ Page({
     else if((that.data.registerParams.status == 1 && that.data.registerParams.subjectId != null) || (that.data.registerParams.status == 0 && that.data.registerParams.gradeId != null))
     {
       //注册
+      that.setData({  
+        lock_register: true,
+      });
+
       wx.request({
         url: config.PytheRestfulServerURL + '/user/register/',
         data: {
@@ -346,6 +350,10 @@ Page({
                   console.log('用户点击确定')
                 }
               }
+            });
+            
+            that.setData({  
+              lock_register: false,
             });
           }
           else if(res.data.data.userid != null)
@@ -380,6 +388,10 @@ Page({
                 console.log('用户点击确定')
               }
             }
+          });
+
+          that.setData({  
+            lock_register: false,
           });
         },
         

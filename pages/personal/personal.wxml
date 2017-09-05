@@ -8,7 +8,7 @@
 
     <view style="height:20rpx;color:white;"></view>
 
-    <view class="personal_description_zone">
+    <view class="personal_description_zone" bindtap='personalDescriptionPage'>
         <view class="personal_avatar_zone">
             <view class="personal_avatar_container">
                 <image class="personal_avartar_image" src="{{userAvatarUrl}}"></image>
@@ -49,7 +49,7 @@
         
         <view class="personal_description_revise_zone">
 <view class="person_edit_icon_view">
-            <button class="person_edit_icon" bindtap='personalDescriptionPage'>
+            <button class="person_edit_icon" >
                 <image src="../../images/personal_icon_arrow_right@2x.png"></image>
             </button>
         </view>

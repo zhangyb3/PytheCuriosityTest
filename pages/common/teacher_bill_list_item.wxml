@@ -18,7 +18,7 @@
             </view>
         </view>
 
-        <view class="bill_link_container">
+        <view class="bill_link_container" data-bill='{{item}}' bindtap="checkQuestionAnswer">
             <view class="bill_link_text_container">
                 <text style="font-size: 32rpx;font-weight:bold;color:lightgray;">详情</text>
             </view>

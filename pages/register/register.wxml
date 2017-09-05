@@ -49,7 +49,7 @@
     </view>
 
     <view class="register_confirm">
-        <button class="register_confirm_button" bindtap="registerToMainPage">立即登录</button>
+        <button class="register_confirm_button" disabled="{[lock_register}}" bindtap="registerToMainPage">立即登录</button>
     </view>
 
     <view class="countdown_container" hidden="true">
