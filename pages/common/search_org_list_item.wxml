@@ -8,7 +8,7 @@
             <!--头像部分-->
                 <image class="org_icon" wx:if="{{item.avatar != null}}"  src="{{item.avatar}}"
                 ></image>
-                <image class="org_icon" wx:if="{{item.avatar == null}}"  src="../../images/add_op.png"
+                <image class="org_icon_null" wx:if="{{item.avatar == null}}"  src="../../images/add_op.png"
                 ></image>
             <!--介绍-->
                 <view class= "org_middle_wrapper">
