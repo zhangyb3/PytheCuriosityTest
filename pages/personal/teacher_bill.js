@@ -62,6 +62,10 @@ Page({
     console.log('check ' + JSON.stringify(bill) + " QA");
   },
 
+  withdraw:function(e){
+    console.log('teacher withdraw ');
+  },
+
   onHide:function(){
     // 页面隐藏
   },

@@ -5,7 +5,14 @@
 
     <view class="summary_zone">
         <view class="summary_text_view">
-            <text class="summary_text">{{account.summary}}</text>
+            <view class="summary_text_wrapper">
+            </view>
+            <view class="summary_text_wrapper">
+                <text class="summary_text">{{account.summary}}</text>
+            </view>
+            <view class="summary_text_wrapper" bindtap="withdraw">
+                <button class="withdraw_button">提现</button>
+            </view>
         </view>
         <view class="summary_hint_view">
             <text class="summary_hint">当前收益(元)</text>
