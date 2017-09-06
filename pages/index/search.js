@@ -160,7 +160,7 @@ Page({
     //   });
     //   loadingSelections.call(this);
     // }
-    // if(wx.getStorageSync('alreadyRegister') == 'yes')
+    if(wx.getStorageSync('alreadyRegister') == 'yes' && wx.getStorageSync(user.Status) == 0)
     {
       console.log("navigate to ask operation page");
       teacher['teacherid'] = teacher.userid;

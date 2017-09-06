@@ -275,7 +275,7 @@
 
 .reward_num_container{
     float: right;
-    width: 50rpx;
+    /*width: 100rpx;*/
     height: 50rpx;
     /*display:table-cell;
     vertical-align:middle;

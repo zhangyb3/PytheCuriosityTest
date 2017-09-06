@@ -22,9 +22,21 @@
             </view>
 
             <view class="item_content_container">
+
+                <!--<view class="person_edit_icon_view">
+                    <view class="person_edit_icon" >
+                        <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+                    </view>
+                </view>-->
                 
                 <view class="item_content" bindtap="changeAvatar">
+
                     <image class="item_content_avatar" src="{{personalInfo.avatar}}"></image>
+
+                    <view class="person_edit_icon" >
+                        <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+                    </view>
+
                 </view>
 
             </view>
@@ -57,8 +69,20 @@
 
             <view class="item_content_container">
                 
+                <!--<view class="person_edit_icon_view">
+                    <view class="person_edit_icon" >
+                        <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+                    </view>
+                </view>-->
+
                 <view class="item_content">
+
                     <text class="item_content_text">{{personalInfo.name}}</text>
+
+                    <view class="person_edit_icon" >
+                        <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+                    </view>
+
                 </view>
 
             </view>
@@ -88,10 +112,23 @@
             </view>
 
             <view class="item_content_container">
+
+                <!--<view class="person_edit_icon_view">
+                    <view class="person_edit_icon" >
+                        <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+                    </view>
+                </view>-->
                 
                 <view class="item_content">
-                     <text class="item_content_text_null" wx:if="{{personalInfo.orgName == null}}">尚无</text>
+
+
+                    <text class="item_content_text_null" wx:if="{{personalInfo.orgName == null}}">尚无</text>
                     <text class="item_content_text" wx:if="{{personalInfo.orgName != null}}">{{personalInfo.orgId}}</text>
+
+                    <view class="person_edit_icon" >
+                        <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+                    </view>
+
                 </view>
 
             </view> 
@@ -114,9 +151,25 @@
 
             <view class="item_hint_container_">
                 
-                <!--<view class="item_hint">-->
-                    <text class="item_hint_text">简介:</text>
-                <!--</view>-->
+                <view class="item_hint_container">
+
+                    <view class="item_hint">
+                        <text class="item_hint_text">简介:</text>
+                    </view>
+
+                </view>
+
+                <view class="item_content_container">
+
+                    <view class="item_content">
+
+                        <view class="person_edit_icon" >
+                            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+                        </view>
+
+                    </view>
+
+                </view>
 
             </view>
 

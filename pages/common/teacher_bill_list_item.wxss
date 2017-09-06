@@ -71,7 +71,7 @@
 }
 
 .bill_source_text_view_container{
-    margin-left: 100rpx;
+    margin-left: 50rpx;
 }
 
 .bill_source_text_view{

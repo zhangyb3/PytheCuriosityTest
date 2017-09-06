@@ -22,8 +22,8 @@
         </view>
         <view class="liker_zone" wx:if="{{ (item.likesnum != null && item.likesnum >= 0) || finished == true }}">
             <view class="liker_num_container">
-                <text class="liker_num" hidden="{{finished == false}}">{{item.likesnum}}</text>
-                <text class="liker_num" hidden="{{finished == true}}">{{item.answerlikenum}}</text>
+                <!--<text class="liker_num" hidden="{{finished == false}}">{{item.likesnum}}</text>-->
+                <text class="liker_num" hidden="{{finished == true}}">{{item.likesnum}}</text>
             </view>
             <view class="liker_img_container">
                 <image class="liker_img" src="../../images/liked.png"></image>
@@ -59,7 +59,7 @@
         <view class="reward_zone" >
 
             <view class="reward_num_container">
-                <text class="reward_num">{{item.rewardnum}}</text>
+                <text class="reward_num">{{item.reward}}</text>
             </view>
             <view class="reward_img_container">
                 <image class="reward_img" src="../../images/icon_money.png"></image>

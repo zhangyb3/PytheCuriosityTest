@@ -329,7 +329,7 @@ Page({
   },
 
   askOneTeacher:function(e){
-
+    console.log(wx.getStorageSync(user.Status));
     //先判断是否已注册
     if(wx.getStorageSync('alreadyRegister') == 'no')
     {
@@ -338,7 +338,7 @@ Page({
       });
       loadingSelections.call(this);
     }
-    if(wx.getStorageSync('alreadyRegister') == 'yes')
+    if(wx.getStorageSync('alreadyRegister') == 'yes' && wx.getStorageSync(user.Status) == 0)
     {
       console.log("navigate to ask operation page");
       var parametersJSON = e.currentTarget.dataset.teacher;
