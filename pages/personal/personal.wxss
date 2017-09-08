@@ -70,6 +70,7 @@
     /*position: fixed;*/
     height: 100%;
     width: 70%;
+    min-height: 200rpx;
     /*left: 170rpx;*/
     /*right: 20rpx;*/
     /*position: relative;*/

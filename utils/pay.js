@@ -17,7 +17,7 @@ var requestOrder = (success, fail) => {
 
           session_id : sessionID, 
           mch_id : config.MerchantID,
-          body : "pythe_test",
+          body : "pythe",
           total_fee : wx.getStorageSync('rewardNum')*100,
           notify_url : "https://www.haowen.mobi/",
           trade_type : "JSAPI",

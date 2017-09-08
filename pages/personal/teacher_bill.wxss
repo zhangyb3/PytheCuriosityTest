@@ -38,8 +38,13 @@
     display:-webkit-flex;
 }
 
+.summary_icon{
+    height: 100rpx;
+    width: 100rpx;
+}
+
 .summary_text{
-    font-size: 100rpx;
+    font-size: 50rpx;
     font-weight: bold;
     float: left;
     color: white;

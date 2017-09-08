@@ -361,7 +361,17 @@ Page({
         }
       })
     }
-      
+    if(wx.getStorageSync(user.Status) == 1)
+    {
+      wx.showModal({
+        content: '老师尚未开通发问功能',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          }
+        }
+      });
+    } 
   },
 
 

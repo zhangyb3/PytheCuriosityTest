@@ -1,0 +1,28 @@
+
+
+.backrground_wrapper{
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+
+}
+
+.background_image_container{
+
+    background-repeat:no-repeat; 
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+    background: rgba(255,255,255,0.2);
+
+}
+
+.background_image{
+    filter: blur(3px);
+    opacity: 0.2;
+    /*color: rgba(255,255,255,1);*/
+}
+

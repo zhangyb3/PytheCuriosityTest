@@ -1,2 +1,32 @@
-<!--pages/personal/student_bill.wxml-->
-<text>pages/personal/student_bill.wxml</text>
+
+<import src="../common/student_bill_list_item.wxml" />
+
+<scroll-view  class="scroll_list"  upper-threshold="50px" lower-threshold="50px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
+
+    <view class="summary_zone">
+        <view class="summary_text_view">
+            <view class="summary_text_wrapper">
+                <image class="summary_icon" src="../../images/wallet.png"></image>
+            </view>
+            <view class="summary_text_wrapper">
+                <text class="summary_text">{{account.summary}}</text>
+            </view>
+            <view class="summary_text_wrapper" bindtap="enchashment">
+                <!--<button class="withdraw_button">提现</button>-->
+            </view>
+        </view>
+        <view class="summary_hint_view">
+            <text class="summary_hint">当前消费(元)</text>
+        </view>
+    </view>
+
+    <block wx:for="{{student_bill_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
+        
+        <view class="student_bill_container" >
+          <template is="student_bill_list_item" data="{{item,index,preview_img_url}}"></template>
+        </view>
+        <!--<view class="interval"></view>-->
+
+    </block>
+
+</scroll-view>

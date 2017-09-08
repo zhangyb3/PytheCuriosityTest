@@ -29,9 +29,9 @@
             </view>
 
             <view class="person_org_view" wx:if="{{orgName == null}}">
-                <text class="person_org" style="color:white;" >
+                <!--<text class="person_org" style="color:white;" >
                 FREELANCE
-                </text>
+                </text>-->
             </view>
             
             <!--<view class="personal_summary_wrap">
@@ -119,7 +119,7 @@
     <view class="about_us_zone">
         <view class="balance_detailed_rules personal_operation_item" bindtap="checkPersonalBill">
 <view class="menu_list_icon_wrap">
-    <image class="menu_list_icon_detail" src="../../images/personal_iocn_jiesuan@2x.png"></image>
+    <image class="menu_list_icon_detail" src="../../images/wallet_icon.png"></image>
 </view>
             <text class="rules personal_operation_item_text">钱包</text>
             <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>

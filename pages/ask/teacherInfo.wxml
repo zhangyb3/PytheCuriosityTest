@@ -3,6 +3,8 @@
 <import src="../common/question_answer_list_item.wxml" />
 <import src="../common/teacher_info_summary_section.wxml" />
 
+<import src="../pop/description_background.wxml" />
+
 <!--<view class="teacher_info_page_container">-->
 
 <!--<view class="description_container_background" >
@@ -14,15 +16,19 @@
  
   <scroll-view  class="scroll_list"  upper-threshold="50px" lower-threshold="50px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
 
-    <view class="description_container" style="background-image:url( {{checkTeacher.icon}}) ;background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;" >
+    <view class="description_background_container">
+        <template is="description_background" data="{{checkTeacher}}" ></template>
+    </view>
+
+    <view class="description_container"  >
         <view class="avatar_container">
             <image class="avatar" src="{{checkTeacher.icon}}"></image>
         </view>
         <view class="teacher_name_container">
             <text style="font-size:50rpx;font-weight:bold;">{{checkTeacher.name}}</text>
         </view>
-        <view class="org_name_container">
-            <text style="font-size:40rpx;">就职于 {{checkTeacher.org}}</text>
+        <view class="org_name_container" data-org="{{checkTeacher.org}}">
+            <text wx:if="{{checkTeacher.org != null}}" style="font-size:40rpx;">就职于 {{checkTeacher.orgName}}</text>
         </view>
         <view class="teacher_description_container">
             <view class="teacher_description">

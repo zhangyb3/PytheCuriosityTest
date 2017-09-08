@@ -12,6 +12,7 @@ var fileSys = require("../../utils/file.js");
 Page({
   data:{
 
+    userRole: 0,
     preview_img_url: config.PytheFileServerURL ,
 
   },
@@ -21,7 +22,9 @@ Page({
     this.data.personalInfo = JSON.parse(decodeURIComponent(parameters.personalInfo)); 
     this.setData({
       personalInfo: this.data.personalInfo,
+      userRole: this.data.userRole,
     });
+
 
   },
   onReady:function(){
@@ -29,8 +32,13 @@ Page({
   },
   onShow:function(){
     // 页面显示
+    this.data.userRole = wx.getStorageSync(user.Status);
     this.data.personalInfo.name = wx.getStorageSync(user.UserNickName);
     this.data.personalInfo.description = wx.getStorageSync(user.UserDescription);
+    this.setData({
+      personalInfo: this.data.personalInfo,
+      userRole: this.data.userRole,
+    });
 
   },
 

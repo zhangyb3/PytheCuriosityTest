@@ -1,0 +1,14 @@
+<!-- 背景层 -->
+
+<template name="description_background">
+
+
+    <view class="backrground_wrapper" data-teacher="{{checkTeacher}}">
+        <view class="background_image_container" >
+            <image class="background_image" src="{{checkTeacher.icon}}"></image>
+        </view>
+    </view>
+
+
+
+</template>

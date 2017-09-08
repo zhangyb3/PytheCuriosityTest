@@ -1,4 +1,4 @@
-// pages/personal/teacher_bill.js
+
 var listViewUtil=require("../../utils/listViewUtil.js");
 var netUtil=require("../../utils/netUtil.js");
 var utils=require("../../utils/util.js");
@@ -9,6 +9,7 @@ var user = require("../../utils/user.js");
 
 Page({
   data:{
+    account: {},
     teacher_bill_list: [],
     list_mode: "teacher_bill",
   },
@@ -39,6 +40,27 @@ Page({
 
     if(wx.getStorageSync(user.Status) == 1)
     {
+      wx.request({
+        url: config.PytheRestfulServerURL + '/user/statistics',
+        data: {
+          userId: wx.getStorageSync(user.UserID),
+        },
+        method: 'GET',
+        success: function(res){
+          // success
+          that.data.account.summary = res.data.data.income.toFixed(2);
+          that.setData({
+            account: that.data.account,
+          });
+        },
+        fail: function(res) {
+          // fail
+        },
+        complete: function(res) {
+          // complete
+        }
+      });
+
       listViewUtil.loadList(that,'teacher_bill',config.PytheRestfulServerURL,
         base.TEACHER_QUERY_BILL,
         10,
@@ -62,7 +84,7 @@ Page({
     console.log('check ' + JSON.stringify(bill) + " QA");
   },
 
-  withdraw:function(e){
+  enchashment:function(e){
     console.log('teacher withdraw ');
   },
 

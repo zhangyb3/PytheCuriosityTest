@@ -77,22 +77,26 @@
     /*margin-top: 10rpx;*/
     height: 80rpx;
     width: 100%;
+
+    line-height: 40rpx;
 }
 
 .teacher_brief{
     display: flex;
     font-size: 32rpx;
-    line-height: 32rpx;
+    /*line-height: 32rpx;*/
     /*margin-top: 10rpx;*/
     /*line-height: 26rpx;*/
     /*line-height: 25rpx;*/
     /*height: auto;*/
     width: 100%;
     /*margin-bottom: 15px;*/
+    
     color: #999999;
     text-overflow: -o-ellipsis-lastline;
     overflow: hidden;
     text-overflow: ellipsis;
+    word-break: break-all;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;

@@ -503,7 +503,7 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
                 // temp.answercontent = JSON.parse(temp.answercontent);
                 temp.starttime = util.formatDate(temp.starttime);
             }
-            if(list_type == 'teacher_bill')
+            if(list_type == 'teacher_bill' || list_type == 'student_bill')
             {
                 temp.day = util.formatDay(temp.operationTime);
                 temp.hms = util.formatHMS(temp.operationTime);
@@ -653,6 +653,11 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             that.data.teacher_bill_list=that.data.teacher_bill_list.concat(concatDatas);
             console.log('before setData----------'+that.data.search_org_list);
             that.setData({teacher_bill_list:that.data.teacher_bill_list});
+        }
+        if(list_type == 'student_bill'){
+            that.data.student_bill_list=that.data.student_bill_list.concat(concatDatas);
+            console.log('before setData----------'+that.data.search_org_list);
+            that.setData({student_bill_list:that.data.student_bill_list});
         }
 
     };

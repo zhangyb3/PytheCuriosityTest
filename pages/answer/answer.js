@@ -375,7 +375,7 @@ Page({
     {
       that.data.userRole = 0;
       var myAnsweredParams = {
-        teacherId : wx.getStorageSync(user.TeacherID),
+        studentId : wx.getStorageSync(user.TeacherID),
         pageSize : 10,
         pageNum : 1,
         
@@ -398,7 +398,7 @@ Page({
       //加载未答列表
       var that = this;
       var myUnanswerParams = {
-        teacherId : wx.getStorageSync(user.TeacherID),
+        studentId : wx.getStorageSync(user.TeacherID),
         pageSize : 10,
         pageNum : 1,
         

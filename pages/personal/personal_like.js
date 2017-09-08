@@ -9,6 +9,9 @@ var base = require("../../utils/base.js");
 var user = require("../../utils/user.js");
 var fileSys = require("../../utils/file.js");
 
+var selectItem;
+var itemIndex;
+
 Page({
   data:{
     personal_like_menu:[{
@@ -125,20 +128,21 @@ Page({
   },
 
   selectOneItem:function(e){
-    var selectItem,itemIndex;
+    
     selectItem = e.currentTarget.dataset.item;
     itemIndex = e.currentTarget.dataset.index;
     console.log(JSON.stringify(selectItem) + "," + itemIndex);
 
     // this.setData({hide_select_item:false});
-
+    // this.setData({hide_loading:false});
     selectItem.playingVoice = false;
+
+
     //进入详细列表
     // base.cleanCacheFile(20);
-    // base.getDetailContent(this,selectItem);
-    
+    //base.getDetailContent(this,selectItem);
     wx.navigateTo({
-      url: '../section/concrete_content?selectItem=' + JSON.stringify(selectItem),
+      url: '../section/concrete_content?selectItem=' + JSON.stringify(selectItem) + '&from_page=' + 'home_page',
       success: function(res){
         // success
       },
@@ -149,6 +153,7 @@ Page({
         // complete
       }
     });
+
   },
   returnIndexPage: function(e) {
       console.log("return to index page");

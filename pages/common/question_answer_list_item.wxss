@@ -187,10 +187,12 @@
     
     word-break:break-all;
     overflow: hidden;
-    text-overflow: ellipsis ;
+    text-overflow: -o-ellipsis-lastline;
     display: -webkit-box;
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
+
+    line-height: 50rpx;
 }
 
 .question_text{

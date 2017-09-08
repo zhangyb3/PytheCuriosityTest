@@ -60,6 +60,8 @@ Page({
       subjectId: null,
     },
 
+    organization: {},
+
     countdownText : '发送验证码',
     second: 60,
   },
@@ -199,6 +201,7 @@ Page({
       description: wx.getStorageSync(user.UserDescription),
       avatar: wx.getStorageSync('userAvatarUrl'),
       orgId: wx.getStorageSync(user.OrganizationID),
+      orgName: this.data.organization.name,
     };
 
     wx.navigateTo({
@@ -554,6 +557,7 @@ Page({
         // success
         if(res.data.status == 200)
         {
+          that.data.organization.name = res.data.data.organization.name;
           that.setData({
             orgName: res.data.data.organization.name,
           });

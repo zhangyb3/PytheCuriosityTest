@@ -6,11 +6,12 @@
     <view class="summary_zone">
         <view class="summary_text_view">
             <view class="summary_text_wrapper">
+                <image class="summary_icon" src="../../images/wallet.png"></image>
             </view>
             <view class="summary_text_wrapper">
                 <text class="summary_text">{{account.summary}}</text>
             </view>
-            <view class="summary_text_wrapper" bindtap="withdraw">
+            <view class="summary_text_wrapper" bindtap="enchashment">
                 <button class="withdraw_button">提现</button>
             </view>
         </view>

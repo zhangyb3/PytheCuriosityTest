@@ -11,7 +11,7 @@
                 ></image>
             </view>
             <!--名师中间部分:姓名,介绍,收藏-->
-                <view class= "teacher_middle_wrapper" data-teacher='{{item}}'>
+                <view class= "teacher_middle_wrapper" data-teacher='{{item}}' bindtap="checkTeacherInfo">
                 <!--教师姓名-->
                     <view style="height:10rpx;"></view>
                     <text class="teacher_content">{{ item.username }}</text>

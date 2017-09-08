@@ -54,14 +54,20 @@
     width: 100%;
     height: 100rpx;
     color: black;
+    
     justify-content:center;
     align-items:center;
     display:-webkit-flex;
 }
 
+.org_name_container text{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    
+}
+
 .teacher_description_container{
     width: 100%;
-    height: 150rpx;
+    /*height: 150rpx;*/
     color: black;
     justify-content:center;
     align-items:center;
@@ -73,11 +79,15 @@
     height: 100%;
 
     word-break:break-all;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
     display: -webkit-box;
-    -webkit-line-clamp: 3;
+    /*-webkit-line-clamp: 3;*/
     -webkit-box-orient: vertical;
+}
+
+.teacher_description text{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .statistic_container{
@@ -153,5 +163,6 @@
 
 @import "../common/question_answer_list_item.wxss";
 
+@import "../pop/description_background.wxss";
 
 /*@import "../listView/question_answer_list.wxss";*/
