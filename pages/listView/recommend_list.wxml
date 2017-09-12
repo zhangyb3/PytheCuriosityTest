@@ -11,7 +11,7 @@
       <block wx:for="{{infos}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         
         <view class="question_answer_container" >
-          <template is="question_answer_list_item" data="{{item,index,preview_img_url,alreadyRegister,recommend}}"></template>
+          <template is="question_answer_list_item" data="{{item,index,preview_img_url,alreadyRegister,recommend,index_page}}"></template>
         </view>
         <view style="height:10rpx;"></view>
       </block>

@@ -5,12 +5,12 @@
 <!--列表-->
 
   <scroll-view  class="teacher_scroll_list"  wx:if="{{hide_teacher_list == false}}"upper-threshold="0px" lower-threshold="0px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh">
-      <view class="occupy" wx:if="{{index_search_page}}" style="height:200rpx;"></view>
+      <view class="occupy" wx:if="{{search_page}}" style="height:200rpx;"></view>
 
       <block wx:for="{{search_teacher_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         
         <view class="search_teacher_list_container" >
-          <template is="search_teacher_list_item" data="{{item,index,alreadyRegister,add_teacher_page,index_search_page,teacher_edit,user,org,ask_page}}"></template>
+          <template is="search_teacher_list_item" data="{{item,index,alreadyRegister,add_teacher_page,search_page,teacher_edit,user,org,ask_page}}"></template>
         </view>
 
         <view class="interval"></view>

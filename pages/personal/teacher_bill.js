@@ -85,7 +85,29 @@ Page({
   },
 
   enchashment:function(e){
-    console.log('teacher withdraw ');
+    var account = e.currentTarget.dataset.account;
+    console.log('teacher enchashment ' + JSON.stringify(account));
+
+    wx.request({
+      url: config.PytheRestfulServerURL + '/user/enchashment',
+      data: {
+        userId: wx.getStorageSync(user.UserID),
+        roleStatus: wx.getStorageSync(user.Status),
+        money: account.summary,
+        openId: wx.getStorageSync(user.OpenID),
+      },
+      method: 'POST', 
+      success: function(res){
+        // success
+        console.log(res);
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
   },
 
   onHide:function(){

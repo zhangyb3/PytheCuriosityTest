@@ -22,7 +22,7 @@
                 </view>
                     
 
-                <button class="org_ask_section" wx:if="{{index_search_page == true}}" data-org="{{item}}" bindtap="askOneOrg">
+                <button class="org_ask_section" wx:if="{{search_page == true}}" data-org="{{item}}" bindtap="askOneOrg">
                 <text>查看详情</text>  
                 </button>
 

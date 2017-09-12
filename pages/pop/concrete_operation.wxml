@@ -1,0 +1,27 @@
+<!-- 弹出层 -->
+
+<template name="concrete_operation">
+
+<view class="operation_zone_background">
+</view>
+
+<view class="operation_zone_container" >
+
+    <view class="operation_zone" >
+
+        <view class="collect_view_wrap">
+        <view class="collect_wrap" wx:if="{{alreadyRegister == 'yes'}}" data-selected="{{answer}}" data-answer_index="{{answer_index}}" bindtap='likeAnswer'><image wx:if="{{answer.isClick == 0}}" class="collect_icon_img" src="../../images/unlike.png"></image><image wx:if="{{answer.isClick == 1}}" class="collect_icon_img" src="../../images/liked.png"></image><text class="collect_num" >{{answer.likesnum}}</text></view>
+        </view>
+        
+
+
+
+        
+        <view class="reward_answer" data-selected='{{answer}}'  data-question='{{question}}' bindtap='rewardAnswer'>鼓励一下</view>
+
+
+    </view>
+
+</view>
+
+</template>

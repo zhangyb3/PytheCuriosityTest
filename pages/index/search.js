@@ -38,7 +38,7 @@ Page({
     search_teacher_list:[],
     search_org_list:[],
 
-    index_search_page: true,
+    search_page: true,
 
     list_mode: 'index_search_knowledge',
     list_type: 'index',

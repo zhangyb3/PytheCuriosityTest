@@ -58,10 +58,10 @@
 
         <view class="reward_zone" >
 
-            <view class="reward_num_container">
+            <view class="reward_num_container" hidden="{{index_page == true || search_page == true}}">
                 <text class="reward_num">{{item.reward}}</text>
             </view>
-            <view class="reward_img_container">
+            <view class="reward_img_container" hidden="{{index_page == true || search_page == true}}">
                 <image class="reward_img" src="../../images/icon_money.png"></image>
             </view>
             <view class="time_container">

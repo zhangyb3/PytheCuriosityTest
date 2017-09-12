@@ -50,7 +50,7 @@
     color: white;
 }
 
-.withdraw_button{
+.enchashement_button{
     font-size: 50rpx;
     font-weight: bold;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;

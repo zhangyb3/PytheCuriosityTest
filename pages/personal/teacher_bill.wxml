@@ -11,8 +11,8 @@
             <view class="summary_text_wrapper">
                 <text class="summary_text">{{account.summary}}</text>
             </view>
-            <view class="summary_text_wrapper" bindtap="enchashment">
-                <button class="withdraw_button">提现</button>
+            <view class="summary_text_wrapper" data-account="{{account}}" bindtap="enchashment">
+                <button class="enchashement_button">提现</button>
             </view>
         </view>
         <view class="summary_hint_view">

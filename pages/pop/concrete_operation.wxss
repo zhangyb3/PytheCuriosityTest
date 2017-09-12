@@ -1,0 +1,106 @@
+
+.operation_zone_background{
+    z-index: 2;
+    position: fixed;
+    bottom: 0;
+    height: 90rpx;
+    width: 100%;
+    background-color: #f3f1e4;
+}
+
+
+.operation_zone_container{
+    
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.operation_zone{
+    
+    height: 90rpx;
+
+    display: flex;
+    flex-direction: row;
+
+    /*margin-left: 40rpx;
+    margin-right: 40rpx;*/
+    width: 90%;
+    
+    justify-content: space-between;
+    
+    z-index: 3;
+    position: fixed;
+    bottom: 0;
+}
+
+.operation_zone>text {
+    width: 100%;
+    text-align: center;
+    font-size: 28rpx;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    color: #A9A9A9;
+}
+
+.operation_zone>text:not(:first-child) {
+    border-left: 1px solid #EEE;
+}
+
+.like_answer_image{
+    width: 34rpx;
+    height: 40rpx;
+    
+}
+
+.operation_zone>text:before {
+    content: '';
+    display: block;
+    width: 18px;
+    height: 18px;
+    margin-right: 2px;
+    position: relative;
+    bottom: 1px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+}
+
+.like_answer:before{
+    display: flex;
+    flex-direction: row;
+    /*background-image: url(../../images/like.png);*/
+    /*background-size: 18px; */
+}
+
+.not_like_answer:before{
+    display: flex;
+    flex-direction: row;
+    background-image: url(../../images/not_like.png);
+    background-size: 18px; 
+}
+
+/*.reward_answer:before{
+    background-image: url(../../images/money.png);
+    background-size: 18px; 
+}*/
+
+/*.reward_answer{
+    width: 60rpx;
+    height: 90rpx;
+}*/
+.reward_answer{
+    width: 140rpx;
+    height: 50rpx; 
+    margin-top: 20rpx;
+    
+    line-height: 50rpx;
+    color: #3aa4f1;
+    font-size: 32rpx;
+    border-radius: 14rpx;
+    border: 1rpx solid #3aa4f1;
+    text-align: center;
+
+}
