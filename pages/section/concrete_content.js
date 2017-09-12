@@ -177,12 +177,13 @@ Page({
 
   //打赏答案
   rewardAnswer:function(e){
-    var selected = e.currentTarget.dataset.selected;
+    var answer = e.currentTarget.dataset.selected;
     var question = e.currentTarget.dataset.question;
-    console.log(selected);
+    console.log(JSON.stringify(answer) + JSON.stringify(question));
     var parametersJSON ={
       questionId: question.questionid,
-      answerId: selected.answerid,
+      answerId: answer.answerid,
+      answerTeacher: answer.userid,
       payFee: true,
     };
     var parametersString = netUtil.json2Form(parametersJSON);

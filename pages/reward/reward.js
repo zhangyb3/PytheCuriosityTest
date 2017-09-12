@@ -5,6 +5,7 @@ var app = getApp()
 
 var pay = require('../../utils/pay.js');
 var config = require('../../utils/config.js');
+var user = require('../../utils/user.js');
 
 var js_code;
 var user_info={
@@ -33,6 +34,7 @@ Page({
     this.data.payFee = parameters.payFee;
     this.data.payAnswerId = parameters.answerId;
     this.data.payQuestionId = parameters.questionId;
+    this.data.answerTeacher = parameters.answerTeacher;
 
     var that = this;
     this.setData({
@@ -116,9 +118,11 @@ Page({
   rewardConfirm:function(e){
     pay.orderPay(
       (pay_result)=>{
+        console.log(pay_result);
+
         if(this.data.payFee)
         {
-          //更新打赏的数据库纪录
+          //更新打赏的Answer表数据库纪录
           wx.request({
             url: config.PytheRestfulServerURL + '/rewardnum',
             data: {
@@ -149,7 +153,16 @@ Page({
             complete: function() {
               // complete
             }
-          })
+          });
+
+          //更新数据库Bill表的纪录
+          var parameters = {
+            studentId: wx.getStorageSync(user.StudentID),
+            teacherId: this.data.answerTeacher,
+            answerId: this.data.payAnswerId,
+          };
+          pay.recordAnswerReward(parameters);
+
         }
       },
       (pay_result)=>{

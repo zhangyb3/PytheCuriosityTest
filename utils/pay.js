@@ -149,9 +149,39 @@ function recordQuestionPay(parameters)
     })
 }
 
+function recordAnswerReward(parameters)
+{
+    wx.request({
+      url: config.PytheRestfulServerURL + '/record/rewardAnswer',
+      data: {
+        studentId: parameters.studentId,
+        teacherId: parameters.teacherId,
+        answerId: parameters.answerId,
+        money: wx.getStorageSync('rewardNum'),
+        payId: wx.getStorageSync('last_pay_id'),
+        outTradeNo: wx.getStorageSync('last_out_trade_no'),
+      },
+      method: 'POST', 
+      success: function(res){
+        // success
+        console.log('record : ' + res);
+       
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+        console.log('record : ' + res);
+
+      }
+    })
+}
+
 module.exports = {
     requestOrder : requestOrder,
     orderPay : orderPay,
     enchashment: enchashment,
     recordQuestionPay: recordQuestionPay,
+    recordAnswerReward: recordAnswerReward
 }
