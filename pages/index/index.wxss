@@ -26,7 +26,7 @@
 }
 
 .index_page_list_container{
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
     width: 100%;
     z-index: 3;
     /*margin-top: 100rpx;*/

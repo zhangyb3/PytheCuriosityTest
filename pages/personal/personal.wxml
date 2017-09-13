@@ -58,6 +58,8 @@
         
     </view>
 
+    <view style="height:50rpx;"></view>
+    
     <view class="personal_operation_zone">
 <!--<view class="personal_ask personal_operation_item" bindtap='selectPersonalWallet'>
 <view class="menu_list_icon_wrap">
@@ -128,12 +130,12 @@
     </view>
 
 
-    <contact-button 
+    <!--<contact-button 
     type="default-light" 
     size="20"
     session-from="weapp"
     >
-    </contact-button>
+    </contact-button>-->
 
 
     <view class="login_container" hidden='{{hide_login}}'>

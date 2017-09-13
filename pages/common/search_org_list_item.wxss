@@ -117,10 +117,10 @@
     line-height: 62rpx;
     width: 116rpx;
     margin-right: 20rpx;
-    color: #3AA4F1;
+    color: #29bcbb;
     font-size: 28rpx;
     text-align: center;
-    border: 1px solid #3AA4F1;
+    border: 1px solid #29bcbb;
     background: none;
     /*padding: 0;*/
     padding: 0;
@@ -135,7 +135,7 @@
     font-size: 28rpx;
     /*padding-bottom: 10rpx;*/
     /*margin-bottom: 40rpx;*/
-    color: #3AA4F1;
+    color: #29bcbb;
     /*text-align: center;*/
 }
 

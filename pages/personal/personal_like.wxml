@@ -36,7 +36,7 @@
       <template is="personal_like_teacher_list" data="{{personal_like_teacher_list,scrollHeight}}"></template>
     </view>-->
 
-
+    <view style="height:10rpx;"></view>
     <view class="personal_like_answer_list_container" >
       <template is="personal_like_answer_list" data="{{personal_like_answer_list,preview_img_url,scrollHeight,finished}}"></template>
     </view>

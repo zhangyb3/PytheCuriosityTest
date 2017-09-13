@@ -35,25 +35,25 @@
 
   "window":{
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#d2cea9",
+    "navigationBarBackgroundColor": "#ffffff",
     "navigationBarTitleText": "派知好学",
     "navigationBarTextStyle":"black",
-    "backgroundColor": "#f3f1e4"
+    "backgroundColor": "#eaeaea"
     
   },
 
   "tabBar": {
       "color":"#ffffff",
-      "selectedColor":"#3AA4F1",
-      "backgroundColor":"#d2cea9",
+      "selectedColor":"#cfd37d",
+      "backgroundColor":"#29bcbb",
       "list": [
       {
         "pagePath": "pages/index/index",
         
         "color":"white",
         "selectedColor":"lightblue",
-        "iconPath":"images/tab_icon_know_nor@2x.png",
-        "selectedIconPath":"images/tab_icon_know_sel@2x.png",
+        "iconPath":"images/tab_icon_know_nor.png",
+        "selectedIconPath":"images/tab_icon_know_sel.png",
         "text":"知"
       },
       {
@@ -61,8 +61,8 @@
         
         "color":"white",
         "selectedColor":"lightblue",
-        "iconPath":"images/tab_icon_question_nor@2x.png",
-        "selectedIconPath":"images/tab_icon_question_sel@2x.png",
+        "iconPath":"images/tab_icon_question_nor.png",
+        "selectedIconPath":"images/tab_icon_question_sel.png",
         "text":"学"
       },
       {
@@ -70,8 +70,8 @@
         
         "color":"white",
         "selectedColor":"lightblue",
-        "iconPath":"images/tab_icon_answer_nor@2x.png",
-        "selectedIconPath":"images/tab_icon_answer_sel@2x.png",
+        "iconPath":"images/tab_icon_answer_nor.png",
+        "selectedIconPath":"images/tab_icon_answer_sel.png",
         "text":"教"
       },
       {
@@ -79,8 +79,8 @@
         
         "color":"white",
         "selectedColor":"lightblue",
-        "iconPath":"images/tab_icon_myself_nor@2x.png",
-        "selectedIconPath":"images/tab_icon_myself_sel@2x.png",
+        "iconPath":"images/tab_icon_myself_nor.png",
+        "selectedIconPath":"images/tab_icon_myself_sel.png",
         "text":"我"
       }
       ]

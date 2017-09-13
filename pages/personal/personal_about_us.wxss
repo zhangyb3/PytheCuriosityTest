@@ -9,7 +9,7 @@ position: fixed;
     
     display: flex;
     flex-direction: column;
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
     border: 1px solid #eee;
 }
 
@@ -22,7 +22,7 @@ position: fixed;
     
     display: flex;
     flex-direction: column;
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
 
 }
 

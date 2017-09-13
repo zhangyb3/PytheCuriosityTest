@@ -22,7 +22,7 @@
     left: 40rpx;
     right: 40rpx;
     height: 650rpx;
-    background-color: #f3f1e4;
+    background-color: #ffffff;
     z-index: 13;
 }
 
@@ -36,7 +36,7 @@
 .student_avatar{
     width: 50%;
     line-height: 84rpx;
-    background-color: #eeeeee;
+    background-color: #eaeaea;
     color: #999999;
     font-size: 34rpx;
     text-align: center;
@@ -45,8 +45,8 @@
 .student_avatar_after{
     width: 50%;
     line-height: 84rpx;
-    background-color: #f3f1e4;
-    color: #3AA4F1;
+    background-color: #ffffff;
+    color: #29bcbb;
     font-size: 34rpx;
     text-align: center;
 }
@@ -54,7 +54,7 @@
 .teacher_avatar{
     width: 50%;
     line-height: 84rpx;
-    background-color: #eeeeee;
+    background-color: #eaeaea;
     color: #999999;
     font-size: 34rpx;
     text-align: center;
@@ -63,8 +63,8 @@
 .teacher_avatar_after{
     width: 50%;
     line-height: 84rpx;
-    background-color: #f3f1e4;
-    color: #3AA4F1;
+    background-color: #ffffff;
+    color: #29bcbb;
     font-size: 34rpx;
     text-align: center;
 }
@@ -125,7 +125,7 @@ button_wrap{
     height: 76rpx;
     line-height:76rpx;
     -webkit-text-fill-color: #333;
-    background-color: #d2cea9;
+    background-color: #29bcbb;
     text-align: center;
     border-top :1px solid #CCCCCC;
     border-bottom :1px solid #CCCCCC;
@@ -173,7 +173,7 @@ button_wrap{
     line-height:30px;
     margin-bottom: 10px;
     width: 168rpx;
-    background-color: #d2cea9;
+    background-color: #29bcbb;
     -webkit-text-fill-color: #f5f5f5;
     text-align: center;
     font-size: 28rpx;
@@ -267,7 +267,7 @@ button_wrap{
     bottom: 30rpx;
     line-height: 74rpx;
     border-radius:4px;
-    background-color: #d2cea9;
+    background-color: #29bcbb;
     /*align-items: center;*/
     /*argin-top: 100px;*/
     border:none;

@@ -4,7 +4,7 @@
     flex-direction:row;
     /*justify-content: space-between;*/
     align-items: center;
-    background-color: #d2cea9;
+    background-color: #29bcbb;
     border-bottom: 1px solid #EEE;
     height:100rpx;
     width: 100%;
@@ -28,7 +28,7 @@
 
 .subject_name{
     display: flex;
-    color: #3aa4f1;
+    color: #cfd37d;
     font-size: 40rpx;
     width: 80rpx;
     /*margin-top: 8rpx;*/
@@ -43,7 +43,7 @@
     /*padding-left: 15%;*/
     margin-left: 10rpx;
     width:100%;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
 
     
 }
@@ -63,7 +63,7 @@
     /*background-color: #EEE;*/
     font-size: 36rpx;
     color: #999999;
-    background-color: #f5f5f5;
+    background-color: #ffffff;
     margin-left: 10rpx;
 
 }

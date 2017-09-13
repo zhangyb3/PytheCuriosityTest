@@ -9,8 +9,7 @@
 <import src="../common/index_search_page_filter.wxml" />
 <import src="../common/index_search_section_selector.wxml" />
 
-<import src="../pop/show_image_page.wxml" />
-
+<import src="../pop/show_image_page.wxml"/>
 
 
 <import src="../pop/register_lock_cover.wxml" />

@@ -1,12 +1,12 @@
 page{
 
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
 
 }
 
 .personal_description_page{
 
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
     width: 100%;
     height: 100%;
 

@@ -1,6 +1,7 @@
 <import src="../listView/search_teacher_list.wxml" />
 
 <view class="teacher_phone_search_container" >
+
     <view class="input_view" >
         <input class="input" type="text" value="{{joinTeacherPhone}}" bindinput="inputTeacherPhone" ></input>
         <view class="search_button"    bindtap='searchTeacherByPhone'><image src="../../images/index_icon_serch@2x.png"></image>

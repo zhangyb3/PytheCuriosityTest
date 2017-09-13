@@ -9,19 +9,19 @@
     
     display: flex;
     flex-direction: column;
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
 }
 
 .list_bottom{
   height: 10px;
-  background-color: #f3f1e4;
+  background-color: #eaeaea;
 }
 
 .personal_like_answer_list_container{
   height: 100px;
   /*margin-top: 100rpx;*/
   /*border-bottom: 1px solid #fff;*/
-  background-color: #f3f1e4;
+  background-color: #eaeaea;
 }
 
 .personal_like_teacher_list_container{

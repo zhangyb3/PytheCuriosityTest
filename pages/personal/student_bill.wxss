@@ -7,7 +7,7 @@
 .summary_zone{
     width: 100%;
     height: auto;
-    background-color: #d2cea9;
+    background-color: #29bcbb;
 
     /*justify-content:center;
     align-items:center;
@@ -60,7 +60,7 @@
 
 .summary_hint_view{
     width: 100%;
-    height: 40rpx;
+    height: 80rpx;
 
     justify-content:center;
     align-items:center;

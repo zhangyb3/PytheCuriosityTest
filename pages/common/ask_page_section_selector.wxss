@@ -15,7 +15,7 @@
 .middle_line_wrap{
     display: flex;
     width: 2px;
-    background-color: #d2cea9;
+    background-color: #29bcbb;
     /*top: 15rpx;*/
     /*bottom: 30rpx;*/
     height: 100rpx;
@@ -37,7 +37,7 @@
     text-align: center;
     /*border: 1px;*/
     color: #fff;
-    background-color: #d2cea9;
+    background-color: #29bcbb;
     
     justify-content: center;
     align-items: center;
@@ -45,8 +45,8 @@
 }
 
 .bar_item.active{
-    color: #3AA4F1;
-    background-color: #d2cea9;
+    color: #cfd37d;
+    background-color: #29bcbb;
     font-size: 40rpx;
 }
 

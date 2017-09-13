@@ -1,7 +1,7 @@
 /* pages/index/orgInfo.wxss */
 
 page{
-  background-color:#f3f1e4;
+  background-color:#eaeaea;
 }
 
 .index_page_container{
@@ -12,8 +12,8 @@ page{
 
 .member_text_container{
   /*margin-top: 50rpx;*/
-  height: 50rpx;
-  background-color: #f3f1e4;
+  height: 100rpx;
+  background-color: #eaeaea;
 
   justify-content:center;
   align-items:center;

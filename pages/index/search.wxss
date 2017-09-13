@@ -55,26 +55,26 @@
 .index_page_list_container{
   margin-top: 100rpx;
   width: 100%;
-  background-color: #f3f1e4;
+  background-color: #eaeaea;
 }
 
 .search_knowledge_list_container{
   width: 100%;
-  background-color: #f3f1e4;
+  background-color: #eaeaea;
   /*margin-top: 200rpx;*/
   
 }
 
 .search_teacher_list_container{
   width: 100%;
-  background-color: #f3f1e4;
+  background-color: #eaeaea;
   /*margin-top: 200rpx;*/
   
 }
 
 .search_org_list_container{
   width: 100%;
-  background-color: #f3f1e4;
+  background-color: #eaeaea;
   /*margin-top: 200rpx;*/
   
 }
