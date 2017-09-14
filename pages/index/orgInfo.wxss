@@ -13,7 +13,7 @@ page{
 .member_text_container{
   /*margin-top: 50rpx;*/
   height: 100rpx;
-  background-color: #eaeaea;
+  background-color: #29bcbb;
 
   justify-content:center;
   align-items:center;
@@ -31,5 +31,173 @@ page{
   /*margin-top: 50rpx;*/
 }
 
+.teacher_info_page_container{
+    width: 100%;
+    /*height: auto;*/
+
+}
+
+.description_container_background{
+    width: 100%;
+    /*height: 100%;*/
+    height: auto;
+    filter: blur(10px);
+    z-index: 1;
+    /*opacity: 50;*/
+}
+
+.description_container{
+    width: 100%;
+    /*height: auto;*/
+    color: black;
+
+}
+
+.description_container:before{
+    width: 100%;
+    background:rgba(255,255,255,0.1);
+}
+
+.avatar_container{
+    width: 100%;
+    height: 150rpx;
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.avatar{
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 50%;
+    opacity: 1.0;
+}
+
+.org_name_container{
+    width: 100%;
+    height: 100rpx;
+    color: black;
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.org_address_container{
+    width: 100%;
+    height: 100rpx;
+    line-height: 30rpx;
+    color: black;
+    
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.org_address_container text{
+    width: 60%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+}
+
+.org_description_container{
+    width: 100%;
+    /*height: 150rpx;*/
+    color: black;
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.org_description{
+    width: 80%;
+    height: 100%;
+
+    word-break:break-all;
+    /*overflow: hidden;*/
+    /*text-overflow: ellipsis;*/
+    display: -webkit-box;
+    /*-webkit-line-clamp: 3;*/
+    -webkit-box-orient: vertical;
+}
+
+.org_description text{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-weight: 600;
+}
+
+.statistic_container{
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1rpx solid #EEE;
+    width: 100%;
+
+}
+
+.middle_line_wrap{
+    display: flex;
+    width: 2px;
+    background-color: #29bcbb;
+    /*top: 15rpx;*/
+    /*bottom: 30rpx;*/
+    height: 100rpx;
+}
+
+.middle_line{
+    display: flex;
+    width: 1px;
+    background-color: #fff;
+    /*top: 15rpx;*/
+    /*bottom: 30rpx;*/
+    margin-top: 22rpx;
+    height: 60rpx;
+}
+.bar_item{
+    
+    width: 50%;
+    line-height: 100rpx;
+    text-align: center;
+    /*border: 1px;*/
+    color: #fff;
+    background-color: #29bcbb;
+    
+    justify-content: center;
+    align-items: center;
+    font-size: 40rpx;
+}
+
+.answer_questions_container{
+    width: 100%;
+    /*height: 100%;*/
+    /*bottom: 0;*/
+    background-color: #f3f1e4;
+    /*overflow-y: auto;*/
+}
+
+/*@import "../common/teacher_info_summary_section.wxss";*/
+
+.personal_answer_container{
+    display: flex;
+    /*position: relative;*/
+    /*height: 100px;*/
+    height:auto;
+    width: 100%;
+    /*height: 200rpx;*/
+    background-color: #f3f1e4;
+}
+
+.personal_answer_list{
+    display: flex;
+    position: relative;
+    height: 100px;
+    /*width: 100%;*/
+    margin-left: 0px;
+    margin-right: 0px;
+    background-color: blue;
+}
+
+@import "../common/search_teacher_list_item.wxss";
+
+@import "../pop/description_background.wxss";
 
 @import "../listView/search_teacher_list.wxss";

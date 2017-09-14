@@ -36,6 +36,32 @@ Page({
     
     var that = this;
     wx.request({
+      url: config.PytheRestfulServerURL + '/org/query',
+      data: {
+        orgId: this.data.organization.id,
+      },
+      method: 'GET',
+      success: function(res){
+        // success
+        console.log(res.data.data);
+        
+        var organization = res.data.data.organization;
+        that.data.organization = organization;
+        that.data.organizationName = organization.name;
+        that.data.organizationDescription = organization.description;
+        that.data.organizationAddress = organization.address;
+        that.setData({
+          checkOrg: organization,
+        });
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    });
+    wx.request({
       url: config.PytheRestfulServerURL + '/org/queryTeachers',
       data: {
         orgId: this.data.organization.id,
@@ -65,6 +91,16 @@ Page({
         // complete
       }
     })
+  },
+
+  checkOrgAddress:function(e){
+    console.log(e);
+    var organization = e.currentTarget.dataset.org;
+    wx.openLocation({
+      latitude: organization.latitude,
+      longitude: organization.longitude,
+      scale: 28
+    });
   },
 
   cancelTeacherFromOrg:function(e){

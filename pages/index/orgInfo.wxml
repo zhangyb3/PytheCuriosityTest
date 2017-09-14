@@ -1,9 +1,36 @@
 
-<import src="../listView/search_teacher_list.wxml" />
+
+<import src="../common/search_teacher_list_item.wxml" />
+<import src="../common/teacher_info_summary_section.wxml" />
+
+<import src="../pop/description_background.wxml" />
 
 
+ 
+  <scroll-view  class="scroll_list"  upper-threshold="50px" lower-threshold="50px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
 
-<view class="index_page_container" >
+    <view class="description_background_container">
+        <template is="description_background" data="{{checkOrg}}" ></template>
+    </view>
+
+    <view class="description_container"  >
+        <view class="avatar_container">
+            <image class="avatar" src="{{checkOrg.avatar}}"></image>
+        </view>
+        <view class="org_name_container">
+            <text style="font-size:50rpx;font-weight:bold;">{{checkOrg.name}}</text>
+        </view>
+        <view class="org_address_container" data-org="{{checkOrg}}" bindtap="checkOrgAddress">
+            <text  style="font-size:28rpx;">{{checkOrg.address}}</text>
+        </view>
+        <view class="org_description_container">
+            <view class="org_description">
+                <text style="font-size:30rpx;">{{checkOrg.description}}</text>
+            </view>
+            
+        </view>
+        <view class="interval" style="height:50rpx;"></view>
+    </view>
 
     <view class="member_text_container">
       <view class="member_text_view">
@@ -11,12 +38,23 @@
       </view>
       
     </view>
+
+    <block wx:for="{{search_teacher_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
+        
+        <view class="personal_answer_container" >
+          <template is="search_teacher_list_item" data="{{item,index,preview_img_url,finished,teacher_info}}"></template>
+        </view>
+        <view class="interval"></view>
+
+    </block>
+
+  </scroll-view>
+
+<!--</view>-->
+
+
+<!--</view>-->
+
     
 
-    <view class="search_teacher_list_container" >
-      <template is="search_teacher_list" data="{{search_teacher_list,hide_teacher_list,index_search_page,teacher_edit,user,org}}"></template>
-    </view>
-
-    <text></text>
-
-</view>
+    

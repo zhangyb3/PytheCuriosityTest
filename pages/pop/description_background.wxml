@@ -3,9 +3,10 @@
 <template name="description_background">
 
 
-    <view class="backrground_wrapper" data-teacher="{{checkTeacher}}">
+    <view class="backrground_wrapper" data-teacher="{{checkTeacher}}" data-org="{{checkOrg}}">
         <view class="background_image_container" >
-            <image class="background_image" src="{{checkTeacher.icon}}"></image>
+            <image class="background_image" wx:if="{{checkTeacher != null}}" src="{{checkTeacher.icon}}"></image>
+            <image class="background_image" wx:if="{{checkOrg != null}}" src="{{checkOrg.avatar}}"></image>
         </view>
     </view>
 
