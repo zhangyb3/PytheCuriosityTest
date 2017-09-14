@@ -5,7 +5,7 @@
     bottom: 0;
     height: 90rpx;
     width: 100%;
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
 }
 
 

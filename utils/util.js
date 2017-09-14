@@ -84,7 +84,7 @@ function formatDay(time) {
     ]).map(function(item) {
     let _item = item.toString()
     return _item[1] ? _item : '0'.concat(_item)
-  }).join("/")
+  }).join("-")
 }
 
 function formatHMS(time) {

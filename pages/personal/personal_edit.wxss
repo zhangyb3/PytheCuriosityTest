@@ -2,7 +2,7 @@
 
 .person_zone{
     position: fixed;
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
     top: 0rpx;
     left: 0rpx;
     right: 0rpx;
@@ -96,7 +96,7 @@
     margin-top: 50px;
     -webkit-text-fill-color: #ffffff;
     font-size: 40rpx;
-    background-color: #d2cea9;
+    background-color: #29bcbb;
 }
 
 .title_wrap{

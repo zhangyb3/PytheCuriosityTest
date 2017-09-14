@@ -3,16 +3,21 @@ page{
     background-color: #eaeaea;
 }
 
+.personal_description{
+    background-color: #ffffff;
+}
+
 .personal_description_zone{
     display: flex;
     flex-direction: row;
     /*border-top: 1px solid #EEE;*/
     background-color: #ffffff;
-    width: 100%;
+    width: 90%;
+    margin-left: 5%;
     /*min-height: 300rpx;*/
     /*border-bottom: 50rpx solid #fff;*/
-    height: auto;
-
+    /*height: auto;*/
+    height: 200rpx;
     /*align-items: center;*/
 }
 
@@ -32,21 +37,21 @@ page{
     width: 20%;
     height: 100%;  
 
-    /*justify-content:center;*/
-    /*align-items:center;*/
-    /*display:-webkit-flex;*/
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
 }
 
 .personal_avatar_container{
     width: 120rpx;
     height: 120rpx;
-    margin-top: 20rpx;
-    margin-left: 20rpx;
+    /*margin-top: 20rpx;*/
+    /*margin-left: 20rpx;*/
 }
 
 .personal_avartar_image{
     /*margin-top: 35rpx;*/
-    /*margin-left: 30rpx;*/
+    margin-left: 0rpx;
     width: 120rpx;
     height: 120rpx;
     /*border-radius: 50%;*/
@@ -72,8 +77,8 @@ page{
     display: flex;
     height: auto;
     width: 100%;
-    margin-top: 34rpx;
-    margin-left: 10rpx;
+    margin-top: 40rpx;
+    /*margin-left: 10rpx;*/
 }
 
 .personal_nick_name{
@@ -82,18 +87,19 @@ page{
     font-size: 45rpx;
     font-weight: bold;
     color: #666666;
+    margin-left: 20rpx;
 }
 
 .person_discribe_wrap{
     display: flex;
     width: 100%;
     height: 100rpx;
-    margin-top: 20rpx;
+    /*margin-top: 20rpx;*/
     /*margin-right: 80rpx;*/
 }
 
 .person_discribe_box{
-    margin-top: 10rpx;
+    /*margin-top: 10rpx;*/
     height: 80rpx;
 
     word-break: break-all;
@@ -136,7 +142,7 @@ page{
     color: black;
     /*float: left;*/
     /*padding-bottom: -20rpx;*/
-    
+    margin-left: 20rpx;
 }
 
 .personal_summary_wrap{
@@ -192,7 +198,7 @@ page{
     /*margin-top: 55rpx;*/
     /*margin-left: 20rpx;*/
     /*height: 100%;*/
-    height: auto;
+    /*height: auto;*/
     /*width: 50rpx;*/
 }
 
@@ -257,44 +263,54 @@ page{
     
 }
 
+.personal_operation_item_wrapper{
+    background-color: #ffffff;
+    border-bottom: 5px solid #eaeaea;
+    border-width: 1px;
+}
+
 .personal_operation_item{
     /*width: 100%;*/
     display: flex;
     flex-direction: row;
     /*justify-content: flex-end;*/
-    line-height: 100rpx;
-    width: 100%;
-    /*margin-left: 40rpx;*/
-    border-bottom: 5px solid #eaeaea;
-    border-width: 1px;
+    line-height: 120rpx;
+    height: 120rpx;
+    width: 90%;
+    margin-left: 5%;
+    
+    
     background-color: #ffffff;
     /*margin-right: 20rpx;*/
     /*background:url(../../images/icon_more@2x.png) no-repeat right center;*/
-
+    font-weight: 600;
+    align-items: center;
 }
 
 .arr_icon{
-    margin-top: 40rpx;
-    margin-right: 30rpx;
+    /*margin-top: 40rpx;*/
+    /*margin-right: 10%;*/
     /*right: 30rpx;*/
     width: 13rpx;
     height: 25rpx;
+    float: right;
+    margin-right: 0;
 }
 
 .personal_ask personal_operation_item{
     /*padding-right: 10px;*/
     /*background:url(../../images/icon_money_1@2x.png) no-repeat center;
     background-size: 25px 25px;*/
-    background: black;
+    width: 90%;
 }
 
 .personal_operation_item_text{
-    width: 90%;
+    width: 70%;
     line-height: 94rpx;
     font-size: 34rpx;
     /*font-weight: bold;*/
-    margin-left: 30rpx;
-    padding-top: 6rpx;
+    /*margin-left: 30rpx;*/
+    /*padding-top: 6rpx;*/
     color: #333333;
     text-align: left;
 }
@@ -312,7 +328,7 @@ page{
 .menu_list_icon_wrap{
     display: flex;
     align-items: center;
-    width: 100rpx;
+    width: 20%;
     height: 100rpx;
 }
 /*.menu_list_icon{
@@ -320,48 +336,43 @@ page{
     height: 37rpx;
     margin-left: 30rpx;
 }*/
-.menu_list_icon_wallet{
-    width: 55rpx;
-    height: 37rpx;
-    margin-left: 30rpx;
-}
+
 
 .menu_list_icon_question{
     width: 46rpx;
     height: 46rpx;
-    margin-left: 30rpx;
+    /*margin-left: 30rpx;*/
 }
 
 .menu_list_icon_answer{
     width: 50rpx;
     height: 46rpx;
-    margin-left: 30rpx;
+    /*margin-left: 30rpx;*/
 }
 
 .menu_list_icon_like{
     width: 46rpx;
     height: 45rpx;
-    margin-left: 36rpx;
+    /*margin-left: 36rpx;*/
 }
 
 .menu_list_icon_detail{
     width: 41rpx;
     height: 48rpx;
-    margin-left: 36rpx;
+    /*margin-left: 36rpx;*/
 }
 
 .menu_list_icon_us{
     width: 47rpx;
     height: 47rpx;
     
-    margin-left: 34rpx;
+    /*margin-left: 34rpx;*/
 }
 .tab_interval{
     height: 20rpx;
     width: 100%;
     /*background-color: #ffffff;*/
 }
-
 @import "../register/register.wxss";
     
 @import "../pop/register_lock_cover.wxss";

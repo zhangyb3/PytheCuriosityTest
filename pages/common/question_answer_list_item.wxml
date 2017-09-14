@@ -32,8 +32,9 @@
         </view>
     </view>
 
-    <view style="height:10rpx;width:100%;"></view>
+    <view style="height:20rpx;width:100%;"></view>
 
+    <view class="middel_zone_wrapper">
     <view class="middle_zone" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneItem">
         <view class="img_zone">
              <view class="question_img_container" wx:if="{{item.questioncontent.img[0] != null}}">
@@ -45,6 +46,7 @@
                 <text class="question_text">{{item.questioncontent.text[0]}}</text>
             </view>
         </view>
+    </view>
     </view>
 
     <view style="height:10rpx;width:100%;"></view>

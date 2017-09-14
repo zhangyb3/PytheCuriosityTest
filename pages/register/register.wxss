@@ -115,14 +115,14 @@ button_wrap{
     line-height: 76rpx;
     width: auto;
     /*border:1px solid #CCCCCC;*/
-
+    background-color: #29bcbb;
 }
 
 .send_verification_code_button{
     font-size:30rpx;
     height: 76rpx;
     line-height:76rpx;
-    -webkit-text-fill-color: #3AA4F1;
+    -webkit-text-fill-color: #ffffff;
     text-align: center;
     border-top :1px solid #CCCCCC;
     border-bottom :1px solid #CCCCCC;

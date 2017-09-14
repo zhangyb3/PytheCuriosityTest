@@ -8,6 +8,7 @@
 
     <view style="height:20rpx;color:white;"></view>
 
+    <view class="personal_description">
     <view class="personal_description_zone" bindtap='personalDescriptionPage'>
         <view class="personal_avatar_zone">
             <view class="personal_avatar_container">
@@ -24,7 +25,7 @@
             </view>-->
 
             <view class="person_org_view" wx:if="{{userStatus == 1 && orgName != null}}">
-                <text class="person_org" >就职于 {{orgName}}
+                <text class="person_org" >就职: {{orgName}}
                 </text>
             </view>
 
@@ -48,19 +49,20 @@
         </view>
         
         <view class="personal_description_revise_zone">
-<view class="person_edit_icon_view">
+        <view class="person_edit_icon_view">
             <button class="person_edit_icon" >
                 <image src="../../images/personal_icon_arrow_right@2x.png"></image>
             </button>
         </view>
-
         </view>
         
+        </view>
+
     </view>
 
     <view style="height:50rpx;"></view>
     
-    <view class="personal_operation_zone">
+    
 <!--<view class="personal_ask personal_operation_item" bindtap='selectPersonalWallet'>
 <view class="menu_list_icon_wrap">
     <image class="menu_list_icon_wallet" src="../../images/personal_iocn_money@2x.png"></image>
@@ -83,50 +85,103 @@
             <text class="personal_answer personal_operation_item_text">我的答</text>
             <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>-->
+        <view class="personal_operation_item_wrapper">
         <view class="personal_like personal_operation_item" bindtap='selectPersonalLike'>
-<view class="menu_list_icon_wrap">
-    <image class="menu_list_icon_like" src="../../images/personal_iocn_mydianzan@2x.png"></image>
+            <view class="menu_list_icon_wrap">
+            <image class="menu_list_icon_like" src="../../images/personal_iocn_mydianzan@2x.png"></image>
 </view>
             <text class="personal_like personal_operation_item_text">我的点赞</text>
-            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-        </view>
-    </view>
 
-    <view class="organization_management personal_operation_item" wx:if="{{userStatus == 1}}" bindtap='selectOrganizationManagement'>
-<view class="menu_list_icon_wrap">
-    <image class="menu_list_icon_detail" src="../../images/organization_icon.png"></image>
-</view>
-            <text class="organization personal_operation_item_text">机构管理</text>
-            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-        </view>
+            <view class="personal_description_revise_zone">
+            <view class="person_edit_icon_view">
+                <button class="person_edit_icon" >
+                    <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
+                </button>
+            </view>
+            </view>
 
-    <view class="about_us_zone">
-        <view class="balance_detailed_rules personal_operation_item" bindtap='selectBalanceRules'>
-<view class="menu_list_icon_wrap">
-    <image class="menu_list_icon_detail" src="../../images/personal_iocn_jiesuan@2x.png"></image>
-</view>
-            <text class="rules personal_operation_item_text">结算细则</text>
-            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
-        <view class="about_us personal_operation_item" bindtap='selectAboutUs'>
-<view class="menu_list_icon_wrap">
-    <image class="menu_list_icon_us" src="../../images/personal_iocn_about@2x.png"></image>
-</view>
-            <text class="about personal_operation_item_text">关于我们</text>
-            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-        </view>
-    </view>
-
-
-    <view class="about_us_zone">
-        <view class="balance_detailed_rules personal_operation_item" bindtap="checkPersonalBill">
-<view class="menu_list_icon_wrap">
-    <image class="menu_list_icon_detail" src="../../images/wallet_icon.png"></image>
-</view>
-            <text class="rules personal_operation_item_text">钱包</text>
-            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>
         
+    
+
+        <view class="personal_operation_item_wrapper">
+        <view class="organization_management personal_operation_item" wx:if="{{userStatus == 1}}" bindtap='selectOrganizationManagement'>
+            <view class="menu_list_icon_wrap">
+                <image class="menu_list_icon_detail" src="../../images/organization_icon.png"></image>
+</view>
+            <text class="organization personal_operation_item_text">机构管理</text>
+
+            <view class="personal_description_revise_zone">
+            <view class="person_edit_icon_view">
+                <button class="person_edit_icon" >
+                    <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
+                </button>
+            </view>
+            </view>
+                
+        </view>
+        </view>
+
+
+    <view class="about_us_zone">
+
+        <view class="personal_operation_item_wrapper">
+        <view class="balance_detailed_rules personal_operation_item" bindtap='selectBalanceRules'>
+        <view class="menu_list_icon_wrap">
+            <image class="menu_list_icon_detail" src="../../images/personal_iocn_jiesuan@2x.png"></image>
+</view>
+            <text class="rules personal_operation_item_text">结算细则</text>
+            <view class="personal_description_revise_zone">
+            <view class="person_edit_icon_view">
+                <button class="person_edit_icon" >
+                    <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
+                </button>
+            </view>
+            </view>
+
+        </view>
+        </view>
+
+        <view class="personal_operation_item_wrapper">
+        <view class="about_us personal_operation_item" bindtap='selectAboutUs'>
+            <view class="menu_list_icon_wrap">
+                <image class="menu_list_icon_us" src="../../images/personal_iocn_about@2x.png"></image>
+</view>
+            <text class="about personal_operation_item_text">关于我们</text>
+            <view class="personal_description_revise_zone">
+            <view class="person_edit_icon_view">
+                <button class="person_edit_icon" >
+                    <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
+                </button>
+            </view>
+            </view>
+
+        </view>
+        </view>
+
+    </view>
+
+
+    <view class="about_us_zone">
+
+        <view class="personal_operation_item_wrapper">
+        <view class="balance_detailed_rules personal_operation_item" bindtap="checkPersonalBill">
+            <view class="menu_list_icon_wrap">
+                <image class="menu_list_icon_detail" src="../../images/wallet_icon.png"></image>
+</view>
+            <text class="rules personal_operation_item_text">钱包</text>
+            <view class="personal_description_revise_zone">
+            <view class="person_edit_icon_view">
+                <button class="person_edit_icon" >
+                    <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
+                </button>
+            </view>
+            </view>
+            
+        </view>
+        </view>
+
     </view>
 
 
