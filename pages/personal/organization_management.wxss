@@ -109,7 +109,7 @@
 
 .organization_discribe_box{
     margin-top: 30rpx;
-    height: 110rpx;
+    height: 120rpx;
 }
 .organization_discribe{
     display: flex;
@@ -117,11 +117,13 @@
     /*left: 170rpx;
     right: 80rpx;*/
     width: 90%;
-    height: 106rpx;
+    line-height: 40rpx;
+    height: 120rpx;
     font-size: 32rpx;
     color: #999999;
     padding-bottom: -20rpx;
-    line-height: 37rpx;
+    
+    word-break: break-all;
     text-overflow: -o-ellipsis-lastline;
     overflow: hidden;
     text-overflow: ellipsis;

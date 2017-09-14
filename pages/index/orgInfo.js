@@ -133,6 +133,23 @@ Page({
    
   },
 
+  checkTeacherInfo:function(e){
+    var teacher = (e.currentTarget.dataset.teacher);
+
+    wx.navigateTo({
+      url: '../ask/teacherInfo?userId=' + teacher.userid,
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+  },
+
   onHide:function(){
     // 页面隐藏
   },

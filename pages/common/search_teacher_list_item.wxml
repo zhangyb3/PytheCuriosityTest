@@ -11,15 +11,16 @@
                 ></image>
             </view>
             <!--名师中间部分:姓名,介绍,收藏-->
-                <view class= "teacher_middle_wrapper" data-teacher='{{item}}' bindtap="checkTeacherInfo">
+                <view class= "teacher_middle_wrapper"  >
                 <!--教师姓名-->
-                    <view style="height:10rpx;"></view>
-                    <text class="teacher_content">{{ item.username }}</text>
+                    <view style="height:20rpx;"></view>
+                    <text class="teacher_content" data-teacher='{{item}}' bindtap="checkTeacherInfo">{{ item.username }}</text>
                     <!--教师简介-->
                     <view style="height:20rpx;"></view>
-                    <view class="teacher_brief_wrap">
+                    <view class="teacher_brief_wrap" data-teacher='{{item}}' bindtap="checkTeacherInfo">
                     <text class="teacher_brief">{{ item.subject }} | {{item.description}}</text>
                     </view>
+                    <view style="height:20rpx;"></view>
                     <!--收藏数量-->
                 <view class="collect_icon_wrap"  data-teacher="{{item}}" data-index='{{index}}' bindtap="likeTeacher">
                 <image wx:if="{{item.collectOrNot == false}}" src="../../images/unfollow.png"></image>
@@ -28,7 +29,7 @@
                 </view>
                     <!--<text class="collect_icon" src="../../images/icon_language@2x.png">268
                 </text>-->
-                <view style="height:10rpx;"></view>
+                <view style="height:20rpx;"></view>
                 </view>
 
                 <view class="teacher_ask_section" wx:if="{{search_page == true || ask_page == true}}">
