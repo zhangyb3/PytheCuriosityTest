@@ -43,21 +43,22 @@ page{
 }
 
 .personal_avatar_container{
-    width: 120rpx;
-    height: 120rpx;
+    width: 100%;
+    /*width: 120rpx;*/
+    /*height: 120rpx;*/
     /*margin-top: 20rpx;*/
     /*margin-left: 20rpx;*/
 }
 
 .personal_avartar_image{
     /*margin-top: 35rpx;*/
-    margin-left: 0rpx;
+    
     width: 120rpx;
     height: 120rpx;
     /*border-radius: 50%;*/
-    border-radius: 20rpx;
-    border-style: solid;
-    border-width: 0.5px;
+    /*border-radius: 20rpx;*/
+    /*border-style: solid;*/
+    /*border-width: 0.5px;*/
     border-color: lightgray;
 }
 
@@ -85,7 +86,7 @@ page{
     display: flex;
     height: auto;
     font-size: 45rpx;
-    font-weight: bold;
+    font-weight: 600;
     color: #666666;
     margin-left: 20rpx;
 }
@@ -357,8 +358,8 @@ page{
 }
 
 .menu_list_icon_detail{
-    width: 41rpx;
-    height: 48rpx;
+    width: 50rpx;
+    height: 50rpx;
     /*margin-left: 36rpx;*/
 }
 

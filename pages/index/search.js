@@ -430,6 +430,12 @@ Page({
 
   },
 
+  cancelSearchInput:function(e){
+    this.setData({
+      searchContent:'',
+    });
+  },
+
   onHide:function(){
     // 页面隐藏
   },

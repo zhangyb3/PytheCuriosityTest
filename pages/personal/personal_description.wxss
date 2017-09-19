@@ -62,7 +62,7 @@ page{
 
     height: 50%;
     font-size: 36rpx;
-    font-weight: bold;
+    font-weight: 600;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 
 }
@@ -86,8 +86,8 @@ page{
 .item_content_text{
 
     height: 50%;
-    font-size: 45rpx;
-    font-weight: bold;
+    font-size: 36rpx;
+    font-weight: 600;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: grey;
 }
@@ -95,8 +95,8 @@ page{
 .item_content_text_null{
 
     height: 50%;
-    font-size: 45rpx;
-    font-weight: bold;
+    font-size: 36rpx;
+    font-weight: 600;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     color: lightgrey;
 }

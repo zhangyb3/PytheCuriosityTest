@@ -461,10 +461,6 @@ Page({
 
   onShow:function(){
 
-    
-    this.setData({
-      hide_register_lock_cover: true,
-    });
 
    
     var that = this;
@@ -686,6 +682,9 @@ Page({
     //   wx.setStorageSync('fromRegister', 'no');
     // }
 
+    this.setData({
+      hide_register_lock_cover: true,
+    });
 
   },
 

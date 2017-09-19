@@ -5,7 +5,7 @@
     
 
     <view class="input_view" >
-        <input class="input" type="text" placeholder="查询"  bindinput="listenSearchInput" ></input>
+        <input class="input" type="text" value="{{searchContent}}" placeholder="查询"  bindinput="listenSearchInput" ></input>
         <button class="search_button"    bindtap='searchByContent'><image src="../../images/index_icon_serch@2x.png"></image>
         </button>
     </view>

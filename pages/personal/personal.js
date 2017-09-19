@@ -572,54 +572,7 @@ Page({
       }
     });
 
-    if(wx.getStorageSync('fixPersonalInfo')=='yes')
-    {
-      var that = this;
-      register.checkRegister(
-          (userRegisterResult) => {
-            console.log('check register : ' + JSON.stringify(userRegisterResult));
-            //如果没注册过，则注册
-            var registerInfo = userRegisterResult.data.data;
-            if(registerInfo.userid == null)
-            {
-              wx.setStorageSync('alreadyRegister', 'no');
-              console.log("register : " + wx.getStorageSync('alreadyRegister'));
-              //注册
-              this.setData({
-                hide_login: false,
-              });
-              loadingSelections.call(this);
-            }
-            else
-            {
-              wx.setStorageSync('alreadyRegister', 'yes');
-              wx.setStorageSync(user.UserID, registerInfo.userid);
-              wx.setStorageSync(user.StudentID, registerInfo.studentid);
-              wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
-              wx.setStorageSync(user.GradeID, registerInfo.gradeid);
-              wx.setStorageSync(user.UserDescription, registerInfo.description);
-              wx.setStorageSync('userNickName', registerInfo.username);
-              wx.setStorageSync('userAvatarUrl', registerInfo.userimg);
-
-              wx.setStorageSync('fixPersonalInfo', 'no');
-
-              that.data.userAvatarUrl = wx.getStorageSync('userAvatarUrl');
-              that.data.userNickName = wx.getStorageSync('UserNickName');
-              that.data.userDescription = wx.getStorageSync('UserDescription');
-              that.setData({
-                userAvatarUrl: that.data.userAvatarUrl,
-                userNickName: that.data.userNickName,
-                userDescription: that.data.userDescription,
-              });
-            }
-          },
-          (userRegisterResult) => {
-            console.log(userRegisterResult);
-          },
-        );
-        
-    }
-
+    
 
     this.setData({
       hide_register_lock_cover: true,

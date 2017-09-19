@@ -153,7 +153,7 @@
 .user_content_text{
     line-height: 60rpx;
     font-size: 28rpx;
-    margin-left: 10rpx;
+    margin-left: 20rpx;
     width: auto;
     color: gray;
     /*font-weight: bold;*/
