@@ -32,16 +32,27 @@
         <view class="interval" style="height:50rpx;"></view>
     </view>
 
+    <view class="manager_text_container" data-manager="{{manager}}" bindtap="checkManager">
+        <view class="manager_text">
+            <view class="manager_hint_text">
+                <text>负责人</text>
+            </view>
+            <view class="manager_content_text">
+                <text>{{manager.username}}</text>
+            </view>
+        </view>
+    </view>
+
     <view class="member_text_container">
-      <view class="member_text_view">
-        <text>机构成员</text>
-      </view>
+        <view class="member_text_view">
+            <text>机构成员</text>
+        </view>
       
     </view>
 
     <block wx:for="{{search_teacher_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         
-        <view class="personal_answer_container" >
+        <view class="search_teacher_list_container" >
           <template is="search_teacher_list_item" data="{{item,index,preview_img_url,finished,teacher_info}}"></template>
         </view>
         <view class="interval"></view>

@@ -50,8 +50,12 @@ Page({
         that.data.organizationName = organization.name;
         that.data.organizationDescription = organization.description;
         that.data.organizationAddress = organization.address;
+
+        var manager = res.data.data.manager;
+
         that.setData({
           checkOrg: organization,
+          manager: manager,
         });
       },
       fail: function(res) {
@@ -184,6 +188,11 @@ Page({
         // complete
       }
     })
+  },
+
+  checkManager:function(e){
+    var manager = e.currentTarget.dataset.manager;
+    console.log(JSON.stringify(manager));
   },
 
   onHide:function(){
