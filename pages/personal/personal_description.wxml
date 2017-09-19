@@ -31,7 +31,10 @@
                 
                 <view class="item_content" bindtap="changeAvatar">
 
-                    <image class="item_content_avatar" src="{{personalInfo.avatar}}"></image>
+                    <!--<image class="item_content_avatar" src="{{personalInfo.avatar}}"></image>-->
+                    <view class="item_content_avatar_wrapper">
+                    <view class="item_content_avatar" style="background-image:url({{personalInfo.avatar}})"></view>
+                    </view>
 
                     <view class="person_edit_icon" >
                         <image src="../../images/personal_icon_arrow_right@2x.png"></image>

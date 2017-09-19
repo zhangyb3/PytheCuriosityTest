@@ -12,7 +12,9 @@
     <view class="personal_description_zone" bindtap='personalDescriptionPage'>
         <view class="personal_avatar_zone">
             <view class="personal_avatar_container">
-                <image class="personal_avartar_image" src="{{userAvatarUrl}}"></image>
+                <view class="personal_avartar_image_wrapper">
+                    <view class="personal_avartar_image" style="background-image:url({{userAvatarUrl}})"></view>
+                </view>
             </view>
         </view>
         <view class="personal_description_text_zone">

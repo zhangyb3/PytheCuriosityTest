@@ -101,10 +101,27 @@ page{
     color: lightgrey;
 }
 
-.item_content_avatar{
+.item_content_avatar_wrapper{
 
     width: 150rpx;
     height: 150rpx;
+
+}
+
+.item_content_avatar{
+
+    /*width: 150rpx;*/
+    /*height: 150rpx;*/
+
+    width:100%;
+    height:0;
+    padding-bottom: 100%;
+    overflow:hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-size:cover;
 
 }
 

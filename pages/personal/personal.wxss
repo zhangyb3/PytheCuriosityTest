@@ -50,16 +50,33 @@ page{
     /*margin-left: 20rpx;*/
 }
 
-.personal_avartar_image{
-    /*margin-top: 35rpx;*/
+.personal_avartar_image_wrapper{
     
     width: 120rpx;
     height: 120rpx;
+
+}
+
+.personal_avartar_image{
+    /*margin-top: 35rpx;*/
+    
+    /*width: 120rpx;*/
+    /*height: 120rpx;*/
     /*border-radius: 50%;*/
     /*border-radius: 20rpx;*/
     /*border-style: solid;*/
     /*border-width: 0.5px;*/
     border-color: lightgray;
+
+    width:100%;
+    height:0;
+    padding-bottom: 100%;
+    overflow:hidden;
+    background-position: center center;
+    background-repeat: no-repeat;
+    -webkit-background-size:cover;
+    -moz-background-size:cover;
+    background-size:cover;
 }
 
 .personal_description_text_zone{

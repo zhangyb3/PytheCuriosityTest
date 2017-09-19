@@ -23,6 +23,7 @@
 .background_image{
     filter: blur(3px);
     opacity: 0.2;
+    width: 100%;
     /*color: rgba(255,255,255,1);*/
 }
 
