@@ -4,7 +4,7 @@
 
             
 <!--名师区域  -->
-            <view class="org_wrapper">
+            <view class="org_wrapper" data-org="{{item}}" bindtap="askOneOrg">
             <!--头像部分-->
                 <image class="org_icon" wx:if="{{item.avatar != null}}"  src="{{item.avatar}}"
                 ></image>

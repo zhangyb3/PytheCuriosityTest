@@ -1,0 +1,35 @@
+<!--pages/personal/organization_edit.wxml-->
+<import src="../listView/section_display_list.wxml" />
+
+<view class="catalog_page">
+
+  <view class="search_input_field_container">
+    <view style="height:50rpx;"></view>
+
+    <view class="search_input_field_wrapper">
+      <view class="search_input_field_unit">
+        <view class="search_input_field_left"></view>
+        <view class="search_input_field">
+          <input class="search_input" type="text" value="{{searchContent}}" placeholder="知识点/教师/机构"  bindinput="listenSearchInput" maxlength="10" auto-focus></input>
+        </view>
+        <view class="search_input_field_icon" bindtap='searchByContent'>
+          <image class="search_input_field_icon_img" src="../../images/search_button.png"></image>
+        </view>
+        <view class="search_input_field_right"></view>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="banner_container">
+  </view>
+
+  <view class="section_display_list_container" >
+    <template is="section_display_list" data="{{section_display_list,scrollHeight}}"></template>
+  </view>
+
+   
+
+    
+
+</view>

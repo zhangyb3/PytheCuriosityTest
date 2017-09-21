@@ -84,7 +84,8 @@
 .asker_name{
     display:inline-block;
     font-size: 42rpx;
-    font-weight: bold;
+    font-weight: 500;
+    color: gray;
 }
 
 .liker_zone{
@@ -130,7 +131,7 @@
 
 .liker_num{
     display:inline-block;
-    
+    color: gray;
 }
 
 
@@ -203,7 +204,7 @@
 
 .question_text{
     display:inline-block;
-    color: gray;
+    color: black;
     font-size: 32rpx;
 }
 
@@ -251,6 +252,7 @@
 
 .solver_name{
     font-size: 28rpx;
+    color: gray;
 }
 
 .reward_zone{

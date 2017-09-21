@@ -70,7 +70,7 @@
     color: #0F0F0F;
     height: auto;
     font-size: 42rpx;  
-    font-weight:bold; 
+    font-weight: 600; 
 }
 
 .teacher_brief_wrap{

@@ -69,7 +69,7 @@
     color: #0F0F0F;
     height: auto;
     font-size: 36rpx;  
-    font-weight:bold; 
+    font-weight: 600; 
 }
 
 .org_brief_wrap{

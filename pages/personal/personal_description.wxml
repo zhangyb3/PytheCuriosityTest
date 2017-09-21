@@ -9,9 +9,9 @@
 
     <view class="personal_description_item_wrapper">
 
-        <view style="height:10rpx;"></view>
+        <view style="height:20rpx;"></view>
 
-        <view class="personal_description_item">
+        <view class="personal_description_item" bindtap="changeAvatar">
 
             <view class="item_hint_container">
                 
@@ -29,7 +29,7 @@
                     </view>
                 </view>-->
                 
-                <view class="item_content" bindtap="changeAvatar">
+                <view class="item_content" >
 
                     <!--<image class="item_content_avatar" src="{{personalInfo.avatar}}"></image>-->
                     <view class="item_content_avatar_wrapper">
@@ -46,7 +46,7 @@
 
         </view>
 
-        <view style="height:10rpx;"></view>
+        <view style="height:20rpx;"></view>
 
     </view>
 
@@ -58,7 +58,7 @@
 
     <view class="personal_description_item_wrapper">
 
-        <view style="height:10rpx;"></view>
+        <view style="height:20rpx;"></view>
 
         <view class="personal_description_item" bindtap="personalEditPage">
 
@@ -92,7 +92,7 @@
 
         </view>
 
-        <view style="height:10rpx;"></view>
+        <view style="height:20rpx;"></view>
 
     </view>
 
@@ -102,7 +102,7 @@
 
     <view class="personal_description_item_wrapper">
 
-        <view style="height:10rpx;"></view>
+        <view style="height:20rpx;"></view>
 
         <view class="personal_description_item">
 
@@ -138,7 +138,7 @@
 
         </view>
 
-        <view style="height:10rpx;"></view>
+        <view style="height:20rpx;"></view>
 
     </view>
 
@@ -148,7 +148,7 @@
 
     <view class="personal_description_item_wrapper">
 
-        <view style="height:10rpx;"></view>
+        <view style="height:20rpx;"></view>
 
         <view class="personal_description_zone" bindtap="personalEditPage">
 
@@ -189,7 +189,7 @@
 
         </view>
 
-        <view style="height:10rpx;"></view>
+        <view style="height:20rpx;"></view>
 
     </view>
 
