@@ -1,35 +1,61 @@
-<!--pages/personal/organization_edit.wxml-->
-<import src="../listView/section_display_list.wxml" />
+<!--index.wxml-->
+<import src="../login/login.wxml" />
 
-<view class="catalog_page">
+<import src="../listView/recommend_list.wxml" />
+<!--<import src="../listView/question_answer_list.wxml" />-->
+<!--<import src="../listView/index_page_list.wxml" />-->
+<import src="../common/index_page_filter.wxml" />
+<import src="../pop/index_page_subject_list.wxml" />
+<import src="../pop/index_page_select_item.wxml" />
 
-  <view class="search_input_field_container">
-    <view style="height:50rpx;"></view>
+<import src="../pop/show_image_page.wxml" />
 
-    <view class="search_input_field_wrapper">
-      <view class="search_input_field_unit">
-        <view class="search_input_field_left"></view>
-        <view class="search_input_field">
-          <input class="search_input" type="text" value="{{searchContent}}" placeholder="知识点/教师/机构"  bindinput="listenSearchInput" maxlength="10" auto-focus></input>
-        </view>
-        <view class="search_input_field_icon" bindtap='searchByContent'>
-          <image class="search_input_field_icon_img" src="../../images/search_button.png"></image>
-        </view>
-        <view class="search_input_field_right"></view>
-      </view>
-    </view>
+<view class="show_image_page_container" hidden='{{hide_show_image_page}}'>
+        <template is="show_image_page" data="{{img_src}}"></template>
+</view>
 
+<import src="../pop/register_lock_cover.wxml" />
+<view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
+
+<!--<import src="../register/register.wxml" />-->
+
+
+<!--<view class="register_container" hidden='{{hide_register_page}}'>
+  <template is="register_page" data="{{grades,grade_index,subjects,subject_index,hide_subject_selection,hide_grade_selection,select_student,select_teacher,second}}"></template>
+</view>-->
+
+<view class="index_page_subject_list_container" hidden='{{hide_pop_subject_list}}'>
+    <template is="index_page_subject_list" data="{{subject_infos}}"></template>
   </view>
 
-  <view class="banner_container">
+<view class="index_page_container" hidden='{{hide_index_page}}'>
+ 
+  <view class="index_page_filter_container" >
+    <template is="index_page_filter" data="{{subject_name}}"></template>
   </view>
 
-  <view class="section_display_list_container" >
-    <template is="section_display_list" data="{{section_display_list,scrollHeight}}"></template>
-  </view>
+  <!--<view class="index_page_list_container" >
+    <template is="index_page_list" data="{{infos}}"></template>
+  </view>-->
 
-   
+  <!--<view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
+    <template is="index_page_select_item" data="{{answers,question}}"></template>
+  </view>-->
 
-    
+  <!--<view class="list_bottom"></view>-->
 
 </view>
+
+<view class="index_page_list_container" >
+    <!--<template is="index_page_list" data="{{infos,preview_img_url,scrollHeight}}"></template>-->
+    <template is="recommend_list" data="{{infos,preview_img_url,scrollHeight,finished,index_page}}"></template>
+</view>
+
+<view class="index_page_select_item_container" hidden='{{hide_select_item}}'>
+    <template is="index_page_select_item" data="{{answers,question,preview_img_url,alreadyRegister}}"></template>
+  </view>
+  <!--<view class="list_bottom"></view>-->
+
+
+  <loading hidden="{{hide_loading}}">正在加载</loading>
+

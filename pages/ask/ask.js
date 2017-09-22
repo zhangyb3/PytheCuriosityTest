@@ -156,17 +156,8 @@ Page({
     ask_page: true,
 
   },
-  onLoad:function(options){
+  onLoad:function(parameters){
 
-    this.setData({
-      hide_register_lock_cover: false,
-    });
-    
-    
-    
-      this.setData({
-        hide_register_lock_cover: true,
-      });
     
     var that = this;
     wx.getSystemInfo({
@@ -179,10 +170,34 @@ Page({
       }
     });
     
-    
-
-    this.setData({hide_ask_subject_list:false});
-    this.setData({hide_ask_teacher_list:true});
+    this.setData({
+      hide_register_lock_cover: true,
+    });
+     
+    var hide_which = parameters.hide_which;
+    this.data.hide_which = hide_which;
+    if(hide_which == 'teacher')
+    {
+      this.data.ask_page_menu[0].active = true;
+      this.data.ask_page_menu[1].active = false;
+      
+      this.setData({hide_ask_teacher_list:true});
+      
+      this.setData({hide_ask_subject_list:false});
+      this.data.list_mode = 'subject_list';
+    }
+    if(hide_which == 'subject')
+    {
+      this.data.ask_page_menu[1].active = true;
+      this.data.ask_page_menu[0].active = false;
+      
+      this.setData({hide_ask_subject_list:true});
+      
+      this.setData({hide_ask_teacher_list:false});
+      this.data.list_mode = 'teacher_list';  
+      this.setData({hide_teacher_list:false});
+    }
+    this.setData({ask_page_menu : this.data.ask_page_menu});
 
     this.setData({ask_subject_list: this.data.subjectList});
     // this.setData({ask_teacher_list: this.data.teachers});
@@ -227,8 +242,8 @@ Page({
       this.setData({hide_ask_subject_list:true});
       
       this.setData({hide_ask_teacher_list:false});
-      this.data.list_mode = 'teacher_list';
-      this.setData({hide_teacher_list:false});
+      this.data.list_mode = 'teacher_list';  
+      this.setData({hide_teacher_list:false});    
     }
     else
     {
@@ -722,8 +737,6 @@ function loadingSelections() {
   this.data.registerParams.gradeId = null;
   this.data.registerParams.subjectId = null;
 
-
-  // 页面初始化 options为页面跳转所带来的参数
   this.setData({
     hide_subject_selection:true,
     hide_grade_selection:false,

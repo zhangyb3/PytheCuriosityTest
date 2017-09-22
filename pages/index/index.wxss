@@ -1,70 +1,86 @@
-/**index.wxss**/
-.index_page_container{
-  width: 100%;
-  height: 10%;
+
+page{
+    background-color: #e0dede;
 }
 
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.search_input_field_container{
+
+    height: 200rpx;
+
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.search_input_field_wrapper{
+    
+    margin-left: 5%;
+
 }
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-}
-
-.index_page_list_container{
-    background-color: #eaeaea;
-    width: 100%;
-    z-index: 3;
+.search_input_field_unit{
     /*margin-top: 100rpx;*/
-
+    height: 100rpx;
+    display: flex;
+    flex-direction: row;
 }
 
-.list_bottom{
-  height: 10px;
-  background-color: #ECEBF4;
-}
-
-.index_page_filter{
-  width: 10%;
-  color: #ECEBF4;
-}
-
-.preview_img_classic{
-    width: 100%;
+.search_input_field_left{
+    width: 50rpx;
     height: 100%;
+    background-color: white;
+    border-radius: 50rpx 0 0 50rpx;
+}
 
+.search_input_field{
+    height: 100%;
+    width: 70%;
+    background-color: white;
+    
+}
+
+.search_input{
+    height: 100%;
+    line-height: 100%;
+    width: 100%;
+    text-align: center;
+    /*color: #cf4848;*/
+}
+
+.search_input_field_icon{
+    height: 100%;
+    width: 10%;
+    background-color: white;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+    
+}
+
+.search_input_field_icon_img{
+    height: 50rpx;
+    width: 50rpx;
+    background-color: white;
+    
+}
+
+.search_input_field_right{
+    width: 50rpx;
+    height: 100%;
+    background-color: white;
+    border-radius: 0 50rpx 50rpx 0;
+}
+
+.banner_container{
+    
+    height: 80rpx;
+    background-color: #5d5d5d;
+
+}
+
+.section_display_list_container{
+    /*height: 50%;*/
+    
 }
 
 
 
-@import "../listView/recommend_list.wxss";
-/*@import "../listView/question_answer_list.wxss";*/
-/*@import "../listView/index_page_list.wxss";*/
-@import "../common/index_page_filter.wxss";
-@import "../pop/index_page_subject_list.wxss";
-@import "../register/register.wxss";
-
-@import "../pop/index_page_select_item.wxss";
-
-
-@import "../pop/show_image_page.wxss";
-@import "../pop/register_lock_cover.wxss";
-
-@import "../login/login.wxss";
-
-
-
+@import "../listView/section_display_list.wxss";

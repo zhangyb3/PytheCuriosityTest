@@ -43,48 +43,6 @@
     
   },
 
-  "tabBar": {
-      "color":"#ffffff",
-      "selectedColor":"#cfd37d",
-      "backgroundColor":"#29bcbb",
-      "list": [
-      {
-        "pagePath": "pages/index/index",
-        
-        "color":"white",
-        "selectedColor":"lightblue",
-        "iconPath":"images/tab_icon_know_nor.png",
-        "selectedIconPath":"images/tab_icon_know_sel.png",
-        "text":"知"
-      },
-      {
-        "pagePath": "pages/ask/ask",
-        
-        "color":"white",
-        "selectedColor":"lightblue",
-        "iconPath":"images/tab_icon_question_nor.png",
-        "selectedIconPath":"images/tab_icon_question_sel.png",
-        "text":"学"
-      },
-      {
-        "pagePath": "pages/answer/answer",
-        
-        "color":"white",
-        "selectedColor":"lightblue",
-        "iconPath":"images/tab_icon_answer_nor.png",
-        "selectedIconPath":"images/tab_icon_answer_sel.png",
-        "text":"教"
-      },
-      {
-        "pagePath": "pages/personal/personal",
-        
-        "color":"white",
-        "selectedColor":"lightblue",
-        "iconPath":"images/tab_icon_myself_nor.png",
-        "selectedIconPath":"images/tab_icon_myself_sel.png",
-        "text":"我"
-      }
-      ]
-  },
+  
   "debug": true
 }
