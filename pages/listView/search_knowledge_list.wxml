@@ -5,7 +5,7 @@
 
 
 <!--列表-->
-  <scroll-view wx:if="{{hide_knowledge_list == false}}" class="scroll_list"  scroll-y="true" upper-threshold="0px" lower-threshold="0px" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
+  <scroll-view wx:if="{{hide_knowledge_list == false}}" class="scroll_list"  scroll-y="true" upper-threshold="50px" lower-threshold="50px" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh" >
       <view class="occupy" style="height:200rpx;"></view>
     
       <block wx:for="{{infos}}" wx:for-item="item" wx:for-index="index" wx:key="unique">

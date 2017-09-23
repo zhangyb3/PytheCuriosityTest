@@ -4,9 +4,9 @@
 <import src="../pop/register_lock_cover.wxml" />
 <view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
 
-<import src="../register/register.wxml" />
-<view class="register_container" hidden='{{hide_register_page}}'>
-  <template is="register_page" data="{{grades,grade_index,subjects,subject_index,hide_subject_selection,hide_grade_selection,select_student,select_teacher,second}}"></template>
+<import src="../login/login.wxml" />
+<view class="login_container" hidden='{{hide_login}}'>
+        <template is="login_view" data="{{select_student,select_teacher,lock_countdown,grade_index,gradeRange,subject_index,subjectRange,second,countdownText}}"></template>
 </view>
 
 <view class="catalog_page">

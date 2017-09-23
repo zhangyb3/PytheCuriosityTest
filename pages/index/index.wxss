@@ -6,7 +6,7 @@ page{
 .search_input_field_container{
 
     height: 200rpx;
-
+    /*box-shadow:  10px 10px 10rpx #e0dede;*/
 }
 
 .search_input_field_wrapper{
@@ -78,9 +78,13 @@ page{
 
 .section_display_list_container{
     /*height: 50%;*/
-    
+    box-shadow:  10px 10px 10rpx #5d5d5d;
 }
 
 
+@import "../register/register.wxss";
+    
+@import "../pop/register_lock_cover.wxss";
+@import "../login/login.wxss";
 
 @import "../listView/section_display_list.wxss";
