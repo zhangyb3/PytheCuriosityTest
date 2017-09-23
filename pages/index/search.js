@@ -452,7 +452,7 @@ function searchByContent(the)
   
   var that = the;
   var searchParameters = {
-    query: search_content,
+    query: encodeURIComponent(search_content),
     subjectId: -1,
     userId: -1,
     pageNum: 1,

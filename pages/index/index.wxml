@@ -21,7 +21,7 @@
           <input class="search_input" type="text" value="{{searchContent}}" placeholder="知识点/教师/机构"  bindinput="listenSearchInput" maxlength="10" auto-focus></input>
         </view>
         <view class="search_input_field_icon" bindtap='searchByContent'>
-          <image class="search_input_field_icon_img" src="../../images/search_button.png"></image>
+          <image class="search_input_field_icon_img" src="../../images/index_icon_serch@2x.png"></image>
         </view>
         <view class="search_input_field_right"></view>
       </view>

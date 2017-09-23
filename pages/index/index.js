@@ -454,7 +454,7 @@ Page({
     
 
     wx.navigateTo({
-      url: 'search?searchContent='+this.data.searchContent,
+      url: 'search?searchContent='+ encodeURIComponent(this.data.searchContent),
       success: function(res){
         // success
       },
