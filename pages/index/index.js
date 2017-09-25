@@ -27,7 +27,7 @@ Page({
         infoNum: 0,
       },
       {
-        sectionName: '信息',
+        sectionName: '消息',
         icon: '../../images/info_section.png',
         infoNum: 0,
       },
@@ -243,7 +243,24 @@ Page({
             }
           });
         }
-        
+        else
+        {
+          var that = this;
+          wx.showModal({
+            content: '尚未登录',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定');
+                //注册
+                that.setData({
+                  hide_login: false,
+                });
+
+                loadingSelections.call(that);
+              }
+            }
+          });
+        }
         break;
       }
       case '教师':
@@ -281,6 +298,13 @@ Page({
       case '消息':
       {
         
+        var that = this;
+        wx.showModal({
+          content: '尚未开通',
+          success: function(res) {
+            
+          }
+        });
         break;
       }
       case '提问':
@@ -405,7 +429,18 @@ Page({
     this.setData({
       searchContent: ''
     });
-    
+    // wx.navigateTo({
+    //   url: 'search',
+    //   success: function(res){
+    //     // success
+    //   },
+    //   fail: function(res) {
+    //     // fail
+    //   },
+    //   complete: function(res) {
+    //     // complete
+    //   }
+    // })
   },
   listenSearchInput:function(e){
     var searchContent = e.detail.value;

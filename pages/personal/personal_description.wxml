@@ -181,7 +181,7 @@
             <view class="item_content_container_">
                 
                 <!--<view class="item_content">-->
-                     <text class="item_content_text_null" wx:if="{{personalInfo.description == null}}">尚无介绍</text>
+                    <text class="item_content_text_null" wx:if="{{personalInfo.description == null}}">尚无介绍</text>
                     <text class="item_content_text" wx:if="{{personalInfo.description != null}}">{{personalInfo.description}}</text>
                 <!--</view>-->
 

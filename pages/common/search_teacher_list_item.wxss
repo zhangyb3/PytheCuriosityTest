@@ -25,7 +25,7 @@
     /*overflow-y: auto;*/
     /*justify-content: space-between*/
     width: 100%;
-    height: auto;
+    height: 220rpx;
     /*position: relative;*/
     /*z-index: 1;*/
     /*background-color: #f3f1e4;*/
@@ -409,8 +409,8 @@
 }
 
 .arr_icon{
-    width: 20%;
-    height: 20%;
+    width: 13rpx;
+    height: 25rpx;
 }
 
 .delete_container{

@@ -41,7 +41,12 @@ page{
     line-height: 100%;
     width: 100%;
     text-align: center;
-    /*color: #cf4848;*/
+    color: lightgray;
+    
+}
+
+::-webkit-input-placeholder {
+  color: #eaeaea;
 }
 
 .search_input_field_icon{

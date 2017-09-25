@@ -53,7 +53,7 @@
     <block wx:for="{{search_teacher_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
         
         <view class="search_teacher_list_container" >
-          <template is="search_teacher_list_item" data="{{item,index,preview_img_url,finished,teacher_info}}"></template>
+          <template is="search_teacher_list_item" data="{{item,index,preview_img_url,finished,teacher_info,user,org,teacher_edit}}"></template>
         </view>
         <view class="interval"></view>
 
