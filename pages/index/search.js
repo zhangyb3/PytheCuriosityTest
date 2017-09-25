@@ -52,9 +52,16 @@ Page({
         });
       }
     });
+
     console.log(parameters);
-    this.data.searchContent = parameters.searchContent;
-    searchByContent(this);
+    this.data.searchContent = decodeURIComponent(parameters.searchContent);
+    if((this.data.searchContent) != "undefined"){ 
+      this.setData({
+        searchContent: this.data.searchContent,
+      });
+      searchByContent(this);
+    }
+
   },
   onReady:function(){
     // 页面渲染完成
@@ -63,12 +70,20 @@ Page({
     // 页面显示
   },
 
+  cleanPlaceholder:function(e){
+    this.setData({
+      searchContent: ''
+    });
+    
+  },
   listenSearchInput:function(e){
     console.log(e.detail.value);
-    this.data.searchContent = e.detail.value
+    this.data.searchContent = e.detail.value;
+    
   },
   searchByContent:function(e){
-    searchByContent(this);
+    var that = this;
+    searchByContent(that);
   },
   cancelSearchInput:function(e){
     this.setData({
@@ -515,4 +530,6 @@ function searchByContent(the)
       {},
       'GET',
   );
+
+  
 }

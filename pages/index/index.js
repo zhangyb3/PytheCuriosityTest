@@ -228,18 +228,22 @@ Page({
     {
       case '机构':
       {
-        wx.navigateTo({
-          url: '../personal/organization_management',
-          success: function(res){
-            // success
-          },
-          fail: function(res) {
-            // fail
-          },
-          complete: function(res) {
-            // complete
-          }
-        });
+        if(wx.getStorageSync('alreadyRegister') == 'yes')
+        {
+          wx.navigateTo({
+            url: '../personal/organization_management',
+            success: function(res){
+              // success
+            },
+            fail: function(res) {
+              // fail
+            },
+            complete: function(res) {
+              // complete
+            }
+          });
+        }
+        
         break;
       }
       case '教师':
@@ -352,7 +356,7 @@ Page({
       }
       case '设置':
       {
-        if(wx.getStorageSync('alreadyRegister') == 'no')
+        if(wx.getStorageSync('alreadyRegister') == 'yes')
         {
           wx.navigateTo({
             url: '../personal/personal',
@@ -369,21 +373,23 @@ Page({
         }
         else
         {
-          // wx.showModal({
-          //   content: '尚未登录',
-          //   success: function(res) {
-          //     if (res.confirm) {
-          //       console.log('用户点击确定')
-          //     }
-          //   }
-          // });
+          var that = this;
+          wx.showModal({
+            content: '尚未登录',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定');
+                //注册
+                that.setData({
+                  hide_login: false,
+                });
 
-          //注册
-          this.setData({
-            hide_login: false,
+                loadingSelections.call(that);
+              }
+            }
           });
 
-          loadingSelections.call(this);
+          
           
 
         }
@@ -394,6 +400,13 @@ Page({
 
   },
 
+  cleanPlaceholder:function(e){
+    console.log(e);
+    this.setData({
+      searchContent: ''
+    });
+    
+  },
   listenSearchInput:function(e){
     var searchContent = e.detail.value;
     console.log(searchContent);
@@ -402,7 +415,6 @@ Page({
   },
   searchByContent:function(e){
     var that = this;
-    
 
     wx.navigateTo({
       url: 'search?searchContent='+ encodeURIComponent(this.data.searchContent),
@@ -415,7 +427,8 @@ Page({
       complete: function(res) {
         // complete
       }
-    })
+    });
+ 
 
   },
 

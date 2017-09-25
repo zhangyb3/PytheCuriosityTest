@@ -6,14 +6,18 @@
 <!--名师区域  -->
             <view class="org_wrapper" data-org="{{item}}" bindtap="askOneOrg">
             <!--头像部分-->
-                <image class="org_icon" wx:if="{{item.avatar != null}}"  src="{{item.avatar}}"
-                ></image>
-                <image class="org_icon_null" wx:if="{{item.avatar == null}}"  src="../../images/add_op.png"
-                ></image>
+                <view class= "org_icon_wrapper">
+                    <image class="org_icon" wx:if="{{item.avatar != null}}"  src="{{item.avatar}}"
+                    ></image>
+                    <image class="org_icon_null" wx:if="{{item.avatar == null}}"  src="../../images/add_op.png"
+                    ></image>
+                </view>
             <!--介绍-->
                 <view class= "org_middle_wrapper">
                 <!--机构介绍-->
-                    <text class="org_name">{{ item.name }}</text>
+                    <view class="org_name_wrap">
+                        <text class="org_name">{{ item.name }}</text>
+                    </view>
                     <!--简介-->
                     <view class="org_brief_wrap">
                         <text class="org_brief">简介：{{item.description}}</text>
@@ -21,10 +25,11 @@
                     
                 </view>
                     
-
-                <button class="org_ask_section" wx:if="{{search_page == true}}" data-org="{{item}}" bindtap="askOneOrg">
-                <text>查看详情</text>  
-                </button>
+                <view class="org_ask_section">
+                    <button class="org_ask_button" wx:if="{{search_page == true}}" data-org="{{item}}" bindtap="askOneOrg">
+                    <text>详情</text>  
+                    </button>
+                </view>
 
                 
                 

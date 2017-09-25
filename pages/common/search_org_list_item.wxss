@@ -20,12 +20,12 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    overflow-x: hidden; 
+    /*overflow-x: hidden; */
     /*overflow-y: auto;*/
     /*justify-content: space-between*/
     height: 220rpx;
-    position: relative;
-    z-index: 1;
+    /*position: relative;*/
+    /*z-index: 1;*/
     /*background-color: #f3f1e4;*/
 
     border-top: 1px solid #EEE;
@@ -33,61 +33,79 @@
 }
 
 .org_icon_null{
-    position: absolute;
+    /*position: absolute;*/
     width: 120rpx;
     height: 120rpx;
-    top: 36rpx;
-    left: 30rpx;
+    /*top: 36rpx;
+    left: 30rpx;*/
     border-radius: 50%;
     border: 1rpx dashed #A9A9A9;
 
 }
 
 .org_icon{
-    position: absolute;
+    /*position: absolute;*/
     width: 120rpx;
     height: 120rpx;
-    top: 36rpx;
-    left: 30rpx;
+    /*top: 36rpx;
+    left: 30rpx;*/
     border-radius: 50%;
 }
 
+.org_icon_wrapper{
+    width: 25%;
+    height: 100%;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
 .org_middle_wrapper{
-    margin-left: 170rpx;
-    right: 140rpx;
-    width: 400rpx;
-    height: 220rpx;
+    
+    width: 55%;
+    height: 100%;
     display: flex;
     
     flex-direction: column;
-    align-items: flex-start;
     
 }
 
+.org_name_wrap{
+    
+    height: 100rpx;
+    line-height: 100rpx;
+    width: 100%;
+
+    text-overflow: -o-ellipsis-lastline;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+
 .org_name {
-    margin-top: 30rpx;
+    
     color: #0F0F0F;
-    height: auto;
+    
     font-size: 36rpx;  
     font-weight: 600; 
 }
 
 .org_brief_wrap{
-    margin-top: 30rpx;
-    height: 60rpx;
-    width: 400rpx;
+    height: 70rpx;
+    line-height: 35rpx;
+    width: 100%;
 }
 
 .org_brief{
     display: flex;
+    
     font-size: 32rpx;
-    line-height: 32rpx;
-    /*margin-top: 10rpx;*/
-    /*line-height: 26rpx;*/
-    /*line-height: 25rpx;*/
-    /*height: auto;*/
-    /*width: auto;*/
-    /*margin-bottom: 15px;*/
+    
+   
     color: #999999;
     text-overflow: -o-ellipsis-lastline;
     overflow: hidden;
@@ -106,6 +124,15 @@
 }
 
 .org_ask_section{
+    width: 20%;
+    height: 100%;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.org_ask_button{
     /*display: flex;*/
     /*align-items: center;
     justify-content: center;*/
@@ -115,10 +142,11 @@
     /*right: 20px;
     bottom: 8px;*/
     line-height: 62rpx;
-    width: 116rpx;
-    margin-right: 20rpx;
+    width: 80%;
+    /*width: 116rpx;*/
+    /*margin-right: 20rpx;*/
     color: #29bcbb;
-    font-size: 28rpx;
+    font-size: 32rpx;
     text-align: center;
     border: 1px solid #29bcbb;
     background: none;
@@ -128,23 +156,23 @@
     background: none;
 }
 
-.org_ask_section text{
+.org_ask_button text{
     width: 100%;
     /*height: 100%;*/
     line-height: 62rpx;
-    font-size: 28rpx;
+    font-size: 32rpx;
     /*padding-bottom: 10rpx;*/
     /*margin-bottom: 40rpx;*/
     color: #29bcbb;
     /*text-align: center;*/
 }
 
-.org_ask_section:after{
+.org_ask_button:after{
     border:0;
     border-radius: 0 0 0 0;
 }
 
-.org_ask_section image{
+.org_ask_button image{
     /*padding-left: -10px;*/
     position: absolute;
     top: 10rpx;
@@ -155,165 +183,15 @@
 }
 
 /*去掉button的边框*/
-.org_ask_section:after{
+.org_ask_button:after{
     border:none;
 }
 
 
-.answer_container {
-    /*padding: 8px;*/
-    display: flex;
-    flex-direction: column;
-    /*border-top: 1px solid #EEE;*/
-    /*border-bottom: 1px solid #EEE;*/
-    
-}
-
-.answer_wrapper {
-    /*padding: 8px;*/
-    display: flex;
-    flex-direction: row;
-    /*border-top: 1px solid #EEE;*/
-    /*border-bottom: 1px solid #EEE;*/
-    height: 20px;
-}
-
-.answer_wrapper>image {
-    margin-left: 5px;
-    width: 20px;
-    height: 20px;
-    
-    border-radius: 50%;
-    background-size: contain;
-}
-
-.lines {
-    
-    font-size: 18px;
-    height: 100px;
-
-    overflow-x: hidden; 
-    overflow-y: auto;
-}
-
-
-
-.org_name {
-    width: 100%;
-    color: #666;
-    font-size: 16px;
-    margin-bottom: 0;
-}
 
 
 
 
-/* likes and fav */
-
-.ctrls {
-    display: flex;
-    flex-direction: row;
-    
-    margin-right: 5px;
-    /*border-bottom: 1px solid #EEE;*/
-}
-
-.ctrls>text {
-    width: 100%;
-    
-    font-size: 18px;
-    position: relative;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    
-    color: #A9A9A9;
-}
-
-.ctrls>text:not(:first-child) {
-    margin-right: 10px;
-    border-left: 1px solid #EEE;
-}
-
-.ctrls>text:before {
-    content: '';
-    display: block;
-    width: 18px;
-    height: 18px;
-    margin-right: 2px;
-    position: relative;
-    bottom: 1px;
-    background-position: 0 0;
-    background-repeat: no-repeat;
-}
-
-
-/* not like */
-
-.ctrls>.not-like:before {
-    background-image: url(http://wx.wg-global.com/Public/images/_gwlbzq_icon.png);
-    background-size: 18px;
-}
-
-
-/* liked */
-
-.ctrls>.like:before {
-    background-image: url(http://wx.wg-global.com/Public/images/_gwlbzh_icon.png);
-    background-size: 18px;
-}
-
-
-/* fav */
-
-.ctrls>.fav:before {
-    background-image: url(http://wx.wg-global.com/Public/images/gwlbsch_icon.png);
-    background-size: 18px;
-}
-
-
-/* not-fav */
-
-.ctrls>.not-fav:before {
-    background-image: url(http://wx.wg-global.com/Public/images/gwlbscq_icon.png);
-    background-size: 18px;
-}
-
-
-/* new */
-
-.isnew {
-    position: relative;
-    overflow: hidden;
-}
-
-.isnew:before {
-    content: '新人报到';
-    display: block;
-    padding: 12rpx 60rpx;
-    position: absolute;
-    background-color: #F5C51E;
-    color: #FFF;
-    top: 10px;
-    left: -35px;
-    font-size: 30rpx;
-    transform: rotate(-45deg);
-}
-
-.isnew:after {
-    content: attr(data-dt);
-    color: #E1635A;
-    position: absolute;
-    font-size: 28rpx;
-    width: 75px;
-    top: 55px;
-    right: 20px;
-    padding: 4px;
-    transform: rotate(-15deg);
-    background: url(http://wx.wg-global.com/Public/images/gwlbsjyz_icon.png) no-repeat;
-    background-size: 80px 25px;
-    text-align: center;
-}
 
 .border_tab{
     /*border-bottom: 1px solid #fff;*/
