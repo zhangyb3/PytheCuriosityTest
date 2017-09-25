@@ -20,7 +20,7 @@ Page({
     countdownText : '发',
 
     userAvatarUrl:'',
-    userNickName:'9527',
+    userNickName:'',
     userStatus: 0,
 
     hide_register_lock_cover: false,

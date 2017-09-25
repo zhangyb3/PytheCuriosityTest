@@ -10,3 +10,5 @@
 }
 
 @import "../listView/search_teacher_list.wxss";
+
+@import "../login/login.wxss";

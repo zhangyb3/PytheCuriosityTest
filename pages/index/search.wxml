@@ -15,7 +15,10 @@
 <import src="../pop/register_lock_cover.wxml" />
 
 
-
+<import src="../login/login.wxml" />
+<view class="login_container" hidden='{{hide_login}}'>
+        <template is="login_view" data="{{select_student,select_teacher,lock_countdown,grade_index,gradeRange,subject_index,subjectRange,second,countdownText}}"></template>
+</view>
 
 <!--<view class="index_page_container" >-->
   

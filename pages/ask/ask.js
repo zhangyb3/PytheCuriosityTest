@@ -257,14 +257,14 @@ Page({
   selectOneSubject:function(e){
 
     //先判断是否已注册
-    if(wx.getStorageSync('alreadyRegister') == 'no')
-    {
-      this.setData({
-        hide_login: false,
-      });
-      loadingSelections.call(this);
-    }
-    if(wx.getStorageSync('alreadyRegister') == 'yes')
+    // if(wx.getStorageSync('alreadyRegister') == 'no')
+    // {
+    //   this.setData({
+    //     hide_login: false,
+    //   });
+    //   loadingSelections.call(this);
+    // }
+    // else
     {
       // console.log("navigate to ask operation page");
       // var parametersJSON = e.currentTarget.dataset.item;
@@ -323,23 +323,23 @@ Page({
     //       'GET',
     //   );
 
-
+      console.log(e.currentTarget.dataset.item);
+      wx.navigateTo({
+        url: 'teachers?subjectId=' + e.currentTarget.dataset.item.subjectId,
+        success: function(res){
+          // success
+        },
+        fail: function(res) {
+          // fail
+        },
+        complete: function(res) {
+          // complete
+        }
+      });
 
     }
 
-    console.log(e.currentTarget.dataset.item);
-    wx.navigateTo({
-      url: 'teachers?subjectId=' + e.currentTarget.dataset.item.subjectId,
-      success: function(res){
-        // success
-      },
-      fail: function(res) {
-        // fail
-      },
-      complete: function(res) {
-        // complete
-      }
-    })
+    
       
   },
 

@@ -309,72 +309,144 @@ Page({
       }
       case '提问':
       {
-        wx.navigateTo({
-          url: '../ask/ask?hide_which=' + 'subject',
-          success: function(res){
-            // success
-          },
-          fail: function(res) {
-            // fail
-          },
-          complete: function(res) {
-            // complete
-          }
-        });
+        if(wx.getStorageSync('alreadyRegister') == 'yes')
+        {
+          wx.navigateTo({
+            url: '../ask/ask?hide_which=' + 'subject',
+            success: function(res){
+              // success
+            },
+            fail: function(res) {
+              // fail
+            },
+            complete: function(res) {
+              // complete
+            }
+          });
+        }
+        else
+        {
+          var that = this;
+          wx.showModal({
+            content: '尚未登录',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定');
+                //注册
+                that.setData({
+                  hide_login: false,
+                });
+
+                loadingSelections.call(that);
+              }
+            }
+          });
+
+        }
         break;
       }
       case '回答':
       {
-        wx.navigateTo({
-          url: '../answer/answer',
-          success: function(res){
-            // success
-          },
-          fail: function(res) {
-            // fail
-          },
-          complete: function(res) {
-            // complete
-          }
-        });
+        if(wx.getStorageSync('alreadyRegister') == 'yes')
+        {
+          wx.navigateTo({
+            url: '../answer/answer',
+            success: function(res){
+              // success
+            },
+            fail: function(res) {
+              // fail
+            },
+            complete: function(res) {
+              // complete
+            }
+          });
+        }
+        else
+        {
+          var that = this;
+          wx.showModal({
+            content: '尚未登录',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定');
+                //注册
+                that.setData({
+                  hide_login: false,
+                });
+
+                loadingSelections.call(that);
+              }
+            }
+          });
+
+        }
         break;
       }
       case '收藏':
       {
-        
+        var that = this;
+        wx.showModal({
+          content: '尚未开通',
+          success: function(res) {
+            
+          }
+        });
         break;
       }
       case '钱包':
       {
-        if(wx.getStorageSync(user.Status) == 1)
+        if(wx.getStorageSync('alreadyRegister') == 'yes')
         {
-          wx.navigateTo({
-            url: '../personal/teacher_bill',
-            success: function(res){
-              // success
-            },
-            fail: function(res) {
-              // fail
-            },
-            complete: function(res) {
-              // complete
-            }
-          })
+          if(wx.getStorageSync(user.Status) == 1)
+          {
+            wx.navigateTo({
+              url: '../personal/teacher_bill',
+              success: function(res){
+                // success
+              },
+              fail: function(res) {
+                // fail
+              },
+              complete: function(res) {
+                // complete
+              }
+            })
+          }
+          if(wx.getStorageSync(user.Status) == 0)
+          {
+            wx.navigateTo({
+              url: '../personal/student_bill',
+              success: function(res){
+                // success
+              },
+              fail: function(res) {
+                // fail
+              },
+              complete: function(res) {
+                // complete
+              }
+            })
+          }
         }
-        if(wx.getStorageSync(user.Status) == 0)
+         else
         {
-          wx.navigateTo({
-            url: '../personal/student_bill',
-            success: function(res){
-              // success
-            },
-            fail: function(res) {
-              // fail
-            },
-            complete: function(res) {
-              // complete
+          var that = this;
+          wx.showModal({
+            content: '尚未登录',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定');
+                //注册
+                that.setData({
+                  hide_login: false,
+                });
+
+                loadingSelections.call(that);
+              }
             }
-          })
+          });
+
         }
         break;
       }
@@ -412,9 +484,6 @@ Page({
               }
             }
           });
-
-          
-          
 
         }
         
