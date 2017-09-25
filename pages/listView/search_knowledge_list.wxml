@@ -21,7 +21,7 @@
 
   </scroll-view>
 
-  <text class="no_content_hint" wx:if="{{(hide_knowledge_list == false || ask_page == true) && infos.length == 0}}">没找到符合条件的题目</text>
+  <!--<text class="no_content_hint" wx:if="{{(hide_knowledge_list == false || ask_page == true) && infos.length == 0}}">没找到符合条件的题目</text>-->
 
 
 <!--</view>-->
