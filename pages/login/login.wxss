@@ -46,7 +46,7 @@
     width: 50%;
     line-height: 84rpx;
     background-color: #ffffff;
-    color: #29bcbb;
+    color: #d25353;
     font-size: 34rpx;
     text-align: center;
 }
@@ -64,7 +64,7 @@
     width: 50%;
     line-height: 84rpx;
     background-color: #ffffff;
-    color: #29bcbb;
+    color: #d25353;
     font-size: 34rpx;
     text-align: center;
 }
@@ -117,14 +117,14 @@ button_wrap{
     line-height: 76rpx;
     width: auto;
     /*border:1px solid #CCCCCC;*/
-    background-color: #29bcbb;
+    background-color: #d25353;
 }
 
 .send_verification_code_button{
     font-size:30rpx;
     height: 76rpx;
     line-height:76rpx;
-    -webkit-text-fill-color: #29bcbb;
+    -webkit-text-fill-color: #d25353;
     color: #ffffff;
     text-align: center;
     border-top :1px solid #CCCCCC;
@@ -173,8 +173,8 @@ button_wrap{
     line-height:30px;
     margin-bottom: 10px;
     width: 168rpx;
-    background-color: #29bcbb;
-    -webkit-text-fill-color: #29bcbb;
+    background-color: #d25353;
+    -webkit-text-fill-color: #d25353;
     text-align: center;
     font-size: 28rpx;
     /*border-radius:0 8rpx 8rpx 0;*/
@@ -267,7 +267,7 @@ button_wrap{
     bottom: 30rpx;
     line-height: 74rpx;
     border-radius:4px;
-    background-color: #29bcbb;
+    background-color: #d25353;
     /*align-items: center;*/
     /*argin-top: 100px;*/
     border:none;
