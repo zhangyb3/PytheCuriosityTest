@@ -67,7 +67,7 @@ image {
 
 .uploadButton{
   margin-top: 40rpx;
-  background-color: #3aa4f1;
+  background-color: #d25353;
   color: #fff;
   font-size: 34rpx;
   line-height: 90rpx;

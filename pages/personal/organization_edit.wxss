@@ -160,7 +160,7 @@
     bottom:0;
     width:100%;
     height:100rpx;
-    background: #29bcbb;
+    background: #eaeaea;
     clear:both;
     text-align: center;
     /*z-index: 5;*/
@@ -170,6 +170,7 @@
 .organization_add_text{
     vertical-align: middle;
     font-weight: bold;
+    color: white;
 }
 
 @import "../listView/member_display_list.wxss";

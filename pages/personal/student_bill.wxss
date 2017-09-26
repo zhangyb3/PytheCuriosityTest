@@ -7,8 +7,8 @@
 .summary_zone{
     width: 100%;
     height: auto;
-    background-color: #29bcbb;
-
+    /*background-color: #eaeaea;*/
+    border-bottom: 1rpx solid #eaeaea;
     /*justify-content:center;
     align-items:center;
     display:-webkit-flex;*/
@@ -47,7 +47,7 @@
     font-size: 50rpx;
     font-weight: bold;
     float: left;
-    color: white;
+    color: #d25353;
 }
 
 .withdraw_button{
@@ -71,7 +71,7 @@
     font-size: 30rpx;
     font-weight: bold;
 
-    color: white;
+    /*color: white;*/
 }
 
 .student_bill_container{

@@ -5,7 +5,7 @@
     position: fixed;
     flex-direction: column;
     align-items: center;
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
     top: 0rpx;
     left: 0rpx;
     right: 0rpx;
@@ -19,7 +19,7 @@
 }
 
 .reward_page_motto{
-    color: #3aa4f1;
+    color: #d25353;
     font-size: 40rpx;
     
 }
@@ -114,14 +114,16 @@
     width: 80%;
     line-height: 92rpx;
     font-size: 36rpx;
-    background-color: #d2cea9;
-    -webkit-text-fill-color: #ffffff;
+    background-color: #eaeaea;
+    /*-webkit-text-fill-color: white;*/
+    border: 1px solid #d25353;
+    color: #d25353;
 }
 
 .otherRewardInput{
     text-align: center;
     font-size: 30rpx;
-    border: 1px solid #3AA4F1;
+    border: 1px solid #d25353;
 }
 
 

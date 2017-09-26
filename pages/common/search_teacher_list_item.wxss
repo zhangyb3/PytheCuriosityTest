@@ -12,7 +12,7 @@
     
     display: flex;
     flex-direction: column;*/
-    background-color: #f3f1e4;
+    background-color: white;
 }
 
 .teacher_wrapper{
@@ -28,7 +28,7 @@
     height: 250rpx;
     /*position: relative;*/
     /*z-index: 1;*/
-    /*background-color: #f3f1e4;*/
+    background-color: white;
 
     border-top: 1px solid #EEE;
     border-bottom: 1px solid #EEE;
@@ -150,10 +150,10 @@
     line-height: 62rpx;
     width: 80%;
     
-    color: #3AA4F1;
+    color: #d25353;
     font-size: 28rpx;
     text-align: center;
-    border: 1px solid #29bcbb;
+    border: 1px solid #d25353;
     background: none;
     
     padding: 0;
@@ -168,7 +168,7 @@
     font-size: 28rpx;
     /*padding-bottom: 10rpx;*/
     /*margin-bottom: 40rpx;*/
-    color: #29bcbb;
+    color: #d25353;
     /*text-align: center;*/
 }
 

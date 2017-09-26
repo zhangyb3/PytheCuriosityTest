@@ -15,7 +15,7 @@
     position: fixed;
     flex-direction: column;
     align-items: center;
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
     top: 290rpx;
     left: 20rpx;
     right: 20rpx;
@@ -127,7 +127,9 @@
     width: 75%;
     line-height: 92rpx;
     font-size: 36rpx;
-    background-color: #d2cea9;
-    -webkit-text-fill-color: #ffffff;
+    background-color: #eaeaea;
+    /*-webkit-text-fill-color: #ffffff;*/
+    color: #d25353;
+    border: 1px solid #d25353;
 }
 

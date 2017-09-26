@@ -27,6 +27,15 @@ Page({
       user: this.data.user,
       org: this.data.organization,
     });
+
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          scrollHeight: res.windowHeight
+        });
+      }
+    });
+
   },
   onReady:function(){
     // 页面渲染完成

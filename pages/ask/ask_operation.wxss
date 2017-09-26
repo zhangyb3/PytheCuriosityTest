@@ -301,8 +301,10 @@ color: #999999;
     line-height: 93rpx;
     /*margin-top: 55rpx;*/
     width: 85%;
-    background-color: #d2cea9;
+    background-color: #eaeaea;
     font-size: 36rpx;
+    color: #d25353;
+    border: 1px solid #d25353;
 }
 
 .input_select_view{
@@ -375,13 +377,13 @@ background-color: deepskyblue;
 .background{
   height: 55rpx;
   width: 100%;
-  background-color: #f3f1e4;
+  background-color: #eaeaea;
 }
 .ask_commit_confirm{
 
     /*margin-top: 100rpx;*/
     height: 680rpx;
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
 }
 
 @import "../section/operation_record_sound.wxss";

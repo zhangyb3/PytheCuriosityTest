@@ -281,16 +281,11 @@ Page({
       }
       case '搜索':
       {
-        wx.navigateTo({
-          url: 'search',
-          success: function(res){
-            // success
-          },
-          fail: function(res) {
-            // fail
-          },
-          complete: function(res) {
-            // complete
+        var that = this;
+        wx.showModal({
+          content: '尚未开通',
+          success: function(res) {
+            
           }
         });
         break;
@@ -385,13 +380,39 @@ Page({
       }
       case '收藏':
       {
-        var that = this;
-        wx.showModal({
-          content: '尚未开通',
-          success: function(res) {
-            
-          }
-        });
+        if(wx.getStorageSync('alreadyRegister') == 'yes')
+        {
+          wx.navigateTo({
+            url: '../personal/personal_like',
+            success: function(res){
+              // success
+            },
+            fail: function(res) {
+              // fail
+            },
+            complete: function(res) {
+              // complete
+            }
+          })
+        }
+        else
+        {
+          var that = this;
+          wx.showModal({
+            content: '尚未登录',
+            success: function(res) {
+              if (res.confirm) {
+                console.log('用户点击确定');
+                //注册
+                that.setData({
+                  hide_login: false,
+                });
+
+                loadingSelections.call(that);
+              }
+            }
+          });
+        }
         break;
       }
       case '钱包':
@@ -429,7 +450,7 @@ Page({
             })
           }
         }
-         else
+        else
         {
           var that = this;
           wx.showModal({

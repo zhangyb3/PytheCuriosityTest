@@ -4,7 +4,7 @@
     flex-direction:row;
     /*justify-content: space-between;*/
     align-items: center;
-    background-color: #29bcbb;
+    background-color: #eaeaea;
     border-bottom: 1px solid #EEE;
     height:100rpx;
     width: 100%;

@@ -145,10 +145,10 @@
     width: 80%;
     /*width: 116rpx;*/
     /*margin-right: 20rpx;*/
-    color: #29bcbb;
+    color: #d25353;
     font-size: 32rpx;
     text-align: center;
-    border: 1px solid #29bcbb;
+    border: 1px solid #d25353;
     background: none;
     /*padding: 0;*/
     padding: 0;
@@ -163,7 +163,7 @@
     font-size: 32rpx;
     /*padding-bottom: 10rpx;*/
     /*margin-bottom: 40rpx;*/
-    color: #29bcbb;
+    color: #d25353;
     /*text-align: center;*/
 }
 

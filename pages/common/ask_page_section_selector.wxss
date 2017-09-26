@@ -15,7 +15,7 @@
 .middle_line_wrap{
     display: flex;
     width: 2px;
-    background-color: #29bcbb;
+    background-color: #eaeaea;
     /*top: 15rpx;*/
     /*bottom: 30rpx;*/
     height: 100rpx;
@@ -37,17 +37,19 @@
     text-align: center;
     /*border: 1px;*/
     color: #fff;
-    background-color: #29bcbb;
+    background-color: #eaeaea;
     
     justify-content: center;
     align-items: center;
     font-size: 40rpx;
+    font-weight: bold;
 }
 
 .bar_item.active{
-    color: #cfd37d;
-    background-color: #29bcbb;
+    color: #d25353;
+    background-color: #eaeaea;
     font-size: 40rpx;
+    font-weight: bold;
 }
 
 .bottom_line{

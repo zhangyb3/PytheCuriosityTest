@@ -102,7 +102,7 @@
 .middle_line_wrap{
     display: flex;
     width: 2px;
-    background-color: #29bcbb;
+    background-color: #999999;
     /*top: 15rpx;*/
     /*bottom: 30rpx;*/
     height: 100rpx;
@@ -124,7 +124,7 @@
     text-align: center;
     /*border: 1px;*/
     color: #fff;
-    background-color: #29bcbb;
+    background-color: #999999;
     
     justify-content: center;
     align-items: center;

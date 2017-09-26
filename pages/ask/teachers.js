@@ -60,7 +60,7 @@ Page({
   onShow:function(){
     
     var that = this;
-    if(wx.getStorageSync(user.StudentID) != 'studentID')
+    if(wx.getStorageSync('alreadyRegister') == "yes" && wx.getStorageSync(user.Status) == 0)
     {
       this.data.searchParameters.userId = wx.getStorageSync(user.StudentID);
     }
@@ -68,6 +68,7 @@ Page({
     {
       this.data.searchParameters.userId = -1;
     }   
+
     listViewUtil.loadList(that,'subject_teacher',config.PytheRestfulServerURL,
     "/question/teacherList",
     10,

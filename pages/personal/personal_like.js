@@ -260,7 +260,7 @@ Page({
     var that = this;
     var myLikeAnswerParams = {
       userId : wx.getStorageSync(user.UserID),
-      pageSize : 3,
+      pageSize : 10,
       pageNum : 1,
       
     };    

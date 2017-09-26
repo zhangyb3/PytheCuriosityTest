@@ -119,9 +119,9 @@ var remoteLogin = (success, fail) => {
             });
 
             //SID,TID临时测试数据
-            wx.setStorageSync(user.StudentID, 'studentID');
-            wx.setStorageSync(user.TeacherID, 'teacherID');
-            wx.setStorageSync(user.UserID, 'userID');
+            // wx.setStorageSync(user.StudentID, 'studentID');
+            // wx.setStorageSync(user.TeacherID, 'teacherID');
+            // wx.setStorageSync(user.UserID, 'userID');
 
             wx.request({
                 url: LOGIN_URL,
@@ -153,14 +153,14 @@ var remoteLogin = (success, fail) => {
                             key: user.OpenID,
                             data: res.data.data.openid,
                         });
-                        wx.setStorage({
-                            key: user.StudentID,
-                            data: 'studentID',
-                        });
-                        wx.setStorage({
-                            key: user.TeacherID,
-                            data: 'teacherID',
-                        });
+                        // wx.setStorage({
+                        //     key: user.StudentID,
+                        //     data: 'studentID',
+                        // });
+                        // wx.setStorage({
+                        //     key: user.TeacherID,
+                        //     data: 'teacherID',
+                        // });
                         wx.setStorageSync('SessionID', res.data.data.session_id);
                         wx.setStorageSync('OpenID', res.data.data.openid);
                         wx.setStorageSync('StudentID', 'StudentID');

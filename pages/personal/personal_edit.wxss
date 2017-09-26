@@ -94,9 +94,11 @@
     width: 90%;
     line-height: 92rpx;
     margin-top: 50px;
-    -webkit-text-fill-color: #ffffff;
+    -webkit-text-fill-color: #d25353;
     font-size: 40rpx;
-    background-color: #29bcbb;
+    background-color: #eaeaea;
+    color: #d25353;
+    border: 1rpx solid #d25353;
 }
 
 .title_wrap{

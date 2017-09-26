@@ -4,7 +4,7 @@ page{
 }
 
 .teacher_phone_search_container{
-    background-color: #29bcbb;
+    background-color: #999999;
     display: flex;
     flex-direction: row;
     border-bottom: 5px #ffffff;
@@ -74,6 +74,7 @@ page{
 
 .cancel{
     vertical-align: middle;
+    font-weight: bold;
 }
 
 .no_teacher_notification{
