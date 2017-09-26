@@ -138,26 +138,21 @@
 }
 
 .teacher_ask_section_button{
-    /*display: flex;*/
-    /*align-items: center;
-    justify-content: center;*/
-    /*background: url(../../images/teacher_ask_icon.png) no-repeat center center;*/
 
-    justify-content:center;
-    align-items:center;
-    display:-webkit-flex;
-    
+    display: flex;
+    position: relative;
+
     line-height: 62rpx;
     width: 80%;
-    
+
     color: #d25353;
-    font-size: 28rpx;
+    font-size: 32rpx;
     text-align: center;
     border: 1px solid #d25353;
     background: none;
-    
+
     padding: 0;
-    border-radius: 33rpx;
+    /*border-radius: 33rpx;*/
     background: none;
 }
 

@@ -43,6 +43,8 @@ Page({
     list_mode: 'index_search_knowledge',
     list_type: 'index',
 
+    preview_img_url: config.PytheFileServerURL ,
+
     hide_login:true,
     select_student:true,
     select_teacher:false,

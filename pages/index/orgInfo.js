@@ -16,6 +16,7 @@ Page({
     teacher_edit: true,
     user: {},
     org: {},
+    preview_img_url: config.PytheFileServerURL ,
   },
   onLoad:function(parameters){
 
