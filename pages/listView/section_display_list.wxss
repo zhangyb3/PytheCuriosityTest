@@ -51,7 +51,7 @@
     height: auto;
     width: 33.33%;
 
-    
+    align-items: center;
 }
 
 .member_item_wrapper{

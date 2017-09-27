@@ -16,7 +16,7 @@
     <text class="title">个人描述:</text>
     </view>
 <!--<input  class="description_content_text_input" bindinput="getDescriptionText"   placeholder-style="color:#C9C9C9;"/>-->
-    <textarea class="description_content_text_input" bindinput="getDescriptionText"   value='{{userdesc}}' placeholder-style="color:#C9C9C9;"/>
+    <textarea class="description_content_text_input" bindinput="getDescriptionText" maxlength="100"  value='{{userdesc}}' placeholder-style="color:#C9C9C9;"/>
 
 </view>
 

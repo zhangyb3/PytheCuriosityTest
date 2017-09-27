@@ -42,14 +42,14 @@
     justify-content: center;
     align-items: center;
     font-size: 40rpx;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .bar_item.active{
     color: #d25353;
     background-color: #eaeaea;
     font-size: 40rpx;
-    font-weight: bold;
+    /*font-weight: bold;*/
 }
 
 .bottom_line{

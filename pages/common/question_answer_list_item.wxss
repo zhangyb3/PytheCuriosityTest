@@ -83,7 +83,7 @@
 
 .asker_name{
     display:inline-block;
-    font-size: 42rpx;
+    font-size: 32rpx;
     font-weight: 500;
     color: gray;
 }
@@ -162,8 +162,8 @@
 
 .question_img_container{
     float: left;
-    width: 100rpx;
-    height: 100rpx;
+    width: 150rpx;
+    height: 150rpx;
     /*display:table-cell;
     vertical-align:middle;
     text-align: center;*/
@@ -173,8 +173,8 @@
 }
 
 .question_img{
-    width: 90rpx;
-    height: 90rpx;
+    width: 120rpx;
+    height: 120rpx;
     /*border-radius: 50%;*/
 
     /*position: relative;
@@ -186,7 +186,7 @@
 .question_text_container{
     float: right;
 
-    height: 100rpx;
+    height: 150rpx;
     /*white-space:nowrap; */
 
     /*display: flex;*/
@@ -196,7 +196,7 @@
     overflow: hidden;
     text-overflow: -o-ellipsis-lastline;
     display: -webkit-box;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;
 
     line-height: 50rpx;

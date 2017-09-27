@@ -41,7 +41,7 @@ page{
     line-height: 100%;
     width: 100%;
     text-align: center;
-    color: lightgray;
+    color: gray;
     
 }
 
@@ -78,6 +78,19 @@ page{
     
     height: 80rpx;
     background-color: #5d5d5d;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.register_login{
+
+    height: 50rpx;
+    line-height: 50rpx;
+    background-color: white;
+    color: #d25353;
+    font-size: 32rpx;
 
 }
 

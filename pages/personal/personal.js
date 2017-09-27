@@ -475,27 +475,27 @@ Page({
           wx.setStorageSync(user.TeacherID, registerInfo.userid);
 
           //自动更新头像
-          // if(wx.getStorageSync('avatarUrl') != wx.getStorageSync('userAvatarUrl'))
-          // {
-          //   wx.request({
-          //     url: config.PytheRestfulServerURL + '/user/updateAvatar',
-          //     data: {
-          //       userId: wx.getStorageSync(user.UserID),
-          //       avatar: wx.getStorageSync('avatarUrl'),
-          //     },
-          //     method: 'GET', 
-          //     success: function(res){
-          //       // success
-          //       wx.setStorageSync('userAvatarUrl', wx.getStorageSync('avatarUrl'));
-          //     },
-          //     fail: function(res) {
-          //       // fail
-          //     },
-          //     complete: function(res) {
-          //       // complete
-          //     }
-          //   })
-          // }
+          if(wx.getStorageSync('avatarUrl') != wx.getStorageSync('userAvatarUrl'))
+          {
+            wx.request({
+              url: config.PytheRestfulServerURL + '/user/updateAvatar',
+              data: {
+                userId: wx.getStorageSync(user.UserID),
+                avatar: wx.getStorageSync('avatarUrl'),
+              },
+              method: 'GET', 
+              success: function(res){
+                // success
+                wx.setStorageSync('userAvatarUrl', wx.getStorageSync('avatarUrl'));
+              },
+              fail: function(res) {
+                // fail
+              },
+              complete: function(res) {
+                // complete
+              }
+            })
+          }
 
         }
       },
@@ -578,6 +578,29 @@ Page({
       hide_register_lock_cover: true,
     });
   },
+
+
+  //退出登录
+  exitSystem:function(e){
+    console.log('退出登录');
+
+    wx.setStorageSync('exitSystem', 'yes');
+    wx.navigateBack({
+      delta: 1, // 回退前 delta(默认为1) 页面
+      success: function(res){
+        // success
+      },
+      fail: function(res) {
+        // fail
+      },
+      complete: function(res) {
+        // complete
+      }
+    })
+
+  },
+
+
   onHide:function(){
     // 页面隐藏
   },

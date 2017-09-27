@@ -2,13 +2,16 @@
 
 .answer_operation_view{
     background-color: #eaeaea;
+    height: auto;
+    overflow-y: auto;
 }
 .answer_question_wrapper{
     /*margin-top: 10px;*/
-    height: 100px;
+    /*height: 100px;*/
+    height: auto;
     /*border-top: 1px solid #EEE;*/
     overflow-x: hidden; 
-    overflow-y: auto;
+    /*overflow-y: auto;*/
     align-items: center;
     background-color: white;
 }

@@ -965,7 +965,9 @@ Page({
         },
     };
 
-    if(answerParams.answerContent.text[0]!=null && answerParams.knowledgeId!=null)
+    if(answerParams.answerContent.text[0]!=null 
+    // && answerParams.knowledgeId!=null
+      )
     {
       base.commitAnswer(answerParams);
       wx.setStorageSync('hasTakenPhoto', 'no');
@@ -987,7 +989,7 @@ Page({
     {
       wx.showModal({
         title: '提示',
-        content: '答案内容和知识点不能为空',
+        content: '答案内容不能为空',
         success: function(res) {
           if (res.confirm) {
             console.log('用户点击确定')

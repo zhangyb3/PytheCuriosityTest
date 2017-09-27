@@ -5,36 +5,46 @@
     <view class="display_list_view" >
     
     
-    
-    <!-- 遮罩 -->
-    <!--<view class="display_list_cover"  bindtap='returnIndexPage'></view>-->
+
 
     <!-- 成员列表区域 -->
     <scroll-view class="display_list_zone" scroll-y="true" style="height:{{scrollHeight}}px"  >
-        <view class="members">
-            <block wx:for-items="{{member_display_list}}"  >
-                <view class="member_item_wrapper" >
-                    <view class="member_item" hover-class="" data-name="{{item.username}}" data-memberId="{{item.userid}}" bindtap="getSelectSubjectList" >
+        
+        <block wx:for-items="{{member_display_list}}"  >
+
+            <view class="item_container">
+
+                <view class="member_item_wrapper" data-item="{{item}}"  bindtap="redirectToPage">
+
+                    <view style="height: 20rpx;"></view>
+
+                    <view class="member_item" hover-class=""  >
                         <view class="member_item_container">
 
                             <view class="member_img_container">
                                 <image class="member_img" src="{{item.userimg}}"></image>
-                                <image class="member_delete" src="../../images/cancel.png" bindtap="orgDeleteTeacher" data-teacher="{{item}}"/>
+                                <image class="member_cancel" src="../../images/cancel.png"  data-teacher="{{item}}" bindtap="orgDeleteTeacher"/>
                             </view>
                             
                             
                         </view>
                         
                     </view>
-                <view class="member_name">
+                <!--<view class="member_name">
                     <text>{{item.username}}</text>
-                </view>
+                </view>-->
+
+                <view style="height: 20rpx;"></view>
                 
                 </view>
 
-            </block>
+            </view>
+
             
-        </view>
+
+        </block>
+            
+        
         
     </scroll-view>
 

@@ -194,6 +194,9 @@ function download(that,download_file,fileType)
                   // complete
                   // wx.hideLoading();
                   wx.setStorageSync('playingVoice', 'no');
+                  that.setData({
+                    isPlaying: false,
+                  });
                 }
               })
             }
@@ -216,6 +219,7 @@ function download(that,download_file,fileType)
           },
           complete: function(res) {
             console.log(res);
+            
           }
         })
 
@@ -281,6 +285,9 @@ function downloadFile(that,download_file,fileType,success,fail)
         },
         complete: function(res) {
           // complete
+          that.setData({
+            isPlaying: false,
+          });
         }
       })
     }
@@ -351,7 +358,9 @@ function downloadFile(that,download_file,fileType,success,fail)
             complete: function() {
               // complete
               // wx.hideLoading();
-              
+              that.setData({
+                isPlaying: false,
+              });
             }
           })
         }

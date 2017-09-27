@@ -9,7 +9,7 @@
    
     <!-- 成员列表区域 -->
     <scroll-view class="display_list_zone" scroll-y="true" style="height:{{scrollHeight}}px"  >
-        <!--<view class="members">-->
+
         <block wx:for-items="{{section_display_list}}"  >
 
             <view class="item_container">
@@ -34,7 +34,7 @@
                     <text>{{item.sectionName}}</text>
                 </view>
 
-                    <view style="height: 20rpx;"></view>
+                <view style="height: 20rpx;"></view>
                 
                 </view>
 
@@ -42,7 +42,6 @@
 
         </block>
             
-        <!--</view>-->
         
     </scroll-view>
 

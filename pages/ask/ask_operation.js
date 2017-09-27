@@ -817,18 +817,18 @@ Page({
         }
       });
     }
-    else if(this.data.ask_question.subjectId == null)
-    {
-      wx.showModal({
-        title: '提示',
-        content: '题目科目不能为空',
-        success: function(res) {
-          if (res.confirm) {
-            console.log('用户点击确定')
-          }
-        }
-      });
-    }
+    // else if(this.data.ask_question.subjectId == null)
+    // {
+    //   wx.showModal({
+    //     title: '提示',
+    //     content: '题目科目不能为空',
+    //     success: function(res) {
+    //       if (res.confirm) {
+    //         console.log('用户点击确定')
+    //       }
+    //     }
+    //   });
+    // }
     else
     {
       this.setData({

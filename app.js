@@ -26,10 +26,7 @@ App({
     }
 
     wx.setStorageSync('alreadyRegister', 'no');
-
-    
-
-  
+    wx.setStorageSync('exitSystem', 'no');
     
 
 

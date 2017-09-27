@@ -1,8 +1,8 @@
 <!--pages/personal/organization_edit.wxml-->
 <import src="../listView/section_display_list.wxml" />
 
-<import src="../pop/register_lock_cover.wxml" />
-<view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>
+<!--<import src="../pop/register_lock_cover.wxml" />
+<view class="register_lock_cover" hidden='{{hide_register_lock_cover}}'></view>-->
 
 <import src="../login/login.wxml" />
 <view class="login_container" hidden='{{hide_login}}'>
@@ -30,6 +30,8 @@
   </view>
 
   <view class="banner_container">
+    <button class="register_login" wx:if="{{ exitSystem == 'yes' && alreadyRegister == 'yes' }}" bindtap="userLogin">登录</button>
+    <button class="register_login" wx:if="{{ exitSystem == 'yes' && alreadyRegister == 'no' }}" bindtap="userRegister">注册</button>
   </view>
 
   <view class="section_display_list_container" >

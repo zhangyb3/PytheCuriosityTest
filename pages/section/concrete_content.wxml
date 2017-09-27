@@ -29,15 +29,18 @@
         
             <view class="multi_tips"> 
 
+            <view style="height: 20rpx;"></view>
             <view class="multi_tips_min"> 
+            
             <view wx:if="{{question.questioncontent.audio[0] != null}}" class="speak_style_record" data-voice="{{question.questioncontent.audio[0]}}" bindtap="playVoiceRecord">
         <image wx:if="{{!isPlaying}}" class="sound_style_record" src="../../images/voice_static.png" ></image>
         <image wx:if="{{isPlaying}}" class="sound_style_record" src="../../images/record.gif" ></image>
         <text class="record_time">{{question.questioncontent.audio[1]}}秒</text>
 
             </view>
+            
             </view>
-
+            <view style="height: 20rpx;"></view>
             
 
                 <view wx:if="{{question.questioncontent.img[0] != null}}" class="photo" >
@@ -98,7 +101,7 @@
                             </view>
 
                         </view>-->
-
+                <view style="height: 20rpx;"></view>
                 <view class="multi_tips">
                 <view class="multi_tips_min">
                         <view wx:if="{{answer.answercontent.audio[0] != null}}" data-voice="{{answer.answercontent.audio[0]}}" class="speak_style_record" bindtap="playVoiceRecord">
@@ -108,7 +111,7 @@
 
  </view>
                 </view>
-                
+                <view style="height: 20rpx;"></view>
 
                         <view wx:if="{{answer.answercontent.img[0] != null}}" class="photo" >
                             <image class="preview_img_classic" data-photo='{{answer.answercontent.img[0]}}' src='{{preview_img_url + answer.answercontent.img[0]}}' bindtap="showPhoto" mode="aspectFit">
@@ -133,7 +136,7 @@
             <view class="border_tab_seprateline"></view>
 
             <view class="operation_container">
-                <template is="concrete_operation" data="{{alreadyRegister,question,answer}}"></template>
+                <template is="concrete_operation" data="{{alreadyRegister,question,answer,answer_index}}"></template>
             </view>
 
             </block>

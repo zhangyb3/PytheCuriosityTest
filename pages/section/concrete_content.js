@@ -129,7 +129,7 @@ Page({
   //点赞答案
   likeAnswer:function(e){
     var answer_index = e.currentTarget.dataset.answer_index;
-    
+    console.log(answer_index);
     //点赞+1并更新数据库
     console.log(this.data.answers[answer_index]);
     

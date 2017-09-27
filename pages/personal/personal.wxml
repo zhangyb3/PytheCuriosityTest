@@ -164,6 +164,7 @@
 
     </view>
 
+    <view style="height: 30rpx;"></view>
 
     <view class="about_us_zone">
 
@@ -172,7 +173,7 @@
             <view class="menu_list_icon_wrap">
                 <image class="menu_list_icon_detail" src="../../images/wallet_icon.png"></image>
 </view>
-            <text class="rules personal_operation_item_text">钱包</text>
+            <text class="rules personal_operation_item_text">我的钱包</text>
             <view class="personal_description_revise_zone">
             <view class="person_edit_icon_view">
                 <button class="person_edit_icon" >
@@ -186,6 +187,25 @@
 
     </view>
 
+
+    <view style="height: 30rpx;"></view>
+
+    <view class="personal_operation_item_wrapper">
+    <view class="exit_selection personal_operation_item" bindtap="exitSystem">
+        <view class="menu_list_icon_wrap">
+            <image class="menu_list_icon_detail" src="../../images/cancel.png"></image>
+</view>
+        <text class="exit personal_operation_item_text">退出登录</text>
+        <view class="personal_description_revise_zone">
+        <view class="person_edit_icon_view">
+            <button class="person_edit_icon" >
+                <!--<image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>-->
+            </button>
+        </view>
+        </view>
+        
+    </view>
+    </view>
 
     <!--<contact-button 
     type="default-light" 

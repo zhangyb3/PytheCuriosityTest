@@ -50,7 +50,7 @@
 
 .input_view{
     height: 68rpx;
-    width: 75%;
+    width: 80%;
 
     border-radius: 34rpx;
     display: flex;
@@ -64,7 +64,7 @@
     font-size: 30rpx;
     color: #999999;
     background-color: #ffffff;
-    margin-left: 10rpx;
+    margin-left: 30rpx;
 
 }
 

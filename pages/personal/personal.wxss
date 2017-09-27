@@ -3,6 +3,10 @@ page{
     background-color: #eaeaea;
 }
 
+.personal_page{
+    overflow-y: auto;
+}
+
 .personal_description{
     background-color: #ffffff;
 }

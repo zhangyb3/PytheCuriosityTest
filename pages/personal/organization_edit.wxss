@@ -2,6 +2,7 @@
 
 .organization_edit_page{
     /*background-color: #f3f1e4;*/
+    width: 100%;
 }
 
 
@@ -151,8 +152,8 @@
 }
 
 .teacher_display_list_container{
-    height: 50%;
-    
+    /*height: 50%;*/
+    width: 100%;
 }
 
 .update_organization{

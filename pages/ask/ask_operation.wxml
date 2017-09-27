@@ -26,15 +26,16 @@
         
         <view class="border_tab"></view>-->
         <view class="ask_background_line"></view>
-        <view class="subject_container" wx:if="{{ask_question.not_select_subject == true}}">
+
+        <!--<view class="subject_container" wx:if="{{ask_question.not_select_subject == true}}">
             <picker mode="selector" bindchange="subjectChange" value="{{subject_index}}" range="{{subjectRange}}" class="subject_picker_wrap">
                 <view class="subject_picker">
                     {{subjectRange[subject_index]}}
                 </view>
-                <!--<image class="arr_img" src="../../images/question_sanjiao@2x.png"></image>-->
+                
             </picker>
             
-        </view>
+        </view>-->
 
         <view class="ask_container" >
             

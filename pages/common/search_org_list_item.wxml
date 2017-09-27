@@ -26,7 +26,7 @@
                 </view>
                     
                 <view class="org_ask_section">
-                    <button class="org_ask_button" wx:if="{{search_page == true}}" data-org="{{item}}" bindtap="askOneOrg">
+                    <button class="org_ask_button" wx:if="{{search_page == true}}" data-org="{{item}}" >
                     <text>详情</text>  
                     </button>
                 </view>
