@@ -4,8 +4,8 @@
     flex-direction:row;
     /*justify-content: space-between;*/
     align-items: center;
-    background-color: #eaeaea;
-    border-bottom: 1px solid #EEE;
+    background-color: #999999;
+    border-bottom: 1px solid #ffffff;
     height:100rpx;
     width: 100%;
     position: fixed;
@@ -78,6 +78,8 @@
     background: none;
     height: 90rpx;
     width: 160rpx;
+    font-size: 36rpx;
+    color: white;
     /*justify-content: flex-end;*/
     /*margin-right: 20rpx;*/
     /*justify-content: space-around;*/
@@ -127,5 +129,5 @@
 .bottom_line_seprate{
     width: 100%;
     height: 1px;
-    background-color: #EEE;
+    background-color: white;
 }

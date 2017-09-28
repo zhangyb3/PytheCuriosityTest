@@ -30,8 +30,18 @@
   </view>
 
   <view class="banner_container">
+
+    <view class="user_status" wx:if="{{exitSystem == 'no' && alreadyRegister == 'yes'}}">
+      <view class="icon_container">
+        <image class="index_user_avatar" src="../../images/index_user_avatar.png"></image>
+      </view>
+      <view class="name_container">
+        <text class="index_user_name">我叫{{indexUserName}},young,simple,naive</text>
+      </view>
+    </view>
+
     <button class="register_login" wx:if="{{ exitSystem == 'yes' && alreadyRegister == 'yes' }}" bindtap="userLogin">登录</button>
-    <button class="register_login" wx:if="{{ exitSystem == 'yes' && alreadyRegister == 'no' }}" bindtap="userRegister">注册</button>
+    <button class="register_login" wx:if="{{ alreadyRegister == 'no' }}" bindtap="userRegister">注册</button>
   </view>
 
   <view class="section_display_list_container" >

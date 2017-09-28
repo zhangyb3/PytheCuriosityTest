@@ -1,0 +1,42 @@
+<template name="nearby_org_list_item">
+
+<view class="list-item" style="background-color:white" data-item='{{ item }}' data-org='{{item}}' data-index='{{index}}' >
+
+            
+
+            <view class="org_wrapper" data-org="{{item}}" bindtap="askOneOrg">
+            <!--头像部分-->
+                <view class= "org_icon_wrapper">
+                    <image class="org_icon" wx:if="{{item.avatar != null}}"  src="{{item.avatar}}"
+                    ></image>
+                    <image class="org_icon_null" wx:if="{{item.avatar == null}}"  src="../../images/add_op.png"
+                    ></image>
+                </view>
+                
+            <!--介绍-->
+                <view class= "org_middle_wrapper">
+                    
+                    <view style="height:35rpx;"></view>
+
+                    <view class="org_name_wrap" data-org="{{item}}">
+                        <text class="org_name">{{ item.name }}</text>
+                    </view>
+
+                    <view class="org_address_wrap" data-org="{{item}}">
+                        <view class="org_address_icon">
+                            <image src="../../images/address_icon.png"></image>
+                        </view>
+                        <view class="org_address_text_container">
+                            <text class="org_address_text">·{{item.address}}</text>
+                        </view>
+                    </view>
+                    
+                </view>
+                    
+                
+              
+            </view>   
+            <view class="border_tab"></view>   
+</view>
+
+</template>

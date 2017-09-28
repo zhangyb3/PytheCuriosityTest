@@ -395,7 +395,6 @@ page{
     width: 100%;
     /*background-color: #ffffff;*/
 }
-@import "../register/register.wxss";
     
 @import "../pop/register_lock_cover.wxss";
 

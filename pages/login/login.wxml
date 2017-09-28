@@ -34,7 +34,7 @@
             
         </view>
         <view class="grade_container" wx:if="{{select_student}}" hidden='{{hide_grade_selection}}'>
-            <text class="grade_hint">年 级</text>
+            <text class="grade_hint">年级</text>
             <picker mode="selector" bindchange="gradeChange" value="{{grade_index}}" range="{{gradeRange}}" class="grade_picker_wrap">
                 <view class="grade_picker">
                     {{gradeRange[grade_index]}}
@@ -42,7 +42,7 @@
             </picker>
         </view>
         <view class="subject_container" wx:if="{{select_teacher}}" hidden='{{hide_subject_selection}}'>
-            <text class="subject_hint"> 科目:</text>
+            <text class="subject_hint">科目</text>
             <picker mode="selector" bindchange="subjectChange" value="{{subject_index}}" range="{{subjectRange}}" class="subject_picker_wrap">
                 <view class="subject_picker">
                     {{subjectRange[subject_index]}}

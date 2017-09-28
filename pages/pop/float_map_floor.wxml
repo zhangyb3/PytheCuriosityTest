@@ -1,0 +1,12 @@
+<!-- 弹出层 -->
+
+<template name="float_map_view">
+
+   
+
+    <view class="float_map_icon_conatainer" data-user_info="{{userInfo}}" bindtap="showOrgOnMap">
+        <image  class="float_map_icon" src="../../images/float_map_icon.png"></image>
+    </view>
+    
+
+</template>

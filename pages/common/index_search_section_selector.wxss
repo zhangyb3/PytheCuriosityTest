@@ -4,7 +4,7 @@
     height: 100rpx;
     display: flex;
     flex-direction: row;
-    border-bottom: 1rpx solid #EEE;
+    /*border-bottom: 1px solid white;*/
     width: 100%;
     
     z-index: 2;
@@ -37,13 +37,14 @@
     line-height: 100rpx;
     text-align: center;
     /*border: 1px;*/
-    color: #fff;
+    color: #999999;
     background-color: #eaeaea;
     
     justify-content: center;
     align-items: center;
     font-size: 40rpx;
     /*font-weight: bold;*/
+    border-bottom: 1px solid white;
 }
 
 .bar_item.active{
@@ -51,6 +52,7 @@
     background-color: #eaeaea;
     font-size: 40rpx;
     /*font-weight: bold;*/
+    border-bottom: 1px solid #d25353;
 }
 
 .bottom_line{

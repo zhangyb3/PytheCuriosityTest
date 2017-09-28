@@ -74,7 +74,7 @@
     flex-direction: column;
     position: absolute;
     /*width: 85%;*/
-    top: 52rpx;
+    top: 150rpx;
     left: 50rpx;
     right: 50rpx;
     height: auto;

@@ -84,23 +84,52 @@ page{
     display:-webkit-flex;
 }
 
-.register_login{
+.user_status{
+    width: 90%;
+    height: 100%;
 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.icon_container{
+    width: 80rpx;
+    height: 80rpx;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.index_user_avatar{
+    height: 50rpx;
+    width: 50rpx;
+
+}
+
+.index_user_name{
+    color: white;
+    font-size: 32rpx;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+
+.register_login{
+    width: 50%;
     height: 50rpx;
     line-height: 50rpx;
     background-color: white;
     color: #d25353;
     font-size: 32rpx;
-
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .section_display_list_container{
     /*height: 50%;*/
-    box-shadow:  10px 10px 10rpx #5d5d5d;
+    box-shadow:  5rpx 5rpx 5rpx 5rpx #999999;
 }
 
-
-@import "../register/register.wxss";
     
 @import "../pop/register_lock_cover.wxss";
 @import "../login/login.wxss";

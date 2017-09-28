@@ -15,7 +15,6 @@
     "pages/personal/personal_edit",
     "pages/personal/personal_like",
     "pages/knowledge/knowledge",
-    "pages/register/register",
     "pages/reward/reward",
     "pages/reward/other_reward",
     "pages/section/record_voice",
@@ -28,7 +27,9 @@
     "pages/personal/student_bill",
     "pages/personal/personal_description",
     "pages/section/image_frame",
-    "pages/section/concrete_content"
+    "pages/section/concrete_content",
+    "pages/nearby/list_show",
+    "pages/nearby/map_show"
   ],
 
   "window":{

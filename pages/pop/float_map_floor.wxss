@@ -1,0 +1,18 @@
+
+.float_map_icon_conatainer{
+
+    z-index: 12;
+
+    position: fixed;
+    top: 20rpx;
+    /*bottom: 50%;*/
+    right: 5%;
+}
+
+
+.float_map_icon{
+    width: 115px;
+    height: 50px;
+}
+
+

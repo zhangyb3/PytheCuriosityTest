@@ -87,7 +87,6 @@
 @import "../common/index_search_page_filter.wxss";
 @import "../common/index_search_section_selector.wxss";
 
-@import "../register/register.wxss";
 
 @import "../pop/register_lock_cover.wxss";
 

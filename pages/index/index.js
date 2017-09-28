@@ -12,18 +12,18 @@ Page({
   data:{
     section_display_list: [
       {
-        sectionName: '机构',
+        sectionName: '机构管理',
         icon: '../../images/organization_section.png',
         infoNum: 0,
       },
       {
-        sectionName: '教师',
-        icon: '../../images/teacher_section.png',
+        sectionName: '发现',
+        icon: '../../images/discovery_section.png',
         infoNum: 0,
       },
       {
-        sectionName: '搜索',
-        icon: '../../images/search_section.png',
+        sectionName: '附近',
+        icon: '../../images/nearby_section.png',
         infoNum: 0,
       },
       {
@@ -52,7 +52,7 @@ Page({
         infoNum: 0,
       },
       {
-        sectionName: '设置',
+        sectionName: '个人设置',
         icon: '../../images/personal_section.png',
         infoNum: 0,
       },
@@ -110,7 +110,8 @@ Page({
     
     if(wx.getStorageSync('alreadyRegister') == 'no' && wx.getStorageSync('exitSystem') == 'no')
     {
-      loginSystem.call(this);
+      var result = loginSystem(this);
+      console.log(result);
     }
     
     if(wx.getStorageSync('exitSystem') == 'yes')
@@ -121,10 +122,15 @@ Page({
       wx.setStorageSync('alreadyRegister', alreadyRegister);
     }
 
-    this.setData({
-      exitSystem: wx.getStorageSync('exitSystem'),
-      alreadyRegister: wx.getStorageSync('alreadyRegister'),
-    });
+    if(wx.getStorageSync('alreadyRegister') == 'yes' && wx.getStorageSync('exitSystem') == 'no')
+    {
+       this.setData({
+        indexUserName: wx.getStorageSync(user.UserNickName),
+        exitSystem: wx.getStorageSync('exitSystem'),
+        alreadyRegister: wx.getStorageSync('alreadyRegister'),
+      });
+    }
+   
 
   },
 
@@ -136,7 +142,7 @@ Page({
 
     switch(item.sectionName)
     {
-      case '机构':
+      case '机构管理':
       {
         if(wx.getStorageSync('alreadyRegister') == 'yes' && wx.getStorageSync('exitSystem') == 'no')
         {
@@ -175,10 +181,10 @@ Page({
         }
         break;
       }
-      case '教师':
+      case '发现':
       {
         wx.navigateTo({
-          url: '../ask/ask?hide_which=' + 'teacher',
+          url: '../index/catalog',
           success: function(res){
             // success
           },
@@ -191,13 +197,18 @@ Page({
         });
         break;
       }
-      case '搜索':
+      case '附近':
       {
-        var that = this;
-        wx.showModal({
-          content: '尚未开通',
-          success: function(res) {
-            
+        wx.navigateTo({
+          url: '../nearby/list_show',
+          success: function(res){
+            // success
+          },
+          fail: function(res) {
+            // fail
+          },
+          complete: function(res) {
+            // complete
           }
         });
         break;
@@ -391,7 +402,7 @@ Page({
         }
         break;
       }
-      case '设置':
+      case '个人设置':
       {
         if(wx.getStorageSync('alreadyRegister') == 'yes' && wx.getStorageSync('exitSystem') == 'no')
         {
@@ -621,13 +632,15 @@ Page({
             that.setData({
               hide_login:true,
             });
-            that.setData({
-              userAvatarUrl: wx.getStorageSync('userAvatarUrl'),
-              userNickName: wx.getStorageSync(user.UserNickName),
-              userDescription: wx.getStorageSync(user.UserDescription),
-            });
+            
           }
           
+          that.setData({
+            userAvatarUrl: wx.getStorageSync('userAvatarUrl'),
+            userNickName: wx.getStorageSync(user.UserNickName),
+            userDescription: wx.getStorageSync(user.UserDescription),
+          });
+
         },
         fail: function() {
           // fail
@@ -658,17 +671,16 @@ Page({
   },
 
   userLogin:function(e){
-    loginSystem.call(this);
-    this.setData({
-      exitSystem: wx.getStorageSync('exitSystem'),
-      alreadyRegister: wx.getStorageSync('alreadyRegister'),
-    });
+    loginSystem(this);
   },
 
   userRegister:function(e){
     this.setData({
       hide_login: false,
+      select_student: true,
+      select_teacher: false,
     });
+    loadingSelection();
   },
 
 
@@ -788,108 +800,124 @@ function countdown(that) {
 
 function loginSystem(that) {
 
-    wx.login({
-      success: function(res){
-        // success
-        wx.getUserInfo({
-          success: function(res){
-            // success
-            console.log(res.rawData);
-            var rawData = JSON.parse(res.rawData);
-            wx.setStorageSync('avatarUrl', rawData.avatarUrl);
-            // wx.setStorageSync('userNickName', rawData.nickName);
-            wx.setStorageSync('wxNickName', rawData.nickName);
-          },
-          fail: function() {
-            // fail
-          },
-          complete: function() {
-            // complete
+  wx.login({
+    success: function(res){
+      // success
+      wx.getUserInfo({
+        success: function(res){
+          // success
+          console.log(res.rawData);
+          var rawData = JSON.parse(res.rawData);
+          wx.setStorageSync('avatarUrl', rawData.avatarUrl);
+          // wx.setStorageSync('userNickName', rawData.nickName);
+          wx.setStorageSync('wxNickName', rawData.nickName);
+        },
+        fail: function() {
+          // fail
+        },
+        complete: function() {
+          // complete
+        }
+      })
+    },
+    fail: function() {
+      // fail
+    },
+    complete: function() {
+      // complete
+    }
+  })
+  
+  
+  //登录
+  base.login(
+    () => {
+
+      base.getUserInfo(
+        (userInfo) => {
+          console.log("已获取数据", userInfo);
+          // app.data.userInfo = userInfo;
+
+        }, 
+        () => {
+          console.log("用户拒绝提供信息");
+        }
+      );
+
+      // 检查是否有注册过
+      register.checkRegister(
+        (userRegisterResult) => {
+          console.log('check register : ' + JSON.stringify(userRegisterResult));
+          //如果没注册过，则注册
+          var registerInfo = userRegisterResult.data.data;
+          if(registerInfo == null)
+          {
+
           }
-        })
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
-    
-    //登录
-    base.login(
-      () => {
-
-        base.getUserInfo(
-          (userInfo) => {
-            console.log("已获取数据", userInfo);
-            // app.data.userInfo = userInfo;
-
-          }, 
-          () => {
-            console.log("用户拒绝提供信息");
-          }
-        );
-
-        // 检查是否有注册过
-        register.checkRegister(
-          (userRegisterResult) => {
-            console.log('check register : ' + JSON.stringify(userRegisterResult));
-            //如果没注册过，则注册
-            var registerInfo = userRegisterResult.data.data;
+          else if(registerInfo.userid == null)
+          {
+            wx.setStorageSync('alreadyRegister', 'no');
+            console.log("register : " + wx.getStorageSync('alreadyRegister'));
             
-            if(registerInfo.userid == null)
-            {
-              wx.setStorageSync('alreadyRegister', 'no');
-              console.log("register : " + wx.getStorageSync('alreadyRegister'));
-              
-              
-            }
-            else
+            
+          }
+          else
+          {
+            wx.setStorageSync('alreadyRegister', 'yes');
+            wx.setStorageSync(user.UserID, registerInfo.userid);
+            // wx.setStorageSync(user.StudentID, registerInfo.studentid);
+            // wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
+            wx.setStorageSync(user.GradeID, registerInfo.gradeid);
+            wx.setStorageSync(user.UserDescription, registerInfo.description);
+            wx.setStorageSync(user.UserNickName, registerInfo.username);
+            wx.setStorageSync('userAvatarUrl', registerInfo.userimg);
+            wx.setStorageSync(user.Status, registerInfo.status);
+            wx.setStorageSync(user.TeacherID, registerInfo.userid);
+            wx.setStorageSync(user.StudentID, registerInfo.userid);
+            wx.setStorageSync(user.TeacherID, registerInfo.userid);
+
+            
+
+            if(wx.getStorageSync(user.UserID)!='userID')
             {
               wx.setStorageSync('alreadyRegister', 'yes');
-              wx.setStorageSync(user.UserID, registerInfo.userid);
-              // wx.setStorageSync(user.StudentID, registerInfo.studentid);
-              // wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
-              wx.setStorageSync(user.GradeID, registerInfo.gradeid);
-              wx.setStorageSync(user.UserDescription, registerInfo.description);
-              wx.setStorageSync(user.UserNickName, registerInfo.username);
-              wx.setStorageSync('userAvatarUrl', registerInfo.userimg);
-              wx.setStorageSync(user.Status, registerInfo.status);
-              wx.setStorageSync(user.TeacherID, registerInfo.userid);
-              wx.setStorageSync(user.StudentID, registerInfo.userid);
-              wx.setStorageSync(user.TeacherID, registerInfo.userid);
+              wx.setStorageSync('fromRegister', 'no');
+              
+              wx.showToast({
+                title: '已登录',
+                duration: 1200
+              });
 
               
-
-              if(wx.getStorageSync(user.UserID)!='userID')
-              {
-                wx.setStorageSync('alreadyRegister', 'yes');
-                wx.setStorageSync('fromRegister', 'no');
-                
-                wx.showToast({
-                  title: '已登录',
-                  duration: 1200
-                });
-                
-              }
               
-
-              if(wx.getStorageSync(user.Status) == 1)
-              {
-                wx.setStorageSync(user.OrganizationID, registerInfo.organizationid);
-              }
-
             }
-          },
-          (userRegisterResult) => {
-            console.log(userRegisterResult);
-          },
-        );
-      
-      }
-    );
+            
 
-    wx.setStorageSync('exitSystem', 'no');
+            if(wx.getStorageSync(user.Status) == 1)
+            {
+              wx.setStorageSync(user.OrganizationID, registerInfo.organizationid);
+            }
+            
+            
+
+          }
+
+          that.setData({
+            indexUserName: wx.getStorageSync(user.UserNickName),
+            exitSystem: wx.getStorageSync('exitSystem'),
+            alreadyRegister: wx.getStorageSync('alreadyRegister') 
+          });
+          
+        },
+        (userRegisterResult) => {
+          console.log(userRegisterResult);
+        },
+      );
     
+    }
+  );
+
+  wx.setStorageSync('exitSystem', 'no');
+
+  return 'finish';
 }

@@ -1,0 +1,33 @@
+<import src="../common/nearby_org_list_item.wxml" />
+
+
+
+<!--列表-->
+
+  <scroll-view  class="org_scroll_list" upper-threshold="50px" lower-threshold="50px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh">
+      
+      <view class="nearby_org_list_hint_container">
+        <view class="nearby_org_list_hint">
+            <text>·附近机构列表</text>
+        </view>
+      </view>
+
+      <block wx:for="{{search_org_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
+        
+        <view class="nearby_org_list_container" >
+          <template is="nearby_org_list_item" data="{{item,index,alreadyRegister}}"></template>
+        </view>
+
+        <view class="interval"></view>
+      </block>
+
+      
+
+  </scroll-view>
+
+  <!--<text class="no_content_hint" wx:if="{{hide_org_list == false && search_org_list.length == 0}}">没找到符合条件的机构</text>-->
+
+<import src="../pop/float_map_floor.wxml" />
+<view class="float_map_floor" >
+  <template is="float_map_view" data="{{userInfo,alreadyRegister}}"></template>
+</view>

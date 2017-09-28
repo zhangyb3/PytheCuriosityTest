@@ -1,10 +1,9 @@
-
 .input_filter{
     display: flex;
     flex-direction:row;
     /*justify-content: space-between;*/
     align-items: center;
-    background-color: #29bcbb;
+    background-color: white;
     border-bottom: 1px solid #EEE;
     height:100rpx;
     width: 100%;
@@ -28,7 +27,7 @@
 
 .subject_name{
     display: flex;
-    color: #cfd37d;
+    color: #999999;
     font-size: 40rpx;
     width: 80rpx;
     /*margin-top: 8rpx;*/
@@ -43,7 +42,7 @@
     /*padding-left: 15%;*/
     margin-left: 10rpx;
     width:100%;
-    background-color: #ffffff;
+    background-color: #eaeaea;
 
     
 }
@@ -63,7 +62,7 @@
     /*background-color: #EEE;*/
     font-size: 36rpx;
     color: #999999;
-    background-color: #ffffff;
+    background-color: #eaeaea;
     margin-left: 10rpx;
 
 }
