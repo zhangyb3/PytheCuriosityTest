@@ -70,7 +70,7 @@
     color: #0F0F0F;
     height: auto;
     font-size: 42rpx;  
-    font-weight: 600; 
+    font-weight: 500; 
 }
 
 .teacher_brief_wrap{
@@ -198,9 +198,9 @@
 
 .add_teacher_button_container image{
     /*padding-left: -10px;*/
-    
-    width: 50rpx;
-    height: 50rpx;
+    border: 1px solid #A9A9A9;
+    width: 100rpx;
+    height: 100rpx;
 
 }
 

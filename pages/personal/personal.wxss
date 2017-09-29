@@ -107,7 +107,7 @@ page{
     display: flex;
     height: auto;
     font-size: 45rpx;
-    font-weight: 500;
+    /*font-weight: 500;*/
     color: #666666;
     margin-left: 20rpx;
 }

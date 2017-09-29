@@ -93,6 +93,8 @@ Page({
 
     countdownText : '发送验证码',
     second: 60,
+
+    organization: {},
     
   },
   onLoad:function(parameters){
@@ -144,10 +146,11 @@ Page({
     {
       case '机构管理':
       {
+        
         if(wx.getStorageSync('alreadyRegister') == 'yes' && wx.getStorageSync('exitSystem') == 'no')
         {
           wx.navigateTo({
-            url: '../personal/organization_management',
+            url: '../personal/organization_manage',
             success: function(res){
               // success
             },
@@ -896,11 +899,11 @@ function loginSystem(that) {
             if(wx.getStorageSync(user.Status) == 1)
             {
               wx.setStorageSync(user.OrganizationID, registerInfo.organizationid);
-            }
-            
-            
+            }        
 
           }
+
+          
 
           that.setData({
             indexUserName: wx.getStorageSync(user.UserNickName),

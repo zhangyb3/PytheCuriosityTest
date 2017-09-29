@@ -1,0 +1,79 @@
+.my_create{
+    z-index: 12;
+    width: 100%;
+    height: 100rpx;
+    line-height: 100rpx;
+    background-color: white;
+
+    /*justify-content:center;
+    align-items:center;
+    display:-webkit-flex;*/
+    position: fixed;
+    top: 0;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-bottom: 2rpx solid #999999;
+}
+
+.my_create_view_container{
+    width: 50%;
+    height: 100%;
+    line-height: 100rpx;
+
+    float: left;
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.my_create_view{
+    /*margin-left: 20rpx;*/
+    /*width: 90%;*/
+    /*height: 50rpx;*/
+    /*border-bottom: 2rpx solid #EEE;*/
+    font-size: 40rpx;
+    font-weight: bold;
+}
+
+.save_button_container{
+    width: 50%;
+    height: 100%;
+    line-height: 100rpx;
+
+    float: right;
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.save_button_view{
+    
+    width: 200rpx;
+    /*background-color: white;
+    color: #d25353;*/
+    font-size: 40rpx;
+    font-weight: bold;
+    
+}
+
+.ob{
+    height: 50rpx;
+    line-height: 50rpx;
+    border-radius: 33rpx;
+    text-align: center;
+    border: 1px solid #d25353;
+}
+
+.save_button{
+    
+    background-color: white;
+    color: #d25353;
+}
+
+.create_button{
+    
+    background-color: #d25353;
+    color: white;
+}
