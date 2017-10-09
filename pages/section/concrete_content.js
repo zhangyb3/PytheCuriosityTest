@@ -14,6 +14,7 @@ Page({
     preview_img_url: config.PytheFileServerURL ,
     selectItem: {},
     from_page: 'home_page',
+    alreadyRegister: 'no',
   },
   onLoad:function(parameters){
    
@@ -40,6 +41,8 @@ Page({
     {
       base.getDetailContent(this,this.data.selectItem);
     }
+
+    base.getDetailContent(this, this.data.selectItem);
 
   },
 

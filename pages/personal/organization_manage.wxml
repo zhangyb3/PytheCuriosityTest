@@ -43,7 +43,7 @@
                     <!--<image class="item_content_avatar" src="{{personalInfo.avatar}}"></image>-->
                     <view class="item_content_avatar_wrapper">
                     <view class="item_content_avatar" wx:if="{{alreadySetupOrg == true}}" style="background-image:url({{organization.avatar}})"></view>
-                    <view class="item_content_avatar_null" wx:if="{{alreadySetupOrg == false}}" style="background-image:url(../../images/add_op.png)"></view>
+                    <view class="item_content_avatar_null" wx:if="{{alreadySetupOrg == false || organization.avatar == null}}" style="background-image:url(../../images/add_op.png)"></view>
                     </view>
 
                     <view class="person_edit_icon" >
@@ -110,7 +110,7 @@
 
 <view class="personal_description_item_container" >
 
-    <view class="personal_description_item_wrapper">
+    <view class="personal_description_item_wrapper" data-address="{{organization.address}}" bindtap="chooseOrgLocation">
 
         <view style="height:20rpx;"></view>
 

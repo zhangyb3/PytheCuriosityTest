@@ -374,7 +374,7 @@ Page({
           path : that.data.ask_question.upload_voice_path,
           fileType : 'audio',
         };
-        fileSys.uploadFile(that.data.ask_question.voice_path,parameters);
+        fileSys.uploadFile(that.data.ask_question.voice_path,parameters,that);
         
       },
       fail: function() {
@@ -563,7 +563,7 @@ Page({
                   path : that.data.ask_question.upload_draw_path,
                   fileType : 'image',
                 };
-                fileSys.uploadFile(that.data.ask_question.draw_path,parameters);
+                fileSys.uploadFile(that.data.ask_question.draw_path,parameters,that);
               },
               fail: function() {
                 // fail
@@ -634,7 +634,7 @@ Page({
                   
                 };
                 //上传文件
-                fileSys.uploadFile(savedFilePath,parameters);
+                fileSys.uploadFile(savedFilePath,parameters,that);
                   },
                   fail: function() {
                     // fail
@@ -910,7 +910,7 @@ Page({
             path : that.data.ask_question.upload_voice_path,
             fileType : 'audio',
           };
-          fileSys.uploadFile(that.data.ask_question.voice_path,parameters);
+          fileSys.uploadFile(that.data.ask_question.voice_path,parameters,that);
           
         },
         fail: function() {

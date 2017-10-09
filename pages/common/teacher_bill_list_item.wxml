@@ -27,7 +27,7 @@
         <view class="bill_source_container">
             <view class="bill_source_text_view_container">
             <view class="bill_source_text_view">
-                <text style="font-size: 28rpx;color:gray;">来自</text>
+                <text style="font-size: 28rpx;color:gray;"></text>
                 <image class="student_avatar" src="{{item.studentAvatar}}"></image>
                 <text style="font-size: 32rpx;color:gray;">{{item.studentName}}</text>
             </view>

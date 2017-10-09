@@ -31,7 +31,7 @@
 }
 
 .speak_style_record{
-background-color: deepskyblue;
+background-color: #d25353;
     display: flex;
     width: 200rpx;
     height: 60rpx;

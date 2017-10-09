@@ -1,7 +1,7 @@
 
 <view class="personal_description_page">
 
-<view style="height:100rpx;"></view>
+<view style="height:50rpx;"></view>
 
 <view class="personal_description_item_container">
 

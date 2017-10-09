@@ -139,6 +139,8 @@
                 <template is="concrete_operation" data="{{alreadyRegister,question,answer,answer_index}}"></template>
             </view>
 
+            <view style='height:50rpx;'></view>
+
             </block>
 
         </view>

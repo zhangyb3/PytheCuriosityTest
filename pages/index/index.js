@@ -122,6 +122,10 @@ Page({
       wx.clearStorageSync();
       wx.setStorageSync('exitSystem', 'yes');
       wx.setStorageSync('alreadyRegister', alreadyRegister);
+      this.setData({
+        exitSystem: wx.getStorageSync('exitSystem'),
+        alreadyRegister: wx.getStorageSync('alreadyRegister'),
+      });
     }
 
     if(wx.getStorageSync('alreadyRegister') == 'yes' && wx.getStorageSync('exitSystem') == 'no')
@@ -146,9 +150,21 @@ Page({
     {
       case '机构管理':
       {
-        
-        if(wx.getStorageSync('alreadyRegister') == 'yes' && wx.getStorageSync('exitSystem') == 'no')
+        if (wx.getStorageSync(user.Status) == 0) {
+          wx.showModal({
+            content: '学生尚未开通此功能',
+            success: function (res) {
+              if (res.confirm) {
+                console.log('用户点击确定');
+              }
+            }
+          });
+
+        }
+        else if(wx.getStorageSync('alreadyRegister') == 'yes' && wx.getStorageSync('exitSystem') == 'no')
         {
+          
+
           wx.navigateTo({
             url: '../personal/organization_manage',
             success: function(res){
@@ -182,6 +198,7 @@ Page({
             }
           });
         }
+        
         break;
       }
       case '发现':
@@ -644,6 +661,7 @@ Page({
             userDescription: wx.getStorageSync(user.UserDescription),
           });
 
+          that.onShow();
         },
         fail: function() {
           // fail

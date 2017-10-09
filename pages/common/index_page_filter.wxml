@@ -12,8 +12,7 @@
     </view>
 
     <view class="input_view" >
-        <input class="input" type="text" placeholder="知识点、机构、老师" bindinput="listenerSearchInput" bindconfirm='
-        getSearchContentList' maxlength="10" ></input>
+        <input class="input" type="text" placeholder="知识点、机构、老师" bindinput="listenerSearchInput" bindconfirm='getSearchContentList' maxlength="10" ></input>
         <button class="search_button"    bindtap='getSearchContentList'><image src="../../images/index_icon_serch@2x.png"></image>
         </button>
     </view>

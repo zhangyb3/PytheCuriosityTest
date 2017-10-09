@@ -95,7 +95,7 @@ Page({
     wx.setStorageSync('lastRemoteAudio', 'no');
     wx.setStorageSync('lastRemoteImg', 'no');
     wx.setStorageSync('playingVoice', 'no');
-    wx.setStorageSync('alreadyRegister', 'no');
+    // wx.setStorageSync('alreadyRegister', 'no');
 
 
   },

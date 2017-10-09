@@ -13,7 +13,7 @@ Page({
     organization: {},
     userRole: 0,
     preview_img_url: config.PytheFileServerURL ,
-
+    alreadySetupOrg: false,
   },
   onLoad:function(parameters){
     console.log(parameters);
@@ -128,7 +128,7 @@ Page({
       },
       complete: function(res) {
         // complete
-        this.onShow();
+        that.onShow();
       }
     });
 
@@ -305,12 +305,13 @@ Page({
           complete: function(res) {
             // complete
             console.log(res);
+            that.setData({
+              organization: that.data.organization,
+            });
           }
         });
 
-        that.setData({
-          orgInfo: that.data.organization,
-        });
+        
 
 
       },
@@ -377,8 +378,43 @@ Page({
               path : that.data.upload_avatar_path,
               fileType : 'image',
             };
-            fileSys.uploadFile(upload_avatar_local_path,parameters);
+            //准备完毕，上传
+            wx.setStorageSync('uploading_avatar', 'yes');
+            fileSys.uploadFile(upload_avatar_local_path,parameters,that);
             
+            // var jumpToNextStep = false;
+            // var count = 0;
+            // for(; count < 5; )
+            // {
+            //   if(jumpToNextStep) break;
+
+            //   //每秒检测一次上传是否完成
+            //   setTimeout(function(){
+            //     if(wx.getStorageSync('uploading_avatar') == 'no')
+            //     {
+            //       that.onShow();
+            //       jumpToNextStep = true;
+            //     }
+            //     count++;
+            //     console.log(count);
+            //   },1000);
+
+                
+
+            // }
+            // if(count >= 5)
+            // {
+            //   wx.showModal({
+            //     content: '上传速度不给力，请稍后再试',
+            //     success: function(res) {
+            //       if (res.confirm) {
+            //         console.log('用户点击确定');          
+            //       }
+            //     }
+            //   });
+            // }
+
+            //更新数据库纪录
             wx.request({
               url: config.PytheRestfulServerURL + '/org/updateAvatar',
               data: {
@@ -388,20 +424,23 @@ Page({
               method: 'GET', 
               success: function(res){
                 // success
-                that.data.organization.avatar = that.data.preview_img_url + parameters.path;
-                that.setData({
-                  organization: that.data.organization,
-
-                });
+                
               },
               fail: function(res) {
                 // fail
               },
               complete: function(res) {
                 // complete
-                that.onShow();
+                
+                //最多等待5秒
+                
+
               }
             });
+            
+            
+            
+
           },
           fail: function() {
             // fail
@@ -418,10 +457,11 @@ Page({
       },
       complete: function(res) {
         // complete
+        
       }
     });
 
-    that.onShow();
+    
   },
 
   editOrgName:function(e){

@@ -134,6 +134,8 @@ Page({
             method: 'GET', 
             success: function(res){
               // success
+              //插入打赏纪录
+
               wx.navigateBack({
                 delta: 1, // 回退前 delta(默认为1) 页面
                 success: function(res){

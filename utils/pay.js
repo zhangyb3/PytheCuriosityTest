@@ -154,7 +154,7 @@ function recordAnswerReward(parameters)
     wx.request({
       url: config.PytheRestfulServerURL + '/record/rewardAnswer',
       data: {
-        studentId: parameters.studentId,
+        studentId: parameters.studentId, 
         teacherId: parameters.teacherId,
         answerId: parameters.answerId,
         money: wx.getStorageSync('rewardNum'),

@@ -75,6 +75,46 @@ Page({
     
   },
 
+  checkOrg: function (e) {
+    var org = e.currentTarget.dataset.org;
+    console.log(org);
+    wx.navigateTo({
+      url: '../index/orgInfo?'
+      + 'orgId=' + org.id + '&'
+      + 'orgManagerId=' + org.managerId + '&'
+      ,
+      success: function (res) {
+        // success
+      },
+      fail: function (res) {
+        // fail
+      },
+      complete: function (res) {
+        // complete
+      }
+    })
+  },
+
+  checkOrgLocation: function (e) {
+    var org = e.currentTarget.dataset.org;
+    console.log(org);
+
+    wx.openLocation({
+      latitude: org.latitude, // 纬度，范围为-90~90，负数表示南纬
+      longitude: org.longitude, // 经度，范围为-180~180，负数表示西经
+      scale: 28, // 缩放比例
+      success: function (res) {
+        // success
+      },
+      fail: function (res) {
+        // fail
+      },
+      complete: function (res) {
+        // complete
+      }
+    })
+  },
+
   showOrgOnMap:function(e){
     wx.navigateTo({
       url: 'map_show',

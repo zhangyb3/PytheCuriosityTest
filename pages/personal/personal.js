@@ -147,7 +147,7 @@ Page({
   selectOrganizationManagement:function(e){
     console.log('personal organization management');
     wx.navigateTo({
-      url: 'organization_management' ,
+      url: 'organization_manage' ,
       success: function(res){
         // success
       },
@@ -459,7 +459,7 @@ Page({
           this.setData({
             hide_login: false,
           });
-          loadingSelections.call(this);
+          loadingSelections(this);
         }
         else
         {
@@ -475,27 +475,29 @@ Page({
           wx.setStorageSync(user.TeacherID, registerInfo.userid);
 
           //自动更新头像
-          if(wx.getStorageSync('avatarUrl') != wx.getStorageSync('userAvatarUrl'))
-          {
-            wx.request({
-              url: config.PytheRestfulServerURL + '/user/updateAvatar',
-              data: {
-                userId: wx.getStorageSync(user.UserID),
-                avatar: wx.getStorageSync('avatarUrl'),
-              },
-              method: 'GET', 
-              success: function(res){
-                // success
-                wx.setStorageSync('userAvatarUrl', wx.getStorageSync('avatarUrl'));
-              },
-              fail: function(res) {
-                // fail
-              },
-              complete: function(res) {
-                // complete
-              }
-            })
-          }
+          // if(wx.getStorageSync('avatarUrl') != wx.getStorageSync('userAvatarUrl'))
+          // {
+          //   var that = this;
+          //   wx.request({
+          //     url: config.PytheRestfulServerURL + '/user/updateAvatar',
+          //     data: {
+          //       userId: wx.getStorageSync(user.UserID),
+          //       avatar: wx.getStorageSync('avatarUrl'),
+          //     },
+          //     method: 'GET', 
+          //     success: function(res){
+          //       // success
+          //       wx.setStorageSync('userAvatarUrl', wx.getStorageSync('avatarUrl'));
+          //     },
+          //     fail: function(res) {
+          //       // fail
+          //     },
+          //     complete: function(res) {
+          //       // complete
+          //       that.onShow();
+          //     }
+          //   })
+          // }
 
         }
       },

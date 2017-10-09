@@ -236,39 +236,7 @@
     /*background-color: #f3f1e4;*/
 }
 
-.collect_view_wrap{
-    display: flex;
-    flex-direction: row;
-    height: 60rpx;
-    width: auto;
-    /*background-color: #f3f1e4;*/
-}
 
-.collect_wrap{
-    display: flex;
-    flex-direction: row;
-    /*position: absolute;*/
-    /*margin-left: 40rpx;*/
-    height: 60rpx;
-    width: auto;
-}
-
-.collect_icon_img{
-    /*display: flex;*/
-    /*margin-left: 10rpx;*/
-    margin-top: 20rpx;
-    width: 43rpx;
-    height: 50rpx;
-    line-height: 40rpx;
-}
-
-.collect_num{
-    margin-top: 26rpx;
-    font-size: 28rpx;
-    color: #999999;
-    margin-left: 10rpx;
-    line-height: 40rpx;
-}
 
 .reward_icon_img{
     width: 52rpx;

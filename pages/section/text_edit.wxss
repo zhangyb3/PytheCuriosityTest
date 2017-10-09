@@ -38,8 +38,8 @@ page{
 
 .text_edit_confirm_button{
 
-    height: 50rpx;
-    line-height: 50rpx;
+    height: 80rpx;
+    line-height: 80rpx;
     text-align: center;
     font-size: 40rpx;
     background-color: white;

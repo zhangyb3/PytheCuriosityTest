@@ -56,10 +56,11 @@ function getDetailContent(that,selectItem)
     {
       URL = ANSWER_DETAIL_CONTENT_URL;
     }
+    URL = DETAIL_CONTENT_URL;
 
     //请求具体数据
     wx.request({
-      url: URL,
+      url: URL, 
       data: {
         questionId: selectItem.questionid,
         userId: wx.getStorageSync(user.UserID),
@@ -148,7 +149,7 @@ function commitQuestion(parameters)
     },
     method: 'POST', 
     success: function(res){
-      // success
+      // success 
       console.log(res);
       wx.setStorageSync('last_commit_question_id', res.data.data);
       //提交问题之后纪录付款技能

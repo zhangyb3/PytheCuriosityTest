@@ -106,7 +106,7 @@
 
 .org_address_icon{
 
-    width: 30rpx;
+    width: 25rpx;
     height: 30rpx;
 
     justify-content:center;

@@ -356,7 +356,7 @@ Page({
           path : that.data.question_answer.upload_voice_path,
           fileType : 'audio',
         };
-        fileSys.uploadFile(that.data.question_answer.voice_path,parameters);
+        fileSys.uploadFile(that.data.question_answer.voice_path,parameters,that);
       },
       fail: function() {
         // fail
@@ -569,7 +569,7 @@ Page({
                   path : that.data.question_answer.upload_draw_path,
                   fileType : 'image',
                 };
-                fileSys.uploadFile(that.data.question_answer.draw_path,parameters);
+                fileSys.uploadFile(that.data.question_answer.draw_path,parameters,that);
                 
               },
               fail: function() {
@@ -969,21 +969,36 @@ Page({
     // && answerParams.knowledgeId!=null
       )
     {
-      base.commitAnswer(answerParams);
-      wx.setStorageSync('hasTakenPhoto', 'no');
-      wx.setStorageSync('hasDrawnPicture', 'no');
-      wx.navigateBack({
-        delta: 1, // 回退前 delta(默认为1) 页面
-        success: function(res){
-          // success
-        },
-        fail: function(res) {
-          // fail
-        },
-        complete: function(res) {
-          // complete
-        }
-      })
+      if (wx.getStorageSync('alreadyRegister') == 'yes' && wx.getStorageSync(user.Status) == 1)
+      {
+        base.commitAnswer(answerParams);
+        wx.setStorageSync('hasTakenPhoto', 'no');
+        wx.setStorageSync('hasDrawnPicture', 'no');
+        wx.navigateBack({
+          delta: 1, // 回退前 delta(默认为1) 页面
+          success: function (res) {
+            // success
+          },
+          fail: function (res) {
+            // fail
+          },
+          complete: function (res) {
+            // complete
+          }
+        })
+      }
+      else
+      {
+        wx.showModal({
+          content: '学生尚未能回答问题',
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定')
+            }
+          }
+        });
+      }
+      
     }
     else
     {

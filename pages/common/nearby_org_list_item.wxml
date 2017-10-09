@@ -4,9 +4,9 @@
 
             
 
-            <view class="org_wrapper" data-org="{{item}}" bindtap="askOneOrg">
+            <view class="org_wrapper" data-org="{{item}}" >
             <!--头像部分-->
-                <view class= "org_icon_wrapper">
+                <view class= "org_icon_wrapper" data-org="{{item}}" bindtap="checkOrg">
                     <image class="org_icon" wx:if="{{item.avatar != null}}"  src="{{item.avatar}}"
                     ></image>
                     <image class="org_icon_null" wx:if="{{item.avatar == null}}"  src="../../images/add_op.png"
@@ -18,11 +18,11 @@
                     
                     <view style="height:35rpx;"></view>
 
-                    <view class="org_name_wrap" data-org="{{item}}">
+                    <view class="org_name_wrap" data-org="{{item}}" bindtap="checkOrg">
                         <text class="org_name">{{ item.name }}</text>
                     </view>
 
-                    <view class="org_address_wrap" data-org="{{item}}">
+                    <view class="org_address_wrap" data-org="{{item}}" bindtap="checkOrgLocation">
                         <view class="org_address_icon">
                             <image src="../../images/address_icon.png"></image>
                         </view>

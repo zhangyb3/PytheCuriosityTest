@@ -182,18 +182,23 @@ Page({
       console.log(parametersJSON);
       var parameters = netUtil.json2Form(parametersJSON);
       console.log(parameters);
-      wx.navigateTo({
-        url: '../answer/answer_operation' + '?' + parameters,
-        success: function(res){
-          // success
-        },
-        fail: function() {
-          // fail
-        },
-        complete: function() {
-          // complete
-        }
-      });
+
+
+      {
+        wx.navigateTo({
+          url: '../answer/answer_operation' + '?' + parameters,
+          success: function (res) {
+            // success
+          },
+          fail: function () {
+            // fail
+          },
+          complete: function () {
+            // complete
+          }
+        });
+      }
+      
     }
     if(this.data.hide_personal_not_answer_list)
     {

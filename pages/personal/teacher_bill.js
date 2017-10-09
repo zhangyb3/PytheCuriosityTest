@@ -9,7 +9,9 @@ var user = require("../../utils/user.js");
 
 Page({
   data:{
-    account: {},
+    account: {
+      summary: 0.00,
+    },
     teacher_bill_list: [],
     list_mode: "teacher_bill",
   },
@@ -82,6 +84,38 @@ Page({
   checkQuestionAnswer:function(e){
     var bill = e.currentTarget.dataset.bill;
     console.log('check ' + JSON.stringify(bill) + " QA");
+    
+    if(bill.bill.operationtype == 'ask question')
+    {
+      wx.request({
+        url: config.PytheRestfulServerURL + '/bill/checkQADetail',
+        data: {
+          operationtype: bill.bill.operationtype,
+          objectid: bill.bill.objectid,
+        },
+        method: 'POST',
+        success: function (res) {
+          // success
+          console.log(res);
+
+          var selectItem = res.data.data;
+          selectItem.answertime = utils.formatDate(selectItem.answertime);
+          selectItem.questioncontent = JSON.parse(selectItem.questioncontent);
+          
+          wx.navigateTo({
+            url: '../section/concrete_content?selectItem='+JSON.stringify(selectItem),
+          });
+        },
+        fail: function (res) {
+          // fail
+        },
+        complete: function (res) {
+          // complete
+        }
+      })
+      
+    }
+    
   },
 
   enchashment:function(e){

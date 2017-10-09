@@ -73,7 +73,9 @@ Page({
               path : that.data.upload_avatar_path,
               fileType : 'image',
             };
-            fileSys.uploadFile(upload_avatar_local_path,parameters);
+            //准备完毕，上传
+            wx.setStorageSync('uploading_avatar', 'yes');
+            fileSys.uploadFile(upload_avatar_local_path,parameters,that);
             
             wx.request({
               url: config.PytheRestfulServerURL + '/user/updateAvatar',

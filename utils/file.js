@@ -34,12 +34,13 @@ function uploadFilePrepare(filePath, fileType)
   })
 }
 
-function uploadFile(filePath, parameters)
+function uploadFile(filePath, parameters, that)
 {
     // wx.showLoading({
     //   title: 'loading',
     //   mask: true,
     // });
+    var the = that;
     console.log('upload file ' + filePath);
     console.log(' to ' + FILE_UPLOAD_URL);
     wx.uploadFile({
@@ -51,6 +52,7 @@ function uploadFile(filePath, parameters)
       success: function(res){
         console.log(res);
         // wx.hideLoading();
+        
       },
       fail: function(res) {
         console.log(res);
@@ -60,15 +62,20 @@ function uploadFile(filePath, parameters)
           content: res.errMsg,
           success: function(res) {
             if (res.confirm) {
-              console.log('用户点击确定')
+              console.log('用户点击确定');
             }
           }
         });
+        
       },
       complete: function(res) {
         console.log(res);
         // wx.hideLoading();
-
+        if(wx.getStorageSync('uploading_avatar') == 'yes')
+        {
+          wx.setStorageSync('uploading_avatar', 'no');
+          the.onShow();
+        }
       }
     })
 }

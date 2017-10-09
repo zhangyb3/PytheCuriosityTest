@@ -20,8 +20,6 @@
     "pages/section/record_voice",
     "pages/personal/personal_about_us",
     "pages/personal/personal_balance_rules",
-    "pages/personal/organization_management",
-    "pages/personal/organization_edit",
     "pages/personal/organization_manage",
     "pages/personal/teacher_add",
     "pages/personal/teacher_bill",
