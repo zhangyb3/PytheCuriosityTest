@@ -22,9 +22,9 @@
                         <text class="org_name">{{ item.name }}</text>
                     </view>
 
-                    <view class="org_address_wrap" data-org="{{item}}" bindtap="checkOrgLocation">
+                    <view class="org_address_wrap" hidden="{{item.address == '' || item.address == null}}" data-org="{{item}}" bindtap="checkOrgLocation">
                         <view class="org_address_icon">
-                            <image src="../../images/address_icon.png"></image>
+                            <image src="../../images/address_icon@2x.png"></image>
                         </view>
                         <view class="org_address_text_container">
                             <text class="org_address_text">·{{item.address}}</text>

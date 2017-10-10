@@ -4,9 +4,16 @@
     z-index: 12;
 
     position: fixed;
-    top: 20rpx;
-    /*bottom: 50%;*/
-    right: 5%;
+    /*top: 20rpx;*/
+    bottom: 100rpx;
+    
+    width: 100%;
+    height: auto;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+    
 }
 
 
