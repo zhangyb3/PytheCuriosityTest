@@ -55,7 +55,7 @@
                         <view class="delete_container" style="width: 100%">
                             <view class="delete"  data-teacher="{{item}}"  bindtap="cancelTeacherFromOrg">
                                 <text class="delete_button" wx:if="{{user.teacherId == item.userid}}" >退出机构</text>
-                                <text class="delete_button" wx:if="{{org.managerId == user.teacherId}}" >解除老师</text>
+                                <text class="delete_button" wx:if="{{user.teacherId != item.userid && org.managerId == user.teacherId}}" >解除老师</text>
                             </view>
                         </view>
                         

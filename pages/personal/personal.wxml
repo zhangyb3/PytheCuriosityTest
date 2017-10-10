@@ -87,7 +87,8 @@
             <text class="personal_answer personal_operation_item_text">我的答</text>
             <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
         </view>-->
-        <view class="personal_operation_item_wrapper">
+
+        <!--<view class="personal_operation_item_wrapper">
         <view class="personal_like personal_operation_item" bindtap='selectPersonalLike'>
             <view class="menu_list_icon_wrap">
             <image class="menu_list_icon_like" src="../../images/personal_iocn_mydianzan@2x.png"></image>
@@ -103,11 +104,11 @@
             </view>
 
         </view>
-        </view>
+        </view>-->
         
     
 
-        <view class="personal_operation_item_wrapper">
+        <!--<view class="personal_operation_item_wrapper">
         <view class="organization_management personal_operation_item" wx:if="{{userStatus == 1}}" bindtap='selectOrganizationManagement'>
             <view class="menu_list_icon_wrap">
                 <image class="menu_list_icon_detail" src="../../images/organization_icon.png"></image>
@@ -123,7 +124,7 @@
             </view>
                 
         </view>
-        </view>
+        </view>-->
 
 
     <view class="about_us_zone">
@@ -166,7 +167,7 @@
 
     <view style="height: 30rpx;"></view>
 
-    <view class="about_us_zone">
+    <!--<view class="about_us_zone">
 
         <view class="personal_operation_item_wrapper">
         <view class="balance_detailed_rules personal_operation_item" bindtap="checkPersonalBill">
@@ -185,7 +186,7 @@
         </view>
         </view>
 
-    </view>
+    </view>-->
 
 
     <view style="height: 30rpx;"></view>

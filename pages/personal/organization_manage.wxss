@@ -16,7 +16,7 @@ page{
 
 .personal_description_item_container{
 
-    background-color: #eaeaea;
+    background-color: white;
     width: 100%;
     height: auto;
 
@@ -97,6 +97,7 @@ page{
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
     
+    text-align: right;
 }
 
 .item_content_text{
@@ -192,7 +193,7 @@ page{
 
 .search_input_field_container{
     background-color: white;
-    height: 100rpx;
+    height: 60rpx;
     width: 100%;
     /*box-shadow:  10px 10px 10rpx #e0dede;*/
 }
@@ -205,17 +206,18 @@ page{
 
 .search_input_field_unit{
     
-    height: 50rpx;
+    height: 60rpx;
     display: flex;
     flex-direction: row;
-    
+    border-radius: 30rpx;
+    border: 1px solid #eaeaea;
 }
 
 .search_input_field_left{
-    width: 25rpx;
+    width: 60rpx;
     height: 100%;
-    background-color: #eaeaea;
-    border-radius: 25rpx 0 0 25rpx;
+    /*background-color: #eaeaea;*/
+    border-radius: 30rpx 0 0 30rpx;
 }
 
 
@@ -223,14 +225,14 @@ page{
 .search_input_field{
     height: 100%;
     width: 45%;
-    background-color: #eaeaea;
-    line-height: 50rpx;
+    /*background-color: #eaeaea;*/
+    line-height: 60rpx;
     font-size: 36rpx;
 }
 
 .search_input{
     height: 100%;
-    line-height: 50rpx;
+    line-height: 60rpx;
     width: 100%;
     text-align: center;
     color: gray;
@@ -244,7 +246,7 @@ page{
 .search_input_field_icon{
     height: 100%;
     width: 10%;
-    background-color: #eaeaea;
+    /*background-color: #eaeaea;*/
 
     justify-content:center;
     align-items:center;
@@ -253,17 +255,17 @@ page{
 }
 
 .search_input_field_icon_img{
-    height: 25rpx;
-    width: 25rpx;
-    background-color: #eaeaea;
+    height: 30rpx;
+    width: 30rpx;
+    /*background-color: #eaeaea;*/
     
 }
 
 .search_input_field_right{
-    width: 25rpx;
+    width: 60rpx;
     height: 100%;
-    background-color: #eaeaea;
-    border-radius: 0 25rpx 25rpx 0;
+    /*background-color: #eaeaea;*/
+    border-radius: 0 30rpx 30rpx 0;
 }
 
 .item_container{

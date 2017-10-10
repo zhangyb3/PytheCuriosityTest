@@ -1,21 +1,21 @@
 
-var listViewUtil=require("../../utils/listViewUtil.js");
-var netUtil=require("../../utils/netUtil.js");
-var utils=require("../../utils/util.js");
+var listViewUtil = require("../../utils/listViewUtil.js");
+var netUtil = require("../../utils/netUtil.js");
+var utils = require("../../utils/util.js");
 var register = require("../../utils/register.js");
 var config = require("../../utils/config.js");
 var base = require("../../utils/base.js");
 var user = require("../../utils/user.js");
 
 Page({
-  data:{
+  data: {
     account: {
       summary: 0.00,
     },
     teacher_bill_list: [],
     list_mode: "teacher_bill",
   },
-  onLoad:function(options){
+  onLoad: function (options) {
     // 页面初始化 options为页面跳转所带来的参数
     wx.getSystemInfo({
       success: (res) => {
@@ -26,12 +26,13 @@ Page({
         });
       }
     });
+
   },
-  onReady:function(){
+  onReady: function () {
     // 页面渲染完成
   },
-  onShow:function(){
-    
+  onShow: function () {
+
     var that = this;
     var queryParams = {
       studentId: wx.getStorageSync(user.StudentID),
@@ -40,53 +41,51 @@ Page({
       pageSize: 10,
     };
 
-    if(wx.getStorageSync(user.Status) == 1)
-    {
+    if (wx.getStorageSync(user.Status) == 1) {
       wx.request({
         url: config.PytheRestfulServerURL + '/user/statistics',
         data: {
           userId: wx.getStorageSync(user.UserID),
         },
         method: 'GET',
-        success: function(res){
+        success: function (res) {
           // success
           that.data.account.summary = res.data.data.income.toFixed(2);
           that.setData({
             account: that.data.account,
           });
         },
-        fail: function(res) {
+        fail: function (res) {
           // fail
         },
-        complete: function(res) {
+        complete: function (res) {
           // complete
         }
       });
 
-      listViewUtil.loadList(that,'teacher_bill',config.PytheRestfulServerURL,
+      listViewUtil.loadList(that, 'teacher_bill', config.PytheRestfulServerURL,
         base.TEACHER_QUERY_BILL,
         10,
-            queryParams,
-            function (netData){
-              //取出返回结果的列表
-              return netData.data;
-            },
-            function(item){
-              
-            },
-            {},
-            'GET',
-        );
+        queryParams,
+        function (netData) {
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function (item) {
+
+        },
+        {},
+        'GET',
+      );
     }
 
   },
 
-  checkQuestionAnswer:function(e){
+  checkQuestionAnswer: function (e) {
     var bill = e.currentTarget.dataset.bill;
     console.log('check ' + JSON.stringify(bill) + " QA");
-    
-    if(bill.bill.operationtype == 'ask question')
-    {
+
+    if (bill.bill.operationtype == 'ask question') {
       wx.request({
         url: config.PytheRestfulServerURL + '/bill/checkQADetail',
         data: {
@@ -101,9 +100,9 @@ Page({
           var selectItem = res.data.data;
           selectItem.answertime = utils.formatDate(selectItem.answertime);
           selectItem.questioncontent = JSON.parse(selectItem.questioncontent);
-          
+
           wx.navigateTo({
-            url: '../section/concrete_content?selectItem='+JSON.stringify(selectItem),
+            url: '../section/concrete_content?selectItem=' + JSON.stringify(selectItem),
           });
         },
         fail: function (res) {
@@ -113,12 +112,12 @@ Page({
           // complete
         }
       })
-      
+
     }
-    
+
   },
 
-  enchashment:function(e){
+  enchashment: function (e) {
     var account = e.currentTarget.dataset.account;
     console.log('teacher enchashment ' + JSON.stringify(account));
 
@@ -130,24 +129,24 @@ Page({
         money: account.summary,
         openId: wx.getStorageSync(user.OpenID),
       },
-      method: 'POST', 
-      success: function(res){
+      method: 'POST',
+      success: function (res) {
         // success
         console.log(res);
       },
-      fail: function(res) {
+      fail: function (res) {
         // fail
       },
-      complete: function(res) {
+      complete: function (res) {
         // complete
       }
     })
   },
 
-  onHide:function(){
+  onHide: function () {
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function () {
     // 页面关闭
   }
 })

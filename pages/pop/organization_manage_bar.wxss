@@ -14,7 +14,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    border-bottom: 2rpx solid #999999;
+    /*border-bottom: 2rpx solid #999999;*/
 }
 
 .my_create_view_container{

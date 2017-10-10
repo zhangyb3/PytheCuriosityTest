@@ -7,7 +7,7 @@
 
 <scroll-view class="display_list_zone" scroll-y="true" style="height:{{scrollHeight}}px;z-index:1;"  >
 
-<view style="height: 100rpx;"></view>
+<view style="height: 125rpx;background-color: #eaeaea;"></view>
 
 <view class="personal_description_page" wx:if="{{alreadySetupOrg == true}}">
 
@@ -46,9 +46,9 @@
                     <view class="item_content_avatar_null" wx:if="{{alreadySetupOrg == false || organization.avatar == null}}" style="background-image:url(../../images/add_op.png)"></view>
                     </view>
 
-                    <view class="person_edit_icon" >
+                    <!--<view class="person_edit_icon" >
                         <image src="../../images/personal_icon_arrow_right@2x.png"></image>
-                    </view>
+                    </view>-->
 
                 </view>
 
@@ -92,9 +92,9 @@
 
                     <text class="item_content_text">{{organization.name}}</text>
 
-                    <view class="person_edit_icon" >
+                    <!--<view class="person_edit_icon" >
                         <image src="../../images/personal_icon_arrow_right@2x.png"></image>
-                    </view>
+                    </view>-->
 
                 </view>
 
@@ -138,9 +138,10 @@
                     <text class="item_content_text_null" wx:if="{{organization.address == null}}" data-address="{{organization.address}}" bindtap="chooseOrgLocation">尚无</text>
                     <!--<text class="item_content_text" wx:if="{{organization.address != null}}">有</text>-->
                     <image class="item_address_icon" wx:if="{{organization.address != null}}" src="../../images/address_icon.png" data-address="{{organization.address}}" bindtap="chooseOrgLocation"></image>
-                    <view class="person_edit_icon" >
+
+                    <!--<view class="person_edit_icon" >
                         <image src="../../images/personal_icon_arrow_right@2x.png"></image>
-                    </view>
+                    </view>-->
 
                 </view>
 
@@ -178,9 +179,10 @@
                     <view class="item_description_text">
                     <text class="item_content_text">{{organization.description}}</text>
                     </view>
-                    <view class="person_edit_icon" >
+
+                    <!--<view class="person_edit_icon" >
                         <image src="../../images/personal_icon_arrow_right@2x.png"></image>
-                    </view>
+                    </view>-->
 
                 </view>
 
@@ -193,6 +195,8 @@
     </view>
 
 </view>
+
+<view style="height: 25rpx;background-color: #eaeaea;"></view>
 
 <view style="height:25rpx;"></view>
 
