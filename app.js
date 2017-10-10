@@ -28,8 +28,9 @@ App({
     wx.setStorageSync('alreadyRegister', 'no');
     wx.setStorageSync('exitSystem', 'no');
     
-
-
+    wx.setStorageSync('last_latitude', 'undefined');
+    wx.setStorageSync('last_longtitude','undefined');
+    
   },
   getUserInfo:function(cb){
     var that = this

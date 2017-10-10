@@ -8,10 +8,13 @@
       <view class="occupy" wx:if="{{search_page}}" style="height:200rpx;"></view>
     
       <block wx:for="{{ask_subject_list}}" wx:for-item="item" wx:for-index="index" wx:key="unique">
-        <view class="interval"></view>
+        
         <view class="ask_subject_list_container" >
           <template is="ask_subject_list_item" data="{{item}}"></template>
         </view>
+
+        <view class="interval"></view>
+        
       </block>
 
 

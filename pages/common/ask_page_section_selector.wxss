@@ -36,7 +36,7 @@
     line-height: 100rpx;
     text-align: center;
     /*border: 1px;*/
-    color: #fff;
+    color: #9d9d9d;
     background-color: #eaeaea;
     
     justify-content: center;
@@ -50,6 +50,7 @@
     background-color: #eaeaea;
     font-size: 40rpx;
     /*font-weight: bold;*/
+    border-bottom: 1px solid #d25353;
 }
 
 .bottom_line{

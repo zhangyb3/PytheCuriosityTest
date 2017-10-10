@@ -24,46 +24,48 @@ Page({
   },
   onReady:function(){
     // 页面渲染完成
+    
+
   },
   onShow:function(){
 
     console.log(JSON.stringify(this.data));
     var editType = this.data.editType;
-    switch (editType)
-    {
+    switch (editType) {
       case 'editOrgName':
-      {
-        var leftLength = 10 - this.data.orgName.length;
-        this.setData({
-          original: this.data.orgName,
-          wordsCountdown : leftLength,
-        });
-        break;
-      }
+        {
+          var leftLength = 10 - this.data.orgName.length;
+          this.setData({
+            original: this.data.orgName,
+            wordsCountdown: leftLength,
+          });
+          break;
+        }
       case 'editOrgDescription':
-      {
-        var leftLength = 100 - this.data.orgDescription.length;
-        this.setData({
-          original: this.data.orgDescription,
-          wordsCountdown : leftLength,
-        });
-        break;
-      }
+        {
+          var leftLength = 100 - this.data.orgDescription.length;
+          this.setData({
+            original: this.data.orgDescription,
+            wordsCountdown: leftLength,
+          });
+          break;
+        }
     }
 
   },
 
   getTextInput:function(e){
+    var that = this;
     console.log(e.detail.value);
-    this.data.inputContent = e.detail.value;
+    that.data.inputContent = e.detail.value;
 
-    var editType = this.data.editType;
+    var editType = that.data.editType;
     switch (editType)
     {
       case 'editOrgName':
       {
         var leftLength = 10 - e.detail.value.length;
-        this.setData({
+        that.setData({
           
           wordsCountdown : leftLength,
         });
@@ -72,7 +74,7 @@ Page({
       case 'editOrgDescription':
       {
         var leftLength = 100 - e.detail.value.length;
-        this.setData({
+        that.setData({
           
           wordsCountdown : leftLength,
         });

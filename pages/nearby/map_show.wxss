@@ -1,1 +1,8 @@
-/* pages/nearby/map_show.wxss */
+
+.map_container{
+  position:fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+}

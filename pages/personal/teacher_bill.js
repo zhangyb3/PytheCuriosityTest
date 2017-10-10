@@ -85,7 +85,8 @@ Page({
     var bill = e.currentTarget.dataset.bill;
     console.log('check ' + JSON.stringify(bill) + " QA");
 
-    if (bill.bill.operationtype == 'ask question') {
+    // if (bill.bill.operationtype == 'ask question') 
+    {
       wx.request({
         url: config.PytheRestfulServerURL + '/bill/checkQADetail',
         data: {

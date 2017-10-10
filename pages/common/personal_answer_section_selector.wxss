@@ -28,7 +28,7 @@
     align-items: center;
     font-size: 40rpx;
     /*font-weight: bold;*/
-    color: #fff;
+    color: #9d9d9d;
 }
 
 .bar_item.active{
@@ -37,7 +37,7 @@
     background-color: #eaeaea;
     font-size: 40rpx;
     /*font-weight: bold;*/
-    /*color: #333333;*/
+    border-bottom: 1px solid #d25353;
 }
 
 .person_answer_middle_line{

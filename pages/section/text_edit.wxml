@@ -4,7 +4,7 @@
     <view style="height:100rpx;"></view>
 
     <view class="text_edit_textarea_container">
-        <textarea class="text_edit_textarea" bindinput="getTextInput" maxlength="{{maxLength}}"  value='{{original}}' auto-height auto-focus/>
+        <textarea class="text_edit_textarea" bindinput="getTextInput" maxlength="{{maxLength}}"  value='{{original}}' auto-height='true' auto-focus="true"/>
     </view>
 
     <view style="height:20rpx;"></view>

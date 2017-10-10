@@ -165,7 +165,7 @@
     /*margin-right: 40rpx;*/
 
     width: 100%;
-    height: auto;
+    /*height: auto;*/
 
     justify-content:center;
     align-items:center;
@@ -283,20 +283,27 @@
 
 .photo{
     width: 80%;
-    height: auto;
+    /*height: auto;*/
 
     justify-content:center;
     align-items:center;
-    display:-webkit-flex;
+    /*display:-webkit-flex;*/
+    flex-direction: column;
 }
 
 .draw{
     width: 80%;
-    height: auto;
+    /*height: auto;*/
 
     justify-content:center;
     align-items:center;
-    display:-webkit-flex;
+    /*display:-webkit-flex;*/
+    flex-direction: column;
+}
+
+.preview_img_classic{
+  align-items:center;
+  width: 100%;
 }
 
 @import "../pop/concrete_operation.wxss";

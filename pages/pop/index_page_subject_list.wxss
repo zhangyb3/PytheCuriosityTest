@@ -19,7 +19,7 @@
     right: 0;
     /*display: block;*/
     bottom: 386px;
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
 }
 
 /*.subject_item{
@@ -128,7 +128,7 @@
 
 
 .subjects {
-    background-color: #f3f1e4;
+    background-color: #eaeaea;
     z-index: 11;
     width: 100%;
    

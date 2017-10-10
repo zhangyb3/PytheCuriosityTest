@@ -13,66 +13,75 @@ Page({
 
     latitude: '',
     longitude: '',
+    search_org_list: [],
+    list_mode: 'index_search_org',
 
   },
   onLoad:function(parameters){
     
-  },
-  onReady:function(){
-    // 页面渲染完成
-  },
-  onShow:function(){
     var that = this;
     wx.getLocation({
       type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
-      success: function(res){
+      success: function (res) {
         // success
         console.log(res);
         that.data.latitude = res.latitude;
         that.data.longitude = res.longitude;
         console.log('now position : ' + JSON.stringify(that.data));
+
+        wx.setStorageSync('last_latitude', that.data.latitude);
+        wx.setStorageSync('last_longtitude', that.data.longitude);
       },
-      fail: function(res) {
+      fail: function (res) {
         // fail
       },
-      complete: function(res) {
+      complete: function (res) {
         // complete
-
-        //加载附近机构列表
-        var searchParameters = {
-          latitude: that.data.latitude,
-          longitude: that.data.longitude,
-          userId: wx.getStorageSync(user.UserID),
-          pageNum: 1,
-          pageSize: 10,
-
-          query: '',
-          subjectId: -1,
-          userId: -1,
-        };
-        that.setData({
-          search_org_list: [],
-        });
-
-        listViewUtil.loadList(that,'index_search_org',config.PytheRestfulServerURL,
-        "/index/search/organization",
-        10,
-        searchParameters,
-        function (netData){
-          //取出返回结果的列表
-          return netData.data;
-        },
-        function(item){
-        
-        },
-        {},
-        'GET'
-        );
-
+        refreshNearbyOrgList(that);
       }
     });
 
+  },
+  onReady:function(){
+    // 页面渲染完成
     
+
+  },
+  onShow:function(){
+
+    var that = this;
+    var tempLatitude = that.data.latitude;
+    var tempLongtitude = that.data.longtitude;
+
+    wx.getLocation({
+      type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
+      success: function (res) {
+        // success
+        console.log(res);
+
+        that.data.latitude = res.latitude;
+        that.data.longitude = res.longitude;
+        console.log('now position : ' + JSON.stringify(that.data));
+
+        wx.setStorageSync('last_latitude', that.data.latitude);
+        wx.setStorageSync('last_longtitude', that.data.longitude);
+        
+      },
+      fail: function (res) {
+        // fail
+      },
+      complete: function (res) {
+        // complete
+        var distance = utils.getDistance(tempLatitude, tempLongtitude, that.data.latitude, that.data.longitude);
+        console.log('distance : ' + distance);
+        if(distance > 20000000000000)
+        {
+          refreshNearbyOrgList(that);
+        }
+        
+      }
+    });
+
   },
 
   checkOrg: function (e) {
@@ -138,3 +147,38 @@ Page({
     // 页面关闭
   }
 })
+
+function refreshNearbyOrgList(the)
+{
+  var that = the;
+  //加载附近机构列表
+  var searchParameters = {
+    latitude: that.data.latitude,
+    longitude: that.data.longitude,
+    userId: wx.getStorageSync(user.UserID),
+    pageNum: 1,
+    pageSize: 10,
+
+    query: '',
+    subjectId: -1,
+    userId: -1,
+  };
+  that.setData({
+    search_org_list: [],
+  });
+
+  listViewUtil.loadList(that, 'index_search_org', config.PytheRestfulServerURL,
+    "/index/search/organization",
+    10,
+    searchParameters,
+    function (netData) {
+      //取出返回结果的列表
+      return netData.data;
+    },
+    function (item) {
+
+    },
+    {},
+    'GET'
+  );
+}
