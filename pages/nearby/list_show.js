@@ -14,11 +14,18 @@ Page({
     latitude: '',
     longitude: '',
     search_org_list: [],
-    list_mode: 'index_search_org',
-
+    list_mode: 'nearest_orgs',
+    list_type: 'nearest_orgs',
   },
   onLoad:function(parameters){
-    
+    wx.getSystemInfo({
+      success: (res) => {
+        this.setData({
+          scrollHeight: res.windowHeight
+        });
+      }
+    });
+
     var that = this;
     wx.getLocation({
       type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
@@ -167,8 +174,8 @@ function refreshNearbyOrgList(the)
     search_org_list: [],
   });
 
-  listViewUtil.loadList(that, 'index_search_org', config.PytheRestfulServerURL,
-    "/index/search/organization",
+  listViewUtil.loadList(that, 'nearest_orgs', config.PytheRestfulServerURL,
+    "/nearestOrgs",
     10,
     searchParameters,
     function (netData) {
@@ -179,6 +186,6 @@ function refreshNearbyOrgList(the)
 
     },
     {},
-    'GET'
+    'POST'
   );
 }

@@ -135,7 +135,8 @@ Page({
 
 
     var that = this;
-
+    if (that.data.answers[answer_index].isClick == 0)
+    {
     //更新数据库
     wx.request({
       url: config.PytheRestfulServerURL + '/likesnum',
@@ -170,6 +171,7 @@ Page({
         // complete
       }
     })
+    }
 
 
   },

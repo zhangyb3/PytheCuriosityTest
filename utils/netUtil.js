@@ -267,9 +267,11 @@ function request(requestConfig){
         contentType = 'application/json';
     }else if (requestConfig.netMethod =='POST'){
         body = paramStr;//keyvalue形式
-        body = json2Form(requestConfig.params);//这时传给服务器的是jsonObject,不符合本项目中的要求
+        // body = json2Form(requestConfig.params);//这时传给服务器的是jsonObject,不符合本项目中的要求
+        body = JSON.stringify(requestConfig.params);
         console.log("requestBody jsonString : " + body);
-        contentType = "application/x-www-form-urlencoded";
+        contentType = 'application/json';
+        // contentType = "application/x-www-form-urlencoded";
     }
 
 
@@ -636,6 +638,11 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
             that.data.search_org_list=that.data.search_org_list.concat(concatDatas);
             console.log('before setData----------'+that.data.search_org_list);
             that.setData({search_org_list:that.data.search_org_list});
+        }
+        if (list_type == 'nearest_orgs') {
+          that.data.search_org_list = that.data.search_org_list.concat(concatDatas);
+          console.log('before setData----------' + that.data.search_org_list);
+          that.setData({ search_org_list: that.data.search_org_list });
         }
 
         if(list_type == 'subject_teacher'){

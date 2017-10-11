@@ -65,10 +65,14 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     page.data.defaultPageSize = page_size;
 
     page.data.netStateBean = new netUtil.netStateBean();
-    if(requestMethod != undefined){
-        page.data.requestMethod = requestMethod;
-    }else {
+    if(requestMethod == 'GET'){
+        page.data.requestMethod = 'GET';
+    }
+    else if (requestMethod == 'POST'){
         page.data.requestMethod = "POST";
+    }
+    else {
+      page.data.requestMethod = requestMethod;
     }
 
 
@@ -128,6 +132,9 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
         page.data.search_teacher_list = [];
     }
     if(list_type == 'index_search_org'){
+        page.data.search_org_list = [];
+    }
+    if (list_type == 'nearest_orgs') {
         page.data.search_org_list = [];
     }
     if(list_type == 'subject_teacher'){
@@ -253,6 +260,11 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             
             netUtil.requestSimpleList(page,'index_search_org',1,netUtil.action.request_refresh);
         }
+        else if (page.data.list_mode == 'nearest_orgs') {
+              page.data.search_org_list = [];
+
+              netUtil.requestSimpleList(page, 'nearest_orgs', 1, netUtil.action.request_refresh);
+        }
 
         else if(page.data.list_mode == 'subject_teacher'){
             page.data.search_teacher_list = [];
@@ -347,6 +359,11 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
             // page.data.personal_like_teacher_list = [];
             page.data.urlDetail = "/index/search/organization";
             netUtil.requestSimpleList(page,'index_search_org',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+        }
+        else if (page.data.list_mode == 'nearest_orgs') {
+          
+          page.data.urlDetail = "/nearestOrgs";
+          netUtil.requestSimpleList(page, 'nearest_orgs', page.data.currentPageIndex + 1, netUtil.action.request_refresh);
         }
         else if(page.data.list_mode == 'subject_teacher'){
             // page.data.search_teacher_list = [];

@@ -44,7 +44,7 @@
             
 
                 <view wx:if="{{question.questioncontent.img[0] != null}}" class="photo" >
-                    <image class="preview_img_classic" data-photo="{{question.questioncontent.img[0]}}" src='{{preview_img_url + question.questioncontent.img[0]}}' bindtap="showPhoto" mode="aspectFit">
+                    <image class="preview_img_classic" data-photo="{{question.questioncontent.img[0]}}" src='{{preview_img_url + question.questioncontent.img[0]}}' bindtap="showPhoto" style="max-width:100%;max-height:100%;" mode="aspectFit">
                         <!--<view>照片</view>-->
                     </image>
                 </view>

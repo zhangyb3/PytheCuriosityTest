@@ -288,7 +288,7 @@
     justify-content:center;
     align-items:center;
     /*display:-webkit-flex;*/
-    flex-direction: column;
+    /*flex-direction: column;*/
 }
 
 .draw{
@@ -298,7 +298,7 @@
     justify-content:center;
     align-items:center;
     /*display:-webkit-flex;*/
-    flex-direction: column;
+    /*flex-direction: column;*/
 }
 
 .preview_img_classic{
