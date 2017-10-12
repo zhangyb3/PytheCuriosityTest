@@ -302,7 +302,7 @@
 }
 
 .preview_img_classic{
-  align-items:center;
+  height: 400rpx;
   width: 100%;
 }
 

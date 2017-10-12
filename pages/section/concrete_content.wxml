@@ -29,7 +29,7 @@
         
             <view class="multi_tips"> 
 
-            <view style="height: 20rpx;"></view>
+            <view style="height: 10rpx;"></view>
             <view class="multi_tips_min"> 
             
             <view wx:if="{{question.questioncontent.audio[0] != null}}" class="speak_style_record" data-voice="{{question.questioncontent.audio[0]}}" bindtap="playVoiceRecord">
@@ -40,7 +40,7 @@
             </view>
             
             </view>
-            <view style="height: 20rpx;"></view>
+            <view style="height: 10rpx;"></view>
             
 
                 <view wx:if="{{question.questioncontent.img[0] != null}}" class="photo" >
