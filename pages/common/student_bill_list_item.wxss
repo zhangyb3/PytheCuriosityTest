@@ -22,7 +22,7 @@
 }
 
 .bill_time_container{
-    width: 15%;
+    width: 20%;
 
     justify-content:center;
     align-items:center;
@@ -36,7 +36,7 @@
 }
 
 .bill_money_container{
-    width: 25%;
+    width: 30%;
 
     justify-content:center;
     align-items:center;
@@ -55,7 +55,7 @@
 }
 
 .bill_link_container{
-    width: 10%;
+    width: 20%;
 
     justify-content:center;
     align-items:center;
@@ -63,7 +63,7 @@
 }
 
 .bill_source_container{
-    width: 50%;
+    width: 30%;
     
     /*justify-content:center;
     align-items:center;
@@ -71,14 +71,24 @@
 }
 
 .bill_source_text_view_container{
-    margin-left: 50rpx;
+    /*margin-left: 50rpx;*/
 }
 
 .bill_source_text_view{
-    display: flex;
+    display: inline-flex;
     flex-direction: row;
     align-items: center;
-    float: left;
+    /*float: left;*/
+
+    height: 100%;
+    line-height: 100%;
+    word-break:break-all;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
 }
 
 .student_avatar{

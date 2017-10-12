@@ -77,10 +77,10 @@ Page({
   onReady: function () {
     // 页面渲染完成
     this.data.mapContext = wx.createMapContext('nearby_org_map');
-
+    this.moveToPosition();
   },
   onShow: function () {
-    this.moveToPosition();
+    
     
   },
 

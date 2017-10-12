@@ -4,7 +4,7 @@
 
 <!--列表-->
 
-  <scroll-view  class="org_scroll_list" upper-threshold="50px" lower-threshold="50px" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh">
+  <scroll-view  class="org_scroll_list" upper-threshold="50rpx" lower-threshold="50rpx" scroll-y="true" style="height:{{scrollHeight}}px" bindscrolltolower="onLoadMore" bindscrolltoupper="onRefresh">
       
       <view class="nearby_org_list_hint_container">
         <view class="nearby_org_list_hint">
