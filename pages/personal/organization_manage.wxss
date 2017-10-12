@@ -125,8 +125,8 @@ page{
 
 .item_content_avatar_wrapper{
 
-    width: 150rpx;
-    height: 150rpx;
+    width: 100rpx;
+    height: 100rpx;
 
 }
 

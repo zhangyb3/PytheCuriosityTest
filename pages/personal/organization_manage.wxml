@@ -25,7 +25,7 @@
             <view class="item_hint_container">
                 
                 <view class="item_hint">
-                    <text class="item_hint_text">图标</text>
+                    <text class="item_hint_text">头像</text>
                 </view>
 
             </view>
@@ -75,7 +75,7 @@
             <view class="item_hint_container">
                 
                 <view class="item_hint">
-                    <text class="item_hint_text">名称</text>
+                    <text class="item_hint_text">机构名称</text>
                 </view>
 
             </view>
@@ -119,7 +119,7 @@
             <view class="item_hint_container">
                 
                 <view class="item_hint">
-                    <text class="item_hint_text">位置</text>
+                    <text class="item_hint_text">机构地址</text>
                 </view>
 
             </view>
@@ -166,7 +166,7 @@
             <view class="item_hint_container">
                 
                 <view class="item_hint">
-                    <text class="item_hint_text">简介</text>
+                    <text class="item_hint_text">机构简介</text>
                 </view>
 
             </view>

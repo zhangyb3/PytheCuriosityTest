@@ -119,10 +119,41 @@ Page({
     console.log(e);
     var org = {};
     org.id = e.markerId;
-    wx.showModal({
-      title: '机构信息',
-      content: JSON.stringify(org),
-    })
+
+    wx.request({
+      url: config.PytheRestfulServerURL + '/org/query',
+      data: {
+        orgId: org.id,
+      },
+      method: 'GET',
+      success: function (res) {
+        org = res.data.data.organization;
+        var manager = res.data.data.manager;
+
+        wx.showModal({
+          title: '机构信息',
+          content: org.name + '; 地址：' + org.address
+          + '; 管理者：' + manager.username + '; ---点击确定查看详细',
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确定');
+              wx.openLocation({
+                latitude: org.latitude,
+                longitude: org.longitude,
+                scale: 28
+              });
+            }
+          }
+        })
+      },
+      fail: function(res){
+
+      },
+      complete: function(res){
+
+      }
+    });
+    
   },
 
 

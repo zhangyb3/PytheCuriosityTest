@@ -38,7 +38,7 @@
     height: 150rpx;
     /*top: 36rpx;
     left: 30rpx;*/
-    /*border-radius: 50%;*/
+    border-radius: 30rpx;
     border: 1rpx dashed #A9A9A9;
 
 }
@@ -49,7 +49,7 @@
     height: 150rpx;
     /*top: 36rpx;
     left: 30rpx;*/
-    /*border-radius: 50%;*/
+    border-radius: 30rpx;
 }
 
 .org_icon_wrapper{
