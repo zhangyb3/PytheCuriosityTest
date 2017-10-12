@@ -41,7 +41,7 @@ Page({
     search_page: true,
 
     list_mode: 'index_search_knowledge',
-    list_type: 'index',
+    // list_type: 'index',
 
     preview_img_url: config.PytheFileServerURL ,
 
@@ -90,7 +90,6 @@ Page({
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
-          // scrollHeight: res.windowHeight - (100 * res.windowHeight / 750),
           scrollHeight: res.windowHeight
         });
       }
@@ -138,7 +137,7 @@ Page({
     var value = e.target.dataset.value; // 获取当前点击标签的值
     console.log(value);
     var index_search_menu = this.data.index_search_menu;
-    if(index_search_menu[0].value == value)
+    //if(index_search_menu[0].value == value)
     {
       console.log("knowledge");
       this.data.index_search_menu[0].active = true;
@@ -163,7 +162,7 @@ Page({
     var value = e.target.dataset.value; // 获取当前点击标签的值
     console.log(value);
     var index_search_menu = this.data.index_search_menu;
-    if(index_search_menu[1].value == value)
+    //if(index_search_menu[1].value == value)
     {
       console.log("teacher");
       this.data.index_search_menu[1].active = true;
@@ -188,7 +187,7 @@ Page({
     var value = e.target.dataset.value; // 获取当前点击标签的值
     console.log(value);
     var index_search_menu = this.data.index_search_menu;
-    if(index_search_menu[2].value == value)
+    //if(index_search_menu[2].value == value)
     {
       console.log("organization");
       this.data.index_search_menu[2].active = true;

@@ -26,36 +26,31 @@ Page({
       }
     });
 
-    var that = this;
-    wx.getLocation({
-      type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
-      success: function (res) {
-        // success
-        console.log(res);
-        that.data.latitude = res.latitude;
-        that.data.longitude = res.longitude;
-        console.log('now position : ' + JSON.stringify(that.data));
+    // var that = this;
+    // wx.getLocation({
+    //   type: 'wgs84', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
+    //   success: function (res) {
+    //     // success
+    //     console.log(res);
+    //     that.data.latitude = res.latitude;
+    //     that.data.longitude = res.longitude;
+    //     console.log('now position : ' + JSON.stringify(that.data));
 
-        wx.setStorageSync('last_latitude', that.data.latitude);
-        wx.setStorageSync('last_longtitude', that.data.longitude);
-      },
-      fail: function (res) {
-        // fail
-      },
-      complete: function (res) {
-        // complete
-        refreshNearbyOrgList(that);
-      }
-    });
+    //     wx.setStorageSync('last_latitude', that.data.latitude);
+    //     wx.setStorageSync('last_longtitude', that.data.longitude);
+    //   },
+    //   fail: function (res) {
+    //     // fail
+    //   },
+    //   complete: function (res) {
+    //     // complete
+    //     refreshNearbyOrgList(that);
+    //   }
+    // });
 
   },
   onReady:function(){
     // 页面渲染完成
-    
-
-  },
-  onShow:function(){
-
     var that = this;
     var tempLatitude = that.data.latitude;
     var tempLongtitude = that.data.longtitude;
@@ -72,7 +67,7 @@ Page({
 
         wx.setStorageSync('last_latitude', that.data.latitude);
         wx.setStorageSync('last_longtitude', that.data.longitude);
-        
+
       },
       fail: function (res) {
         // fail
@@ -81,13 +76,18 @@ Page({
         // complete
         var distance = utils.getDistance(tempLatitude, tempLongtitude, that.data.latitude, that.data.longitude);
         console.log('distance : ' + distance);
-        if(distance > 20000000000000)
+        // if(distance > 20000000000000)
         {
           refreshNearbyOrgList(that);
         }
-        
+
       }
     });
+
+  },
+  onShow:function(){
+
+    
 
   },
 

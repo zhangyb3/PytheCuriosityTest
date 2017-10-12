@@ -680,7 +680,7 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
         }else if (action == request_loadmore){
             loadMoreNoData(that);
         }else if (action == request_refresh){
-            showSuccessToast(that,"没有新内容");
+            // showSuccessToast(that,"没有新内容");
             //清空现有列表
             if(list_type == 'index'){
                 //滑动列表结尾追加数据
@@ -748,7 +748,7 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
                 that.setData({personal_like_teacher_list:[]});
             }
             if (that.hasSuccessed){
-                showSuccessToast(that,"没有新内容");
+                //showSuccessToast(that,"没有新内容");
             }else {
                 showEmptyPage(that);
             }

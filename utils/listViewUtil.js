@@ -248,16 +248,17 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
         else if(page.data.list_mode == 'index_search_knowledge'){
             page.data.search_knowledge_list = [];
             page.data.infos = [];
+            page.data.urlDetail = "/index/search/knowledge";
             netUtil.requestSimpleList(page,'index_search_knowledge',1,netUtil.action.request_refresh);
         }
         else if(page.data.list_mode == 'index_search_teacher'){
             page.data.search_teacher_list = [];
-            
+            page.data.urlDetail = "/index/search/teacher";
             netUtil.requestSimpleList(page,'index_search_teacher',1,netUtil.action.request_refresh);
         }
         else if(page.data.list_mode == 'index_search_org'){
             page.data.search_org_list = [];
-            
+            page.data.urlDetail = "/index/search/organization";
             netUtil.requestSimpleList(page,'index_search_org',1,netUtil.action.request_refresh);
         }
         else if (page.data.list_mode == 'nearest_orgs') {
@@ -348,40 +349,40 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
         else if(page.data.list_mode == 'index_search_knowledge'){
             // page.data.search_knowledge_list = [];
             page.data.urlDetail = "/index/search/knowledge";
-            netUtil.requestSimpleList(page,'index_search_knowledge',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+            netUtil.requestSimpleList(page,'index_search_knowledge',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
         }
         else if(page.data.list_mode == 'index_search_teacher'){
             // page.data.search_teacher_list = [];
             page.data.urlDetail = "/index/search/teacher";
-            netUtil.requestSimpleList(page,'index_search_teacher',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+            netUtil.requestSimpleList(page,'index_search_teacher',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
         }
         else if(page.data.list_mode == 'index_search_org'){
             // page.data.personal_like_teacher_list = [];
             page.data.urlDetail = "/index/search/organization";
-            netUtil.requestSimpleList(page,'index_search_org',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+            netUtil.requestSimpleList(page,'index_search_org',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
         }
         else if (page.data.list_mode == 'nearest_orgs') {
           
           page.data.urlDetail = "/nearestOrgs";
-          netUtil.requestSimpleList(page, 'nearest_orgs', page.data.currentPageIndex + 1, netUtil.action.request_refresh);
+          netUtil.requestSimpleList(page, 'nearest_orgs', page.data.currentPageIndex + 1, netUtil.action.request_loadmore);
         }
         else if(page.data.list_mode == 'subject_teacher'){
             // page.data.search_teacher_list = [];
             
-            netUtil.requestSimpleList(page,'subject_teacher',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+            netUtil.requestSimpleList(page,'subject_teacher',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
         }
         else if(page.data.list_mode == 'collection_teacher'){
             // page.data.search_teacher_list = [];
             
-            netUtil.requestSimpleList(page,'collection_teacher',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+            netUtil.requestSimpleList(page,'collection_teacher',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
         }
         else if(page.data.list_mode == 'teacher_bill'){
             
-            netUtil.requestSimpleList(page,'teacher_bill',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+            netUtil.requestSimpleList(page,'teacher_bill',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
         }
          else if(page.data.list_mode == 'student_bill'){
             
-            netUtil.requestSimpleList(page,'student_bill',page.data.currentPageIndex +1,netUtil.action.request_refresh);
+            netUtil.requestSimpleList(page,'student_bill',page.data.currentPageIndex +1,netUtil.action.request_loadmore);
         }
 
         else
@@ -394,9 +395,9 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
 
     page.onLoadMore = page.onReachBottom;
     page.onRefresh = page.onPullDownRefresh;
-    page.onRetry = function(){
-        netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
-    };
+    // page.onRetry = function(){
+    //     netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
+    // };
 
     page.setNetparams = setNetparams;
     page.getListFromNetData = getListFromNetData;

@@ -454,43 +454,34 @@ Page({
   onReady:function(){
     
     
-    
-    
-
-  },
-
-  onShow:function(){
-
-
-   
     var that = this;
-    
-    
+
+
     {
       var simple_params = {
-        gradeId : wx.getStorageSync(user.GradeID),
-        pageSize : 10,
-        pageNum : 1,
-        
+        gradeId: wx.getStorageSync(user.GradeID),
+        pageSize: 10,
+        pageNum: 1,
+
       };
       this.setData({
         hide_loading: false,
       });
-      listViewUtil.loadList(that,'index',config.PytheRestfulServerURL,
-      "/index/defaultList",
-      10,
-          simple_params,
-          function (netData){
-            //取出返回结果的列表
-            return netData.data;
-          },
-          function(item,that){
-            that.setData({
-              hide_loading: true,
-            });
-          },
-          {},
-          'GET',
+      listViewUtil.loadList(that, 'index', config.PytheRestfulServerURL,
+        "/index/defaultList",
+        10,
+        simple_params,
+        function (netData) {
+          //取出返回结果的列表
+          return netData.data;
+        },
+        function (item, that) {
+          that.setData({
+            hide_loading: true,
+          });
+        },
+        {},
+        'GET',
       );
       wx.setStorageSync('index_load_type', 'one');
     }
@@ -501,6 +492,15 @@ Page({
     this.setData({
       hide_register_lock_cover: true,
     });
+    
+
+  },
+
+  onShow:function(){
+
+
+   
+    
 
   },
 

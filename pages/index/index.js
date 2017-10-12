@@ -132,6 +132,7 @@ Page({
     {
        this.setData({
         indexUserName: wx.getStorageSync(user.UserNickName),
+        indexUserDescription: '呵呵',
         exitSystem: wx.getStorageSync('exitSystem'),
         alreadyRegister: wx.getStorageSync('alreadyRegister'),
       });

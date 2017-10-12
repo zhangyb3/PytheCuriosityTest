@@ -59,11 +59,11 @@ Page({
             },
             {
               id: 4,
-              iconPath: '/images/marker.png',
+              iconPath: '/images/position.png',
               position: {
-                left: res.windowWidth / 2 - 10,
+                left: res.windowWidth / 2 - 15,
                 top: res.windowHeight / 2 - 30,
-                width: 20,
+                width: 30,
                 height: 30
               },
               clickable: true
@@ -103,8 +103,8 @@ Page({
         console.log(res.latitude);
         that.data.longitude = res.longitude;
         that.data.latitude = res.latitude;
-
-        refreshNearbyOrgsOnMap(that);
+        //定位后局部刷新
+        //refreshNearbyOrgsOnMap(that);
       }
     });
     
@@ -133,7 +133,7 @@ Page({
         wx.showModal({
           title: '机构信息',
           content: org.name + '; 地址：' + org.address
-          + '; 管理者：' + manager.username + '; ---点击确定查看详细',
+          + '; 负责人：' + manager.username + ';      点击确定查看详细',
           success: function (res) {
             if (res.confirm) {
               console.log('用户点击确定');
@@ -185,9 +185,9 @@ function refreshNearbyOrgsOnMap(the)
       for(var count = 0; count < results.length; count++)
       {
         that.data.nearbyOrgsOnMap[count] = results[count];
-        that.data.nearbyOrgsOnMap[count].iconPath = results[count].avatar;
+        that.data.nearbyOrgsOnMap[count].iconPath = '/images/marker.png';
         that.data.nearbyOrgsOnMap[count].width = 50;
-        that.data.nearbyOrgsOnMap[count].height = 50;
+        that.data.nearbyOrgsOnMap[count].height = 60;
       }
 
       that.setData({

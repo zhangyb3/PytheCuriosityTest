@@ -119,8 +119,8 @@ page{
     width: 50%;
     height: 50rpx;
     line-height: 50rpx;
-    background-color: white;
-    color: #d25353;
+    background-color: #5d5d5d;
+    color: white;
     font-size: 32rpx;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
