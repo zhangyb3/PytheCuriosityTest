@@ -45,6 +45,8 @@ Page({
 
     index_page: true,
     finished: true,
+
+    requestingResultList: false,
     
   },
 

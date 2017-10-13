@@ -151,6 +151,7 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     }
 
     page.onPullDownRefresh = function(){
+      if(page.data.requestingResultList == false){
         if(list_type == 'index'){
             page.data.infos=[];//知列表
 
@@ -293,10 +294,12 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
         {
             netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
         }
-        
+        page.data.requestingResultList = true;
+      }
     };
 
     page.onReachBottom = function(){
+      if(page.data.requestingResultList == false){
         if(page.data.list_mode == 'subject_list')
         {
             wx.stopPullDownRefresh();
@@ -389,8 +392,8 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
         {
             netUtil.requestSimpleList(page,list_type,page.data.currentPageIndex +1,netUtil.action.request_loadmore);
         }
-        
-
+        page.data.requestingResultList = true;
+      }
     };
 
     page.onLoadMore = page.onReachBottom;
@@ -402,8 +405,12 @@ function loadList(page,list_type,basic_url,urlDetail,page_size,setNetparams,getL
     page.setNetparams = setNetparams;
     page.getListFromNetData = getListFromNetData;
     page.handldItemInfo = handldItemInfo;
-    netUtil.requestSimpleList(page,list_type,1,netUtil.action.request_refresh);
-
+    
+    {
+      netUtil.requestSimpleList(page, list_type, 1, netUtil.action.request_refresh);
+      page.data.requestingResultList = true;
+    }
+    
     
 }
 

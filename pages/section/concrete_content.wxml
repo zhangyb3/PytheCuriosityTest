@@ -29,7 +29,7 @@
         
             <view class="multi_tips"> 
 
-            <view style="height: 10rpx;"></view>
+            <view style="height: 30rpx;"></view>
             <view class="multi_tips_min"> 
             
             <view wx:if="{{question.questioncontent.audio[0] != null}}" class="speak_style_record" data-voice="{{question.questioncontent.audio[0]}}" bindtap="playVoiceRecord">
@@ -40,7 +40,7 @@
             </view>
             
             </view>
-            <view style="height: 10rpx;"></view>
+            <view style="height: 20rpx;"></view>
             
 
                 <view wx:if="{{question.questioncontent.img[0] != null}}" class="photo" >
@@ -48,6 +48,8 @@
                         <!--<view>照片</view>-->
                     </image>
                 </view>
+
+              <view style="height: 20rpx;"></view>
 
                 <view wx:if="{{question.questioncontent.draw[0] != null}}" class="draw" >
                     <image class="preview_img_classic" data-draw="{{question.questioncontent.draw[0]}}" src='{{preview_img_url + question.questioncontent.draw[0]}}' bindtap="showDraw" mode="aspectFit">
@@ -101,7 +103,7 @@
                             </view>
 
                         </view>-->
-                <view style="height: 20rpx;"></view>
+                <view style="height: 30rpx;"></view>
                 <view class="multi_tips">
                 <view class="multi_tips_min">
                         <view wx:if="{{answer.answercontent.audio[0] != null}}" data-voice="{{answer.answercontent.audio[0]}}" class="speak_style_record" bindtap="playVoiceRecord">
@@ -118,6 +120,8 @@
                                 <!--<view>照片</view>-->
                             </image>
                         </view>
+
+                <view style="height: 20rpx;"></view>
 
                         <view wx:if="{{answer.answercontent.draw[0] != null}}" class="draw" >
                             <image class="preview_img_classic" data-draw='{{answer.answercontent.draw[0]}}' src='{{preview_img_url + answer.answercontent.draw[0]}}' bindtap="showDraw" mode="aspectFit">

@@ -64,6 +64,8 @@
 
 </view>
 
+<view class="split_line"></view>
+
 <view class="personal_description_item_container" data-item="{{organization}}" bindtap="editOrgName">
 
     <view class="personal_description_item_wrapper">
@@ -107,6 +109,8 @@
     </view>
 
 </view>
+
+<view class="split_line"></view>
 
 <view class="personal_description_item_container" >
 
@@ -154,6 +158,8 @@
     </view>
 
 </view>
+
+<view class="split_line"></view>
 
 <view class="personal_description_item_container" data-item="{{organization}}" bindtap="editOrgDescription">
 
@@ -227,7 +233,7 @@
 
         <view class="item_container">
 
-            <view class="member_item_wrapper" data-item="{{item}}"  bindtap="redirectToPage">
+            <view class="member_item_wrapper" data-teacher="{{item}}" bindtap="orgDeleteTeacher" >
 
                 <view style="height: 20rpx;"></view>
 
@@ -236,7 +242,7 @@
 
                         <view class="member_img_container">
                             <image class="member_img" src="{{item.userimg}}"></image>
-                            <image class="member_cancel" src="../../images/cancel.png"  data-teacher="{{item}}" bindtap="orgDeleteTeacher"/>
+                            <image class="member_cancel" src="../../images/cancel.png"  data-teacher="{{item}}" />
                         </view>
                         
                         

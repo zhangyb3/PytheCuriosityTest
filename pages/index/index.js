@@ -95,6 +95,8 @@ Page({
     second: 60,
 
     organization: {},
+
+    requestingResultList: false,
     
   },
   onLoad:function(parameters){
@@ -132,7 +134,7 @@ Page({
     {
        this.setData({
         indexUserName: wx.getStorageSync(user.UserNickName),
-        indexUserDescription: '呵呵',
+        indexUserDescription: wx.getStorageSync(user.UserDescription),
         exitSystem: wx.getStorageSync('exitSystem'),
         alreadyRegister: wx.getStorageSync('alreadyRegister'),
       });
@@ -926,6 +928,7 @@ function loginSystem(that) {
 
           that.setData({
             indexUserName: wx.getStorageSync(user.UserNickName),
+            indexUserDescription: wx.getStorageSync(user.UserDescription),
             exitSystem: wx.getStorageSync('exitSystem'),
             alreadyRegister: wx.getStorageSync('alreadyRegister') 
           });

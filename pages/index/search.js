@@ -85,12 +85,18 @@ Page({
     countdownText : '发送验证码',
     second: 60,
 
+    show_cancel_button: true,
+    foucs_on_input: false,
+
+    requestingResultList: false,
+
   },
   onLoad:function(parameters){
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
-          scrollHeight: res.windowHeight
+          scrollHeight: res.windowHeight,
+          show_cancel_button: this.data.show_cancel_button
         });
       }
     });
@@ -121,15 +127,34 @@ Page({
   listenSearchInput:function(e){
     console.log(e.detail.value);
     this.data.searchContent = e.detail.value;
+    this.data.show_cancel_button = true;
     
+  },
+  listenSearchInput_: function (e) {
+    
+    this.data.show_cancel_button = true;
+    this.setData({
+      show_cancel_button: this.data.show_cancel_button,
+      focus_on_input: true,
+    });
   },
   searchByContent:function(e){
     var that = this;
     searchByContent(that);
+    
+    this.data.show_cancel_button = true;
+    this.setData({
+      show_cancel_button: this.data.show_cancel_button,
+      focus_on_input: false,
+    });
   },
-  cancelSearchInput:function(e){
+  cancelSearchInput: function(e) {
+    
+    this.data.show_cancel_button = false;
     this.setData({
       searchContent: '',
+      show_cancel_button: this.data.show_cancel_button,
+      focus_on_input: false,
     });
   },
 
@@ -321,7 +346,7 @@ Page({
               search_teacher_list: that.data.search_teacher_list,
             });
             wx.showToast({
-              title: '收藏成功',
+              title: '已关注',
               icon: 'success',
               duration: 1000
             });
@@ -487,11 +512,7 @@ Page({
 
   },
 
-  cancelSearchInput:function(e){
-    this.setData({
-      searchContent:'',
-    });
-  },
+  
 
   selectStudent:function(e){
     console.log("学生");

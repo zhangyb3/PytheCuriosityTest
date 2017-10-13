@@ -16,7 +16,10 @@ Page({
     search_org_list: [],
     list_mode: 'nearest_orgs',
     list_type: 'nearest_orgs',
+
+    requestingResultList: false,
   },
+  
   onLoad:function(parameters){
     wx.getSystemInfo({
       success: (res) => {

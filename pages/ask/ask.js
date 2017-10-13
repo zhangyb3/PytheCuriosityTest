@@ -155,6 +155,8 @@ Page({
     },
     ask_page: true,
 
+    requestingResultList: false,
+
   },
   onLoad:function(parameters){
 
@@ -434,7 +436,7 @@ Page({
               search_teacher_list: that.data.search_teacher_list,
             });
             wx.showToast({
-              title: '收藏成功',
+              title: '已关注',
               icon: 'success',
               duration: 1000
             });

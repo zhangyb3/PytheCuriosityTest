@@ -204,34 +204,44 @@ Page({
     var teacher = e.currentTarget.dataset.teacher;
     var organization = this.data.organization;
     console.log(organization.name + ' delete teacher ' + teacher.username);
+
     var that = this;
-    wx.request({
-      url: config.PytheRestfulServerURL + '/teacher/orgDelete',
-      data: {
-        teacherId: teacher.userid,
-        orgId: organization.id,
-      },
-      method: 'GET', 
-      success: function(res){
-        // success
-        if(res.data.msg=='OK')
-        {
-          wx.showToast({
-            title: '删除老师成功',
-            icon: 'success',
-            duration: 1000
+    wx.showModal({
+      content: '是否删除该老师?',
+      success: function (res) {
+        if (res.confirm) {
+          console.log('用户点击确定');
+
+          wx.request({
+            url: config.PytheRestfulServerURL + '/teacher/orgDelete',
+            data: {
+              teacherId: teacher.userid,
+              orgId: organization.id,
+            },
+            method: 'GET',
+            success: function (res) {
+              // success
+              if (res.data.msg == 'OK') {
+                wx.showToast({
+                  title: '删除老师成功',
+                  icon: 'success',
+                  duration: 1000
+                });
+                that.onShow();
+              }
+
+            },
+            fail: function (res) {
+              // fail
+            },
+            complete: function (res) {
+              // complete
+            }
           });
-          that.onShow();
         }
-        
-      },
-      fail: function(res) {
-        // fail
-      },
-      complete: function(res) {
-        // complete
       }
-    })
+    });
+    
   },
 
   updateOrganization:function(e){

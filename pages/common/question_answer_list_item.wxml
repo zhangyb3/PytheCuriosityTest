@@ -36,12 +36,17 @@
 
     <view class="middel_zone_wrapper">
     <view class="middle_zone" data-item='{{ item }}' data-index='{{index}}' bindtap="selectOneItem">
-        <view class="img_zone">
-             <view class="question_img_container" wx:if="{{item.questioncontent.img[0] != null}}">
+        <view class="img_zone" wx:if="{{item.questioncontent.img[0] != null}}">
+             <view class="question_img_container" >
                 <image class="question_img" src="{{preview_img_url + item.questioncontent.img[0]}}"></image>
             </view>
         </view>
-        <view class="text_zone">
+        <view class="text_zone" wx:if="{{item.questioncontent.img[0] != null}}">
+            <view class="question_text_container">
+                <text class="question_text">{{item.questioncontent.text[0]}}</text>
+            </view>
+        </view>
+        <view class="text_zone_no_pic" wx:if="{{item.questioncontent.img[0] == null}}">
             <view class="question_text_container">
                 <text class="question_text">{{item.questioncontent.text[0]}}</text>
             </view>

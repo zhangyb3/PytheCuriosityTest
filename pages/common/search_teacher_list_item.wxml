@@ -33,9 +33,9 @@
                 </view>
 
                 <view class="teacher_ask_section" wx:if="{{search_page == true || ask_page == true}}">
-                <button class="teacher_ask_section_button"  data-teacher="{{item}}" bindtap="askOneTeacher">
+                <view class="teacher_ask_section_button"  data-teacher="{{item}}" bindtap="askOneTeacher">
                 <text>请教</text>  
-                </button>
+                </view>
                 </view>
 
                 <view class="add_teacher_button_container" wx:if="{{add_teacher_page == true}}" bindtap='organizationAddTeacher' data-teacher="{{item}}">

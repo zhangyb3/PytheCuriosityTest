@@ -1,0 +1,104 @@
+
+
+.list_item{
+    width: 100%;
+    height: 150rpx;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+
+    border-bottom: 1px solid #EEE;
+}
+
+.bill_list_item_container{
+
+    width: 100%;
+    height: 80%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    
+    background-color: white;
+}
+
+.bill_time_container{
+    width: 20%;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.bill_time_text_view{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bill_money_container{
+    width: 20%;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.bill_money_text_view{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.reward_img{
+    width: 50rpx;
+    height: 50rpx;
+}
+
+.bill_link_container{
+    width: 30%;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.bill_source_container{
+    width: 30%;
+    
+    /*justify-content:center;
+    align-items:center;
+    display:-webkit-flex;*/
+}
+
+.bill_source_text_view_container{
+    /*margin-left: 50rpx;*/
+}
+
+.bill_source_text_view{
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    /*float: left;*/
+}
+
+.people_name{
+  width: 70%;
+  height: 120rpx;
+  line-height: 120rpx;
+  word-break:break-all;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.people_avatar{
+    width: 40rpx;
+    height: 40rpx;
+    border-radius: 50%;
+    
+}
+

@@ -90,7 +90,7 @@ page{
 
     display: flex;
     flex-direction: row;
-    align-items: center;
+    /*align-items: center;*/
 }
 
 .icon_container{
@@ -108,10 +108,27 @@ page{
 
 }
 
+.name_container{
+  width: 80%;
+  height: 80rpx;
+  line-height: 80rpx;
+
+  /*text-overflow: -o-ellipsis-lastline;*/
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+  /*display: -webkit-box;*/
+  /*-webkit-line-clamp: 1;*/
+  /*-webkit-box-orient: horizontal;*/
+}
+
+
 .index_user_name{
     color: white;
     font-size: 32rpx;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+
 }
 
 
@@ -121,6 +138,8 @@ page{
     line-height: 50rpx;
     background-color: #5d5d5d;
     color: white;
+    border: 1px solid #5d5d5d;
+    text-align: center;
     font-size: 32rpx;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }

@@ -25,7 +25,7 @@
 
 
   <view class="index_search_page_filter_container" >
-    <template is="index_search_page_filter" data="{{searchContent}}"></template>
+    <template is="index_search_page_filter" data="{{searchContent,show_cancel_button,focus_on_input}}"></template>
   </view>
 
   

@@ -298,6 +298,7 @@ function request(requestConfig){
                 console.log("response : " + JSON.stringify(responseData));
                 var data = responseData;
                 requestConfig.callback.onSuccess(data);
+
             }
         },
         fail:function(res){
@@ -312,8 +313,8 @@ function request(requestConfig){
             stopPullRefresh(requestConfig.page);
            // requestConfig.callback.onEnd();
            wx.setStorageSync('end_load', 'yes');
-
             // that.setData({hidden:true,toast:true});
+           requestConfig.page.data.requestingResultList = false;
         }
     })
 }
@@ -786,7 +787,7 @@ function requestSimpleList(that,list_type,pageIndex,action,requestMethod){
         hideLoadingDialog(that);
     };
 
-    request(config)
+    request(config);
 }
 
 

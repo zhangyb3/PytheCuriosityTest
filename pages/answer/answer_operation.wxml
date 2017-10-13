@@ -24,6 +24,8 @@
                 
         </view>
 
+        <view style="height: 20rpx;background-color: white;" ></view>
+
         <!--<view class="border_tab"></view>-->
 <view class="background_white">
     <view class="multi_tips">
@@ -84,7 +86,7 @@
 
 
             <view class="answer_content_zone" hidden='{{hide_textarea}}'>
-                <textarea class="answer_content_text_input" placeholder="请输入答案..."  bindinput="getAnswerText" placeholder-style="font-size:30rpx; color:#999999" maxlength="-1" />
+                <textarea class="answer_content_text_input" placeholder="请输入答案..."  bindinput="getAnswerText" placeholder-style="font-size:30rpx; color:#999999" maxlength="-1" auto-height='true'/>
             </view>
 
             <view class="border_tab"></view>

@@ -42,6 +42,10 @@ page{
     
 }
 
+.nearby_org_list_hint text{ 
+  margin-left: 20rpx;
+}
+
 
 @import "../common/nearby_org_list_item.wxss";
 

@@ -2,7 +2,7 @@
 
 <view class="list_item" style="background-color:white" data-item='{{ item }}' data-index='{{index}}' >
 
-    <view class="teacher_bill_list_item_container">
+    <view class="bill_list_item_container">
     
         <view class="bill_time_container">
             <view class="bill_time_text_view">
@@ -28,8 +28,8 @@
             <view class="bill_source_text_view_container">
             <view class="bill_source_text_view">
                 <text style="font-size: 28rpx;color:gray;"></text>
-                <image class="student_avatar" src="{{item.studentAvatar}}"></image>
-                <text style="font-size: 32rpx;color:gray;">{{item.studentName}}</text>
+                <image class="people_avatar" src="{{item.studentAvatar}}"></image>
+                <text class="people_name" style="font-size: 32rpx;color:gray;">{{item.studentName}}</text>
             </view>
             </view>
         </view>

@@ -46,6 +46,7 @@ Page({
     answer_page: true,
     userRole: 0,
 
+    requestingResultList: false,
     
   },
   onLoad:function(parameters){
@@ -167,6 +168,7 @@ Page({
 
   selectOneItem:function(result){
     
+
     if(this.data.hide_personal_answer_list)
     {
       var index = result.currentTarget.dataset.index;
@@ -183,7 +185,7 @@ Page({
       var parameters = netUtil.json2Form(parametersJSON);
       console.log(parameters);
 
-
+      if(wx.getStorageSync(user.Status) == 1 )
       {
         wx.navigateTo({
           url: '../answer/answer_operation' + '?' + parameters,
@@ -197,6 +199,13 @@ Page({
             // complete
           }
         });
+      }
+      else
+      {
+        wx.showModal({
+          title: '提示',
+          content: '学生尚未开通答题功能',
+        })
       }
       
     }
@@ -227,6 +236,8 @@ Page({
 
 
     }
+
+    
 
   },
 

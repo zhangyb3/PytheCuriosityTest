@@ -4,13 +4,19 @@
 
     
 
-    <view class="input_view" >
-        <input class="input" type="text" value="{{searchContent}}" placeholder="查询"  bindinput="listenSearchInput" bindconfirm="searchByContent" bindfocus="cleanPlaceholder" maxlength="10" ></input>
+    <view class="input_view" wx:if="{{show_cancel_button == true}}">
+        <input class="input" type="text" value="{{searchContent}}"  bindinput="listenSearchInput" bindconfirm="searchByContent"  maxlength="10" focus="{{focus_on_input}}"></input>
         <button class="search_button"    bindtap='searchByContent'><image src="../../images/index_icon_serch@2x.png"></image>
         </button>
     </view>
 
-    <view class="cancel_view" >
+     <view class="input_view_no_cancel" wx:if="{{show_cancel_button == false}}">
+        <input class="input_no_cancel" type="text" value="{{searchContent}}"   bindfocus="listenSearchInput_" bindconfirm="searchByContent"  maxlength="10" ></input>
+        <button class="search_button"    bindtap='searchByContent'><image src="../../images/index_icon_serch@2x.png"></image>
+        </button>
+    </view>
+
+    <view class="cancel_view" wx:if="{{show_cancel_button == true}}">
         <button class="cancel_button"
          bindtap='cancelSearchInput'>取消
          </button>        

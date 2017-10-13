@@ -15,6 +15,9 @@ Page({
     checkTeacher: {},
     teacher_info: true,
     preview_img_url: config.PytheFileServerURL ,
+
+    requestingResultList: false,
+
   },
   onLoad:function(parameters){
     var that = this;
