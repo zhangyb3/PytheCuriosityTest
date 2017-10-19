@@ -31,6 +31,7 @@ App({
     wx.setStorageSync('last_latitude', 'undefined');
     wx.setStorageSync('last_longtitude','undefined');
     
+    
   },
   getUserInfo:function(cb){
     var that = this
@@ -66,7 +67,7 @@ App({
         var login_code = res.code;
         wx.getUserInfo({
           success: function (res) {
-           
+           console.log("get user all data : " + res);
             var userData = {
               loginCode : login_code,
               userInfo : res.userInfo,
@@ -75,7 +76,10 @@ App({
             };
             typeof callback == "function" && callback(userData)
             
-          }
+          }, fail: function (res) {
+            console.log("fail to get user all data : " + JSON.stringify(res));
+           
+          },
         })
       }
     })

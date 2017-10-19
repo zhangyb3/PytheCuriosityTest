@@ -1,10 +1,12 @@
 var config = require('./config')
 var user = require('./user')
 var register = require('./register')
+var util = require("./util");
+var WXBizDataCrypt = require('./decode.js');
 var app = getApp();
 
 const LOGIN_URL = `${config.PytheRestfulServerURL}/user/login/request`;//登录服务
-const FULL_USER_INFO_URL = `${config.PytheRestfulServerURL}/userInfo`;//获取unionid并保存在服务端
+const FULL_USER_INFO_URL = `${config.PytheRestfulServerURL}/user/userInfo`;//获取unionid并保存在服务端
 const CHECK_LOGIN_URL = `${config.PytheRestfulServerURL}/user/login/session`;//校验是否登录
 const CHECK_REGISTER_URL = `${config.PytheRestfulServerURL}/user/register/is`;//校验是否注册
 const DECODE_USER_DATA = `${config.PytheRestfulServerURL}/user/decode`;//解密用户信息
@@ -123,6 +125,7 @@ var remoteLogin = (success, fail) => {
             // wx.setStorageSync(user.TeacherID, 'teacherID');
             // wx.setStorageSync(user.UserID, 'userID');
 
+            
             wx.request({
                 url: LOGIN_URL,
                 data: {
@@ -144,29 +147,36 @@ var remoteLogin = (success, fail) => {
                             });
                         }
                     } else {//成功
+                    
+                        var login_result = res.data.data;
+                        
                         console.log("登录成功", res);
-                        wx.setStorage({
-                            key: user.SessionID,
-                            data: res.data.data.session_id,
-                        });
-                        wx.setStorage({
-                            key: user.OpenID,
-                            data: res.data.data.openid,
-                        });
-                        // wx.setStorage({
-                        //     key: user.StudentID,
-                        //     data: 'studentID',
-                        // });
-                        // wx.setStorage({
-                        //     key: user.TeacherID,
-                        //     data: 'teacherID',
-                        // });
+                        
                         wx.setStorageSync('SessionID', res.data.data.session_id);
                         wx.setStorageSync('OpenID', res.data.data.openid);
-                        wx.setStorageSync('StudentID', 'StudentID');
-                        wx.setStorageSync('TeacherID', 'TeacherID');
+                        wx.setStorageSync('SessionKey', res.data.data.session_key);
+
                         console.log('openid : ' + wx.getStorageSync('OpenID'));
-                        typeof success == "function" && success(res.data.data);
+                        wx.getUserInfo({
+                          withCredentials: true,
+                          success: function(res) {},
+                          fail: function(res) {},
+                          complete: function(res) {
+
+                            var session_key = wx.getStorageSync("SessionKey");
+                            var encryptedData = res.encryptedData;
+                            var iv = res.iv;
+
+                            var pc = new WXBizDataCrypt(config.AppID,session_key)
+                            var result = pc.decryptData(encryptedData,iv);
+                            console.log(result);
+                            wx.setStorageSync(user.UnionID, result.unionId);
+                            
+                            typeof success == "function" && success();
+                          },
+                        })
+                                       
+                          
                     }
                 }
             })
@@ -175,6 +185,7 @@ var remoteLogin = (success, fail) => {
 }
 
 var getUserInfo = (success, fail) => {
+
     wx.getUserInfo({
         success: function (res) {
             console.log("获取用户信息", res);
@@ -194,10 +205,12 @@ var getUserInfo = (success, fail) => {
             } else {
                 typeof success == "function" && success(userInfo);
             }
-        }, fail: function () {
-            typeof fail == "function" && fail();
+        }, fail: function (res) {
+            typeof fail == "function" && fail(res);
         }
-    })
+    });
+    
+
 }
 
 

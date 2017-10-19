@@ -62,7 +62,9 @@ Page({
   onShow:function(){
     
     var that = this;
-    if(wx.getStorageSync('alreadyRegister') == "yes" && wx.getStorageSync(user.Status) == 0)
+    if(wx.getStorageSync('alreadyRegister') == "yes" 
+    // && wx.getStorageSync(user.Status) == 0
+    )
     {
       this.data.searchParameters.userId = wx.getStorageSync(user.StudentID);
     }

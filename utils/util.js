@@ -1,3 +1,5 @@
+
+
 function formatTime(time) {
   if (typeof time !== 'number' || time < 0) {
     return time
@@ -124,11 +126,14 @@ function getDistance(lat1, lng1, lat2, lng2)
   return r * 2 * Math.asin(Math.sqrt(Math.pow(Math.sin(a / 2), 2) + Math.cos(rad1) * Math.cos(rad2) * Math.pow(Math.sin(b / 2), 2)))
 }
 
+
+
+
 module.exports = {
   formatTime: formatTime,
   formatLocation: formatLocation,
   formatDate: formatDate,
   formatDay: formatDay,
   formatHMS: formatHMS,
-  getDistance: getDistance
+  getDistance: getDistance,
 }

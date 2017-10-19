@@ -3,6 +3,7 @@ module.exports = {
     encryptedData : "encryptedData",
     iv : "iv",
     OpenID : "OpenID",
+    UnionID: "UnionID",
     js_code : 'js_code',
     SessionID : 'SessionID',
     UserID: 'UserID',
