@@ -69,6 +69,8 @@ Page({
     
 
     preview_img_url: config.PytheFileServerURL ,
+
+    commitDisabled: false,
   },
 
  //手指按下
@@ -532,15 +534,15 @@ Page({
             that.data.question_answer.draw_path = res.savedFilePath;
             wx.setStorageSync('recordLocalDraw',res.savedFilePath);
             wx.setStorageSync('hasDrawnPicture', 'yes');
-            wx.showModal({
-              title: '图示已保存',
-              content: res.savedFilePath,
-              success: function(res) {
-                if (res.confirm) {
-                  console.log('用户点击确定')
-                }
-              }
-            });
+            // wx.showModal({
+            //   title: '图示已保存',
+            //   content: res.savedFilePath,
+            //   success: function(res) {
+            //     if (res.confirm) {
+            //       console.log('用户点击确定')
+            //     }
+            //   }
+            // });
             that.setData({
               hide_record_sound_section : true,
               hide_take_photo_section : true,
@@ -939,6 +941,7 @@ Page({
 
   commitAnswer:function(result){
     console.log("commit answer");
+    this.setData({ commitDisabled: true });
     //上传quesition_answer
     this.data.question_answer.questionId = this.data.answer_question.question_id;
     this.data.question_answer.studentId = this.data.answer_question.student_id;
@@ -969,9 +972,11 @@ Page({
     // && answerParams.knowledgeId!=null
       )
     {
+      
       if (wx.getStorageSync('alreadyRegister') == 'yes' && wx.getStorageSync(user.Status) == 1)
       {
-        base.commitAnswer(answerParams);
+       
+        base.commitAnswer(this, answerParams);
         wx.setStorageSync('hasTakenPhoto', 'no');
         wx.setStorageSync('hasDrawnPicture', 'no');
         wx.navigateBack({
@@ -989,6 +994,7 @@ Page({
       }
       else
       {
+        
         wx.showModal({
           content: '学生尚未能回答问题',
           success: function (res) {
@@ -997,11 +1003,13 @@ Page({
             }
           }
         });
+        this.setData({ commitDisabled: false });
       }
       
     }
     else
     {
+     
       wx.showModal({
         title: '提示',
         content: '答案内容不能为空',
@@ -1011,6 +1019,7 @@ Page({
           }
         }
       });
+      this.setData({ commitDisabled: false });
     }
 
   },

@@ -137,10 +137,10 @@ Page({
           success: function(res) {
             // @ savedFilePath: wxfile://    本地临时录音的路径 
             // @ errMsg:  saveFile : ok  应该是返回信息
-            wx.showModal({
-              title: "保存成功",
-              content: "文件路径是" + res.savedFilePath
-            })
+            // wx.showModal({
+            //   title: "保存成功",
+            //   content: "文件路径是" + res.savedFilePath
+            // })
             
             that.setData({
               voiceFilePath: res.savedFilePath,

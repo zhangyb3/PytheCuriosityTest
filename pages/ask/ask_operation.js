@@ -52,9 +52,11 @@ Page({
 
     hide_bounty_page: true,
     hasPaidReward: false,
-    rewardTap1:false,
+    rewardTap1:true,
     rewardTap5:false,
-    rewardTap10:false
+    rewardTap10:false,
+
+    commitDisabled: false,
   },
 
    //手指按下
@@ -527,15 +529,15 @@ Page({
             that.data.ask_question.draw_path = res.savedFilePath;
             wx.setStorageSync('recordLocalDraw',res.savedFilePath);
             wx.setStorageSync('hasDrawnPicture', 'yes');
-            wx.showModal({
-              title: '图示已保存',
-              content: res.savedFilePath,
-              success: function(res) {
-                if (res.confirm) {
-                  console.log('用户点击确定')
-                }
-              }
-            });
+            // wx.showModal({
+            //   title: '图示已保存',
+            //   content: res.savedFilePath,
+            //   success: function(res) {
+            //     if (res.confirm) {
+            //       console.log('用户点击确定')
+            //     }
+            //   }
+            // });
             that.setData({
               hide_record_sound_section : true,
               hide_take_photo_section : true,
@@ -795,7 +797,7 @@ Page({
 
   commitConfirm:function(result){
     console.log('before commit question');
-
+    wx.setStorageSync("rewardNum", 0.01);
     if(this.data.ask_question.text_content == '' || this.data.ask_question.text_content == null)
     {
       
@@ -826,6 +828,7 @@ Page({
       this.setData({
         hide_bounty_page: false,
         hide_textarea: true,
+        commmitDisabled: true,
       });
     }
 
@@ -837,26 +840,36 @@ Page({
     this.setData({
       hide_bounty_page: true,
       hide_textarea: false,
+      commitDisabled: false,
     });
   },
   confirmBounty:function(e){
-    pay.orderPay(
-      (payResult)=>{
-        console.log(payResult);
-        if(payResult.errMsg == "requestPayment:ok")
-        {
-          this.data.hasPaidReward = true;
-          commitQuestion.call(this);
-          this.setData({
+    //防止多次提交
+    this.setData({commitDisabled: true});
+    var that = this;
+      pay.orderPay(
+        (payResult) => {
+          console.log(payResult);
+          if (payResult.errMsg == "requestPayment:ok") {
+            that.data.hasPaidReward = true;
+            commitQuestion(that);
+            that.setData({
+              hide_bounty_page: true,
+              hide_textarea: false,
+
+            });
+          }
+        },
+        (payResult) => {
+          console.log(payResult);
+          that.setData({
             hide_bounty_page: true,
             hide_textarea: false,
+            commitDisabled: false
           });
-        }
-      },
-      (payResult)=>{
-        console.log(payResult);
-      },
-    );
+        },
+      );
+   
   },
   
 
@@ -945,36 +958,37 @@ function speaking() {
 }
 
 //上传问题
-function commitQuestion() {
+function commitQuestion(the) {
+  var that = the;
   console.log("commit question");
     //先检查是否选好悬赏金额
     //接着开始请求支付
     //示支付结果而定是否上传ask_question
-    if(this.data.hasPaidReward)
+    if(that.data.hasPaidReward)
     {
-      this.data.ask_question.studentId = wx.getStorageSync(user.StudentID);
-      this.data.ask_question.rewardNum = wx.getStorageSync('rewardNum')
+      that.data.ask_question.studentId = wx.getStorageSync(user.StudentID);
+      that.data.ask_question.rewardNum = wx.getStorageSync('rewardNum')
       // base.commitQuestion(this.data.ask_question);
 
       var questionParams= {
         studentId: wx.getStorageSync(user.StudentID),
-        teacherId: this.data.ask_question.ask_teacherId,
+        teacherId: that.data.ask_question.ask_teacherId,
         questionContent:{
           text: [
-            this.data.ask_question.text_content,
+            that.data.ask_question.text_content,
           ],
           img: [
-            this.data.ask_question.upload_photo_path,
+            that.data.ask_question.upload_photo_path,
           ],
           audio:[
-            this.data.ask_question.upload_voice_path,
-            this.data.ask_question.voice_timeLength,
+            that.data.ask_question.upload_voice_path,
+            that.data.ask_question.voice_timeLength,
           ],
           draw:[
-            this.data.ask_question.upload_draw_path,
+            that.data.ask_question.upload_draw_path,
           ],
         },
-        subjectId: this.data.ask_question.subjectId,
+        subjectId: that.data.ask_question.subjectId,
         
         // reward: wx.getStorageSync('rewardNum'),
         reward: wx.getStorageSync("rewardNum"),
@@ -986,19 +1000,13 @@ function commitQuestion() {
 
         wx.setStorageSync('hasTakenPhoto', 'no');
         wx.setStorageSync('hasDrawnPicture', 'no');
-        this.data.hasPaidReward = false;
-        wx.navigateBack({
-          delta: 1, // 回退前 delta(默认为1) 页面
-          success: function(res){
-            // success
-          },
-          fail: function(res) {
-            // fail
-          },
-          complete: function(res) {
-            // complete
-          }
-        });
+        that.data.hasPaidReward = false;
+        wx.navigateTo({
+          url: '../../pages/answer/answer',
+          success: function(res) {},
+          fail: function(res) {},
+          complete: function(res) {},
+        })
       
     }
     

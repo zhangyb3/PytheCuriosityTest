@@ -4,10 +4,10 @@
     <view style="height:100rpx;"></view>
 
     <view class="text_edit_textarea_container">
-        <textarea class="text_edit_textarea" bindinput="getTextInput" maxlength="{{maxLength}}"  value='{{original}}' auto-height='true' auto-focus="true"/>
+        <textarea class="text_edit_textarea" bindinput="getTextInput" maxlength="{{maxLength}}"  value='{{original}}' auto-height='true' />
     </view>
 
-    <view style="height:20rpx;"></view>
+    <!--<view style="height:20rpx;"></view>-->
 
     <view class="words_countdown_container">
         <view class="words_countdown_text">{{wordsCountdown}}</view>

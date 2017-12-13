@@ -1,5 +1,5 @@
 page{
-    background-color: white;
+    background-color: lightgray;
 }
 
 .text_edit_container{
@@ -11,7 +11,7 @@ page{
 
 .text_edit_textarea_container{
 
-    border-bottom: 2px solid gray;
+    border: 10px solid white;
 }
 
 .text_edit_textarea{
@@ -22,6 +22,9 @@ page{
     color: #999999;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     word-break: break-all;
+
+    min-height: 200rpx;
+    background-color: white;
 }
 
 .words_countdown_container{

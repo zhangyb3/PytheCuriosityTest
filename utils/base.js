@@ -114,8 +114,9 @@ function getDetailContent(that,selectItem)
     
 }
 
-function commitAnswer(parameters)
+function commitAnswer(the, parameters)
 {
+  var that = the;
   wx.request({
     url: COMMIT_ANSWER_URL,
     data: {
@@ -125,6 +126,20 @@ function commitAnswer(parameters)
     success: function(res){
       // success
       console.log(res);
+
+      //推送老师已回答消息到学生
+      wx.request({
+        url: config.PytheRestfulServerURL + '/answer/push/information',
+        data: {
+          answerId: res.data.data.data
+        },
+        method: 'GET',
+        dataType: '',
+        success: function(res) {},
+        fail: function(res) {},
+        complete: function(res) {},
+      })
+
       wx.showToast({
         title: '已提交',
         icon: 'success',
@@ -136,6 +151,7 @@ function commitAnswer(parameters)
     },
     complete: function() {
       // complete
+      that.setData({commitDisabled: false});
     }
   })
 }

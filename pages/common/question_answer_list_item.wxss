@@ -349,6 +349,11 @@
     color: white;
 }
 
+#refund_image{
+  height: 48rpx;
+  width: 155rpx;
+}
+
 
 
 

@@ -52,9 +52,9 @@
         
         <view class="personal_description_revise_zone">
         <view class="person_edit_icon_view">
-            <button class="person_edit_icon" >
+            <view class="person_edit_icon" >
                 <image src="../../images/personal_icon_arrow_right@2x.png"></image>
-            </button>
+            </view>
         </view>
         </view>
         
@@ -154,9 +154,9 @@
             <text class="about personal_operation_item_text">关于我们</text>
             <view class="personal_description_revise_zone">
             <view class="person_edit_icon_view">
-                <button class="person_edit_icon" >
+                <view class="person_edit_icon" >
                     <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-                </button>
+                </view>
             </view>
             </view>
 

@@ -347,7 +347,9 @@ Page({
     that.data.finished = false;
     if(wx.getStorageSync(user.Status) == 1)
     {
-      that.data.userRole = 1;
+      that.setData({
+        userRole: 1,
+      });
       var myAnsweredParams = {
         teacherId : wx.getStorageSync(user.TeacherID),
         pageSize : 10,
@@ -394,7 +396,9 @@ Page({
     }
     if(wx.getStorageSync(user.Status) == 0)
     {
-      that.data.userRole = 0;
+      that.setData({
+        userRole: 0,
+      });
       var myAnsweredParams = {
         studentId : wx.getStorageSync(user.TeacherID),
         pageSize : 10,
@@ -453,7 +457,7 @@ Page({
     var question = e.currentTarget.dataset.question;
     console.log("abandon " + JSON.stringify(question));
 
-    abandonQuestionToRefund(question);
+    abandonQuestionToRefund(this, question);
 
 
   },
@@ -467,9 +471,9 @@ Page({
   }
 })
 
-function handleQuestionBillData(question)
+function handleQuestionBillData(the, question)
 {
-  
+  var that = the;
   wx.request({
     url: config.PytheRestfulServerURL + '/bill/mapQuestion',
     data: {
@@ -487,7 +491,8 @@ function handleQuestionBillData(question)
         content: '结束提问后会自动退还赏金',
         success: function(res) {
           if (res.confirm) {
-           refund(bill);
+           refund(that, bill);
+           
           } 
         }
       });
@@ -503,8 +508,9 @@ function handleQuestionBillData(question)
   
 }
 
-function refund(bill)
+function refund(the, bill)
 {
+  var that = the;
   wx.request({
     url: config.PytheRestfulServerURL + '/user/pay/refund',
     data: {
@@ -515,6 +521,7 @@ function refund(bill)
     method: 'POST', 
     success: function(res){
       // success
+      that.onShow();
     },
     fail: function(res) {
       // fail
@@ -525,7 +532,7 @@ function refund(bill)
   })
 }
 
-function abandonQuestionToRefund(question)
+function abandonQuestionToRefund(the, question)
 {
-  handleQuestionBillData(question);
+  handleQuestionBillData(the, question);
 }

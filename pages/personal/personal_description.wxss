@@ -157,7 +157,7 @@ page{
    
     width:13rpx;
     height:25rpx;
-
+    
 }
 
 .item_hint_container_{

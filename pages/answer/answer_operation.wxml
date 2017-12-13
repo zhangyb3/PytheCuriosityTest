@@ -190,7 +190,7 @@
         </view>-->
 
         <view class="answer_commit_confirm">
-            <button class="answer_commit_button" bindtap="commitAnswer">
+            <button class="answer_commit_button" bindtap="commitAnswer" disabled="{{commitDisabled}}">
                 确定
             </button>
         </view>

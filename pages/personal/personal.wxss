@@ -87,7 +87,7 @@ page{
     /*display: flex;*/
     /*position: fixed;*/
     height: 100%;
-    width: 75%;
+    width: 70%;
     min-height: 200rpx;
     /*left: 170rpx;*/
     /*right: 20rpx;*/
@@ -209,19 +209,19 @@ page{
     /*height: 100%;*/
     height:auto;
     width: 10%;
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
     /*margin-right: 20rpx;*/
     /*right: 30rpx;*/
     /*background-color: yellow;*/
 }
 
 .person_edit_icon_view{
-    display: flex;
-    /*right: 30rpx;*/
-    /*margin-top: 55rpx;*/
-    /*margin-left: 20rpx;*/
-    /*height: 100%;*/
-    /*height: auto;*/
-    /*width: 50rpx;*/
+    /*display: flex;*/
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
 }
 
 .person_edit_icon{

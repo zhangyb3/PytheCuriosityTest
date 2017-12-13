@@ -94,7 +94,12 @@ Page({
 
   },
   onShow:function(){
-    // 页面显示
+    
+    this.setData({
+      rewardTap1: true
+    });
+    wx.setStorageSync("rewardNum", 1);
+    
   },
   
 
