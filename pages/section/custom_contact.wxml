@@ -1,0 +1,7 @@
+
+<button class="contact_button_bar" open-type="contact">
+
+  <image class="contact_icon" src="/images/contact.png" ></image>
+
+</button>
+

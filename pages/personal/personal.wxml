@@ -129,7 +129,7 @@
 
     <view class="about_us_zone">
 
-        <view class="personal_operation_item_wrapper">
+        <!--<view class="personal_operation_item_wrapper">
         <view class="balance_detailed_rules personal_operation_item" bindtap='selectBalanceRules'>
         <view class="menu_list_icon_wrap">
             <image class="menu_list_icon_detail" src="../../images/personal_iocn_jiesuan@2x.png"></image>
@@ -144,7 +144,7 @@
             </view>
 
         </view>
-        </view>
+        </view>-->
 
         <view class="personal_operation_item_wrapper">
         <view class="about_us personal_operation_item" bindtap='selectAboutUs'>
@@ -191,7 +191,7 @@
 
     <view style="height: 30rpx;"></view>
 
-    <view class="personal_operation_item_wrapper">
+    <!--<view class="personal_operation_item_wrapper">
     <view class="exit_selection personal_operation_item" bindtap="exitSystem">
         <view class="menu_list_icon_wrap">
             <image class="menu_list_icon_detail" src="../../images/cancel.png"></image>
@@ -200,13 +200,13 @@
         <view class="personal_description_revise_zone">
         <view class="person_edit_icon_view">
             <button class="person_edit_icon" >
-                <!--<image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>-->
+                
             </button>
         </view>
         </view>
         
     </view>
-    </view>
+    </view>-->
 
     <!--<contact-button 
     type="default-light" 

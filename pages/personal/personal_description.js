@@ -136,6 +136,18 @@ Page({
     })
   },
 
+  redirectToOrgPage:function(e){
+    console.log(e);
+    var orgId = e.currentTarget.dataset.org;
+
+    wx.navigateTo({
+      url: '../../pages/index/orgInfo?orgId=' + orgId,
+      success: function(res) {},
+      fail: function(res) {},
+      complete: function(res) {},
+    })
+  },
+
   onHide:function(){
     // 页面隐藏
   },

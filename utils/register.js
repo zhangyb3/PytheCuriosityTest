@@ -125,6 +125,7 @@ function commitRegister(the)
           wx.setStorageSync(user.GradeID, res.data.data.gradeid);
           wx.setStorageSync(user.UserNickName, res.data.data.username);
           wx.setStorageSync(user.UserDescription, res.data.data.description);
+          wx.setStorageSync(user.Status, res.data.data.status);
 
           //判断注册是否成功，成功则返回index页面
           wx.setStorageSync('alreadyRegister', 'yes');

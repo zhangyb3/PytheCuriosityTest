@@ -1,0 +1,27 @@
+
+.no_org{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  z-index: 10;
+}
+
+.no_org_text_container{
+
+  margin-top: 100rpx;
+  text-align: center;
+  font-size: 40rpx;
+  color: #eaeaea;
+}
+
+.setup_org_button_container{
+  margin-top: 100rpx;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  align-items: center;
+  display: -webkit-flex;
+}

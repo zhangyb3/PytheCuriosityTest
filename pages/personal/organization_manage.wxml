@@ -1,13 +1,11 @@
 
-<import src="../pop/organization_manage_bar.wxml" />
-    <template is="organization_manage_bar" data="{{alreadySetupOrg}}"></template>
 
 
 
 
 <scroll-view class="display_list_zone" scroll-y="true" style="height:{{scrollHeight}}px;z-index:1;"  >
 
-<view style="height: 125rpx;background-color: #eaeaea;"></view>
+<view style="height: 25rpx;background-color: #eaeaea;"></view>
 
 <view class="personal_description_page" wx:if="{{alreadySetupOrg == true}}">
 
@@ -42,8 +40,8 @@
 
                     <!--<image class="item_content_avatar" src="{{personalInfo.avatar}}"></image>-->
                     <view class="item_content_avatar_wrapper">
-                    <view class="item_content_avatar" wx:if="{{alreadySetupOrg == true}}" style="background-image:url({{organization.avatar}})"></view>
-                    <view class="item_content_avatar_null" wx:if="{{alreadySetupOrg == false || organization.avatar == null}}" style="background-image:url(../../images/add_op.png)"></view>
+                    <view class="item_content_avatar" wx:if="{{organization.avatar != null}}" style="background-image:url({{organization.avatar}})"></view>
+                    <image class="item_content_avatar_null" wx:if="{{organization.avatar == null}}" src="../../images/add_op.png"></image>
                     </view>
 
                     <!--<view class="person_edit_icon" >
@@ -266,3 +264,7 @@
 </view>
 
 </scroll-view>
+
+
+<import src="../pop/organization_manage_null.wxml" />
+    <template is="organization_manage_null" data="{{alreadySetupOrg}}"></template>

@@ -98,7 +98,7 @@
 
 </view>
 
-<view class="personal_description_item_container" wx:if="{{userRole == 1}}">
+<view class="personal_description_item_container" wx:if="{{userRole == 1}}" data-org="{{personalInfo.orgId}}" bindtap="redirectToOrgPage">
 
     <view class="personal_description_item_wrapper">
 
@@ -126,7 +126,7 @@
 
 
                     <text class="item_content_text_null" wx:if="{{personalInfo.orgName == null}}">尚无</text>
-                    <text class="item_content_text" wx:if="{{personalInfo.orgName != null}}">{{personalInfo.orgName}}</text>
+                    <text class="item_content_text" wx:if="{{personalInfo.orgName != null}}" >{{personalInfo.orgName}}</text>
 
                     <view class="person_edit_icon" >
                         <image src="../../images/personal_icon_arrow_right@2x.png"></image>

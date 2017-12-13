@@ -28,8 +28,15 @@ App({
     wx.setStorageSync('alreadyRegister', 'no');
     wx.setStorageSync('exitSystem', 'no');
     
-    wx.setStorageSync('last_latitude', 'undefined');
-    wx.setStorageSync('last_longtitude','undefined');
+    wx.getLocation({
+      type: 'gcj02', // 默认为 wgs84 返回 gps 坐标，gcj02 返回可用于 wx.openLocation 的坐标
+      success: function (res) {
+
+        wx.setStorageSync('last_latitude', res.latitude);
+        wx.setStorageSync('last_longtitude', res.longitude);
+
+      },
+    });
     
     
   },

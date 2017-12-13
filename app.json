@@ -28,6 +28,7 @@
     "pages/section/image_frame",
     "pages/section/concrete_content",
     "pages/section/text_edit",
+    "pages/section/custom_contact",
     "pages/nearby/list_show",
     "pages/nearby/map_show"
   ],

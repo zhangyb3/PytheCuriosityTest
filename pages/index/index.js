@@ -27,8 +27,8 @@ Page({
         infoNum: 0,
       },
       {
-        sectionName: '消息',
-        icon: '../../images/info_section.png',
+        sectionName: '收藏',
+        icon: '../../images/collection_section.png',
         infoNum: 0,
       },
       {
@@ -42,8 +42,8 @@ Page({
         infoNum: 0,
       },
       {
-        sectionName: '收藏',
-        icon: '../../images/collection_section.png',
+        sectionName: '客服',
+        icon: '../../images/info_section.png',
         infoNum: 0,
       },
       {
@@ -237,16 +237,16 @@ Page({
         });
         break;
       }
-      case '消息':
+      case '客服':
       {
         
-        var that = this;
-        wx.showModal({
-          content: '尚未开通',
-          success: function(res) {
-            
-          }
-        });
+        // var that = this;
+        // wx.navigateTo({
+        //   url: '../section/custom_contact',
+        //   success: function(res) {},
+        //   fail: function(res) {},
+        //   complete: function(res) {},
+        // });
         break;
       }
       case '提问':
@@ -606,7 +606,10 @@ Page({
     // 页面隐藏
   },
   onUnload:function(){
-    // 页面关闭
+    
+    //清除缓存
+    wx.clearStorageSync();
+
   }
 })
 

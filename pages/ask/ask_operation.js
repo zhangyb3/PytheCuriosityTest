@@ -753,15 +753,7 @@ Page({
     console.log(e.currentTarget.dataset.image_source);
   },
 
-  //问老师需要选中科目
-  subjectChange: function(e) {
-    console.log('科目', this.data.subjects[e.detail.value])
-    this.setData({
-      subject_index: e.detail.value
-    })
-
-    this.data.ask_question.subjectId = this.data.subjects[e.detail.value].subjectid;
-  },
+  
 
   selectReward1:function(e){
     console.log("￥ 1");

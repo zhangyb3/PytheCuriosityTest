@@ -38,7 +38,7 @@
 }
 
 .bill_money_container{
-    width: 20%;
+    width: 40%;
 
     justify-content:center;
     align-items:center;
@@ -65,7 +65,7 @@
 }
 
 .bill_source_container{
-    width: 30%;
+    width: 40%;
     
     /*justify-content:center;
     align-items:center;
@@ -84,7 +84,7 @@
 }
 
 .people_name{
-  width: 70%;
+  /*width: 70%;*/
   height: 120rpx;
   line-height: 120rpx;
   word-break:break-all;

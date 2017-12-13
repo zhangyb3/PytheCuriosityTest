@@ -33,6 +33,7 @@ position: fixed;
 }
 
 .aboutUs_content{
+    line-height: 60rpx;
     font-size: 36rpx;
     color: #333333;
     margin-top: 45rpx;

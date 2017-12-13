@@ -510,7 +510,7 @@ function refund(bill)
     data: {
       out_trade_no: bill.outTradeNo,
       total_fee: bill.money * 100,
-      refund_fee: bill.money * 100,
+      refund_fee: bill.money * 100 / 2,
     },
     method: 'POST', 
     success: function(res){

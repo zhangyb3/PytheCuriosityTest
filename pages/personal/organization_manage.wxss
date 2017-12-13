@@ -134,6 +134,11 @@ page{
 
 }
 
+.item_content_avatar_null{
+    width: 100rpx;
+    height: 100rpx;
+}
+
 .item_content_avatar{
 
     /*width: 150rpx;*/
@@ -349,4 +354,6 @@ page{
 }
 
 
-@import "../pop/organization_manage_bar.wxss";
+
+
+@import "../pop/organization_manage_null.wxss";

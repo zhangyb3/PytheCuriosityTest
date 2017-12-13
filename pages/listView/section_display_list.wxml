@@ -12,6 +12,8 @@
 
         <block wx:for-items="{{section_display_list}}"  >
 
+          
+
             <view class="item_container">
 
                 <view class="member_item_wrapper" data-item="{{item}}"  bindtap="redirectToPage">
@@ -23,7 +25,10 @@
 
                             <view class="member_img_container">
                                 <image class="member_img" src="{{item.icon}}"></image>
-                                <image class="member_info" wx:if="{{item.infoNum != 0}}" src="../../images/cancel.png"  data-section="{{item}}"/>
+                                <!--<image class="member_info" wx:if="{{item.sectionName == '客服'}}" src="../../images/cancel.png"  data-section="{{item}}"/>-->
+                                <button id="contact_button" wx:if="{{item.sectionName == '客服'}}" open-type="contact">
+                                </button>
+
                             </view>
                             
                             
@@ -35,10 +40,17 @@
                 </view>
 
                 <view style="height: 20rpx;"></view>
+
+                <button id="contact_button" wx:if="{{item.sectionName == '客服'}}" open-type="contact">
+                </button>
                 
-                </view>
+                </view> 
+
+                
 
             </view>
+
+          
 
         </block>
             

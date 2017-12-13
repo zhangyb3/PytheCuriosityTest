@@ -13,16 +13,16 @@
 
         <view class="bill_money_container">
             <view class="bill_money_text_view">
-                <!--<image class="reward_img" src="../../images/icon_money.png"></image>-->
+                <image class="reward_img" src="../../images/money.png"></image>
                 <text style="font-size: 45rpx;font-weight:bold;">+{{item.money}}</text>
             </view>
         </view>
 
-        <view class="bill_link_container" data-bill='{{item}}' bindtap="checkQuestionAnswer">
+        <!--<view class="bill_link_container" data-bill='{{item}}' bindtap="checkQuestionAnswer">
             <view class="bill_link_text_container">
                 <text style="font-size: 32rpx;font-weight:bold;color:lightgray;">详情</text>
             </view>
-        </view>
+        </view>-->
 
         <view class="bill_source_container">
             <view class="bill_source_text_view_container">

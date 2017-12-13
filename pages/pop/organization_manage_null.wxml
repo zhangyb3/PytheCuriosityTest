@@ -1,0 +1,21 @@
+<!-- 弹出层 -->
+
+<template name="organization_manage_null">
+
+   
+<view class="no_org" wx:if="{{alreadySetupOrg == false}}">
+
+  <view class="no_org_text_container">
+    尚未创建机构
+  </view>
+
+  <view class="setup_org_button_container">
+    <view class="setup_org_button" bindtap="setupOrg">
+      <image style="width: 130px; height: 32px;" src="../../images/setup_org_button.png"></image>
+    </view>
+  </view>
+
+</view>
+    
+
+</template>

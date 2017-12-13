@@ -56,7 +56,7 @@ function getDetailContent(that,selectItem)
     {
       URL = ANSWER_DETAIL_CONTENT_URL;
     }
-    URL = DETAIL_CONTENT_URL;
+    
 
     //请求具体数据
     wx.request({
