@@ -20,7 +20,7 @@ Page({
 
     console.log(parameters.selectItem);
 
-    this.data.selectItem = JSON.parse(decodeURIComponent(parameters.selectItem));
+		this.data.selectItem = JSON.parse(decodeURIComponent(parameters.selectItem));
     this.data.from_page = parameters.from_page;
 
   },

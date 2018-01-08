@@ -4,7 +4,7 @@
 <view class="nickname_zone">
     <view class="nickname_wrap">
     <text class="title">修改昵称:</text>
-    <input class="nickname_content_text_input" placeholder="最大长度为10" maxlength="10" bindinput="getNicknameText" value='{{nickname}}' auto-focus/>
+    <input class="nickname_content_text_input" placeholder="最多字数为6" maxlength="6" bindinput="getNicknameText" value='{{nickname}}' auto-focus/>
     </view>
 </view>
 

@@ -141,6 +141,22 @@ page{
     
 }
 
+.org_edit_icon{
+    
+
+    background: none;
+		height: 100%;
+
+    justify-content:center;
+    align-items:center;
+    display:-webkit-flex;
+}
+
+.org_edit_icon image{
+	width: 140rpx;
+	height: 60rpx;
+}
+
 .person_edit_icon{
     
 

@@ -1,6 +1,7 @@
 var config = require('./config')
 var user = require('./user')
 var login = require('login.js')
+var register = require('register.js')
 var pay = require("./pay");
 var util = require("./util");
 
@@ -304,7 +305,127 @@ function cleanCacheFile(quantity)
   });
 }
 
+function loginSystem(the) {
+  var that = the;
 
+  wx.login({
+    success: function (res) {
+      // success
+      wx.getUserInfo({
+        success: function (res) {
+          // success
+          console.log(res.rawData);
+          var rawData = JSON.parse(res.rawData);
+          wx.setStorageSync('avatarUrl', rawData.avatarUrl);
+          // wx.setStorageSync('userNickName', rawData.nickName);
+          wx.setStorageSync('wxNickName', rawData.nickName);
+        },
+        fail: function () {
+          // fail
+        },
+        complete: function () {
+          // complete
+        }
+      })
+    },
+    fail: function () {
+      // fail
+    },
+    complete: function () {
+      // complete
+    }
+  })
+
+
+  //登录
+  login.login(
+    () => {
+
+
+
+      // 检查是否有注册过
+      register.checkRegister(
+        (userRegisterResult) => {
+          console.log('check register : ' + JSON.stringify(userRegisterResult));
+          //如果没注册过，则注册
+          var registerInfo = userRegisterResult.data.data;
+          if (registerInfo == null) {
+
+          }
+          else if (registerInfo.userid == null) {
+            wx.setStorageSync('alreadyRegister', 'no');
+            console.log("register : " + wx.getStorageSync('alreadyRegister'));
+
+
+          }
+          else {
+            wx.setStorageSync('alreadyRegister', 'yes');
+            wx.setStorageSync(user.UserID, registerInfo.userid);
+            // wx.setStorageSync(user.StudentID, registerInfo.studentid);
+            // wx.setStorageSync(user.TeacherID, registerInfo.teacherid);
+            wx.setStorageSync(user.GradeID, registerInfo.gradeid);
+            wx.setStorageSync(user.UserDescription, registerInfo.description);
+            wx.setStorageSync(user.UserNickName, registerInfo.username);
+            wx.setStorageSync('userAvatarUrl', registerInfo.userimg);
+            wx.setStorageSync(user.Status, registerInfo.status);
+            wx.setStorageSync(user.TeacherID, registerInfo.userid);
+            wx.setStorageSync(user.StudentID, registerInfo.userid);
+            wx.setStorageSync(user.TeacherID, registerInfo.userid);
+
+
+
+            if (wx.getStorageSync(user.UserID) != 'userID') {
+              wx.setStorageSync('alreadyRegister', 'yes');
+              wx.setStorageSync('fromRegister', 'no');
+
+              wx.showToast({
+                title: '已登录',
+                duration: 1200
+              });
+
+              //从服务通知进来answer页面，自动刷新
+              if(wx.getStorageSync("fromServiceInfoToAnswerPage") == 'yes')
+              {
+                that.data.personal_answer_menu[0].active = false;
+                that.data.personal_answer_menu[1].active = true;
+                that.setData({
+                  hide_personal_answer_list: false,
+                  hide_personal_not_answer_list: true,
+                  personal_answer_menu: that.data.personal_answer_menu
+                });
+                that.onShow();
+              }
+
+            }
+
+
+            if (wx.getStorageSync(user.Status) == 1) {
+              wx.setStorageSync(user.OrganizationID, registerInfo.organizationid);
+            }
+
+          }
+
+
+
+          that.setData({
+            indexUserName: wx.getStorageSync(user.UserNickName),
+            indexUserDescription: wx.getStorageSync(user.UserDescription),
+            exitSystem: wx.getStorageSync('exitSystem'),
+            alreadyRegister: wx.getStorageSync('alreadyRegister')
+          });
+
+        },
+        (userRegisterResult) => {
+          console.log(userRegisterResult);
+        },
+      );
+
+    }
+  );
+
+  wx.setStorageSync('exitSystem', 'no');
+
+}
 
 module.exports = {
     login: login.login,
@@ -350,4 +471,6 @@ module.exports = {
     MY_ANSWER_COLLECTION_URL_DETAIL: MY_ANSWER_COLLECTION_URL_DETAIL,
 
     MY_TEACHER_COLLECTION_URL_DETAIL: MY_TEACHER_COLLECTION_URL_DETAIL,
+
+    loginSystem: loginSystem,
 }

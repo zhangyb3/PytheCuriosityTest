@@ -6,214 +6,204 @@
 
 <view class="personal_page" hidden='{{hide_personal_page}}'>
 
-    <view style="height:20rpx;color:white;"></view>
+<view style="height:50rpx;"></view>
 
-    <view class="personal_description">
-    <view class="personal_description_zone" bindtap='personalDescriptionPage'>
-        <view class="personal_avatar_zone">
-            <view class="personal_avatar_container">
-                <view class="personal_avartar_image_wrapper">
-                    <view class="personal_avartar_image" style="background-image:url({{userAvatarUrl}})"></view>
-                </view>
-            </view>
-        </view>
-        <view class="personal_description_text_zone">
-            <view class="personal_nick_name_wrap"><text class="personal_nick_name">{{userNickName}}</text>
-            </view>
-            <!--<view class="person_discribe_wrap"></view>-->
-            <!--<view class="person_discribe_box">
-                <text class="person_discribe">{{userDescription}}
-                </text>
-            </view>-->
+<view class="personal_description_item_container">
 
-            <view class="person_org_view" wx:if="{{userStatus == 1 && orgName != null}}">
-                <text class="person_org" >就职: {{orgName}}
-                </text>
-            </view>
-
-            <view class="person_org_view" wx:if="{{orgName == null}}">
-                <!--<text class="person_org" style="color:white;" >
-                FREELANCE
-                </text>-->
-            </view>
-            
-            <!--<view class="personal_summary_wrap">
-                <view class="person_summary_box" bindtap="checkPersonalBill">
-                    <image  class="earn_num_img" src="../../images/personal_icon_org.money@2x.png">
-                    </image>
-                    <text class="personal_summary">{{teacherEarn}}
-                    </text>
-                </view>
-            </view>-->
-                <!--<text class="personal_summary" src="../../images/icon_money_1@2x.png">265</text>-->
-
-            <view class="tab_interval"></view>
-        </view>
-        
-        <view class="personal_description_revise_zone">
-        <view class="person_edit_icon_view">
-            <view class="person_edit_icon" >
-                <image src="../../images/personal_icon_arrow_right@2x.png"></image>
-            </view>
-        </view>
-        </view>
-        
-        </view>
-
-    </view>
-
-    <view style="height:50rpx;"></view>
-    
-    
-<!--<view class="personal_ask personal_operation_item" bindtap='selectPersonalWallet'>
-<view class="menu_list_icon_wrap">
-    <image class="menu_list_icon_wallet" src="../../images/personal_iocn_money@2x.png"></image>
-</view>
-            <text class="personal_ask personal_operation_item_text">钱包</text>
-            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-        </view>-->
-
-        <!--<view class="personal_ask personal_operation_item" bindtap='selectPersonalAsk'>
-<view class="menu_list_icon_wrap">
-    <image class="menu_list_icon_question" src="../../images/personal_iocn_myquestion@2x.png"></image>
-</view>
-            <text class="personal_ask personal_operation_item_text">我的问</text>
-            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-        </view>
-        <view class="personal_answer personal_operation_item" bindtap='selectPersonalAnswer'>
-<view class="menu_list_icon_wrap">
-    <image class="menu_list_icon_answer" src="../../images/personal_iocn_myanswer@2x.png"></image>
-</view>
-            <text class="personal_answer personal_operation_item_text">我的答</text>
-            <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-        </view>-->
-
-        <!--<view class="personal_operation_item_wrapper">
-        <view class="personal_like personal_operation_item" bindtap='selectPersonalLike'>
-            <view class="menu_list_icon_wrap">
-            <image class="menu_list_icon_like" src="../../images/personal_iocn_mydianzan@2x.png"></image>
-</view>
-            <text class="personal_like personal_operation_item_text">我的点赞</text>
-
-            <view class="personal_description_revise_zone">
-            <view class="person_edit_icon_view">
-                <button class="person_edit_icon" >
-                    <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-                </button>
-            </view>
-            </view>
-
-        </view>
-        </view>-->
-        
     
 
-        <!--<view class="personal_operation_item_wrapper">
-        <view class="organization_management personal_operation_item" wx:if="{{userStatus == 1}}" bindtap='selectOrganizationManagement'>
-            <view class="menu_list_icon_wrap">
-                <image class="menu_list_icon_detail" src="../../images/organization_icon.png"></image>
-</view>
-            <text class="organization personal_operation_item_text">机构管理</text>
+    <view class="personal_description_item_wrapper">
 
-            <view class="personal_description_revise_zone">
-            <view class="person_edit_icon_view">
-                <button class="person_edit_icon" >
-                    <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-                </button>
-            </view>
-            </view>
+        <view style="height:20rpx;"></view>
+
+        <view class="personal_description_item" bindtap="changeAvatar">
+
+            <view class="item_hint_container">
                 
-        </view>
-        </view>-->
-
-
-    <view class="about_us_zone">
-
-        <!--<view class="personal_operation_item_wrapper">
-        <view class="balance_detailed_rules personal_operation_item" bindtap='selectBalanceRules'>
-        <view class="menu_list_icon_wrap">
-            <image class="menu_list_icon_detail" src="../../images/personal_iocn_jiesuan@2x.png"></image>
-</view>
-            <text class="rules personal_operation_item_text">结算细则</text>
-            <view class="personal_description_revise_zone">
-            <view class="person_edit_icon_view">
-                <button class="person_edit_icon" >
-                    <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-                </button>
-            </view>
-            </view>
-
-        </view>
-        </view>-->
-
-        <view class="personal_operation_item_wrapper">
-        <view class="about_us personal_operation_item" bindtap='selectAboutUs'>
-            <view class="menu_list_icon_wrap">
-                <image class="menu_list_icon_us" src="../../images/personal_iocn_about@2x.png"></image>
-</view>
-            <text class="about personal_operation_item_text">关于我们</text>
-            <view class="personal_description_revise_zone">
-            <view class="person_edit_icon_view">
-                <view class="person_edit_icon" >
-                    <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
+                <view class="item_hint">
+                    <text class="item_hint_text">头像</text>
                 </view>
+
             </view>
-            </view>
 
-        </view>
-        </view>
+            <view class="item_content_container">
 
-    </view>
-
-    <view style="height: 30rpx;"></view>
-
-    <!--<view class="about_us_zone">
-
-        <view class="personal_operation_item_wrapper">
-        <view class="balance_detailed_rules personal_operation_item" bindtap="checkPersonalBill">
-            <view class="menu_list_icon_wrap">
-                <image class="menu_list_icon_detail" src="../../images/wallet_icon.png"></image>
-</view>
-            <text class="rules personal_operation_item_text">我的钱包</text>
-            <view class="personal_description_revise_zone">
-            <view class="person_edit_icon_view">
-                <button class="person_edit_icon" >
-                    <image class="arr_icon" src="../../images/personal_icon_arrow_right@2x.png"></image>
-                </button>
-            </view>
-            </view>
-            
-        </view>
-        </view>
-
-    </view>-->
-
-
-    <view style="height: 30rpx;"></view>
-
-    <!--<view class="personal_operation_item_wrapper">
-    <view class="exit_selection personal_operation_item" bindtap="exitSystem">
-        <view class="menu_list_icon_wrap">
-            <image class="menu_list_icon_detail" src="../../images/cancel.png"></image>
-</view>
-        <text class="exit personal_operation_item_text">退出登录</text>
-        <view class="personal_description_revise_zone">
-        <view class="person_edit_icon_view">
-            <button class="person_edit_icon" >
+                <!--<view class="person_edit_icon_view">
+                    <view class="person_edit_icon" >
+                        <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+                    </view>
+                </view>-->
                 
-            </button>
-        </view>
-        </view>
-        
-    </view>
-    </view>-->
+                <view class="item_content" >
 
-    <!--<contact-button 
-    type="default-light" 
-    size="20"
-    session-from="weapp"
-    >
-    </contact-button>-->
+                    <!--<image class="item_content_avatar" src="{{personalInfo.avatar}}"></image>-->
+                    <view class="item_content_avatar_wrapper">
+                    <view class="item_content_avatar" style="background-image:url({{personalInfo.avatar}})"></view>
+                    </view>
+
+                    <view class="person_edit_icon" >
+                        <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+                    </view>
+
+                </view>
+
+            </view>
+
+        </view>
+
+        <view style="height:20rpx;"></view>
+
+    </view>
+
+    
+
+</view>
+
+<view class="personal_description_item_container">
+
+    <view class="personal_description_item_wrapper">
+
+        <view style="height:20rpx;"></view>
+
+        <view class="personal_description_item" bindtap="personalEditPage">
+
+            <view class="item_hint_container">
+                
+                <view class="item_hint">
+                    <text class="item_hint_text">昵称</text>
+                </view>
+
+            </view>
+
+            <view class="item_content_container">
+                
+                <!--<view class="person_edit_icon_view">
+                    <view class="person_edit_icon" >
+                        <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+                    </view>
+                </view>-->
+
+                <view class="item_content">
+
+                    <text class="item_content_text">{{personalInfo.name}}</text>
+
+                    <view class="person_edit_icon" >
+                        <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+                    </view>
+
+                </view>
+
+            </view>
+
+        </view>
+
+        <view style="height:20rpx;"></view>
+
+    </view>
+
+</view>
+
+<view class="personal_description_item_container" wx:if="{{userRole == 1}}" >
+
+    <view class="personal_description_item_wrapper">
+
+        <view style="height:20rpx;"></view>
+
+        <view class="personal_description_zone" >
+
+            <view class="item_hint_container_">
+                
+                <view class="item_hint_container">
+
+                    <view class="item_hint">
+                        <text class="item_hint_text">机构</text>
+                    </view>
+
+                </view>
+
+                <view class="item_content_container">
+
+                    <view class="item_content">
+
+                        <view class="org_edit_icon" >
+                            <image src="../../images/quit_org.png"  wx:if="{{personalInfo.orgId > 0}}" data-teacher="{{personalInfo}}"  bindtap="cancelTeacherFromOrg"></image>
+                        </view>
+
+                    </view>
+
+                </view>
+
+            </view>
+
+            <view style="height:20rpx;"></view>
+
+            <view class="item_content_container_" data-org="{{personalInfo.orgId}}" bindtap="redirectToOrgPage">
+                
+                <!--<view class="item_content">-->
+                    <text class="item_content_text_null" wx:if="{{personalInfo.orgName == null}}">尚无</text>
+                    <text class="item_content_text" wx:if="{{personalInfo.orgName != null}}">{{personalInfo.orgName}}</text>
+                <!--</view>-->
+
+            </view> 
+
+        </view>
+
+        <view style="height:20rpx;"></view>
+
+    </view>
+
+</view>
+
+<view class="personal_description_item_container">
+
+    <view class="personal_description_item_wrapper">
+
+        <view style="height:20rpx;"></view>
+
+        <view class="personal_description_zone" bindtap="personalEditPage">
+
+            <view class="item_hint_container_">
+                
+                <view class="item_hint_container">
+
+                    <view class="item_hint">
+                        <text class="item_hint_text">简介</text>
+                    </view>
+
+                </view>
+
+                <view class="item_content_container">
+
+                    <view class="item_content">
+
+                        <view class="person_edit_icon" >
+                            <image src="../../images/personal_icon_arrow_right@2x.png"></image>
+                        </view>
+
+                    </view>
+
+                </view>
+
+            </view>
+
+            <view style="height:20rpx;"></view>
+
+            <view class="item_content_container_">
+                
+                <!--<view class="item_content">-->
+                    <text class="item_content_text_null" wx:if="{{personalInfo.description == null}}">尚无介绍</text>
+                    <text class="item_content_text" wx:if="{{personalInfo.description != null}}">{{personalInfo.description}}</text>
+                <!--</view>-->
+
+            </view> 
+
+        </view>
+
+        <view style="height:20rpx;"></view>
+
+    </view>
+
+</view> 
 
 
     <view class="login_container" hidden='{{hide_login}}'>

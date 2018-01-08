@@ -50,7 +50,7 @@ Page({
     
   },
   onLoad:function(parameters){
-    console.log("from personal");
+    
     console.log(parameters);
     
     wx.getSystemInfo({
@@ -62,8 +62,18 @@ Page({
         });
       }
     })
-  },
 
+    if(parameters.from == 'serviceInfo')
+    {
+      wx.setStorageSync('alreadyRegister', 'no');
+      wx.setStorageSync('exitSystem', 'no');
+      wx.setStorageSync("fromServiceInfoToAnswerPage", 'yes');
+      base.loginSystem(this);
+      
+
+    }
+    
+  },
 
 
   selectAlreadyAnswer:function(e){

@@ -4,10 +4,12 @@ page{
 }
 
 .teacher_phone_search_container{
-    background-color: #999999;
+    border-bottom: 1px solid darkgray;
+
     display: flex;
     flex-direction: row;
-    border-bottom: 5px #ffffff;
+		align-items: center;
+ 
     height: 100rpx;
 }
 
@@ -15,12 +17,12 @@ page{
 .input{
     display: flex;
     /*align-items: center;*/
-    text-align: center;
+    
     /*padding:0 5%;*/
     padding-left: 15%;
     margin-left: 10rpx;
     width:70%;
-    background-color: #ffffff;
+    
 
     
 }
@@ -35,11 +37,11 @@ page{
     /*justify-content: space-around;*/
     /*margin-left: 20px;*/
     /*margin:2px 5px;*/
-    text-align: center;
-    /*background-color: #EEE;*/
+    
+    background-color: #eaeaea;
     font-size: 30rpx;
     color: #999999;
-    background-color: #ffffff;
+    
     margin-left: 10rpx;
     margin-top: 20rpx;
     justify-content:center;
@@ -50,8 +52,8 @@ page{
 .search_button{
     /*background: url(../../images/nav_icon_search@2x.png) center center no-repeat;*/
     /*padding :0;*/
-    padding-right: 30rpx;
-    padding-left: 0;
+    padding-left: 30rpx;
+    padding-right: 0;
     line-height: 68rpx;
     width: auto;
     background: none;
@@ -73,8 +75,7 @@ page{
 }
 
 .cancel{
-    vertical-align: middle;
-    font-weight: bold;
+    
 }
 
 .no_teacher_notification{

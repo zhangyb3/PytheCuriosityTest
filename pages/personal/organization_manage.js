@@ -14,6 +14,7 @@ Page({
     userRole: 0,
     preview_img_url: config.PytheFileServerURL ,
     alreadySetupOrg: false,
+		teacherPhone: "",
   },
   onLoad:function(parameters){
     console.log(parameters);
@@ -243,6 +244,15 @@ Page({
     });
     
   },
+
+	orgAddTeacher: function (e){
+		wx.navigateTo({
+			url: '',
+			success: function(res) {},
+			fail: function(res) {},
+			complete: function(res) {},
+		})
+	},
 
   updateOrganization:function(e){
     console.log('edit org');

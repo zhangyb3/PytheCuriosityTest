@@ -61,9 +61,12 @@ Page({
     },
 
     organization: {},
+		personalInfo: {},
 
     countdownText : '发送验证码',
     second: 60,
+
+		userRole: 0,
   },
   onLoad:function(options){
 
@@ -93,56 +96,11 @@ Page({
   
   
 
-  selectPersonalAsk:function(result){
-    var parametersJSON = this.data.user;
-    var parametersString = netUtil.json2Form(parametersJSON);
-    wx.navigateTo({
-      url: 'personal_ask' + '?' + parametersString,
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
-  },
+  
 
-  selectPersonalAnswer:function(result){
-    var parametersJSON = this.data.user;
-    var parametersString = netUtil.json2Form(parametersJSON);
-    wx.navigateTo({
-      url: 'personal_answer' + '?' + parametersString,
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
-  },
+  
 
-  selectPersonalLike:function(result){
-    var parametersJSON = this.data.user;
-    var parametersString = netUtil.json2Form(parametersJSON);
-    wx.navigateTo({
-      url: 'personal_like' + '?' + parametersString,
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
-  },
+  
 
   selectOrganizationManagement:function(e){
     console.log('personal organization management');
@@ -195,7 +153,7 @@ Page({
   personalDescriptionPage:function(e){
     console.log('person description');
 
-    var personalInfo = {
+    this.data.personalInfo = {
       id: wx.getStorageSync(user.UserID),
       name: wx.getStorageSync(user.UserNickName),
       description: wx.getStorageSync(user.UserDescription),
@@ -205,7 +163,7 @@ Page({
     };
 
     wx.navigateTo({
-      url: 'personal_description?personalInfo='+JSON.stringify(personalInfo),
+      url: 'personal_description?personalInfo='+JSON.stringify(this.data.personalInfo),
       success: function(res){
         // success
       },
@@ -298,6 +256,47 @@ Page({
     register.commitRegister(this);
   },
 
+	cancelTeacherFromOrg: function (e) {
+		var that = this;
+		var teacher = e.currentTarget.dataset.teacher;
+		console.log(teacher);
+
+		{
+			wx.showModal({
+				title: '提示',
+				content: '确定退出该机构？',
+				success: function (res) {
+					if (res.confirm) {
+						wx.request({
+							url: config.PytheRestfulServerURL + '/teacher/orgDelete',
+							data: {
+								orgId: teacher.orgId,
+								teacherId: teacher.id,
+							},
+							method: 'GET',
+							success: function (res) {
+								// success
+								if(res.data.status == 200)
+								{
+									wx.setStorageSync(user.OrganizationID, -1);
+									
+								}
+							},
+							fail: function (res) {
+								// fail
+							},
+							complete: function (res) {
+								// complete
+								that.onShow();
+							}
+						})
+					}
+				}
+			});
+		}
+
+	},
+
   checkPersonalBill:function(e){
 
     if(wx.getStorageSync(user.Status) == 1)
@@ -333,7 +332,32 @@ Page({
 
   },
 
+	personalEditPage: function (e) {
+		wx.navigateTo({
+			url: 'personal_edit',
+			success: function (res) {
+				// success
+			},
+			fail: function (res) {
+				// fail
+			},
+			complete: function (res) {
+				// complete
+			}
+		})
+	},
 
+	redirectToOrgPage: function (e) {
+		console.log(e);
+		var orgId = e.currentTarget.dataset.org;
+
+		wx.navigateTo({
+			url: '../../pages/index/orgInfo?orgId=' + orgId,
+			success: function (res) { },
+			fail: function (res) { },
+			complete: function (res) { },
+		})
+	},
 
   onReady:function(){
     
@@ -370,30 +394,43 @@ Page({
           wx.setStorageSync(user.StudentID, registerInfo.userid);
           wx.setStorageSync(user.TeacherID, registerInfo.userid);
 
+					this.data.personalInfo = {
+						id: wx.getStorageSync(user.UserID),
+						name: wx.getStorageSync(user.UserNickName),
+						description: wx.getStorageSync(user.UserDescription),
+						avatar: wx.getStorageSync('userAvatarUrl'),
+						orgId: wx.getStorageSync(user.OrganizationID),
+						orgName: this.data.organization.name,
+					};
+					this.setData({
+						personalInfo: this.data.personalInfo,
+						userRole: this.data.userRole
+					});
+
           //自动更新头像
-          // if(wx.getStorageSync('avatarUrl') != wx.getStorageSync('userAvatarUrl'))
-          // {
-          //   var that = this;
-          //   wx.request({
-          //     url: config.PytheRestfulServerURL + '/user/updateAvatar',
-          //     data: {
-          //       userId: wx.getStorageSync(user.UserID),
-          //       avatar: wx.getStorageSync('avatarUrl'),
-          //     },
-          //     method: 'GET', 
-          //     success: function(res){
-          //       // success
-          //       wx.setStorageSync('userAvatarUrl', wx.getStorageSync('avatarUrl'));
-          //     },
-          //     fail: function(res) {
-          //       // fail
-          //     },
-          //     complete: function(res) {
-          //       // complete
-          //       that.onShow();
-          //     }
-          //   })
-          // }
+          if(wx.getStorageSync('avatarUrl') != wx.getStorageSync('userAvatarUrl'))
+          {
+            var that = this;
+            wx.request({
+              url: config.PytheRestfulServerURL + '/user/updateAvatar',
+              data: {
+                userId: wx.getStorageSync(user.UserID),
+                avatar: wx.getStorageSync('avatarUrl'),
+              },
+              method: 'GET', 
+              success: function(res){
+                // success
+                wx.setStorageSync('userAvatarUrl', wx.getStorageSync('avatarUrl'));
+              },
+              fail: function(res) {
+                // fail
+              },
+              complete: function(res) {
+                // complete
+                that.onShow();
+              }
+            })
+          }
 
         }
       },
@@ -406,75 +443,55 @@ Page({
     this.data.userNickName = wx.getStorageSync('UserNickName');
     this.data.userDescription = wx.getStorageSync('UserDescription');
     this.data.userStatus = wx.getStorageSync('Status');
+		this.data.userRole = wx.getStorageSync(user.Status);
     this.setData({
       userAvatarUrl: this.data.userAvatarUrl,
       userNickName: this.data.userNickName,
       userDescription: this.data.userDescription,
       userStatus: this.data.userStatus,
     });
-    var that = this;
-    //查看赚了多少钱
-    wx.request({
-      url: config.PytheRestfulServerURL + '/me/earn',
-      data: {
-        teacherId: wx.getStorageSync(user.TeacherID),
-        
-      },
-      method: 'GET', 
-      success: function(res){
-        // success
-        if(res.data.data != null)
-        {
-          that.setData({
-            teacherEarn: res.data.data,
-          });
-        }
-        else{
-          that.setData({
-            teacherEarn: 0.00,
-          });
-        }
-        
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    });
 
-    wx.request({
-      url: config.PytheRestfulServerURL + '/org/query',
-      data: {
-        orgId: wx.getStorageSync(user.OrganizationID),
-        
-      },
-      method: 'GET', 
-      success: function(res){
-        // success
-        if(res.data.status == 200)
-        {
-          that.data.organization.name = res.data.data.organization.name;
-          that.setData({
-            orgName: res.data.data.organization.name,
-          });
-        }
-        
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    });
+		var that = this;
+		wx.request({
+			url: config.PytheRestfulServerURL + '/org/query',
+			data: {
+				orgId: wx.getStorageSync(user.OrganizationID),
+
+			},
+			method: 'GET',
+			success: function (res) {
+				// success
+				if (res.data.status == 200) {
+					that.data.organization = res.data.data.organization;
+					that.data.personalInfo.orgName = res.data.data.organization.name;
+					that.setData({
+						personalInfo: that.data.personalInfo,
+					});	
+
+				}
+				else
+				{
+					that.data.personalInfo.orgName = null;
+					that.setData({
+						personalInfo: that.data.personalInfo
+					});
+				}
+
+			},
+			fail: function () {
+				
+			},
+			complete: function () {
+				
+			}
+		});
 
     
 
     this.setData({
       hide_register_lock_cover: true,
     });
+
   },
 
 

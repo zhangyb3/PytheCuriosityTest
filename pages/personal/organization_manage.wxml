@@ -5,7 +5,9 @@
 
 <scroll-view class="display_list_zone" scroll-y="true" style="height:{{scrollHeight}}px;z-index:1;"  >
 
-<view style="height: 25rpx;background-color: #eaeaea;"></view>
+<view class="org_hint" >
+	<text style='margin-left:5%;font-size:28rpx'>·机构信息</text>
+</view>
 
 <view class="personal_description_page" wx:if="{{alreadySetupOrg == true}}">
 
@@ -141,6 +143,10 @@
                     <!--<text class="item_content_text" wx:if="{{organization.address != null}}">有</text>-->
                     <image class="item_address_icon" wx:if="{{organization.address != null}}" src="../../images/address_icon.png" data-address="{{organization.address}}" bindtap="chooseOrgLocation"></image>
 
+										<view class="item_description_text" wx:if="{{organization.address != null}}" data-address="{{organization.address}}" bindtap="chooseOrgLocation">
+                    	<text class="item_content_text">{{organization.address}}</text>
+                    </view>
+
                     <!--<view class="person_edit_icon" >
                         <image src="../../images/personal_icon_arrow_right@2x.png"></image>
                     </view>-->
@@ -200,13 +206,15 @@
 
 </view>
 
-<view style="height: 25rpx;background-color: #eaeaea;"></view>
+<view class="org_hint" >
+	<text style='margin-left:5%;font-size:28rpx;'>·机构成员</text>
+</view>
 
 <view style="height:25rpx;"></view>
 
 <view class="search_input_field_container">
 
-<view class="search_input_field_wrapper">
+<!-- <view class="search_input_field_wrapper">
     <view class="search_input_field_unit">
     <view class="search_input_field_left"></view>
     <view class="search_input_field">
@@ -221,9 +229,9 @@
     
     <view class="search_input_field_right"></view>
     </view>
-</view>
+</view> -->
 
-<view style="height:25rpx;"></view>
+<!-- <view style="height:25rpx;"></view> -->
 
 </view>
 
@@ -247,9 +255,9 @@
                     </view>
                     
                 </view>
-            <!--<view class="member_name">
+             <view class="member_name">
                 <text>{{item.username}}</text>
-            </view>-->
+            </view> 
 
             <view style="height: 20rpx;"></view>
             
@@ -260,6 +268,34 @@
         
 
     </block>
+
+		<view class="item_container">
+
+            <view class="member_item_wrapper"  bindtap="searchTeacherByPhone" >
+
+                <view style="height: 20rpx;"></view>
+
+                <view class="member_item" hover-class=""  >
+                    <view class="member_item_container">
+
+                        <view class="member_img_container">
+                            <image class="member_img add_teacher" src="../../images/add_op.png"></image>
+                            
+                        </view>
+                        
+                        
+                    </view>
+                    
+                </view>
+             <view class="member_name">
+                <text>添加</text>
+            </view> 
+
+            <view style="height: 20rpx;"></view>
+            
+            </view>
+
+        </view>
 
 </view>
 

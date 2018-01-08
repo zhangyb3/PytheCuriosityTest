@@ -4,8 +4,8 @@
 
    
 
-    <view class="float_map_icon_conatainer" data-user_info="{{userInfo}}" bindtap="showOrgOnMap">
-        <image  class="float_map_icon" src="../../images/float_map_icon.png"></image>
+    <view class="float_map_icon_conatainer" data-user_info="{{userInfo}}" >
+        <image  class="float_map_icon" src="../../images/float_map_icon.png" bindtap="showOrgOnMap"></image>
     </view>
     
 
