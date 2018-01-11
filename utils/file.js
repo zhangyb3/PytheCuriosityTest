@@ -271,11 +271,11 @@ function downloadFile(that,download_file,fileType,success,fail)
   // //已经下载过
   if(whetherLoaded == true)
   {
-    if(fileType = 'image')
+    if(fileType == 'image')
     {
       typeof success == "function" && success(wx.getStorageSync(download_file));
     }
-    if(fileType = 'audio')
+    if(fileType == 'audio')
     {
       wx.playVoice({
         filePath: wx.getStorageSync(download_file),
